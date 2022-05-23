@@ -1,5 +1,10 @@
 # Test
 baseURL = 'https://www.ultimatexr.io/'
 languageCode = 'en-us'
-title = 'UltimateXR'
+title = 'UltimateXR | The XR Framework and Toolkit'
 theme = 'ultimatexr'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
