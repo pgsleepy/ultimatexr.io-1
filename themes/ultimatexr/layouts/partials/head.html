@@ -1,6 +1,11 @@
+{{ if eq .Section "docs" }}<base href="/docs/">{{ end }}
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-<title>{{ .Site.Title }}</title>
+{{ $title := print .Title " - " .Site.Title }}
+{{ if .IsHome }}{{ $title = .Title }}{{ end }}
+<title>{{ $title }}</title>
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC0JGRZ79C"></script>
 <script>

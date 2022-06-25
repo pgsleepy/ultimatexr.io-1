@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <h3>Single</h3>
+  {{ with .Site.GetPage "/docs/_Sidebar.md" }}
+    {{ .Content }}
+  {{ end }}
+  {{ .Content }}
+{{ end }}
