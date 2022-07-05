@@ -1,9 +1,9 @@
 {{ define "main" }}
-  <h3>Section</h3>
-  {{ with .Site.GetPage "/docs/_Sidebar.md" }}
-    {{ .Content }}
-  {{ end }}
-  {{ with .Site.GetPage "/docs/Home.md" }}
+  {{ if isset .Params "section_page" }}
+    {{ with .Site.GetPage .Params.section_page }}
+      {{ .Content }}
+    {{ end }}
+  {{ else }}
     {{ .Content }}
   {{ end }}
 {{ end }}

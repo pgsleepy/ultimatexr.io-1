@@ -4,6 +4,37 @@ title = 'UltimateXR'
 theme = 'ultimatexr'
 disablePathToLower = true
 
+[menu]
+[[menu.main]]
+  identifier = 'learn'
+  name = 'Learn'
+  url = '/learn/'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'guides'
+  name = 'Guides'
+  url = '/guides/getting-started'
+  weight = 10
+
+[[menu.main]]
+  identifier = 'scripting'
+  name = 'API'
+  url = '/api/'
+  weight = 20
+[[menu.main]]
+  name = 'Community'
+  url = '/community/'
+  weight = 30
+[[menu.main]]
+  name = 'Enterprise'
+  url = 'https://www.vrmada.com/en/contact'
+  weight = 40
+[[menu.main]]
+  name = 'About'
+  url = '/about/'
+  weight = 50
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]

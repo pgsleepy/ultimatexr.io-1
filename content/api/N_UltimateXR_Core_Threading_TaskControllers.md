@@ -1,0 +1,7 @@
+# UltimateXR.Core.Threading.TaskControllers Namespace
+
+## Classes
+&nbsp;<table><tr><th></th><th>Class</th><th>Description</th></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_Threading_TaskControllers_UxrCancellableController">UxrCancellableController</a></td><td>
+Parent abstract class for <a href="T_UltimateXR_Core_Threading_TaskControllers_UxrLoopController">UxrLoopController</a> and <a href="T_UltimateXR_Core_Threading_TaskControllers_UxrTaskController">UxrTaskController</a>.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_Threading_TaskControllers_UxrLoopController">UxrLoopController</a></td><td>
+A wrapper class to turn a cancelable action into a controllable <a href="M_UltimateXR_Core_Threading_TaskControllers_UxrCancellableController_Start">Start()</a>/ <a href="M_UltimateXR_Core_Threading_TaskControllers_UxrCancellableController_Stop">Stop()</a> pattern and run it uninterruptedly in a loop.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_Threading_TaskControllers_UxrTaskController">UxrTaskController</a></td><td>
+A wrapper class to turn a cancelable task delegate into a controllable <a href="M_UltimateXR_Core_Threading_TaskControllers_UxrCancellableController_Start">Start()</a>/ <a href="M_UltimateXR_Core_Threading_TaskControllers_UxrCancellableController_Stop">Stop()</a> pattern.</td></tr></table>&nbsp;

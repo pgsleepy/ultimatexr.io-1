@@ -1,0 +1,30 @@
+# UltimateXR.Avatar Namespace
+
+## Classes
+&nbsp;<table><tr><th></th><th>Class</th><th>Description</th></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a></td><td>
+
+Main class for avatars in the scene. An avatar is the visual representation of a user in the application. The minimal representation requires a single camera that allows the user to look around. More elements can be added such as hands to interact with the environment or a half/full body to have a more complete representation.
+
+A special avatar is the local avatar, which is the avatar controlled by the user using the headset and input controllers. Non-local avatars are other avatars instantiated in the scene but not controlled by the user, either other users through the network or special cases such as automated replays. A quick way to access the local avatar is by using the <a href="P_UltimateXR_Avatar_UxrAvatar_LocalAvatar">UxrAvatar.LocalAvatar</a> static property.
+
+Although avatars may contain significant information and components, the avatar is not in charge of updating itself. Local avatars are updated by the <a href="T_UltimateXR_Avatar_Controllers_UxrAvatarController">UxrAvatarController</a> added to the same GameObject where the <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> is. This allows to separate the update logic and functionality from the avatar representation. The standard avatar controller provided by UltimateXR is the <a href="T_UltimateXR_Avatar_Controllers_UxrStandardAvatarController">UxrStandardAvatarController</a> component. It provides high-level functionality to interact with the virtual world. Different update logic can be created by programming a new <a href="T_UltimateXR_Avatar_Controllers_UxrAvatarController">UxrAvatarController</a> component if required.
+
+Non-local avatars (Avatars whose <a href="T_UltimateXR_Avatar_UxrAvatarMode">UxrAvatar.AvatarMode</a> is <a href="T_UltimateXR_Avatar_UxrAvatarMode">UpdateExternally</a>) can be updated by accessing their rig using <a href="P_UltimateXR_Avatar_UxrAvatar_AvatarRig">AvatarRig</a>.
+
+Local avatar update logic is handled automatically by the <a href="T_UltimateXR_Core_UxrManager">UxrManager</a> singleton without requiring any user intervention.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarEventArgs">UxrAvatarEventArgs</a></td><td>
+Base class for avatar events.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarHandPoseChangeEventArgs">UxrAvatarHandPoseChangeEventArgs</a></td><td>
+Event args for a hand pose change in an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a>.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarMoveEventArgs">UxrAvatarMoveEventArgs</a></td><td>
+Contains information about an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> that has moved/rotated. Avatars are moved/rotated through [!:UxrManager] functionality such as:
+&nbsp;<ul><li>UxrManager.Instance.MoveAvatarTo</li><li>UxrManager.Instance.RotateAvatar</li><li>UxrManager.Instance.TeleportLocalAvatar</li></ul>&nbsp;
+These methods will move/rotate the root transform of the avatar. If a user moves or rotates in the real-world, the camera transform will be updated but the root avatar transform will remain fixed. Only moving or teleporting the avatar will generate <a href="T_UltimateXR_Avatar_UxrAvatarMoveEventArgs">UxrAvatarMoveEventArgs</a> events.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarStartedEventArgs">UxrAvatarStartedEventArgs</a></td><td>
+Arguments for the avatar started event.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarSyncEventArgs">UxrAvatarSyncEventArgs</a></td><td>
+Describes an event raised by an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> that can also be played back. This facilitates the manipulation synchronization through network.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarUpdateEventArgs">UxrAvatarUpdateEventArgs</a></td><td>
+Contains information about an avatar update event.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_UxrHandIntegration">UxrHandIntegration</a></td><td>
+Component that allows to select different graphical variations for the hands that are shown grabbing the controllers using IK.</td></tr></table>
+
+## Enumerations
+&nbsp;<table><tr><th></th><th>Enumeration</th><th>Description</th></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarMode">UxrAvatarMode</a></td><td>
+Avatar operating modes.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarRenderModes">UxrAvatarRenderModes</a></td><td>
+Flags describing the different avatar render elements that can be enabled/disabled separately.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Avatar_UxrAvatarSyncEventType">UxrAvatarSyncEventType</a></td><td>
+Enumerates the different events that can be synced for networking using <a href="T_UltimateXR_Avatar_UxrAvatarSyncEventArgs">UxrAvatarSyncEventArgs</a> .</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Avatar_UxrHandIntegration_GizmoHandSize">UxrHandIntegration.GizmoHandSize</a></td><td>
+Enumerates the supported gizmo hand sizes.</td></tr></table>&nbsp;

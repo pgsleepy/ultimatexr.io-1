@@ -1,0 +1,89 @@
+# IUxrControllerInput Interface
+ 
+
+Controller interface for all XR input devices, supporting single controller and dual controller setups.
+
+**Namespace:**&nbsp;<a href="N_UltimateXR_Devices">UltimateXR.Devices</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
+
+## Syntax
+
+**C#**<br />
+``` C#
+public interface IUxrControllerInput : IUxrDevice
+```
+
+<a href="UltimateXR/Scripts/Devices/IUxrControllerInput.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
+The IUxrControllerInput type exposes the following members.
+
+
+## Properties
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_Handedness">Handedness</a></td><td>
+
+Gets or sets the handedness, which is the <a href="P_UltimateXR_Devices_IUxrControllerInput_Primary">Primary</a> -dominant- hand in <a href="T_UltimateXR_Devices_UxrControllerSetupType">Dual</a> controller setups. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> controller setups where the controller is grabbed with one hand, it determines which hand is being used.
+ If <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> false, such as in gamepads, the handedness value should be ignored.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a></td><td>
+
+Gets whether <a href="P_UltimateXR_Devices_IUxrControllerInput_Handedness">Handedness</a> can be used. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> devices, it may be used to control which hand is holding the controller. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Dual</a> devices it is used to determine which hands have the <a href="P_UltimateXR_Devices_IUxrControllerInput_Primary">Primary</a> (dominant) and <a href="P_UltimateXR_Devices_IUxrControllerInput_Secondary">Secondary</a> (non-dominant) roles.
+ Devices such as gamepads don't support handedness and will target the single device no matter which <a href="T_UltimateXR_Core_UxrHandSide">UxrHandSide</a> is used. In this case it is good practice to use <a href="P_UltimateXR_Devices_IUxrControllerInput_Primary">Primary</a> to target the device in order to make the code cleaner.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_JoystickDeadZone">JoystickDeadZone</a></td><td>
+Gets the controller's joystick dead zone [0.0, 1.0]. Some controllers may have a more sensitive joystick, and this property can be used to compensate in different implementations.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_LeftController3DModel">LeftController3DModel</a></td><td>
+Gets the left instanced 3D controller model, if available. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> configurations where <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is false, both sides will return the same model.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_LeftControllerName">LeftControllerName</a></td><td>
+Gets the left controller name, or empty if not connected / doesn't exist. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> configurations where <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is not available, both sides will return the same name.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_MainJoystickIsTouchpad">MainJoystickIsTouchpad</a></td><td>
+Gets a value indicating whether the main two-axis input element is a touchpad. If false, it usually means the main joystick is a thumbstick.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_Primary">Primary</a></td><td>
+
+Gets which hand is holding the controller in <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> setups where <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is available. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Dual</a> setups it identifies the dominant hand. In both cases, <a href="P_UltimateXR_Devices_IUxrControllerInput_Handedness">Handedness</a> determines which hand it is.
+ In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> devices where handedness is not applicable ( <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is false) it is good practice to use <a href="P_UltimateXR_Devices_IUxrControllerInput_Primary">Primary</a> to address the device, even if both left and right can too.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_RightController3DModel">RightController3DModel</a></td><td>
+Gets the right instanced 3D controller model, if available. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> configurations where <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is false, both sides will return the same model.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_RightControllerName">RightControllerName</a></td><td>
+Gets the right controller name, or empty if not connected / doesn't exist. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> configurations where <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is not available, both sides will return the same name.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_Secondary">Secondary</a></td><td>
+Gets which hand is not holding the controller in <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> setups where <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is available. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Dual</a> setups it identifies the non-dominant hand.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Devices_IUxrControllerInput_SetupType">SetupType</a></td><td>
+Gets the setup type. See <a href="T_UltimateXR_Devices_UxrControllerSetupType">UxrControllerSetupType</a>.</td></tr></table>&nbsp;
+<a href="#iuxrcontrollerinput-interface">Back to Top</a>
+
+## Methods
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_AreAllControllerElementsBlinking">AreAllControllerElementsBlinking</a></td><td>
+Checks if all elements of a specific controller element are currently blinking</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonPressFlags">GetButtonPressFlags</a></td><td>
+Gets an uint value representing press states for each the controller <a href="T_UltimateXR_Devices_UxrInputButtons">UxrInputButtons</a> flags in the current frame.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonPressFlagsLastFrame">GetButtonPressFlagsLastFrame</a></td><td>
+Gets an uint value representing press states for each the in the last frame.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonsEvent">GetButtonsEvent</a></td><td>
+Check if a given input event took place for a button or a set of buttons in the current frame.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonsPress">GetButtonsPress</a></td><td>
+Check if the given button or buttons are being pressed in the current frame.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonsPressDown">GetButtonsPressDown</a></td><td>
+Check if the given button or buttons are being pressed in the current frame but weren't the previous frame (press-down).</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonsPressUp">GetButtonsPressUp</a></td><td>
+Check if the given button or buttons aren't being pressed in the current frame but were during the previous frame (release press).</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonsTouch">GetButtonsTouch</a></td><td>
+Check if the given button or buttons are being touched in the current frame.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonsTouchDown">GetButtonsTouchDown</a></td><td>
+Check if the given button or buttons are being touched in the current frame but weren't the previous frame (touch-down).</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonsTouchUp">GetButtonsTouchUp</a></td><td>
+Check if the given button or buttons aren't being touched in the current frame but were during the previous frame (release touch).</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonTouchFlags">GetButtonTouchFlags</a></td><td>
+Gets an uint value representing touch states for each the controller <a href="T_UltimateXR_Devices_UxrInputButtons">UxrInputButtons</a> flags in the current frame.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetButtonTouchFlagsLastFrame">GetButtonTouchFlagsLastFrame</a></td><td>
+Gets an uint value representing touch states for each the controller <a href="T_UltimateXR_Devices_UxrInputButtons">UxrInputButtons</a> flags in the last frame.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetController3DModel">GetController3DModel</a></td><td>
+Gets the instanced controller 3D model for a given hand.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetControllerCapabilities">GetControllerCapabilities</a></td><td>
+Gets the capabilities of the XR controller.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetControllerElementsGameObjects">GetControllerElementsGameObjects</a></td><td>
+Returns a list of GameObjects that represent parts of the instantiated controller. This can be useful to highlight buttons or other elements during tutorials. Functionality to make these elements blink is also provided by the framework.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetIgnoreControllerInput">GetIgnoreControllerInput</a></td><td>
+Gets whether the given controller input should be ignored.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetInput1D">GetInput1D</a></td><td>
+Gets the state of an analog controller input element.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_GetInput2D">GetInput2D</a></td><td>
+Gets the state of a 2D input element (joystick, touchpad...).</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_HasControllerElements">HasControllerElements</a></td><td>
+Checks if the given controller has specific elements.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_IsAnyControllerElementBlinking">IsAnyControllerElementBlinking</a></td><td>
+Checks if any specific controller element is currently blinking</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_IsControllerEnabled">IsControllerEnabled</a></td><td>
+Checks whether the given controller is enabled.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_SendGrabbableHapticFeedback">SendGrabbableHapticFeedback(UxrGrabbableObject, UxrHapticClip)</a></td><td>
+Sends haptic feedback to XR controllers that are being used to manipulate a grabbable object. Each hand associated to an XR controller that is grabbing the object will receive haptic feedback.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_SendGrabbableHapticFeedback_1">SendGrabbableHapticFeedback(UxrGrabbableObject, UxrHapticClipType, Single, Single, UxrHapticMode)</a></td><td>
+Sends haptic feedback to XR controllers that are being used to manipulate a grabbable object. Each hand associated to an XR controller that is grabbing the object will receive haptic feedback.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_SendHapticFeedback_1">SendHapticFeedback(UxrHandSide, UxrHapticClip)</a></td><td>
+Sends haptic feedback to a controller if the controller supports it.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_SendHapticFeedback">SendHapticFeedback(UxrHandSide, Single, Single, Single, UxrHapticMode)</a></td><td>
+Sends haptic feedback to a controller if the controller supports it.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_SendHapticFeedback_2">SendHapticFeedback(UxrHandSide, UxrHapticClipType, Single, Single, UxrHapticMode)</a></td><td>
+Sends a predefined haptic clip to a controller.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_SetIgnoreControllerInput">SetIgnoreControllerInput</a></td><td>
+Sets whether the given controller input should be ignored.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_StartControllerElementsBlinking">StartControllerElementsBlinking</a></td><td>
+Starts blinking one or more elements in a controller. This can be useful during tutorials to highlight which button(s) to press.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_StopAllBlinking">StopAllBlinking</a></td><td>
+Stops all controller elements to blink</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_StopControllerElementsBlinking">StopControllerElementsBlinking</a></td><td>
+Stops controller elements to blink</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_IUxrControllerInput_StopHapticFeedback">StopHapticFeedback</a></td><td>
+Stops all current haptics in a given controller.</td></tr></table>&nbsp;
+<a href="#iuxrcontrollerinput-interface">Back to Top</a>
+
+## Events
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public event](media/pubevent.gif "Public event")</td><td><a href="E_UltimateXR_Devices_IUxrControllerInput_ButtonStateChanged">ButtonStateChanged</a></td><td>
+Event called after a controller button state changed.</td></tr><tr><td>![Public event](media/pubevent.gif "Public event")</td><td><a href="E_UltimateXR_Devices_IUxrControllerInput_HapticRequesting">HapticRequesting</a></td><td>
+Event called right before haptic feedback was requested.</td></tr><tr><td>![Public event](media/pubevent.gif "Public event")</td><td><a href="E_UltimateXR_Devices_IUxrControllerInput_Input1DChanged">Input1DChanged</a></td><td>
+Event called after a <a href="T_UltimateXR_Devices_UxrInput1D">UxrInput1D</a> element changed.</td></tr><tr><td>![Public event](media/pubevent.gif "Public event")</td><td><a href="E_UltimateXR_Devices_IUxrControllerInput_Input2DChanged">Input2DChanged</a></td><td>
+Event called after a <a href="T_UltimateXR_Devices_UxrInput2D">UxrInput2D</a> element changed.</td></tr><tr><td>![Public event](media/pubevent.gif "Public event")</td><td><a href="E_UltimateXR_Devices_IUxrControllerInput_Updated">Updated</a></td><td>
+Event called right after the controller input state has been updated.</td></tr><tr><td>![Public event](media/pubevent.gif "Public event")</td><td><a href="E_UltimateXR_Devices_IUxrControllerInput_Updating">Updating</a></td><td>
+Event called right before the controller input state is updated.</td></tr></table>&nbsp;
+<a href="#iuxrcontrollerinput-interface">Back to Top</a>
+
+## See Also
+
+
+#### Reference
+<a href="N_UltimateXR_Devices">UltimateXR.Devices Namespace</a><br />

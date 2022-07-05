@@ -1,0 +1,5 @@
+# UltimateXR.Core.Caching Namespace
+
+## Interfaces
+&nbsp;<table><tr><th></th><th>Interface</th><th>Description</th></tr><tr><td>![Public interface](media/pubinterface.gif "Public interface")</td><td><a href="T_UltimateXR_Core_Caching_IUxrPrecacheable">IUxrPrecacheable</a></td><td>
+The <a href="T_UltimateXR_Core_Caching_IUxrPrecacheable">IUxrPrecacheable</a> interface is used in components that need to create instances at runtime and want a way to precache them so that there aren't any hiccups on instantiation. The <a href="T_UltimateXR_Core_UxrManager">UxrManager</a> will look for <a href="T_UltimateXR_Core_Caching_IUxrPrecacheable">IUxrPrecacheable</a> components when the scene is loaded and will instantiate and render the objects specified by <a href="P_UltimateXR_Core_Caching_IUxrPrecacheable_PrecachedInstances">PrecachedInstances</a> a certain amount of frames while the screen is still black. This will make sure their resources (meshes, textures) are cached in order to minimize instantiation delays.</td></tr></table>&nbsp;

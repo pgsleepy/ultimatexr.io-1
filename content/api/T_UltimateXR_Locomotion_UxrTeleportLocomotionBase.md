@@ -1,0 +1,113 @@
+# UxrTeleportLocomotionBase Class
+ 
+
+Base component for teleport locomotion.
+
+
+## Inheritance Hierarchy
+<a href="https://docs.microsoft.com/dotnet/api/system.object" target="_blank" rel="noopener noreferrer">System.Object</a><br />&nbsp;&nbsp;Object<br />&nbsp;&nbsp;&nbsp;&nbsp;Component<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Behaviour<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MonoBehaviour<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="T_UltimateXR_Core_Components_UxrComponent">UltimateXR.Core.Components.UxrComponent</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="T_UltimateXR_Core_Components_UxrComponent_1">UltimateXR.Core.Components.UxrComponent</a>(<a href="T_UltimateXR_Locomotion_UxrLocomotion">UxrLocomotion</a>)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="T_UltimateXR_Core_Components_Composite_UxrAvatarComponent_1">UltimateXR.Core.Components.Composite.UxrAvatarComponent</a>(<a href="T_UltimateXR_Locomotion_UxrLocomotion">UxrLocomotion</a>)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="T_UltimateXR_Locomotion_UxrLocomotion">UltimateXR.Locomotion.UxrLocomotion</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UltimateXR.Locomotion.UxrTeleportLocomotionBase<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="T_UltimateXR_Locomotion_UxrTeleportLocomotion">UltimateXR.Locomotion.UxrTeleportLocomotion</a><br />
+**Namespace:**&nbsp;<a href="N_UltimateXR_Locomotion">UltimateXR.Locomotion</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
+
+## Syntax
+
+**C#**<br />
+``` C#
+public abstract class UxrTeleportLocomotionBase : UxrLocomotion, 
+	IUxrPrecacheable
+```
+
+<a href="UltimateXR/Scripts/Locomotion/UxrTeleportLocomotionBase.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
+The UxrTeleportLocomotionBase type exposes the following members.
+
+
+## Constructors
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase__ctor">UxrTeleportLocomotionBase</a></td><td /></tr></table>&nbsp;
+<a href="#uxrteleportlocomotionbase-class">Back to Top</a>
+
+## Properties
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_BlockingTargetLayers">BlockingTargetLayers</a></td><td>
+Gets or sets the layers which should be considered when ray-casting looking for either valid or invalid teleportation surfaces.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_CanBackStep">CanBackStep</a></td><td>
+Gets whether the avatar can currently receive input to step backwards.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_CanRotate">CanRotate</a></td><td>
+Gets whether the avatar can currently receive input to rotate around.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ControllerForward">ControllerForward</a></td><td>
+Gets the smoothed direction of ray-casting when starts on the controller.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ControllerStart">ControllerStart</a></td><td>
+Gets the smoothed source of ray-casting when it starts on the controller.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_DestinationValidationRadius">DestinationValidationRadius</a></td><td>
+Gets or sets the radius of a cylinder used when validating if a teleport destination is valid.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_FadeRotationColor">FadeRotationColor</a></td><td>
+Gets or sets the fade color when using <a href="T_UltimateXR_Locomotion_UxrRotationType">Fade</a> translation teleporting.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_FadeRotationSeconds">FadeRotationSeconds</a></td><td>
+Gets or sets the transition duration in seconds for the <a href="T_UltimateXR_Locomotion_UxrRotationType">Fade</a> rotation type.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_FadeTranslationColor">FadeTranslationColor</a></td><td>
+Gets or sets the fade color when using <a href="T_UltimateXR_Locomotion_UxrTranslationType">Fade</a> translation teleporting.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_FadeTranslationSeconds">FadeTranslationSeconds</a></td><td>
+Gets or sets the transition duration in seconds for the <a href="T_UltimateXR_Locomotion_UxrTranslationType">Fade</a> translation type.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_HandSide">HandSide</a></td><td>
+Gets the hand used to control the teleport component.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_InvalidMaterialColorTargets">InvalidMaterialColorTargets</a></td><td>
+When <a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ShowTargetAlsoWhenInvalid">ShowTargetAlsoWhenInvalid</a> is true, sets the teleport target color used when the destination is invalid.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_IsAllowedToTeleport">IsAllowedToTeleport</a></td><td>
+Gets whether the component is currently allowed to teleport the avatar.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_IsOtherComponentTeleporting">IsOtherComponentTeleporting</a></td><td>
+Gets whether other teleport component is currently teleporting the avatar.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_IsTeleporting">IsTeleporting</a></td><td>
+Gets or sets whether the component is currently teleporting the avatar.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_LayerMaskRaycast">LayerMaskRaycast</a></td><td>
+Gets the LayerMask used for ray-casting either valid or invalid teleport destinations.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_MaxAllowedDistance">MaxAllowedDistance</a></td><td>
+Gets or sets the maximum teleport distance.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_MaxAllowedHeightDifference">MaxAllowedHeightDifference</a></td><td>
+Gets or sets the maximum height difference allowed from the current position to a destination.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_MaxAllowedSlopeDegrees">MaxAllowedSlopeDegrees</a></td><td>
+Gets or sets the maximum slop for a destination to be considered valid.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_PrecachedInstances">PrecachedInstances</a></td><td>
+Gets the GameObjects, usually prefabs, that will be precached when the scene is loaded.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ReorientationType">ReorientationType</a></td><td>
+Gets or sets how the teleport target direction is set.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_RotationStepDegrees">RotationStepDegrees</a></td><td>
+Gets or sets the amount of degrees rotated around the avatar axis when the user presses the left or right joystick buttons.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_RotationType">RotationType</a></td><td>
+Gets or sets the teleport rotation type.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ShowTargetAlsoWhenInvalid">ShowTargetAlsoWhenInvalid</a></td><td>
+Gets or sets whether the target should also be visible when the teleport destination is not valid.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_SmoothRotationSeconds">SmoothRotationSeconds</a></td><td>
+Gets or sets the transition duration in seconds for the <a href="T_UltimateXR_Locomotion_UxrRotationType">Smooth</a> rotation type.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_SmoothTranslationSeconds">SmoothTranslationSeconds</a></td><td>
+Gets or sets the transition duration in seconds for the <a href="T_UltimateXR_Locomotion_UxrTranslationType">Smooth</a> translation type.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_Target">Target</a></td><td>
+Gets or sets the target object.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TargetPlacementAboveHit">TargetPlacementAboveHit</a></td><td>
+Gets or sets the distance above the ground the target is positioned.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TeleportDirection">TeleportDirection</a></td><td>
+Gets or sets the current teleport direction.</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TeleportPosition">TeleportPosition</a></td><td>
+Gets or sets the current teleport destination.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TranslationType">TranslationType</a></td><td>
+Gets or sets the teleport translation type.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TriggerCollidersInteraction">TriggerCollidersInteraction</a></td><td>
+Gets or sets the behaviour for raycasts against trigger volumes.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ValidMaterialColorTargets">ValidMaterialColorTargets</a></td><td>
+When <a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ShowTargetAlsoWhenInvalid">ShowTargetAlsoWhenInvalid</a> is true, sets the teleport target color used when the destination is valid.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_ValidTargetLayers">ValidTargetLayers</a></td><td>
+Gets or sets the layers over which teleportation is allowed.</td></tr></table>&nbsp;
+<a href="#uxrteleportlocomotionbase-class">Back to Top</a>
+
+## Methods
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_Awake">Awake</a></td><td>
+Initializes the component. Should also be called in child classes.
+ (Overrides <a href="M_UltimateXR_Locomotion_UxrLocomotion_Awake">UxrLocomotion.Awake()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_CancelOtherTeleportTargets">CancelOtherTeleportTargets</a></td><td>
+Cancels all other current teleport targets. When overriden in child classes the base class should be called too.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_CancelTarget">CancelTarget</a></td><td>
+Cancels the current teleport target. When overriden in child classes the base class should be called too.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_HasBlockingRaycastHit">HasBlockingRaycastHit</a></td><td>
+Checks whether the given raycast hits have any that are blocking. A blocking raycast can either be a valid or invalid teleport destination depending on many factors. Use IsValidDestination(Vector3, Vector3, Boolean) to check whether the given position is valid.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_IsValidTeleport">IsValidTeleport</a></td><td>
+Checks if the teleport position is valid.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_NotifyDestinationRaycast">NotifyDestinationRaycast</a></td><td>
+Notifies a raycast was selected to be a potential destination. Computes whether the destination is valid. If it is, sets the appropriate internal state that can later be executed using <a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TryTeleportUsingCurrentTarget">TryTeleportUsingCurrentTarget()</a>.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_NotifyNoDestinationRaycast">NotifyNoDestinationRaycast</a></td><td>
+Notifies that no raycast were found to be processed as a potential teleport destination.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_OnDisable">OnDisable</a></td><td>
+Clear some states and unsubscribes from events.
+ (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_1_OnDisable">UxrComponent(T).OnDisable()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_OnEnable">OnEnable</a></td><td>
+Resets the component and subscribes to events.
+ (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_1_OnEnable">UxrComponent(T).OnEnable()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TryTeleportUsingCurrentTarget">TryTeleportUsingCurrentTarget</a></td><td>
+Tries to teleport the avatar using the current <a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TeleportPosition">TeleportPosition</a> and <a href="P_UltimateXR_Locomotion_UxrTeleportLocomotionBase_TeleportDirection">TeleportDirection</a> values, only if the current destination is valid and the avatar isn't currently being teleported.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_UpdateLocomotion">UpdateLocomotion</a></td><td>
+Updates the locomotion and the avatar's position/orientation the component belongs to.
+ (Overrides <a href="M_UltimateXR_Locomotion_UxrLocomotion_UpdateLocomotion">UxrLocomotion.UpdateLocomotion()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrTeleportLocomotionBase_UpdateTeleportLocomotion">UpdateTeleportLocomotion</a></td><td>
+Can be overriden in child classes to execute the additional per-frame teleport locomotion logic.</td></tr></table>&nbsp;
+<a href="#uxrteleportlocomotionbase-class">Back to Top</a>
+
+## Extension Methods
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_MonoBehaviourExt_CheckSetEnabled">CheckSetEnabled</a></td><td>
+Enables/disabled the component if it isn't enabled already.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_MonoBehaviourExt">MonoBehaviourExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_ComponentExt_GetOrAddComponent__1">GetOrAddComponent(T)</a></td><td>
+Gets the Component of a given type. If it doesn't exist, it is added to the GameObject.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_ComponentExt">ComponentExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_ComponentExt_GetPathUnderScene">GetPathUnderScene</a></td><td>
+Gets the full path under current scene, including all parents, but scene name, for the given component.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_ComponentExt">ComponentExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_ComponentExt_GetSceneUid">GetSceneUid</a></td><td>
+Gets an unique identifier string for the given component.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_ComponentExt">ComponentExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_ComponentExt_GetUniqueScenePath">GetUniqueScenePath</a></td><td>
+Gets an unique path in the scene for the given component. It will include scene name, sibling and component indices to make it unique.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_ComponentExt">ComponentExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_MonoBehaviourExt_LoopCoroutine">LoopCoroutine</a></td><td>
+Creates a coroutine that simplifies executing a loop during a certain amount of time.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_MonoBehaviourExt">MonoBehaviourExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_ComponentExt_SafeGetComponentInParent__1">SafeGetComponentInParent(T)</a></td><td>
+Gets the Component of a given type in the GameObject or any of its parents. It also works on prefabs, where regular GetComponentInParent(Type, Boolean) will not work: https://issuetracker.unity3d.com/issues/getcomponentinparent-is-returning-null-when-the-gameobject-is-a-prefab
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_ComponentExt">ComponentExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_ObjectExt_ShowInInspector">ShowInInspector(Boolean)</a></td><td>Overloaded.  
+Controls whether to show the current object in the inspector.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_ObjectExt">ObjectExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_ObjectExt_ShowInInspector_1">ShowInInspector(Boolean, Boolean)</a></td><td>Overloaded.  
+Controls whether to show the current object in the inspector and whether it is editable.
+ (Defined by <a href="T_UltimateXR_Extensions_Unity_ObjectExt">ObjectExt</a>.)</td></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_System_ObjectExt_ThrowIfNull">ThrowIfNull</a></td><td>
+Throws an exception if the object is null.
+ (Defined by <a href="T_UltimateXR_Extensions_System_ObjectExt">ObjectExt</a>.)</td></tr></table>&nbsp;
+<a href="#uxrteleportlocomotionbase-class">Back to Top</a>
+
+## See Also
+
+
+#### Reference
+<a href="N_UltimateXR_Locomotion">UltimateXR.Locomotion Namespace</a><br />

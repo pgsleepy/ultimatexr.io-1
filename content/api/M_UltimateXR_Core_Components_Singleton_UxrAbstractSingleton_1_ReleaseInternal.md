@@ -1,0 +1,25 @@
+# UxrAbstractSingleton(*T*).ReleaseInternal Method 
+ 
+
+The default internal release. Child classes can override this method if they required deallocation code.
+
+**Namespace:**&nbsp;<a href="N_UltimateXR_Core_Components_Singleton">UltimateXR.Core.Components.Singleton</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
+
+## Syntax
+
+**C#**<br />
+``` C#
+protected virtual void ReleaseInternal(
+	Action releasedCallback
+)
+```
+
+
+#### Parameters
+&nbsp;<dl><dt>releasedCallback</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.action" target="_blank" rel="noopener noreferrer">System.Action</a><br />Callback called when the releasing finished.</dd></dl>
+
+## See Also
+
+
+#### Reference
+<a href="T_UltimateXR_Core_Components_Singleton_UxrAbstractSingleton_1">UxrAbstractSingleton(T) Class</a><br /><a href="N_UltimateXR_Core_Components_Singleton">UltimateXR.Core.Components.Singleton Namespace</a><br />

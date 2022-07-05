@@ -1,0 +1,4 @@
+.highlight pre {
+  font-family: var(--uxr-font-family-monospace);
+  padding: var(--uxr-page-padding);
+}

@@ -1,9 +1,58 @@
 #banner-vrmada {
-  position: absolute;
+  /*
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 9;
+  */
   width: 100%;
   height: 42px;
   overflow: hidden;
   background-color: #000;
+  display: flex;
+  align-items: center;
+}
+
+#banner-vrmada a {
+  text-decoration: none;
+}
+
+#banner-vrmada .container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-vrmada {
+  display: inline-block;
+  line-height: 15px;
+  height: 15px;
+}
+
+.logo-vrmada img {
+  height: 10px;
+  margin-right: 10px;
+}
+
+#banner-vrmada a:last-of-type {
+  display: inline-block;
+  margin-left: 10px;
+  line-height: 26px;
+  height: 26px;
+  border-left: 1px solid #858585;
+  margin: 8px 0px;
+  padding-left: 10px;
+  color: #fff;
+  font-size: 9px;
+}
+
+@media (min-width: 768px) {
+  .logo-vrmada img {
+    height: 15px;
+    margin-right: 16px;
+  }
+
+  #banner-vrmada a:last-of-type {
+    font-size: 11px;
+    padding-left: 16px;
+  }
 }

@@ -1,0 +1,38 @@
+strong {
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  position: relative;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0 0 3rem;
+  font-size: 3rem;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+
+h2 {
+  margin: 4rem 0 1.8rem;
+  border-top: 1px solid var(--uxr-color-light);
+  padding-top: 1.8rem;
+  font-size: 24px;
+  letter-spacing: -.02em;
+}
+
+p {
+  line-height: var(--uxr-line-height);
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  text-decoration-thickness: .1em;
+  text-underline-offset: 2px;
+  color: var(--uxr-color-secondary);
+}

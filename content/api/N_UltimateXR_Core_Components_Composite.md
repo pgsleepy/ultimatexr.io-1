@@ -1,0 +1,7 @@
+# UltimateXR.Core.Components.Composite Namespace
+
+## Classes
+&nbsp;<table><tr><th></th><th>Class</th><th>Description</th></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_Components_Composite_UxrAvatarComponent_1">UxrAvatarComponent(T)</a></td><td>
+Generic base class for components that are added to an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> and we want to keep track of. It allows to enumerate components using static methods. This class could have instead inherited from <a href="T_UltimateXR_Core_Components_UxrComponent_2">UxrComponent(TP, TC)</a> but we avoided this to not have redundancy between Avatar/Parent properties and methods.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_Components_Composite_UxrGrabbableObjectComponent_1">UxrGrabbableObjectComponent(T)</a></td><td>
+Generic base class for components belonging to an object that also has a <a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UxrGrabbableObject</a> or in any of its parents. It allows to leverage some of the work related to accessing the <a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UxrGrabbableObject</a> component and processing the events without the need to subscribe or unsubscribe to them. Instead, events can be processed by overriding the different event triggers (OnXXX methods). 
+The component has also all the benefits derived from <a href="T_UltimateXR_Core_Components_UxrComponent">UxrComponent</a>.</td></tr></table>&nbsp;

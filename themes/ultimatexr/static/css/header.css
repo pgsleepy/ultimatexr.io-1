@@ -1,0 +1,140 @@
+header {
+  position: sticky;
+  top: 0px;
+  background-color: var(--uxr-background-color);
+  width: 100%;
+  z-index: 10;
+  border-bottom: 1px solid var(--uxr-divider-color);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--uxr-page-padding);
+}
+
+header a {
+  text-decoration: none;
+}
+
+header .logo-ultimatexr {
+  width: 160px;
+  height: 28px;
+  background-image: url('/images/logo-ultimatexr.svg');
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.nav-main {
+  position: absolute;
+  z-index: 99;
+  background-color: var(--uxr-color-secondary);
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  padding: 15px;
+  transition: all 1s linear;
+  -webkit-transition: opacity .2s linear;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-main a {
+  color: #fff;
+  font-size: 18px;
+  line-height: 42px;
+}
+
+.nav-main.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-button {
+  display: flex;
+}
+
+.menu-button svg {
+  width: 32px;
+  height: 32px;
+}
+
+#menu-button-open {
+  color: var(--uxr-color-primary);
+}
+
+#menu-button-close {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  #menu-button-open,
+  #menu-button-close {
+    display: none;
+  }
+
+  header .container {
+    padding-top: 30px;
+    padding-bottom: 0px;
+  }
+  
+  header .logo-ultimatexr {
+    position: relative;
+    top: -14px;
+    width: 220px;
+    height: 38px;
+  }
+
+  .nav-main {
+    background-color: transparent;
+    position: static;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    left: auto;
+    padding: 0;
+    align-self: flex-end;
+    pointer-events: initial;
+  }
+
+  .nav-main a {
+    color: var(--uxr-color-primary);
+    display: inline-block;
+    line-height: 48px;
+    font-size: 13px;
+  }
+
+  .nav-main ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .nav-main li {
+    padding-right: min(5vw, 80px);
+  }
+
+  .nav-main li:last-of-type {
+    padding-right: 0;
+  }
+
+  .nav-main > ul > li > a {
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 992px) {
+  header .container {
+    padding-top: 40px;
+  }
+
+  .nav-main a {
+    font-size: 14px;
+    line-height: 60px;
+  }
+}

@@ -1,0 +1,17 @@
+# UltimateXR.Animation.IK Namespace
+
+## Classes
+&nbsp;<table><tr><th></th><th>Class</th><th>Description</th></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Animation_IK_UxrArmIKSolver">UxrArmIKSolver</a></td><td>
+IK component that implements basic Inverse Kinematics for an arm.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Animation_IK_UxrBodyIK">UxrBodyIK</a></td><td>
+Class that provides functionality to compute Inverse Kinematics for a humanoid body.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Animation_IK_UxrBodyIKSettings">UxrBodyIKSettings</a></td><td>
+Stores parameters that drive Inverse Kinematics for full-body avatars.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Animation_IK_UxrCcdIKSolver">UxrCcdIKSolver</a></td><td>
+Component that we use to solve IK chains using CCD (Cyclic Coordinate Descent). A chain is defined by a set of links, an effector and a goal. The links are bones that will try to make the effector reach the same exact point, or the closest to, the goal. Usually the effector is on the tip of the last bone. Each link can have different rotation constraints to simulate different behaviours and systems.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Animation_IK_UxrCcdLink">UxrCcdLink</a></td><td>
+Defines a link -bone- in an IK chain solved using CCD.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Animation_IK_UxrIKSolver">UxrIKSolver</a></td><td>
+Base IK Solver class. IK solvers should inherit from it and override the <a href="M_UltimateXR_Animation_IK_UxrIKSolver_InternalSolveIK">InternalSolveIK()</a> method. Not all solvers need to be part of an avatar, but the <a href="T_UltimateXR_Core_Components_Composite_UxrAvatarComponent_1">UxrAvatarComponent(T)</a> inheritance is used to be able to enumerate all the solvers that are part of an avatar.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Animation_IK_UxrWristTorsionIKSolver">UxrWristTorsionIKSolver</a></td><td>
+IK solver that distributes a wrist torsion among different bones in a forearm in order to smooth it out.</td></tr></table>
+
+## Enumerations
+&nbsp;<table><tr><th></th><th>Enumeration</th><th>Description</th></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Animation_IK_UxrArmOverExtendMode">UxrArmOverExtendMode</a></td><td>
+Enumerates the different solutions that can be used when an avatar with visible arms moves a hand farther than the actual length of the arm.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Animation_IK_UxrArmSolveOptions">UxrArmSolveOptions</a></td><td>
+Different clavicle options supported by <a href="M_UltimateXR_Animation_IK_UxrArmIKSolver_SolveIKPass">SolveIKPass(UxrArmSolveOptions, UxrArmOverExtendMode)</a> when clavicle data is present in the rig.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Animation_IK_UxrCcdConstraintType">UxrCcdConstraintType</a></td><td>
+Enumerates the different constraints of a CCD link.</td></tr></table>&nbsp;

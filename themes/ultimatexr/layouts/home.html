@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <h1 class="heading">{{ safeHTML .Params.heading }}</h1>
+  <p class="subheading">{{ .Params.subheading }}</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="/api"><i data-feather="play-circle"></i>Watch trailer</a>
+    <a class="btn" href="/api">Get started</a>
+  </div>
+  <div class="additional-links">
+    <ul>
+      <li>
+        <a href="https://www.github.com">License: MIT</a>
+      </li>
+      <li>
+        <a href="https://www.github.com">Github</a>
+      </li>
+    </ul>
+  </div>
+{{ end }}

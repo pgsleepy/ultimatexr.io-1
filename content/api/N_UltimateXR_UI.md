@@ -1,0 +1,8 @@
+# UltimateXR.UI Namespace
+
+## Classes
+&nbsp;<table><tr><th></th><th>Class</th><th>Description</th></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_UI_UxrCameraPointer">UxrCameraPointer</a></td><td>
+Gaze pointer that can be added to a camera to enable gaze interaction with user interfaces.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_UI_UxrControlFeedback">UxrControlFeedback</a></td><td>
+Defines sound and haptic feedback for pressing events. Each <a href="T_UltimateXR_UI_UnityInputModule_Controls_UxrControlInput">UxrControlInput</a>, for instance, has a <a href="T_UltimateXR_UI_UxrControlFeedback">UxrControlFeedback</a> for each of its click/down/up events.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_UI_UxrFingerTip">UxrFingerTip</a></td><td>
+Component that, added to the tip of an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> finger, allows it to interact with user interfaces. It is normally added only to the index fingers so that other fingers don't generate unwanted interactions, but it can be added to any finger.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_UI_UxrLaserPointer">UxrLaserPointer</a></td><td>
+Component that, added to an object in an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> , allows it to interact with user interfaces using a laser pointer. It is normally added to the hand, so that it points in a forward direction from the hand, but can also be added to inanimate objects.</td></tr></table>&nbsp;

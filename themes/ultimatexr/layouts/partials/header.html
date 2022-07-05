@@ -1,4 +1,49 @@
 <div id="banner-vrmada">
-  <a href="https://www.vrmada.com.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website"><img src="/images/logo-vrmada-white.svg"></a>
-  <a href="https://www.vrmada.com.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website">Enterprise VR and AR consulting and development</a>
+  <div class="container">
+    <a href="https://www.vrmada.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website" class="logo-vrmada"><img src="/images/logo-vrmada-white.svg"></a>
+    <a href="https://www.vrmada.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website">Enterprise VR and AR consulting and development</a>
+  </div>
 </div>
+
+<header>
+  <div class="container">
+    <a href="/">
+      <div class="logo-ultimatexr"></div>
+    </a>
+    <nav class="nav-main">
+      <ul class="menu-main">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+          {{ if .HasChildren }}
+            <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+              <a href="#">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+              </a>
+            </li>
+            <ul class="sub-menu">
+              {{ range .Children }}
+                <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                  <a href="{{ .URL }}">{{ .Name }}</a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ else }}
+            <li>
+              <a href="{{ .URL }}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+              </a>
+            </li>
+          {{ end }}
+        {{ end }}
+        <a href="javascript:;" id="menu-button-close" class="menu-button">
+          <i data-feather="x"></i>
+        </a>
+    </ul>
+    </nav>
+    <a href="javascript:;" id="menu-button-open" class="menu-button">
+      <i data-feather="menu"></i>
+    </a>
+  </div>
+</header>

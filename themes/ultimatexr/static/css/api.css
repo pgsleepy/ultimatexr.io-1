@@ -1,0 +1,53 @@
+/* Hide all non-namespace nodes */
+#content.api {
+  visibility: hidden;
+}
+
+#content.api.loaded {
+  visibility: visible;
+}
+
+#content.api ul > li > ul > li > ul {
+  display: none;
+}
+
+#content.api #sidebar li > a {
+  color: var(--uxr-color);
+  line-height: 28px;
+}
+
+#content.api #sidebar li > a span {
+  display: none;
+}
+
+/* Use first node as sidebar title */
+#content.api #sidebar > ul > li > a {
+  font-weight: 700;
+  color: var(--uxr-color);
+  pointer-events: none;
+  line-height: 32px;
+}
+
+/* Remove side padding of empty headings to avoid unnecessary spacing with narrow icons */
+#content.api table tr th:empty {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+/* Icons in tables - vertical align and no line break*/
+#content.api table tr td:first-child {
+  padding-left: 0px;
+  padding-right: 0px;
+  white-space: nowrap;
+}
+
+#content.api table tr td:first-child img {
+  vertical-align: middle;
+  line-height: 124px;
+}
+
+/* Back to top links after tables */
+#content.api table + a[href]:where([href^="#"]) {
+  display: none;
+}

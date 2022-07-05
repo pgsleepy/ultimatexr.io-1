@@ -1,0 +1,44 @@
+:root {
+  --uxr-color-primary: #281e5a;
+  --uxr-color-secondary: #aa64fa;
+
+  --uxr-background-color: #fff;
+  --uxr-color: var(--uxr-color-primary);
+  --uxr-color-text-2: rgba(60, 60, 60, 0.7);
+  --uxr-color-light: rgb(229, 232, 238);
+  --uxr-color-light-2: rgb(248, 249, 250);
+
+  --uxr-divider-color: var(--uxr-color-light);
+
+  --uxr-font-family: 'Poppins', -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  --uxr-font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --uxr-font-size: 16px;
+  --uxr-line-height: 1.75rem;
+
+  --uxr-header-height-mobile: 60px;
+  --uxr-header-height-tablet: 64px;
+  --uxr-header-height-desktop: 64px;
+
+  --uxr-el-vertical-margin: 20px;
+  --uxr-page-padding: 15px;
+
+  --uxr-max-width: 1520px;
+}
+
+@media (min-width: 768px) {
+  :root {
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --uxr-el-vertical-margin: 25px;
+    --uxr-page-padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --uxr-el-vertical-margin: 30px;
+  }
+}

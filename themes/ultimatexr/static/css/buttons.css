@@ -1,0 +1,37 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  line-height: 48px;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid rgb(241, 241, 241);
+  background-color: rgb(241, 241, 241);
+  width: 100%;
+  margin: 8px 0;
+}
+
+.btn svg {
+  margin-right: 8px;
+  width: 28px;
+  height: 28px;
+}
+
+.btn-primary {
+  border-color: var(--uxr-color-secondary);
+  background-color: var(--uxr-color-secondary);
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    display: inline-flex;
+    width: auto;
+    padding: 0px 30px;
+    margin: 0px;
+  }
+}

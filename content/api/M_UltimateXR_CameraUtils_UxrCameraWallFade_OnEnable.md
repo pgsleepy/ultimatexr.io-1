@@ -1,0 +1,20 @@
+# UxrCameraWallFade.OnEnable Method 
+ 
+
+Subscribes to events. It also initializes the component so that whenever it is enabled, it is considered as being "outside".
+
+**Namespace:**&nbsp;<a href="N_UltimateXR_CameraUtils">UltimateXR.CameraUtils</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
+
+## Syntax
+
+**C#**<br />
+``` C#
+protected override void OnEnable()
+```
+
+
+## See Also
+
+
+#### Reference
+<a href="T_UltimateXR_CameraUtils_UxrCameraWallFade">UxrCameraWallFade Class</a><br /><a href="N_UltimateXR_CameraUtils">UltimateXR.CameraUtils Namespace</a><br />

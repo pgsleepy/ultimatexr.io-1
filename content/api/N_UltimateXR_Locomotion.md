@@ -1,0 +1,20 @@
+# UltimateXR.Locomotion Namespace
+
+## Classes
+&nbsp;<table><tr><th></th><th>Class</th><th>Description</th></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrIgnoreTeleportDestination">UxrIgnoreTeleportDestination</a></td><td>
+Tells teleporting components to ignore destinations that hang from the tree where the component is added.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrLocomotion">UxrLocomotion</a></td><td>
+Base class for locomotion components. Locomotion components enable different ways for an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> to move around the scenario.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrSmoothLocomotion">UxrSmoothLocomotion</a></td><td>
+Type of locomotion where the user moves across the scenario in a similar way to FPS video-games.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrTeleportLocomotion">UxrTeleportLocomotion</a></td><td>
+Standard locomotion using an arc projected from the controllers.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrTeleportLocomotionBase">UxrTeleportLocomotionBase</a></td><td>
+Base component for teleport locomotion.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrTeleportSpawnCollider">UxrTeleportSpawnCollider</a></td><td>
+Component that, added to an object with colliders, allows to define volumes that force a fixed teleportation destination when they are hit with teleporting pointers (arc, ray, etc.).</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrTeleportTarget">UxrTeleportTarget</a></td><td>
+Component describing the visual representation of a teleport destination.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Locomotion_UxrTeleportTargetMaterialID">UxrTeleportTargetMaterialID</a></td><td>
+Component that allows to specify which material ID needs to be changed by an <a href="T_UltimateXR_Locomotion_UxrTeleportTarget">UxrTeleportTarget</a> when different colors are used to indicate whether the teleport is currently valid or not.</td></tr></table>
+
+## Enumerations
+&nbsp;<table><tr><th></th><th>Enumeration</th><th>Description</th></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Locomotion_UxrRaycastStepsQuality">UxrRaycastStepsQuality</a></td><td>
+The number of raycasts to perform over a teleport arc to check where it intersects with the scene. Higher quality steps use more raycasts.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Locomotion_UxrReorientationType">UxrReorientationType</a></td><td>
+How the avatar can be reoriented when executing a teleportation.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Locomotion_UxrRotationType">UxrRotationType</a></td><td>
+Enumerates the supported types of rotation around the avatar's axis.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Locomotion_UxrTranslationType">UxrTranslationType</a></td><td>
+Enumerates the different types an avatar can teleport from one place to another.</td></tr><tr><td>![Public enumeration](media/pubenumeration.gif "Public enumeration")</td><td><a href="T_UltimateXR_Locomotion_UxrWalkDirection">UxrWalkDirection</a></td><td>
+Enumerates the different options available to decide which direction the avatar will move when using locomotion components such as <a href="T_UltimateXR_Locomotion_UxrSmoothLocomotion">UxrSmoothLocomotion</a>.</td></tr></table>&nbsp;
