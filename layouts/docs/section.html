@@ -1,9 +1,0 @@
-{{ define "main" }}
-  {{ if isset .Params "section_page" }}
-    {{ with .Site.GetPage .Params.section_page }}
-      {{ .Content }}
-    {{ end }}
-  {{ else }}
-    {{ .Content }}
-  {{ end }}
-{{ end }}

@@ -1,3 +1,18 @@
+{{ define "head" }}
+  <base href="/api/">
+  {{ $title := findRE "<h1.*?>(.|\n)*?</h1>" .Content 1 | }}
+  {{ $title = index ($title) 0 }}
+  {{ $title = replaceRE `<h1.*?>(.*)</h1>` `$1` $title }}
+{{ end }}
+
+{{ define "sidebar" }}
+  {{ with .Site.GetPage "/api/_Sidebar.md" }}
+    {{ $content := .Content }}
+    {{ $content = replaceRE `\((((\<em\>)?(T\S?)(\<\/em\>)?(,\s?)?)+)\)` `&lt;$1&gt;` $content }}
+    {{ $content | safeHTML }}
+  {{ end }}
+{{ end }}
+
 {{ define "main" }}
   {{ $content := .Content }}
   {{ $content = replaceRE `\((((\<em\>)?(T\S?)(\<\/em\>)?(,\s?)?)+)\)` `&lt;$1&gt;` $content }}

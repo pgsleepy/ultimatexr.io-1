@@ -16,6 +16,11 @@ body.kind-home footer {
   background-color: transparent;
 }
 
+body.kind-home aside,
+body.kind-home #nav-local {
+  display: none;
+}
+
 body.kind-home header .logo-ultimatexr {
   background-image: url('/images/logo-ultimatexr-white.svg');
 }

@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html>
+    {{- block "head" . }}{{- end }}
     {{- partial "head.html" . -}}
     <body class="type-{{ .Type }} kind-{{ .Kind }}">
+        <div class="overlay"></div>
         {{- partial "header.html" . -}}
+        {{- partial "nav-local.html" . -}}
         <div id="content">
           <div class="container">
+            <aside id="sidebar">
+              <a href="javascript:;" class="btn-close">
+                <i data-feather="x"></i>
+              </a>
+              {{- block "sidebar" . }}{{- end }}
+            </aside>
             <main>
               {{- block "main" . }}{{- end }}
             </main>
