@@ -16,7 +16,7 @@ We are in the process of providing additional ways of getting the framework:
 
 ## Requirements
 
-Unity 2021 or higher. Unity 2021 LTS is highly recommended.
+Unity 2021.2 or higher. LTS version is highly recommended.
 
 ## Uninstalling the previous version first
 
