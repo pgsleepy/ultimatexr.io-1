@@ -6,7 +6,7 @@ title: "About"
 
 UltimateXR is a free, open-source framework and toolkit for Unity that simplifies the development of virtual reality applications. It is developed by a team with more than 20 years of experience in the fields of computer graphics, simulation, and videogames. 
 
-The project started in 2016 with the objective to become the technological backbone of our virtual reality company VRMADA. The goal was to create a high-quality, scalable virtual reality framework that could help us develop our applications faster, better and with the highest quality possible. Quality not only in terms of user experience, interactivity, and immersion of the final products, but also in architecture, standards, code, and tools. 
+The project started in 2016 with the objective to become the technological backbone of our virtual reality company VRMADA. The goal was to create a high-quality, scalable virtual reality framework that could help us develop our applications easier, faster, and with the highest quality possible. Quality not only in terms of user experience, interactivity, and immersion of the final products, but also in architecture, standards, code, and tools. 
 
 Creating a public release was always something that we had in mind. After years of successfully developing applications and putting UltimateXR to the test we are happy to take it a step further and make it available to the public. Free and open-source. 
 
