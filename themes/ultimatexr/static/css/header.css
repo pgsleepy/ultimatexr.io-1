@@ -34,22 +34,37 @@ header .logo-ultimatexr {
   left: 0px;
   width: 100vw;
   height: 100vh;
-  padding: 15px;
+  padding: 64px 15px 15px;
   transition: all 1s linear;
   -webkit-transition: opacity .2s linear;
   opacity: 0;
   pointer-events: none;
 }
 
+.nav-main > .menu-main > li {
+  border-top: 1px solid rgba(255, 255, 255, .35);
+}
+
+.nav-main li a {
+  display: block;
+  margin: .8rem 0;
+}
+
 .nav-main a {
   color: #fff;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 42px;
 }
 
 .nav-main.open {
   opacity: 1;
   pointer-events: all;
+}
+
+.nav-main .sub-menu a {
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 .menu-button {
@@ -103,9 +118,11 @@ header .logo-ultimatexr {
     pointer-events: initial;
   }
 
-  .nav-main a {
+  .nav-main li a {
     color: var(--uxr-color-primary);
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    margin: 0;
     line-height: 48px;
     font-size: 13px;
   }
@@ -115,16 +132,68 @@ header .logo-ultimatexr {
     justify-content: flex-end;
   }
 
-  .nav-main li {
+  .nav-main > .menu-main > li {
+    position: relative;
     padding-right: min(5vw, 80px);
+    border-top: none;
   }
 
-  .nav-main li:last-of-type {
+  .nav-main .sub-menu {
+    background: var(--uxr-color-light-2);
+    position: absolute;
+    flex-direction: column;
+    left: -15px;
+    border-top: 1px solid var(--uxr-color-light-2);
+    padding: 10px;
+    margin-top: 6px;
+    min-width: 140px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s;
+    border-radius: 3px;
+  }
+
+  .nav-main .sub-menu:before {
+    content: "";
+    background: var(--uxr-color-light-2);
+    clip-path: polygon(50% 50%,0 100%,100% 100%);
+    display: block;
+    -webkit-clip-path: polygon(50% 50%,0 100%,100% 100%);
+    height: 18px;
+    width: 20px;
+    position: absolute;
+    top: -18px;
+    left: calc(50%-20px);
+  }
+
+  .nav-main .sub-menu a {
+    padding: 0px 5px;
+    font-size: 13px;
+    line-height: 32px;
+  }
+
+  .nav-main > .menu-main > li:last-of-type {
     padding-right: 0;
   }
 
   .nav-main > ul > li > a {
     font-weight: 500;
+  }
+
+  .nav-main li a:hover {
+    color: var(--uxr-color-secondary);
+  }
+
+  .nav-main li:hover .sub-menu {
+    opacity: 1;
+    margin-top: 0px;
+    pointer-events: all;
+  }
+
+  .nav-main svg {
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -133,7 +202,12 @@ header .logo-ultimatexr {
     padding-top: 40px;
   }
 
-  .nav-main a {
+  .nav-main .sub-menu a {
+    font-size: 14px;
+    line-height: 36px;
+  } 
+
+  .nav-main li a {
     font-size: 14px;
     line-height: 60px;
   }

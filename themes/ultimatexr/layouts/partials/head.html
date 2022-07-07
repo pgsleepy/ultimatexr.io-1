@@ -2,12 +2,21 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300,400,500,600,700&display=swap" rel="stylesheet">
-{{ $title := print .Title " - " .Site.Title }}
+<link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet">
+{{ $title := "" }}
+{{ if .Scratch.Get "title" }}
+  {{ $title = print (.Scratch.Get "title") " - " .Site.Title }}
+{{ else }}
+  {{ $title = print .Title " - " .Site.Title }}
+{{ end }}
 {{ if .IsHome }}{{ $title = .Title }}{{ end }}
 <title>{{ $title }}</title>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
 <script src="/js/feather.js"></script>
 <script src="/js/navigation.js"></script>
+<script src="/js/trailer.js"></script>
+<script src="/js/toc.js"></script>
 <script src="/js/api.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <!--

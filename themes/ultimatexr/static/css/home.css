@@ -64,9 +64,22 @@ body.kind-home .additional-links {
   margin-bottom: var(--uxr-el-vertical-margin);
 }
 
+body.kind-home .additional-links {
+  list-style-type: none;
+}
+
+body.kind-home .additional-links a {
+  font-weight: 400;
+  text-decoration: underline;
+}
+
 body.kind-home .additional-links ul li {
   font-size: 14px;
   display: inline-block;
+}
+
+body.kind-home .additional-links ul li:before {
+  display: none;
 }
 
 body.kind-home .additional-links ul li:not(:last-of-type)::after {
@@ -93,6 +106,10 @@ body.kind-home .additional-links ul li:not(:last-of-type)::after {
 }
 
 @media (min-width: 768px) {
+  body.kind-home .nav-main .sub-menu a {
+    color: var(--uxr-color-secondary);
+  }
+
   body.kind-home .actions .btn {
     min-width: 200px;
     margin-left: 10px;

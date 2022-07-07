@@ -2,17 +2,31 @@
   <h1 class="heading">{{ safeHTML .Params.heading }}</h1>
   <p class="subheading">{{ .Params.subheading }}</p>
   <div class="actions">
-    <a class="btn btn-primary" href="/api"><i data-feather="play-circle"></i>Watch trailer</a>
-    <a class="btn" href="/api">Get started</a>
+    <a class="btn btn-primary" href="javascript:"><i data-feather="play-circle"></i>Watch teaser</a>
+    <a class="btn" href="/guides/getting-started">Get started</a>
   </div>
   <div class="additional-links">
     <ul>
       <li>
-        <a href="https://www.github.com">License: MIT</a>
+        <a href="javascript:">License: MIT</a>
       </li>
       <li>
-        <a href="https://www.github.com">Github</a>
+        <a href="https://vrmada.box.com/shared/static/54ktrvge491h3n2dbjxmajhj9wbucwr9.unitypackage">Download</a>
       </li>
     </ul>
+  </div>
+{{ end }}
+
+{{ define "top" }}
+  <div id="container-trailer">
+    <video
+      id="trailer"
+      class="video-js"
+      controls
+      preload="auto"
+      data-setup="{}"
+      >
+      <source src="https://vrmada.box.com/shared/static/3yv91i56echpr86om1i38qi7eod0me4v.mp4" type="video/mp4">
+    </video>
   </div>
 {{ end }}

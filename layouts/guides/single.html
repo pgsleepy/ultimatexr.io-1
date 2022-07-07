@@ -1,0 +1,47 @@
+{{ define "sidebar" }}
+  <h3>Getting started</h3>
+  <ul>
+    <li><a href="/guides/getting-started">Installation</a></li>
+    <li><a href="/guides/sample-scene">Sample scene</a></li>
+  </ul>
+  
+  <h3>Supported platforms</h3> 
+  <ul>
+    <li>
+      <li><a href="/guides/supported-platforms">Overview</a></li>
+      <li><a href="/guides/oculus">Oculus SDK</a></li>
+      <li><a href="/guides/picoxr">Pico XR SDK</a></li>
+      <li><a href="/guides/steamvr">SteamVR</a></li>
+      <li><a href="/guides/wavexr">WaveXR</a></li>
+      <li><a href="/guides/windows-mixed-reality">Windows Mixed Reality</a></li>
+    </li>
+  </ul>
+
+  <h3>Components</h3> 
+  <ul>
+    <li>
+      <li><a href="/guides/avatar">Avatar</a></li>
+      <li><a href="/guides/hand-pose-editor">Hand Pose Editor</a></li>
+      <li><a href="/guides/manipulation">Manipulation</a></li>
+    </li>
+  </ul>
+
+  <h3>Scripting</h3> 
+  <ul>
+    <li>
+      <li><a href="/guides/scripting">Overview</a></li>
+      <li><a href="/guides/scripting-how-do-i">How do I?</a></li>
+    </li>
+  </ul>
+
+  <h3>Troubleshooting</h3> 
+  <ul>
+    <li>
+      <li><a href="/guides/troubleshooting">Common errors</a></li>
+    </li>
+  </ul>
+{{ end }}
+
+{{ define "main" }}
+  {{ .Content }}
+{{ end }}

@@ -28,6 +28,23 @@
 
 #sidebar li a {
   text-decoration: none;
+  color: var(--uxr-color);
+  line-height: 28px;
+  transition: color .3s;
+}
+
+#sidebar li a:hover {
+  color: var(--uxr-color-secondary);
+}
+
+#sidebar h3,
+#sidebar li.title {
+  font-weight: 700;
+  color: var(--uxr-color);
+  pointer-events: none;
+  line-height: 32px;
+  margin-top: 1em;
+  margin-bottom: 0px;
 }
 
 #nav-local {

@@ -6,17 +6,10 @@ disablePathToLower = true
 
 [menu]
 [[menu.main]]
-  identifier = 'learn'
-  name = 'Learn'
-  url = '/learn/'
-  weight = 10
-
-[[menu.main]]
   identifier = 'guides'
   name = 'Guides'
-  url = '/guides/getting-started'
+  url = '/guides/getting-started/'
   weight = 10
-
 [[menu.main]]
   identifier = 'scripting'
   name = 'API'

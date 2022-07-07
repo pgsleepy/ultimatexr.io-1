@@ -3,6 +3,7 @@
   {{ $title := findRE "<h1.*?>(.|\n)*?</h1>" .Content 1 | }}
   {{ $title = index ($title) 0 }}
   {{ $title = replaceRE `<h1.*?>(.*)</h1>` `$1` $title }}
+  {{ .Scratch.Set "title" $title }}
 {{ end }}
 
 {{ define "sidebar" }}

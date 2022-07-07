@@ -1,4 +1,9 @@
+.highlight {
+  margin: var(--uxr-el-vertical-margin) 0;
+}
+
 .highlight pre {
   font-family: var(--uxr-font-family-monospace);
   padding: var(--uxr-page-padding);
+  overflow-x: scroll;
 }

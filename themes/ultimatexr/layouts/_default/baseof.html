@@ -4,6 +4,7 @@
     {{- partial "head.html" . -}}
     <body class="type-{{ .Type }} kind-{{ .Kind }}">
         <div class="overlay"></div>
+        {{- block "top" . }}{{- end }}
         {{- partial "header.html" . -}}
         {{- partial "nav-local.html" . -}}
         <div id="content">
@@ -17,6 +18,8 @@
             <main>
               {{- block "main" . }}{{- end }}
             </main>
+            <aside id="toc">
+            </aside>
           </div>
         </div>
         {{- partial "footer.html" . -}}
