@@ -64,8 +64,9 @@ body.kind-home .additional-links {
   margin-bottom: var(--uxr-el-vertical-margin);
 }
 
-body.kind-home .additional-links {
+body.kind-home .additional-links ul {
   list-style-type: none;
+  padding: 0;
 }
 
 body.kind-home .additional-links a {
