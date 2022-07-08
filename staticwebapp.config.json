@@ -1,0 +1,7 @@
+{
+  "routes": [
+    "route": "/guides/learn",
+    "redirect": "/guides/getting-started",
+    "statusCode": 301
+  ]
+}
