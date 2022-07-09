@@ -6,6 +6,8 @@ title: "Scripting: How do I...?"
 
 The goal of this section is to provide through snippets a very quick understanding of which classes are involved in the different aspects of XR development and how exactly UltimateXR can be used to solve specific problems.
 
+Use the menu on the right to navigate to a specific topic.
+
 For a full scripting reference please visit the [API section](/api).
 
 ## Animation
@@ -327,13 +329,13 @@ How can I know if a controller button was pressed?
 Method1:
 
 ```c#
-bool wasPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Left, UxrButtons.Button1);
+bool wasPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Left, UxrInputButtons.Button1);
 ```
 
 Method2:
 
 ```c#
-bool wasPressed = UxrAvatar.LocalAvatarInput.GetButtonsEvent(UxrHandSide.Left, UxrButtons.Button1, UxrButtonEventType.PressDown);
+bool wasPressed = UxrAvatar.LocalAvatarInput.GetButtonsEvent(UxrHandSide.Left, UxrInputButtons.Button1, UxrButtonEventType.PressDown);
 ```
 
 Method3:
@@ -350,7 +352,7 @@ private void Input_ButtonStateChanged(object sender, UxrInputButtonEventArgs e)
 How can I know if two controller buttons are being pressed at the same time?
 
 ```c#
-bool areBeingPressed = UxrAvatar.LocalAvatarInput.GetButtonsPress(UxrHandSide.Left, UxrButtons.Button1 | UxrButtons.Button2);
+bool areBeingPressed = UxrAvatar.LocalAvatarInput.GetButtonsPress(UxrHandSide.Left, UxrInputButtons.Button1 | UxrInputButtons.Button2);
 ```
 
 How can I set the user handedness?
@@ -374,7 +376,7 @@ UxrAvatar.LocalAvatarInput.SetIgnoreControllerInput(UxrHandSide.Left, true);
 How can I still know if a controller button was pressed on a controller even if it was set to ignore input?
 
 ```c#
-bool wasPressedWhileIgnoring = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Left, UxrButtons.Button1, true);
+bool wasPressedWhileIgnoring = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Left, UxrInputButtons.Button1, true);
 ```
 
 How can I get the forward direction of a controller?
@@ -475,7 +477,7 @@ How do I place a grabbable object on an anchor?
 UxrGrabManager.Instance.PlaceObject(grabbableObject, GrabbleObjectAnchor, UxrPlacementType.Immediate);
 
 // Smooth placement
-UxrGrabManager.Instance.PlaceObject(grabbableObject, GrabbleObjectAnchor, UxrPlacementType.Immediate);
+UxrGrabManager.Instance.PlaceObject(grabbableObject, GrabbleObjectAnchor, UxrPlacementType.Smooth);
 ```
 
 How do I get the velocity of an object being grabbed?
@@ -722,7 +724,7 @@ private void OnDisable()
     _grabbableObject.ConstraintsApplied -= grabbableObject_ConstraintsApplied;
 }
 
-private void grabbableObject_ConstraintsAppliedUxrApplyConstraintsEventArgs e)
+private void grabbableObject_ConstraintsApplied(UxrApplyConstraintsEventArgs e)
 {
     // Keeps the local y position between 0.8 and 1.2
     Vector3 localPosition = _grabbableObject.transform.localPosition;
