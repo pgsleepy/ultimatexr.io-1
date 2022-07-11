@@ -4,6 +4,10 @@ title: UltimateXR
 theme: ultimatexr
 disablePathToLower: true
 
+params:
+  latest_version: v0.8.1
+  latest_version_download_url: https://github.com/VRMADA/ultimatexr-unity/releases/download/v0.8.1/UltimateXR_0.8.1.unitypackage
+
 menu:
   main:
     - identifier: guides

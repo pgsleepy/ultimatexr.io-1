@@ -6,7 +6,8 @@ title: "Getting started"
 
 ## Installation and setup
 
-UltimateXR can be installed by downloading the following [.unitypackage](https://vrmada.box.com/shared/static/54ktrvge491h3n2dbjxmajhj9wbucwr9.unitypackage)
+UltimateXR can be installed by downloading the latest [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}).
+
 
 We are in the process of providing additional ways of getting the framework:
 
@@ -25,7 +26,7 @@ Deleting UltimateXR before installing will not break any reference link. Unityâ€
 
 ## Downloading and installing the .unitypackage file
 
-Download the UltimateXR [.unitypackage](https://vrmada.box.com/shared/static/54ktrvge491h3n2dbjxmajhj9wbucwr9.unitypackage). It contains a big sample scene so the file size is larger than usual. The core package and sample scene will be split in two different packages in the future to limit disk size and lower installation time.
+Download the latest UltimateXR [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}). It contains a big sample scene so the file size is larger than usual. The core package and sample scene will be split in two different packages in the future to limit disk size and lower installation time.
 
 Right click on the Project Window and select Import Package -> Custom Packageâ€¦. 
 
