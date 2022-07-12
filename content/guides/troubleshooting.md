@@ -16,8 +16,8 @@ If this happens, you need to navigate to Tools -> UltimateXR -> SDKs and remove 
 
 ## Shader errors when using Build and Run
 
-Build and Run gives the following shader errors:
+Build and Run may output the following shader errors:
 
 ![](/guides/media/troubleshooting/03ShaderErrors.png)
 
-You an follow the GitHub issue for this error at https://github.com/VRMADA/ultimatexr-unity/issues/2
+You can follow the GitHub issue for this error at https://github.com/VRMADA/ultimatexr-unity/issues/2
