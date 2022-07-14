@@ -7,6 +7,7 @@ title: "Getting started"
 ## Installation and setup
 
 UltimateXR can be installed by downloading the latest [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}).
+
 It is also available on [GitHub](https://github.com/VRMADA/ultimatexr-unity).
 
 We are in the process of providing additional ways of getting the framework:
