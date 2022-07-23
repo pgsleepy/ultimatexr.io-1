@@ -27,6 +27,7 @@
 }
 
 #sidebar li a {
+  position: relative;
   text-decoration: none;
   color: var(--uxr-color);
   line-height: 28px;
@@ -34,8 +35,10 @@
 }
 
 #sidebar li a.new:after {
+  position: absolute;
   content: 'new!';
   vertical-align: super;
+  bottom: 0px;
   font-weight: 600;
   font-size: 9px;
   color: var(--uxr-color-secondary);
