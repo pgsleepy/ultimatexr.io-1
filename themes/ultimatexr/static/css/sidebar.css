@@ -33,6 +33,14 @@
   transition: color .3s;
 }
 
+#sidebar li a.new:after {
+  content: 'new!';
+  vertical-align: super;
+  font-weight: 600;
+  font-size: 9px;
+  color: var(--uxr-color-secondary);
+}
+
 #sidebar li a:hover {
   color: var(--uxr-color-secondary);
 }
