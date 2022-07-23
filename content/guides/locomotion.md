@@ -28,17 +28,17 @@ Teleporting is one of the most common ways to move around in Virtual Reality. It
 
 The avatar prefabs in UltimateXR come with teleporting components by default, which can be found hanging from the HandsIntegration object.
 
-![](/images/guides/locomotion/01Hierarchy.png)
+![](/guides/media/locomotion/01Hierarchy.png)
  
 Teleporting uses one component for each hand. These default components can be disabled and changed by any other locomotion component(s). They can also be left enabled and complemented with new locomotion component(s) in the case they add more features.
 
 At runtime, teleporting looks like this:
 
-![](/images/guides/locomotion/02Teleporting.jpg)
+![](/guides/media/locomotion/02Teleporting.jpg)
  
 ## The UxrTeleportLocomotion component
 
-![](/images/guides/locomotion/03TeleportComponent.png)
+![](/guides/media/locomotion/03TeleportComponent.png)
 
 ### General parameters
 - *Controller Hand*: Which hand controls the input.
@@ -108,7 +108,7 @@ That's it! With the default settings, you can now smoothly move with the left co
 
 What's Next? Tweak the following parameters to dial in the precise movement you desire.
 
-![](/images/guides/locomotion/04SmoothLocomotion.png)
+![](/guides/media/locomotion/04SmoothLocomotion.png)
  
 ### General parameters
 - *Meters Per Second Normal*: Speed of normal joystick movement.
