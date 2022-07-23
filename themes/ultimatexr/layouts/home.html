@@ -6,10 +6,8 @@
     <a class="btn" href="/guides/getting-started">Get started</a>
   </div>
   <div class="additional-links">
+    <p>Latest: {{ .Site.Params.latest_version }}</p>
     <ul>
-      <li>
-        Latest: {{ .Site.Params.latest_version }}
-      </li>
       <li>
         <a href="{{ .Site.Params.latest_version_download_url }}">Download</a>
       </li>
