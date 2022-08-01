@@ -5,8 +5,8 @@ theme: ultimatexr
 disablePathToLower: true
 
 params:
-  latest_version: v0.8.2
-  latest_version_download_url: https://github.com/VRMADA/ultimatexr-unity/releases/download/v0.8.2/UltimateXR_0.8.2.unitypackage
+  latest_version: v0.8.3
+  latest_version_download_url: https://github.com/VRMADA/ultimatexr-unity/releases/download/v0.8.3/UltimateXR_0.8.3.unitypackage
 
 menu:
   main:
