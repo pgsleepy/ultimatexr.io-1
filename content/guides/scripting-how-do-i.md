@@ -667,7 +667,7 @@ private void GrabbableObject_ConstraintsApplied(object sender, UxrApplyConstrain
 Method2: Remove boilerplate if you are creating a component class that will be added to a GameObject with an UxrgrabbableObject by inheriting from UxrGrabbableObjectComponent<T>
 
 ```c#
-class MyComponent : UxrgrabbableObjectComponent<MyComponent>
+class MyComponent : UxrGrabbableObjectComponent<MyComponent>
 {
     protected override void OnObjectGrabbing(UxrManipulationEventArgs e)
     {
@@ -701,12 +701,12 @@ class MyComponent : UxrgrabbableObjectComponent<MyComponent>
 
     protected override void OnObjectConstraintsApplying(UxrApplyConstraintsEventArgs e)
     {
-        Debug.Log($"Object {_grabbableObject.name} is about to be constrained if required");
+        Debug.Log($"Object {e.GrabbableObject.name} is about to be constrained if required");
     }
 
     protected override void OnObjectConstraintsApplied(UxrApplyConstraintsEventArgs e)
     {
-        Debug.Log($"Object {_grabbableObject.name} was constrained if required");
+        Debug.Log($"Object {e.GrabbableObject.name} was constrained if required");
     }
 }
 ```
@@ -894,16 +894,16 @@ UxrPositionTween.MoveIn(image3, startHorizontalOffset, 0.0f, new UxrInterpolatio
 UxrPositionTween.MoveIn(image4, startHorizontalOffset, 0.0f, new UxrInterpolationSettings(durationSeconds, 0.3f, UxrEasing.EaseOutQuad));
 ```
 
-How can I create a typewriter effect to print the name of a user in a Unity Text component?
+How can I create a typewriter effect to print the name of a user in a Unity Text or TextMeshPro component?
 
 ```c#
-UxrTextContentTween.Animate(textComponent, string.Empty, name, new UxrInterpolationSettings(durationSeconds, delaySeconds));
+UxrTextContentTween.Animate(textComponent.gameObject, string.Empty, name, new UxrInterpolationSettings(durationSeconds, delaySeconds));
 ```
 
-How can I create a text effect to print the score in a Unity Text component so that the score is increased numerically and rings a bell when it reaches the end?
+How can I create a text effect to print the score in a Unity Text or TextMeshPro component so that the score is increased numerically and rings a bell when it reaches the end?
 
 ```c#
-UxrTextContentTween.Animate(textComponent, new UxrInterpolationSettings(durationSeconds, delaySeconds), () => RingBell(), "Final score: {0:000000}", 0, finalScore);
+UxrTextContentTween.Animate(textComponent.gameObject, new UxrInterpolationSettings(durationSeconds, delaySeconds), () => RingBell(), "Final score: {0:000000}", 0, finalScore);
 ```
  
 ## UltimateXR Components
