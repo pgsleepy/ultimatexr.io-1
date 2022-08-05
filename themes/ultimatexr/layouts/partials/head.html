@@ -38,12 +38,14 @@
 <script src="/js/trailer.js"></script>
 <script src="/js/toc.js"></script>
 <script src="/js/api.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MC0JGRZ79C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+{{ if hugo.IsProduction }}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC0JGRZ79C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-MC0JGRZ79C');
-</script>
+    gtag('config', 'G-MC0JGRZ79C');
+  </script>
+{{ end }}
