@@ -18,7 +18,9 @@ Unsubscribes from events and stops the haptics coroutine.
 Subscribes to events and sets up the haptics coroutine.
  (Overrides BaseInputModule.OnEnable().)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_UI_UnityInputModule_UxrPointerInputModule_Process">Process</a></td><td> (Overrides BaseInputModule.Process().)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_UI_UnityInputModule_UxrPointerInputModule_ProcessPointerEvents">ProcessPointerEvents</a></td><td>
 Processes the pointer events.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_UI_UnityInputModule_UxrPointerInputModule_ProcessPointerPressRelease">ProcessPointerPressRelease</a></td><td>
-Processes the pointer press and release events.</td></tr></table>&nbsp;
+Processes the pointer press and release events.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_UI_UnityInputModule_UxrPointerInputModule_Start">Start</a></td><td>
+Sets the drag threshold.
+ (Overrides UIBehaviour.Start().)</td></tr></table>&nbsp;
 <a href="#uxrpointerinputmodule-methods">Back to Top</a>
 
 ## Extension Methods

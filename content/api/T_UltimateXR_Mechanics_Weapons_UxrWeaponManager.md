@@ -12,7 +12,8 @@ Singleton manager in charge of updating projectiles, computing hits against enti
 
 **C#**<br />
 ``` C#
-public class UxrWeaponManager : UxrSingleton<UxrWeaponManager>
+public class UxrWeaponManager : UxrSingleton<UxrWeaponManager>, 
+	IUxrLogger
 ```
 
 <a href="UltimateXR/Scripts/Mechanics/Weapons/UxrWeaponManager.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
@@ -21,6 +22,11 @@ The UxrWeaponManager type exposes the following members.
 
 ## Constructors
 &nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Mechanics_Weapons_UxrWeaponManager__ctor">UxrWeaponManager</a></td><td /></tr></table>&nbsp;
+<a href="#uxrweaponmanager-class">Back to Top</a>
+
+## Properties
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Mechanics_Weapons_UxrWeaponManager_LogLevel">LogLevel</a></td><td>
+Gets or sets the current log level. This controls the amount of information sent.</td></tr></table>&nbsp;
 <a href="#uxrweaponmanager-class">Back to Top</a>
 
 ## Methods

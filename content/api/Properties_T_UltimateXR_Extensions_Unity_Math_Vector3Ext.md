@@ -5,7 +5,9 @@ The <a href="T_UltimateXR_Extensions_Unity_Math_Vector3Ext">Vector3Ext</a> type 
 
 
 ## Properties
-&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")![Static member](media/static.gif "Static member")</td><td><a href="P_UltimateXR_Extensions_Unity_Math_Vector3Ext_NaN">NaN</a></td><td>
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")![Static member](media/static.gif "Static member")</td><td><a href="P_UltimateXR_Extensions_Unity_Math_Vector3Ext_MaxValue">MaxValue</a></td><td>
+Represents the Vector3 with maximum float values per component.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")![Static member](media/static.gif "Static member")</td><td><a href="P_UltimateXR_Extensions_Unity_Math_Vector3Ext_MinValue">MinValue</a></td><td>
+Represents the Vector3 with minimum float values per component.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")![Static member](media/static.gif "Static member")</td><td><a href="P_UltimateXR_Extensions_Unity_Math_Vector3Ext_NaN">NaN</a></td><td>
 Represents the NaN vector, an invalid value.</td></tr></table>&nbsp;
 <a href="#vector3ext-properties">Back to Top</a>
 

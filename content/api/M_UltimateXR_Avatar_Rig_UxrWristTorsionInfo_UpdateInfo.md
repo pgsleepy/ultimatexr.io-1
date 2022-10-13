@@ -12,14 +12,13 @@ Updates the wrist torsion information to the current frame.
 public void UpdateInfo(
 	Transform forearm,
 	Transform hand,
-	UxrUniversalLocalAxes forearmUniversalLocalAxes,
-	UxrUniversalLocalAxes handUniversalLocalAxes
+	UxrAvatarArmInfo armInfo
 )
 ```
 
 
 #### Parameters
-&nbsp;<dl><dt>forearm</dt><dd>Type: Transform<br />Forearm bone</dd><dt>hand</dt><dd>Type: Transform<br />Hand bone</dd><dt>forearmUniversalLocalAxes</dt><dd>Type: <a href="T_UltimateXR_Core_Math_UxrUniversalLocalAxes">UltimateXR.Core.Math.UxrUniversalLocalAxes</a><br />Forearm universal axes</dd><dt>handUniversalLocalAxes</dt><dd>Type: <a href="T_UltimateXR_Core_Math_UxrUniversalLocalAxes">UltimateXR.Core.Math.UxrUniversalLocalAxes</a><br />Hand universal axes</dd></dl>
+&nbsp;<dl><dt>forearm</dt><dd>Type: Transform<br />Forearm bone</dd><dt>hand</dt><dd>Type: Transform<br />Hand bone</dd><dt>armInfo</dt><dd>Type: <a href="T_UltimateXR_Avatar_Rig_UxrAvatarArmInfo">UltimateXR.Avatar.Rig.UxrAvatarArmInfo</a><br />Arm information</dd></dl>
 
 ## See Also
 

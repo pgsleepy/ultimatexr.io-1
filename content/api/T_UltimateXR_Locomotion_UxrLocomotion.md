@@ -36,7 +36,9 @@ The smooth locomotion property can be used to determine whether certain operatio
 ## Methods
 &nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrLocomotion_Awake">Awake</a></td><td>
 Logs if there is a missing <a href="N_UltimateXR_Avatar">UltimateXR.Avatar</a> component upwards in the hierarchy.
- (Overrides <a href="M_UltimateXR_Core_Components_Composite_UxrAvatarComponent_1_Awake">UxrAvatarComponent(T).Awake()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrLocomotion_UpdateLocomotion">UpdateLocomotion</a></td><td>
+ (Overrides <a href="M_UltimateXR_Core_Components_Composite_UxrAvatarComponent_1_Awake">UxrAvatarComponent(T).Awake()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrLocomotion_HasBlockingCapsuleCastHit">HasBlockingCapsuleCastHit</a></td><td>
+Checks whether a capsule cast has anything that is blocking. It filters out invalid positives such as against anything part of the avatar or a grabbed object.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrLocomotion_HasBlockingRaycastHit">HasBlockingRaycastHit</a></td><td>
+Checks whether a raycast has anything that is blocking. It filters out invalid raycasts such as against anything part of the avatar or a grabbed object.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Locomotion_UxrLocomotion_UpdateLocomotion">UpdateLocomotion</a></td><td>
 Updates the locomotion and the avatar's position/orientation the component belongs to.</td></tr></table>&nbsp;
 <a href="#uxrlocomotion-class">Back to Top</a>
 

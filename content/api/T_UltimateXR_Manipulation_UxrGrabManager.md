@@ -13,7 +13,7 @@ Manager that takes care of updating all the manipulation mechanics. The manipula
 **C#**<br />
 ``` C#
 public class UxrGrabManager : UxrSingleton<UxrGrabManager>, 
-	IUxrStateSync
+	IUxrStateSync, IUxrLogger
 ```
 
 <a href="UltimateXR/Scripts/Manipulation/UxrGrabManager.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
@@ -28,7 +28,7 @@ The UxrGrabManager type exposes the following members.
 &nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Manipulation_UxrGrabManager_CurrentGrabbedObjects">CurrentGrabbedObjects</a></td><td>
 Gets the currently grabbed objects.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Manipulation_UxrGrabManager_IsGrabbingAllowed">IsGrabbingAllowed</a></td><td>
 Gets or sets whether grabbing is allowed.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Manipulation_UxrGrabManager_LogLevel">LogLevel</a></td><td>
-Gets or sets the current log level.</td></tr></table>&nbsp;
+Gets or sets the current log level. This controls the amount of information sent.</td></tr></table>&nbsp;
 <a href="#uxrgrabmanager-class">Back to Top</a>
 
 ## Methods
@@ -55,7 +55,9 @@ Gets the blend value for the <a href="T_UltimateXR_Manipulation_HandPoses_UxrHan
 Gets the grab pose name required when grabbing the given <a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UxrGrabbableObject</a> using the <a href="T_UltimateXR_Manipulation_UxrGrabber">UxrGrabber</a>.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_GrabObject">GrabObject</a></td><td>
 Grabs an object.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsBeingGrabbed">IsBeingGrabbed(UxrGrabbableObject)</a></td><td>
 Checks whether the given grabbable object is being grabbed.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsBeingGrabbed_1">IsBeingGrabbed(UxrGrabbableObject, Int32)</a></td><td>
-Checks whether the given grabbable object is being grabbed using the given grab point.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsBeingGrabbedByOtherThan">IsBeingGrabbedByOtherThan(UxrGrabbableObject, Int32)</a></td><td>
+Checks whether the given grabbable object is being grabbed using the given grab point.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsBeingGrabbedBy">IsBeingGrabbedBy(UxrGrabbableObject, UxrAvatar)</a></td><td>
+Checks whether the given grabbable object is being grabbed by an avatar.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsBeingGrabbedBy_1">IsBeingGrabbedBy(UxrGrabbableObject, UxrGrabber)</a></td><td>
+Checks whether the given grabbable object is being grabbed by a specific grabber.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsBeingGrabbedByOtherThan">IsBeingGrabbedByOtherThan(UxrGrabbableObject, Int32)</a></td><td>
 Checks whether the given grabbable object is being grabbed using any other grab point than the specified.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsBeingGrabbedByOtherThan_1">IsBeingGrabbedByOtherThan(UxrGrabbableObject, Int32, UxrGrabber)</a></td><td>
 Checks whether the given grabbable object is being grabbed using any other grab point and any other grabber than the specified.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsHandGrabbing">IsHandGrabbing(UxrAvatar, UxrHandSide)</a></td><td>
 Checks whether the given <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> hand is currently grabbing something.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabManager_IsHandGrabbing_1">IsHandGrabbing(UxrAvatar, UxrGrabbableObject, UxrHandSide, Boolean)</a></td><td>

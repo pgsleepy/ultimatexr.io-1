@@ -12,7 +12,6 @@
 protected UxrSteamVRControllerTracking()
 ```
 
-<a href="UltimateXR/Scripts/Devices/Integrations/SteamVR/UxrSteamVRControllerTracking.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
 
 ## See Also
 

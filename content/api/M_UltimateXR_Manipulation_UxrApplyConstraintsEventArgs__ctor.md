@@ -1,7 +1,7 @@
 # UxrApplyConstraintsEventArgs Constructor 
  
 
-\[Missing <summary> documentation for "M:UltimateXR.Manipulation.UxrApplyConstraintsEventArgs.#ctor"\]
+Constructor.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Manipulation">UltimateXR.Manipulation</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 
@@ -9,10 +9,14 @@
 
 **C#**<br />
 ``` C#
-public UxrApplyConstraintsEventArgs()
+public UxrApplyConstraintsEventArgs(
+	UxrGrabbableObject grabbableObject
+)
 ```
 
-<a href="UltimateXR/Scripts/Manipulation/UxrApplyConstraintsEventArgs.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
+
+#### Parameters
+&nbsp;<dl><dt>grabbableObject</dt><dd>Type: <a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UltimateXR.Manipulation.UxrGrabbableObject</a><br />The grabbable object being processed</dd></dl>
 
 ## See Also
 

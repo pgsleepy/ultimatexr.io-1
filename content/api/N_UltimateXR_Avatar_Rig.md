@@ -2,8 +2,11 @@
 
 ## Classes
 &nbsp;<table><tr><th></th><th>Class</th><th>Description</th></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarArm">UxrAvatarArm</a></td><td>
-Stores bone references of an Avatar's arm.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarFinger">UxrAvatarFinger</a></td><td>
-Stores bone references of an Avatar's finger.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarHand">UxrAvatarHand</a></td><td>
+Stores bone references of an Avatar's arm.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarArmInfo">UxrAvatarArmInfo</a></td><td>
+Stores information of an avatar rig's arm.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarFinger">UxrAvatarFinger</a></td><td>
+Stores bone references of an Avatar's finger.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarFingerBoneInfo">UxrAvatarFingerBoneInfo</a></td><td>
+Stores information of the bone in an <a href="T_UltimateXR_Avatar_Rig_UxrAvatarFingerInfo">UxrAvatarFingerInfo</a>.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarFingerInfo">UxrAvatarFingerInfo</a></td><td>
+Stores information of an avatar rig's finger.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarHand">UxrAvatarHand</a></td><td>
 Stores bone references of an Avatar's hand.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarHead">UxrAvatarHead</a></td><td>
 Stores bone references of an Avatar's head.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarLeg">UxrAvatarLeg</a></td><td>
 Stores bone references of an Avatar's leg.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Avatar_Rig_UxrAvatarRig">UxrAvatarRig</a></td><td>

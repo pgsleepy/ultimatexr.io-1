@@ -10,13 +10,14 @@ Notifies a raycast was selected to be a potential destination. Computes whether 
 **C#**<br />
 ``` C#
 protected bool NotifyDestinationRaycast(
-	RaycastHit hit
+	RaycastHit hit,
+	bool checkBlockingInBetween
 )
 ```
 
 
 #### Parameters
-&nbsp;<dl><dt>hit</dt><dd>Type: RaycastHit<br />Raycast that will be processed as a potential teleport destination</dd></dl>
+&nbsp;<dl><dt>hit</dt><dd>Type: RaycastHit<br />Raycast that will be processed as a potential teleport destination</dd><dt>checkBlockingInBetween</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">System.Boolean</a><br />Should it check for blocking elements in a straight line from the current position to the new position?</dd></dl>
 
 #### Return Value
 Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">Boolean</a><br />Whether the destination is a valid teleport location

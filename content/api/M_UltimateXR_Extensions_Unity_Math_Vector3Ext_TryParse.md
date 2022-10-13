@@ -17,7 +17,7 @@ public static bool TryParse(
 
 
 #### Parameters
-&nbsp;<dl><dt>s</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.string" target="_blank" rel="noopener noreferrer">System.String</a><br />Source string</dd><dt>result</dt><dd>Type: Vector3<br />Parsed vector or NaN if there was an error</dd></dl>
+&nbsp;<dl><dt>s</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.string" target="_blank" rel="noopener noreferrer">System.String</a><br />Source string</dd><dt>result</dt><dd>Type: Vector3<br />Parsed vector or <a href="P_UltimateXR_Extensions_Unity_Math_Vector3Ext_NaN">NaN</a> if there was an error</dd></dl>
 
 #### Return Value
 Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">Boolean</a><br />Whether the vector was parsed successfully

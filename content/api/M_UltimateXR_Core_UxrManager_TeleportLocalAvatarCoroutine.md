@@ -1,7 +1,7 @@
 # UxrManager.TeleportLocalAvatarCoroutine Method 
  
 
-Public teleporting coroutine that can be yielded from an external coroutine.
+Public teleporting coroutine that can be yielded from an external coroutine. Teleports the local <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a>. The local avatar is the avatar controlled by the user using the headset and input controllers. Non-local avatars are other avatars instantiated in the scene but not controlled by the user, either other users through the network or other scenarios such as automated replays.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Core">UltimateXR.Core</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

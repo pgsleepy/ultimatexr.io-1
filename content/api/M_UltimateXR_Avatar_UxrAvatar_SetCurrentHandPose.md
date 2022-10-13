@@ -1,7 +1,7 @@
 # UxrAvatar.SetCurrentHandPose Method 
  
 
-Sets the currently active pose for a given hand in the avatar at runtime. Blending is used to transition between poses smoothly, which means the pose is not immediately adopted. To adopt a pose immediately at a given instant use <a href="M_UltimateXR_Avatar_UxrAvatar_SetCurrentHandPoseImmediately">SetCurrentHandPoseImmediately(UxrHandSide, UxrHandPoseAsset, UxrBlendPoseType)</a> instead.
+Sets the currently active pose for a given hand in the avatar at runtime. Blending is used to transition between poses smoothly, which means the pose is not immediately adopted. To adopt a pose immediately at a given instant use <a href="M_UltimateXR_Avatar_UxrAvatar_SetCurrentHandPoseImmediately">SetCurrentHandPoseImmediately(UxrHandSide, String, UxrBlendPoseType)</a> instead.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Avatar">UltimateXR.Avatar</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

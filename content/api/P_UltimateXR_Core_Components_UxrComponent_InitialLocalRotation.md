@@ -1,7 +1,7 @@
 # UxrComponent.InitialLocalRotation Property 
  
 
-The localRotation value at the moment of <a href="M_UltimateXR_Core_Components_UxrComponent_Awake">Awake()</a>
+Gets the localRotation value at the moment of <a href="M_UltimateXR_Core_Components_UxrComponent_Awake">Awake()</a>
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Core_Components">UltimateXR.Core.Components</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

@@ -5,7 +5,9 @@ The <a href="T_UltimateXR_Mechanics_Weapons_UxrActor">UxrActor</a> type exposes 
 
 
 ## Methods
-&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Mechanics_Weapons_UxrActor_Die">Die</a></td><td>
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Mechanics_Weapons_UxrActor_Awake">Awake</a></td><td>
+Makes sure the <a href="T_UltimateXR_Mechanics_Weapons_UxrWeaponManager">UxrWeaponManager</a> singleton instance is available so that actors are registered."/>
+ (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_1_Awake">UxrComponent(T).Awake()</a>.)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Mechanics_Weapons_UxrActor_Die">Die</a></td><td>
 Forces the actor to die after a certain amount of seconds.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Mechanics_Weapons_UxrActor_ReceiveDamage">ReceiveDamage</a></td><td>
 Makes the actor receive generic damage.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Mechanics_Weapons_UxrActor_ReceiveExplosion">ReceiveExplosion</a></td><td>
 Makes the actor receive explosive damage.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Mechanics_Weapons_UxrActor_ReceiveImpact">ReceiveImpact</a></td><td>

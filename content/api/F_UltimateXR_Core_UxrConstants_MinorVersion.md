@@ -9,7 +9,7 @@
 
 **C#**<br />
 ``` C#
-public const int MinorVersion = 8
+public const int MinorVersion = 9
 ```
 
 <a href="UltimateXR/Scripts/Core/UxrConstants.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />

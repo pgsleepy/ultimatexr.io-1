@@ -1,7 +1,7 @@
 # UxrGrabbableObject.IsConstrained Property 
  
 
-Gets whether the object has position/rotation constraints.
+Gets whether the object has translation/rotation constraints.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Manipulation">UltimateXR.Manipulation</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

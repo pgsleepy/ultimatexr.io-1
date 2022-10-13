@@ -1,7 +1,7 @@
 # UxrMathUtils Class
  
 
-Contains math computations involving elements that do not belong to a specific class. Most math is available through extensions classes in namespaces such as UltimateXR.Extensions.System.Math or UltimateXR.Extensions.Unity.Math. Math related to animation is also available through classes in namespaces such as UltimateXR.Animation.IK, UltimateXRAnimation.Interpolation or UltimateXR.Animation.Splines. This class will contain math functionality that cannot be assigned to any extensions class.
+Contains math computations involving elements that do not belong to a specific class. Most math is available through extensions classes in namespaces such as <a href="N_UltimateXR_Extensions_System_Math">UltimateXR.Extensions.System.Math</a> or <a href="N_UltimateXR_Extensions_Unity_Math">UltimateXR.Extensions.Unity.Math</a>. Math related to animation is also available through classes in namespaces such as <a href="N_UltimateXR_Animation_IK">UltimateXR.Animation.IK</a>, <a href="N_UltimateXR_Animation_Interpolation">UltimateXRAnimation.Interpolation</a> or <a href="N_UltimateXR_Animation_Splines">UltimateXR.Animation.Splines</a>. This class will contain math functionality that cannot be assigned to any extensions class.
 
 
 ## Inheritance Hierarchy

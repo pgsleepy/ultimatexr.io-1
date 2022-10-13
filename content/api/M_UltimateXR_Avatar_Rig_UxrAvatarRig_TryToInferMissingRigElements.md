@@ -11,13 +11,13 @@ Tries to infer rig elements by doing some checks on names and bone hierarchy. Th
 ``` C#
 public static void TryToInferMissingRigElements(
 	UxrAvatarRig rig,
-	SkinnedMeshRenderer[] skins
+	IEnumerable<SkinnedMeshRenderer> skins
 )
 ```
 
 
 #### Parameters
-&nbsp;<dl><dt>rig</dt><dd>Type: <a href="T_UltimateXR_Avatar_Rig_UxrAvatarRig">UltimateXR.Avatar.Rig.UxrAvatarRig</a><br />\[Missing <param name="rig"/> documentation for "M:UltimateXR.Avatar.Rig.UxrAvatarRig.TryToInferMissingRigElements(UltimateXR.Avatar.Rig.UxrAvatarRig,UnityEngine.SkinnedMeshRenderer[])"\]</dd><dt>skins</dt><dd>Type: SkinnedMeshRenderer[]<br />\[Missing <param name="skins"/> documentation for "M:UltimateXR.Avatar.Rig.UxrAvatarRig.TryToInferMissingRigElements(UltimateXR.Avatar.Rig.UxrAvatarRig,UnityEngine.SkinnedMeshRenderer[])"\]</dd></dl>
+&nbsp;<dl><dt>rig</dt><dd>Type: <a href="T_UltimateXR_Avatar_Rig_UxrAvatarRig">UltimateXR.Avatar.Rig.UxrAvatarRig</a><br />\[Missing <param name="rig"/> documentation for "M:UltimateXR.Avatar.Rig.UxrAvatarRig.TryToInferMissingRigElements(UltimateXR.Avatar.Rig.UxrAvatarRig,System.Collections.Generic.IEnumerable{UnityEngine.SkinnedMeshRenderer})"\]</dd><dt>skins</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1" target="_blank" rel="noopener noreferrer">System.Collections.Generic.IEnumerable</a>(SkinnedMeshRenderer)<br />\[Missing <param name="skins"/> documentation for "M:UltimateXR.Avatar.Rig.UxrAvatarRig.TryToInferMissingRigElements(UltimateXR.Avatar.Rig.UxrAvatarRig,System.Collections.Generic.IEnumerable{UnityEngine.SkinnedMeshRenderer})"\]</dd></dl>
 
 ## See Also
 

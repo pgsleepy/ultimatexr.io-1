@@ -1,7 +1,7 @@
 # UxrTextContentTween Class
  
 
-Tweening component to animate text programatically or using the inspector. The text interpolation can be used to create a typewriter kind of effect. Programatically it also offers the possibility to interpolate parameters in a text string.
+Tweening component to animate a UI text component programatically or using the inspector. Supports both Unity's Text and TMPro. The text interpolation can be used to create a typewriter kind of effect. Programatically it also offers the possibility to interpolate parameters in a text string.
 
 
 ## Inheritance Hierarchy
@@ -12,7 +12,6 @@ Tweening component to animate text programatically or using the inspector. The t
 
 **C#**<br />
 ``` C#
-[RequireComponent(typeof(Text))]
 [DisallowMultipleComponent]
 public class UxrTextContentTween : UxrTween
 ```
@@ -33,15 +32,16 @@ Animation format string parameter list, when <a href="P_UltimateXR_Animation_UI_
 Animation start text</td></tr><tr><td>![Protected property](media/protproperty.gif "Protected property")</td><td><a href="P_UltimateXR_Animation_UI_UxrTextContentTween_TargetBehaviour">TargetBehaviour</a></td><td>
 Gets the Behaviour the tween animates.
  (Overrides <a href="P_UltimateXR_Animation_UI_UxrTween_TargetBehaviour">UxrTween.TargetBehaviour</a>.)</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Animation_UI_UxrTextContentTween_TargetText">TargetText</a></td><td>
-Gets the Text component whose string will be interpolated.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Animation_UI_UxrTextContentTween_UsesFormatString">UsesFormatString</a></td><td>
+Gets the Text component whose string will be interpolated.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Animation_UI_UxrTextContentTween_Text">Text</a></td><td>
+Gets or sets the text value.</td></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Animation_UI_UxrTextContentTween_UsesFormatString">UsesFormatString</a></td><td>
 Gets whether the interpolation uses format string parameters.
 &nbsp;<ul><li>false: Interpolation will be a plain typewriter effect from <a href="P_UltimateXR_Animation_UI_UxrTextContentTween_StartText">StartText</a> to <a href="P_UltimateXR_Animation_UI_UxrTextContentTween_EndText">EndText</a></li><li>true: Interpolation will use <a href="P_UltimateXR_Animation_UI_UxrTextContentTween_FormatString">FormatString</a> and <a href="P_UltimateXR_Animation_UI_UxrTextContentTween_FormatStringArgs">FormatStringArgs</a>. For more information on how these are used see <a href="M_UltimateXR_Animation_Interpolation_UxrInterpolator_InterpolateText">UxrInterpolator.InterpolateText</a></li></ul></td></tr></table>&nbsp;
 <a href="#uxrtextcontenttween-class">Back to Top</a>
 
 ## Methods
-&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Animation_UI_UxrTextContentTween_Animate">Animate(Text, String, String, UxrInterpolationSettings, Action(UxrTween))</a></td><td>
-Creates and starts a tweening animation for the text string of a Unity Text component.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Animation_UI_UxrTextContentTween_Animate_1">Animate(Text, UxrInterpolationSettings, Action(UxrTween), String, Object[])</a></td><td>
-Creates and starts a tweening animation for the text string of a Unity Text component. See <a href="M_UltimateXR_Animation_Interpolation_UxrInterpolator_InterpolateText">UxrInterpolator.InterpolateText</a> for information on how *formatString* and *formatStringArgs* work.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Animation_UI_UxrTextContentTween_Interpolate">Interpolate</a></td><td>
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Animation_UI_UxrTextContentTween_Animate">Animate(GameObject, String, String, UxrInterpolationSettings, Action(UxrTween))</a></td><td>
+Creates and starts a tweening animation for a Unity UI Text component or TMPro text component.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Animation_UI_UxrTextContentTween_Animate_1">Animate(GameObject, UxrInterpolationSettings, Action(UxrTween), String, Object[])</a></td><td>
+Creates and starts a tweening animation for a Unity UI Text component or TMPro text component. See <a href="M_UltimateXR_Animation_Interpolation_UxrInterpolator_InterpolateText">UxrInterpolator.InterpolateText</a> for information on how *formatString* and *formatStringArgs* work.</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Animation_UI_UxrTextContentTween_Interpolate">Interpolate</a></td><td>
 Interpolates and assigns the value corresponding to the given LERP value.
  (Overrides <a href="M_UltimateXR_Animation_UI_UxrTween_Interpolate">UxrTween.Interpolate(Single)</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Animation_UI_UxrTextContentTween_RestoreOriginalValue">RestoreOriginalValue</a></td><td>
 Restores the animated component to the state before the animation started.

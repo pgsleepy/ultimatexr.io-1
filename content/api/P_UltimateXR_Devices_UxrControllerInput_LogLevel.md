@@ -1,7 +1,7 @@
 # UxrControllerInput.LogLevel Property 
  
 
-\[Missing <summary> documentation for "P:UltimateXR.Devices.UxrControllerInput.LogLevel"\]
+Gets or sets the current log level. This controls the amount of information sent.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Devices">UltimateXR.Devices</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

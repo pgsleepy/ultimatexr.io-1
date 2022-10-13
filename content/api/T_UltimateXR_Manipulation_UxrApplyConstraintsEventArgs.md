@@ -20,7 +20,13 @@ The UxrApplyConstraintsEventArgs type exposes the following members.
 
 
 ## Constructors
-&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrApplyConstraintsEventArgs__ctor">UxrApplyConstraintsEventArgs</a></td><td /></tr></table>&nbsp;
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Manipulation_UxrApplyConstraintsEventArgs__ctor">UxrApplyConstraintsEventArgs</a></td><td>
+Constructor.</td></tr></table>&nbsp;
+<a href="#uxrapplyconstraintseventargs-class">Back to Top</a>
+
+## Properties
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Manipulation_UxrApplyConstraintsEventArgs_GrabbableObject">GrabbableObject</a></td><td>
+Gets the grabbable object.</td></tr></table>&nbsp;
 <a href="#uxrapplyconstraintseventargs-class">Back to Top</a>
 
 ## Extension Methods

@@ -1,8 +1,8 @@
 # UxrAvatarMoveEventArgs Class
  
 
-Contains information about an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> that has moved/rotated. Avatars are moved/rotated through [!:UxrManager] functionality such as:
-&nbsp;<ul><li>UxrManager.Instance.MoveAvatarTo</li><li>UxrManager.Instance.RotateAvatar</li><li>UxrManager.Instance.TeleportLocalAvatar</li></ul>&nbsp;
+Contains information about an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> that has moved/rotated. Avatars are moved/rotated through <a href="T_UltimateXR_Core_UxrManager">UxrManager</a> functionality such as:
+&nbsp;<ul><li><a href="M_UltimateXR_Core_UxrManager_MoveAvatarTo_3">UxrManager.Instance.MoveAvatarTo</a></li><li><a href="M_UltimateXR_Core_UxrManager_RotateAvatar">UxrManager.Instance.RotateAvatar</a></li><li><a href="M_UltimateXR_Core_UxrManager_TeleportLocalAvatar">UxrManager.Instance.TeleportLocalAvatar</a></li></ul>&nbsp;
 These methods will move/rotate the root transform of the avatar. If a user moves or rotates in the real-world, the camera transform will be updated but the root avatar transform will remain fixed. Only moving or teleporting the avatar will generate UxrAvatarMoveEventArgs events.
 
 

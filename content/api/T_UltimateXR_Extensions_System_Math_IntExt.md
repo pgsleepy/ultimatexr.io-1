@@ -13,9 +13,13 @@ public static class IntExt
 ```
 
 <a href="UltimateXR/Scripts/Extensions/System/Math/IntExt.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
+The IntExt type exposes the following members.
+
 
 ## Methods
-&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Math_IntExt_HasFlags">HasFlags(Int32, Int32)</a></td><td>
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Math_IntExt_Clamp">Clamp</a></td><td>
+Clamps a value so that it doesn't go beyond a given range.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Math_IntExt_Clamped">Clamped</a></td><td>
+Returns a clamped value.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Math_IntExt_HasFlags">HasFlags(Int32, Int32)</a></td><td>
 Checks if the given int value has one or more flags set.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Math_IntExt_HasFlags_1">HasFlags(UInt32, UInt32)</a></td><td>
 Checks if the given uint value has one or more flags set.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Math_IntExt_WithFlags">WithFlags(Int32, Int32)</a></td><td>
 Returns an int value with one or more flags set if they weren't set already.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Math_IntExt_WithFlags_1">WithFlags(UInt32, UInt32)</a></td><td>
