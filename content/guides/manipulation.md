@@ -35,7 +35,7 @@ The UxrGrabbableObject component can be added to an object so that it becomes gr
 Let’s create a small sphere with scale x=0.07 y=0.07 z=0.07 and add the UxrGrabbableObject component.
 After adding the component, it should already work out-of-the-box. This means that tuning grabbing behavior becomes changing the default parameters instead of figuring out how to configure it from scratch.
 
-![](/guides/media/manipulation/01Grabbable.png)
+![](/guides/media/manipulation/01Grabbable.jpg)
  
 By pressing Play you should be able to grab the ball and move it around. It will snap to the hand but will not fit.
 
@@ -48,7 +48,7 @@ At this point you have 2 main choices:
 
 Let’s continue with the previous example and register the avatar to use grab poses. The inspector will now look like this:
 
-![](/guides/media/manipulation/02RegisterAvatar.png)
+![](/guides/media/manipulation/02RegisterAvatar.jpg)
  
 The green fields now tell you which fields have specific values for the selected avatar. Each avatar that is registered will have its own set of values for the green fields, which in this case means that every avatar can specify its own pose and snap points for the left and right hand.
 
@@ -106,14 +106,26 @@ We will keep updating this documentation with more advanced tutorials and step b
 ## Parameter reference
 - *Register Avatar for Grips*: Registers an avatar to have the possibility to have different grip parameters for each avatar. This allows to fine-tune how different hand shapes and sizes wrap around the same object. Parameters that can be adjusted for each avatar will be colored to help in the process.
 - *Selected Avatar Grips*: Switches the avatar currently selected to edit its grip parameters. Being able to register different avatars allows to fine-tune how different hand shapes and sizes wrap around the same object. Parameters that can be adjusted for each avatar will be colored to help in the process.
-- *Manipulation Mode*: Use Grab and Move to pick up objects and move/throw/place them. Use Rotate Around Axis for wheels, levers, and similar objects.
 - *Ignore Parent Dependency*: In objects with grabbable parents, mark this to ignore the parent constraint and tell this object is independent.
 - *Priority*: By default, closer objects will be always grabbed over far objects. Using priority, objects with higher priority will always be grabbed if they are in range.
+- *Translation Constraint Mode*: Allows to constrain the translation of this object while being grabbed.
+- *Restrict To Box*: Allowed volume where this object's pivot will be allowed to move while being grabbed.
+- *Restrict To Sphere*: Allowed volume where this object's pivot will be allowed to move while being grabbed.
+- *Translation Offset Min*: Minimum allowed offset along the local axes.
+- *Translation Offset Max*: Maximum allowed offset along the local axes.
+- *Rotation Constraint Mode*: Allows to constrain the rotation of this object while being grabbed.
+- *Rotation Angle Limits Min*: Minimum allowed rotation offset degrees around the local axes.
+- *Rotation Angle Limits Max*: Maximum allowed rotation offset degrees around the local axes.
+- *Rotation Provider*: Controls how an object with constrained position is rotated. Auto will to try to infer the most appropriate rotation provider automatically based on the object shape and the grip. HandOrientation will rotate the object directly by rotating the hand, useful for knobs or small joysticks where the torque is applied mostly by twisting the wrist. HandPositionAroundPivot will rotate the object using the position of the hand around the pivot instead, useful for levers, bigger joysticks, steering wheels and similar objects where the torque is applied using hand leverage around the rotation axis.
+- *Longitudinal Axis*: Specifies which axis, in the object coordinate system, is the longitudinal axis. The longitudinal axis is the axis that goes from head to tail along the object.
+- *Needs 2 Hands to Rotate*: When manipulation mode is set to Rotate Around Axis this will tell if the user will be able to rotate the object using one hand only or the object needs to be grabbed with two hands to rotate it.
+- *Constrained Grab Release Distance*: Maximum allowed distance of a locked grab to move away from the grab point before being released.
+- *Translation Resistance*: Resistance of the object to being moved. Values higher than zero may be used to simulate heavy objects.
+- *Rotation Resistance*: Resistance of the object to being rotated. Values higher than zero may be used to simulate heavy objects.
 - *Rigidbody*: References the object's rigidbody when physics are required. The object will be made kinematic when grabbed and optionally dynamic when released.
 - *Rigidbody Dynamic on Release*: When a rigidbody is specified it controls whether it will be marked as dynamic after being grabbed and released. Otherwise, it will continue to be kinematic after being released.
 - *Vertical Release Multiplier*: When throwing a rigidbody this parameter will enable increasing or decreasing the actual release velocity (vertical component).
 - *Horizontal Release Multiplier*: When throwing a rigidbody this parameter will enable increasing or decreasing the actual release velocity (horizontal component).
-- *Needs 2 Hands to Rotate*: When manipulation mode is set to Rotate Around Axis this will tell if the user will be able to rotate the object using one hand only or the object needs to be grabbed with two hands to rotate it.
 - *Allow 2 Hands Grab*: When more than one grab point has been specified, this parameter will tell if the object can be grabbed with two hands at the same time.
 - *Preview Grip Pose Meshes*: Will show/hide the preview grip pose meshes in the Scene Window.
 - *First Grab Point Is Main*: Whether the first grab point in the list is the main grab in objects with more than one grab point. When an object is grabbed with both hands, the main grab controls the actual position while the secondary grab controls the direction. Set it to true in objects like a rifle, where the trigger hand should be the first grab to keep the object in place, and the front grab will control the aiming direction. If false, the grab point order is irrelevant and the hand that grabbed the object first will be considered as the main grab.
@@ -152,19 +164,3 @@ We will keep updating this documentation with more advanced tutorials and step b
 - *Anchor Snap*: The transform where objects will be snapped to when being placed.
 - *Anchor Snap Mode*: How this object will snap to the UxrGrabbableObjectAnchor transform after being placing on it.
 - *Anchor Proximity Position*: The reference that will be used to know if this object is close enough to an UxrGrabbableObjectAnchor to place it there.
-- *Anchor Proximity Translation Constraint Mode*: Allows to constrain the translation of this object while being grabbed.
-- *Restrict To Box*: Allowed volume where this object's pivot will be allowed to move while being grabbed.
-- *Restrict To Sphere*: Allowed volume where this object's pivot will be allowed to move while being grabbed.
-- *Translation Limits Min*: Minimum allowed offset in local coordinates.
-- *Translation Limits Max*: Maximum allowed offset in local coordinates.
-- *Translation Reference Is Parent*: Tells whether the local translation limits specified are with respect to the parent or another transform.
-- *Translation Parent Transform*: Allows to specify a different transform as parent reference for the local translation limits.
-- *Rotation Constraint Mode*: Allows to constrain the rotation of this object while being grabbed.
-- *Rotation Angle Limits Min*: Minimum allowed rotation offset degrees in local axes.
-- *Rotation Angle Limits Max*: Maximum allowed rotation offset degrees in local axes.
-- *Rotation Reference Is Parent*: Tells whether the local rotation limits specified are with respect to the parent or another transform.
-- *Rotation Parent Transform*: Allows to specify a different transform as parent reference for the local rotation limits.
-- *Locked Grab Release Distance*: Maximum allowed distance of a locked grab to move away from the grab point before being released.
-- *Translation Resistance*: Resistance of the object to being moved. Values higher than zero may be used to simulate heavy objects.
-- *Rotation Resistance*: Resistance of the object to being rotated. Values higher than zero may be used to simulate heavy objects.
-

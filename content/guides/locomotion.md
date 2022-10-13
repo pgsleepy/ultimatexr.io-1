@@ -38,11 +38,12 @@ At runtime, teleporting looks like this:
  
 ## The UxrTeleportLocomotion component
 
-![](/guides/media/locomotion/03TeleportComponent.png)
+![](/guides/media/locomotion/03TeleportComponent.jpg)
 
 ### General parameters
 - *Controller Hand*: Which hand controls the input.
 - *Use Controller Forward*: Will the teleport use the controller's forward vector instead of its own transform forward?
+- *Parent To Destination*: Whether to parent the avatar to the destination object after teleport. Use it when building applications with moving vehicles or platforms the avatar can move on, so that the avatar keeps the relative position/orientation after teleporting.
 - *Shake Filter*: The amount of filtering to apply to the hand movement to smooth it out.
 
 ### Translation
@@ -108,9 +109,10 @@ That's it! With the default settings, you can now smoothly move with the left co
 
 What's Next? Tweak the following parameters to dial in the precise movement you desire.
 
-![](/guides/media/locomotion/04SmoothLocomotion.png)
+![](/guides/media/locomotion/04SmoothLocomotion.jpg)
  
 ### General parameters
+- *Parent To Destination*: Whether to parent the avatar to the destination object after teleport. Use it when building applications with moving vehicles or platforms the avatar can move on, so that the avatar keeps the relative position/orientation after teleporting.
 - *Meters Per Second Normal*: Speed of normal joystick movement.
 - *Meters Per Second Print*: Speed of movement while pressing the sprint button.
 - *Walk Direction: Options for what the Up/Forward on the Joystick is based on*:
@@ -126,6 +128,7 @@ Sprint Button Hand: Which Hand can enable sprint.
 Sprint Button: Button to press to enable sprint.
 
 ### Constraints
+- *Trigger Colliders Interaction*: Whether colliders with the trigger property set will interact with the teleport raycasts.
 - *Collision Layer Mask*: Layers of colliders that will block your movement.
 - *Capsule Radius*: In Meters, size of your body collider.
 - *Max Step Height*: In Meters, you will climb geometry if it is within this height of your current ground.
