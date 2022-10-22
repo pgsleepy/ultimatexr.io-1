@@ -13,8 +13,8 @@ These are some of the principles that we tried to follow:
 - Documentation is a top priority:
   -  Every class, every method, every event, or property is fully documented using standard XML tags. No matter the visibility, public, protected, or private. This will enable programmers to visualize contextual help in the IDE whenever they access any UltimateXR class or member. It also provides a way to automatically create the API documentation on this website.
   -  In longer sections of code, inserting comments every few steps indicating what happens next compartmentalizes the algorithm. At the same time, it helps getting a quicker idea of what each part does even if it could be inferred by looking at the code itself.
-- Always write code when it is required, not because we think it could be useful. Every single line of code in the framework was written because it was used in a project. By doing this, the API will naturally evolve to how it makes sense in real use cases.
--  we want to implement new features that are not required, we need to create a real-world scenario where it would be used. 
+- Always write code when it is required, not because it could be useful. Every single line of code in the framework was written because it was required in a project. By doing this, the API will naturally evolve to how it makes sense in real use cases.
+  If we want to implement new features that are not required, we need to create a real-world scenario where it would be used. 
 - Follow standards whenever possible. We tried to follow the .NET Framework Design Guidelines: https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/
 - Use a common file structure and code style to keep homogeneity across the whole framework. We currently use Rider and its code style capabilities and have used Resharper for Visual Studio in the past. We may provide these configuration files in the future to facilitate external contributions.
 
