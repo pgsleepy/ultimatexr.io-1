@@ -2,7 +2,7 @@
   "routes": [
     {
       "route": "/guides/learn",
-      "redirect": "/guides/getting-started",
+      "redirect": "/guides/what-is-ultimatexr",
       "statusCode": 301
     }
   ]
