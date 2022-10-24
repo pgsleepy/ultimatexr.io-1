@@ -22,26 +22,26 @@ Deleting UltimateXR before installing a newer version will not break any referen
 
 UltimateXR can be installed by downloading the latest [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}).
 
-1. Download the latest UltimateXR [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}). It contains a big sample scene so the file size is larger than usual. The core package and sample scene will be split in two different packages in the future to limit disk size and lower installation time.
+- Download the latest UltimateXR [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}). It contains a big sample scene so the file size is larger than usual. The core package and sample scene will be split in two different packages in the future to limit disk size and lower installation time.
 
-2. Right click on the Project Window and select Import Package -> Custom Package…. 
+- Right click on the Project Window and select Import Package -> Custom Package…. 
 
-![](/guides/media/getting-started/01ImportPackage.png)
+![ImportPackage](/guides/media/getting-started/01ImportPackage.png)
   
-3. Select the downloaded file and click Import. Importing assets may take a while due to the included sample scene.
+- Select the downloaded file and click Import. Importing assets may take a while due to the included sample scene.
 
-### Method 2: Downloading and installing the .unitypackage file
+### Method 2: Using the Package Manager for git users
 
-1. Open the Package Manager using the Window menu -> Package Manager
+- Open the Package Manager using the Window menu -> Package Manager
 
 ![OpenPackageManager](https://user-images.githubusercontent.com/5702147/197527726-7700f742-1055-4a66-8508-cc61ee529c08.jpg)
 
-2. Inside the Package Manager, click on the "+" button on the top left and select "Add package from git URL..."
+- Inside the Package Manager, click on the "+" button on the top left and select "Add package from git URL..."
 
 ![AddFromGitURL](https://user-images.githubusercontent.com/5702147/197527755-cfc2a87c-980b-4ea3-96ee-34c385f79d86.JPG)
 
-3. Input the following URL: https://github.com/VRMADA/ultimatexr-unity.git and click Add.
-4. When the installation has completed, make sure to import the examples if it's your first time using UltimateXR.
+- Input the following URL: https://github.com/VRMADA/ultimatexr-unity.git and click Add.
+- When the installation has completed, make sure to import the examples if it's your first time using UltimateXR.
 
 ![Examples](https://user-images.githubusercontent.com/5702147/197527794-2f304b4d-0b36-4058-96d1-b7e4d389c0a7.jpg)
 
