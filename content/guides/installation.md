@@ -10,8 +10,8 @@ Unity 2021.2 or higher. LTS version is highly recommended.
 
 ## Uninstalling the previous version first
 
-- Before installing any new version, it is extremely important to delete the whole Assets/UltimateXR folder first if present. This will make sure that files that aren’t present in newer versions are removed. Not doing so may create unwanted compilation errors.
-Deleting UltimateXR before installing will not break any reference link. Unity’s .meta files include IDs that make sure that the references are kept.
+- Before installing a new version of UltimateXR, it is extremely important to delete the old Assets/UltimateXR folder first if it exists. This will make sure that files that were deleted in newer versions aren't preserved. Not doing so may create unwanted compilation errors.
+Deleting UltimateXR before installing a newer version will not break any reference link. Unity’s .meta files include IDs to ensure all references are kept correctly.
 - If the previous installation came from the Unity Package Manager, and not the Unity Asset Store or a .unitypackage file, this step is not required.
 
 ## Installation and setup
