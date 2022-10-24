@@ -12,7 +12,7 @@ menu:
   main:
     - identifier: guides
       name: Guides
-      url: /guides/getting-started/
+      url: /guides/what-is-ultimatexr/
       weight: 10
     - identifier: scripting
       name: API
