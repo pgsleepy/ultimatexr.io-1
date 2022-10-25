@@ -1,6 +1,11 @@
 {
   "routes": [
     {
+      "route": "/learn",
+      "redirect": "/guides/what-is-ultimatexr",
+      "statusCode": 301
+    },
+    {
       "route": "/guides/learn",
       "redirect": "/guides/what-is-ultimatexr",
       "statusCode": 301
