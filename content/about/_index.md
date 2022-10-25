@@ -10,7 +10,7 @@ The project started in 2016 with the objective to become the technological backb
 
 Creating a public release was always something that we had in mind. After years of successfully developing applications and putting UltimateXR to the test we are happy to take it a step further and make it available to the public. Free and open-source. 
 
-Why free and open-source? Because we want to make an impact. Virtual reality is our job but also our passion. We want to help everyone to develop VR applications, from indie developers to big companies. We want to assist academies and universities in their quest to teach VR by offering them the tools to do it more easily. We want the result of our work to be available for everyone. 
+Why free and open-source? Because we want to make an impact. Virtual reality is our job but also our passion. We want to help everyone to develop VR applications, from indie developers to big companies. We want to assist academies and universities in their quest to teach VR by offering them the tools to do it more easily. We want the result of our work to be available to everyone. 
 
 Offering our framework is a big step that requires commitment and hard work, but we’re determined to make it the best VR framework possible. 
 
