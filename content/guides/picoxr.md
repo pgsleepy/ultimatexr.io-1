@@ -22,7 +22,7 @@ Go to the Unity Package Manager using the menu Window -> Package Manager. Click 
  
 Navigate to the unzipped folder and select the package.json to install the Pico XR support.
 
-Follow the instructions on https://developer.pico-interactive.com/document?name=unity to create a developer account and create an app ID for your application.
+Follow [these instructions](https://developer-global.pico-interactive.com/docs/unity/en/13136/create-an-application/) to create a developer account and create an app ID for your application.
 
 Go to Edit -> Project Settings and enable PicoXR support for both the desktop and Android platforms.
  
@@ -32,4 +32,8 @@ Enable Multiview under the Android PicoXR settings
 
 ![](/guides/media/supported-platforms/PicoXR05Multiview.png)
  
-Your application should now be compatible with the Pico headset and controllers. For more detailed information please check the PicoXR documentation: https://developer.pico-interactive.com/document?name=unity
+Your application should now be compatible with the Pico headset and controllers.
+To be able to use Play Mode to preview the scene in Unity, and not just create Pico-compatible builds, you will need to install the Pico Preview Tool.
+To install the Pico Preview Tool follow [these instructions](https://developer-global.pico-interactive.com/docs/unity/en/13136/241045/).
+
+For more complete information please check the PicoXR Unity documentation: https://developer-global.pico-interactive.com/document/unity
