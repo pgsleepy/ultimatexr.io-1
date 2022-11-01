@@ -1,7 +1,7 @@
 # UxrControllerInput.GetButtonsTouchUp Method 
  
 
-Check if the given button or buttons aren't being touched in the current frame but were during the previous frame (release touch).
+Checks if the given button or buttons aren't being touched in the current frame but were during the previous frame (release touch).
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Devices">UltimateXR.Devices</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

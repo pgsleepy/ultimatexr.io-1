@@ -1,7 +1,7 @@
 # UxrControllerInput.GlobalControllerConnected Event
  
 
-Event called whenever a controller input device is connected or disconnected
+Event called whenever any controller input device is connected or disconnected
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Devices">UltimateXR.Devices</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

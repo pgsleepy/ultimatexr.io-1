@@ -1,4 +1,4 @@
-# UxrGrabbableObject.Editor_GetAutoRotationProvider Method 
+# UxrGrabbableObject.GetAutoRotationProvider Method 
  
 
 Tries to infer the most appropriate <a href="T_UltimateXR_Manipulation_UxrRotationProvider">UxrRotationProvider</a> to rotate the object based on the shape and size of the object, and the grip.
@@ -9,7 +9,7 @@ Tries to infer the most appropriate <a href="T_UltimateXR_Manipulation_UxrRotati
 
 **C#**<br />
 ``` C#
-public UxrRotationProvider Editor_GetAutoRotationProvider(
+public UxrRotationProvider GetAutoRotationProvider(
 	Vector3 gripPos
 )
 ```
