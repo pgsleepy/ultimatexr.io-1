@@ -51,3 +51,19 @@ body.type-api #content table tr td:first-child img {
 body.type-api #content table + a[href]:where([href^="#"]) {
   display: none;
 }
+
+/* Styling parameters list */
+body.type-api h4#parameters + p {
+  display: none;
+}
+
+body.type-api h4#parameters + p + dl dt {
+  font-weight: 600;
+}
+
+body.type-api h4#parameters + p + dl dd {
+  margin-bottom: 1.2em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
