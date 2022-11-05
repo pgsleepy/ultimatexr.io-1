@@ -87,13 +87,36 @@ UxrManager.Instance.MoveAvatarTo(UxrAvatar.LocalAvatar, Vector3.zero);
 Method 2: Teleporting with a fadeout and fadein.
 
 ```c#
+
+// Quick way
+
 UxrManager.Instance.TeleportLocalAvatar(Vector3.zero, Quaternion.identity, UxrTranslationType.Fade);
+
+// Taking into account re-parenting to destination and/or moving platforms
+
+Transform destination         = ...
+bool      parentToDestination = true;
+UxrManager.Instance.TeleportLocalAvatarRelative(destination, parentToDestination, destination.position, Quaternion.identity, UxrTranslationType.Fade);
 ```
 
 Method 3: Teleporting with a fadeout and fadein using async/await
 
 ```c#
+
+// Quick way
+
+Debug.Log("Teleport start");
 await UxrManager.Instance.TeleportLocalAvatarAsync(Vector3.zero, Quaternion.identity, UxrTranslationType.Fade);
+Debug.Log("Teleport finished");
+
+// Taking into account re-parenting to destination and/or moving platforms
+
+Transform destination         = ...
+bool      parentToDestination = true;
+
+Debug.Log("Teleport start");
+await UxrManager.Instance.TeleportLocalAvatarRelativeAsync(destination, parentToDestination, destination.position, Quaternion.identity, UxrTranslationType.Fade);
+Debug.Log("Teleport finished");
 ```
 
 Method 4: Teleporting with a fadeout and fadein using callbacks:
@@ -132,7 +155,7 @@ private void UxrManager_AvatarMoved(object sender, UxrAvatarMoveEventArgs e)
 }
 ```
 
-How can I do something with the avatar during this frame after I know UltimateXR has finished updating it?
+How can I do something with the avatar each frame after UltimateXR finished updating it?
 
 ```c#
 private void OnEnable()
@@ -271,11 +294,44 @@ if (UxrGrabManager.Instance.GetGrabbingHand(grabbableGun, 0, out UxrGrabber grab
 
 ## Guides
 
-How can I let the user know that an important part of the scenario needs to be focused on?
+How can I show a guiding arrow that instructs the user to look at a specific object?
 
 ```c#
 // Enable
 UxrCompass.Instance.SetTarget(myObject.transform, UxrCompassDisplayMode.Look);
+
+// Same but when the object is in sight it won't show the blinking eye icon
+UxrCompass.Instance.SetTarget(myObject.transform, UxrCompassDisplayMode.OnlyCompass);
+
+// Disable
+UxrCompass.Instance.SetTarget(null);
+```
+
+How can I instruct the user to go to a certain place?
+
+```c#
+// Enable
+UxrCompass.Instance.SetTarget(floor.transform, UxrCompassDisplayMode.Location);
+
+// Disable
+UxrCompass.Instance.SetTarget(null);
+```
+
+How can I instruct the user to grab a certain object?
+
+```c#
+// Enable
+UxrCompass.Instance.SetTarget(hammer.transform, UxrCompassDisplayMode.Grab);
+
+// Disable
+UxrCompass.Instance.SetTarget(null);
+```
+
+How can I instruct the user to use a certain tool?
+
+```c#
+// Enable
+UxrCompass.Instance.SetTarget(tool.transform, UxrCompassDisplayMode.Use);
 
 // Disable
 UxrCompass.Instance.SetTarget(null);
@@ -326,22 +382,22 @@ bool hasTriggerAndGrab = UxrAvatar.LocalAvatarInput.HasControllerElements(UxrHan
 
 How can I know if a controller button was pressed?
 
-Method1:
+Method1 (direct query):
 
 ```c#
 bool wasPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Left, UxrInputButtons.Button1);
 ```
 
-Method2:
+Method2 (direct query):
 
 ```c#
 bool wasPressed = UxrAvatar.LocalAvatarInput.GetButtonsEvent(UxrHandSide.Left, UxrInputButtons.Button1, UxrButtonEventType.PressDown);
 ```
 
-Method3:
+Method3 (using event subscription):
 
 ```c#
-UxrAvatar.LocalAvatarInput.ButtonStateChanged += Input_ButtonStateChanged;
+UxrControllerInput.GlobalButtonStateChanged += Input_ButtonStateChanged;
 
 private void Input_ButtonStateChanged(object sender, UxrInputButtonEventArgs e)
 {
@@ -399,6 +455,21 @@ UxrAvatar.LocalAvatarInput.StopControllerElementsBlinking(UxrHandSide.Left, UxrC
 UxrAvatar.LocalAvatarInput.StopAllBlinking(UxrHandSide.Left);
 ```
 
+How can I get the speed/velocity of the hands?
+
+```c#
+if (UxrKeyboardInput.GetPressDown(UxrKey.Enter))
+{
+    // Velocity using current-last frame data:
+    Vector3 leftInstantVelocity  = UxrAvatar.LocalAvatar.GetGrabber(UxrHandSide.Left).Velocity;
+	Vector3 rightInstantVelocity = UxrAvatar.LocalAvatar.GetGrabber(UxrHandSide.Right).Velocity;
+	
+	// Velocity using multiple frame data:
+	Vector3 leftSmoothVelocity   = UxrAvatar.LocalAvatar.GetGrabber(UxrHandSide.Left).SmoothVelocity;
+	Vector3 rightSmoothVelocity  = UxrAvatar.LocalAvatar.GetGrabber(UxrHandSide.Right).SmoothVelocity;
+}
+```
+
 How can I get keyboard input?
 
 ```c#
@@ -407,7 +478,7 @@ if (UxrKeyboardInput.GetPressDown(UxrKey.Enter))
     Debug.Log("Enter key was pressed");
 }
 ```
- 
+
 ## Manipulation
 
 How do I know if an object is currently being grabbed?
@@ -609,6 +680,7 @@ private void OnEnable()
     _grabbableObject.Placed              += GrabbableObject_Placed;
     _grabbableObject.ConstraintsApplying += GrabbableObject_ConstraintsApplying;
     _grabbableObject.ConstraintsApplied  += GrabbableObject_ConstraintsApplied;
+    _grabbableObject.ConstraintsFinished += GrabbableObject_ConstraintsFinished;
 }
 
 private void OnDisable()
@@ -621,6 +693,7 @@ private void OnDisable()
     _grabbableObject.Placed              -= GrabbableObject_Placed;
     _grabbableObject.ConstraintsApplying -= GrabbableObject_ConstraintsApplying;
     _grabbableObject.ConstraintsApplied  -= GrabbableObject_ConstraintsApplied;
+    _grabbableObject.ConstraintsFinished -= GrabbableObject_ConstraintsFinished;
 }
 
 private void GrabbableObject_Grabbing(object sender, UxrManipulationEventArgs e)
@@ -655,12 +728,17 @@ private void GrabbableObject_Placed(object sender, UxrManipulationEventArgs e)
 
 private void GrabbableObject_ConstraintsApplying(object sender, UxrApplyConstraintsEventArgs e)
 {
-    Debug.Log($"Object {_grabbableObject.name} is about to be constrained if required");
+    Debug.Log($"Object {_grabbableObject.name} is about to be constrained (if required)");
 }
 
 private void GrabbableObject_ConstraintsApplied(object sender, UxrApplyConstraintsEventArgs e)
 {
-    Debug.Log($"Object {_grabbableObject.name} was constrained if required");
+    Debug.Log($"Object {_grabbableObject.name} was constrained and can now be constrained using user specific code");
+}
+
+private void GrabbableObject_ConstraintsFinished(object sender, UxrApplyConstraintsEventArgs e)
+{
+    Debug.Log($"All constraints on object {_grabbableObject.name} were applied");
 }
 ```
 
@@ -701,12 +779,17 @@ class MyComponent : UxrGrabbableObjectComponent<MyComponent>
 
     protected override void OnObjectConstraintsApplying(UxrApplyConstraintsEventArgs e)
     {
-        Debug.Log($"Object {e.GrabbableObject.name} is about to be constrained if required");
+        Debug.Log($"Object {e.GrabbableObject.name} is about to be constrained (if required)");
     }
 
     protected override void OnObjectConstraintsApplied(UxrApplyConstraintsEventArgs e)
     {
-        Debug.Log($"Object {e.GrabbableObject.name} was constrained if required");
+        Debug.Log($"Object {e.GrabbableObject.name} was constrained and can now be constrained using user specific code");
+    }
+
+    protected override void OnObjectConstraintsFinished(UxrApplyConstraintsEventArgs e)
+    {
+        Debug.Log($"All constraints on object {e.GrabbableObject.name} were applied");
     }
 }
 ```
@@ -724,6 +807,13 @@ private void OnDisable()
     _grabbableObject.ConstraintsApplied -= grabbableObject_ConstraintsApplied;
 }
 
+// This method is called every frame right after UltimateXR updated the grabbable object
+// position/rotation and applied all necessary constraints.
+// We can now apply our own constraints on it or other effects. This can be used
+// to add more complex behavior to a grabbed object. Some examples:
+//   -Add recoil to a custom weapon.
+//   -Shake an object while holding it.
+//   -Apply more complex translation/rotation constraints than the UxrGrabbableObject provides.
 private void grabbableObject_ConstraintsApplied(UxrApplyConstraintsEventArgs e)
 {
     // Keeps the local y position between 0.8 and 1.2
