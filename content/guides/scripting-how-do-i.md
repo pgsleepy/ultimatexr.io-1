@@ -516,7 +516,13 @@ if (UxrGrabManager.Instance.GetGrabbingHand(grabbableObject, 0, out UxrGrabber g
 How do I get the grabbing hands if an object can be grabbed with more than one?
 
 ```c#
+// Querying a specific grab point
 if (UxrGrabManager.Instance.GetGrabbingHands(grabbableObject, 0, out List<UxrGrabber> grabbers))
+{
+}
+
+// Querying all grab points
+if (UxrGrabManager.Instance.GetGrabbingHands(grabbableObject, -1, out List<UxrGrabber> grabbers))
 {
 }
 ```
