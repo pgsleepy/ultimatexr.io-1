@@ -11,13 +11,14 @@ Checks if a path is a child of another path. Adapted from https://stackoverflow.
 ``` C#
 public static bool IsSubDirectoryOf(
 	this string candidate,
-	string other
+	string other,
+	bool canBeSame = true
 )
 ```
 
 
 #### Parameters
-&nbsp;<dl><dt>candidate</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.string" target="_blank" rel="noopener noreferrer">System.String</a><br />Path candidate</dd><dt>other</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.string" target="_blank" rel="noopener noreferrer">System.String</a><br />Path to check against</dd></dl>
+&nbsp;<dl><dt>candidate</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.string" target="_blank" rel="noopener noreferrer">System.String</a><br />Path candidate</dd><dt>other</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.string" target="_blank" rel="noopener noreferrer">System.String</a><br />Path to check against</dd><dt>canBeSame (Optional)</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">System.Boolean</a><br />Whether to also consider the same directory as valid</dd></dl>
 
 #### Return Value
 Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">Boolean</a><br />Whether the path is child of the parent path

@@ -1,7 +1,7 @@
 # IUxrControllerInput.GetButtonsTouch Method 
  
 
-Check if the given button or buttons are being touched in the current frame.
+Checks if the given button or all buttons in a set are being touched in the current frame.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Devices">UltimateXR.Devices</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

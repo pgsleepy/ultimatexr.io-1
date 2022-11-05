@@ -1,7 +1,7 @@
 # UxrGrabbableObject.ConstraintsApplied Event
  
 
-Event called right after applying the position/rotation constraints to the object.
+Event called right after applying the position/rotation constraints to the object. This can be used to apply custom constraints to the object.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Manipulation">UltimateXR.Manipulation</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

@@ -1,4 +1,4 @@
-# UxrGrabbableObject.Editor_GetMostProbableLongitudinalRotationAxis Method 
+# UxrGrabbableObject.GetMostProbableLongitudinalRotationAxis Method 
  
 
 Tries to get the longitudinal rotation axis of the grabbable object. If it hasn't been defined by the user (on objects where <a href="P_UltimateXR_Manipulation_UxrGrabbableObject_RangeOfMotionRotationAxisCount">RangeOfMotionRotationAxisCount</a> is less than 2.
@@ -9,7 +9,7 @@ Tries to get the longitudinal rotation axis of the grabbable object. If it hasn'
 
 **C#**<br />
 ``` C#
-public UxrAxis Editor_GetMostProbableLongitudinalRotationAxis()
+public UxrAxis GetMostProbableLongitudinalRotationAxis()
 ```
 
 

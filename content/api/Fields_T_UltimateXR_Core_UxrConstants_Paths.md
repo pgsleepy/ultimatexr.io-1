@@ -5,7 +5,7 @@ The <a href="T_UltimateXR_Core_UxrConstants_Paths">UxrConstants.Paths</a> type e
 
 
 ## Fields
-&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public field](media/pubfield.gif "Public field")![Static member](media/static.gif "Static member")</td><td><a href="F_UltimateXR_Core_UxrConstants_Paths_Base">Base</a></td><td /></tr><tr><td>![Public field](media/pubfield.gif "Public field")![Static member](media/static.gif "Static member")</td><td><a href="F_UltimateXR_Core_UxrConstants_Paths_HandPosePresetsRelativePath">HandPosePresetsRelativePath</a></td><td /></tr><tr><td>![Public field](media/pubfield.gif "Public field")![Static member](media/static.gif "Static member")</td><td><a href="F_UltimateXR_Core_UxrConstants_Paths_SingletonResources">SingletonResources</a></td><td /></tr></table>&nbsp;
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public field](media/pubfield.gif "Public field")![Static member](media/static.gif "Static member")</td><td><a href="F_UltimateXR_Core_UxrConstants_Paths_SingletonResources">SingletonResources</a></td><td /></tr></table>&nbsp;
 <a href="#paths-fields">Back to Top</a>
 
 ## See Also

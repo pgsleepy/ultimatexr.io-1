@@ -1,4 +1,4 @@
-# UxrApplyConstraintsEventArgs.GrabbableObject Property 
+# UxrApplyConstraintsEventArgs.Grabber Property 
  
 
 Gets the grabbable object.
@@ -9,12 +9,12 @@ Gets the grabbable object.
 
 **C#**<br />
 ``` C#
-public UxrGrabbableObject GrabbableObject { get; }
+public UxrGrabber Grabber { get; }
 ```
 
 
 #### Property Value
-Type: <a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UxrGrabbableObject</a>
+Type: <a href="T_UltimateXR_Manipulation_UxrGrabber">UxrGrabber</a>
 
 ## See Also
 

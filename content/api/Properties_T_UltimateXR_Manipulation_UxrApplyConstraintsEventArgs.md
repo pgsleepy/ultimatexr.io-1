@@ -5,7 +5,7 @@ The <a href="T_UltimateXR_Manipulation_UxrApplyConstraintsEventArgs">UxrApplyCon
 
 
 ## Properties
-&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Manipulation_UxrApplyConstraintsEventArgs_GrabbableObject">GrabbableObject</a></td><td>
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Manipulation_UxrApplyConstraintsEventArgs_Grabber">Grabber</a></td><td>
 Gets the grabbable object.</td></tr></table>&nbsp;
 <a href="#uxrapplyconstraintseventargs-properties">Back to Top</a>
 

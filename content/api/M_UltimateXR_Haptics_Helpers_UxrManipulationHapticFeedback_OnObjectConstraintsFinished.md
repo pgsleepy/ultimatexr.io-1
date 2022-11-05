@@ -1,4 +1,4 @@
-# UxrManipulationHapticFeedback.OnObjectConstraintsApplied Method 
+# UxrManipulationHapticFeedback.OnObjectConstraintsFinished Method 
  
 
 Called after all object manipulation has been processed and potential constraints have been applied. It is used to update the speed information.
@@ -9,7 +9,7 @@ Called after all object manipulation has been processed and potential constraint
 
 **C#**<br />
 ``` C#
-protected override void OnObjectConstraintsApplied(
+protected override void OnObjectConstraintsFinished(
 	UxrApplyConstraintsEventArgs e
 )
 ```

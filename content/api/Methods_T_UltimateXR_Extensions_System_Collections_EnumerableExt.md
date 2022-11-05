@@ -13,7 +13,8 @@ Asynchronously applies an action on all elements in a collection.</td></tr><tr><
 Asynchronously applies a function on all elements in a collection.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Collections_EnumerableExt_MaxBy__2">MaxBy(TSource, TKey)(IEnumerable(TSource), Func(TSource, TKey))</a></td><td>
 Returns the maximal element of the given sequence, based on the given projection.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Collections_EnumerableExt_MaxBy__2_1">MaxBy(TSource, TKey)(IEnumerable(TSource), Func(TSource, TKey), IComparer(TKey))</a></td><td>
 Returns the maximal element of the given sequence, based on the given projection and the specified comparer for projected values.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Collections_EnumerableExt_RandomElement__1">RandomElement(TIn)</a></td><td>
-Returns a random element from the collection.</td></tr></table>&nbsp;
+Returns a random element from the collection.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")![Static member](media/static.gif "Static member")</td><td><a href="M_UltimateXR_Extensions_System_Collections_EnumerableExt_SplitCamelCase">SplitCamelCase</a></td><td>
+Splits a list of strings using CamelCase.</td></tr></table>&nbsp;
 <a href="#enumerableext-methods">Back to Top</a>
 
 ## See Also

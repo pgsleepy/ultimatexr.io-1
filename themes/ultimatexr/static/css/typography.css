@@ -4,7 +4,8 @@ strong {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   position: relative;
   font-weight: 600;
   line-height: 1.5;
@@ -29,6 +30,12 @@ h3 {
   font-size: 19px;
   letter-spacing: -.01em;
   margin: 3rem 0 1.25rem;
+}
+
+h4 {
+  font-size: 17px;
+  letter-spacing: -.01em;
+  margin: 1.8rem 0 1rem;
 }
 
 p {
