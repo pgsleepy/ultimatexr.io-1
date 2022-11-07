@@ -533,6 +533,19 @@ How can I force to keep a UxrGrabbableObject in place so that it can’t be move
 grabbableObject.IsLockedInPlace = true;
 ```
 
+How can I enable/disable a grab point in a grabbable object?
+
+```c#
+// Disable so that it can't be used
+grabbableObject.SetGrabPointEnabled(0, false);
+
+// Enable so that it can be used again
+grabbableObject.SetGrabPointEnabled(0, true);
+
+// Enable all grab points
+grabbableObject.EnableAllGrabPoints();
+```
+
 How do I force to release a grabbed object?
 
 Method1:
