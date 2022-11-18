@@ -20,7 +20,7 @@ We provide the following ways to install **UltimateXR**:
 
 ### Method 1: Through the official Unity Asset Store
 
-- Completely remove the current version of UltimateXR if there is one installed.
+- Delete the previous version from /Assets/UltimateXR first. **Important!** Not removing the folder before updating may result in incorrect files remaining after installation.
 - Go to the [Asset Store](https://assetstore.unity.com/packages/slug/236782) and click Open in Unity to proceed with the installation.
 - Remember to rate and review our asset if you liked it!
 
@@ -28,8 +28,8 @@ We provide the following ways to install **UltimateXR**:
 
 UltimateXR can be installed by downloading the latest [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}).
 
+- Delete the previous version from /Assets/UltimateXR first. **Important!** Not removing the folder before updating may result in incorrect files remaining after installation.
 - Download the latest UltimateXR [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}). It contains a big sample scene so the file size is larger than usual. The core package and sample scene will be split in two different packages in the future to limit disk size and lower installation time.
-
 - Right click on the Project Window and select Import Package -> Custom Package…. 
 
 ![ImportPackage](/guides/media/getting-started/01ImportPackage.png)
