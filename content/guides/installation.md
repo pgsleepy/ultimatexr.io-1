@@ -16,9 +16,15 @@ Deleting UltimateXR before installing a newer version will not break any referen
 
 ## Installation and setup
 
-**UltimateXR** can be installed using 2 different methods:
+We provide the following ways to install **UltimateXR**:
 
-### Method 1: Downloading and installing the .unitypackage file
+### Method 1: Through the official Unity Asset Store
+
+- Completely remove the current version of UltimateXR if there is one installed.
+- Go to the [Asset Store](https://assetstore.unity.com/packages/slug/236782) and click Open in Unity to proceed with the installation.
+- Remember to rate and review our asset if you liked it!
+
+### Method 2: Downloading and installing the .unitypackage file
 
 UltimateXR can be installed by downloading the latest [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}).
 
@@ -30,7 +36,7 @@ UltimateXR can be installed by downloading the latest [.unitypackage]({{< param 
   
 - Select the downloaded file and click Import. Importing assets may take a while due to the included sample scene.
 
-### Method 2: Using the Package Manager for git users
+### Method 3: Using the Package Manager for git users
 
 - Open the Package Manager using the Window menu -> Package Manager
 
@@ -47,10 +53,7 @@ UltimateXR can be installed by downloading the latest [.unitypackage]({{< param 
 
 ### Additional installation methods
 
-We are in the process of providing additional ways of getting the framework:
-
-- Installation through the Unity Package Manager without git.
-- Downloading through the Unity Asset Store.
+We are in the process of providing installation through the Unity Package Manager without requiring git. Stay tuned!
 
 ## Setting up the environment
 
