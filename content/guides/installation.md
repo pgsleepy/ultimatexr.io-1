@@ -16,21 +16,27 @@ Deleting UltimateXR before installing a newer version will not break any referen
 
 ## Installation and setup
 
-**UltimateXR** can be installed using 2 different methods:
+We provide the following ways to install **UltimateXR**:
 
-### Method 1: Downloading and installing the .unitypackage file
+### Method 1: Through the official Unity Asset Store
+
+- Delete the previous version from /Assets/UltimateXR first. **Important!** Not removing the folder before updating may result in incorrect files remaining after installation.
+- Go to the [Asset Store](https://assetstore.unity.com/packages/slug/236782) and click Open in Unity to proceed with the installation.
+- Remember to rate and review our asset if you liked it!
+
+### Method 2: Downloading and installing the .unitypackage file
 
 UltimateXR can be installed by downloading the latest [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}).
 
+- Delete the previous version from /Assets/UltimateXR first. **Important!** Not removing the folder before updating may result in incorrect files remaining after installation.
 - Download the latest UltimateXR [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}). It contains a big sample scene so the file size is larger than usual. The core package and sample scene will be split in two different packages in the future to limit disk size and lower installation time.
-
 - Right click on the Project Window and select Import Package -> Custom Package…. 
 
 ![ImportPackage](/guides/media/getting-started/01ImportPackage.png)
   
 - Select the downloaded file and click Import. Importing assets may take a while due to the included sample scene.
 
-### Method 2: Using the Package Manager for git users
+### Method 3: Using the Package Manager for git users
 
 - Open the Package Manager using the Window menu -> Package Manager
 
@@ -47,10 +53,7 @@ UltimateXR can be installed by downloading the latest [.unitypackage]({{< param 
 
 ### Additional installation methods
 
-We are in the process of providing additional ways of getting the framework:
-
-- Installation through the Unity Package Manager without git.
-- Downloading through the Unity Asset Store.
+We are in the process of providing installation through the Unity Package Manager without requiring git. Stay tuned!
 
 ## Setting up the environment
 
