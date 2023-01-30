@@ -111,3 +111,9 @@
     display: none;
   }
 }
+
+@media print {
+  #nav-local {
+    display: none;
+  }
+}

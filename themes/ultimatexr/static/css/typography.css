@@ -117,3 +117,11 @@ main ul li:before {
 main a {
   font-weight: 600;
 }
+
+@media print {
+  main ul,
+  main ol {
+    display: block;
+    list-style: inherit;
+  }
+}

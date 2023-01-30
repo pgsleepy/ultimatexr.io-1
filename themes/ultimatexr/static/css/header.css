@@ -200,7 +200,7 @@ header .logo-ultimatexr {
 @media (min-width: 992px) {
   header .container {
     padding-top: 40px;
-  }
+  } 
 
   .nav-main .sub-menu a {
     font-size: 14px;
@@ -210,5 +210,11 @@ header .logo-ultimatexr {
   .nav-main li a {
     font-size: 14px;
     line-height: 60px;
+  }
+}
+
+@media print {
+  header {
+    display: none;
   }
 }
