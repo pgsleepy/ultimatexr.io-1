@@ -9,7 +9,7 @@ Event called after any controller button state changed.
 
 **C#**<br />
 ``` C#
-public event EventHandler<UxrInputButtonEventArgs> GlobalButtonStateChanged
+public static event EventHandler<UxrInputButtonEventArgs> GlobalButtonStateChanged
 ```
 
 <a href="UltimateXR/Scripts/Devices/UxrControllerInput.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />

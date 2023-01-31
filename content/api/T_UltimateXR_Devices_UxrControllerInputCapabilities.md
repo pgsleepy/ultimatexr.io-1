@@ -16,7 +16,7 @@ public enum UxrControllerInputCapabilities
 <a href="UltimateXR/Scripts/Devices/UxrControllerInputCapabilities.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
 
 ## Members
-&nbsp;<table><tr><th></th><th>Member name</th><th>Value</th><th>Description</th></tr><tr><td /><td target="F:UltimateXR.Devices.UxrControllerInputCapabilities.HapticImpulses">**HapticImpulses**</td><td>1</td><td>It supports raw haptic impulses.</td></tr><tr><td /><td target="F:UltimateXR.Devices.UxrControllerInputCapabilities.HapticClips">**HapticClips**</td><td>2</td><td>It supports haptic feedback using pre-recorded clips.</td></tr></table>
+&nbsp;<table><tr><th></th><th>Member name</th><th>Value</th><th>Description</th></tr><tr><td /><td target="F:UltimateXR.Devices.UxrControllerInputCapabilities.HapticImpulses">**HapticImpulses**</td><td>1</td><td>It supports raw haptic impulses.</td></tr><tr><td /><td target="F:UltimateXR.Devices.UxrControllerInputCapabilities.HapticClips">**HapticClips**</td><td>2</td><td>It supports haptic feedback using pre-recorded clips.</td></tr><tr><td /><td target="F:UltimateXR.Devices.UxrControllerInputCapabilities.TrackedHandPose">**TrackedHandPose**</td><td>4</td><td>It supports finger tracking.</td></tr></table>
 
 ## See Also
 

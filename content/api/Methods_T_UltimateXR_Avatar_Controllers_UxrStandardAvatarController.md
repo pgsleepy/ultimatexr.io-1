@@ -7,7 +7,8 @@ The <a href="T_UltimateXR_Avatar_Controllers_UxrStandardAvatarController">UxrSta
 ## Methods
 &nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Avatar_Controllers_UxrStandardAvatarController_CanHandInteractWithUI">CanHandInteractWithUI</a></td><td>
 Gets if the hand is available to interact with UI elements, such as pressing buttons. This is used by the UI interaction system to ignore the hand for these events. For example, when the hand is holding an object it could be desirable to not let it interact inadvertently with any user interface.
- (Overrides <a href="M_UltimateXR_Avatar_Controllers_UxrAvatarController_CanHandInteractWithUI">UxrAvatarController.CanHandInteractWithUI(UxrHandSide)</a>.)</td></tr></table>&nbsp;
+ (Overrides <a href="M_UltimateXR_Avatar_Controllers_UxrAvatarController_CanHandInteractWithUI">UxrAvatarController.CanHandInteractWithUI(UxrHandSide)</a>.)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Avatar_Controllers_UxrStandardAvatarController_SolveBodyIK">SolveBodyIK</a></td><td>
+Solves the body IK using the current headset and controller positions.</td></tr></table>&nbsp;
 <a href="#uxrstandardavatarcontroller-methods">Back to Top</a>
 
 ## Extension Methods

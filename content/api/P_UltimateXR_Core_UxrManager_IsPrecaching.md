@@ -1,7 +1,7 @@
 # UxrManager.IsPrecaching Property 
  
 
-Gets whether the manager is currently pre-caching. This happens right after the local avatar is enabled and _usePrecaching is set.
+Gets whether the manager is currently pre-caching. This happens right after the local avatar is enabled and <a href="P_UltimateXR_Core_UxrManager_UsePrecaching">UsePrecaching</a> is set.
 
 **Namespace:**&nbsp;<a href="N_UltimateXR_Core">UltimateXR.Core</a><br />**Assembly:**&nbsp;UltimateXR (in UltimateXR.dll) Version: 0.0.0.0
 

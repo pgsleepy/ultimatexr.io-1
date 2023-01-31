@@ -1,4 +1,4 @@
-# UxrGrabManager.GetClosestGrabbableObject Method (UxrAvatar, UxrHandSide, UxrGrabbableObject, Int32)
+# UxrGrabManager.GetClosestGrabbableObject Method (UxrAvatar, UxrHandSide, UxrGrabbableObject, Int32, IEnumerable(UxrGrabbableObject))
  
 
 Gets the closest grabbable object that can be grabbed by an <a href="T_UltimateXR_Avatar_UxrAvatar">UxrAvatar</a> using the given hand.
@@ -13,13 +13,14 @@ public bool GetClosestGrabbableObject(
 	UxrAvatar avatar,
 	UxrHandSide handSide,
 	out UxrGrabbableObject grabbableObject,
-	out int grabPoint
+	out int grabPoint,
+	IEnumerable<UxrGrabbableObject> candidates = null
 )
 ```
 
 
 #### Parameters
-&nbsp;<dl><dt>avatar</dt><dd>Type: <a href="T_UltimateXR_Avatar_UxrAvatar">UltimateXR.Avatar.UxrAvatar</a><br />Avatar to check</dd><dt>handSide</dt><dd>Type: <a href="T_UltimateXR_Core_UxrHandSide">UltimateXR.Core.UxrHandSide</a><br />Whether to check the left hand or right hand</dd><dt>grabbableObject</dt><dd>Type: <a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UltimateXR.Manipulation.UxrGrabbableObject</a><br />Returns the closest grabbable object or null if none was found</dd><dt>grabPoint</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.int32" target="_blank" rel="noopener noreferrer">System.Int32</a><br />Returns the grab point that can be grabbed</dd></dl>
+&nbsp;<dl><dt>avatar</dt><dd>Type: <a href="T_UltimateXR_Avatar_UxrAvatar">UltimateXR.Avatar.UxrAvatar</a><br />Avatar to check</dd><dt>handSide</dt><dd>Type: <a href="T_UltimateXR_Core_UxrHandSide">UltimateXR.Core.UxrHandSide</a><br />Whether to check the left hand or right hand</dd><dt>grabbableObject</dt><dd>Type: <a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UltimateXR.Manipulation.UxrGrabbableObject</a><br />Returns the closest grabbable object or null if none was found</dd><dt>grabPoint</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.int32" target="_blank" rel="noopener noreferrer">System.Int32</a><br />Returns the grab point that can be grabbed</dd><dt>candidates (Optional)</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1" target="_blank" rel="noopener noreferrer">System.Collections.Generic.IEnumerable</a>(<a href="T_UltimateXR_Manipulation_UxrGrabbableObject">UxrGrabbableObject</a>)<br />List of grabbable objects to process or null to process all current enabled grabbable objects</dd></dl>
 
 #### Return Value
 Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">Boolean</a><br />Whether a grabbable object was found

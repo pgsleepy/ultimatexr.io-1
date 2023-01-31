@@ -9,7 +9,7 @@ Sets whether the given controller input should be ignored.
 
 **C#**<br />
 ``` C#
-public void SetIgnoreControllerInput(
+public static void SetIgnoreControllerInput(
 	UxrHandSide handSide,
 	bool ignore
 )
@@ -17,10 +17,7 @@ public void SetIgnoreControllerInput(
 
 
 #### Parameters
-&nbsp;<dl><dt>handSide</dt><dd>Type: <a href="T_UltimateXR_Core_UxrHandSide">UltimateXR.Core.UxrHandSide</a><br />Which controller to change. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> devices where <a href="P_UltimateXR_Devices_IUxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is false, such as in gamepads, both hands will address the single device.</dd><dt>ignore</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">System.Boolean</a><br />Boolean telling whether to ignore the given controller input</dd></dl>
-
-#### Implements
-<a href="M_UltimateXR_Devices_IUxrControllerInput_SetIgnoreControllerInput">IUxrControllerInput.SetIgnoreControllerInput(UxrHandSide, Boolean)</a><br />
+&nbsp;<dl><dt>handSide</dt><dd>Type: <a href="T_UltimateXR_Core_UxrHandSide">UltimateXR.Core.UxrHandSide</a><br />Which controller to change. In <a href="T_UltimateXR_Devices_UxrControllerSetupType">Single</a> devices where <a href="P_UltimateXR_Devices_UxrControllerInput_IsHandednessSupported">IsHandednessSupported</a> is false, such as in gamepads, both hands will address the single device.</dd><dt>ignore</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.boolean" target="_blank" rel="noopener noreferrer">System.Boolean</a><br />Boolean telling whether to ignore the given controller input</dd></dl>
 
 ## See Also
 

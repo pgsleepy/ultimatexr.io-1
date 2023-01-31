@@ -4,6 +4,12 @@
 The <a href="T_UltimateXR_Manipulation_UxrGrabbableObjectSnapTransform">UxrGrabbableObjectSnapTransform</a> type exposes the following members.
 
 
+## Methods
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Manipulation_UxrGrabbableObjectSnapTransform_Awake">Awake</a></td><td>
+Makes sure to hide the GameObject initially during play mode when working from the editor.
+ (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_Awake">UxrComponent.Awake()</a>.)</td></tr></table>&nbsp;
+<a href="#uxrgrabbableobjectsnaptransform-methods">Back to Top</a>
+
 ## Extension Methods
 &nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public Extension Method](media/pubextension.gif "Public Extension Method")</td><td><a href="M_UltimateXR_Extensions_Unity_MonoBehaviourExt_CheckSetEnabled">CheckSetEnabled</a></td><td>
 Enables/disabled the component if it isn't enabled already.

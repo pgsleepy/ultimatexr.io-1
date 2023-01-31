@@ -12,13 +12,13 @@ Creates a texture with a flat color.
 public static Texture2D Create(
 	int width,
 	int height,
-	Color color
+	Color32 color
 )
 ```
 
 
 #### Parameters
-&nbsp;<dl><dt>width</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.int32" target="_blank" rel="noopener noreferrer">System.Int32</a><br />Width in pixels</dd><dt>height</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.int32" target="_blank" rel="noopener noreferrer">System.Int32</a><br />Height in pixels</dd><dt>color</dt><dd>Type: Color<br />Color to fill the texture with</dd></dl>
+&nbsp;<dl><dt>width</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.int32" target="_blank" rel="noopener noreferrer">System.Int32</a><br />Width in pixels</dd><dt>height</dt><dd>Type: <a href="https://docs.microsoft.com/dotnet/api/system.int32" target="_blank" rel="noopener noreferrer">System.Int32</a><br />Height in pixels</dd><dt>color</dt><dd>Type: Color32<br />Color to fill the texture with</dd></dl>
 
 #### Return Value
 Type: Texture2D<br />The created Texture2D object
