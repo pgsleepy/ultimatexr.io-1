@@ -9,12 +9,12 @@ Gets all the enabled <a href="T_UltimateXR_UI_UxrLaserPointer">UxrLaserPointer</
 
 **C#**<br />
 ``` C#
-public IEnumerable<UxrFingerTip> LaserPointers { get; }
+public IEnumerable<UxrLaserPointer> LaserPointers { get; }
 ```
 
 
 #### Property Value
-Type: <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1" target="_blank" rel="noopener noreferrer">IEnumerable</a>(<a href="T_UltimateXR_UI_UxrFingerTip">UxrFingerTip</a>)
+Type: <a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1" target="_blank" rel="noopener noreferrer">IEnumerable</a>(<a href="T_UltimateXR_UI_UxrLaserPointer">UxrLaserPointer</a>)
 
 ## See Also
 

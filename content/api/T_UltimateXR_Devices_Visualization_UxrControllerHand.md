@@ -38,7 +38,9 @@ Initializes the component when the controller hand is dynamic, such as when used
 Disables the finger IK solvers.
  (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_1_OnDisable">UxrComponent(T).OnDisable()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Devices_Visualization_UxrControllerHand_OnEnable">OnEnable</a></td><td>
 Enables the finger IK solvers.
- (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_1_OnEnable">UxrComponent(T).OnEnable()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Devices_Visualization_UxrControllerHand_Start">Start</a></td><td>
+ (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_1_OnEnable">UxrComponent(T).OnEnable()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Devices_Visualization_UxrControllerHand_Reset">Reset</a></td><td>
+Make sure the hand rig is allocated when the component is reset.
+ (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_Reset">UxrComponent.Reset()</a>.)</td></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Devices_Visualization_UxrControllerHand_Start">Start</a></td><td>
 Initializes the fingers.
  (Overrides <a href="M_UltimateXR_Core_Components_UxrComponent_Start">UxrComponent.Start()</a>.)</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_Visualization_UxrControllerHand_UpdateFinger">UpdateFinger</a></td><td>
 Updates a given finger.</td></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Devices_Visualization_UxrControllerHand_UpdateIKManually">UpdateIKManually</a></td><td>

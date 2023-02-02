@@ -56,3 +56,9 @@
     padding-left: 16px;
   }
 }
+
+@media print {
+  #banner-vrmada {
+    display: none;
+  }
+}

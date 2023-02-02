@@ -9,7 +9,7 @@
 
 **C#**<br />
 ``` C#
-public const int PatchVersion = 4
+public const int PatchVersion = 6
 ```
 
 <a href="UltimateXR/Scripts/Core/UxrConstants.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />

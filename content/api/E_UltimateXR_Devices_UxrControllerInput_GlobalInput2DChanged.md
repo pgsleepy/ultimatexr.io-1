@@ -9,7 +9,7 @@ Event called after any <a href="T_UltimateXR_Devices_UxrInput2D">UxrInput2D</a> 
 
 **C#**<br />
 ``` C#
-public event EventHandler<UxrInput2DEventArgs> GlobalInput2DChanged
+public static event EventHandler<UxrInput2DEventArgs> GlobalInput2DChanged
 ```
 
 <a href="UltimateXR/Scripts/Devices/UxrControllerInput.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />

@@ -9,7 +9,7 @@ Event called right before any haptic feedback was requested.
 
 **C#**<br />
 ``` C#
-public event EventHandler<UxrControllerHapticEventArgs> GlobalHapticRequesting
+public static event EventHandler<UxrControllerHapticEventArgs> GlobalHapticRequesting
 ```
 
 <a href="UltimateXR/Scripts/Devices/UxrControllerInput.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />

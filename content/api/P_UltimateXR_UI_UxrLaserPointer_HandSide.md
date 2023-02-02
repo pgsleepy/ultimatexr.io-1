@@ -9,7 +9,7 @@ Gets the hand the laser pointer belongs to.
 
 **C#**<br />
 ``` C#
-public UxrHandSide HandSide { get; set; }
+public UxrHandSide HandSide { get; }
 ```
 
 

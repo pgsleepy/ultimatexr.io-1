@@ -23,6 +23,11 @@ The UxrWristTorsionIKSolver type exposes the following members.
 &nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public method](media/pubmethod.gif "Public method")</td><td><a href="M_UltimateXR_Animation_IK_UxrWristTorsionIKSolver__ctor">UxrWristTorsionIKSolver</a></td><td /></tr></table>&nbsp;
 <a href="#uxrwristtorsioniksolver-class">Back to Top</a>
 
+## Properties
+&nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Public property](media/pubproperty.gif "Public property")</td><td><a href="P_UltimateXR_Animation_IK_UxrWristTorsionIKSolver_Amount">Amount</a></td><td>
+Gets or sets the amount of torsion to apply on this Transform from the source. 0 = no torsion, 1 = full torsion, etc.</td></tr></table>&nbsp;
+<a href="#uxrwristtorsioniksolver-class">Back to Top</a>
+
 ## Methods
 &nbsp;<table><tr><th></th><th>Name</th><th>Description</th></tr><tr><td>![Protected method](media/protmethod.gif "Protected method")</td><td><a href="M_UltimateXR_Animation_IK_UxrWristTorsionIKSolver_Awake">Awake</a></td><td>
 Initializes the component.

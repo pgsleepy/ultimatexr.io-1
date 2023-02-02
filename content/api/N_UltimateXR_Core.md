@@ -6,7 +6,8 @@ Static class containing common constants used across the framework.</td></tr><tr
 Geometry constants.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_UxrConstants_Hand">UxrConstants.Hand</a></td><td>
 Hand constants.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_UxrConstants_Paths">UxrConstants.Paths</a></td><td>
 Contains constants describing file paths in the framework.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_UxrConstants_Shaders">UxrConstants.Shaders</a></td><td>
-Contains constants used in shaders such as variable names, keywords, values, etc.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_UxrManager">UxrManager</a></td><td>
+Contains constants used in shaders such as variable names, keywords, values, etc.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_UxrConstants_UI">UxrConstants.UI</a></td><td>
+Contains constants used in UI.</td></tr><tr><td>![Public class](media/pubclass.gif "Public class")</td><td><a href="T_UltimateXR_Core_UxrManager">UxrManager</a></td><td>
 
 Main manager in the UltimateXR framework. As a <a href="T_UltimateXR_Core_Components_Singleton_UxrSingleton_1">UxrSingleton</a> it can be accessed at any point in the application through <a href="P_UltimateXR_Core_Components_Singleton_UxrSingleton_1_Instance">UxrManager.Instance</a> . It can be pre-instantiated in the scene in order to change default parameters through the inspector but it is not required. When accessing the global <a href="P_UltimateXR_Core_Components_Singleton_UxrSingleton_1_Instance">UxrManager.Instance</a>, if no <a href="T_UltimateXR_Core_UxrManager">UxrManager</a> is currently available, one will be instantiated in the scene as the global Singleton.
 
