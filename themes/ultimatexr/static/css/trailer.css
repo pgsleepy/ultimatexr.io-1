@@ -7,12 +7,13 @@
   z-index: 110;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1s;
+  transition: opacity .3s;
 }
 
 #container-trailer.open {
   opacity: 1;
   pointer-events: all;
+  transition: opacity 1s;
 }
 
 #trailer {
