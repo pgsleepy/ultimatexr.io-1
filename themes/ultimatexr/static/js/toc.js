@@ -14,15 +14,8 @@ var initToc = function() {
     var tocItem = document.createElement('li');
     var targetId = h.getAttribute('id');
     var targetEl = document.querySelector('#' + targetId)
-    tocItem.innerHTML = '<a href="' + location.pathname + '#' + targetId + '">' + h.textContent + '</a>'
-
-    tocItem.addEventListener('click', function(event) {
-      event.preventDefault();
-      window.scroll({
-        top: targetEl.getBoundingClientRect().top - 101 + window.scrollY
-      });
-    });
     
+    tocItem.innerHTML = '<a href="' + location.pathname + '#' + targetId + '">' + h.textContent + '</a>'
     ul.appendChild(tocItem);
   });
 }

@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 99px; /* Scrolling to anchors with sticky header offset */
+}
+
 body {
   font-family: var(--uxr-font-family);
   background-color: var(--uxr-background-color);
