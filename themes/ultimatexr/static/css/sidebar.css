@@ -63,6 +63,7 @@
   top: 63px;
   background-color: var(--uxr-background-color);;
   border-bottom: 1px solid var(--uxr-divider-color);
+  z-index: 9;
 }
 
 #nav-local .container {
