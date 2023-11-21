@@ -7,12 +7,12 @@ body.kind-home a {
   color: #fff;
 }
 
-body.kind-home header {
+body.kind-home > header {
   background-color: var(--uxr-color-primary);
   border-bottom: none;
 }
 
-body.kind-home footer {
+body.kind-home > footer {
   background-color: transparent;
 }
 
@@ -92,7 +92,7 @@ body.kind-home .additional-links ul li:not(:last-of-type)::after {
 
 
 @media (min-height: 600px) and (min-width: 820px) {
-  body.kind-home footer {
+  body.kind-home > footer {
     position: absolute;
     bottom: 0px;
   }
@@ -117,7 +117,7 @@ body.kind-home .additional-links ul li:not(:last-of-type)::after {
     margin-right: 10px;
   }
 
-  body.kind-home .nav-main a {
+  body.kind-home .nav-main a:not(:hover) {
     color: #fff;
   }
 

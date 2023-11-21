@@ -1,0 +1,92 @@
+:root {
+  --docsearch-primary-color: var(--uxr-color-secondary) !important;
+  --docsearch-highlight-color: var(--uxr-color-secondary) !important;
+  --docsearch-container-background: rgba(0,0,0,0.65) !important;
+  --docsearch-logo-color: #999 !important;
+  --docsearch-modal-width: 560px;
+  --docsearch-modal-height: 600px;
+  --docsearch-modal-background: #f5f6f7;
+  --docsearch-modal-shadow: inset 1px 1px 0 0 hsla(0,0%,100%,0.5),0 3px 8px 0 #555a64;
+  --docsearch-searchbox-height: 56px;
+  --docsearch-searchbox-background: #ebedf0;
+  --docsearch-searchbox-focus-background: #fff;
+}
+
+#docsearch {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.DocSearch-Container {
+  backdrop-filter: blur(10px) !important;
+}
+
+#docsearch .DocSearch-Search-Icon {
+  width: 24px;
+  height: 24px;
+}
+
+body.kind-home #docsearch .DocSearch-Button-Placeholder,
+body.kind-home #docsearch .DocSearch-Search-Icon {
+  color: #fff;
+}
+
+#docsearch .DocSearch-Button-Placeholder,
+#docsearch .DocSearch-Search-Icon {
+  color: var(--uxr-color-primary);
+}
+
+#docsearch .DocSearch-Button:hover .DocSearch-Button-Placeholder,
+#docsearch .DocSearch-Button:hover .DocSearch-Search-Icon {
+  color: var(--uxr-color-secondary);
+}
+
+#docsearch .DocSearch-Button {
+  border-radius: 0;
+  background-color: transparent;
+  /*background: rgba(255,255,255,.1);*/
+  /*border-bottom: 1px solid rgba(255,255,255,.25);*/
+  margin-left: min(5vw, 80px);
+}
+
+#docsearch .DocSearch-Button:active,
+#docsearch .DocSearch-Button:focus,
+#docsearch .DocSearch-Button:hover {
+  background: none;
+  box-shadow: none;
+  outline: none;
+}
+
+#docsearch .DocSearch-Button-Placeholder {
+  font-size: 13px;
+  line-height: 42px;
+}
+
+#docsearch .DocSearch-Button-Keys {
+  display: none;
+}
+
+.DocSearch-Logo svg * {
+  fill: #999 !important;
+}
+
+
+@media (min-width: 768px) {
+  #docsearch {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  
+  #docsearch .DocSearch-Search-Icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  #docsearch .DocSearch-Button-Placeholder {
+    font-size: 14px;
+    line-height: 60px;
+  }
+}
