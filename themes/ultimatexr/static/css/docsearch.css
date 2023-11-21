@@ -12,6 +12,10 @@
   --docsearch-searchbox-focus-background: #fff;
 }
 
+.DocSearch-Modal {
+  color: var(--uxr-color-primary);
+}
+
 #docsearch {
   margin-left: auto;
   margin-right: 16px;
@@ -88,5 +92,17 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
   #docsearch .DocSearch-Button-Placeholder {
     font-size: 14px;
     line-height: 60px;
+  }
+
+  .DocSearch-Modal {
+    font-size: 1.176470588235294em;
+  }
+  
+  .DocSearch-Footer {
+    font-size: 1em;
+  }
+  
+  .DocSearch-Input {
+    font-size: 1em !important;
   }
 }
