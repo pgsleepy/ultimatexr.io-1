@@ -60,7 +60,6 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
 
 #docsearch .DocSearch-Button-Placeholder {
   font-size: 13px;
-  line-height: 42px;
 }
 
 #docsearch .DocSearch-Button-Keys {
@@ -74,7 +73,7 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
 
 @media (min-width: 768px) {
   body.kind-home #docsearch .DocSearch-Button {
-    background-color: rgba(255, 255, 255, .1);
+    border: 2px solid rgba(255, 255, 255, .2);
     /* border-bottom: 1px solid rgba(255, 255, 255, .15); */
   }
 
@@ -84,7 +83,7 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
   }
 
   #docsearch .DocSearch-Button {
-    background-color: rgba(242, 242, 242, 1);
+    border: 2px solid rgba(242, 242, 242, 1);
     /*border-bottom: 1px solid rgba(0, 0, 0, .15);*/
   }
 
@@ -94,8 +93,7 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
   }
 
   #docsearch {
-    margin-left: 100px;
-    margin-right: auto;
+    margin-right: 0;
   }
 
   #docsearch .DocSearch-Search-Icon {
@@ -112,7 +110,6 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
 @media (min-width: 992px) {
   #docsearch .DocSearch-Button-Placeholder {
     font-size: 14px;
-    line-height: 60px;
   }
 
   .DocSearch-Modal {

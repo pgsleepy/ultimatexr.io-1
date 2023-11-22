@@ -8,6 +8,7 @@ header {
 }
 
 header .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,6 +93,24 @@ header .logo-ultimatexr {
   color: #fff;
 }
 
+.nav-links {
+  margin-left: auto;
+}
+
+.nav-links .social {
+  display: none;
+}
+
+body.kind-home .nav-links .social svg {
+  fill: #fff;
+  opacity: .65;
+}
+
+body.kind-home .nav-links .social a:hover svg {
+  fill: var(--uxr-color-secondary);
+  opacity: 1;
+}
+
 @media (min-width: 768px) {
   #menu-button-open,
   #menu-button-close {
@@ -99,7 +118,7 @@ header .logo-ultimatexr {
   }
 
   header .container {
-    padding-top: 30px;
+    padding-top: 51px;
     padding-bottom: 0px;
   }
   
@@ -117,6 +136,7 @@ header .logo-ultimatexr {
     width: auto;
     height: auto;
     left: auto;
+    margin-left: auto;
     padding: 0;
     align-self: flex-end;
     pointer-events: initial;
@@ -199,11 +219,53 @@ header .logo-ultimatexr {
     width: 16px;
     height: 16px;
   }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links .social {
+    display: inline-block;
+  }
+
+  .nav-links ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    display: inline-block;
+  }
+  .nav-links li a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-links li svg {
+    position: relative;
+    top: 7px;
+    left: 7px;
+    width: 22px;
+    height: 22px;
+    fill: #666;
+  }
+
+  .nav-links li a:hover svg {
+    fill: var(--uxr-color-secondary);
+  }
 }
 
 @media (min-width: 992px) {
   header .container {
-    padding-top: 40px;
+    padding-top: 51px;
   } 
 
   .nav-main .sub-menu a {
@@ -213,7 +275,7 @@ header .logo-ultimatexr {
 
   .nav-main li a {
     font-size: 14px;
-    line-height: 60px;
+    line-height: 56px;
   }
 }
 
