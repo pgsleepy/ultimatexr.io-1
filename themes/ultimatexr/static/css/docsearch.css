@@ -17,7 +17,6 @@
 }
 
 #docsearch {
-  margin-left: auto;
   margin-right: 16px;
 }
 
@@ -50,13 +49,11 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
   background-color: transparent;
   /*background: rgba(255,255,255,.1);*/
   /*border-bottom: 1px solid rgba(255,255,255,.25);*/
-  margin-left: min(5vw, 80px);
 }
 
 #docsearch .DocSearch-Button:active,
 #docsearch .DocSearch-Button:focus,
 #docsearch .DocSearch-Button:hover {
-  background: none;
   box-shadow: none;
   outline: none;
 }
@@ -76,14 +73,38 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
 
 
 @media (min-width: 768px) {
-  #docsearch {
-    margin-left: 0px;
-    margin-right: 0px;
+  body.kind-home #docsearch .DocSearch-Button {
+    background-color: rgba(255, 255, 255, .1);
+    /* border-bottom: 1px solid rgba(255, 255, 255, .15); */
   }
-  
+
+  body.kind-home #docsearch .DocSearch-Button-Placeholder,
+  body.kind-home #docsearch .DocSearch-Search-Icon {
+    color: rgba(255, 255, 255, .75);
+  }
+
+  #docsearch .DocSearch-Button {
+    background-color: rgba(242, 242, 242, 1);
+    /*border-bottom: 1px solid rgba(0, 0, 0, .15);*/
+  }
+
+  #docsearch .DocSearch-Button-Placeholder,
+  #docsearch .DocSearch-Search-Icon {
+    color: rgba(143, 143, 143, 1);
+  }
+
+  #docsearch {
+    margin-left: 100px;
+    margin-right: auto;
+  }
+
   #docsearch .DocSearch-Search-Icon {
     width: 20px;
     height: 20px;
+  }
+
+  #docsearch .DocSearch-Button-Placeholder:after {
+    content: " docs…" !important;
   }
 }
 
