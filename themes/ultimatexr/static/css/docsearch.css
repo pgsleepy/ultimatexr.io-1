@@ -59,7 +59,7 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
 }
 
 #docsearch .DocSearch-Button-Placeholder {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 #docsearch .DocSearch-Button-Keys {
@@ -110,7 +110,7 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
 
 @media (min-width: 992px) {
   #docsearch .DocSearch-Button-Placeholder {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .DocSearch-Modal {
