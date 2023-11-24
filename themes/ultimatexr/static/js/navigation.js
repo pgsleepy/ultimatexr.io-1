@@ -41,7 +41,7 @@ var initSidebarResize = function() {
     
     var sidebar = document.querySelector('#sidebar');
     var scrollY = window.scrollY;
-    var offsetY = 143;
+    var offsetY = 150;
     
     if (scrollY > 42) {
       offsetY = offsetY - 42;
