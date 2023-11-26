@@ -1,4 +1,9 @@
 {{ $social_image := resources.Get "images/ultimatexr-social.jpg" | fingerprint}}
+{{ $apple_touch_icon := resources.Get "images/apple-touch-icon.png" | fingerprint}}
+{{ $favicon_32x32 := resources.Get "images/favicon-32x32.png" | fingerprint}}
+{{ $favicon_16x16 := resources.Get "images/favicon-16x16.png" | fingerprint}}
+{{ $site_webmanifest := resources.Get "site.webmanifest" | fingerprint}}
+{{ $favicon := resources.Get "images/favicon.ico" | fingerprint}}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
@@ -6,6 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin>
+<link rel="apple-touch-icon" sizes="180x180" href="{{ $apple_touch_icon.Permalink }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon_32x32.Permalink }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon_16x16.Permalink }}">
+<link rel="manifest" href="{{ $site_webmanifest.Permalink }}">
+<link rel="icon" type="image/x-icon" href="{{ $favicon.Permalink }}">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
