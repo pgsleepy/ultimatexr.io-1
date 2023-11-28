@@ -12,20 +12,20 @@ menu:
   main:
     - identifier: guides
       name: Guides
-      url: /guides/what-is-ultimatexr/
+      url: /guides/what-is-ultimatexr
       weight: 10
     - identifier: scripting
       name: API
-      url: /api/
+      url: /api
       weight: 20
     - name: Community
-      url: /community/
+      url: /community
       weight: 30
     - name: Enterprise
       url: 'https://www.vrmada.com/en/contact'
       weight: 40
     - name: About
-      url: /about/
+      url: /about
       weight: 50
 
 markup:
