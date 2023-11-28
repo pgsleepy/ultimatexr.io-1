@@ -1,3 +1,11 @@
+{{ $title := "" }}
+{{ if .Scratch.Get "title" }}
+  {{ $title = print (.Scratch.Get "title") " - " .Site.Title }}
+{{ else }}
+  {{ $title = print .Title " - " .Site.Title }}
+{{ end }}
+{{ if .IsHome }}{{ $title = .Title }}{{ end }}
+
 {{ $social_image := resources.Get "images/ultimatexr-social.jpg" | fingerprint}}
 {{ $apple_touch_icon := resources.Get "images/apple-touch-icon.png" | fingerprint}}
 {{ $favicon_32x32 := resources.Get "images/favicon-32x32.png" | fingerprint}}
@@ -23,25 +31,18 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ultimate_xr">
 <meta name="twitter:creator" content="@ultimate_xr">
-<meta name="twitter:title" content="UltimateXR">
-<meta name="twitter:description" content="The free open source XR Framework and Toolkit for Unity">
+<meta name="twitter:title" content="{{ with .Scratch.Get "title" }}{{ . }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="The free open source VR and AR Framework for Unity">
 <meta name="twitter:image" content="{{ $social_image.Permalink }}">
 <!-- Facebook -->
 <meta property="og:url" content="https://www.ultimatexr.io/">
-<meta property="og:title" content="UltimateXR">
-<meta property="og:description" content="The free open source XR Framework and Toolkit for Unity">
+<meta property="og:title" content="{{ with .Scratch.Get "title" }}{{ . }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="The free open source VR and AR Framework for Unity">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{ $social_image.Permalink }}">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-{{ $title := "" }}
-{{ if .Scratch.Get "title" }}
-  {{ $title = print (.Scratch.Get "title") " - " .Site.Title }}
-{{ else }}
-  {{ $title = print .Title " - " .Site.Title }}
-{{ end }}
-{{ if .IsHome }}{{ $title = .Title }}{{ end }}
 <title>{{ $title }}</title>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
