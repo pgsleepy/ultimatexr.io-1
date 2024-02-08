@@ -900,7 +900,7 @@ if (spline.EvaluateUsingArcLength(halfLength, out Vector3 position, out Vector3 
  
 ## Networking
 
-**[Edit]*** Version 1.0.0 will soon be released and is currently available as a preview on [GitHub](https://github.com/VRMADA/ultimatexr-unity/tree/release/v1.0.0). It has native networking capabilities and connectors for the most popular SDKs. Check it out!
+**[Edit]** Version 1.0.0 will soon be released and is currently available as a preview on [GitHub](https://github.com/VRMADA/ultimatexr-unity/tree/release/v1.0.0). It has native networking capabilities and connectors for the most popular SDKs. Check it out!
 
 UltimateXR doesn’t provide native networking components, but currently provides ways to easily sync the most significant events: avatar events (hand poses, teleportation...) and manipulation (grabs, releases, placing...).
 
