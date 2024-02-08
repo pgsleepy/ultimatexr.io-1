@@ -900,6 +900,8 @@ if (spline.EvaluateUsingArcLength(halfLength, out Vector3 position, out Vector3 
  
 ## Networking
 
+**[Edit]*** Version 1.0.0 will soon be released and is currently available as a preview on [GitHub](https://github.com/VRMADA/ultimatexr-unity/tree/release/v1.0.0). It has native networking capabilities and connectors for the most popular SDKs. Check it out!
+
 UltimateXR doesn’t provide native networking components, but currently provides ways to easily sync the most significant events: avatar events (hand poses, teleportation...) and manipulation (grabs, releases, placing...).
 
 Synchronization can be done using the IUxrStateSync interface, which provides a generic way to subscribe to a state change event and the other way around, given a state change event be able to execute it. The process would be sending the events received in the source computer (IUxrStateSync.StateChanged) to remote computers and execute them there (IUxrStateSync.SyncState).
