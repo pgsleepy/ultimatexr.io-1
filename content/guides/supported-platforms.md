@@ -9,12 +9,12 @@ UltimateXR currently supports the following platforms and devices:
 - *OVR/Oculus/Meta*:
   - Oculus Rift/Rift-S
   - Oculus Quest
-  - Meta Quest 2
+  - Meta Quest 2 and 3
 - *Pico XR*
   - Pico Neo 3
 - *SteamVR*
   - Oculus Rift/Rift-S/Quest
-  - Meta Quest 2
+  - Meta Quest 2 and 3
   - HTC Vive/Vive Pro
   - HTC Vive Cosmos
   - Valve Index
