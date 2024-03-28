@@ -36,7 +36,7 @@ The SDK Manager is the main place to check the status of all supported integrati
 
 ![](/guides/media/supported-platforms/02SDKManager.png)
  
-- [Setting up Magic Leap SDK](/guides/magicleap2)
+- [Setting up Magic Leap SDK](/guides/magicleap)
 - [Setting up Oculus SDK](/guides/oculus)
 - [Setting up Pico XR SDK](/guides/picoxr)
 - [Setting up SteamVR](/guides/steamvr)

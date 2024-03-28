@@ -1,5 +1,5 @@
 ---
-title: "Magic Leap 2"
+title: "Magic Leap"
 ---
 
 # Magic Leap 2
@@ -11,7 +11,7 @@ Switch to Android using File -> Buid Settings.
 
 ![](/guides/media/supported-platforms/PicoXR01Android.png)
  
-Open the UltimateXR SDK Manager using the menu Tools -> UltimateXR -> SDK Manager. Click Get SDK under the Magic Leap 2 section. This will open a page with instructions to install all the required elements.
+Open the UltimateXR SDK Manager using the menu Tools -> UltimateXR -> SDK Manager. Click Get SDK under the Magic Leap section. This will open a page with instructions to install all the required elements.
 
 ![](/guides/media/supported-platforms/ML2SDKManager.png)
  
@@ -21,7 +21,7 @@ After following [the instructions](https://developer-docs.magicleap.cloud/docs/g
 
 Go to Edit -> Project Settings and set up the Android permissions under the MagicLeap category.
 
-/media/supported-platforms/MagicLeap2Permissions.png)
+![](/guides/media/supported-platforms/MagicLeap2Permissions.png)
 
 Check for more Magic Leap settings under the XR Plug-in Management section.
 
