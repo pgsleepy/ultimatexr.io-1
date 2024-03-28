@@ -6,6 +6,8 @@ title: "Supported platforms"
 
 UltimateXR currently supports the following platforms and devices:
 
+- *Magic Leap*:
+  - Magic Leap 2
 - *OVR/Oculus/Meta*:
   - Oculus Rift/Rift-S
   - Oculus Quest
@@ -34,6 +36,7 @@ The SDK Manager is the main place to check the status of all supported integrati
 
 ![](/guides/media/supported-platforms/02SDKManager.png)
  
+- [Setting up Magic Leap SDK](/guides/magicleap2)
 - [Setting up Oculus SDK](/guides/oculus)
 - [Setting up Pico XR SDK](/guides/picoxr)
 - [Setting up SteamVR](/guides/steamvr)
