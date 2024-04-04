@@ -58,8 +58,9 @@ var initSidebarResize = function() {
 }
 
 var initSidebarMenu = function() {
-  var parentNodes = document.querySelectorAll('#sidebar li:has( > ul) > a');
-  parentNodes.forEach( el => {
+  var links = document.querySelectorAll('#sidebar li:has( > ul) > a');
+  links.forEach( el => {
+    el.parentNode.classList.add('collapsed');  
     el.addEventListener('click', function(event) {
       event.preventDefault();
       el.parentNode.classList.toggle('collapsed');
