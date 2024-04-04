@@ -35,7 +35,7 @@ The UxrGrabbableObject component can be added to an object so that it becomes gr
 Let’s create a small sphere with scale x=0.07 y=0.07 z=0.07 and add the UxrGrabbableObject component.
 After adding the component, it should already work out-of-the-box. This means that tuning grabbing behavior becomes changing the default parameters instead of figuring out how to configure it from scratch.
 
-![](/guides/media/manipulation/01Grabbable.jpg)
+![](/docs/guides/media/manipulation/01Grabbable.jpg)
  
 By pressing Play you should be able to grab the ball and move it around. It will snap to the hand but will not fit.
 
@@ -48,7 +48,7 @@ At this point you have 2 main choices:
 
 Let’s continue with the previous example and register the avatar to use grab poses. The inspector will now look like this:
 
-![](/guides/media/manipulation/02RegisterAvatar.jpg)
+![](/docs/guides/media/manipulation/02RegisterAvatar.jpg)
  
 The green fields now tell you which fields have specific values for the selected avatar. Each avatar that is registered will have its own set of values for the green fields, which in this case means that every avatar can specify its own pose and snap points for the left and right hand.
 
@@ -60,11 +60,11 @@ By pressing the Create Left Snap and Create Right Snap buttons you will create t
 
 At this point you should be able to see a preview mesh in the Scene Window for the grab pose of both hands.
 
-![](/guides/media/manipulation/03Pose01.png)
+![](/docs/guides/media/manipulation/03Pose01.png)
  
 If you select the newly created Left Grab or Right Grab object, you will notice that the preview will switch to the snap that is selected.
 
-![](/guides/media/manipulation/04Snap.png)
+![](/docs/guides/media/manipulation/04Snap.png)
  
 That is because a UxrGrabbableSnapTransform component was added, that will also let you adjust the blend value since the GrabBall pose is a blend pose.
 
@@ -72,19 +72,19 @@ Now, by adjusting the blend value and moving the transform around, you can easil
 
 With some small adjustments you should now be able to end up with a grip that fits the sphere perfectly.
 
-![](/guides/media/manipulation/05EndResult.png)
+![](/docs/guides/media/manipulation/05EndResult.png)
  
 Do this for both hands, keeping in mind that the blend pose value is shared between left and right, and you should now be able to check in play mode your improvements.
 
 You can add more grab points to grabbable objects so that they can be grabbed from many angles and using different grips. The framework will be able to determine the grip that will be used based on the position and orientation of the object. Click on the + at the end of the Grab Points section to add new grab points.
 
-![](/guides/media/manipulation/05ZGrabPoints.png)
+![](/docs/guides/media/manipulation/05ZGrabPoints.png)
 
 A good practice is to name each grab point so that the snap transforms that are generated later have meaningful names. This will make it easier for other developers to understand how the grabs are structured.
 
 Sometimes it is easy to end up with many different grab points that end up cluttering the scene window:
 
-![](/guides/media/manipulation/06Cluttering.png)
+![](/docs/guides/media/manipulation/06Cluttering.png)
  
 You can filter out grab previews by:
 
@@ -93,7 +93,7 @@ You can filter out grab previews by:
 
 Here is the same view with all grab points collapsed and filtering out the left hand
 
-![](/guides/media/manipulation/07ClutteringFixed.png)
+![](/docs/guides/media/manipulation/07ClutteringFixed.png)
  
 Here are some other tips that can be useful:
 

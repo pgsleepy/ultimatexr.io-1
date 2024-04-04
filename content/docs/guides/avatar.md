@@ -28,7 +28,7 @@ They can be found in the UltimateXR/Prefabs/Avatars folder.
 
 The _URP prefab is meant to be used in Universal Render Pipeline applications, while the _BRP variant is for applications using the Built-in Render Pipeline.
 
-![](/guides/media/avatars/01AvatarPrefabs.png)
+![](/docs/guides/media/avatars/01AvatarPrefabs.png)
  
 The first question normally is, but where’s the normal hands avatar? The answer is there is no “normal” hand size, hand sizes can vary but in a very simplified world they can be grouped in small hands and big hands. Inclusion is one of the main goals of our avatars, and we try to support both in all our applications so that everyone feels included.
 
@@ -36,7 +36,7 @@ Let’s create a new scene and drag the BigHandsAvatar to it. Make sure to remov
 
 You will notice this warning sign on the avatar inspector:
 
-![](/guides/media/avatars/02AvatarWarning.png)
+![](/docs/guides/media/avatars/02AvatarWarning.png)
  
 Click Fix to save your avatar prefab variant to a folder in your project. This is to make sure all changes will be applied to your avatar prefab variant instead of the UltimateXR avatar prefab. Since the UltimateXR prefab may be overwritten with changes during framework updates, you always want to work with a prefab variant that stores your modifications.
 
@@ -48,11 +48,11 @@ This has additional advantages:
 
 Now click Play. If your environment has been correctly set up and the device integration is working, you should be able to see your hands and make a fist by pressing the grab button.
 
-![](/guides/media/avatars/03AvatarTesting.png)
+![](/docs/guides/media/avatars/03AvatarTesting.png)
  
 You can change your appearance using the different combinations provided. You may see that inside the avatar there are glove and hand objects for each side. You can select to activate either the gloves or the hands, and assign any of the following pre-defined materials:
 
-![](/guides/media/avatars/04Gloves.png)
+![](/docs/guides/media/avatars/04Gloves.png)
  
 For the glove objects:
 
@@ -72,11 +72,11 @@ You can also create a new custom skin by creating a new material and assigning t
 
 If you decide to use the hand objects instead of the gloves, make sure you replace the glove renderers assigned by default in the UxrAvatar component with the hand renders:
 
-![](/guides/media/avatars/05ZRenderers.png)
+![](/docs/guides/media/avatars/05ZRenderers.png)
  
 One important thing is making sure you do not move these hands, since there is another set of “virtual” hands that they depend on. If you check in the object tree, you will notice that there is a nested prefab called BigHandsIntegration.
 
-![](/guides/media/avatars/06HandsIntegration.png)
+![](/docs/guides/media/avatars/06HandsIntegration.png)
  
 The LeftHand and RightHand objects inside BigHandsIntegration will show a green overlay hand in the scene window when selected. These hands need to be perfectly aligned with the avatar hand to work properly. Since they are already aligned, if you move any of the avatar hands they will become misaligned. If you really need to move an avatar hand for whatever reason, make sure you move the hand inside the HandsIntegration prefab to keep the alignment.
 
@@ -91,11 +91,11 @@ The fact that it can easily add all this functionality to any avatar, even to th
 
 A last step is required if you opted for the hand objects instead of the gloves. Go to the grabbers located below the LeftHand and RightHand inside the BigHandsIntegration object.
 
-![](/guides/media/avatars/06Z1GrabberFix.png)
+![](/docs/guides/media/avatars/06Z1GrabberFix.png)
  
 Both components currently reference the glove renderers, which you deactivated in favor of the hands. You need to reference the HandLeft and HandRight renderers that you activated instead. What this does is tell the grabbers which objects should be used to preview grab poses.
 
-![](/guides/media/avatars/06Z2GrabberFix.png)
+![](/docs/guides/media/avatars/06Z2GrabberFix.png)
  
 Possible next steps setting up your avatar:
 
@@ -115,17 +115,17 @@ You will notice that there is immediately an assistant on top of the component t
 
 Let’s see what it can do automatically:
 
-![](/guides/media/avatars/07AvatarFix01.png)
-![](/guides/media/avatars/08AvatarFix02.png)
-![](/guides/media/avatars/09AvatarFix03.png)
+![](/docs/guides/media/avatars/07AvatarFix01.png)
+![](/docs/guides/media/avatars/08AvatarFix02.png)
+![](/docs/guides/media/avatars/09AvatarFix03.png)
      
 Woops! It seems we got our first roadblock.
 
-![](/guides/media/avatars/10AvatarFix04.png)
+![](/docs/guides/media/avatars/10AvatarFix04.png)
  
 This is because we haven’t placed anything hanging from the avatar yet. Let’s add our Cyborg geometry, we’ll drag the CyborgGeo asset under the avatar GameObject.
 
-![](/guides/media/avatars/11AvatarFix05.png)
+![](/docs/guides/media/avatars/11AvatarFix05.png)
  
 Let’s go back to the UxrAvatar assistant and try Fix again. It seems to work now! 
 
@@ -133,19 +133,19 @@ Now we set the Rig Type to Half or Full Body since the avatar is more than just 
 
 We see that there are some elements that weren’t found correctly (Upper Chest, Chest, and Spine) but the rest was automatically assigned and found, including all finger bones. Let’s assign the missing elements.
 
-![](/guides/media/avatars/12AvatarFix06.png)
+![](/docs/guides/media/avatars/12AvatarFix06.png)
  
 Going back to the assistant, we see it now offers a choice between using Big Hands or Small Hands for the Hands Integration. You can check the previous section (Using a UltimateXR avatar prefab) if you are not familiar with what the Hands Integration is.
 
-![](/guides/media/avatars/13AvatarFix07.png)
+![](/docs/guides/media/avatars/13AvatarFix07.png)
  
 Let’s go with the small hands this time. The hand size will not affect the avatar itself; it will only decide which hands are shown when the avatar Render Mode is set to Controllers. When the Controllers are rendered, the Show Controller parameter tells whether to also render hands on top mimicking the user input on the real controllers. These hands, rendered using IK, can either be the big hands or the small hands. It really depends on what you consider your own avatar hand size to be, so that it doesn’t feel different from the avatar that you created.
 
-![](/guides/media/avatars/14AvatarFix08.png)
+![](/docs/guides/media/avatars/14AvatarFix08.png)
  
 Once we have selected the small hands, we see that the assistant tells us that the avatar is ready to rock!
 
-![](/guides/media/avatars/15AvatarFix09.png)
+![](/docs/guides/media/avatars/15AvatarFix09.png)
  
 Let’s see how well the hand integration was automatically aligned with our avatar.
 
@@ -153,23 +153,23 @@ Open the SmallHandsIntegration object added to our avatar and select the LeftHan
 
 Do the same operation on the right hand.
 
-![](/guides/media/avatars/16AvatarFix10.png)
+![](/docs/guides/media/avatars/16AvatarFix10.png)
  
 When selecting LeftHand and RightHand in the SmallHandsIntegration object, you may also have noticed that the inspector lets you choose which hands are shown when the avatar Render Mode is set to LeftController + RightController. Set up which combination you prefer.
 
-![](/guides/media/avatars/17AvatarFix11.png)
+![](/docs/guides/media/avatars/17AvatarFix11.png)
  
 The next step is quite critical for manipulation: Go to the GrabberLeft and GrabberRight objects hanging from LeftHand/RightHand and assign them the correct renderers for each hand. This will provide a way to preview grab hand poses when editing the pose properties of a grabbable object.
 
-![](/guides/media/avatars/18AvatarFix12.png)
+![](/docs/guides/media/avatars/18AvatarFix12.png)
  
 Now go to the UxrAvatar component and drag all the renderers in your avatar to the Avatar Renderers field. It can be useful to click the lock on the inspector to be able to multi-select all renderers in the hierarchy and drag&drop them to the Avatar Renderers.
 
-![](/guides/media/avatars/19AvatarFix13.png)
+![](/docs/guides/media/avatars/19AvatarFix13.png)
 
 To finish let’s go to the root GameObject and edit the UxrStandardAvatarController component. We can adjust the eyes height so that the gizmos shown coincide with the eyes on the avatar. All other values are good by default.
 
-![](/guides/media/avatars/20AvatarFix14.png)
+![](/docs/guides/media/avatars/20AvatarFix14.png)
  
 Now click Play to test the avatar.
 

@@ -17,7 +17,7 @@ When attached to a GameObject, it will tell the <a href="T_UltimateXR_Guides_Uxr
 public class UxrCompassTargetHint : UxrComponent
 ```
 
-<a href="UltimateXR/Scripts/Guides/UxrCompassTargetHint.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
+<a href="UltimateXR/Scripts/docs/guides/UxrCompassTargetHint.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
 The UxrCompassTargetHint type exposes the following members.
 
 

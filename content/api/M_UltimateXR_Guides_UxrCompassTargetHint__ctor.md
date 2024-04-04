@@ -12,7 +12,7 @@
 public UxrCompassTargetHint()
 ```
 
-<a href="UltimateXR/Scripts/Guides/UxrCompassTargetHint.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
+<a href="UltimateXR/Scripts/docs/guides/UxrCompassTargetHint.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
 
 ## See Also
 

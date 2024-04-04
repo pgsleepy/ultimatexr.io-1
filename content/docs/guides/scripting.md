@@ -24,20 +24,20 @@ Here are some tips to help you navigate through the code:
 
 Use Ctrl+M followed by Ctrl+O to collapse to definitions. Our source files are grouped in sections that follow a logic order, and the collapsed view helps getting a quick look at what is available and how the file is organized. Public properties, events and methods will be shown on top and will help you understand how the components are used.
 
-![](/guides/media/scripting/01Collapsed.png)
+![](/docs/guides/media/scripting/01Collapsed.png)
 
 ## Expanded view
 
 Use Ctrl+M followed by Ctrl+L to expand the definitions. The collapse and expand shortcuts will help you alternate between the two views to quickly navigate through the code. 
 
-![](/guides/media/scripting/02Expanded.png)
+![](/docs/guides/media/scripting/02Expanded.png)
 
 ## Code completion
 
 Make use of the autocompletion and tooltips in your IDE, such as Intellisense in Visual Studio or the built-in capabilities in Rider. The framework has full XML documentation which among other things will assist you when you write code:
 
-![](/guides/media/scripting/03AutoCompletion.png)
+![](/docs/guides/media/scripting/03AutoCompletion.png)
  
-To check commonly used code snippets that will help you developing your VR apps navigate to the [How Do I...](/guides/scripting-how-do-i) section. It will also help you understand which classes are involved in the different aspects of development.
+To check commonly used code snippets that will help you developing your VR apps navigate to the [How Do I...](/docs/guides/scripting-how-do-i) section. It will also help you understand which classes are involved in the different aspects of development.
 
 If you need help regarding specific classes it is recommended to visit the [API](/api) section where all functionality is detailed.

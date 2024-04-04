@@ -10,9 +10,9 @@ params:
 
 menu:
   main:
-    - identifier: guides
-      name: Guides
-      url: /guides/what-is-ultimatexr
+    - identifier: docs
+      name: Docs
+      url: /docs/guides/what-is-ultimatexr
       weight: 10
     - identifier: scripting
       name: API

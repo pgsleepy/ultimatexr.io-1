@@ -57,8 +57,19 @@ var initSidebarResize = function() {
   window.addEventListener('scroll', resize);
 }
 
+var initSidebarMenu = function() {
+  var parentNodes = document.querySelectorAll('#sidebar li:has( > ul) > a');
+  parentNodes.forEach( el => {
+    el.addEventListener('click', function(event) {
+      event.preventDefault();
+      el.parentNode.classList.toggle('collapsed');
+    });
+  })
+}
+
 document.addEventListener('DOMContentLoaded', function(event) {
   initMobileNavigation();
+  initSidebarMenu();  
 
   // Check if we have local navigation
   var navLocal = document.querySelector('#nav-local');

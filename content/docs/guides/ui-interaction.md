@@ -14,7 +14,7 @@ To provide maximum compatibility with existing workflows and designs, UltimateXR
 
 Here is an example of the popular [SRDebugger tool](https://www.stompyrobot.uk/tools/srdebugger/), working in VR using UltimateXR:
 
-![](/guides/media/ui/01SRDebugger.jpg)
+![](/docs/guides/media/ui/01SRDebugger.jpg)
  
 ## Interacting with a UI
 
@@ -27,11 +27,11 @@ UltimateXR supports two ways to interact with a user interface:
 
 The first requirement to be able to use user interfaces is to add a Unity *EventSystem* GameObject to the scene using the GameObject -> UI -> EventSystem menu:
 
-![](/guides/media/ui/02EventSystem.jpg)
+![](/docs/guides/media/ui/02EventSystem.jpg)
 
 We then add the *UxrPointerInputModule* component to the *EventSystem* GameObject which looks as follows:
 
-![](/guides/media/ui/03UxrPointerInputModule.jpg)
+![](/docs/guides/media/ui/03UxrPointerInputModule.jpg)
  
 The *UxrPointerInputModule* is required to enable interaction with canvases in the scene.
 
@@ -39,7 +39,7 @@ The *Auto Enable On World Canvases* option allows UltimateXR to automatically se
 
 If for some reason you don’t want UltimateXR to automatically set up pre-existing canvases or you are instantiating a canvas at runtime, you need to set up the canvas manually. This is done by simply adding a *UxrCanvas* component on the same GameObject that has the Unity Canvas:
 
-![](/guides/media/ui/04UxrCanvas.jpg)
+![](/docs/guides/media/ui/04UxrCanvas.jpg)
  
 A common mistake is to forget adding the *UxrCanvas* component to prefabs that are instantiated at runtime.
 
@@ -47,7 +47,7 @@ A common mistake is to forget adding the *UxrCanvas* component to prefabs that a
 
 The built-in avatars in UltimateXR already come with fingertips and laser pointers pre-configured. The prefabs have the fingertips enabled and the laser pointers disabled by default. If you want to use laser pointers instead, you can enable them by enabling the GameObjects hanging from the HandsIntegration object as shown below:
 
-![](/guides/media/ui/05LaserPointers.jpg)
+![](/docs/guides/media/ui/05LaserPointers.jpg)
  
 ## Setting up fingertips in a custom avatar
 
@@ -55,7 +55,7 @@ Fingertips are enabled using the *UxrFingerTip* component and are normally added
 
 An important consideration is to align the forward vector of the GameObject containing the *UxrFingerTip* component in the direction the pressing is performed. Using a slight downward angle is desired because press actions are normally performed that way. UltimateXR filters out press actions that aren’t performed in a natural angle, so be careful with this step. The right and up vectors do not require to have a specific orientation.
 
-![](/guides/media/ui/06FingerTip.jpg)
+![](/docs/guides/media/ui/06FingerTip.jpg)
  
 ## Setting up laser pointers in a custom avatar.
 
@@ -63,7 +63,7 @@ UI laser pointers are enabled using the *UxrLaserPointer* component, which are n
 
 The *UxrLaserPointer* shows the following parameters:
 
-![](/guides/media/ui/07LaserPointerComponent.jpg)
+![](/docs/guides/media/ui/07LaserPointerComponent.jpg)
  
 ### General properties
 
@@ -97,11 +97,11 @@ The *UxrControlInput* is a very useful component that provides additional functi
 
 Audio and haptic feedback can be configured using the *UxrControlInput* inspector:
 
-![](/guides/media/ui/08ControlInput.jpg)
+![](/docs/guides/media/ui/08ControlInput.jpg)
  
 Which completely expanded looks like this:
 
-![](/guides/media/ui/09ExpandedControlInput.jpg) 
+![](/docs/guides/media/ui/09ExpandedControlInput.jpg) 
 
 Each press/release/click event allows to specify an optional audio clip that should be played and optional haptic feedback.
 
@@ -112,7 +112,7 @@ The haptic clip supports some interesting features:
 
 ## UxrControlInput scripting
 
-Some examples of common *UxrControlInput* use can be found [here](/guides/scripting-how-do-i#ui).
+Some examples of common *UxrControlInput* use can be found [here](/docs/guides/scripting-how-do-i#ui).
 
 The full *UxrControlInput* API can be found [here](/api/T_UltimateXR_UI_UnityInputModule_Controls_UxrControlInput).
 
@@ -132,6 +132,6 @@ The full set of tweening animation components are:
 
 They can be added to the different elements in a UI and will perform the given animation when enabled.
 
-For examples of use via scripting go to [How do I?](/guides/scripting-how-do-i#ui)
+For examples of use via scripting go to [How do I?](/docs/guides/scripting-how-do-i#ui)
 
 You can also check the full tweening API [here](/api/N_UltimateXR_Animation_UI).

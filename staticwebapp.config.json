@@ -3,12 +3,77 @@
   "routes": [
     {
       "route": "/learn",
-      "redirect": "/guides/what-is-ultimatexr",
+      "redirect": "/docs/guides/what-is-ultimatexr",
       "statusCode": 301
     },
     {
       "route": "/guides/learn",
-      "redirect": "/guides/what-is-ultimatexr",
+      "redirect": "/docs/guides/what-is-ultimatexr",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/sample-scene",
+      "redirect": "/docs/guides/example-scene",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/what-is-ultimatexr",
+      "redirect": "/docs/guides/what-is-ultimatexr",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/how-to-contribute",
+      "redirect": "/docs/guides/how-to-contribute",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/installation",
+      "redirect": "/docs/guides/installation",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/supported-platforms",
+      "redirect": "/docs/guides/supported-platforms",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/magicleap",
+      "redirect": "/docs/guides/magicleap",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/oculus",
+      "redirect": "/docs/guides/oculus",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/picoxr",
+      "redirect": "/docs/guides/picoxr",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/steamvr",
+      "redirect": "/docs/guides/steamvr",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/wavexr",
+      "redirect": "/docs/guides/wavexr",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/windows-mixed-reality",
+      "redirect": "/docs/guides/windows-mixed-reality",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/tools-menu",
+      "redirect": "/docs/guides/tools-menu",
+      "statusCode": 301
+    },
+    {
+      "route": "/guides/example-scene",
+      "redirect": "/docs/guides/example-scene",
       "statusCode": 301
     }
   ]

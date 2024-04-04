@@ -15,7 +15,7 @@ Compass component that assists the user by giving visual hints to know where to 
 public class UxrCompass : UxrSingleton<UxrCompass>
 ```
 
-<a href="UltimateXR/Scripts/Guides/UxrCompass.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
+<a href="UltimateXR/Scripts/docs/guides/UxrCompass.cs" rel="noopener noreferrer" title="View the source code">View Source</a><br />
 The UxrCompass type exposes the following members.
 
 

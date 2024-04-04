@@ -30,15 +30,15 @@ UltimateXR currently supports the following platforms and devices:
 
 Open the UltimateXR SDK Manager window using the top menu Tools -> UltimateXR -> SDK Manager
 
-![](/guides/media/supported-platforms/01SDKManagerOpen.png)
+![](/docs/guides/media/supported-platforms/01SDKManagerOpen.png)
  
 The SDK Manager is the main place to check the status of all supported integrations and add or remove SDKs.
 
-![](/guides/media/supported-platforms/02SDKManager.png)
+![](/docs/guides/media/supported-platforms/02SDKManager.png)
  
-- [Setting up Magic Leap SDK](/guides/magicleap)
-- [Setting up Oculus SDK](/guides/oculus)
-- [Setting up Pico XR SDK](/guides/picoxr)
-- [Setting up SteamVR](/guides/steamvr)
-- [Setting up WaveXR](/guides/wavexr)
-- [Setting up Windows Mixed Reality](/guides/windows-mixed-reality)
+- [Setting up Magic Leap SDK](/docs/guides/magicleap)
+- [Setting up Oculus SDK](/docs/guides/oculus)
+- [Setting up Pico XR SDK](/docs/guides/picoxr)
+- [Setting up SteamVR](/docs/guides/steamvr)
+- [Setting up WaveXR](/docs/guides/wavexr)
+- [Setting up Windows Mixed Reality](/docs/guides/windows-mixed-reality)

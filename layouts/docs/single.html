@@ -1,0 +1,44 @@
+{{ define "sidebar" }}
+  <h3>Getting started</h3>
+  <ul>
+    <li><a href="/docs/guides/what-is-ultimatexr">What is UltimateXR?</a></li>
+    <li><a href="/docs/guides/how-to-contribute">How to Contribute<i class="label">new!</i></a></li>
+    <li><a href="/docs/guides/installation">Installation</a></li>
+    <li>
+      <a href="/docs/guides/supported-platforms">
+        Supported Platforms
+      </a>
+      <ul>
+        <li>
+          <li><a href="/docs/guides/supported-platforms">Overview</a></li>
+          <li><a href="/docs/guides/magicleap">Magic Leap SDK</a></li>
+          <li><a href="/docs/guides/oculus">Oculus SDK</a></li>
+          <li><a href="/docs/guides/picoxr">Pico XR SDK</a></li>
+          <li><a href="/docs/guides/steamvr">SteamVR</a></li>
+          <li><a href="/docs/guides/wavexr">WaveXR</a></li>
+          <li><a href="/docs/guides/windows-mixed-reality">Windows Mixed Reality</a></li>
+        </li>
+      </ul>
+    </li>
+    <li><a href="/docs/guides/tools-menu">Tools Menu<i class="label">new!</i></a></li>
+    <li><a href="/docs/guides/example-scene">Example Scene</a></li>
+  </ul>
+
+  <h3>Tutorials</h3>
+  <ul>
+    <li><a href="/docs/tutorials/creating-your-first-scene">Creating your first scene</a></li>
+    <li><a href="/docs/tutorials/creating-a-grabbable-ball">Creating a grabbable ball</a></li>
+    <li><a href="/docs/tutorials/adding-manipulation-constraints">Adding manipulation constraints</a></li>
+    <li><a href="/docs/tutorials/grab-point-shapes">Grab Point Shapes</a></li>
+    <li><a href="/docs/tutorials/creating-a-custom-avatar">Creating a custom avatar</a></li>
+    <li><a href="/docs/tutorials/creating-a-2d-ui">Creating a 2D UI</a></li>
+    <li><a href="/docs/tutorials/creating-a-3d-ui">Creating a 3D UI</a></li>
+    <li><a href="/docs/tutorials/adding-haptics">Adding haptics</a></li>
+    <li><a href="/docs/tutorials/multiplayer">Multiplayer</a></li>
+    <li><a href="/docs/tutorials/creating-a-weapon">Creating a weapon</a></li>
+  </ul>
+{{ end }}
+
+{{ define "main" }}
+  {{ .Content }}
+{{ end }}

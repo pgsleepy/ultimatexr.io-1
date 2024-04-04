@@ -26,19 +26,24 @@
   color: var(--uxr-color-primary);;
 }
 
+#sidebar li {
+  overflow: hidden;
+}
+
 #sidebar li a {
+  display: block;
   position: relative;
   text-decoration: none;
   color: var(--uxr-color);
-  line-height: 28px;
+  padding: 5px 0px;
+  line-height: 22px;
   transition: color .3s;
 }
 
-#sidebar li a.new:after {
-  position: absolute;
-  content: 'new!';
+#sidebar li .label {
   vertical-align: super;
-  bottom: 0px;
+  top: 0px;
+  margin-left: 2px;
   font-weight: 600;
   font-size: 9px;
   color: var(--uxr-color-secondary);
@@ -56,6 +61,45 @@
   line-height: 32px;
   margin-top: 1em;
   margin-bottom: 0px;
+}
+
+/* Sub tree */
+#sidebar li:has(> ul) > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0px;
+}
+
+#sidebar li:has(> ul) > a:after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  bottom: 1px;
+  right: 2px;
+  border: solid var(--uxr-color);
+  border-width: 0 2.5px 2.5px 0;
+  display: inline-block;
+  padding: 2.5px;
+  transform: rotate(-135deg);
+}
+
+#sidebar li:has(> ul) > a:hover:after {
+  border-color: var(--uxr-color-secondary);
+}
+
+#sidebar li > ul {
+  padding-left: 15px;
+  border-left: 2px solid var(--uxr-color-light-2);
+}
+
+#sidebar li.collapsed > ul {
+  height: 0px;
+}
+
+#sidebar li.collapsed > a:after {
+  bottom: 2.5px;
+  transform: rotate(45deg);
 }
 
 #nav-local {
