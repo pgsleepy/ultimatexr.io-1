@@ -6,7 +6,7 @@ main :not(pre,h1,h2,h3,h4,h5,h6)>code {
 
 main :not(pre,h1,h2,h3,h4,h5,h6)>code {
   background-color: var(--uxr-color-light);
-  padding: .15em .25em;
+  padding: .15em .4em;
   border-radius: 4px;
   font-family: var(--uxr-font-family-monospace);
   color: var(--uxr-color-primary);
