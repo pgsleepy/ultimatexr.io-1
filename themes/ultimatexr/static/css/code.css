@@ -25,3 +25,11 @@ main :not(pre,h1,h2,h3,h4,h5,h6)>code {
   padding: var(--uxr-page-padding);
   overflow-x: scroll;
 }
+
+/* Fixes iOS font sizing anomaly */
+code {
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
