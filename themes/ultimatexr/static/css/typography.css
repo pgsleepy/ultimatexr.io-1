@@ -59,7 +59,17 @@ em {
   font-weight: 700;
 }
 
-main ul,
+main ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 2em;
+  unicode-bidi: isolate;
+}
+
 main ol {
   display: block;
   list-style: none;
@@ -83,7 +93,13 @@ main ul ul {
 main li {
   display: list-item;
   text-align: match-parent;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
   position: relative;
+}
+
+main li::marker {
+  color: var(--uxr-color-secondary);
 }
 
 main ol li {
@@ -99,19 +115,6 @@ main ol li:before {
   font-size: 14px;
   color: var(--uxr-color-secondary);
   content: counter(item) ".";
-}
-
-main ul li:before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: var(--uxr-color-secondary);
-  transition: background-color .5s;
-  left: -1rem;
-  top: 9px;
 }
 
 main a {
