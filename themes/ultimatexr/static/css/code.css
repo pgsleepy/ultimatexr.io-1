@@ -18,12 +18,22 @@ main :not(pre,h1,h2,h3,h4,h5,h6)>code {
 
 .highlight {
   margin: var(--uxr-el-vertical-margin) 0;
+  font-family: var(--uxr-font-family-monospace);
+  background-color: #272822;
+  overflow-x: scroll;
 }
 
 .highlight pre {
-  font-family: var(--uxr-font-family-monospace);
-  padding: var(--uxr-page-padding);
-  overflow-x: scroll;
+  padding: 1em 0;
+}
+
+.highlight code {
+  display: inline-block;
+}
+
+
+.highlight code > span > span {
+  padding: 0 1em;
 }
 
 /* Fixes iOS font sizing anomaly */
