@@ -58,9 +58,13 @@ var initSidebarResize = function() {
 }
 
 var initSidebarMenu = function() {
+  // All links that have a submenu
   var links = document.querySelectorAll('#sidebar li:has( > ul) > a');
+  
   links.forEach( el => {
-    el.parentNode.classList.add('collapsed');  
+    ul = el.parentNode.querySelector('ul');
+    ul.style.height = ul.scrollHeight + 'px';
+    // Add collapse on click event by toggling classes
     el.addEventListener('click', function(event) {
       event.preventDefault();
       el.parentNode.classList.toggle('collapsed');

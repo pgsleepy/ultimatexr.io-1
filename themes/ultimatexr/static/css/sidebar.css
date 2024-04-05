@@ -87,15 +87,17 @@
 
 #sidebar li:has(> ul) > a:hover:after {
   border-color: var(--uxr-color-secondary);
+  opacity: 1;
 }
 
 #sidebar li > ul {
   padding-left: 15px;
   border-left: 2px solid var(--uxr-color-light-2);
+  transition: height .2s;
 }
 
 #sidebar li.collapsed > ul {
-  height: 0px;
+  height: 0px !important;
 }
 
 #sidebar li.collapsed > a:after {
