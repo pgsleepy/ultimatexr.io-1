@@ -81,7 +81,8 @@
   border-width: 0 2.5px 2.5px 0;
   display: inline-block;
   padding: 2.5px;
-  transform: rotate(-135deg);
+  transform: rotate(45deg);
+  opacity: .35;
 }
 
 #sidebar li:has(> ul) > a:hover:after {
@@ -98,8 +99,8 @@
 }
 
 #sidebar li.collapsed > a:after {
-  bottom: 2.5px;
-  transform: rotate(45deg);
+  bottom: 0px;
+  transform: rotate(-45deg);
 }
 
 #nav-local {
