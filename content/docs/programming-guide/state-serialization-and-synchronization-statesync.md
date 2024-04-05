@@ -329,7 +329,7 @@ The answer is that nested synchronization events do not need to be processed, th
 
 Going back to `UxrManager`, **the `ComponentStateChanged` event will only be raised for top level synchronization calls**. Nested synchronization statements will not generate any events. This is the default behavior that can be controlled using the `UseTopLevelStateChangesOnly` property in `UxrManager`.
 
-The main role of `BeginSync()` is to help keep track of the current synchronization depth by incrementing an internal counter that is decremented when `EndSync()` is called. The `ComponentStateChanged` events in `UxrManager` will only be raised when the depth is 1.
+The main role of `BeginSync()` is to keep track of nesting by incrementing an internal counter that is decremented when `EndSync()` is called. The `ComponentStateChanged` events in `UxrManager` will only be raised when the depth is 1.
 
 Another important consideration is that events replicated through `UxrManager.Instance.ExecuteStateSyncEvent()` will not raise `ComponentStateChanged` events themselves to prevent infinite loops. Within `ExecuteStateSyncEvent` all BeginSync/EndSync statements will be ignored. This prevents multiplayer clients retransmitting the events they have received, for example.
 
