@@ -5,6 +5,15 @@ strong {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6 {
+  color: var(--uxr-color-headings);
+}
+
+h1,
+h2,
+h3,
 h4 {
   position: relative;
   font-weight: 600;
@@ -12,14 +21,14 @@ h4 {
 }
 
 h1 {
-  margin: 0 0 3rem;
-  font-size: 3rem;
+  margin: 0 0 2rem;
+  font-size: 2rem;
   line-height: 1.4;
   letter-spacing: -.02em;
 }
 
 h2 {
-  margin: 4rem 0 1.8rem;
+  margin: 3rem 0 0;
   border-top: 1px solid var(--uxr-color-light);
   padding-top: 1.8rem;
   font-size: 24px;

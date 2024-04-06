@@ -4,7 +4,10 @@
 
   --uxr-background-color: #fff;
   --uxr-color: var(--uxr-color-primary);
-  --uxr-color-text-2: rgba(60, 60, 60, 0.7);
+  --uxr-color-headings: rgba(15, 23, 42);
+  --uxr-color-text-body: rgba(75, 85, 99);
+  --uxr-color-text: rgba(51, 65, 85);
+  --uxr-color-text-2: rgba(75 ,85, 99);
   --uxr-color-light: rgb(229, 232, 238);
   --uxr-color-light-2: rgb(240, 241, 242);
   --uxr-color-light-3: rgb(248, 249, 250);

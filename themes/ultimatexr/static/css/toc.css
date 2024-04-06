@@ -3,7 +3,7 @@
 }
 
 #toc li.title {
-  color: var(--uxr-color-primary);
+  color: var(--uxr-color-headings);
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
@@ -19,7 +19,7 @@
   font-weight: 500;
   color: var(--uxr-color-text-2);
   transition: color .5s;
-  line-height: 28px;
+  line-height: 32px;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -34,13 +34,14 @@
   display: block;
   position: relative;
   text-decoration: none;
-  color: var(--uxr-color);
+  color: var(--uxr-color-text);
   padding: 5px 0px;
   line-height: 22px;
   transition: color .3s;
 }
 
 #sidebar li .label {
+  position: absolute;
   vertical-align: super;
   top: 0px;
   margin-left: 2px;
@@ -56,11 +57,17 @@
 #sidebar h3,
 #sidebar li.title {
   font-weight: 700;
-  color: var(--uxr-color);
+  font-size: 1em;
+  text-transform: uppercase;
+  color: var(--uxr-color-headings);
   pointer-events: none;
   line-height: 32px;
   margin-top: 1em;
   margin-bottom: 0px;
+}
+
+#sidebar > ul {
+  margin-bottom: 2em;
 }
 
 /* Sub tree */

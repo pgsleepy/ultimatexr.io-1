@@ -37,6 +37,7 @@ body.kind-home #content .container {
 }
 
 body.kind-home h1 {
+  color: #fff;
   font-size: 36px;
   line-height: 45px;
   font-weight: 700;
