@@ -12,12 +12,43 @@ var initToc = function() {
 
   headings.forEach(function(h) {
     var tocItem = document.createElement('li');
-    var targetId = h.getAttribute('id');
-    var targetEl = document.querySelector('#' + targetId);
-    
+    var targetId = h.getAttribute('id') || h.textContent.replace(/\s+/g, '-').toLowerCase();
+    h.id = targetId; // Ensure the heading has an ID
+
     tocItem.innerHTML = '<a href="' + location.pathname + '#' + targetId + '">' + h.textContent + '</a>';
     ul.appendChild(tocItem);
   });
+
+  // Function to highlight the active section
+  var highlightActiveSection = function() {
+    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    var currentSectionId;
+
+    headings.forEach(function(h) {
+      if (h.offsetTop <= scrollPosition + window.innerHeight / 4) {
+        var hId = h.getAttribute('id');
+        if (hId) { // Check if the heading has an ID
+          currentSectionId = hId;
+        }
+      }
+    });
+
+    if (currentSectionId) {
+      toc.querySelectorAll('li a').forEach(function(link) {
+        var listItem = link.parentElement;
+        listItem.classList.remove('active');
+        if (link.getAttribute('href') === location.pathname + '#' + currentSectionId) {
+          listItem.classList.add('active');
+        }
+      });
+    }
+  };
+
+  // Highlight the active section on scroll
+  document.addEventListener('scroll', highlightActiveSection);
+
+  // Highlight the active section initially
+  highlightActiveSection();
 };
 
 function initializeToc() {
