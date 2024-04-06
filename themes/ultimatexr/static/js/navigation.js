@@ -34,13 +34,14 @@ var initLocalNavigation = function() {
 }
 
 var initSidebarResize = function() {
+  var sidebar = document.querySelector('#sidebar');
+
   var resize = function() {
     if (window.innerWidth < 992) {
       sidebar.style.removeProperty('height');
       return;
     }
     
-    var sidebar = document.querySelector('#sidebar');
     var scrollY = window.scrollY;
     var offsetY = 150;
     
@@ -59,8 +60,10 @@ var initSidebarResize = function() {
 }
 
 var initSidebarMenu = function() {
-  var links = document.querySelectorAll('#sidebar li:has( > ul) > a');
+  var sidebar = document.querySelector('#sidebar');
+  var links = sidebar.querySelectorAll('li:has( > ul) > a');
   
+  // Add expand/collapse functionality to links with subtree
   links.forEach(el => {
     var ul = el.parentNode.querySelector('ul');
     ul.style.height = ul.scrollHeight + 'px';
@@ -86,4 +89,20 @@ function initializeAll() {
   }
 }
 
+// Maintain scroll position across pages
+let scrollTop = 0
+
+addEventListener("turbo:click", ({ target }) => {
+  scrollTop = sidebar.scrollTop;
+})
+
+addEventListener("turbo:render", () => {
+  let sidebar = document.querySelector('#sidebar');
+
+  if (scrollTop) {
+    sidebar.scrollTo(0, scrollTop)
+  }
+})
+
+// Initialize everything
 document.addEventListener("turbo:load", initializeAll);
