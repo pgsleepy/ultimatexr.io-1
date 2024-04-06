@@ -20,7 +20,7 @@
   font-weight: 400;
   color: var(--uxr-color-text-body);
   transition: color .5s;
-  line-height: 32px;
+  line-height: 28px;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
