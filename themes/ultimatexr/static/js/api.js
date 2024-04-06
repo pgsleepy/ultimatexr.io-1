@@ -7,15 +7,17 @@ var initSidebarLinks = function() {
       return '<span class="type-'+ s.toLowerCase() +'">'+ s +'</span>';
     });
   });
-}
+};
 
 var showApiDoc = function() {
   document.querySelector('body.type-api #content').classList.add('loaded');
-}
+};
 
-document.addEventListener('DOMContentLoaded', function(event) {
+var initializeApiPage = function() {
   if (document.querySelector('body').classList.contains('type-api')) {
     initSidebarLinks();
     showApiDoc();
   }
-});
+};
+
+document.addEventListener('turbo:load', initializeApiPage);

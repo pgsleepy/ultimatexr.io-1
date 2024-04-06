@@ -30,6 +30,7 @@ var initLocalNavigation = function() {
 
   overlay.addEventListener('click', closeSidebar);
   buttonClose.addEventListener('click', closeSidebar);
+  document.addEventListener("turbo:click", closeSidebar);
 }
 
 var initSidebarResize = function() {
@@ -58,33 +59,31 @@ var initSidebarResize = function() {
 }
 
 var initSidebarMenu = function() {
-  // All links that have a submenu
   var links = document.querySelectorAll('#sidebar li:has( > ul) > a');
   
-  links.forEach( el => {
-    ul = el.parentNode.querySelector('ul');
+  links.forEach(el => {
+    var ul = el.parentNode.querySelector('ul');
     ul.style.height = ul.scrollHeight + 'px';
-    // Add collapse on click event by toggling classes
     el.addEventListener('click', function(event) {
       event.preventDefault();
       el.parentNode.classList.toggle('collapsed');
     });
-  })
+  });
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
+function initializeAll() {
   initMobileNavigation();
-  initSidebarMenu();  
+  initSidebarMenu();
 
-  // Check if we have local navigation
   var navLocal = document.querySelector('#nav-local');
-  if(navLocal !== null) {
+  if (navLocal !== null) {
     initLocalNavigation();
   }
 
-  // Check if we have a sidebar
   var sidebar = document.querySelector('#sidebar');
-  if(sidebar !== null) {
+  if (sidebar !== null) {
     initSidebarResize();
   }
-});
+}
+
+document.addEventListener("turbo:load", initializeAll);

@@ -7,21 +7,23 @@ var initToc = function() {
   }
 
   var ul = document.createElement('ul');
-  ul.innerHTML = '<li class="title">On this page</li>'
+  ul.innerHTML = '<li class="title">On this page</li>';
   toc.appendChild(ul);
 
   headings.forEach(function(h) {
     var tocItem = document.createElement('li');
     var targetId = h.getAttribute('id');
-    var targetEl = document.querySelector('#' + targetId)
+    var targetEl = document.querySelector('#' + targetId);
     
-    tocItem.innerHTML = '<a href="' + location.pathname + '#' + targetId + '">' + h.textContent + '</a>'
+    tocItem.innerHTML = '<a href="' + location.pathname + '#' + targetId + '">' + h.textContent + '</a>';
     ul.appendChild(tocItem);
   });
-}
+};
 
-document.addEventListener('DOMContentLoaded', function(event) {
+function initializeToc() {
   if (document.querySelector('#toc') !== null) {
     initToc();
   }
-});
+}
+
+document.addEventListener("turbo:load", initializeToc);
