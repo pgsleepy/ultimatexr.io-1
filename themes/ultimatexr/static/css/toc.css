@@ -2,51 +2,8 @@
   display: none;
 }
 
-#toc li.title {
-  color: var(--uxr-color-headings);
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-#toc li {
-  display: list-item;
-  transition: padding .3s;
-}
-
-#toc li a {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--uxr-color-text-body);
-  transition: color .5s;
-  line-height: 28px;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-#toc li a:hover,
-#toc li.active a {
-  color: var(--uxr-color-secondary);
-}
-
-#toc li.active {
-  padding-left: 5px;
-}
-
 @media (min-width: 1200px) {
   #toc {
     display: block;
-    margin-left: 20px;
-    width: 220px;
-    
-  }
-
-  #toc ul {
-    position: sticky;
-    padding-top: calc(var(--uxr-el-vertical-margin) * 1.5);
-    top: 101px;
   }
 }

@@ -50,6 +50,7 @@
   color: var(--uxr-color-secondary);
 }
 
+#sidebar li a.active,
 #sidebar li a:hover {
   color: var(--uxr-color-secondary);
 }
@@ -145,14 +146,13 @@
 #sidebar::-webkit-scrollbar {
   width: 8px; /* Width of the vertical scrollbar */
   height: 8px; /* Height of the horizontal scrollbar */
-  background: transparent; /* Hide scrollbar by default */
+  background: transparent;
 }
 
 /* The scrollbar handle */
 #sidebar::-webkit-scrollbar-thumb {
   background: var(--uxr-color-light); /* Scrollbar handle color */
   border-radius: 8px; /* Roundness of the scrollbar handle */
-  background: transparent; /* Hide scrollbar by default */
 }
 
 /* The scrollbar handle when rolling over sidebar */

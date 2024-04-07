@@ -126,10 +126,6 @@ main ol li:before {
   content: counter(item) ".";
 }
 
-main a {
-  font-weight: 600;
-}
-
 @media print {
   main ul,
   main ol {

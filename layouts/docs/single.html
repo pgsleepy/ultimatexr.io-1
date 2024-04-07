@@ -1,10 +1,15 @@
 {{ define "sidebar" }}
+  {{ $RelPermalink := .RelPermalink }}
   {{ range .Site.Data.docs }}
-  <h3>{{ .title }}</h3>
-  {{ partial "recursive-menu.html" .items }}
+    <h3>{{ .title }}</h3>
+    {{ partial "recursive-menu.html" (dict "items" .items "RelPermalink" $RelPermalink) }}
   {{ end }}
 {{ end }}
 
 {{ define "main" }}
   {{ .Content }}
+
+  {{/* Flatten the menu items and pass them to the pagination partial to build the prev/next links */}}
+  {{ $result := partial "flatten-dict.html" (dict "data" .Site.Data.docs) }}
+  {{ partial "pagination.html" (dict "items" $result.accumulator "RelPermalink" .RelPermalink) }}
 {{ end }}

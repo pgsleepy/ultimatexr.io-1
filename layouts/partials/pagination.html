@@ -1,0 +1,33 @@
+{{ $items := .items }}
+{{ $currentRelUrl := .RelPermalink }}
+{{ $currentRelUrl := strings.TrimRight "/" $currentRelUrl }}
+
+<nav class="pagination">
+  <ul>
+    {{ range $index, $item := $items }}
+      {{ if eq $item.url $currentRelUrl }}
+        {{/* Add previous item if not the first one */}}
+        <li>
+        {{ if gt $index 0 }}
+          {{ $prevIndex := sub $index 1 }}
+          <a href="{{ (index $items $prevIndex).url }}">
+            <div class="pagination-label"><i data-lucide="chevron-left"></i>Previous</div>
+            <div class="pagination-title">{{ (index $items $prevIndex).title }}</div>
+          </a>
+        {{ end }}
+        </li>
+      
+        {{/* Add next item if not the last one */}}
+        <li>
+        {{ if lt $index (sub (len $items) 1) }}
+          {{ $nextIndex := add $index 1 }}
+          <a href="{{ (index $items $nextIndex).url }}">
+            <div class="pagination-label">Next<i data-lucide="chevron-right"></i></div>
+            <div class="pagination-title">{{ (index $items $nextIndex).title }}</div>
+          </a>
+          {{ end }}
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</nav>

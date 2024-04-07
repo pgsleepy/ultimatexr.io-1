@@ -9,7 +9,9 @@
 @import "callouts.css";
 @import "layout.css";
 @import "sidebar.css";
+@import "sidepane.css";
 @import "toc.css";
+@import "pagination.css";
 @import "buttons.css";
 @import "header.css";
 @import "banner-vrmada.css";

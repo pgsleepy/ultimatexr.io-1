@@ -1,0 +1,17 @@
+{{ $accumulator := .accumulator }}
+
+{{ range .data }}
+  {{ if or .url (not .items) }}
+    {{/* Directly append items since $accumulator is always a slice */}}
+    {{ $item := dict "title" .title "url" .url }}
+    {{ $accumulator = $accumulator | append $item }}
+  {{ end }}
+
+  {{ if .items }}
+    {{/* Recurse for nested items, passing the updated accumulator */}}
+    {{ $subresult := partial "flatten-dict.html" (dict "data" .items "accumulator" $accumulator) }}
+    {{ $accumulator = $subresult.accumulator }}
+  {{ end }}
+{{ end }}
+
+{{ return dict "accumulator" $accumulator }}

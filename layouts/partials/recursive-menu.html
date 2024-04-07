@@ -1,9 +1,13 @@
+{{ $items := .items }}
+{{ $currentRelUrl := .RelPermalink }}
+{{ $currentRelUrl := strings.TrimRight "/" $currentRelUrl }}
+
 <ul>
-  {{ range . }}
+  {{ range $items }}
   <li class="{{ if .items }}collapsed{{ end }}">
-    <a href="{{ .url | default "#" }}">{{ .title }}<span class="label">{{ .label }}</span></a>{{ if .label }}{{ end }}
+    <a href="{{ .url | default "#" }}" class="{{ if eq .url $currentRelUrl }}active{{ end }}">{{ .title }}{{ if .label }}<span class="label">{{ .label }}</span>{{ end }}</a>
     {{ if .items }}
-      {{ partial "recursive-menu.html" .items }}
+      {{ partial "recursive-menu.html" (dict "items" .items "RelPermalink" $currentRelUrl) }}
     {{ end }}
   </li>
   {{ end }}
