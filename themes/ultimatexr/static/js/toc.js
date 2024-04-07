@@ -1,13 +1,15 @@
-var initToc = function() {
+var initializeToc = function() {
   var headings = document.querySelectorAll('#content h2');
-  var toc = document.querySelector('#toc');
-
-  if (toc === null || headings.length === 0) {
+  if (headings.length === 0) {
     return;
   }
-
+  
+  var sidepane = document.querySelector('#sidepane .wrapper');
+  var toc = document.createElement('aside');
   var ul = document.createElement('ul');
-  ul.innerHTML = '<li class="title">On this page</li>';
+
+  sidepane.prepend(toc);
+  toc.innerHTML = '<h3>On this page</h3>';
   toc.appendChild(ul);
 
   headings.forEach(function(h) {
@@ -25,7 +27,7 @@ var initToc = function() {
     var currentSectionId;
 
     headings.forEach(function(h) {
-      if (h.offsetTop <= scrollPosition + window.innerHeight / 4) {
+      if (h.offsetTop <= scrollPosition + window.innerHeight / 2) {
         var hId = h.getAttribute('id');
         if (hId) { // Check if the heading has an ID
           currentSectionId = hId;
@@ -50,11 +52,5 @@ var initToc = function() {
   // Highlight the active section initially
   highlightActiveSection();
 };
-
-function initializeToc() {
-  if (document.querySelector('#toc') !== null) {
-    initToc();
-  }
-}
 
 document.addEventListener("turbo:load", initializeToc);

@@ -18,7 +18,10 @@
             <main>
               {{- block "main" . }}{{- end }}
             </main>
-            <aside id="toc">
+            <aside id="sidepane">
+              <div class="wrapper">
+                {{- partial "community-links.html" . -}}
+              </div>
             </aside>
           </div>
         </div>
