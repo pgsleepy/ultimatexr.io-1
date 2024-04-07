@@ -1,3 +1,7 @@
+#sidepane {
+  display: none;
+}
+
 #sidepane .wrapper {
   display: flex;
   flex-direction: column;
