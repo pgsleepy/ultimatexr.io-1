@@ -4,7 +4,6 @@
       url: "/docs/guides/what-is-ultimatexr"
     - title: "How to Contribute"
       url: "/docs/guides/how-to-contribute"
-      label: "new!"
     - title: "Installation"
       url: "/docs/guides/installation"
     - title: "Supported Platforms"
@@ -26,7 +25,6 @@
           url: "/docs/guides/windows-mixed-reality"
     - title: "Tools Menu"
       url: "/docs/guides/tools-menu"
-      label: "new!"
     - title: "Example Scene"
       url: "/docs/guides/example-scene"
 
