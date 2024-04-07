@@ -82,7 +82,7 @@
   content: "";
   display: inline-block;
   position: relative;
-  bottom: 1px;
+  margin-bottom: 1px;
   right: 2px;
   border: solid var(--uxr-color);
   border-width: 0 2.5px 2.5px 0;
