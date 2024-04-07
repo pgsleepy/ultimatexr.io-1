@@ -1,0 +1,20 @@
+{{ $type := .Get 0 }}
+{{ $title := .Get 1 }}
+{{ $inner := (markdownify .Inner) }}
+
+{{ $iconClass := "" }}
+{{- if eq $type "warning" -}}
+  {{ $iconClass = "triangle-alert" }}
+{{- else if eq $type "caution" -}}
+  {{ $iconClass = "octagon-alert" }}
+{{- else if eq $type "tip" -}}
+  {{ $iconClass = "lightbulb" }}
+{{- else -}}
+  {{ $iconClass = "info" }}
+{{- end }}
+
+<div class="callout {{ $type }}">
+    <i data-lucide="{{ $iconClass }}"></i>
+    <div class="title">{{ if $title }}{{ $title }}{{ else }}{{ $type }}{{ end }}</div>
+  <div class="content">{{ $inner }}</div>
+</div>
