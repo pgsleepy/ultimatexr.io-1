@@ -19,7 +19,6 @@ body.type-api #content #sidebar li > a span {
 body.type-api #content #sidebar > ul > li > a {
   font-weight: 700;
   color: var(--uxr-color);
-  pointer-events: none;
   line-height: 32px;
 }
 

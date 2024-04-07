@@ -34,13 +34,14 @@
   display: block;
   position: relative;
   text-decoration: none;
-  color: var(--uxr-color);
+  color: var(--uxr-color-text);
   padding: 5px 0px;
   line-height: 22px;
   transition: color .3s;
 }
 
 #sidebar li .label {
+  position: absolute;
   vertical-align: super;
   top: 0px;
   margin-left: 2px;
@@ -56,11 +57,17 @@
 #sidebar h3,
 #sidebar li.title {
   font-weight: 700;
-  color: var(--uxr-color);
+  font-size: 1em;
+  text-transform: uppercase;
+  color: var(--uxr-color-headings);
   pointer-events: none;
   line-height: 32px;
   margin-top: 1em;
   margin-bottom: 0px;
+}
+
+#sidebar > ul {
+  margin-bottom: 2em;
 }
 
 /* Sub tree */
@@ -75,31 +82,34 @@
   content: "";
   display: inline-block;
   position: relative;
-  bottom: 1px;
+  margin-bottom: 1px;
   right: 2px;
   border: solid var(--uxr-color);
   border-width: 0 2.5px 2.5px 0;
   display: inline-block;
   padding: 2.5px;
-  transform: rotate(-135deg);
+  transform: rotate(45deg);
+  opacity: .35;
 }
 
 #sidebar li:has(> ul) > a:hover:after {
   border-color: var(--uxr-color-secondary);
+  opacity: 1;
 }
 
 #sidebar li > ul {
   padding-left: 15px;
   border-left: 2px solid var(--uxr-color-light-2);
+  transition: height .2s;
 }
 
 #sidebar li.collapsed > ul {
-  height: 0px;
+  height: 0px !important;
 }
 
 #sidebar li.collapsed > a:after {
-  bottom: 2.5px;
-  transform: rotate(45deg);
+  bottom: 0px;
+  transform: rotate(-45deg);
 }
 
 #nav-local {
@@ -129,6 +139,30 @@
   width: 16px;
   height: 16px;
   margin-right: 5px;
+}
+
+/* The scrollbar track */
+#sidebar::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+  background: transparent; /* Hide scrollbar by default */
+}
+
+/* The scrollbar handle */
+#sidebar::-webkit-scrollbar-thumb {
+  background: var(--uxr-color-light); /* Scrollbar handle color */
+  border-radius: 8px; /* Roundness of the scrollbar handle */
+  background: transparent; /* Hide scrollbar by default */
+}
+
+/* The scrollbar handle when rolling over sidebar */
+#sidebar:hover::-webkit-scrollbar-thumb {
+  background: var(--uxr-color-scrollbar); /* Color when hovering over the scrollbar handle */
+}
+
+/* The scrollbar handle on hover */
+#sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--uxr-color-scrollbar-active);
 }
 
 @media (min-width: 768px) {

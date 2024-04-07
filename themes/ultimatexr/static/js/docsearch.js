@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+function initializeDocSearch() {
   docsearch({
     container: "#docsearch",
     appId: "ES5EXUJLVC",
@@ -7,4 +7,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     placeholder: "Search the docs…",
     maxResultsPerGroup: 7
   });
-});
+}
+
+document.addEventListener("turbo:load", initializeDocSearch);

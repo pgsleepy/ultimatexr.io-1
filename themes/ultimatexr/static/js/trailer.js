@@ -13,15 +13,17 @@ var initTrailer = function() {
 
   button.addEventListener('click', function(e) {
     video.currentTime(0);
-    video.initChildren()
+    video.initChildren();
     overlay.classList.add('open');
     containerTrailer.classList.add('open');
     video.play();
-  })
-}
+  });
+};
 
-document.addEventListener('DOMContentLoaded', function(event) {
+function initializeTrailer() {
   if (document.querySelector('body').classList.contains('kind-home')) {
     initTrailer();
   }
-});
+}
+
+document.addEventListener("turbo:load", initializeTrailer);

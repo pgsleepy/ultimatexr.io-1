@@ -9,9 +9,9 @@
         {{- partial "nav-local.html" . -}}
         <div id="content">
           <div class="container">
-            <aside id="sidebar">
+            <aside id="sidebar" {{ if eq $.Type "docs" }}data-turbo-permanent{{ end }}>
               <a href="javascript:;" class="btn-close">
-                <i data-feather="x"></i>
+                <i data-lucide="x"></i>
               </a>
               {{- block "sidebar" . }}{{- end }}
             </aside>

@@ -9,7 +9,7 @@ html {
 body {
   font-family: var(--uxr-font-family);
   background-color: var(--uxr-background-color);
-  color: var(--uxr-color);
+  color: var(--uxr-color-text-body);
   font-size: var(--uxr-font-size);
   line-height: var(--uxr-line-height);
 }

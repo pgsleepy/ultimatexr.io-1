@@ -4,12 +4,23 @@
 
   --uxr-background-color: #fff;
   --uxr-color: var(--uxr-color-primary);
-  --uxr-color-text-2: rgba(60, 60, 60, 0.7);
+  --uxr-color-headings: rgb(15, 23, 42);
+  --uxr-color-text-body: rgb(75, 85, 99);
+  --uxr-color-text: rgb(51, 65, 85);
+  --uxr-color-text-2: rgb(75 ,85, 99);
   --uxr-color-light: rgb(229, 232, 238);
   --uxr-color-light-2: rgb(240, 241, 242);
   --uxr-color-light-3: rgb(248, 249, 250);
 
+  --uxr-color-scrollbar: rgb(229, 232, 238);
+  --uxr-color-scrollbar-active: rgb(201, 206, 210);
+
   --uxr-divider-color: var(--uxr-color-light);
+
+  --uxr-color-callout-info: rgb(14,165,233);
+  --uxr-color-callout-tip: rgb(79,163,124);
+  --uxr-color-callout-warning: rgb(255,140,0);
+  --uxr-color-callout-caution: rgb(209, 36, 47);
 
   --uxr-font-family: 'Poppins', -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   --uxr-font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
