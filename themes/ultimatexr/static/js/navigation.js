@@ -97,7 +97,10 @@ function initSidebarResize(sidebar) {
 function initSidebarMenu(sidebar) {
   const linksWithSubmenu = sidebar.querySelectorAll('li:has( > ul) > a');
   const leafLinks = sidebar.querySelectorAll('li:not(:has( > ul)) > a');
-  const currentHref = new URL(window.location.href).href.replace(/\/$/, '');
+  const currentHref = (location.protocol + '//' + location.host + location.pathname).replace(/\/$/, '');
+
+  // Close sidebar
+  elements.sidebar.classList.remove('open');
 
   const toggleSubmenu = (event) => {
     event.preventDefault();
@@ -118,7 +121,6 @@ function initSidebarMenu(sidebar) {
       link.classList.add('active');
 
       let parentNode = link.parentNode
-      console.log();
       
       while (parentNode) {
         if(parentNode.tagName.toLowerCase() == 'li' && parentNode.classList.contains('collapsed')) {

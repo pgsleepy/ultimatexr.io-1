@@ -35,17 +35,6 @@
   color: oklch(from var(--uxr-color-callout-tip) calc(l / 1.2) c h);
 }
 
-.callout.warning {
-  color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.2) c h);
-  border-color: var(--uxr-color-callout-warning);
-  background-color: hsl(from var(--uxr-color-callout-warning) h s l / .1);
-}
-
-.callout.warning .title,
-.callout.warning svg {
-  color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.2) c h);
-}
-
 .callout.caution {
   color: oklch(from var(--uxr-color-callout-caution) calc(l / 1.2) c h);
   border-color: var(--uxr-color-callout-caution);
@@ -55,4 +44,15 @@
 .callout.caution .title,
 .callout.caution svg {
   color: oklch(from var(--uxr-color-callout-caution) calc(l / 1.2) c h);
+}
+
+.callout.warning {
+  color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.2) c h);
+  border-color: var(--uxr-color-callout-warning);
+  background-color: hsl(from var(--uxr-color-callout-warning) h s l / .1);
+}
+
+.callout.warning .title,
+.callout.warning svg {
+  color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.2) c h);
 }

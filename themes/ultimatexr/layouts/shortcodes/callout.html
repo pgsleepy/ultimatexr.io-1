@@ -3,9 +3,9 @@
 {{ $inner := (markdownify .Inner) }}
 
 {{ $iconClass := "" }}
-{{- if eq $type "warning" -}}
+{{- if eq $type "caution" -}}
   {{ $iconClass = "triangle-alert" }}
-{{- else if eq $type "caution" -}}
+{{- else if eq $type "warning" -}}
   {{ $iconClass = "octagon-alert" }}
 {{- else if eq $type "tip" -}}
   {{ $iconClass = "lightbulb" }}

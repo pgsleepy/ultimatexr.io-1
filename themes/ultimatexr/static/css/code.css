@@ -1,18 +1,14 @@
 /* Inline code */
 
-main :not(pre,h1,h2,h3,h4,h5,h6)>code {
-  white-space: nowrap;
-}
-
-main :not(pre,h1,h2,h3,h4,h5,h6)>code {
+main :not(pre)>code {
   background-color: var(--uxr-color-light);
   padding: .15em .4em;
   border-radius: 4px;
   font-family: var(--uxr-font-family-monospace);
   color: var(--uxr-color-primary);
   transition: color .5s, background-color .5s;
+  white-space: nowrap;
 }
-
 
 /* Code blocks */
 

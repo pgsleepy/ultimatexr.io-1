@@ -19,8 +19,8 @@
 
   --uxr-color-callout-info: rgb(14,165,233);
   --uxr-color-callout-tip: rgb(79,163,124);
-  --uxr-color-callout-warning: rgb(255,140,0);
-  --uxr-color-callout-caution: rgb(209, 36, 47);
+  --uxr-color-callout-caution: rgb(255,140,0);
+  --uxr-color-callout-warning: rgb(209, 36, 47);
 
   --uxr-font-family: 'Poppins', -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
   --uxr-font-family-monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;

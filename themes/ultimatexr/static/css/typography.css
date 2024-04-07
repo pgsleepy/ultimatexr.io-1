@@ -120,7 +120,7 @@ main ol li {
 main ol li:before {
   position: absolute;
   left: 2px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
   color: var(--uxr-color-secondary);
   content: counter(item) ".";
