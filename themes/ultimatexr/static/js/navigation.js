@@ -1,5 +1,7 @@
-// Store references to all event listeners
-const eventListeners = [];
+// Store references to all elements and event listeners
+let elements = {};
+let eventListeners = [];
+let initialized = false;
 
 document.addEventListener("turbo:load", cleanup);
 document.addEventListener("turbo:load", initialize);
@@ -18,7 +20,7 @@ function removeEventListeners() {
 }
 
 function initialize() {
-  const elements = {
+  elements = {
     buttonOpenMobile: document.querySelector('#menu-button-open'),
     buttonCloseMobile: document.querySelector('#menu-button-close'),
     navigation: document.querySelector('header .nav-main'),
@@ -42,6 +44,8 @@ function initialize() {
   if (elements.buttonOpenLocal && elements.overlay) {
     initLocalNavigation(elements);
   }
+
+  initialized = true;
 }
 
 function cleanup() {
@@ -91,15 +95,47 @@ function initSidebarResize(sidebar) {
 }
 
 function initSidebarMenu(sidebar) {
-  const links = sidebar.querySelectorAll('li:has( > ul) > a');
-  links.forEach(link => {
-    const submenu = link.parentNode.querySelector('ul');
-    const toggleSubmenu = (event) => {
-      event.preventDefault();
-      link.parentNode.classList.toggle('collapsed');
-    };
+  const linksWithSubmenu = sidebar.querySelectorAll('li:has( > ul) > a');
+  const leafLinks = sidebar.querySelectorAll('li:not(:has( > ul)) > a');
+  const currentHref = new URL(window.location.href).href.replace(/\/$/, '');
 
+  const toggleSubmenu = (event) => {
+    event.preventDefault();
+    event.target.parentNode.classList.toggle('collapsed');
+  };
+  
+  // Enable submenu toggle for links with submenus
+  linksWithSubmenu.forEach(link => {
+    const submenu = link.parentNode.querySelector('ul');
     addEventListenerWithReference(link, 'click', toggleSubmenu);
+  });
+
+  // Open subtree for active link
+  leafLinks.forEach(link => {
+    link.classList.remove('active');
+    
+    if(link.href == currentHref) {
+      link.classList.add('active');
+
+      let parentNode = link.parentNode
+      console.log();
+      
+      while (parentNode) {
+        if(parentNode.tagName.toLowerCase() == 'li' && parentNode.classList.contains('collapsed')) {
+          parentNode.classList.remove('collapsed');
+        }
+
+        if (parentNode == elements.sidebar) {
+          if(!initialized) {
+            elements.sidebar.scrollTo({top: link.closest('#sidebar > ul').offsetTop - 40, behavior: 'smooth'});
+          }
+          
+          break;
+        }
+
+        parentNode = parentNode.parentNode;
+      }
+    }
   });
 }
 
