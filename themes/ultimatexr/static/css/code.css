@@ -10,7 +10,6 @@ main :not(pre)>code {
   white-space: nowrap;
 }
 
-
 /* Code blocks */
 
 .highlight {
