@@ -253,7 +253,7 @@
       url: ""
       items:
         - title: "Camera Color Fade"
-          url: "/docs/rendering/effect-camera-color-fade"
+          url: "/docs/rendering/effects-camera-color-fade"
         - title: "Magnifying glass"
           url: "/docs/rendering/effects-magnifying-glass"
         - title: "Planar reflection"
