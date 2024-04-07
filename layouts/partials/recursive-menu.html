@@ -1,0 +1,10 @@
+<ul>
+  {{ range . }}
+  <li class="{{ if .items }}collapsed{{ end }}">
+    <a href="{{ .url | default "#" }}">{{ .title }}<span class="label">{{ .label }}</span></a>{{ if .label }}{{ end }}
+    {{ if .items }}
+      {{ partial "recursive-menu.html" .items }}
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>
