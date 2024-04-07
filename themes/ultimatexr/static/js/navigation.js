@@ -99,6 +99,9 @@ function initSidebarMenu(sidebar) {
   const leafLinks = sidebar.querySelectorAll('li:not(:has( > ul)) > a');
   const currentHref = (location.protocol + '//' + location.host + location.pathname).replace(/\/$/, '');
 
+  // Close sidebar
+  elements.sidebar.classList.remove('open');
+
   const toggleSubmenu = (event) => {
     event.preventDefault();
     event.target.parentNode.classList.toggle('collapsed');
@@ -114,7 +117,6 @@ function initSidebarMenu(sidebar) {
   leafLinks.forEach(link => {
     link.classList.remove('active');
     
-    console.log(link.href, currentHref);
     if(link.href == currentHref) {
       link.classList.add('active');
 
