@@ -1,108 +1,119 @@
-var initMobileNavigation = function() {
-  var buttonOpen = document.querySelector('#menu-button-open');
-  var buttonClose = document.querySelector('#menu-button-close');
-  var navigation = document.querySelector('header .nav-main');
+// Store references to all event listeners
+const eventListeners = [];
 
-  buttonOpen.addEventListener('click', function(event) {
-    navigation.classList.add('open');
-  });
+document.addEventListener("turbo:load", cleanup);
+document.addEventListener("turbo:load", initialize);
 
-  buttonClose.addEventListener('click', function(event) {
-    navigation.classList.remove('open');
-  });
+function addEventListenerWithReference(element, event, handler) {
+  element.addEventListener(event, handler);
+  eventListeners.push({ element, event, handler });
 }
 
-var initLocalNavigation = function() {
-  var buttonOpen = document.querySelector('#nav-local .btn-menu');
-  var buttonClose = document.querySelector('#sidebar .btn-close');
-  var sidebar = document.querySelector('#sidebar');
-  var overlay = document.querySelector('.overlay');
-
-  var closeSidebar = function() {
-    overlay.classList.remove('open');
-    sidebar.classList.remove('open');
-  }
+function removeEventListeners() {
+  eventListeners.forEach(({ element, event, handler }) => {
+    element.removeEventListener(event, handler);
+  });
   
-  buttonOpen.addEventListener('click', function(event) {
-    overlay.classList.add('open');
-    sidebar.classList.add('open');
-  });
-
-  overlay.addEventListener('click', closeSidebar);
-  buttonClose.addEventListener('click', closeSidebar);
-  document.addEventListener("turbo:click", closeSidebar);
+  eventListeners.length = 0; // Clear the array after removing all listeners
 }
 
-var initSidebarResize = function() {
-  var sidebar = document.querySelector('#sidebar');
+function initialize() {
+  const elements = {
+    buttonOpenMobile: document.querySelector('#menu-button-open'),
+    buttonCloseMobile: document.querySelector('#menu-button-close'),
+    navigation: document.querySelector('header .nav-main'),
+    buttonOpenLocal: document.querySelector('#nav-local .btn-menu'),
+    buttonCloseLocal: document.querySelector('#sidebar .btn-close'),
+    sidebar: document.querySelector('#sidebar'),
+    overlay: document.querySelector('.overlay'),
+  };
 
-  var resize = function() {
-    if (window.innerWidth < 992) {
+  initMobileNavigation(elements);
+  initSidebarMenu(elements.sidebar);
+
+  if (elements.sidebar) {
+    initSidebarResize(elements.sidebar);
+  }
+
+  const scrollManager = maintainScrollPosition(elements.sidebar);
+  addEventListenerWithReference(document, "turbo:click", scrollManager.saveScroll);
+  addEventListenerWithReference(document, "turbo:render", scrollManager.restoreScroll);
+
+  if (elements.buttonOpenLocal && elements.overlay) {
+    initLocalNavigation(elements);
+  }
+}
+
+function cleanup() {
+  removeEventListeners();
+}
+
+function initMobileNavigation({ buttonOpenMobile, buttonCloseMobile, navigation }) {
+  addEventListenerWithReference(buttonOpenMobile, 'click', () => navigation.classList.add('open'));
+  addEventListenerWithReference(buttonCloseMobile, 'click', () => navigation.classList.remove('open'));
+}
+
+function initLocalNavigation({ buttonOpenLocal, buttonCloseLocal, sidebar, overlay }) {
+  addEventListenerWithReference(buttonOpenLocal, 'click', () => {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+  });
+
+  addEventListenerWithReference(buttonCloseLocal, 'click', () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+  });
+
+  addEventListenerWithReference(overlay, 'click', () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+  });
+}
+
+function initSidebarResize(sidebar) {
+  const resizeSidebar = () => {
+    const breakpoint = 992;
+    const offsetYBase = 150;
+    const scrollCompensation = 42;
+
+    if (window.innerWidth < breakpoint) {
       sidebar.style.removeProperty('height');
       return;
     }
-    
-    var scrollY = window.scrollY;
-    var offsetY = 150;
-    
-    if (scrollY > 42) {
-      offsetY = offsetY - 42;
-    } else {
-      offsetY = offsetY - scrollY;
-    }
 
-    sidebar.style.height = 'calc(100vh - '+ offsetY +'px)';
-  }
-  
-  resize();
-  window.addEventListener('resize', resize);
-  window.addEventListener('scroll', resize);
+    const offsetY = window.scrollY > scrollCompensation ? offsetYBase - scrollCompensation : offsetYBase - window.scrollY;
+    sidebar.style.height = `calc(100vh - ${offsetY}px)`;
+  };
+
+  resizeSidebar();
+  addEventListenerWithReference(window, 'resize', resizeSidebar);
+  addEventListenerWithReference(window, 'scroll', resizeSidebar);
 }
 
-var initSidebarMenu = function() {
-  var sidebar = document.querySelector('#sidebar');
-  var links = sidebar.querySelectorAll('li:has( > ul) > a');
-  
-  // Add expand/collapse functionality to links with subtree
-  links.forEach(el => {
-    var ul = el.parentNode.querySelector('ul');
-    ul.style.height = ul.scrollHeight + 'px';
-    el.addEventListener('click', function(event) {
+function initSidebarMenu(sidebar) {
+  const links = sidebar.querySelectorAll('li:has( > ul) > a');
+  links.forEach(link => {
+    const submenu = link.parentNode.querySelector('ul');
+    const toggleSubmenu = (event) => {
       event.preventDefault();
-      el.parentNode.classList.toggle('collapsed');
-    });
+      link.parentNode.classList.toggle('collapsed');
+    };
+
+    addEventListenerWithReference(link, 'click', toggleSubmenu);
   });
 }
 
-function initializeAll() {
-  initMobileNavigation();
-  initSidebarMenu();
+function maintainScrollPosition(sidebar) {
+  let scrollTop = 0;
 
-  var navLocal = document.querySelector('#nav-local');
-  if (navLocal !== null) {
-    initLocalNavigation();
-  }
-
-  var sidebar = document.querySelector('#sidebar');
-  if (sidebar !== null) {
-    initSidebarResize();
-  }
+  return {
+    saveScroll: () => {
+      scrollTop = sidebar.scrollTop;
+    },
+    restoreScroll: () => {
+      if (scrollTop) {
+        sidebar.scrollTo(0, scrollTop);
+      }
+    },
+  };
 }
-
-// Maintain scroll position across pages
-let scrollTop = 0
-
-addEventListener("turbo:click", ({ target }) => {
-  scrollTop = sidebar.scrollTop;
-})
-
-addEventListener("turbo:render", () => {
-  let sidebar = document.querySelector('#sidebar');
-
-  if (scrollTop) {
-    sidebar.scrollTo(0, scrollTop)
-  }
-})
-
-// Initialize everything
-document.addEventListener("turbo:load", initializeAll);
