@@ -201,6 +201,8 @@
       url: "/docs/manipulation/uxrgrabbableobject"
     - title: "UxrGrabbableObjectAnchor"
       url: "/docs/manipulation/uxrgrabbableobjectanchor"
+    - title: "UxrGrabber"
+      url: "/docs/manipulation/uxrgrabber"
     - title: "UxrGrabManager"
       url: "/docs/manipulation/uxrgrabmanager"
     - title: "Helper Components"
