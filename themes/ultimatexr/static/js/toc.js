@@ -17,7 +17,7 @@ var initializeToc = function() {
     var targetId = h.getAttribute('id') || h.textContent.replace(/\s+/g, '-').toLowerCase();
     h.id = targetId; // Ensure the heading has an ID
 
-    tocItem.innerHTML = '<a href="' + location.pathname + '#' + targetId + '">' + h.textContent + '</a>';
+    tocItem.innerHTML = '<a href="' + location.pathname + '#' + targetId + '" title="' + h.textContent + '">' + h.textContent + '</a>';
     ul.appendChild(tocItem);
   });
 
