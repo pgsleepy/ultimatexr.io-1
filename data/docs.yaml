@@ -64,7 +64,7 @@
       url: ""
       items:
         - title: "Getting User Input"
-          url: "/docs/programming-guide/input-gettin-user-input"
+          url: "/docs/programming-guide/input-getting-user-input"
         - title: "Controller Mapping"
           url: "/docs/programming-guide/input-controller-mapping"
         - title: "Tracking"
