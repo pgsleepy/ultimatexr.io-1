@@ -168,7 +168,7 @@
     - title: "Overview"
       url: "/docs/avatars/overview"
     - title: "Using Built-in Avatars"
-      url: "/docs/avatars/built-in-avatars"
+      url: "/docs/avatars/using-built-in-avatars"
     - title: "Creating a Custom Avatar"
       url: "/docs/avatars/creating-a-custom-avatar"
     - title: "UxrAvatar"
