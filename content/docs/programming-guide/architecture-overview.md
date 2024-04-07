@@ -1,8 +1,8 @@
 ---
-title: "Scripting"
+title: "Overview"
 ---
 
-# Scripting
+# Overview
 
 UltimateXR was designed from the beginning to be an easy-to-use yet powerful and scalable framework. Regarding the code, we always tried to apply the highest standards.
 
