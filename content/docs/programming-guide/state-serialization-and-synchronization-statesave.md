@@ -31,9 +31,7 @@ All these are features implemented in UltimateXR with the help of **StateSave**.
  ## Adding StateSave support
 
 Adding StateSave support to our components is pretty straightforward:
-- Derive the component from `UxrComponent` instead of `MonoBehaviour`. In case the component already derives from another class that cannot be changed, use our implementer classes to add `IUxrStateSave`  support.
-
- [link to custom class support]
+- Derive the component from `UxrComponent` instead of `MonoBehaviour`. In case the class in the codebase already derives from another class that cannot be changed, consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class).
 
 - Override `SerializeState` to add serialization of all variables comprising the state.
 
@@ -247,8 +245,8 @@ As mentioned, these options are exclusively used internally, but understanding t
 
 ## Supported variable types
 
-`SerializeStateValue()` supports a wide range of variable types, including common collection types such as arrays, `List<>`, `Dictionary<>` and `HashSet<>`:
-[link to document]
+`SerializeStateValue()` supports a wide range of variable types, including common collection types such as arrays, `List<>`, `Dictionary<>` and `HashSet<>`.
+Consult the [Serialization guide](/docs/programming-guide/other-features-serialization) for the full list of supported types.
 
 To extend support for new types to work with `SerializeStateValue()`, the following steps can be taken:
 - Implement the `IUxrSerializable` interface.

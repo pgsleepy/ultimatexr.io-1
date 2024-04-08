@@ -122,8 +122,10 @@ These are the 3 interfaces that grant access to the functionality described in t
 - `IUxrStateSync`: Provide access to an event that is raised each time the state is changed and be able to serialize that event. Also be able to deserialize an event and execute the same change to replicate it.
 
 All 3 interfaces are implemented by `UxrComponent`. Inheriting from `UxrComponent` instead of `MonoBehaviour` when creating custom components is the easiest way to automatically be able to use the functionality.
-Some teams, however, already use a custom parent class in their codebase. Since C# doesn't support multiple inheritance it would not be possible to use the functionality this way. To overcome this, UltimateXR provides implementer classes for `IUxrUniqueId`, `IUxrStateSave`,  and `IUxrStateSync` so that they can easily be implemented in custom parent classes. For more details, check this guide.
 
-[link to the guide]
+{{% callout tip %}}
+If teams are already using a custom parent class in their codebase, C# does not support multiple inheritance, making it impossible to directly utilize UltimateXR's functionality in this manner. To address this limitation, UltimateXR offers implementer classes for IUxrUniqueId, IUxrStateSave, and IUxrStateSync. These implementer classes facilitate the implementation of the required interfaces.
+Consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for the implementation details.
+{{% /callout %}}
 
 Now let's start by knowing a little more about unique ids and why they're important.

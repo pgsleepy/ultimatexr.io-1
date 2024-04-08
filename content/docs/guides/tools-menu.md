@@ -14,7 +14,7 @@ Once UltimateXR is installed, a new menu will be available under Tools->Ultimate
 
 Avatars are the visual representation of users in virtual reality.
 The Avatar menu enables users to incorporate a fully functional built-in avatar into the scene. These built-in avatars can be used directly or serve as parent prefabs to create custom variants. Creating a prefab variant offers the advantage of inheriting all the functionalities of the parent while allowing users to customize the graphical appearance and add new components as needed.
-More information about avatars can be found in the Avatars guide. [link to documentation]
+More information about avatars can be found in the [Avatars guide](/docs/avatars/overview).
 
 ## The Networking menu
 
@@ -23,7 +23,7 @@ More information about avatars can be found in the Avatars guide. [link to docum
 The Networking menu enables users to activate networking capabilities, facilitating full multiplayer support for projects. Multiplayer functionality, also known as multiuser functionality, allows multiple users to experience the same environment, view each other, and interact within it.
 UltimateXR offers native networking functionality through connectors with the most commonly used networking SDKs.
 
-More information about multiplayer can be found in the Multiplayer section. [link to documentation]
+More information about multiplayer can be found in the [Multiplayer guide](/docs/multiplayer/overview).
 
 ## The SDKs menu
 
