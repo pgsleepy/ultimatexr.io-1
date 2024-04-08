@@ -19,7 +19,7 @@
 }
 
 #sidepane h3 {
-  color: var(--uxr-color-headings);
+  color: var(--uxr-color-dark);
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;

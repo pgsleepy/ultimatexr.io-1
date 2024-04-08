@@ -1,14 +1,10 @@
-strong {
-  font-weight: 600;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: var(--uxr-color-headings);
+  color: var(--uxr-color-dark);
 }
 
 h1,
@@ -63,13 +59,14 @@ a {
   color: var(--uxr-color-secondary);
 }
 
+strong,
 em {
-  font-weight: 700;
+  font-weight: 600;
 }
 
-main ul {
+main ul,
+main ol {
   display: block;
-  list-style-type: disc;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
@@ -78,19 +75,13 @@ main ul {
   unicode-bidi: isolate;
 }
 
-main ol {
-  display: block;
-  list-style: none;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-left: 1.25rem;
-  margin-bottom: 1.2em;
+main ul {
+  list-style-type: disc;
+  
 }
 
 main ol {
-  padding-left: 0;
+  list-style: none;
 }
 
 main ul ul {
@@ -104,25 +95,32 @@ main li {
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
   position: relative;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: .3125rem;
 }
 
 main li::marker {
-  color: var(--uxr-color-secondary);
+  color: var(--uxr-color-medium);
 }
 
 main ol li {
-  counter-increment: item;
-  position: relative;
-  padding-left: 1.5rem;
+  counter-increment: listitem;
 }
 
 main ol li:before {
-  position: absolute;
-  left: 2px;
+  content: counter(listitem);
+  background-color: var(--uxr-color-light);
+  font-size: 12px;
   font-weight: 500;
-  font-size: 14px;
-  color: var(--uxr-color-secondary);
-  content: counter(item) ".";
+  line-height: 20.5px;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  position: absolute;
+  left: -1.5rem;
+  top: 2px;
 }
 
 @media print {

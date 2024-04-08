@@ -60,7 +60,7 @@
   font-weight: 700;
   font-size: 1em;
   text-transform: uppercase;
-  color: var(--uxr-color-headings);
+  color: var(--uxr-color-dark);
   pointer-events: none;
   line-height: 32px;
   margin-top: 1em;
