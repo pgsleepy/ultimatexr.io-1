@@ -228,7 +228,9 @@ Whether a variable should skip `ChangesSincePreviousSave` does not depend on the
 - Use `level >= UxrStateSaveLevel.ChangesSinceBeginning` if the variable is modified exclusively in events synchronized using **StateSync** statements (BeginSync/EndSync).
 - Don't use it if the variable can be modified at any time, out of a **StateSync** block (BeginSync/EndSync).
 
-Note: If you still aren't familiar with **StateSync** functionality, don't worry, you'll understand this later.
+{{% callout info %}}
+You might still be unfamiliar with **StateSync**. This functionality will be covered in the next section of the guide.
+{{% /callout %}}
 
 If the variable is only modified in **StateSync** blocks, these are already handled by the replay system. In our example, `_life` is likely already synchronized in a method `ApplyDamage()` or similar, and `_ammo` will also be probably updated by a synchronized `Shoot()` method.
 Not filtering out `ChangesSinceBeginning` in this case would be less performant and would cause small stutters/inconsistencies in the variables right around when they change in the replay. The replay system will call the synced method on the exact timestamp, which is the desired result. At the same time, the variables will also be updated by the `ChangesSinceBeginning` deserialization and interpolated a little before and after the timestamp, which is not desired.
