@@ -21,6 +21,7 @@
   align-items: center;
   display: inline-flex;
   font-size: 13px;
+  font-weight: 500;
   color: var(--uxr-color-text-body);
 }
 
