@@ -6,12 +6,13 @@ title: "What is UltimateXR?"
 
 ![](https://user-images.githubusercontent.com/5702147/197527335-7fea8987-44ed-4412-8304-63f28e291d60.png)
 
-**UltimateXR** is a professional-grade, free, open-source framework and toolkit for Unity.
-UltimateXR's goal is to simplify the development of virtual reality applications; from simulators to videogames and from simple prototypes to full AAA-scale projects.
+**UltimateXR** is a comprehensive, professional-grade, and open-source framework designed for Unity developers. With a focus on simplifying the development process for virtual reality applications, UltimateXR offers a versatile toolkit suitable for a wide range of projects, from immersive simulators to high-quality video games.
 
-Main features:
+Originally crafted in 2016 by VRMADA, a company specializing in virtual training simulators with a background in video game development, UltimateXR has evolved into a versatile toolkit with a wide range of functionality:
+
 - Free and open-source under the MIT license.
 - Cross-device compatibility. Support for all major headsets.
+- Full native networking/multiuser functionality.
 - State-of-the-art grab and manipulation mechanics.
 - Integrated hand pose editor.
 - Customizable full-body avatar representation with Inverse Kinematics.
