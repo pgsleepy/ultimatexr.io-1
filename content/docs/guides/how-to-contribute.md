@@ -14,6 +14,10 @@ Join our community forums or chat channels to connect with other users and devel
 - Follow [@ultimate_xr](https://twitter.com/ultimate_xr) on Twitter/X.
 - Follow VRMADA on [LinkedIn](https://www.linkedin.com/company/vrmada/).
 
+### Star UltimateXR on GitHub
+
+One simple yet impactful way to support UltimateXR is by [starring the project on GitHub](https://github.com/VRMADA/ultimatexr-unity/). Starring a repository is a way to show appreciation for the project and signal its value to other developers. It helps increase the project's visibility, making it more likely to be discovered by others in the community.
+
 ### Code Contributions
 
 Found a bug? Have a brilliant idea for a new feature? We welcome all code contributions! Fork our repository, make your changes, and submit a pull request. Our team will review it promptly.
