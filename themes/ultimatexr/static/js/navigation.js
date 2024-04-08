@@ -109,7 +109,10 @@ function initSidebarMenu(sidebar) {
   
   // Enable submenu toggle for links with submenus
   linksWithSubmenu.forEach(link => {
+    // Force height in submenus to enable collapse animations to work
     const submenu = link.parentNode.querySelector('ul');
+    submenu.style.height = submenu.scrollHeight + 'px';
+    
     addEventListenerWithReference(link, 'click', toggleSubmenu);
   });
 

@@ -7,21 +7,35 @@
   border-left: 4px solid var(--uxr-color-callout-info);
 }
 
+.callout .title {
+  color: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 2em;
+  margin-bottom: .5em;
+}
+
 .callout svg {
   position: absolute;
   width: 20px;
   height: 20px;
   margin-top: 2px;
   stroke-width: 2.25px;
-  color: oklch(from var(--uxr-color-callout-info) calc(l / 1.2) c h);
+  color: inherit;
 }
 
-.callout .title {
-  color: oklch(from var(--uxr-color-callout-info) calc(l / 1.2) c h);
+.callout a {
+  color: inherit;
   font-weight: 600;
-  text-transform: uppercase;
-  margin-left: 2em;
-  margin-bottom: .5em;
+}
+
+.callout a:hover {
+  opacity: .8;
+}
+
+.callout code {
+  color: oklch(from var(--uxr-color-callout-info) calc(l / 1.6) c h);
+  background-color: hsl(from var(--uxr-color-callout-info) h s l / .2);
 }
 
 .callout.tip {
@@ -30,9 +44,9 @@
   background-color: hsl(from var(--uxr-color-callout-tip) h s l / .1);
 }
 
-.callout.tip .title,
-.callout.tip svg {
-  color: oklch(from var(--uxr-color-callout-tip) calc(l / 1.2) c h);
+.callout.tip code {
+  color: oklch(from var(--uxr-color-callout-tip) calc(l / 1.6) c h);
+  background-color: hsl(from var(--uxr-color-callout-tip) h s l / .2);
 }
 
 .callout.caution {
@@ -41,9 +55,9 @@
   background-color: hsl(from var(--uxr-color-callout-caution) h s l / .1);
 }
 
-.callout.caution .title,
-.callout.caution svg {
-  color: oklch(from var(--uxr-color-callout-caution) calc(l / 1.2) c h);
+.callout.caution code {
+  color: oklch(from var(--uxr-color-callout-caution) calc(l / 1.6) c h);
+  background-color: hsl(from var(--uxr-color-callout-caution) h s l / .2);
 }
 
 .callout.warning {
@@ -52,7 +66,7 @@
   background-color: hsl(from var(--uxr-color-callout-warning) h s l / .1);
 }
 
-.callout.warning .title,
-.callout.warning svg {
-  color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.2) c h);
+.callout.warning code {
+  color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.6) c h);
+  background-color: hsl(from var(--uxr-color-callout-warning) h s l / .2);
 }
