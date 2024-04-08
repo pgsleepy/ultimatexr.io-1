@@ -19,7 +19,7 @@ Consult the [Custom Parent Class guide](/docs/programming-guide/state-serializat
 -   **Replays**: Capturing all **StateSync** events during recording and replicating them during playback at their respective timestamps.
 
 {{% callout tip %}}
-**StateSync** can also be valuable in implementing analytics by intercepting relevant events within the appropriate components.
+StateSync can also be valuable in implementing analytics by intercepting relevant events within the appropriate components.
 {{% /callout %}}
 
 ## Synchronization statements

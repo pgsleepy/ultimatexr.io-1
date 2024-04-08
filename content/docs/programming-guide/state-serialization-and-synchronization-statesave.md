@@ -229,7 +229,7 @@ Whether a variable should skip `ChangesSincePreviousSave` does not depend on the
 - Don't use it if the variable can be modified at any time, out of a **StateSync** block (BeginSync/EndSync).
 
 {{% callout info %}}
-You might still be unfamiliar with **StateSync**. This functionality will be covered in the next chapter.
+You might still be unfamiliar with StateSync. This functionality will be covered in the [next chapter](/docs/programming-guide/state-serialization-and-synchronization-statesync).
 {{% /callout %}}
 
 If the variable is only modified in **StateSync** blocks, these are already handled by the replay system. In our example, `_life` is likely already synchronized in a method `ApplyDamage()` or similar, and `_ammo` will also be probably updated by a synchronized `Shoot()` method.
