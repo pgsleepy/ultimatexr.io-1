@@ -4,15 +4,15 @@ title: "Example scene"
 
 # Example scene
 
-Once UltimateXR has been installed and the integration for your headset has been completed, it’s a good idea to start by opening the example scene. The example scene can be found in UltimateXR/Examples/Fullscene and showcases many cool features supported by the framework. It will help you understand how virtual reality mechanics are created by looking at a fully working project.
+Once you've installed UltimateXR and completed the integration for your headset, it's highly recommended to begin by exploring the example scene. Located under UltimateXR/Examples/Fullscene, it provides a practical demonstration of how virtual reality mechanics are constructed by examining a fully functional project.
 
 And it is optimized for mobile headsets!
 
-Getting to know how everything works will take some time. The scene itself is the result of many iterations, testing and polishing. We have spent a big amount of time on it, and we don’t expect you to learn everything in one go :)
+Understanding all the intricacies may require some time and patience. The scene itself is the culmination of numerous iterations, extensive testing, and meticulous refinement. We've invested significant effort into crafting it, and we understand that learning everything at once can be overwhelming.
 
-New features will be added every now and then to showcase new mechanics, so keep an eye on every update!
+Keep an eye out for regular updates, as new features will be periodically added to introduce new mechanics and functionalities.
 
-For now it is targeting the more flexible Universal Render Pipeline (URP), but we plan to add support for other pipelines really soon.
+While the example scene currently targets the Universal Render Pipeline (URP), we're actively working to extend support to other pipelines such as the High Definition Render Pipeline (HDRP) in the near future. Stay tuned for more updates on this front!
 
 ![](/docs/guides/media/getting-started/01Avatar.png)
 ![](/docs/guides/media/getting-started/02Lab.png)
