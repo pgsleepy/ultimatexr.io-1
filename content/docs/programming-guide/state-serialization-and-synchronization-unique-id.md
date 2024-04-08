@@ -145,4 +145,6 @@ The tool can be opened using the menu Tools->UltimateXR->Networking->Check Uniqu
 
 ![](/docs/programming-guide/media/UniqueIdTool.png)
 
+{{% callout tip %}}
 The "Only Log, Don't Modify" option will execute a dry run that will log the changes that would be made to the console, without actually making the changes.
+{{% /callout %}}
