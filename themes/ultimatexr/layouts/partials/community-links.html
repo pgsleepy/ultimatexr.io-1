@@ -1,9 +1,15 @@
-{{ $filePath := replace .File.Path "\\" "/" }}
+{{ $filePath := "" }}
+{{ with .File }}
+  {{ $filePath = replace .Path "\\" "/" }}
+{{ end }}
+
 <aside id="community-links">
   <h3 class="title">Community</h3>
   <ul>
-    <li><a href="https://github.com/VRMADA/ultimatexr.io/edit/master/content/{{ $filePath }}" target="_blank"><i data-lucide="square-pen"></i>Edit this page on GitHub</a></li>
-    <li><a href="https://github.com/VRMADA/ultimatexr-unity" target="_blank"><i data-lucide="star"></i>Star on GitHub</a></li>
-    <li><a href="https://discord.gg/GXHdneaFjA" target="_blank"><i data-lucide="message-square"></i>Chat on Discord</a></li>
+    {{ if $filePath }}
+      <li><a href="{{ .Site.Params.website_repo_url }}/edit/{{ .Site.Params.website_contributing_branch }}/content/{{ $filePath }}" target="_blank"><i data-lucide="square-pen"></i>Edit this page on GitHub</a></li>
+    {{ end }}
+    <li><a href="{{ .Site.Params.unity_asset_repo_url }}" target="_blank"><i data-lucide="star"></i>Star on GitHub</a></li>
+    <li><a href="{{ .Site.Params.discord_server_url }}" target="_blank"><i data-lucide="message-square"></i>Chat on Discord</a></li>
   </ul>
 </aside>

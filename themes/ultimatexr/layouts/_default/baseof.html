@@ -20,7 +20,7 @@
             </main>
             <aside id="sidepane">
               <div class="wrapper">
-                {{- partial "community-links.html" . -}}
+                {{- block "sidepane" . }}{{- end }}
               </div>
             </aside>
           </div>
