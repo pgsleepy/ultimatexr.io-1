@@ -234,9 +234,9 @@ Using synchronization, the framework will listen for change events on all compon
 
 The unique id functionality described in earlier sections makes it possible to retrieve the target component in remote clients or during replay playback. This target component will invoke the `SyncState()` call to mirror the same code as the source component.
 
-### Raising of StateChanged
+### Raising `StateChanged`
 
-Synchronized property changes and method calls are will raise the `StateChanged` event. Internally, the `EndSyncProperty()` and `EndSyncMethod()` implementations will create a `UxrStateSyncEventArgs` object containing the necessary information and raise the event. Property changes will use a specialized `UxrPropertyChangedSyncEventArgs` object, while method calls will use `UxrMethodInvokedSyncEventArgs`.
+Synchronized property changes and method calls will raise the `StateChanged` event. Internally, the `EndSyncProperty()` and `EndSyncMethod()` implementations will create a `UxrStateSyncEventArgs` object containing the necessary information and raise the event. Property changes will use a specialized `UxrPropertyChangedSyncEventArgs` object, while method calls will use `UxrMethodInvokedSyncEventArgs`.
 
 For a property change, this object will store the component reference, as a unique id, the property name, as a string, and the new value.
 For a method call, it will store the component reference, as a unique id, the method name, as a string, and all the parameters.
@@ -244,9 +244,9 @@ Both `EndSyncProperty()` and `EndSyncMethod()` use a `[CallerMemberName]` attrib
 
 When a `UxrSyncEventArgs` object is intercepted, besides inspecting it, it can be serialized to a `byte[]` array  using the `SerializeEventBinary()` method. The object is also debug-friendly by having a descriptive  `ToString()` implementation.
 
-### Mirroring using `StateSync()`
+### Mirroring using `SyncState()`
 
-The other side of the synchronization is the `StateSync()` method. `StateSync()` takes a `UxrStateSyncEventArgs` object and replicates the original code, either a property change or a method call.
+The other side of the synchronization is the `SyncState)` method. `SyncState)` takes a `UxrStateSyncEventArgs` object and replicates the original code, either a property change or a method call.
 In a multiplayer session, these objects are serialized to a `byte[]` array using the `SerializeEventBinary()` method in `UxrStateSyncEventArgs`. A static `DeserializeEventBinary()` method is also available to deserialize a `byte[]` to the target `IUxrStateSync` component and the `UxrStateSyncEventArgs` object. Once deserialized, the original code can be mirrored using:
 ```c#
 stateSync.SyncState(stateSyncEventArgs);
@@ -345,7 +345,5 @@ The following flags are available:
 
 **`GenerateNewFrame`**: Forces to output a new sampling frame at the end of the Unity frame when recording a replay. This can be used to avoid interpolation errors when a certain event affects how values are interpolated.
 For instance, re-parenting an object between two frames will create a jump if the position is recorded in local space. Forcing to output a new frame will avoid this.
-
-## Custom synchronization events
 
 ## Synchronization error messages
