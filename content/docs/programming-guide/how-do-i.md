@@ -4,9 +4,9 @@ title: "Programming: How do I...?"
 
 # Programming: How do I...?
 
-The goal of this section is to provide through snippets a very quick understanding of which classes are involved in the different aspects of XR development and how exactly UltimateXR can be used to solve specific problems.
+The objective of this section is to offer brief code snippets to quickly understand the classes involved in resolving specific challenges, categorized accordingly.
 
-Use the menu on the right to navigate to a specific topic.
+Use the menu on the right to navigate to a specific category.
 
 For a full programming reference please visit the [API section](/api).
 

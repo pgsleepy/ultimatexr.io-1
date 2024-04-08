@@ -4,7 +4,7 @@ title: "Overview"
 
 # Overview
 
-UltimateXR is a robust framework carefully designed with ease of use and scalability at its core. Mastering the entirity of the framework's API capabilities may require some time and dedication.
+UltimateXR is a robust framework carefully designed with ease of use and scalability at its core. Mastering the entirity of the framework may require some time and dedication.
 
 Here are some options to kickstart your journey:
 
