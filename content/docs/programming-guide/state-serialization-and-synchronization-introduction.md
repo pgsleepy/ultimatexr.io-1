@@ -123,7 +123,7 @@ These are the 3 interfaces that grant access to the functionality described in t
 
 All 3 interfaces are implemented by `UxrComponent`. Inheriting from `UxrComponent` instead of `MonoBehaviour` when creating custom components is the easiest way to automatically be able to use the functionality.
 
-{{% callout tip %}}
+{{% callout warning %}}
 If teams are already using a custom parent class in their codebase, C# does not support multiple inheritance, making it impossible to directly utilize UltimateXR's functionality in this manner. To address this limitation, UltimateXR offers implementer classes for IUxrUniqueId, IUxrStateSave, and IUxrStateSync. These implementer classes facilitate the implementation of the required interfaces.
 Consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for the implementation details.
 {{% /callout %}}

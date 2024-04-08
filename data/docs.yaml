@@ -60,6 +60,8 @@
           url: "/docs/programming-guide/state-serialization-and-synchronization-statesave"
         - title: "StateSync"
           url: "/docs/programming-guide/state-serialization-and-synchronization-statesync"
+        - title: "Custom Parent Class"
+          url: "/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class"
     - title: "Input"
       url: ""
       items:

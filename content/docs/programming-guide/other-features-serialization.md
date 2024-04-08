@@ -8,11 +8,13 @@ title: "Serialization"
 
 ## Supported Types
 
+## `UxrVarType`
+
 ## Serialization Extensions
 
-### BinaryReaderExt
+## BinaryReaderExt
 
-### BinaryWriterExt
+## BinaryWriterExt
 
 ## UxrBinarySerializer
 

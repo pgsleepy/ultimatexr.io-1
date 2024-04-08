@@ -18,7 +18,9 @@ Consult the [Custom Parent Class guide](/docs/programming-guide/state-serializat
 -   **Multiplayer**: Facilitating synchronization among clients by propagating property changes or method calls similar to Remote Procedure Calls (RPCs). This synchronization is written using **platform-agnostic** code and will work on any multiplayer platform supported by UltimateXR.
 -   **Replays**: Capturing all **StateSync** events during recording and replicating them during playback at their respective timestamps.
 
+{{% callout tip %}}
 **StateSync** can also be valuable in implementing analytics by intercepting relevant events within the appropriate components.
+{{% /callout %}}
 
 ## Synchronization statements
 
@@ -206,10 +208,11 @@ public void SetEnabled(bool enabled, Color color)
 
 ## Implementation details
 
-Event, Execution, StateSyncResult, UxrManager.
-When no multiplayer or replay: Just events not having receivers.
+Up to this point we have seen **what** the StateSync functionality is able to do. In order to better understand **how** it is achieved, we will explore the internal process that happens when synchronization statements are used.
 
-Up to this point we have seen **what** the StateSync functionality is able to do. In order to better understand **how** it is achieved, we will explore the internal process that happens when synchronization statements are used. Although recommended, reading the implementation details is not mandatory.
+{{% callout tip %}}
+Although recommended, reading the implementation details is not mandatory.
+{{% /callout %}}
 
 Analyzing the `IUxrStateSync` interface, we find the two key elements that make this functionality possible:
 
