@@ -68,17 +68,12 @@
     },
     {
       "route": "/guides/scripting",
-      "redirect": "/docs/guides/programming-guide/architecture-overview",
+      "redirect": "/docs/programming-guide/architecture-overview",
       "statusCode": 301
     },
     {
       "route": "/guides/scripting-how-do-i",
-      "redirect": "/docs/guides/programming-guide/how-do-i",
-      "statusCode": 301
-    },
-    {
-      "route": "/guides/tools-menu",
-      "redirect": "/docs/guides/tools-menu",
+      "redirect": "/docs/programming-guide/how-do-i",
       "statusCode": 301
     },
     {
