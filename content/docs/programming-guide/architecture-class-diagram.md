@@ -1,5 +1,7 @@
 ---
-title: "Title"
+title: "Class Diagram"
 ---
 
-# Title
+# Class Diagram
+
+![](/docs/programming-guide/media/ClassDiagram.png)
