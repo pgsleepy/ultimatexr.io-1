@@ -5,10 +5,15 @@ var initializeToc = function() {
   }
   
   var sidepane = document.querySelector('#sidepane .wrapper');
-  var toc = document.createElement('aside');
   var ul = document.createElement('ul');
+  var toc = document.querySelector('#toc');
+  
+  if (!toc) {
+    toc = document.createElement('aside');
+    toc.id = 'toc';
+    sidepane.prepend(toc);
+  }
 
-  sidepane.prepend(toc);
   toc.innerHTML = '<h3>On this page</h3>';
   toc.appendChild(ul);
 
