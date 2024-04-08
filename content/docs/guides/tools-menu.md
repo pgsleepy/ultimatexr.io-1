@@ -6,13 +6,19 @@ title: "Tools Menu"
 
 Once UltimateXR is installed, a new menu will be available under Tools->UltimateXR providing quick access to common functionality.
 
+![](/docs/guides/media/getting-started/ToolsMenu.png)
+
 ## The Avatar menu
+
+![](/docs/guides/media/getting-started/ToolsMenuAvatars.png)
 
 Avatars are the visual representation of users in virtual reality.
 The Avatar menu enables users to incorporate a fully functional built-in avatar into the scene. These built-in avatars can be used directly or serve as parent prefabs to create custom variants. Creating a prefab variant offers the advantage of inheriting all the functionalities of the parent while allowing users to customize the graphical appearance and add new components as needed.
 More information about avatars can be found in the Avatars guide. [link to documentation]
 
 ## The Networking menu
+
+![](/docs/guides/media/getting-started/ToolsMenuNetworking.png)
 
 The Networking menu enables users to activate networking capabilities, facilitating full multiplayer support for projects. Multiplayer functionality, also known as multiuser functionality, allows multiple users to experience the same environment, view each other, and interact within it.
 UltimateXR offers native networking functionality through connectors with the most commonly used networking SDKs.
@@ -21,17 +27,23 @@ More information about multiplayer can be found in the Multiplayer section. [lin
 
 ## The SDKs menu
 
+![](/docs/guides/media/getting-started/ToolsMenuSdks.png)
+
 The SDKs menu provides access to the SDK Manager, which serves as the central hub in UltimateXR for managing integrations with other platforms. Within the SDK Manager, users can explore all platform categories and view the available SDKs that can be installed, along with their current status.
 
 Another important feature accessible from the SDKs menu is the symbols removal tool. After uninstalling an SDK, residual code from the SDK may still be present in Unity, leading to compiler errors. The symbols removal tool effectively eliminates any remaining references to the uninstalled SDK.
 
 ## The Utils menu
 
+![](/docs/guides/media/getting-started/ToolsMenuUtils.png)
+
 Through the Utils menu users can access a variety of transform utilities, allowing to perform tasks such as aligning objects, orienting objects towards specific targets, and mirroring objects across planes.
 
 ## Global Settings
 
 The Global Settings menu provides access to the global settings file, where project-wide options are stored. If the project does not already have a global settings file, the menu will create a new one.
+
+![](/docs/guides/media/getting-started/ToolsMenuGlobalSettings.png)
 
 The Log Levels section provides control over the amount of information that is logged for each UltimateXR module. Sometimes the console can become cluttered with too many messages, and it might be better turning some modules off. On the other hand, sometimes increasing the log level for a specific module can help tracking down the source of an error.
 
