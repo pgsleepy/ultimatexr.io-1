@@ -4,15 +4,13 @@ title: "About"
 
 # About UltimateXR
 
-UltimateXR is a free, open-source framework and toolkit for Unity that simplifies the development of virtual reality applications. It is developed by a team with more than 20 years of experience in the fields of computer graphics, simulation, and videogames. 
+UltimateXR is an open-source framework and toolkit for Unity designed to streamline the development of virtual reality applications. Developed by a team with over 20 years of experience in computer graphics, simulation, and video games, the project was initiated in 2016 with the aim of serving as the technological backbone for our virtual reality company, VRMADA. Our objective was clear: to create a high-quality, scalable framework that would simplify and accelerate our application development process, ensuring top-notch user experience, interactivity, and immersion.
 
-The project started in 2016 with the objective to become the technological backbone of our virtual reality company VRMADA. The goal was to create a high-quality, scalable virtual reality framework that could help us develop our applications easier, faster, and with the highest quality possible. Quality not only in terms of user experience, interactivity, and immersion of the final products, but also in architecture, standards, code, and tools. 
+From the outset, we envisioned making UltimateXR publicly available. After years of successful application development and rigorous testing, we are excited to take this next step and offer it to the community as a free, open-source solution.
 
-Creating a public release was always something that we had in mind. After years of successfully developing applications and putting UltimateXR to the test we are happy to take it a step further and make it available to the public. Free and open-source. 
+Why free and open-source? Simply put, we want to make an impact. Virtual reality is not just our job; it's our passion. Our goal is to empower developers of all backgrounds, from indie creators to corporate teams, as well as support academic institutions in teaching VR. By providing accessible tools and resources, we aim to democratize VR development and ensure that our work benefits the widest possible audience.
 
-Why free and open-source? Because we want to make an impact. Virtual reality is our job but also our passion. We want to help everyone to develop VR applications, from indie developers to big companies. We want to assist academies and universities in their quest to teach VR by offering them the tools to do it more easily. We want the result of our work to be available to everyone. 
-
-Offering our framework is a big step that requires commitment and hard work, but we’re determined to make it the best VR framework possible. 
+Offering our framework to the public is a significant step that demands dedication and hard work. However, we are committed to continually improving UltimateXR to make it the best VR framework available.
 
 ## Credits
 
