@@ -14,8 +14,8 @@ Offering our framework to the public is a significant step that demands dedicati
 
 ## Credits
 
-- *Paulo Tromp*: CEO at VRMADA 
-- *Enrique Tromp*: CTO at VRMADA. Direction, architecture, programming and documentation.
+- [*Paulo Tromp*](https://www.linkedin.com/in/paulotromp/): CEO at VRMADA.
+- [*Enrique Tromp*](https://www.linkedin.com/in/enriquetromp/): CTO at VRMADA. Direction, architecture, programming and documentation.
 - *Alberto Cruz*: Lead graphics 
 - *Fernando Rojas*: Additional programming 
 - *Agustín Cámara*: Additional graphics 
