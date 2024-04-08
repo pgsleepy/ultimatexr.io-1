@@ -13,7 +13,3 @@
   {{ $result := partial "flatten-dict.html" (dict "data" .Site.Data.docs) }}
   {{ partial "pagination.html" (dict "items" $result.accumulator "RelPermalink" .RelPermalink) }}
 {{ end }}
-
-{{ define "sidepane" }}
-  {{- partial "community-links.html" . -}}
-{{ end }}
