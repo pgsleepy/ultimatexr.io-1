@@ -1,11 +1,11 @@
 /* Inline code */
 
 main :not(pre)>code {
-  background-color: var(--uxr-color-light);
+  background-color: var(--uxr-color-light-2);
   padding: .15em .4em;
   border-radius: 4px;
   font-family: var(--uxr-font-family-monospace);
-  color: var(--uxr-color-primary);
+  color: var(--uxr-color-dark);
   transition: color .5s, background-color .5s;
   white-space: nowrap;
 }

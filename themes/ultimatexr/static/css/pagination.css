@@ -21,11 +21,11 @@
   align-items: center;
   display: inline-flex;
   font-size: 13px;
+  font-weight: 500;
   color: var(--uxr-color-text-body);
 }
 
 .pagination-title {
-  font-weight: 500;
   font-size: 16px;
   margin-left: 10px;
   align-items: top;

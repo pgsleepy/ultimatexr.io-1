@@ -60,7 +60,7 @@
   font-weight: 700;
   font-size: 1em;
   text-transform: uppercase;
-  color: var(--uxr-color-headings);
+  color: var(--uxr-color-dark);
   pointer-events: none;
   line-height: 32px;
   margin-top: 1em;
@@ -115,7 +115,7 @@
 
 #nav-local {
   position: sticky;
-  top: 63px;
+  top: 67px;
   background-color: var(--uxr-background-color);;
   border-bottom: 1px solid var(--uxr-divider-color);
   z-index: 9;
