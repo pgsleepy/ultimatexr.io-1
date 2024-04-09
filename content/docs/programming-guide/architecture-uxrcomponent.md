@@ -2,7 +2,7 @@
 title: "UxrComponent"
 ---
 
-## `UxrComponent`
+# `UxrComponent`
 
 All components in UltimateXR originate from one of the core components shown in the [Class Diagram](/docs/programming-guide/architecture-class-diagram), all of which inherit from `UxrComponent`.
 
