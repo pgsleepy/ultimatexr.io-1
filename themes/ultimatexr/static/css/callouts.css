@@ -38,6 +38,18 @@
   background-color: hsl(from var(--uxr-color-callout-info) h s l / .2);
 }
 
+.callout li::marker {
+  color: inherit;
+}
+
+.callout ol li:before {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  background-color: hsl(from var(--uxr-color-callout-info) h s l / 1);
+}
+
+/* Tip */
+
 .callout.tip {
   color: oklch(from var(--uxr-color-callout-tip) calc(l / 1.2) c h);
   border-color: var(--uxr-color-callout-tip);
@@ -48,6 +60,13 @@
   color: oklch(from var(--uxr-color-callout-tip) calc(l / 1.6) c h);
   background-color: hsl(from var(--uxr-color-callout-tip) h s l / .2);
 }
+
+.callout.tip ol li:before {
+  background-color: hsl(from var(--uxr-color-callout-tip) h s l / 1);
+}
+
+
+/* Caution */
 
 .callout.caution {
   color: oklch(from var(--uxr-color-callout-caution) calc(l / 1.2) c h);
@@ -60,6 +79,13 @@
   background-color: hsl(from var(--uxr-color-callout-caution) h s l / .2);
 }
 
+.callout.caution ol li:before {
+  background-color: hsl(from var(--uxr-color-callout-caution) h s l / 1);
+}
+
+
+/* Warning */
+
 .callout.warning {
   color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.2) c h);
   border-color: var(--uxr-color-callout-warning);
@@ -69,4 +95,8 @@
 .callout.warning code {
   color: oklch(from var(--uxr-color-callout-warning) calc(l / 1.6) c h);
   background-color: hsl(from var(--uxr-color-callout-warning) h s l / .2);
+}
+
+.callout.warning ol li:before {
+  background-color: hsl(from var(--uxr-color-callout-warning) h s l / 1);
 }
