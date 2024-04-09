@@ -64,6 +64,15 @@
           url: "/docs/programming-guide/input-helpers"
         - title: "Extending Input/Tracking"
           url: "/docs/programming-guide/input-extending-input-tracking"
+    - title: "Avatars"
+      url: ""
+      items:
+        - title: "Overview"
+          url: "/docs/programming-guide/avatars-overview"
+        - title: "UxrAvatar"
+          url: "/docs/programming-guide/avatars-uxravatar"
+        - title: "UxrAvatarController"
+          url: "/docs/programming-guide/avatars-uxravatarcontroller"
     - title: "Manipulation"
       url: ""
       items:
