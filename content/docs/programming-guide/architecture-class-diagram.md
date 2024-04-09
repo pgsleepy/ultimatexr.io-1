@@ -25,7 +25,7 @@ The primary component class in UltimateXR is `UxrComponent`, which inherits from
 Additionally, `UxrComponent` offers quick access to commonly used utilities to simplify development.
 
 {{% callout tip %}}
-Users can incorporate this functionality into their own components by inheriting from `UxrComponent` rather than `MonoBehaviour`.
+Users can incorporate this functionality into their own components by inheriting from any of the core components rather than `MonoBehaviour`.
 {{% /callout %}}
 
 ## Core Components Overview
