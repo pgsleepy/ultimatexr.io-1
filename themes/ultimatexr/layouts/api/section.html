@@ -7,6 +7,7 @@
     {{ $content := .Content }}
     {{ $content = replaceRE `\((((\<em\>)?(T\S?)(\<\/em\>)?(,\s?)?)+)\)` `&lt;$1&gt;` $content }}
     {{ $content = replaceRE `<li>` `<li class="collapsed">` $content }}
+    {{ $content = replaceRE `(<em>|</em>)` `` $content }}
     {{ $content | safeHTML }}
   {{ end }}
 {{ end }}
