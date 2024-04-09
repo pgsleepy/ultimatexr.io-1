@@ -26,8 +26,10 @@ Users can incorporate this functionality into their own components by inheriting
 
 ## Core Components Overview
 
+## `UxrComponent`
 **`UxrComponent`** is the base class for all components in the framework.
 
+## `UxrComponent<T>`
 **`UxrComponent<T>`** is a typed version of `UxrComponent` with additional functionality to enumerate all component instances of type `T` and operate on them. For instance, `UxrAvatar` is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`.
 
 **`UxrComponent<TP, TC>`** is a typed version of `UxrComponent` used for components of type `TC` that are found in a hierarchy where a component of type `TP` is the root.  For instance, `UxrButton3D` is defined as `class UxrButton3D : UxrComponent<Canvas, UxrButton3D>`.
