@@ -101,8 +101,8 @@ main li {
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
   position: relative;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: .5em;
+  margin-bottom: .5em;
   padding-left: .3125rem;
 }
 
@@ -117,16 +117,16 @@ main ol li {
 main ol li:before {
   content: counter(listitem);
   background-color: var(--uxr-color-light);
-  font-size: 12px;
+  font-size: calc(12em/14);
   font-weight: 500;
-  line-height: 20.5px;
+  line-height: calc(20em/12);
   text-align: center;
-  height: 20px;
-  width: 20px;
-  border-radius: 10px;
+  height: calc(20em/12);
+  width: calc(20em/12);
+  border-radius: calc(10em/12);
   position: absolute;
-  left: -1.5rem;
-  top: 2px;
+  left: calc(-24em/12);
+  top: calc(2em/12);
 }
 
 @media print {
