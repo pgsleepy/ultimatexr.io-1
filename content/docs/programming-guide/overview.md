@@ -4,7 +4,7 @@ title: "Overview"
 
 # Overview
 
-UltimateXR is a framework carefully designed with ease of use and scalability at its core. Mastering the entirity of the framework may require some time and dedication.
+UltimateXR is a framework carefully designed with ease of use and scalability as its fundamental goals. Mastering the entirity of the framework may require some time and dedication.
 
 This programming guide serves as a comprehensive resource for programmers exploring the framework's capabilities. It covers a range of topics crucial for both novice and experienced users.
 
