@@ -1,5 +1,5 @@
 var initSidebarLinks = function() {
-  var apiNavbarLinks = document.querySelectorAll('body.type-api #content #sidebar li a');
+  var apiNavbarLinks = document.querySelectorAll('body.type-api #content .sidebar li a');
 
   apiNavbarLinks.forEach(function(link) {
     link.innerHTML = link.innerHTML.replace(/\s(namespace)$/gi, function(s) {
