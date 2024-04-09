@@ -4,7 +4,26 @@ title: "Source File Layout"
 
 # Source File Layout
 
-UltimateXR source files follow a standardized layout, organized into sections where elements are classified depending on accessibility and role. Each element is thoroughly documented using XML tags, serving as the source for documentation generation. This consistent layout facilitates collaboration among multiple contributors, as they can quickly understand the structure of each file, facilitating efficient development and maintenance.
+UltimateXR source files follow a standardized layout, organized into regions where elements are classified depending on accessibility and role. Each element is thoroughly documented using XML tags, serving as the source for documentation generation. This consistent layout facilitates collaboration among multiple contributors, as they can quickly understand the structure of each file, facilitating efficient development and maintenance.
+
+Commonly used #region sections are, in order of appearance:
+- Inspector Properties/Serialized Fields
+- Public Types & Data
+- Constructors & Finalizer
+- Implicit Interface Implementations
+- Explicit Interface Implementations
+- Public Overrides
+- Public Properties
+- Public Methods
+- Unity Methods
+- Coroutines
+- Event Handling Methods
+- Event Trigger Methods
+- Protected Overrides
+- Protected Methods
+- Protected Types & Data
+- Private Methods
+- Private Types & Data
 
 ## Collapsed view
 

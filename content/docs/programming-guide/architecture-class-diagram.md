@@ -2,7 +2,7 @@
 title: "Class Diagram"
 ---
 
-## Core Components
+# Core Components
 
 ![](/docs/programming-guide/media/ClassDiagram.png)
 
