@@ -1,14 +1,16 @@
 ---
-title: "Class Diagram"
+title: "Core Components Diagram"
 ---
 
-# Core Components
+# Core Components Diagram
+
+## Core Components
 
 UltimateXR includes hundreds of components, all deriving from one of the **core components** in this diagram:
 
 ![](/docs/programming-guide/media/ClassDiagram.png)
 
-## Overview
+## UxrComponent Overview
 
 The primary component class in UltimateXR is `UxrComponent`, which inherits from Unity's `MonoBehaviour`. All components within UltimateXR ultimately derive from `UxrComponent`.
 
