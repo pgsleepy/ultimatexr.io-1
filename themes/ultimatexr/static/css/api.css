@@ -7,10 +7,6 @@ body.type-api #content.loaded {
   visibility: visible;
 }
 
-body.type-api #content ul > li > ul > li > ul {
-  display: none;
-}
-
 body.type-api #content .sidebar li > a span {
   display: none;
 }
