@@ -1,4 +1,4 @@
-#sidebar {
+.sidebar {
   position: fixed;
   top: 0px;
   left: calc(-100vw + 64px);
@@ -14,23 +14,23 @@
   transition: all .3s;
 }
 
-#sidebar.open {
+.sidebar.open {
   left: 0px;
   opacity: 1;
   pointer-events: all;
 }
 
-#sidebar .btn-close {
+.sidebar .btn-close {
   position: absolute;
   right: 15px;
   color: var(--uxr-color-primary);;
 }
 
-#sidebar li {
+.sidebar li {
   overflow: hidden;
 }
 
-#sidebar li a {
+.sidebar li a {
   display: block;
   position: relative;
   text-decoration: none;
@@ -40,7 +40,10 @@
   transition: color .3s;
 }
 
-#sidebar li .label {
+.sidebar > ul > li > a {
+}
+
+.sidebar li .label {
   position: absolute;
   vertical-align: super;
   top: 0px;
@@ -50,13 +53,21 @@
   color: var(--uxr-color-secondary);
 }
 
-#sidebar li a.active,
-#sidebar li a:hover {
+.sidebar li:not(.collapsed):has(li a.active) > a {
+  font-weight: 600;
+}
+
+.sidebar li a.active,
+.sidebar li a:hover {
   color: var(--uxr-color-secondary);
 }
 
-#sidebar h3,
-#sidebar li.title {
+.sidebar li a.active {
+  font-weight: 600;
+}
+
+.sidebar h3,
+.sidebar li.title {
   font-weight: 700;
   font-size: 1em;
   text-transform: uppercase;
@@ -67,24 +78,25 @@
   margin-bottom: 0px;
 }
 
-#sidebar > ul {
+.sidebar > ul {
   margin-bottom: 2em;
 }
 
 /* Sub tree */
-#sidebar li:has(> ul) > a {
+.sidebar li:has(> ul) > a {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 0px;
 }
 
-#sidebar li:has(> ul) > a:after {
+.sidebar li:has(> ul) > a:after {
   content: "";
   display: inline-block;
   position: relative;
   margin-bottom: 1px;
   right: 2px;
+  bottom: 1px;
   border: solid var(--uxr-color);
   border-width: 0 2.5px 2.5px 0;
   display: inline-block;
@@ -93,22 +105,22 @@
   opacity: .35;
 }
 
-#sidebar li:has(> ul) > a:hover:after {
+.sidebar li:has(> ul) > a:hover:after {
   border-color: var(--uxr-color-secondary);
   opacity: 1;
 }
 
-#sidebar li > ul {
+.sidebar li > ul {
   padding-left: 15px;
   border-left: 2px solid var(--uxr-color-light-2);
   transition: height .2s;
 }
 
-#sidebar li.collapsed > ul {
+.sidebar li.collapsed > ul {
   height: 0px !important;
 }
 
-#sidebar li.collapsed > a:after {
+.sidebar li.collapsed > a:after {
   bottom: 0px;
   transform: rotate(-45deg);
 }
@@ -143,25 +155,25 @@
 }
 
 /* The scrollbar track */
-#sidebar::-webkit-scrollbar {
+.sidebar::-webkit-scrollbar {
   width: 8px; /* Width of the vertical scrollbar */
   height: 8px; /* Height of the horizontal scrollbar */
   background: transparent;
 }
 
 /* The scrollbar handle */
-#sidebar::-webkit-scrollbar-thumb {
+.sidebar::-webkit-scrollbar-thumb {
   background: var(--uxr-color-light); /* Scrollbar handle color */
   border-radius: 8px; /* Roundness of the scrollbar handle */
 }
 
 /* The scrollbar handle when rolling over sidebar */
-#sidebar:hover::-webkit-scrollbar-thumb {
+.sidebar:hover::-webkit-scrollbar-thumb {
   background: var(--uxr-color-scrollbar); /* Color when hovering over the scrollbar handle */
 }
 
 /* The scrollbar handle on hover */
-#sidebar::-webkit-scrollbar-thumb:hover {
+.sidebar::-webkit-scrollbar-thumb:hover {
   background: var(--uxr-color-scrollbar-active);
 }
 
@@ -173,7 +185,7 @@
     display: none;
   }
 
-  #sidebar {
+  .sidebar {
     position: sticky;
     width: 320px;
     overflow-y: auto;
@@ -186,7 +198,7 @@
     pointer-events: all;
   }
 
-  #sidebar .btn-close {
+  .sidebar .btn-close {
     display: none;
   }
 }

@@ -25,8 +25,8 @@ function initialize() {
     buttonCloseMobile: document.querySelector('#menu-button-close'),
     navigation: document.querySelector('header .nav-main'),
     buttonOpenLocal: document.querySelector('#nav-local .btn-menu'),
-    buttonCloseLocal: document.querySelector('#sidebar .btn-close'),
-    sidebar: document.querySelector('#sidebar'),
+    buttonCloseLocal: document.querySelector('.sidebar .btn-close'),
+    sidebar: document.querySelector('.sidebar'),
     overlay: document.querySelector('.overlay'),
   };
 
@@ -132,7 +132,7 @@ function initSidebarMenu(sidebar) {
 
         if (parentNode == elements.sidebar) {
           if(!initialized) {
-            elements.sidebar.scrollTo({top: link.closest('#sidebar > ul').offsetTop - 40, behavior: 'smooth'});
+            elements.sidebar.scrollTo({top: link.closest('.sidebar ul').offsetTop - 40, behavior: 'smooth'});
           }
           
           break;
