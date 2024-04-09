@@ -4,6 +4,8 @@ title: "Class Diagram"
 
 # Core Components
 
+UltimateXR includes hundreds of components, all deriving from one of the **core components** in this diagram:
+
 ![](/docs/programming-guide/media/ClassDiagram.png)
 
 ## Overview
