@@ -24,4 +24,14 @@ Additionally, `UxrComponent` offers quick access to commonly used utilities to s
 Users can incorporate this functionality into their own components by inheriting from `UxrComponent` rather than `MonoBehaviour`.
 {{% /callout %}}
 
+## Core Components Overview
+
+- `UxrComponent`: Base class for all components in the framework.
+- `UxrComponent<T>`: Typed class version of `UxrComponent` with additional functionality to enumerate all component instances of type `T` and operate on them. For instance, `UxrAvatar` is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`.
+  - `UxrComponent<TP, TC>`: Typed class version of `UxrComponent` used for components of type `TC` that are found in a hierarchy where a component of type `TP` is the root.  For instance, `UxrButton3D` is defined as `class UxrButton3D : UxrComponent<Canvas, UxrButton3D>`.
+  - `UxrAvatarComponent<T>`: `UxrComponent` of type `T` that can be found in a hierarchy under an `UxrAvatar`. For instance, `UxrFingerTip` is defined as `class UxrFingerTip : UxrAvatarComponent<UxrFingerTip>`.
+  - `UxrGrabbableObjectComponent<T>`: `UxrComponent` of type `T` that has an `UxrGrabbableObject` in the same `GameObject`. For instance, `UxrWeapon` is defined as `class UxrWeapon : UxrGrabbableObjectComponent<UxrWeapon>`.
+- `UxrAbstractSingleton<T>`: `UxrComponent` base class to build singletons for a type `T` that can be abstract. Abstract classes are used when the singleton being created is itself a base abstract class.
+  - `UxrSingleton<T>`: `UxrComponent` singleton for a type `T`. For example, the `UxrGrabManager` is defined as `class UxrGrabManager : UxrSingleton<UxrGrabManager>`.
+
 Let's start off by taking a closer look at `UxrComponent`.
