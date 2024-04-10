@@ -7,6 +7,11 @@ body.type-api #content.loaded {
   visibility: visible;
 }
 
+body.type-api #content .sidebar li a {
+  word-break: break-word;
+}
+
+/* Remove Namespace term in link title */
 body.type-api #content .sidebar li > a span {
   display: none;
 }

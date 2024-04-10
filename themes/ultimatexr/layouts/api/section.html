@@ -6,6 +6,8 @@
   {{ with .Site.GetPage "/api/_Sidebar.md" }}
     {{ $content := .Content }}
     {{ $content = replaceRE `\((((\<em\>)?(T\S?)(\<\/em\>)?(,\s?)?)+)\)` `&lt;$1&gt;` $content }}
+    {{ $content = replaceRE `<ul>` `<div class="wrapper"><ul>` $content }}
+    {{ $content = replaceRE `</ul>` `</ul><div class="wrapper">` $content }}
     {{ $content = replaceRE `<li>` `<li class="collapsed">` $content }}
     {{ $content = replaceRE `(<em>|</em>)` `` $content }}
     {{ $content | safeHTML }}

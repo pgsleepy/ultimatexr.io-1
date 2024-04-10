@@ -2,13 +2,15 @@
 {{ $currentRelUrl := .RelPermalink }}
 {{ $currentRelUrl := strings.TrimRight "/" $currentRelUrl }}
 
-<ul>
-  {{ range $items }}
-  <li class="{{ if .items }}collapsed{{ end }}">
-    <a href="{{ .url | default "#" }}" class="{{ if eq .url $currentRelUrl }}active{{ end }}">{{ .title }}{{ if .label }}<span class="label">{{ .label }}</span>{{ end }}</a>
-    {{ if .items }}
-      {{ partial "recursive-menu.html" (dict "items" .items "RelPermalink" $currentRelUrl) }}
+<div class="wrapper">
+  <ul>
+    {{ range $items }}
+    <li class="{{ if .items }}collapsed{{ end }}">
+      <a href="{{ .url | default "#" }}" class="{{ if eq .url $currentRelUrl }}active{{ end }}">{{ .title }}{{ if .label }}<span class="label">{{ .label }}</span>{{ end }}</a>
+      {{ if .items }}
+        {{ partial "recursive-menu.html" (dict "items" .items "RelPermalink" $currentRelUrl) }}
+      {{ end }}
+    </li>
     {{ end }}
-  </li>
-  {{ end }}
-</ul>
+  </ul>
+</div>
