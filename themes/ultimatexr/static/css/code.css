@@ -14,7 +14,7 @@ main :not(pre)>code {
 
 .highlight {
   border-radius: .375rem;
-  margin: var(--uxr-el-vertical-margin) 0;
+  margin: 1.25em 0;
   font-family: var(--uxr-font-family-monospace);
   background-color: var(--uxr-color-code-background);
   overflow-x: auto;
