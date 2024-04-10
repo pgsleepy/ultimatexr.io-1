@@ -39,7 +39,7 @@
           url: "/docs/programming-guide/architecture-principles"
         - title: "Source File Layout"
           url: "/docs/programming-guide/architecture-source-file-layout"
-        - title: "Namespaces"
+        - title: "Assemblies and Namespaces"
           url: "/docs/programming-guide/architecture-assemblies-and-namespaces"
         - title: "Core Components Diagram"
           url: "/docs/programming-guide/architecture-class-diagram"
