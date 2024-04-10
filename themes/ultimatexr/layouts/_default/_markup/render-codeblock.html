@@ -1,0 +1,9 @@
+{{ $class := .Attributes.class | default ""    }}
+{{ $lang  := .Attributes.lang  | default .Type }}
+{{ $content := .Inner }}
+{{ $content = replaceRE `\t` `    ` $content }}
+{{ if transform.CanHighlight $lang }}
+<div class="{{ $class }}">{{ highlight $content $lang }}</div>
+{{else}}
+<pre><code class="{{ $class }}">{{ $content }}</code></pre>
+{{end}}
