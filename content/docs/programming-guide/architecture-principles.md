@@ -9,7 +9,7 @@ UltimateXR was envisioned from the beginning as an accessible yet comprehensive 
 Here are some of the guiding principles behind our development:
 
 - Prioritizing writing well-structured, clean code. UltimateXR is intended to be used across numerous projects and by countless developers over the years. It is also the API we use ourselves.
-- Knowing that even the smallest contribution can save countless hours for developers and users alike. This means creating components and functionality that work out of the box, designing efficient workflows, adding tooltips, programming simple yet powerful APIs.
+- Understanding that even the smallest contribution can save countless hours for developers and users alike. This means creating components and functionality that work out of the box, designing efficient workflows, adding tooltips, programming simple yet powerful APIs.
 - Writing functionality that serves a purpose, originating from real-world project requirements. This approach naturally shapes the API to align with practical use cases.
 - Adhering to standards wherever feasible, mostly from the .NET Framework [Design Guidelines](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/).
 - Maintaining consistency throughout the framework, by employing a uniform file structure and coding style. Currently, we use Rider and its code style functionality, having previously used Resharper for Visual Studio. We plan to offer these configuration files to streamline external contributions.

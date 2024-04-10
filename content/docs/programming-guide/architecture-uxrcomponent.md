@@ -22,41 +22,43 @@ A commonly used functionality in `UxrComponent` is the possibility to enumerate 
 ```c#
 foreach (UxrComponent component in UxrComponent.AllComponents)
 {
-	Debug.Log($"Hi, I'm an UxrComponent of type {component.GetType()} on object {component.name}");
+    Debug.Log($"Hi, I'm an UxrComponent of type {component.GetType()} on object {component.name}");
 }
 
 ```
 
-In the code above, thanks to the static `AllComponents` property, it is possible to access to all components in the scene that inherit from `UxrComponent`.
+In the code above, through the static `AllComponents` property, it is possible to access all components in the scene that inherit from `UxrComponent`.
+
+{{% callout tip %}}
 To iterate over the enabled components only, the property `EnabledComponents` can be used instead.
+{{% /callout %}}
 
 In the previous [Class Diagram](/docs/programming-guide/architecture-class-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`.
 
-`UxrComponent<T>` allows iteration through all components of a specific type. For example, using `UxrAvatar` (which is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`):
+In `UxrComponent<T>`, `AllComponents` and `EnabledComponents` are redefined to return only the components of the specific type `T`. For instance using `UxrAvatar`, which is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`:
 
 ```c#
 foreach (UxrAvatar avatar in UxrAvatar.AllComponents)
 {
-	Debug.Log($"Hi, I'm an UxrAvatar component on object {avatar.name}");
+    Debug.Log($"Hi, I'm an UxrAvatar component on object {avatar.name}");
 }
 
 ```
 
-In `UxrComponent<T>`, `AllComponents` and `EnabledComponents` are redefined to return only the components of the specific type.
-
-Similarly, for the `UxrComponent<TP, TC>` variant, it is possible to access the components of type `TC` in a specific parent `TP`.
+In case of the `UxrComponent<TP, TC>` variant, it is possible to access the components of type `TC` in a specific parent `TP` by using the method `GetParentChildren()`.
 For instance, to iterate over the `UxrFingerTip` components from an `UxrAvatar`:
 
 ```c#
-
 UxrAvatar avatar = ...
 
 foreach (UxrFingerTip fingerTip in UxrFingerTip.GetParentChildren(avatar))
 {
-	Debug.Log($"Hi, I'm a UxrFingerTip component from avatar {avatar.name}");
+    Debug.Log($"Hi, I'm a UxrFingerTip component from avatar {avatar.name}");
 }
 
 ```
+
+`GetParentChildren()` will iterate over all registered `UxrFingerTip` components that hang from a specific `UxrAvatar`.
 
 ## `UxrComponent` Variations
 
