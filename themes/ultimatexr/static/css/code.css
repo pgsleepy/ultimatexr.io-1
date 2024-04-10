@@ -29,7 +29,6 @@ main :not(pre)>code {
   display: inline-block;
 }
 
-
 .highlight code > span > span {
   padding: 0 1em;
 }
@@ -40,4 +39,27 @@ code {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+/* The scrollbar track */
+.highlight::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+  background: transparent;
+}
+
+/* The scrollbar handle */
+.highlight::-webkit-scrollbar-thumb {
+  background: var(--uxr-color-light); /* Scrollbar handle color */
+  border-radius: 8px; /* Roundness of the scrollbar handle */
+}
+
+/* The scrollbar handle when rolling over highlight */
+.highlight:hover::-webkit-scrollbar-thumb {
+  background: var(--uxr-color-scrollbar-active);
+}
+
+/* The scrollbar handle on hover */
+.highlight::-webkit-scrollbar-thumb:hover {
+  background: var(--uxr-color-scrollbar-active);
 }
