@@ -16,12 +16,13 @@ main :not(pre)>code {
   border-radius: .375rem;
   margin: var(--uxr-el-vertical-margin) 0;
   font-family: var(--uxr-font-family-monospace);
-  background-color: #272822;
+  background-color: var(--uxr-color-code-background);
   overflow-x: auto;
 }
 
 .highlight pre {
   padding: 1em 0;
+  background-color: var(--uxr-color-code-background) !important;
 }
 
 .highlight code {

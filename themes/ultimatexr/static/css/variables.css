@@ -15,6 +15,8 @@
 
   --uxr-color-scrollbar: rgb(229, 232, 238);
   --uxr-color-scrollbar-active: rgb(201, 206, 210);
+  
+  --uxr-color-code-background: rgb(248, 248, 248);
 
   --uxr-divider-color: var(--uxr-color-light);
 

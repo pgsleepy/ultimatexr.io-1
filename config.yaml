@@ -37,4 +37,5 @@ markup:
     renderer:
       unsafe: true
   highlight:
+    style: vs
     noClasses: false
