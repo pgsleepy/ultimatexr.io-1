@@ -122,8 +122,8 @@ Here, `GetComponents()` returns all registered `UxrFingerTip` components that be
 
 ## Component Registration
 
-Components inheriting from `UxrComponent` are automatically registered in the system by the base `Awake()` implementation. This makes them visible to the enumeration methods described above.
-Components are unregistered once the base `OnDestroy()` is called.
+Components inheriting from `UxrComponent` are automatically registered in the system during `Awake()`. This makes them visible to the enumeration methods described above.
+Components are unregistered by `OnDestroy()`.
 
 ## Other `UxrComponent` specializations
 
@@ -137,9 +137,9 @@ This component is covered in the [Manipulation](/docs/programming-guide/manipula
 
 These singleton components will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
 
-## Base Functionality
+## Common Properties
 
-`UxrComponent` offers useful functionality that will be inherited:
+These properties are inherited by any component derived from `UxrComponent`:
 
 ### `UniqueId`
 
@@ -217,9 +217,9 @@ Whether to use the local or world version of the methods depends on whether the 
 - `GlobalIdChanging`: Raised right before the `UniqueId` of a component is about to change.
 - `GlobalIdChanged`: Raised right after the `UniqueId` of a component changed.
 
-## IUxrUnique, IUxrStateSave and IUxrStateSync
+## Interfaces
 
-These are the 3 core interfaces implemented by `UxrComponent`. They provide high level functionality used in modules such as multiplayer, state-saving and replays.
+`UxrComponent` implements 3 core interfaces: `IUxrUnique`, `IUxrStateSave` and `IUxrStateSync`. They provide high level functionality used in modules such as multiplayer, state-saving and replays.
 
 We present a brief overview of these methods below, with detailed technical documentation available in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide
 
