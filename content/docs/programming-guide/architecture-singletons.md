@@ -60,5 +60,6 @@ public class MySingleton : UxrSingleton<MySingleton>
 To designate a prefab as a singleton instance, simply add a prefab named MySingleton to the /Resources/Singletons folder. If no prefab is found, an empty GameObject with a `MySingleton` component will be automatically created.
 
 {{% callout caution %}}
-When using Unity methods, just like when deriving from `UxrComponent`, make sure to override it and call the base implementation.
+When using Unity methods, just like when deriving from `UxrComponent`, make sure to override them and call the base implementation.
+This is especially important in the case of `Awake()`, `Start()`, `OnEnable()`, `OnDisable()` and `OnDestroy()`.
 {{% /callout %}}
