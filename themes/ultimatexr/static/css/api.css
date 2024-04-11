@@ -12,8 +12,9 @@ body.type-api #content .sidebar li a {
 }
 
 /* Remove Namespace term in link title */
-body.type-api #content .sidebar li > a span {
-  display: none;
+body.type-api #content .sidebar li > a strong {
+  color: black;
+  font-weight: normal;
 }
 
 /* Markdown files create titles with em in them */
