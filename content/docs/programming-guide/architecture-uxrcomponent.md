@@ -17,14 +17,14 @@ Consult the [Custom Parent Class guide](/docs/programming-guide/state-serializat
 
 ## Component Enumeration
 
+### `UxrComponent`
 A commonly used functionality in `UxrComponent` is the possibility to enumerate all components from anywhere in the code:
 
 ```c#
 foreach (UxrComponent component in UxrComponent.AllComponents)
 {
-    Debug.Log($"Hi, I'm an UxrComponent of type {component.GetType()} on object {component.name}");
+    Debug.Log($"Hello, I'm a UxrComponent of type {component.GetType()} on object {component.name}");
 }
-
 ```
 
 In the code above, through the static `AllComponents` property, it is possible to access all components in the scene that inherit from `UxrComponent`.
@@ -32,15 +32,17 @@ To iterate over the enabled components only, the property `EnabledComponents` ca
 
 In the previous [Class Diagram](/docs/programming-guide/architecture-class-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`.
 
+### `UxrComponent<T>`
 In `UxrComponent<T>`, `AllComponents` and `EnabledComponents` are redefined to return only the components of the specific type `T`. For instance using `UxrAvatar`, which is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`:
 
 ```c#
 foreach (UxrAvatar avatar in UxrAvatar.EnabledComponents)
 {
-    Debug.Log($"Hi, I'm an enabled UxrAvatar component on object {avatar.name}");
+    Debug.Log($"Hello, I'm an enabled UxrAvatar component on object {avatar.name}");
 }
 ```
 
+### `UxrComponent<TP, TC>`
 In case of the `UxrComponent<TP, TC>` variant, it is also possible to access the components of type `TC` in a specific parent `TP` by using the method `GetParentChildren()`.
 For instance, to iterate over the `UxrFingerTip` components from an `UxrAvatar`:
 
@@ -49,9 +51,8 @@ UxrAvatar avatar = ...
 
 foreach (UxrFingerTip fingerTip in UxrFingerTip.GetParentChildren(avatar, false))
 {
-    Debug.Log($"Hi, I'm a UxrFingerTip component from avatar {avatar.name}");
+    Debug.Log($"Hello, I'm a UxrFingerTip component from avatar {avatar.name}");
 }
-
 ```
 
 `GetParentChildren()` will iterate over all registered `UxrFingerTip` components that hang from a specific `UxrAvatar`. The second parameter `includeDisabled` controls whether to include disabled components or from inactive GameObjects in the list.

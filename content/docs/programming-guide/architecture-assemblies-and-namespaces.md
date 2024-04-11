@@ -6,7 +6,7 @@ title: "Assemblies and Namespaces"
 
 ## Assemblies
 
-UltimateXR is structured in two assemblies:
+UltimateXR is structured in two [assemblies](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html):
 - **UltimateXR**, containing all the runtime code. This assembly is defined through the file /UltimateXR/UltimateXR.asmdef. All the runtime code is located under /UltimateXR/Scripts in the .unitypackage and Asset Store distributions. When UltimateXR is imported using the Package Manager, the runtime code can be found in /UltimateXR/Runtime/Scripts.
 - **UltimateXR.Editor**, containing all the Unity Editor code such as custom inspectors, tools and SDK Management. This assembly is defined through the file /UltimateXR/Editor/UltimateXR.Editor.asmdef. All the editor code is located under the /UltimateXR/Editor folder.
 
