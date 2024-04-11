@@ -28,10 +28,7 @@ public class MyComponent : UxrComponent<MyComponent>
 }
 ```
 
-{{% callout warning %}}
 Unity methods are implemented in `UxrComponent` as virtual protected. Implementing Unity methods like `Awake()` or `OnEnable()` requires overriding and calling the base implementation.
-{{% /callout %}}
-
 Continuing with the `MyComponent` class, the following code would be required to implement some of the Unity methods:
 
 ```c#
@@ -39,22 +36,19 @@ public class MyComponent : UxrComponent<MyComponent>
 {
 	protected override void Awake()
 	{
-		base.Awake();
-		
+		base.Awake();		
 		// Add initialization code here
 	}
 	
 	protected override void OnEnable()
 	{
-		base.OnEnable();
-		
+		base.OnEnable();		
 		// Add OnEnable code here
 	}
 	
 	protected override void OnDisable()
 	{
-		base.OnDisable();
-		
+		base.OnDisable();		
 		// Add OnDisable code here
 	}
 	
@@ -67,7 +61,7 @@ public class MyComponent : UxrComponent<MyComponent>
 
 In the above example we have overriden `Awake()`, `OnEnable()` and `OnDisable()` ensuring the base implementation is always called first. `Update()` is implemented normally since it does not have a base implementation.
 
-{{% callout danger %}}
+{{% callout caution %}}
 Omitting the call to the base implementations will result in core functionalities such as component enumeration or unique id not working correctly.
 {{% /callout %}}
 
