@@ -120,6 +120,11 @@ foreach (UxrFingerTip fingerTip in UxrFingerTip.GetComponents(avatar, false))
 
 Here, `GetComponents()` returns all registered `UxrFingerTip` components that belong to a specific `UxrAvatar`. The second parameter `includeDisabled` controls whether to include disabled components or from inactive GameObjects in the list.
 
+## Component Registration
+
+Components inheriting from `UxrComponent` are automatically registered in the system by the base `Awake()` implementation. This makes them visible to the enumeration methods described above.
+Components are unregistered once the base `OnDestroy()` is called.
+
 ## Other `UxrComponent` specializations
 
 Besides the `UxrComponent<T>` and `UxrComponent<TP, TC>` variations, there are other core components in the class diagram:
@@ -142,7 +147,7 @@ UltimateXR provides a unique identifier to components within instances or prefab
 It is a key component used by other modules such as networking, save files and replays.
 
 {{% callout info %}}
-For a detailed exploration of the unique ID functionality, refer to the dedicated section on [unique ID](/docs/programming-guide/state-serialization-and-synchronization-unique-id) in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+For a detailed view of the unique ID functionality, refer to the dedicated section on [unique ID](/docs/programming-guide/state-serialization-and-synchronization-unique-id) in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
 {{% /callout %}}
 
 ### `IsBeingDestroyed` and `IsApplicationQuitting`
@@ -151,7 +156,7 @@ When `Destroy()` is called on a component, Unity will keep the reference and des
 
 `IsApplicationQuitting` tells whether `Application.Quit()` was called and the application is closing. It can be used to prevent access from objects in `OnDestroy()` that are no longer available.
 
-### Transform utilities
+## Transform utilities
 
 Sometimes it can be convenient to know initial transform values. Instead of storing them in temporal variables, the following properties can be used on any type derived from `UxrComponent`:
 
@@ -179,10 +184,10 @@ In addition to the properties, these methods will also provide useful transform 
 - `RestoreInitialWorldTransform()`: Restores the object's transform using the initial world data from above.
 
 In certain scenarios, when manipulating object transforms, the following methods add the ability to temporarily store and recover transformation values. This ensures that objects can be reverted to their original state after undergoing various operations:
-- `PushTransform()`: Stores the current position, rotation and localScale values.
-- `PushLocalTransform()`: Stores the current localPosition, localRotation and localScale values.
-- `PopTransform()`: 
-- `PopLocalTransform()`: 
+- `PushTransform()`: Stores the current position, rotation and localScale values in the world transform stack.
+- `PushLocalTransform()`: Stores the current localPosition, localRotation and localScale values in the local transform stack.
+- `PopTransform()`: Restores the position/rotation and localScale from the world transform stack.
+- `PopLocalTransform()`: Restores the localPosition/localRotation and localScale from the local transform stack.
 
 These methods operate on a stack-based system, allowing transformation values to be pushed onto the stack and then popped off the stack to restore the original values.
 The use of a stack allows not only to store and retrieve values, but also make sure that it works with nesting.
@@ -199,22 +204,9 @@ PopTransform();
 
 Whether to use the local or world version of the methods depends on whether the object is parented or not and if it's relevant to keep the local position/orientation of the object or the world position/orientation.
 
-### StateSaveMonitor
+## Events
 
-This property provides access to a `UxrStateSaveMonitor` object with events raised whenever the state of the object is being serialized or deserialized.
-
-It can provide technical information to advanced users working with [state serialization](/docs/programming-guide/state-serialization-and-synchronization-statesave) functionality.
-
-## Component Registration
-
-Components inheriting from `UxrComponent` are automatically registered in the system by the base `Awake()` implementation. This makes them visible to the enumeration methods described above.
-Components are unregistered once the base `OnDestroy()` is called.
-
-## Relevant Events
-
-### Static events
-
-`UxrComponent` provides the following global events:
+`UxrComponent` provides the following static events:
 
 - `GlobalRegistering`: Raised right before a new component is about to be registered.
 - `GlobalRegistered`: Raised right after a new component was registered.
@@ -225,48 +217,73 @@ Components are unregistered once the base `OnDestroy()` is called.
 - `GlobalIdChanging`: Raised right before the `UniqueId` of a component is about to change.
 - `GlobalIdChanged`: Raised right after the `UniqueId` of a component changed.
 
-### Events
-
-`UxrComponent` provides the following events:
-
-- `StateChanged`: Raised right after the state of the component changed. A full guide about state changes can be found in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave) section.
-
-## Relevant Methods
-
-
-StateSerializationVersion
-SerializationOrder
-SaveStateWhenDisabled
-SerializeActiveAndEnabledState
-TransformStateSaveSpace
-
------
-
-public T GetCachedComponent<T>() where T : Component
-
-SyncState(UxrSyncEventArgs e)
-
-RegisterIfNecessary()
-ChangeUniqueId(Guid newUniqueId)
-CombineUniqueId
-
-ToString()
-
-RequiresTransformSerialization
-SerializeState
-InterpolateState
-GetInterpolator
-SerializeStateValue
-SerializeStateTransform
-InterpolateStateTransform
-IsTransformPositionVarName
-IsTransformRotationVarName
-IsTransformScaleVarName
-
-BeginSync
-CancelSync
-EndSyncProperty
-EndSyncMethod
-
-
 ## IUxrUnique, IUxrStateSave and IUxrStateSync
+
+These are the 3 core interfaces implemented by `UxrComponent`. They provide high level functionality used in modules such as multiplayer, state-saving and replays.
+
+We present a brief overview of these methods below, with detailed technical documentation available in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide
+
+### IUxrUnique
+
+The implementation of this interface provides unique id functionality.
+Besides the `UniqueId` property described earlier, this interface also has the following methods:
+
+{{% callout info %}}
+This functionality is fully detailed in the [unique ID](/docs/programming-guide/state-serialization-and-synchronization-unique-id) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+{{% /callout %}}
+
+- `RegisterIfNecessary()`: Forces the component to be registered. This can be used in disabled components, where `Awake()` is not called until the object is enabled.
+- `ChangeUniqueId()`: Changes the component unique id.
+- `CombineUniqueId()`: Changes the component unique id by combining it with another id.
+
+### IUxrStateSave
+
+The implementation of this interface provides the ability for a component to serialize/deserialize its state to/from a byte stream.
+It is used extensively by UltimateXR to provide high-level functionality such as multiplayer, save file and replay support.
+
+{{% callout info %}}
+This functionality is fully detailed in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+{{% /callout %}}
+
+#### IUxrStateSave Related Properties
+
+- `StateSaveMonitor`: `UxrStateSaveMonitor` object, used for user debugging, with events raised whenever the state or variables of the component are being serialized or deserialized.
+- `StateSerializationVersion`: Enables serialization versioning and backwards compatibility with older formats.
+- `SerializationOrder`: Controls the order in which components are serialized.
+- `SaveStateWhenDisabled`: Controls whether to serialize the component when it is disabled.
+- `SerializeActiveAndEnabledState`: Controls whether to include the enabled and active states in the serialization.
+- `TransformStateSaveSpace`: Controls the space the transform is serialized in, in components that serialize the transform.
+
+#### IUxrStateSave Related Methods
+
+- `RequiresTransformSerialization`: Returns whether the component should serialize its transform.
+- `SerializeState`: Serializes the state of the component.
+- `InterpolateState`: Interpolates the state of the component between begin and end variables.
+- `GetInterpolator`: Returns a custom interpolator for a specific state variable.
+- `SerializeStateValue`: Serializes a specific state variable.
+- `SerializeStateTransform`: Serializes a transform.
+- `InterpolateStateTransform`: Interpolates a transform.
+- `IsTransformPositionVarName`: Checks whether a given variable name corresponds to the position value in a transform.
+- `IsTransformRotationVarName`: Checks whether a given variable name corresponds to the rotation value in a transform.
+- `IsTransformScaleVarName`: Checks whether a given variable name corresponds to the scale value in a transform.
+
+### IUxrStateSync
+
+The implementation of this interface provides the ability for a component to replicate actions such as property changes or method calls to other instances. These other instances can be the same component on another device, or on the same device but in another session.
+It is used extensively by UltimateXR to provide high-level functionality such as multiplayer synchronization and replay support.
+
+{{% callout info %}}
+This functionality is fully detailed in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+{{% /callout %}}
+
+#### IUxrStateSave Events
+
+- `StateChanged`: Raised right after a property or method in the component was called.
+
+#### IUxrStateSave Related Methods
+
+- `SyncState()`: Replicates a state change described by an object passed to the `StateChanged` event.
+- `BeginSync`: Begins a synchronization block.
+- `CancelSync`: Cancels a synchronization block.
+- `EndSyncProperty`: Ends a synchronization block for a property change.
+- `EndSyncMethod`: Ends a synchronization block for a method call.
