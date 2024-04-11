@@ -13,7 +13,6 @@ Having `UxrComponent` as a common parent for all components in the framework hel
 We also encourage users to inherit from `UxrComponent`, or any of the core components, instead of `MonoBehaviour` to benefit from all the capabilities it provides.
 
 {{% callout info %}}
-
 If inheriting directly from `UxrComponent` is not possible, as C# does not support multiple inheritance, we offer an alternative method to implement the necessary interfaces.
 Please refer to the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for detailed implementation instructions.
 {{% /callout %}}
@@ -85,6 +84,48 @@ This component is covered in the [Manipulation](/docs/programming-guide/manipula
 These will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
 
 ## Relevant Properties
+
+Besides all the enumeration properties, `UxrComponent` also offers additional useful functionality accessible through properties:
+
+### `UniqueId`
+
+UltimateXR provides a unique identifier to components within instances or prefabs. This identifier, unless manually modified, remains constant throughout the application's runtime and across various sessions.
+It is a key component used by other modules such as networking, save files and replays.
+
+{{% callout info %}}
+For a detailed exploration of the unique ID functionality, refer to the dedicated section on [unique ID](/docs/programming-guide/state-serialization-and-synchronization-unique-id) in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+{{% /callout %}}
+
+### `IsBeingDestroyed` and `IsApplicationQuitting`
+
+When calling `Destroy()` on a component, Unity will keep the reference and destroy the component at the end of the frame. `IsBeingDestroyed` can be used to check whether `Destroy()` was called on the component.
+
+`IsApplicationQuitting` tells whether `Application.Quit()` was called and the application is closing. It can be used to prevent access from objects in `OnDestroy()` that are no longer available.
+
+### Transform properties
+
+Sometimes it can be convenient to know initial transform values. Instead of storing them in temporal variables, the following properties can be used:
+
+- `InitialParent`
+- `InitialLocalPosition`
+- `InitialLocalRotation`
+- `InitialLocalEulerAngles`
+- `InitialLocalScale`
+- `InitialLossyScale`
+- `InitialPosition`
+- `InitialRotation`
+- `InitialEulerAngles`
+- `InitialRelativeMatrix`
+- `InitialLocalToWorldMatrix`
+
+{{% callout info %}}
+These properties are stored during `Awake()`.
+They can be reset at any point using the `RecomputeInitialTransformData()` method.
+{{% /callout %}}
+
+### StateSaveMonitor
+
+
 
 ## Relevant Events
 
