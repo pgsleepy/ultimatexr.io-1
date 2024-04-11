@@ -14,7 +14,7 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 table tr th {
-  border-color: var(--uxr-color-primary);
+  border-color: var(--uxr-color-text);
   text-align: left;
   font-size: 14px;
   font-weight: 600;

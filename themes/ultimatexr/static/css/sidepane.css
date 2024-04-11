@@ -37,7 +37,7 @@
   display: block;
   font-size: 13px;
   font-weight: 400;
-  color: var(--uxr-color-text-body);
+  color: var(--uxr-color-text);
   transition: color .5s;
   line-height: 28px;
   overflow: hidden;

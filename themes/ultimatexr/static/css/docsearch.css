@@ -13,7 +13,7 @@
 }
 
 .DocSearch-Modal {
-  color: var(--uxr-color-primary);
+  color: var(--uxr-color-text);
 }
 
 #docsearch {
@@ -36,7 +36,7 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
 
 #docsearch .DocSearch-Button-Placeholder,
 #docsearch .DocSearch-Search-Icon {
-  color: var(--uxr-color-primary);
+  color: var(--uxr-color-text);
 }
 
 #docsearch .DocSearch-Button:hover .DocSearch-Button-Placeholder,
@@ -83,7 +83,7 @@ body.kind-home #docsearch .DocSearch-Search-Icon {
   }
 
   #docsearch .DocSearch-Button {
-    border: 2px solid rgba(242, 242, 242, 1);
+    border: 2px solid var(--uxr-color-light-2);
     /*border-bottom: 1px solid rgba(0, 0, 0, .15);*/
     padding: 0 12px;
   }

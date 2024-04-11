@@ -84,12 +84,15 @@ body.kind-home .additional-links ul li:before {
   display: none;
 }
 
+body.kind-home .theme {
+  display: none;
+}
+
 body.kind-home .additional-links ul li:not(:last-of-type)::after {
   content: '·';
   padding: 0px 10px;
   opacity: .85;
 }
-
 
 
 @media (min-height: 600px) and (min-width: 820px) {
@@ -128,6 +131,10 @@ body.kind-home .additional-links ul li:not(:last-of-type)::after {
 }
 
 @media (min-width: 992px) {
+  body.kind-home .nav-links svg {
+    opacity: 0.65;
+  }
+
   body.kind-home #content .container {
     padding-top: 0px;
   }

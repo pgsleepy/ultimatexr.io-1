@@ -3,3 +3,14 @@
     Copyright © {{ now.Year }} VRMADA. All rights reserved.
   </p>
 </footer>
+<script>
+  var savedTheme = localStorage.getItem('theme');
+  var htmlElement = document.documentElement;
+
+  if (savedTheme === 'dark') {
+    htmlElement.classList.add('theme-dark');
+  } else {
+    htmlElement.classList.remove('theme-dark');
+  }
+</script>
+<script src="/js/theme.js" type="module" data-turbo-eval="false"></script>

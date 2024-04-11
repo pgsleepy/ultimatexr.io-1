@@ -1,0 +1,81 @@
+/* Dark Theme */
+html.theme-dark body:not(.kind-home) {
+  --uxr-background-color: rgb(26, 26, 26);
+  --uxr-color-dark: rgba(222, 222, 222);
+  --uxr-color-text: rgba(160, 160, 160);
+  --uxr-color-text-2: rgb(179, 179, 179);
+  --uxr-color-text-body: rgba(200, 200, 200);
+  --uxr-color-medium: rgb(80, 80, 80);
+  --uxr-color-light: rgb(60, 60, 60);
+  --uxr-color-light-2: rgb(66, 66, 66);
+  --uxr-color-light-3: rgb(20, 20, 20);
+
+  --uxr-color-scrollbar: rgb(66, 66, 66);
+  --uxr-color-scrollbar-active: rgb(83, 83, 83);
+
+  --uxr-color-code-background: rgb(36, 36, 36);
+
+  --uxr-divider-color: rgb(51, 51, 51);
+
+  --uxr-color-callout-info: rgb(15, 165, 233);
+  --uxr-color-callout-tip: rgb(79, 163, 124);
+  --uxr-color-callout-caution: rgb(255, 140, 0);
+  --uxr-color-callout-warning: rgb(209, 36, 47);
+}
+
+html.theme-dark body:not(.kind-home) header .logo-ultimatexr {
+  background-image: url('/images/logo-ultimatexr-white.svg');
+}
+
+@media (min-width: 768px) {
+  body:not(.kind-home) .nav-main li a:not(:hover):not(:active) {
+    color: var(--uxr-color-text);
+  }
+}
+
+/* Callouts */
+
+html.theme-dark .callout {
+  color: var(--uxr-color-callout-info);
+}
+
+html.theme-dark .callout code {
+  color: var(--uxr-color-callout-info);
+}
+
+html.theme-dark .callout.tip {
+  color: var(--uxr-color-callout-tip);
+}
+
+html.theme-dark .callout.tip code {
+  color: var(--uxr-color-callout-tip);
+}
+
+html.theme-dark .callout.caution {
+  color: var(--uxr-color-callout-caution);
+}
+
+html.theme-dark .callout.caution code {
+  color: var(--uxr-color-callout-caution);
+}
+
+html.theme-dark .callout.warning {
+  color: var(--uxr-color-callout-warning);
+}
+
+html.theme-dark .callout.warning code {
+  color: var(--uxr-color-callout-warning);
+}
+
+
+/* Scrollbar */
+
+/* The scrollbar track */
+html.theme-dark ::-webkit-scrollbar {
+  background: transparent;
+}
+
+/* The scrollbar handle */
+html.theme-dark ::-webkit-scrollbar-thumb {
+  background: var(--uxr-color-scrollbar); /* Color when hovering over the scrollbar handle */
+}

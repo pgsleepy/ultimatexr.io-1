@@ -82,7 +82,7 @@ header .logo-ultimatexr {
 }
 
 #menu-button-open {
-  color: var(--uxr-color-primary);
+  color: var(--uxr-color-text);
 }
 
 #menu-button-close {
@@ -95,18 +95,65 @@ header .logo-ultimatexr {
 
 .nav-links {
   margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links .social {
   display: none;
 }
 
-body.kind-home .nav-links .social svg {
-  fill: #fff;
-  opacity: .65;
+.nav-links ul {
+  margin: 0;
+  padding: 0;
 }
 
-body.kind-home .nav-links .social a:hover svg {
+.nav-links li {
+  display: inline-block;
+}
+.nav-links li a {
+  display: inline-block;
+  vertical-align: middle;
+  width: 36px;
+  height: 36px;
+}
+
+.nav-links li svg {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  width: 22px;
+  height: 22px;
+  color: var(--uxr-color-text);
+  fill: var(--uxr-color-text);
+  opacity: .75;
+}
+
+.nav-links li a:hover svg {
+  color: var(--uxr-color-secondary);
+  fill: var(--uxr-color-secondary);
+  opacity: 1;
+}
+
+.nav-links .theme .dark {
+  display: none;
+}
+
+html.theme-dark .nav-links .theme .dark {
+  display: block;
+}
+
+html.theme-dark .nav-links .theme .light {
+  display: none;
+}
+
+body.kind-home .nav-links svg {
+  color: #fff;
+  fill: #fff;
+}
+
+body.kind-home .nav-links a:hover svg {
+  color: var(--uxr-color-secondary);
   fill: var(--uxr-color-secondary);
   opacity: 1;
 }
@@ -143,7 +190,7 @@ body.kind-home .nav-links .social a:hover svg {
   }
 
   .nav-main li a {
-    color: var(--uxr-color-primary);
+    color: var(--uxr-color-text);
     display: flex;
     align-items: center;
     margin: 0;
@@ -226,40 +273,14 @@ body.kind-home .nav-links .social a:hover svg {
     top: 0;
     padding-top: 15px;
     padding-right: 15px;
-    display: flex;
-    align-items: center;
+  }
+
+  .nav-links .theme {
+    margin-right: 16px;
   }
 
   .nav-links .social {
-    display: inline-block;
-  }
-
-  .nav-links ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links li {
-    display: inline-block;
-  }
-  .nav-links li a {
-    display: inline-block;
-    vertical-align: middle;
-    width: 36px;
-    height: 36px;
-  }
-
-  .nav-links li svg {
-    position: relative;
-    top: 7px;
-    left: 7px;
-    width: 22px;
-    height: 22px;
-    fill: #666;
-  }
-
-  .nav-links li a:hover svg {
-    fill: var(--uxr-color-secondary);
+    display: inline-block ;
   }
 }
 
