@@ -334,7 +334,7 @@ The order in which components are serialized determines the sequence in which th
 For instance, the `UxrInstanceManager` must be serialized before any components in instantiated GameObjects. If the `UxrInstanceManager` were serialized last, the system would attempt to deserialize component data and locate the corresponding components in the scene. However, since the `UxrInstanceManager` hadn't created those objects yet, this process, relying on the component's unique id, would fail.
 By prioritizing the serialization of the `UxrInstanceManager`, we ensure that the instances are created and available for deserialization.
 
-{{% callout info %}}
+{{% callout tip %}}
 The order in which components are serialized is determined by the `SerializationOrder` property from `IUxrStateSave`. This property can be overriden.
 {{% /callout %}}
 
