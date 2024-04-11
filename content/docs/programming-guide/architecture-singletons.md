@@ -13,7 +13,7 @@ A singleton is a design pattern used in software engineering to ensure that a cl
 Singleton support in UltimateXR is facilitated by two main classes: `UxrAbstractSingleton<T>` and `UxrSingleton<T>`.
 
 {{% callout info %}}
-As observed on the [Class Diagram](/docs/programming-guide/architecture-class-diagram), `UxrSingleton` is a subclass from `UxrAbstractSingleton<T>`, which in turn inherits from `UxrComponent`.
+As observed on the [Core Components Diagram](/docs/programming-guide/architecture-class-diagram), `UxrSingleton` is a subclass from `UxrAbstractSingleton<T>`, which in turn inherits from `UxrComponent`.
 {{% /callout %}}
 
 `UxrAbstractSingleton<T>` is a singleton designed to work with abstract classes, which can then serve as a foundation for creating instantiable concrete classes.
@@ -48,7 +48,7 @@ The second step guarantees that in the absence of a predefined singleton prefab,
 
 ## Creating Custom Singletons
 
-Just like creating custom components deriving from `UxrComponent`, creating custom singletons can be done by inheriting from the appropriate singleton class. For example:
+Like creating custom components deriving from `UxrComponent`, creating custom singletons can be done by inheriting from the appropriate singleton class. For example:
 
 ```c#
 public class MySingleton : UxrSingleton<MySingleton>
@@ -60,5 +60,5 @@ public class MySingleton : UxrSingleton<MySingleton>
 To designate a prefab as a singleton instance, simply add a prefab named MySingleton to the /Resources/Singletons folder. If no prefab is found, an empty GameObject with a `MySingleton` component will be automatically created.
 
 {{% callout caution %}}
-Just like when deriving from `UxrComponent`, remember overriding the Unity methods and calling the base implementation.
+Like when deriving from `UxrComponent`, remember overriding the Unity methods and calling the base implementation.
 {{% /callout %}}
