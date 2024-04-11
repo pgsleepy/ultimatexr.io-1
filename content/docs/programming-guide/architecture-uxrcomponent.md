@@ -13,8 +13,9 @@ Having `UxrComponent` as a common parent for all components in the framework hel
 We also encourage users to inherit from `UxrComponent`, or any of the core components, instead of `MonoBehaviour` to benefit from all the capabilities it provides.
 
 {{% callout info %}}
-When deriving from `UxrComponent` is not possible, due to multiple inheritance, we also provide a way to implement the required interfaces.
-Consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for the implementation details.
+
+If inheriting directly from `UxrComponent` is not possible, as C# does not support multiple inheritance, we offer an alternative method to implement the necessary interfaces.
+Please refer to the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for detailed implementation instructions.
 {{% /callout %}}
 
 ## Component Enumeration
