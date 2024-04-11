@@ -95,8 +95,8 @@ function initSidebarResize(sidebar) {
 }
 
 function initSidebarMenu(sidebar) {
-  const linksWithSubmenu = sidebar.querySelectorAll('li:has( > ul) > a');
-  const leafLinks = sidebar.querySelectorAll('li:not(:has( > ul)) > a');
+  const linksWithSubmenu = sidebar.querySelectorAll('li:has( > .wrapper) > a');
+  const leafLinks = sidebar.querySelectorAll('li:not(:has( > .wrapper)) > a');
   const currentHref = (location.protocol + '//' + location.host + location.pathname).replace(/\/$/, '');
 
   // Close sidebar
@@ -109,10 +109,6 @@ function initSidebarMenu(sidebar) {
   
   // Enable submenu toggle for links with submenus
   linksWithSubmenu.forEach(link => {
-    // Force height in submenus to enable collapse animations to work
-    const submenu = link.parentNode.querySelector('ul');
-    submenu.style.height = submenu.scrollHeight + 'px';
-    
     addEventListenerWithReference(link, 'click', toggleSubmenu);
   });
 
