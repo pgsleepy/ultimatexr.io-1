@@ -17,7 +17,7 @@ Of particular interest is the [How do I...?](/docs/programming-guide/how-do-i) s
 {{% callout tip "Next Steps" %}}
 Here are some options to kickstart your journey:
 
-- Start with the [architecture](/docs/programming-guide/architecture-principles), if you're an intermediate/advanced user.
+- Start with the [architecture](/docs/programming-guide/architecture-principles), for intermediate/advanced users.
 - Check commonly used code snippets that will help you develop your application: [How Do I...?](/docs/programming-guide/how-do-i).
 - Visit the [API](/api) section for the full API reference.
 {{% /callout %}}
