@@ -1,1 +1,6 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noreferrer noopener"{{ end }}>{{ .Text }}</a>
+{{/* safeHTML does not detect all cases of tags, <TP, TC> for instance so we need to escape all tags manually */}}
+{{ $text := .Text }}
+{{ $text = replaceRE `<` `&lt;` $text }}
+{{ $text = replaceRE `>` `&gt;` $text }}
+
+<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noreferrer noopener"{{ end }}>{{ $text | safeHTML }}</a>
