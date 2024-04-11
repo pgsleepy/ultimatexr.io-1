@@ -78,9 +78,11 @@ Besides the `UxrComponent<T>` and `UxrComponent<TP, TC>` variations, there are o
 
 ### `UxrGrabbableObjectComponent<T>`
 
+This component is covered in the [Manipulation](/docs/programming-guide/manipulation-uxrgrabbableobjectcomponent) section.
+
 ### `UxrAbstractSingleton<T>` and `UxrSingleton<T>`
 
-These will be covered in the [Singletons](docs/programming-guide/architecture-singletons) section.
+These will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
 
 ## Relevant Properties
 

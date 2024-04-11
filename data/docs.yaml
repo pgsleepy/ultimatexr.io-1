@@ -90,6 +90,8 @@
           url: "/docs/programming-guide/manipulation-uxrgrabmanager"
         - title: "UxrGrabbableObject"
           url: "/docs/programming-guide/manipulation-uxrgrabbableobject"
+        - title: "UxrGrabbableObjectComponent"
+          url: "/docs/programming-guide/manipulation-uxrgrabbableobjectcomponent"
         - title: "UxrGrabbableObjectAnchor"
           url: "/docs/programming-guide/manipulation-uxrgrabbableobjectanchor"
         - title: "UxrGrabber"
