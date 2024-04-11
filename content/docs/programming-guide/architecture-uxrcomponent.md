@@ -137,7 +137,7 @@ This component is covered in the [Manipulation](/docs/programming-guide/manipula
 
 These singleton components will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
 
-## Common Properties
+## Properties
 
 These properties are inherited by any component derived from `UxrComponent`:
 
@@ -160,17 +160,17 @@ When `Destroy()` is called on a component, Unity will keep the reference and des
 
 Sometimes it can be convenient to know initial transform values. Instead of storing them in temporal variables, the following properties can be used on any type derived from `UxrComponent`:
 
-- `InitialParent`
-- `InitialLocalPosition`
-- `InitialLocalRotation`
-- `InitialLocalEulerAngles`
-- `InitialLocalScale`
-- `InitialLossyScale`
-- `InitialPosition`
-- `InitialRotation`
-- `InitialEulerAngles`
-- `InitialRelativeMatrix`
-- `InitialLocalToWorldMatrix`
+- `InitialParent`: `Transform` with the initial parent of the GameObject where the component is located.
+- `InitialLocalPosition`: `Vector3` with the initial `localPosition` value.
+- `InitialLocalRotation`: `Quaternion` with the initial `localRotation` value.
+- `InitialLocalEulerAngles`: `Vector3` with the initial `localEulerAngles` value.
+- `InitialLocalScale`: `Vector3` with the initial `localScale` value.
+- `InitialLossyScale`: `Vector3` with the initial `lossyScale` value.
+- `InitialPosition`: `Vector3` with the initial `position` value.
+- `InitialRotation`: `Quaternion` with the initial `rotation` value.
+- `InitialEulerAngles`: `Vector3` with the initial `eulerAngles` value.
+- `InitialRelativeMatrix`: `Matrix4x4` with the initial relative matrix. This matrix represents the transformation relative to the parent.
+- `InitialLocalToWorldMatrix`: `Vector3` with the initial `localToWorldMatrix` value.
 
 {{% callout info %}}
 These properties are stored during `Awake()`.
