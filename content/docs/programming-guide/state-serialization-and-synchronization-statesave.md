@@ -327,13 +327,34 @@ The only requirement for using conditions during serialization is to ensure that
 
 Ultimately, it's the user's discretion to determine what needs to be serialized to ensure proper integration with systems that use  **StateSave** functionality.
 
+## Component Order
+
+The order in which components are serialized determines the sequence in which the component data appears in the data stream. During deserialization, the system reconstructs the data in the same order, which is crucial for components with dependencies.
+
+For instance, the `UxrInstanceManager` must be serialized before any components in instantiated GameObjects. If the `UxrInstanceManager` were serialized last, the system would attempt to deserialize component data and locate the corresponding components in the scene. However, since the `UxrInstanceManager` hadn't created those objects yet, this process, relying on the component's unique id, would fail.
+By prioritizing the serialization of the `UxrInstanceManager`, we ensure that the instances are created and available for deserialization.
+
+{{% callout tip %}}
+The order in which components are serialized is determined by the `SerializationOrder` property from `IUxrStateSave`. This property can be overriden.
+{{% /callout %}}
+
+Most of the time, the `SerializationOrder` can be left unchanged. With dependencies, however, it can be overriden to control the order in which certain components are serialized. By default it is assigned a value of 0. UltimateXR defines the serialization values used by UltimateXR components in the `UxrConstants.Serialization` class:
+
+- `SerializationOrderInstanceManager` = `SerializationOrderSingleton` - 1000
+- `SerializationOrderSingleton` = -10000
+- `SerializationOrderDefault` = 0
+
+Serialization will be performed for increasing values of `SerializationOrder` which means that, by default, the `UxrInstanceManager` is serialized first, followed by all singletons, and finally, all other components.
+
 ## State interpolation
 
 State interpolation is a feature provided by the framework to support functionality like replays.
 
 A replay is an application session that has been recorded and can be played back. Unlike a video, a replay contains spatial data and events instead of pixels. offering the additional benefit of being viewable from any angle. Replays have many applications in videogames and simulators.
 
+{{% callout info %}}
 UltimateXR supports recording replays to a file and playing them back.
+{{% /callout %}}
 
 A replay file, in a very simplified way, represents a timeline with 2 type of elements: **StateSync** events and **StateSave** frames. Events are property changes or method calls that have been synchronized using BeginSync/EndSync statements, part of the **StateSync** functionality. **StateSave** frames, on the other hand, are serialized state changes saved at regular intervals, usually a fixed amount of times per second. These frames are written using `SerializeState()` calls with the `ChangesSincePreviousSave` level.
 
