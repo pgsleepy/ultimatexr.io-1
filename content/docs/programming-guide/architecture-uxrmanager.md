@@ -1,5 +1,19 @@
 ---
-title: "Title"
+title: "UxrManager"
 ---
 
-# Title
+# UxrManager
+
+## Overview
+
+## Precaching
+
+## Update Sequence
+
+## Events
+
+## Teleporting
+
+## State Serialization
+
+## State Synchronization
