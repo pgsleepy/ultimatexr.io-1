@@ -1,5 +1,4 @@
 {{/* safeHTML detects <T> as a tag so we need to manually escape it */}}
-{{ $text := .Text }}
-{{ $text = replaceRE `<T>` `&lt;T&gt;` $text | safeHTML }}
-
+{{- $text := .Text }}
+{{- $text = replaceRE `<T>` `&lt;T&gt;` $text | safeHTML }}
 <a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noreferrer noopener"{{ end }}>{{ $text }}</a>
