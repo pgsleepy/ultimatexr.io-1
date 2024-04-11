@@ -178,8 +178,32 @@ This property provides access to a `UxrStateSaveMonitor` object with events rais
 
 It can provide technical information to advanced users working with [state serialization](/docs/programming-guide/state-serialization-and-synchronization-statesave) functionality.
 
+## Component Registration
+
+Components inheriting from `UxrComponent` are automatically registered in the system by the base `Awake()` implementation. This makes them visible to the enumeration methods described above.
+Components are unregistered once the base `OnDestroy()` is called.
+
 ## Relevant Events
 
-`UxrComponent` provides many events to 
+### Static events
+
+`UxrComponent` provides the following global events:
+
+- `GlobalRegistering`: Raised right before a new component is about to be registered.
+- `GlobalRegistered`: Raised right after a new component was registered.
+- `GlobalUnregistering`: Raised right before a component is about to be unregistered.
+- `GlobalUnregistered`: Raised right after a new component was unregistered.
+- `GlobalEnabled`: Raised when the `OnEnable()` of a component is called.
+- `GlobalDisabled`: Raised when the `OnDisable()` of a component is called.
+- `GlobalIdChanging`: Raised right before the `UniqueId` of a component is about to change.
+- `GlobalIdChanged`: Raised right after the `UniqueId` of a component changed.
+
+### Events
+
+`UxrComponent` provides the following events:
+
+- `StateChanged`: Raised right after the state of the component changed. A full guide about state changes can be found in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave) section.
+
+
 
 ## Relevant Methods
