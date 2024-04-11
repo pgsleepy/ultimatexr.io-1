@@ -17,6 +17,61 @@ If inheriting directly from `UxrComponent` is not possible, as C# does not suppo
 Please refer to the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for detailed implementation instructions.
 {{% /callout %}}
 
+## Inheriting from `UxrComponent`
+
+Inheriting from `UxrComponent` or any other core component is straightforward. The following example creates a component class `MyComponent` that inherits from `UxrComponent<T>`.
+
+```c#
+public class MyComponent : UxrComponent<MyComponent>
+{
+
+}
+```
+
+{{% callout warning %}}
+Unity methods are implemented in `UxrComponent` as virtual protected. Implementing Unity methods like `Awake()` or `OnEnable()` requires overriding and calling the base implementation.
+{{% /callout %}}
+
+Continuing with the `MyComponent` class, the following code would be required to implement some of the Unity methods:
+
+```c#
+public class MyComponent : UxrComponent<MyComponent>
+{
+	protected override void Awake()
+	{
+		base.Awake();
+		
+		// Add initialization code here
+	}
+	
+	protected override void OnEnable()
+	{
+		base.OnEnable();
+		
+		// Add OnEnable code here
+	}
+	
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+		
+		// Add OnDisable code here
+	}
+	
+	private void Update()
+	{
+		// Update doesn't have a parent implementation.
+	}
+}
+```
+
+In the above example we have overriden `Awake()`, `OnEnable()` and `OnDisable()` ensuring the base implementation is always called first. `Update()` is implemented normally since it does not have a base implementation.
+
+{{% callout danger %}}
+Omitting the call to the base implementations will result in core functionalities such as component enumeration or unique id not working correctly.
+{{% /callout %}}
+
+
 ## Component Enumeration
 
 ### `UxrComponent`
@@ -32,7 +87,7 @@ foreach (UxrComponent component in UxrComponent.AllComponents)
 In the code above, through the static `AllComponents` property, it is possible to access all components in the scene that inherit from `UxrComponent`.
 To iterate over the enabled components only, the property `EnabledComponents` can be used instead.
 
-In the previous [Class Diagram](/docs/programming-guide/architecture-class-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`.
+In the previous [Class Diagram](/docs/programming-guide/architecture-class-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`:
 
 ### `UxrComponent<T>`
 In `UxrComponent<T>`, `AllComponents` and `EnabledComponents` are redefined to return only the components of the specific type `T`. For instance using `UxrAvatar`, which is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`:
@@ -81,7 +136,7 @@ This component is covered in the [Manipulation](/docs/programming-guide/manipula
 
 ### `UxrAbstractSingleton<T>` and `UxrSingleton<T>`
 
-These will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
+These singleton components will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
 
 ## Relevant Properties
 
@@ -98,13 +153,13 @@ For a detailed exploration of the unique ID functionality, refer to the dedicate
 
 ### `IsBeingDestroyed` and `IsApplicationQuitting`
 
-When calling `Destroy()` on a component, Unity will keep the reference and destroy the component at the end of the frame. `IsBeingDestroyed` can be used to check whether `Destroy()` was called on the component.
+When `Destroy()` is called on a component, Unity will keep the reference and destroy the component at the end of the frame. `IsBeingDestroyed` can be used to check whether `Destroy()` was called on the component.
 
 `IsApplicationQuitting` tells whether `Application.Quit()` was called and the application is closing. It can be used to prevent access from objects in `OnDestroy()` that are no longer available.
 
 ### Transform properties
 
-Sometimes it can be convenient to know initial transform values. Instead of storing them in temporal variables, the following properties can be used:
+Sometimes it can be convenient to know initial transform values. Instead of storing them in temporal variables, the following properties can be used on any type derived from `UxrComponent`:
 
 - `InitialParent`
 - `InitialLocalPosition`
@@ -125,8 +180,12 @@ They can be reset at any point using the `RecomputeInitialTransformData()` metho
 
 ### StateSaveMonitor
 
+This property provides access to a `UxrStateSaveMonitor` object with events raised whenever the state of the object is being serialized or deserialized.
 
+It can provide technical information to advanced users working with [state serialization](/docs/programming-guide/state-serialization-and-synchronization-statesave) functionality.
 
 ## Relevant Events
+
+`UxrComponent` provides many events to 
 
 ## Relevant Methods
