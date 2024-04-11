@@ -132,9 +132,9 @@ This component is covered in the [Manipulation](/docs/programming-guide/manipula
 
 These singleton components will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
 
-## Relevant Properties
+## Base Functionality
 
-Besides all the enumeration properties, `UxrComponent` also offers additional useful functionality accessible through properties:
+`UxrComponent` offers useful functionality that will be inherited:
 
 ### `UniqueId`
 
@@ -151,7 +151,7 @@ When `Destroy()` is called on a component, Unity will keep the reference and des
 
 `IsApplicationQuitting` tells whether `Application.Quit()` was called and the application is closing. It can be used to prevent access from objects in `OnDestroy()` that are no longer available.
 
-### Transform properties
+### Transform utilities
 
 Sometimes it can be convenient to know initial transform values. Instead of storing them in temporal variables, the following properties can be used on any type derived from `UxrComponent`:
 
@@ -169,8 +169,35 @@ Sometimes it can be convenient to know initial transform values. Instead of stor
 
 {{% callout info %}}
 These properties are stored during `Awake()`.
-They can be reset at any point using the `RecomputeInitialTransformData()` method.
+They can be set to the current transform values at any time using the `RecomputeInitialTransformData()` method.
 {{% /callout %}}
+
+In addition to the properties, these methods will also provide useful transform functionality:
+
+- `RecomputeInitialTransformData()`: Sets all the transform properties described above using the current transform values.
+- `RestoreInitialLocalTransform()`: Restores the object's transform using the initial local data from above.
+- `RestoreInitialWorldTransform()`: Restores the object's transform using the initial world data from above.
+
+In certain scenarios, when manipulating object transforms, the following methods add the ability to temporarily store and recover transformation values. This ensures that objects can be reverted to their original state after undergoing various operations:
+- `PushTransform()`: Stores the current position, rotation and localScale values.
+- `PushLocalTransform()`: Stores the current localPosition, localRotation and localScale values.
+- `PopTransform()`: 
+- `PopLocalTransform()`: 
+
+These methods operate on a stack-based system, allowing transformation values to be pushed onto the stack and then popped off the stack to restore the original values.
+The use of a stack allows not only to store and retrieve values, but also make sure that it works with nesting.
+
+```c#
+// Store current position/rotation and localScale of the object
+PushTransform();
+
+// Operate on the transform
+
+// Restore position/rotation and localScale of the object
+PopTransform();
+```
+
+Whether to use the local or world version of the methods depends on whether the object is parented or not and if it's relevant to keep the local position/orientation of the object or the world position/orientation.
 
 ### StateSaveMonitor
 
@@ -204,6 +231,42 @@ Components are unregistered once the base `OnDestroy()` is called.
 
 - `StateChanged`: Raised right after the state of the component changed. A full guide about state changes can be found in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave) section.
 
-
-
 ## Relevant Methods
+
+
+StateSerializationVersion
+SerializationOrder
+SaveStateWhenDisabled
+SerializeActiveAndEnabledState
+TransformStateSaveSpace
+
+-----
+
+public T GetCachedComponent<T>() where T : Component
+
+SyncState(UxrSyncEventArgs e)
+
+RegisterIfNecessary()
+ChangeUniqueId(Guid newUniqueId)
+CombineUniqueId
+
+ToString()
+
+RequiresTransformSerialization
+SerializeState
+InterpolateState
+GetInterpolator
+SerializeStateValue
+SerializeStateTransform
+InterpolateStateTransform
+IsTransformPositionVarName
+IsTransformRotationVarName
+IsTransformScaleVarName
+
+BeginSync
+CancelSync
+EndSyncProperty
+EndSyncMethod
+
+
+## IUxrUnique, IUxrStateSave and IUxrStateSync
