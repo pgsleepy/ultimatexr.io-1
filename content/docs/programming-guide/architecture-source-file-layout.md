@@ -6,9 +6,9 @@ title: "Source File Layout"
 
 ## Regions
 
-UltimateXR source files follow a standardized layout, organized into regions where elements are classified depending on accessibility and role. Each element is thoroughly documented using XML tags, serving as the source for documentation generation. This consistent layout facilitates collaboration among multiple contributors, as they can quickly understand the structure of each file, facilitating efficient development and maintenance.
+UltimateXR source files follow a standardized layout, organized into `#region` blocks of code where elements are classified depending on accessibility and role. This consistent layout facilitates collaboration among multiple contributors, as they can quickly understand the structure of each file, facilitating efficient development and maintenance.
 
-Commonly used #region sections are, in order of appearance:
+Commonly used `#region` blocks are, in order of appearance:
 - Inspector Properties/Serialized Fields
 - Public Types & Data
 - Constructors & Finalizer
@@ -29,13 +29,22 @@ Commonly used #region sections are, in order of appearance:
 
 ## Collapsed view
 
-Use Ctrl+M followed by Ctrl+O to collapse definitions. The collapsed view provides an overview of available elements and the file's organization. Public properties, events, and methods are prioritized at the top, giving immediate understanding of component usage and functionality.
+{{% callout tip %}}
+Use Ctrl+M followed by Ctrl+O to collapse definitions.
+{{% /callout %}}
+
+The collapsed view provides an overview of available elements and the file's organization. Public properties, events, and methods are prioritized at the top, giving immediate understanding of component usage and functionality.
 
 ![](/docs/guides/media/scripting/01Collapsed.png)
 
 ## Expanded view
 
-Use Ctrl+M followed by Ctrl+L to expand the definitions. The collapse and expand shortcuts will help you alternate between the two views to quickly navigate through the code. 
+{{% callout tip %}}
+Use Ctrl+M followed by Ctrl+L to expand the definitions.
+{{% /callout %}}
+
+The expanded view provides a full view of the whols sourcecode.
+Alternating between the two views will help to quickly navigate through the code.
 
 ![](/docs/guides/media/scripting/02Expanded.png)
 
