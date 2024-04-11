@@ -33,37 +33,37 @@ Users can incorporate this functionality into their own components by inheriting
 ### `UxrComponent`
 `UxrComponent` is the base class for all components in the framework.
 
-Check [`UxrComponent`](/api/T_UltimateXR_Core_Components_UxrComponent) in the [API Guide](/api).
+Check [UxrComponent](/api/T_UltimateXR_Core_Components_UxrComponent) in the API Guide.
 
 ### `UxrComponent<T>`
 `UxrComponent<T>` is a typed version of `UxrComponent` with additional functionality to enumerate all component instances of type `T` and operate on them. For instance, `UxrAvatar` is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`.
 
-Check [`UxrComponent<T>`](/api/T_UltimateXR_Core_Components_UxrComponent_1) in the [API Guide](/api).
+Check [UxrComponent<T>](/api/T_UltimateXR_Core_Components_UxrComponent_1) in the API Guide.
 
 ### `UxrComponent<TP, TC>`
 `UxrComponent<TP, TC>` is a typed version of `UxrComponent` used for components of type `TC` that are found in a hierarchy where a component of type `TP` is the root.  For instance, `UxrButton3D` is defined as `class UxrButton3D : UxrComponent<Canvas, UxrButton3D>`.
 
-Check [`UxrComponent<TP, TC>`](/api/T_UltimateXR_Core_Components_UxrComponent_2) in the [API Guide](/api).
+Check [UxrComponent<TP, TC>](/api/T_UltimateXR_Core_Components_UxrComponent_2) in the API Guide.
 
 ### `UxrAvatarComponent<T>`
 `UxrAvatarComponent<T>` is an `UxrComponent` of type `T` that can be found in a hierarchy under an `UxrAvatar`. For instance, `UxrFingerTip` is defined as `class UxrFingerTip : UxrAvatarComponent<UxrFingerTip>`.
 
-Check [`UxrAvatarComponent<T>`](/api/T_UltimateXR_Core_Components_Composite_UxrAvatarComponent_1) in the [API Guide](/api).
+Check [UxrAvatarComponent<T>](/api/T_UltimateXR_Core_Components_Composite_UxrAvatarComponent_1) in the API Guide.
 
 ### `UxrGrabbableObjectComponent<T>`
 `UxrGrabbableObjectComponent<T>` is an `UxrComponent` of type `T` that has an `UxrGrabbableObject` in the same `GameObject`. For instance, `UxrWeapon` is defined as `class UxrWeapon : UxrGrabbableObjectComponent<UxrWeapon>`.
 
-Check [`UxrGrabbableObjectComponent<T>`](/api/T_UltimateXR_Core_Components_Composite_UxrGrabbableObjectComponent_1) in the [API Guide](/api).
+Check [UxrGrabbableObjectComponent<T>](/api/T_UltimateXR_Core_Components_Composite_UxrGrabbableObjectComponent_1) in the API Guide.
 
 ### `UxrAbstractSingleton<T>`
 `UxrAbstractSingleton<T>` is a base class to build singletons for a type `T` that can be abstract. Abstract classes are used when the singleton being created is itself a base abstract class.
 
-Check [`UxrAbstractSingleton<T>`](/api/T_UltimateXR_Core_Components_Singleton_UxrAbstractSingleton_1) in the [API Guide](/api).
+Check [UxrAbstractSingleton<T>](/api/T_UltimateXR_Core_Components_Singleton_UxrAbstractSingleton_1) in the API Guide.
 
 ### `UxrSingleton<T>`
 `UxrSingleton<T>` is a singleton component for a type `T`. All singletons in UltimateXR derive from `UxrSingleton<T>`. For instance, the `UxrGrabManager` is defined as `class UxrGrabManager : UxrSingleton<UxrGrabManager>`.
 
-Check [`UxrSingleton<T>`](/api/T_UltimateXR_Core_Components_Singleton_UxrSingleton_1) in the [API Guide](/api).
+Check [UxrSingleton<T>](/api/T_UltimateXR_Core_Components_Singleton_UxrSingleton_1) in the API Guide.
 
 
 Let's start off by taking a closer look at `UxrComponent`.
