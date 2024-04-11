@@ -44,24 +44,40 @@ foreach (UxrAvatar avatar in UxrAvatar.EnabledComponents)
 
 ### `UxrComponent<TP, TC>`
 In case of the `UxrComponent<TP, TC>` variant, it is also possible to access the components of type `TC` in a specific parent `TP` by using the method `GetParentChildren()`.
-For instance, to iterate over the `UxrFingerTip` components from an `UxrAvatar`:
+For instance, to iterate over the `UxrButton3D` components in a `Canvas`:
+
+```c#
+foreach (UxrButton3D button in UxrButton3D.GetParentChildren(canvas, false))
+{
+    Debug.Log($"Hello, I'm a UxrButton3D component in canvas {canvas.name}");
+}
+```
+
+`GetParentChildren()` will iterate over all registered `UxrButton3D` components that hang from a specific `Canvas`. The second parameter `includeDisabled` controls whether to include disabled components or from inactive GameObjects in the list.
+
+### `UxrAvatarComponent<T>`
+UxrAvatarComponent<T> is a specialization used for components that are found in an avatar. It has different enumeration methods to specifically find components hanging from an avatar:
 
 ```c#
 UxrAvatar avatar = ...
 
-foreach (UxrFingerTip fingerTip in UxrFingerTip.GetParentChildren(avatar, false))
+foreach (UxrFingerTip fingerTip in UxrFingerTip.GetComponents(avatar, false))
 {
     Debug.Log($"Hello, I'm a UxrFingerTip component from avatar {avatar.name}");
 }
 ```
 
-`GetParentChildren()` will iterate over all registered `UxrFingerTip` components that hang from a specific `UxrAvatar`. The second parameter `includeDisabled` controls whether to include disabled components or from inactive GameObjects in the list.
+Here, `GetComponents()` returns all registered `UxrFingerTip` components that belong to a specific `UxrAvatar`. The second parameter `includeDisabled` controls whether to include disabled components or from inactive GameObjects in the list.
 
-## `UxrComponent` Variations
+## Other `UxrComponent` specializations
 
-`UxrComponent` has two typed variations:
-- `UxrComponent<T>`
-- `UxrComponent<TP, TC>`
+Besides the `UxrComponent<T>` and `UxrComponent<TP, TC>` variations, there are other core components in the class diagram:
+
+### `UxrGrabbableObjectComponent<T>`
+
+### `UxrAbstractSingleton<T>` and `UxrSingleton<T>`
+
+These will be covered in the [Singletons](docs/programming-guide/architecture-singletons) section.
 
 ## Relevant Properties
 
