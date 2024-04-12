@@ -75,7 +75,7 @@ The `Update` stage runs within the Unity `Update()` method of `UxrManager`. All 
 
 ### Stage Update Events
 
-As shown in the [update sequence](#Update Sequence) above, `UxrManager` provides two sets of update events:
+As shown in the [update sequence](#update_sequence) above, `UxrManager` provides two sets of update events:
 
 - `AvatarsUpdating`: Triggered just before the update stages start.
 - `AvatarsUpdated`: Triggered immediately after the last update stage, `PostProcess` was completed.
