@@ -63,7 +63,7 @@ The different stages are defined by the `UxrUpdateStage` enum:
 - `Animation`: Updates the hands based on the current hand poses or hand tracking values.
 - `PostProcess`: Applies final processing like Inverse Kinematics.
 
-The following diagram provides on the left a high level view of the stages involved in the update during a single frame. On the right it shows the events raised before and after each stage.
+The following diagram provides on the left a high level view of the stages involved in the update during a single frame. On the right it shows the events triggered before and after each stage.
 
 ![](/docs/programming-guide/media/UxrManagerUpdateOrder.png)
 
@@ -71,7 +71,24 @@ The `Update` stage runs within the Unity `Update()` method of `UxrManager`. All 
 
 ## Events
 
+`UxrManager` exposes multiple events to facilitate the integration of new functionality:
+
 ### Stage Update Events
+
+As shown in the [update sequence](#Update Sequence) above, `UxrManager` provides two sets of update events:
+
+- `AvatarsUpdating`: Triggered just before the update stages start.
+- `AvatarsUpdated`: Triggered immediately after the last update stage, `PostProcess` was completed.
+
+and
+
+- `StageUpdating`: Triggered right before an update stage starts. The event parameter indicates the stage.
+- `StageUpdated`: Triggered right after an update stage was completed. The event parameter indicates the stage.
+
+{{% callout info %}}
+Normally custom components use `AvatarsUpdated` event to make sure the code is executed after UltimateXR finished updating.
+For components using grababble objects there are specific events detailed in the [manipulation guide](/docs/programming-guide/manipulation-update).
+{{% /callout %}}
 
 ### Precaching Events
 
