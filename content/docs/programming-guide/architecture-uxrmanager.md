@@ -67,7 +67,7 @@ The following diagram provides on the left a high level view of the stages invol
 
 ![](/docs/programming-guide/media/UxrManagerUpdateOrder.png)
 
-The `Update` stage runs within the Unity `Update()` method of UxrManager. All the other stages, known collectively as **PostUpdate**, are normally executed within the `LateUpdate()` method of `UxrManager`. You can adjust this behavior using the `PostUpdateMode` property or inspector variable. You can set it to either `Update`, for execution during `Update()`, or `LateUpdate`, for execution during `LateUpdate()`.
+The `Update` stage runs within the Unity `Update()` method of `UxrManager`. All the other stages, known collectively as **PostUpdate**, are normally executed within the `LateUpdate()` method of `UxrManager`. This behavior can be adjusted using the `PostUpdateMode` property or inspector variable. It can be set to either `Update`, for execution during `Update()`, or `LateUpdate`, for execution during `LateUpdate()`.
 
 ## Events
 
