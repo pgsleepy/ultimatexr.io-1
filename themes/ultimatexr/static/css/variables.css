@@ -1,25 +1,24 @@
 :root {
-  --uxr-color-primary: #281e5a;
-  --uxr-color-secondary: #aa64fa;
-
-  --uxr-background-color: #fff;
-  --uxr-color: var(--uxr-color-primary);
+  --uxr-color-primary: rgb(40, 30, 90);
+  --uxr-color-secondary: rgb(170, 100, 250);
+  
+  --uxr-background-color: rgb(255, 255, 255);
   --uxr-color-dark: rgb(15, 23, 42);
-  --uxr-color-text-body: rgb(75, 85, 99);
   --uxr-color-text: rgb(51, 65, 85);
   --uxr-color-text-2: rgb(75 ,85, 99);
+  --uxr-color-text-body: rgb(75, 85, 99);
   --uxr-color-medium: rgb(203, 213, 225);
   --uxr-color-light: rgb(229, 232, 238);
   --uxr-color-light-2: rgb(240, 241, 242);
   --uxr-color-light-3: rgb(248, 249, 250);
-
+  
   --uxr-color-scrollbar: rgb(229, 232, 238);
   --uxr-color-scrollbar-active: rgb(201, 206, 210);
   
   --uxr-color-code-background: rgb(248, 248, 248);
-
+  
   --uxr-divider-color: var(--uxr-color-light);
-
+  
   --uxr-color-callout-info: rgb(14,165,233);
   --uxr-color-callout-tip: rgb(79,163,124);
   --uxr-color-callout-caution: rgb(255,140,0);

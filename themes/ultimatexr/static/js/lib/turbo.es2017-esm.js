@@ -932,7 +932,7 @@ function mergeIntoURLSearchParams(url, requestBody) {
   return url
 }
 
-class AppearanceObserver {
+class ThemeObserver {
   started = false
 
   constructor(delegate, element) {
@@ -5718,7 +5718,7 @@ class FrameController {
   constructor(element) {
     this.element = element;
     this.view = new FrameView(this, this.element);
-    this.appearanceObserver = new AppearanceObserver(this, this.element);
+    this.themeObserver = new ThemeObserver(this, this.element);
     this.formLinkClickObserver = new FormLinkClickObserver(this, this.element);
     this.linkInterceptor = new LinkInterceptor(this, this.element);
     this.restorationIdentifier = uuid();
@@ -5731,7 +5731,7 @@ class FrameController {
     if (!this.#connected) {
       this.#connected = true;
       if (this.loadingStyle == FrameLoadingStyle.lazy) {
-        this.appearanceObserver.start();
+        this.themeObserver.start();
       } else {
         this.#loadSourceURL();
       }
@@ -5744,7 +5744,7 @@ class FrameController {
   disconnect() {
     if (this.#connected) {
       this.#connected = false;
-      this.appearanceObserver.stop();
+      this.themeObserver.stop();
       this.formLinkClickObserver.stop();
       this.linkInterceptor.stop();
       this.formSubmitObserver.stop();
@@ -5779,9 +5779,9 @@ class FrameController {
 
   loadingStyleChanged() {
     if (this.loadingStyle == FrameLoadingStyle.lazy) {
-      this.appearanceObserver.start();
+      this.themeObserver.start();
     } else {
-      this.appearanceObserver.stop();
+      this.themeObserver.stop();
       this.#loadSourceURL();
     }
   }
@@ -5789,7 +5789,7 @@ class FrameController {
   async #loadSourceURL() {
     if (this.enabled && this.isActive && !this.complete && this.sourceURL) {
       this.element.loaded = this.#visit(expandURL(this.sourceURL));
-      this.appearanceObserver.stop();
+      this.themeObserver.stop();
       await this.element.loaded;
       this.#hasBeenLoaded = true;
     }
@@ -5817,7 +5817,7 @@ class FrameController {
     }
   }
 
-  // Appearance observer delegate
+  // Theme observer delegate
 
   elementAppearedInViewport(element) {
     this.proposeVisitIfNavigatedWithAction(element, getVisitAction(element));
