@@ -54,6 +54,15 @@ public class MyComponent : UxrComponent, IUxrPrecacheable
 
 ## Update Sequence
 
+The `UxrUpdateManager` is updated in different stages. Updating in stages provides better control over how components are processed, improving scalability and making debugging easier. Events are available to let developers know when each stage begins or ends, allowing for customization and additional functionality as needed.
+
+The different stages are defined by the `UxrUpdateStage` enum:
+- `Update`: Gets new input and tracking values from the controllers. Updates the avatar position using the current locomotion.
+- `AvatarUsingTracking`: Updates the avatar extremities using the new tracking values.
+- `Manipulation`: Updates the manipulation system.
+- `Animation`: Updates the hands based on the current hand poses or hand tracking values.
+- `PostProcess`: Applies final processing like Inverse Kinematics.
+
 ![](/docs/programming-guide/media/UxrManagerUpdateOrder.png)
 
 ## Events
