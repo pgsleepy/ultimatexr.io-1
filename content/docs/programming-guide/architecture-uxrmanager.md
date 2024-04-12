@@ -92,10 +92,21 @@ For components using grababble objects there are specific events detailed in the
 
 ### Precaching Events
 
+Similarly, there are pre and post events for the precaching process:
+- `PrecachingStarted`: Triggered just before the precaching starts.
+- `PrecachingFinished`: Triggered immediately after the precaching was completed.
+
 ### `ComponentStateChanged` Event
+
+`UxrManager` provides the `ComponentStateChanged` event, which is triggered by specific changes to components like property changes and method calls.
+It acts as a central point for capturing component changes, useful for synchronization across network clients, such as in a network setting.
+
+Objects from the `ComponentStateChanged` event can be serialized into a byte stream and deserialized back, enabling the replication of the same changes they represent using the `ExecuteStateSyncEvent` method in `UxrManager`.
+
+This feature plays a big role in the implementation of multiplayer and replays within UltimateXR.
+
+This functionality is covered in more detail in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
 
 ## Teleporting
 
 ## State Serialization
-
-## State Synchronization
