@@ -54,7 +54,7 @@ public class MyComponent : UxrComponent, IUxrPrecacheable
 
 ## Update Sequence
 
-The `UxrUpdateManager` is updated in different stages. Updating in stages provides better control over how components are processed, improving scalability and making debugging easier. Events are available to let developers know when each stage begins or ends, allowing for customization and additional functionality as needed.
+The `UxrManager` is updated in different stages. Updating in stages provides better control over how components are processed, improving scalability and making debugging easier. Events are available to let developers know when each stage begins or ends, allowing for customization and additional functionality as needed.
 
 The different stages are defined by the `UxrUpdateStage` enum:
 - `Update`: Gets new input and tracking values from the controllers. Updates the avatar position using the current locomotion.
@@ -63,12 +63,19 @@ The different stages are defined by the `UxrUpdateStage` enum:
 - `Animation`: Updates the hands based on the current hand poses or hand tracking values.
 - `PostProcess`: Applies final processing like Inverse Kinematics.
 
-
-The following diagram provides on the left a high level view of the steps involved in the update during a single frame. On the right it shows the events raised before and after each step.
+The following diagram provides on the left a high level view of the stages involved in the update during a single frame. On the right it shows the events raised before and after each stage.
 
 ![](/docs/programming-guide/media/UxrManagerUpdateOrder.png)
 
+The `Update` stage runs within the Unity `Update()` method of UxrManager. All the other stages, known collectively as **PostUpdate**, are normally executed within the `LateUpdate()` method of `UxrManager`. You can adjust this behavior using the `PostUpdateMode` property or inspector variable. You can set it to either `Update`, for execution during `Update()`, or `LateUpdate`, for execution during `LateUpdate()`.
+
 ## Events
+
+### Stage Update Events
+
+### Precaching Events
+
+### `ComponentStateChanged` Event
 
 ## Teleporting
 
