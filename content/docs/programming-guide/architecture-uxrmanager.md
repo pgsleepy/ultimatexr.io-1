@@ -24,7 +24,7 @@ Precaching helps reduce loading times and prevents stuttering at runtime by ensu
 
 When a prefab is first instantiated, Unity loads all its associated assets such as textures, models, and sounds. If these assets aren't already in memory and have to be loaded from disk, it can slow down the process. However, subsequent uses of the same prefab benefit from having these assets already in memory, resulting in reduced chances of hiccups.
 
-With precaching, prefabs expected to be used during gameplay are loaded when the scene loads and shown in front of the camera to ensure the rendering. This happens over a set number of frames, usually 50 by default, while the screen stays black to hide the process. Once the precaching is done, the instances are removed, and the scene gradually becomes visible.
+With precaching, prefabs expected to be used during gameplay are loaded when the scene loads and shown in front of the camera to ensure the rendering. This happens over a set number of frames, usually 50 by default, while the screen stays black to hide the process. Once the precaching is done, the instances are removed, and the scene gradually fades in.
 By doing this, the assets needed for these prefabs are more likely to be in memory, which helps prevent interruptions during gameplay.
 
 ### `IUxrPrecacheable`
@@ -53,6 +53,8 @@ public class MyComponent : UxrComponent, IUxrPrecacheable
 ```
 
 ## Update Sequence
+
+![](/docs/programming-guide/media/UxrManagerUpdateOrder.png)
 
 ## Events
 
