@@ -75,7 +75,7 @@ The `Update` stage runs within the Unity `Update()` method of `UxrManager`. All 
 
 ### Stage Update Events
 
-As shown in the [update sequence](#update_sequence) above, `UxrManager` provides two sets of update events:
+As shown in the [update sequence](#update-sequence) above, `UxrManager` provides two sets of update events:
 
 - `AvatarsUpdating`: Triggered just before the update stages start.
 - `AvatarsUpdated`: Triggered immediately after the last update stage, `PostProcess` was completed.
@@ -101,11 +101,13 @@ Similarly, there are pre and post events for the precaching process:
 `UxrManager` provides the `ComponentStateChanged` event, which is triggered by specific changes to components like property changes and method calls.
 It acts as a central point for capturing component changes, useful for synchronization across network clients, such as in a network setting.
 
-Objects from the `ComponentStateChanged` event can be serialized into a byte stream and deserialized back, enabling the replication of the same changes they represent using the `ExecuteStateSyncEvent` method in `UxrManager`.
+The descriptor passed to the `ComponentStateChanged` event can be serialized into a byte stream and deserialized back, enabling the replication of the same changes they represent using the `ExecuteStateSyncEvent` method in `UxrManager`.
+
+![](/docs/programming-guide/media/StateSyncDiagram.png)
 
 This feature plays a big role in the implementation of multiplayer and replays within UltimateXR.
 
-This functionality is covered in more detail in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+State synchronization is covered in detail in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
 
 ## Teleporting
 

@@ -293,6 +293,10 @@ private void UxrManager_ComponentStateChanged(IUxrStateSync component, UxrSyncEv
 UxrManager.Instance.ExecuteStateSyncEvent(serializedEvent);
 ```
 
+This is how multiplayer synchronization is implemented internally:
+
+![](/docs/programming-guide/media/StateSyncDiagram.png)
+
 ## Nested synchronization
 
 A question remains after some of the examples given at the beginning. Let's get back to the synchronized `Shoot()` method in the gun component. We have removed some parts for clarity:
