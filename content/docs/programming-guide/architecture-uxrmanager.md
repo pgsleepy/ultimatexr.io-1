@@ -63,6 +63,7 @@ The different stages are defined by the `UxrUpdateStage` enum:
 - `Animation`: Updates the hands based on the current hand poses or hand tracking values.
 - `PostProcess`: Applies final processing like Inverse Kinematics.
 
+
 The following diagram provides on the left a high level view of the steps involved in the update during a single frame. On the right it shows the events raised before and after each step.
 
 ![](/docs/programming-guide/media/UxrManagerUpdateOrder.png)
