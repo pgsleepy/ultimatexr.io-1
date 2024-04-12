@@ -111,4 +111,25 @@ State synchronization is covered in detail in the [StateSync](/docs/programming-
 
 ## Teleporting
 
+`UxrManager` provides extensive functionality to teleport or move an avatar. Moving an avatar can simply be done by moving or rotating the root avatar GameObject, but using `UxrManager` is highly because it will raise `AvatarMoved` events that are used by several components within UltimateXR.
+For instance, LOD components will update which mesh gets enabled.
+Also, `UxrManager` contains many methods to perform different teleportations such as snap turning, smooth turning, dashing and fades. There are variations available for use in coroutines or `async` methods.
+
+The following methods are available:
+
+- `TranslateAvatar()`
+- `MoveAvatarTo()`
+- `RotateAvatar()`
+- `TeleportLocalAvatar()`
+- `TeleportLocalAvatarRelative()`
+- `TeleportLocalAvatarAsync()`
+- `TeleportLocalAvatarRelativeAsync()`
+- `RotateLocalAvatar()`
+- `RotateLocalAvatarAsync()`
+- `TeleportLocalAvatarCoroutine()`
+- `TeleportLocalAvatarRelativeCoroutine()`
+- `RotateLocalAvatarCoroutine()`
+
+For a full description of these methods, consult the [`UxrManager`](/api/T_UltimateXR_Core_UxrManager#uxrmanager-class) API reference.
+
 ## State Serialization
