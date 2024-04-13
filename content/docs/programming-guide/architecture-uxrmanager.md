@@ -139,6 +139,7 @@ One of the most powerful features of `UxrManager` and the UltimateXR framework i
 
 - `SaveStateChanges()` serializes the state changes to a byte[] array.
 - `LoadStateChanges()` deserializes the state changes from a byte array.
+
 The term *changes* is used because, depending on the parameters, these methods can serialize either the entire scene's state or only the modifications made since the scene was loaded or since the last serialization.
 
 This functionality is crucial for multiplayer support, saving game states, and facilitating replays.
