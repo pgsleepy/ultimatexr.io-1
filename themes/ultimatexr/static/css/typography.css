@@ -88,6 +88,7 @@ main ul {
 
 main ol {
   list-style: none;
+  counter-reset: list;
 }
 
 main ul ul {
@@ -106,16 +107,16 @@ main li {
   padding-left: .3125rem;
 }
 
-main li::marker {
+main ul > li::marker {
   color: var(--uxr-color-medium);
 }
 
-main ol li {
-  counter-increment: listitem;
+main ol > li {
+  counter-increment: list;
 }
 
-main ol li:before {
-  content: counter(listitem);
+main ol > li:before {
+  content: counter(list);
   background-color: var(--uxr-color-light);
   font-size: calc(12em/14);
   font-weight: 500;
