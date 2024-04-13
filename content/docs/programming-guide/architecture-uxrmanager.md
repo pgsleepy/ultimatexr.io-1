@@ -107,6 +107,8 @@ The descriptor passed to the `ComponentStateChanged` event can be serialized int
 
 This feature plays a big role in the implementation of multiplayer and replays within UltimateXR.
 
+For a full description of this method, consult the `UxrManager` [API reference](/api/T_UltimateXR_Core_UxrManager_ComponentStateChanged).
+
 State synchronization is covered in detail in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
 
 ## Teleporting
@@ -129,6 +131,18 @@ Here is a list of available methods:
 - `TeleportLocalAvatarRelativeCoroutine()`
 - `RotateLocalAvatarCoroutine()`
 
-For a full description, consult the `UxrManager` [API reference](/api/T_UltimateXR_Core_UxrManager#uxrmanager-class).
+For a full description of these methods, consult the `UxrManager` [API reference](/api/T_UltimateXR_Core_UxrManager#methods).
 
 ## State Serialization
+
+One of the most powerful features of `UxrManager` and the UltimateXR framework is the ability to serialize the entire scene's state to a byte array and deserialize it back.
+
+- `SaveStateChanges()` serializes the state changes to a byte[] array.
+- `LoadStateChanges()` deserializes the state changes from a byte array.
+The term *changes* is used because, depending on the parameters, these methods can serialize either the entire scene's state or only the modifications made since the scene was loaded or since the last serialization.
+
+This functionality is crucial for multiplayer support, saving game states, and facilitating replays.
+
+For a full description of these methods, consult the `UxrManager` [API reference](/api/T_UltimateXR_Core_UxrManager#methods).
+
+State serialization is covered in detail in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.

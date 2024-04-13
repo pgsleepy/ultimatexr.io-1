@@ -8,8 +8,10 @@ Intro
 
 ## New Device Support
 
-## New Multiplayer SDK
+## New Locomotion
 
 ## New UxrGrabPointShape
+
+## New Multiplayer SDK
 
 ## New UxrAvatarController
