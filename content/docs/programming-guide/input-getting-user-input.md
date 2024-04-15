@@ -1,5 +1,9 @@
 ---
-title: "Title"
+title: "Getting User Input"
 ---
 
-# Title
+# Getting User Input
+
+## Elements in a Controller
+
+
