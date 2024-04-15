@@ -18,7 +18,7 @@ All supported input controller components are contained within HandsIntegration 
 The active `UxrControllerInput` can be accessed from anywhere in the code using the static property `UxrAvatar.LocalAvatarInput`.
 
 {{% callout info %}}
-In cases where there is no active controller, a `UxrDummyControllerInput` component is returned to avoid requiring null checks. The dummy controller input will not register any input events.
+In cases where there is no active controller, a `UxrDummyControllerInput` component is returned to avoid checking for null. The dummy controller input will not register any input events.
 {{% /callout %}}
 
 The next section will provide a detailed overview of UxrControlInput and demonstrate how to programmatically retrieve user input.
