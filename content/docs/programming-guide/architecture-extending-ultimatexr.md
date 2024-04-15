@@ -29,7 +29,9 @@ We suggest having a look at how other devices have been integrated. Then follow 
     - Create SensorLeft and SensorRight empty GameObjects under the /LeftHand/SensorsLeft and /RightHand/SensorRight objects. These GameObjects will represent where each controller will be placed in the hand, and are used to know where the avatar hands should be positioned using the tracked controller position as a reference.
     - Add the input and tracking components under the /Components tree. Add the sensor references to the tracking component and the `UxrController3DModel` references from step 6 to the input component.
 	
-By now the new devices should be working. To help with the integration testing, the built-in prefabs can be used together with the DebugInputPanel prefab located at /Prefabs/UI/DebugInput.
+{{% callout info %}}
+To help with the integration testing, the built-in prefabs can be used together with the DebugInputPanel prefab located at /Prefabs/UI/DebugInput.
+{{% /callout %}}
   
 ## New Locomotion
 
@@ -42,7 +44,10 @@ Unlike controller input components, which operate individually, locomotion compo
 - Serve as a standalone component, providing a complete locomotion system. In this scenario, all other components should be either removed or disabled.
 - Act as a supplemental component, enhancing the functionality of existing components, such as enabling climbing capabilities.
 
+{{% callout caution %}}
 Be sure to use `UxrManager` methods for avatar movement to ensure that position and rotation changes are registered by the system.
+{{% /callout %}}
+
 When implementing new locomotion components and features, it's recommended to review the existing locomotion components located at /Scripts/Locomotion for reference.
 
 ## New UxrGrabPointShape
@@ -86,7 +91,10 @@ Through the `UxrNetworkManager` inspector, the framework automates the creation 
 Switching between platforms is seamless, `UxrNetworkManager` will keep track of the components that need to be created and destroyed. It identifies which components, instances or prefabs need setup.
 
 Behind the scenes, the network manager relies on different implementations of `UxrNetworkImplementation`, such as `UxrUnityNetCodeNetwork`, `UxrFishNetNetwork` or `UxrPhotonFusionNetwork`. These implementations provide simple methods that add platform-specific components to an object.
-Only one will be active at a time.
+
+{{% callout info %}}
+`UxrNetworkManager` keeps a reference to the active network implementation. Only one will be active at a time.
+{{% /callout %}}
 
 ### Runtime
 
