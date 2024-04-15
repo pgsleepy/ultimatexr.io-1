@@ -41,6 +41,8 @@ When handedness is supported, the following properties dictate the behavior:
 Changing the Handedness property allows logic to be implemented that supports both left-handed and right-handed users.
 {{% /callout %}}
 
+When handedness is not supported, all calls will target the single controller.
+
 ## Elements in a Controller
 
 Despite variations among controllers, they share common elements. These include:
