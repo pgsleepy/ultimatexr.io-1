@@ -54,6 +54,8 @@
     - title: "Input"
       url: ""
       items:
+        - title: "Overview"
+          url: "/docs/programming-guide/input-overview"
         - title: "Getting User Input"
           url: "/docs/programming-guide/input-getting-user-input"
         - title: "Controller Mapping"
