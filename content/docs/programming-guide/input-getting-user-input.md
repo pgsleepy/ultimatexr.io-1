@@ -15,6 +15,13 @@ A dummy controller input will remove the requirement of null checks and not gene
 - `UxrControllerSetupType.Single`: Single controller setup, such as a gamepad, remote or a gun.
 - `UxrControllerSetupType.Dual`: Dual controller setup (left+right controllers).
 
+## Controller Capabilities
+
+`UxrControllerInput` also exposes the `GetControllerCapabilities()` method, which will return `UxrControllerInputCapabilities` flags:
+- `HapticImpulses`: The controller supports raw haptic impulses, to produce tactile feedback to simulate touch for enhanced immersion.
+- `HapticClips`: The controller supports haptic impulses defined by an audio clip.
+- `TrackedHandPose`: The controller supports finger tracking, through capacitive sensors or similar. For example the Valve Index have this capability.
+
 ## Controller Handedness
 
 Handedness refers to the distinction between left-handed and right-handed controllers. In `Dual` controller setups each controller is grabbed using a different hand. In `Single` controller setups, handedness might be supported or not.
