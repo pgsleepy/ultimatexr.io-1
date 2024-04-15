@@ -10,9 +10,9 @@ A dummy controller input will remove the requirement of null checks and not gene
 ## Elements in a Controller
 
 Despite variations among controllers, they share common elements. These include:
-- Buttons, managed using `UxrInputButtons` flags.
-- Single-axis analog input, such as trigger input, identified by the `UxrInput1D` type.
-- Two-axis analog input, like an analog joystick, identified by the `UxrInput2D` type.
+- **Buttons**, managed using `UxrInputButtons` flags.
+- **Single-axis analog input**, such as trigger input, identified by the `UxrInput1D` type.
+- **Two-axis analog input**, like an analog joystick, identified by the `UxrInput2D` type.
 
 Buttons have discrete states, pressed or depressed, while analog inputs provide continuous input ranging from 0.0 to 1.0. `UxrInput1D` elements provide a single, analog input. `UxrAxis2D` provides an analog input with 2 components, such as the xy values of a joystick.
 
