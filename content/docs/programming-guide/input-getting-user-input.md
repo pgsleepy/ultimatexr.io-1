@@ -37,7 +37,13 @@ To identify controller elements, regardless of type, UltimateXR uses the `UxrCon
 - `Back`: The back button.
 - `Menu`: The menu button.
 
+## Controller Methods
+
+
+
 ## Buttons
+
+Buttons provide discrete input, either pressed or depressed.
 
 UltimateXR supports the following buttons through the `UxrInputButtons` flags:
 
@@ -72,6 +78,16 @@ UltimateXR supports the following buttons through the `UxrInputButtons` flags:
 - `UxrInputButtons.Back`
 - `UxrInputButtons.Menu`
 
+Input components will provide input for their available buttons. There are some special cases, where DPad, for example, will be assigned the joystick data as digital values if no DPad is available. This is to improve support when controllers lack certain elements.
+
+Some buttons are analog in nature but will generate digital values when used with `UxrInputButtons`. For example Joystick values, `Trigger` or `Grip` will report pressed/unpressed values this way.
+
+### Button Input Methods
+
+
+
 ## `UxrInput1D`
 
 ## `UxrInput2D`
+
+## DebugInputPanel
