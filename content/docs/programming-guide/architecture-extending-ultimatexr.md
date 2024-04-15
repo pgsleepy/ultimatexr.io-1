@@ -77,6 +77,8 @@ Multiplayer has two distinct phases where new platforms are required to provide 
 - Edit time: Developers implement a derived class from `UxrNetworkImplementation`. This class handles the creation of platform-specific components and provides additional functionality for runtime operations.
 - Runtime: Developers create a new network avatar component that implements the `IUxrNetworkAvatar` interface. This component primarily handles RPC synchronization support during runtime.
 
+We recommend reviewing the existing multiplayer implementations which can be found in the /Scripts/Networking/Integrations.
+
 ### Edit Time
 
 Through the `UxrNetworkManager` inspector, the framework automates the creation and setup of platform-specific components. Users will not be required to manually add components such as NetworkObject, NetworkTransform, NetworkRigidbody or similar.
@@ -93,6 +95,10 @@ At runtime, the avatar component that implements `IUxrNetworkAvatar` is responsi
 
 Voice over network implementations only require to implement a new `UxrNetworkVoiceImplementation` class.
 
-We recommend reviewing the existing multiplayer implementations which can be found in the /Scripts/Networking/Integrations.
-
 ## New UxrAvatarController
+
+Avatar controllers are the components responsible for updating an avatar and provide it with functionality. They are placed in the same GameObject as the `UxrAvatar` component.
+UltimateXR comes with the built-in `UxrStandardAvatarController` component, designed to facilitate hand poses, manipulation, inverse kinematics, and UI interaction, among other features.
+
+Developers have the flexibility to create custom avatar controllers tailored to specific avatar requirements. At VRMADA, for instance, we developed the `UxrSpectatorAvatarController` for spectator mode during multiuser sessions or replays.
+Developing a custom avatar controller allows for adjustments in the avatar behavior while retaining the framework's core functionality.
