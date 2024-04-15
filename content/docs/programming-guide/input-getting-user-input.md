@@ -4,8 +4,27 @@ title: "Getting User Input"
 
 # Getting User Input
 
+## `UxrControllerInput`
+
 Input information can be accessed using the `UxrControllerInput` object using `UxrAvatar.LocalAvatarInput`. The `LocalAvatarInput` is a static property which means it can be used globally from anywhere in the code. It will return the currently active controller input component, or a dummy component if no controller is currently active.
 A dummy controller input will remove the requirement of null checks and not generate any input events.
+
+## Controller Type
+
+`UxrControllerInput` exposes the `SetupType` property, which can adopt the following values:
+- `UxrControllerSetupType.Single`: Single controller setup, such as a gamepad, remote or a gun.
+- `UxrControllerSetupType.Dual`: Dual controller setup (left+right controllers).
+
+## Controller Handedness
+
+Handedness refers to the distinction between left-handed and right-handed controllers. In `Dual` controller setups each controller is grabbed using a different hand. In `Single` controller setups, handedness might be supported or not.
+In devices with a single controller, such as the old Oculus Go, for example, the controller could be configured for the left hand or the right hand. In a gamepad, however, handedness does not apply.
+
+Whether handedness is supported or not is indicated by the `IsHandednessSupported` property.
+
+When handedness is supported, the following properties dictate the behavior:
+- `Handedness`: Specifies the primary controller side In `Single` setups, it indicates which hand wields the controller. For `Dual` setups, it designates the hand wielding the primary controller. Input can be queried for left and right sides, as well as for primary and secondary. Changing the Handedness property allows logic to be implemented that supports both left-handed and right-handed users.
+- `Primary`/`Secondary`: Will translate to left or right depending on the `Handedness` assigned.
 
 ## Elements in a Controller
 
