@@ -6,7 +6,7 @@ title: "Getting User Input"
 
 ## `UxrControllerInput`
 
-Input information can be accessed using the `UxrControllerInput` component using `UxrAvatar.LocalAvatarInput`. The `LocalAvatarInput` is a static property which means it can be used globally from anywhere in the code. It will return the currently active controller input component, or a dummy component if no controller is currently active.
+The active `UxrControllerInput` component can be accessed using `UxrAvatar.LocalAvatarInput`. The `LocalAvatarInput` is a static property which means it can be used globally from anywhere in the code. It will return the currently active controller input component, or a dummy component if no controller is currently active.
 A dummy controller input will remove the requirement of null checks and not generate any input events.
 
 ## Controller Type
