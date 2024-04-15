@@ -21,6 +21,6 @@ The active `UxrControllerInput` can be accessed from anywhere in the code using 
 In cases where there is no active controller, a `UxrDummyControllerInput` component is returned to avoid requiring null checks. The dummy controller input will not register any input events.
 {{% /callout %}}
 
-Let's see how to get user input in the next section.
+The next section will provide a detailed overview of UxrControlInput and demonstrate how to programmatically retrieve user input.
 
 
