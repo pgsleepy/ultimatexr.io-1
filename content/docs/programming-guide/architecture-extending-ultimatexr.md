@@ -86,6 +86,7 @@ Through the `UxrNetworkManager` inspector, the framework automates the creation 
 Switching between platforms is seamless, `UxrNetworkManager` will keep track of the components that need to be created and destroyed. It identifies which components, instances or prefabs need setup.
 
 Behind the scenes, the network manager relies on different implementations of `UxrNetworkImplementation`, such as `UxrUnityNetCodeNetwork`, `UxrFishNetNetwork` or `UxrPhotonFusionNetwork`. These implementations provide simple methods that add platform-specific components to an object.
+Only one will be active at a time.
 
 ### Runtime
 
