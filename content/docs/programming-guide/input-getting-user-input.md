@@ -206,7 +206,7 @@ uint GetButtonTouchFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
 These methods return the state flags for button presses and touches. These flags will tell which buttons are currently being pressed or touched and which buttons were being pressed or touched the last frame.
 Working with flags requires using bitwise logical operators.
 
-`handSide` specifies the hand to check and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
+`handSide` specifies the hand to check and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input is discussed [above](#ignoring-input).
 
 Let's see some examples:
 
@@ -248,7 +248,7 @@ bool GetButtonsEvent   (UxrHandSide handSide, UxrInputButtons buttons, UxrButton
 bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 ```
 
-`handSide` specifies the hand to check, `buttons` specifies one or more button flags and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
+`handSide` specifies the hand to check, `buttons` specifies one or more button flags and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input is discussed [above](#ignoring-input).
 Using the `buttonEventType` parameter, it is possible to check for different input events:
 - `Touching`: whether the button is being touched.
 - `TouchDown`: whether a touch started the present frame.
