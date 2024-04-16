@@ -283,10 +283,29 @@ bool isAnyReleased = UxrAvatar.LocalAvatarInput.GetButtonsEventAny(UxrHandSide.L
 
 ### Button Events
 
-`GlobalButtonStateChanged`
+Button input can also be retrieved using event subscription.
+`GlobalButtonStateChanged` is a static event in `UxrControllerInput` raised on every button event.
+The `sender` is the `UxrControllerInput` component that raised the event while the `UxrInputButtonEventArgs` will contain the following information:
+- `HandSide`: Which hand performed the input.
+- `Button`: The button that generated the event.
+- `ButtonEventType`: The type of action on the button.
 
 ## `UxrInput1D`
 
 ## `UxrInput2D`
+
+## Other `UxrControllerInput` Properties
+
+`LeftControllerName`: 
+`RightControllerName`: 
+`MainJoystickIsTouchpap`: 
+`JoystickDeadZone`: 
+
+## Other `UxrControllerInput` Events
+
+`GlobalControllerConnected`: 
+`GlobalHapticRequesting`: 
+`Updating`: 
+`Updated`: 
 
 ## DebugInputPanel
