@@ -150,6 +150,8 @@ bool GetButtonsTouchUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIg
 bool GetButtonsTouchUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 ```
 
+These methods function similarly to their `Press` counterparts but are for Touch events instead of Press events. A Touch event registers with a light press of the button, while Press events require a full button press. Not all controllers and buttons support Touch events, as they require a capacitive sensor.
+
 #### State flags
 ```c#
 uint GetButtonPressFlags(UxrHandSide handSide, bool getIgnoredInput)
