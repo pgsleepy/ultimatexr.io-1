@@ -116,15 +116,30 @@ Some buttons are analog in nature but will generate digital values when used wit
 
 ### Button Input Methods
 
-```c#
-uint GetButtonPressFlags(UxrHandSide handSide, bool getIgnoredInput)
-uint GetButtonPressFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
-```
+The following groups of methods can be used to check for button events:
+
+#### Press States
 
 ```c#
-bool GetButtonsEvent(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
-bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
+bool GetButtonsPress(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressDown(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressDownAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 ```
+
+In the methods above, `handSide` specifies the hand to check, while `buttons` denotes the specific button or buttons, indicated by combining flags. The parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary.
+
+{{% callout tip %}}
+Passing the `Handedness` property as `handSide` will query the primary hand. By maintaining a handedness setting, we can implement logic to support both left-handed and right-handed users.
+{{% /callout %}}
+
+These methods determine whether a button or group of buttons is currently pressed (`Press`), pressed during the current frame (`PressDown`), or released during the current frame (`PressUp`).
+Since `buttons` are represented by flags, it's possible to combine multiple buttons and check for them simultaneously.
+When combining multiple buttons with flags, these methods will return `true` only if **all** buttons are in the requested state. Conversely, the `Any` variations will return `true` as long as at least one button is in the requested state.
+
+#### Touch States
 
 ```c#
 bool GetButtonsTouch(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
@@ -135,14 +150,17 @@ bool GetButtonsTouchUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIg
 bool GetButtonsTouchUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 ```
 
+#### State flags
 ```c#
-bool GetButtonsPress(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressDown(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressDownAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+uint GetButtonPressFlags(UxrHandSide handSide, bool getIgnoredInput)
+uint GetButtonPressFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
 ```
+
+```c#
+bool GetButtonsEvent(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
+bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
+```
+
 
 ### Button Events
 
