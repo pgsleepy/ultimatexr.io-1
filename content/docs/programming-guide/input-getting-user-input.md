@@ -148,11 +148,7 @@ Some buttons are analog in nature but will generate digital values when used wit
 
 ### Button Input Methods
 
-The following groups of methods can be used to check for button events.
-
-{{% callout info %}}
-Each group offsers similar functionality but in different ways. One group may make querying easier than the others depending on the situation.
-{{% /callout %}}
+The following groups of methods can be used to check for button events. Each group offsers similar functionality but in different ways. One group may make querying easier than the others depending on the situation.
 
 #### Press States
 
