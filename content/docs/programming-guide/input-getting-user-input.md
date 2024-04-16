@@ -96,7 +96,7 @@ To identify controller elements, regardless of type, UltimateXR uses the `UxrCon
 - `Menu`: The menu button.
 
 {{% callout info %}}
-The `HasControllerElements()` method can be used to retrieve the elements that are present in the active controllers;
+The `HasControllerElements()` method can be used to retrieve the elements that are present on the active controllers;
 {{% /callout %}}
 
 ## Buttons
@@ -137,7 +137,7 @@ UltimateXR supports the following buttons through the `UxrInputButtons` flags:
 - `UxrInputButtons.Menu`
 
 {{% callout info %}}
-The `ButtonToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given button is present in the active controllers.
+The `ButtonToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given button is present on the active controllers.
 {{% /callout %}}
 
 Input components will provide input for their available buttons. There are some special cases, where DPad, for example, will be assigned the joystick data as digital values if no DPad is available. This is to improve support when controllers lack certain elements.
@@ -326,7 +326,7 @@ public class MyComponent : MonoBehaviour
 UltimateXR supports `Grip`, `Trigger` and `Trigger2`. While `Grip` and `Trigger` are present in most controllers, a `Trigger2` can be found in gamepads mostly.
 
 {{% callout info %}}
-The `Input1DToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given element is present in the active controllers.
+The `Input1DToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given element is present on the active controllers.
 {{% /callout %}}
 
 ![](/docs/programming-guide/media/GripAndTrigger.png)
@@ -386,9 +386,8 @@ public class MyComponent : MonoBehaviour
 UltimateXR supports `Joystick` and `Joystick2`. Most controllers come with a `Joystick`, while only a few add a secondary `Joystick2`.
 
 {{% callout info %}}
-The `Input2DToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given element is present in the active controllers.
+The `Input2DToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given element is present on the active controllers.
 {{% /callout %}}
-
 
 ![](/docs/programming-guide/media/WMR_Index.png)
 **Image**: Examples of controllers with 2 joysticks. The windows Mixed Reality controllers (Left) have a joystick and a circular touchpad. Valve Index controllers (right) also have a joystick and touchpad. Even though the Valve Index touchpad has a more vertical shape, the input it provides is 2D.
@@ -448,7 +447,7 @@ public class MyComponent : MonoBehaviour
 - `LeftControllerName`: Gets the left controller name.
 - `RightControllerName`: Gets the right controller name. 
 - `MainJoystickIsTouchpad`: Gets whether the main joystick is a touchpad.
-- `JoystickDeadZone`: Controls the joystick deadzone, which is the center area where the joystick will report a (0, 0) value. It's measured as a radius in a range between 0.0 and 1.0.
+- `JoystickDeadZone`: Controls the joystick deadzone, which is the center area where the joystick will report a (0, 0) value. it is measured as a radius in a range between 0.0 and 1.0.
 
 ## More `UxrControllerInput` Events
 
