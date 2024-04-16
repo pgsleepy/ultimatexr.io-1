@@ -441,3 +441,5 @@ public class MyComponent : MonoBehaviour
 `Updated`: 
 
 ## DebugInputPanel
+
+![](/docs/programming-guide/media/DebugInputPanel.gif)
