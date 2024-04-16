@@ -15,8 +15,8 @@ A dummy controller input removes the need for null checks and will not generate 
 - `UxrControllerSetupType.Single`: Single controller setup, such as a gamepad, remote or a gun.
 - `UxrControllerSetupType.Dual`: Dual controller setup (left+right controllers).
 
-**Image**: A dual controller setup on the left (Quest 3 controllers) and single controllers on the right (Oculus Go and Gamepad).
 ![](/docs/programming-guide/media/ControllerTypes.png)
+**Image**: A dual controller setup on the left (Quest 3 controllers) and single controllers on the right (Oculus Go and Gamepad).
 
 ## Controller Capabilities
 
@@ -317,8 +317,8 @@ public class MyComponent : MonoBehaviour
 `UxrInput1D` elements in a controller are those that provide a single, continuous input range between 0.0 and 1.0.
 UltimateXR supports `Grip`, `Trigger` and `Trigger2`. While `Grip` and `Trigger` are present in most controllers, a `Trigger2` can be found in gamepads mostly.
 
-**Image**: Examples of 1. Trigger, 2. Grip
 ![](/docs/programming-guide/media/GripAndTrigger.png)
+**Image**: Examples of 1. Trigger, 2. Grip
 
 ### `UxrInput1D` Input Methods
 
@@ -373,8 +373,8 @@ public class MyComponent : MonoBehaviour
 `UxrInput2D` elements in a controller are those that provide two continuous values represented by a Vector2, such as joysticks or touchpads/trackpads. The two components have values in a range between 0.0 and 1.0, representing the horizontal axis and vertical axis, respectively.
 UltimateXR supports `Joystick` and `Joystick2`. Most controllers come with a `Joystick`, while only a few add a secondary `Joystick2`.
 
-**Image**: Examples of controllers with 2 joysticks. The windows Mixed Reality controllers (Left) have a joystick and a circular touchpad. Valve Index controllers (right) also have a joystick and touchpad. Even though the Valve Index touchpad has a more vertical shape, the input it provides is 2D.
 ![](/docs/programming-guide/media/WMR_Index.png)
+**Image**: Examples of controllers with 2 joysticks. The windows Mixed Reality controllers (Left) have a joystick and a circular touchpad. Valve Index controllers (right) also have a joystick and touchpad. Even though the Valve Index touchpad has a more vertical shape, the input it provides is 2D.
 
 It is possible to retrieve whether a controller has a joystick or touchpad as primary `Joystick` element using the `MainJoystickIsTouchpad` property.
 
