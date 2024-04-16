@@ -124,12 +124,12 @@ The following groups of methods can be used to check for button events:
 #### Press States
 
 ```c#
-bool GetButtonsPress(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressDown(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPress       (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressAny    (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressDown   (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 bool GetButtonsPressDownAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsPressUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressUp     (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsPressUpAny  (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 ```
 
 In the methods above, `handSide` specifies the hand to check, while `buttons` denotes the specific button or buttons, indicated by combining flags. The parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
@@ -163,12 +163,12 @@ bool isAnyPressed = UxrAvatar.LocalAvatarInput.GetButtonPressAny(UxrHandSide.Lef
 #### Touch States
 
 ```c#
-bool GetButtonsTouch(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsTouchAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsTouchDown(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsTouch       (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsTouchAny    (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsTouchDown   (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 bool GetButtonsTouchDownAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsTouchUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
-bool GetButtonsTouchUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsTouchUp     (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
+bool GetButtonsTouchUpAny  (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 ```
 
 These methods function similarly to their `Press` counterparts but are for Touch events instead of Press events. A Touch event registers with a light press of the button, while Press events require a full button press. Not all controllers and buttons support Touch events, as they require a capacitive sensor.
@@ -176,11 +176,11 @@ These methods function similarly to their `Press` counterparts but are for Touch
 #### State flags
 
 ```c#
-uint GetButtonPressFlags(UxrHandSide handSide, bool getIgnoredInput)
+uint GetButtonPressFlags         (UxrHandSide handSide, bool getIgnoredInput)
 uint GetButtonPressFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
 
-uint GetButtonTouchFlags(UxrHandSide handSide, bool getIgnoredInput)
-uint GetButtonTouchFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput = false)
+uint GetButtonTouchFlags         (UxrHandSide handSide, bool getIgnoredInput)
+uint GetButtonTouchFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
 
 ```
 
@@ -216,10 +216,14 @@ bool isAnyLeftPressed = UxrAvatar.LocalAvatarInput.GetButtonPressFlags(UxrHandSi
 bool areBothPressed = (UxrAvatar.LocalAvatarInput.GetButtonPressFlags(UxrHandSide.Left) & (UxrInputButtons.Button1 | UxrInputButtons.Button2)) != 0;
 ```
 
+{{% callout caution %}}
+When using input functionality that relies on values from the current or previous frames, it's crucial to make sure that the queries are performed [after the input was updated](/docs/programming-guide/architecture-uxrmanager#stage-update-events). 
+{{% /callout %}}
+
 #### Event Querying
 
 ```c#
-bool GetButtonsEvent(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
+bool GetButtonsEvent   (UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 ```
 
