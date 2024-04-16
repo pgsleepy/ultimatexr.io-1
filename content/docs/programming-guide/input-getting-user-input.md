@@ -65,7 +65,7 @@ It is still possible, however, to get input from a controller that is being igno
 This functionality can be used to, for example, ignore input while a virtual controller is being manipulated to avoid teleporting:
 ![](/docs/programming-guide/media/ControllerMapping.gif)
 
-## Elements in a Controller
+## Controller Elements
 
 Despite variations among controllers, they share common elements. These include:
 - **Buttons**, managed using `UxrInputButtons` flags.
