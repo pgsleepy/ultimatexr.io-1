@@ -15,6 +15,9 @@ A dummy controller input removes the need for null checks and will not generate 
 - `UxrControllerSetupType.Single`: Single controller setup, such as a gamepad, remote or a gun.
 - `UxrControllerSetupType.Dual`: Dual controller setup (left+right controllers).
 
+A dual controller setup on the left (Quest 3 controllers) and single controllers on the right (Oculus Go and Gamepad).
+![](/docs/programming-guide/media/ControllerTypes.png)
+
 ## Controller Capabilities
 
 `UxrControllerInput` also exposes the `GetControllerCapabilities()` method, which will return `UxrControllerInputCapabilities` flags:
@@ -145,13 +148,13 @@ When combining multiple buttons with flags, these methods will return `true` onl
 bool isTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonPress(UxrHandSide.Right, UxrInputButtons.Trigger);
 ```
 
-**Example2:** This line will check whether the left Button1 and Button2 are being pressed at the same time:
+**Example2:** This line will check whether the Button1 and Button2 from the left side are being pressed at the same time:
 
 ```c#
 bool areButtonsPressed = UxrAvatar.LocalAvatarInput.GetButtonPress(UxrHandSide.Left, UxrInputButtons.Button1 | UxrInputButtons.Button2);
 ```
 
-**Example3:** This line will check if either Button1 or Button2 is being pressed:
+**Example3:** This line will check if either Button1 or Button2 from the left side is being pressed:
 
 ```c#
 bool isAnyPressed = UxrAvatar.LocalAvatarInput.GetButtonPressAny(UxrHandSide.Left, UxrInputButtons.Button1 | UxrInputButtons.Button2);
