@@ -62,7 +62,7 @@ static void SetIgnoreControllerInput(UxrHandSide handSide, bool ignore)
 
 It is still possible, however, to get input from a controller that is being ignored. By default, all methods that query for user input will not return any data. These methods have an optional `getIgnoredInput` parameter that can be set to `true` to get input even if the controller is set to be ignored.
 
-This functionality can be used to, for example, ignore input while a virtual controller is being grabbed:
+This functionality can be used to, for example, ignore input while a virtual controller is being manipulated to avoid teleporting:
 ![](/docs/programming-guide/media/ControllerMapping.gif)
 
 ## Elements in a Controller
@@ -244,6 +244,35 @@ When using input functionality that relies on values from the current or previou
 ```c#
 bool GetButtonsEvent   (UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
+```
+
+These methods provide another way to query. `handSide` specifies the hand to check, `buttons` specifies one or more button flags and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
+Using the `buttonEventType` parameter, it is possible to check for different input events:
+- `Touching`: whether the button is being touched.
+- `TouchDown`: whether a touch started the present frame.
+- `TouchUp`: whether the touch was released.
+- `Pressing`: whether the button is being pressed.
+- `PressDown`: whether a press started the present frame.
+- `PressUp`: whether the press was released.
+
+When combining multiple buttons with flags, `GetButtonsEvent()` will return `true` only if **all** buttons meet the event conditions. Conversely, `GetButtonsEventAny()` will return `true` as long as at least one button meets the criteria.
+
+**Example1:** This line will check whether the right `Button1` is being pressed:
+
+```c#
+bool isButton1Pressed = UxrAvatar.LocalAvatarInput.GetButtonsEvent(UxrHandSide.Right, UxrInputButtons.Button1, UxrButtonEventType.Pressing);
+```
+
+**Example2:** This line will check whether the Button1 and Button2 from the left side are being pressed at the same time:
+
+```c#
+bool areButtonsPressed = UxrAvatar.LocalAvatarInput.GetButtonsEvent(UxrHandSide.Left, UxrInputButtons.Button1 | UxrInputButtons.Button2, UxrButtonEventType.Pressing);
+```
+
+**Example3:** This line will check if either Button1 or Button2 from the left side was released:
+
+```c#
+bool isAnyReleased = UxrAvatar.LocalAvatarInput.GetButtonsEventAny(UxrHandSide.Left, UxrInputButtons.Button1 | UxrInputButtons.Button2, UxrButtonEventType.PressUp);
 ```
 
 ### Button Events
