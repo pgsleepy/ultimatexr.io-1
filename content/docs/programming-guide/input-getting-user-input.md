@@ -4,7 +4,9 @@ title: "Getting User Input"
 
 # Getting User Input
 
+{{% callout info %}}
 This guide provides a detailed analysis of user input. For brief snippets visit the [Input](/docs/programming-guide/how-do-i#inputtracking) section in [How do I...?](/docs/programming-guide/how-do-i).
+{{% /callout %}}
 
 ## `UxrControllerInput`
 
