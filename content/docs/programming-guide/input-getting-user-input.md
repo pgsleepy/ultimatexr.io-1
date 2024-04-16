@@ -204,7 +204,6 @@ uint GetButtonPressFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
 
 uint GetButtonTouchFlags         (UxrHandSide handSide, bool getIgnoredInput)
 uint GetButtonTouchFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
-
 ```
 
 These methods return the state flags for button presses and touches. These flags will tell which buttons are currently being pressed or touched and which buttons were being pressed or touched the last frame.
@@ -284,15 +283,112 @@ bool isAnyReleased = UxrAvatar.LocalAvatarInput.GetButtonsEventAny(UxrHandSide.L
 ### Button Events
 
 Button input can also be retrieved using event subscription.
-`GlobalButtonStateChanged` is a static event in `UxrControllerInput` raised on every button event.
+
+`GlobalButtonStateChanged` is a static event in `UxrControllerInput` raised on every button action.
 The `sender` is the `UxrControllerInput` component that raised the event while the `UxrInputButtonEventArgs` will contain the following information:
 - `HandSide`: Which hand performed the input.
 - `Button`: The button that generated the event.
-- `ButtonEventType`: The type of action on the button.
+- `ButtonEventType`: The type of action performed on the button.
+
+**Example:** This component will use events to check for user input
+
+```c#
+public class Component : MonoBehaviour
+{
+	private void OnEnable()
+	{
+		UxrControllerInput.GlobalButtonStateChanged += UxrControllerInput_GlobalButtonStateChanged;
+	}
+	
+	private void OnDisable()
+	{
+		UxrControllerInput.GlobalButtonStateChanged -= UxrControllerInput_GlobalButtonStateChanged;
+	}
+	
+	private void UxrControllerInput_GlobalButtonStateChanged(object sender, UxrInputButtonEventArgs args)
+	{
+		Debug.Log($"Side {args.HandSide}, button {args.Button}, event {args.ButtonEventType}");
+	}	
+}
+```
 
 ## `UxrInput1D`
 
+`UxrInput1D` elements in a controller are those that provide a single, continuous input range between 0.0 and 1.0.
+UltimateXR supports `Grip`, `Trigger` and `Trigger2`. While `Grip` and `Trigger` are present in most controllers, a `Trigger2` can be found in gamepads mostly.
+
+**Image**: Examples of 1. Trigger, 2. Grip
+![](/docs/programming-guide/media/ControllerTypes.png)
+
+### `UxrInput1D` Input Methods
+
+### `UxrInput1D` Events
+
+Like buttons, `UxrInput1D` changes can also be retrieved using event subscription.
+
+`GlobalInput1DChanged` is a static event in `UxrControllerInput` raised on every `UxrInput1D` change.
+The `sender` is the `UxrControllerInput` component that raised the event while the `UxrInput1DEventArgs` will contain the following information:
+- `HandSide`: Which hand performed the input.
+- `Target`: The element that generated the event.
+- `Value`: The new value, a float between [0.0f, 1.0f].
+
+**Example:** This component will use events to check for user input
+
+```c#
+public class Component : MonoBehaviour
+{
+	private void OnEnable()
+	{
+		UxrControllerInput.GlobalInput1DChanged += UxrControllerInput_GlobalInput1DChanged;
+	}
+	
+	private void OnDisable()
+	{
+		UxrControllerInput.GlobalInput1DChanged -= UxrControllerInput_GlobalInput1DChanged;
+	}
+	
+	private void UxrControllerInput_GlobalInput1DChanged(object sender, UxrInput1DEventArgs args)
+	{
+		Debug.Log($"Side {args.HandSide}, element {args.Target}, new value {args.Value}");
+	}	
+}
+```
+
 ## `UxrInput2D`
+
+### `UxrInput2D` Input Methods
+
+### `UxrInput2D` Events
+
+Like buttons, `UxrInput2D` changes can also be retrieved using event subscription.
+
+`GlobalInput2DChanged` is a static event in `UxrControllerInput` raised on every `UxrInput2D` change.
+The `sender` is the `UxrControllerInput` component that raised the event while the `UxrInput2DEventArgs` will contain the following information:
+- `HandSide`: Which hand performed the input.
+- `Target`: The element that generated the event.
+- `Value`: The new value, a Vector2 with each component between [0.0f, 1.0f].
+
+**Example:** This component will use events to check for user input
+
+```c#
+public class Component : MonoBehaviour
+{
+	private void OnEnable()
+	{
+		UxrControllerInput.GlobalInput2DChanged += UxrControllerInput_GlobalInput2DChanged;
+	}
+	
+	private void OnDisable()
+	{
+		UxrControllerInput.GlobalInput2DChanged -= UxrControllerInput_GlobalInput2DChanged;
+	}
+	
+	private void UxrControllerInput_GlobalInput2DChanged(object sender, UxrInput2DEventArgs args)
+	{
+		Debug.Log($"Side {args.HandSide}, element {args.Target}, new value {args.Value}");
+	}	
+}
+```
 
 ## Other `UxrControllerInput` Properties
 
