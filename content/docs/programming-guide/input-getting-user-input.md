@@ -241,12 +241,14 @@ When using input functionality that relies on values from the current or previou
 
 #### Event Querying
 
+Event querying provides another way to check for controller input.
+
 ```c#
 bool GetButtonsEvent   (UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 ```
 
-These methods provide another way to query. `handSide` specifies the hand to check, `buttons` specifies one or more button flags and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
+`handSide` specifies the hand to check, `buttons` specifies one or more button flags and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
 Using the `buttonEventType` parameter, it is possible to check for different input events:
 - `Touching`: whether the button is being touched.
 - `TouchDown`: whether a touch started the present frame.
