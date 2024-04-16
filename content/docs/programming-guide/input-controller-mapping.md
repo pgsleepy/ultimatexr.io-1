@@ -10,16 +10,16 @@ UltimateXR provides a common interface using `UxrControllerInput` to access all 
 
 ### HP Reverb G2 ###
 
-| Controller Element | UltimateXR          | Notes      |
-| ------------------ | --------------------| ---------- |
-| Joystick           | UxrInput2D.Joystick |            |
-| Button A           | UxrInput2D.Button1  | Right Side |
-| Button B           | UxrInput2D.Button2  | Right Side |
-| Button X           | UxrInput2D.Button1  | Left Side  |
-| Button Y           | UxrInput2D.Button2  | Left Side  |
-| Menu               | UxrInput2D.Menu     |            |
-| Trigger            | UxrInput1D.Trigger  |            |
-| Grip               | UxrInput1D.Grip     |            |
+| Element  | UltimateXR              | Notes                        |
+| -------- | ----------------------- | ---------------------------- |
+| Joystick | UxrInput2D.Joystick     |                              |
+| Button A | UxrInputButtons.Button1 | Right Side                   |
+| Button B | UxrInputButtons.Button2 | Right Side                   |
+| Button X | UxrInputButtons.Button1 | Left Side                    |
+| Button Y | UxrInputButtons.Button2 | Left Side                    |
+| Menu     | UxrInputButtons.Menu    |                              |
+| Trigger  | UxrInput1D.Trigger      | Also UxrInputButtons.Trigger |
+| Grip     | UxrInput1D.Grip         | Also UxrInputButtons.Grip    |
 
 ## HTC ##
 
