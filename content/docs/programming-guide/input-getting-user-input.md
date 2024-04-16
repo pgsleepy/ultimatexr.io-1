@@ -4,6 +4,8 @@ title: "Getting User Input"
 
 # Getting User Input
 
+This guide provides a detailed analysis of user input. For brief snippets visit the [Input](/docs/programming-guide/how-do-i#inputtracking) section in [How do I...?](/docs/programming-guide/how-do-i).
+
 ## `UxrControllerInput`
 
 The active `UxrControllerInput` component can be accessed using `UxrAvatar.LocalAvatarInput`. The `LocalAvatarInput` is a static property, which means it can be used globally from anywhere in the code. It will return the currently active controller input component, or a dummy component if no controller is currently active.
