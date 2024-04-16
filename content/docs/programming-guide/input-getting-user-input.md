@@ -374,7 +374,7 @@ public class MyComponent : MonoBehaviour
 UltimateXR supports `Joystick` and `Joystick2`. Most controllers come with a `Joystick`, while only a few add a secondary `Joystick2`.
 
 **Image**: Examples of controllers with 2 joysticks. The windows Mixed Reality controllers (Left) have a joystick and a circular touchpad. Valve Index controllers (right) also have a joystick and touchpad. Even though the Valve Index touchpad has a more vertical shape, the input it provides is 2D.
-![](/docs/programming-guide/media/GripAndTrigger.png)
+![](/docs/programming-guide/media/WMR_Index.png)
 
 It is possible to retrieve whether a controller has a joystick or touchpad as primary `Joystick` element using the `MainJoystickIsTouchpad` property.
 
