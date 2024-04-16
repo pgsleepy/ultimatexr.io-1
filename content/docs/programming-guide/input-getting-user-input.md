@@ -293,7 +293,7 @@ The `sender` is the `UxrControllerInput` component that raised the event while t
 **Example:** This component will use events to check for user input
 
 ```c#
-public class Component : MonoBehaviour
+public class MyComponent : MonoBehaviour
 {
 	private void OnEnable()
 	{
@@ -322,6 +322,20 @@ UltimateXR supports `Grip`, `Trigger` and `Trigger2`. While `Grip` and `Trigger`
 
 ### `UxrInput1D` Input Methods
 
+`UxrInput1D` has a single method to retrieve the current value of a 1D control:
+
+```c#
+float GetInput1D(UxrHandSide handSide, UxrInput1D input1D, bool getIgnoredInput = false)
+```
+
+`handSide` specifies the hand to check and `input1D` which 1D control. The optional parameter `getIgnoredInput` controls whether to retrieve input events for [ignored controllers](#ignoring-input). By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary.
+
+**Example:** This line will get the trigger value for the right hand:
+
+```c#
+float rightTrigger = UxrAvatar.LocalAvatarInput.GetInput1D(UxrHandSide.Right, UxrInput1D.Trigger);
+```
+
 ### `UxrInput1D` Events
 
 Like buttons, `UxrInput1D` changes can also be retrieved using event subscription.
@@ -335,7 +349,7 @@ The `sender` is the `UxrControllerInput` component that raised the event while t
 **Example:** This component will use events to check for user input
 
 ```c#
-public class Component : MonoBehaviour
+public class MyComponent : MonoBehaviour
 {
 	private void OnEnable()
 	{
@@ -356,7 +370,29 @@ public class Component : MonoBehaviour
 
 ## `UxrInput2D`
 
+`UxrInput2D` elements in a controller are those that provide two continuous values represented by a Vector2, such as joysticks or touchpads/trackpads. The two components have values in a range between 0.0 and 1.0, representing the horizontal axis and vertical axis, respectively.
+UltimateXR supports `Joystick` and `Joystick2`. Most controllers come with a `Joystick`, while only a few add a secondary `Joystick2`.
+
+**Image**: Examples of controllers with 2 joysticks. The windows Mixed Reality controllers (Left) have a joystick and a circular touchpad. Valve Index controllers (right) also have a joystick and touchpad. Even though the Valve Index touchpad has a more vertical shape, the input it provides is 2D.
+![](/docs/programming-guide/media/GripAndTrigger.png)
+
+It is possible to retrieve whether a controller has a joystick or touchpad as primary `Joystick` element using the `MainJoystickIsTouchpad` property.
+
 ### `UxrInput2D` Input Methods
+
+`UxrInput2D` has a single method to retrieve the current value of a 2D control:
+
+```c#
+float GetInput2D(UxrHandSide handSide, UxrInput2D input2D, bool getIgnoredInput = false)
+```
+
+`handSide` specifies the hand to check and `input2D` which 2D control. The optional parameter `getIgnoredInput` controls whether to retrieve input events for [ignored controllers](#ignoring-input). By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary.
+
+**Example:** This line will get the joystick direction for the right hand:
+
+```c#
+Vector2 rightJoystick = UxrAvatar.LocalAvatarInput.GetInput2D(UxrHandSide.Right, UxrInput2D.Joystick);
+```
 
 ### `UxrInput2D` Events
 
@@ -371,7 +407,7 @@ The `sender` is the `UxrControllerInput` component that raised the event while t
 **Example:** This component will use events to check for user input
 
 ```c#
-public class Component : MonoBehaviour
+public class MyComponent : MonoBehaviour
 {
 	private void OnEnable()
 	{
@@ -394,7 +430,7 @@ public class Component : MonoBehaviour
 
 `LeftControllerName`: 
 `RightControllerName`: 
-`MainJoystickIsTouchpap`: 
+`MainJoystickIsTouchpad`: 
 `JoystickDeadZone`: 
 
 ## Other `UxrControllerInput` Events
