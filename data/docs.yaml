@@ -49,8 +49,6 @@
           url: "/docs/programming-guide/architecture-singletons"
         - title: "UxrManager"
           url: "/docs/programming-guide/architecture-uxrmanager"
-        - title: "Extending UltimateXR"
-          url: "/docs/programming-guide/architecture-extending-ultimatexr"
     - title: "Input"
       url: ""
       items:
