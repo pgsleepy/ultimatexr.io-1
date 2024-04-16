@@ -11,11 +11,11 @@ A dummy controller input removes the need for null checks and will not generate 
 
 ## Controller Type
 
-`UxrControllerInput` exposes the `SetupType` property, which can adopt the following values:
+`UxrControllerInput` exposes the `SetupType` property, which can have the following values:
 - `UxrControllerSetupType.Single`: Single controller setup, such as a gamepad, remote or a gun.
 - `UxrControllerSetupType.Dual`: Dual controller setup (left+right controllers).
 
-A dual controller setup on the left (Quest 3 controllers) and single controllers on the right (Oculus Go and Gamepad).
+**Image**: A dual controller setup on the left (Quest 3 controllers) and single controllers on the right (Oculus Go and Gamepad).
 ![](/docs/programming-guide/media/ControllerTypes.png)
 
 ## Controller Capabilities
@@ -132,7 +132,7 @@ bool GetButtonsPressUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIg
 bool GetButtonsPressUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 ```
 
-In the methods above, `handSide` specifies the hand to check, while `buttons` denotes the specific button or buttons, indicated by combining flags. The parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary.
+In the methods above, `handSide` specifies the hand to check, while `buttons` denotes the specific button or buttons, indicated by combining flags. The parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
 
 {{% callout tip %}}
 Passing the `Handedness` property as `handSide` will query the primary hand. By maintaining a handedness setting, we can implement logic to support both left-handed and right-handed users.
@@ -142,10 +142,10 @@ These methods determine whether a button or group of buttons is currently presse
 Since `buttons` are represented by flags, it's possible to combine multiple buttons and check for them simultaneously.
 When combining multiple buttons with flags, these methods will return `true` only if **all** buttons are in the requested state. Conversely, the `Any` variations will return `true` as long as at least one button is in the requested state.
 
-**Example1:** This line will check whether the right hand trigger is being pressed. Here the trigger will work as a digital button, either pressed or depressed:
+**Example1:** This line will check whether the right hand trigger was released. Here the trigger will work as a digital button, either pressed or depressed:
 
 ```c#
-bool isTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonPress(UxrHandSide.Right, UxrInputButtons.Trigger);
+bool isTriggerReleased = UxrAvatar.LocalAvatarInput.GetButtonPressUp(UxrHandSide.Right, UxrInputButtons.Trigger);
 ```
 
 **Example2:** This line will check whether the Button1 and Button2 from the left side are being pressed at the same time:
@@ -185,7 +185,36 @@ uint GetButtonTouchFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput = f
 ```
 
 These methods return the state flags for button presses and touches. These flags will tell which buttons are currently being pressed or touched and which buttons were being pressed or touched the last frame.
-Using 
+Working with flags requires using bitwise logical operators.
+
+`handSide` specifies the hand to check and the parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
+
+Let's see some examples:
+
+**Example1:** This line will check whether the left `Button1` is being pressed:
+
+```c#
+bool isButton1Pressed = (UxrAvatar.LocalAvatarInput.GetButtonPressFlags(UxrHandSide.Left) & UxrInputButtons.Button1) != 0;
+```
+
+**Example2:** This line will check whether the right `Button2` was pressed the last frame but not the current frame. This means that it was just released.
+
+```c#
+bool isButton2Released = (UxrAvatar.LocalAvatarInput.GetButtonPressFlags         (UxrHandSide.Right) & UxrInputButtons.Button2) == 0 &&
+                         (UxrAvatar.LocalAvatarInput.GetButtonPressFlagsLastFrame(UxrHandSide.Right) & UxrInputButtons.Button2) != 0;
+```
+
+**Example3:** This line will check if any button from the left controller is being pressed:
+
+```c#
+bool isAnyLeftPressed = UxrAvatar.LocalAvatarInput.GetButtonPressFlags(UxrHandSide.Left) != 0;
+```
+
+**Example4:** This line will check if `Button1` and `Button2` are currently being pressed at the same time:
+
+```c#
+bool areBothPressed = (UxrAvatar.LocalAvatarInput.GetButtonPressFlags(UxrHandSide.Left) & (UxrInputButtons.Button1 | UxrInputButtons.Button2)) != 0;
+```
 
 #### Event Querying
 
