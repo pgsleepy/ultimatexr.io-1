@@ -318,7 +318,7 @@ public class Component : MonoBehaviour
 UltimateXR supports `Grip`, `Trigger` and `Trigger2`. While `Grip` and `Trigger` are present in most controllers, a `Trigger2` can be found in gamepads mostly.
 
 **Image**: Examples of 1. Trigger, 2. Grip
-![](/docs/programming-guide/media/ControllerTypes.png)
+![](/docs/programming-guide/media/GripAndTrigger.png)
 
 ### `UxrInput1D` Input Methods
 
