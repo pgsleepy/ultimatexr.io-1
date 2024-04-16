@@ -112,7 +112,7 @@ UltimateXR supports the following buttons through the `UxrInputButtons` flags:
 
 Input components will provide input for their available buttons. There are some special cases, where DPad, for example, will be assigned the joystick data as digital values if no DPad is available. This is to improve support when controllers lack certain elements.
 
-Some buttons are analog in nature but will generate digital values when used with `UxrInputButtons`. For example Joystick left/right/up/down values, `Trigger` or `Grip`.
+Some buttons are analog in nature but will generate digital values when used with `UxrInputButtons`. For example `Trigger` or `Grip`.
 
 ### Button Input Methods
 
@@ -147,7 +147,6 @@ bool GetButtonsPressUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool ge
 ### Button Events
 
 `GlobalButtonStateChanged`
-
 
 ## `UxrInput1D`
 
