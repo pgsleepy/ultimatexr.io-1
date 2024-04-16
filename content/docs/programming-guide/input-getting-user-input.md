@@ -428,18 +428,32 @@ public class MyComponent : MonoBehaviour
 
 ## Other `UxrControllerInput` Properties
 
-`LeftControllerName`: 
-`RightControllerName`: 
-`MainJoystickIsTouchpad`: 
-`JoystickDeadZone`: 
+- `LeftControllerName`: Gets the left controller name.
+- `RightControllerName`: Gets the right controller name. 
+- `MainJoystickIsTouchpad`: Gets whether the main joystick is a touchpad.
+- `JoystickDeadZone`: Controls the joystick deadzone, which is the center area where the joystick will report a (0, 0) value. It's measured as a radius in a range between 0.0 and 1.0.
 
 ## Other `UxrControllerInput` Events
 
-`GlobalControllerConnected`: 
-`GlobalHapticRequesting`: 
-`Updating`: 
-`Updated`: 
+- `GlobalControllerConnected`: Event raised whenever a controller was connected or disconnected.
+- `GlobalHapticRequesting`:  Event raised whenever haptic feedback is requested.
+- `Updating`: Event raised before the input is about to be updated in a frame.
+- `Updated`: Event raised right after the finished updating in a frame.
 
 ## DebugInputPanel
+
+The DebugInputPanel is a prefab located at /Prefabs/UI/DebugInput/DebugInputPanel that can be used to debug controller input. It can be dropped in any scene and will show the input state of the connected controllers at runtime.
+It can also be found in the [example scene](/docs/guides/example-scene).
+
+It will show all 3 input element types. From top to bottom:
+- `UxrInput1D` elements, as a white dot inside a vertical bar.
+- `UxrInput2D` elements, as a white dot inside a box.
+- `UxrButtons` elements, as 6 LEDs that will light up with these events, in order from top to bottom:
+  - `Touching`: whether the button is being touched.
+  - `TouchDown`: whether the button started being touched the present frame.
+  - `TouchUp`: whether the touch was released.
+  - `Pressing`: whether the button is being pressed.
+  - `PressDown`: whether the button started being pressed the present frame.
+  - `PressUp`: whether the press was released.
 
 ![](/docs/programming-guide/media/DebugInputPanel.gif)
