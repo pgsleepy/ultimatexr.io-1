@@ -10,6 +10,12 @@ As seen in previous sections, UltimateXR provides a common interface to access a
 
 ### HP Reverb G2 ###
 
+| Controller Element | UltimateXR | Notes |
+| ------------------ | ---------- | ----- |
+| TestA              | A          |       |
+| TestB              | B          |       |
+| TestC              | C          |       |
+
 ## HTC ##
 
 ### HTC Vive ###
