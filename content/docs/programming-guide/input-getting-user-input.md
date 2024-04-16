@@ -139,6 +139,24 @@ These methods determine whether a button or group of buttons is currently presse
 Since `buttons` are represented by flags, it's possible to combine multiple buttons and check for them simultaneously.
 When combining multiple buttons with flags, these methods will return `true` only if **all** buttons are in the requested state. Conversely, the `Any` variations will return `true` as long as at least one button is in the requested state.
 
+**Example1:** This line will check whether the right hand trigger is being pressed. Here the trigger will work as a digital button, either pressed or depressed:
+
+```c#
+bool isTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonPress(UxrHandSide.Right, UxrInputButtons.Trigger);
+```
+
+**Example2:** This line will check whether the left Button1 and Button2 are being pressed at the same time:
+
+```c#
+bool areButtonsPressed = UxrAvatar.LocalAvatarInput.GetButtonPress(UxrHandSide.Left, UxrInputButtons.Button1 | UxrInputButtons.Button2);
+```
+
+**Example3:** This line will check if either Button1 or Button2 is being pressed:
+
+```c#
+bool isAnyPressed = UxrAvatar.LocalAvatarInput.GetButtonPressAny(UxrHandSide.Left, UxrInputButtons.Button1 | UxrInputButtons.Button2);
+```
+
 #### Touch States
 
 ```c#
@@ -153,16 +171,25 @@ bool GetButtonsTouchUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool ge
 These methods function similarly to their `Press` counterparts but are for Touch events instead of Press events. A Touch event registers with a light press of the button, while Press events require a full button press. Not all controllers and buttons support Touch events, as they require a capacitive sensor.
 
 #### State flags
+
 ```c#
 uint GetButtonPressFlags(UxrHandSide handSide, bool getIgnoredInput)
 uint GetButtonPressFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput)
+
+uint GetButtonTouchFlags(UxrHandSide handSide, bool getIgnoredInput)
+uint GetButtonTouchFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput = false)
+
 ```
+
+These methods return the state flags for button presses and touches. These flags will tell which buttons are currently being pressed or touched and which buttons were being pressed or touched the last frame.
+Using 
+
+#### Event Querying
 
 ```c#
 bool GetButtonsEvent(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput)
 ```
-
 
 ### Button Events
 
