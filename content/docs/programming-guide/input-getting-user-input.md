@@ -46,6 +46,25 @@ Changing the Handedness property allows logic to be implemented that supports bo
 
 When handedness is not supported, all calls will target the single controller.
 
+## Ignoring Input
+
+Occasionally, it can be useful to deactivate input from a controller.
+
+`UxrControllerInput` provides two static methods for ignoring **any** input coming from a specific side.
+
+```c#
+static bool GetIgnoreControllerInput(UxrHandSide handSide)
+static void SetIgnoreControllerInput(UxrHandSide handSide, bool ignore)
+```
+
+`GetIgnoreControllerInput()` checks whether ignoring is currently enabled on the specified side.
+`SetIgnoreControllerInput()` enables or disables ignoring input coming from the specified side.
+
+It is still possible, however, to get input from a controller that is being ignored. By default, all methods that query for user input will not return any data. These methods have an optional `getIgnoredInput` parameter that can be set to `true` to get input even if the controller is set to be ignored.
+
+This functionality can be used to, for example, ignore input while a virtual controller is being grabbed:
+![](/docs/programming-guide/media/ControllerMapping.gif)
+
 ## Elements in a Controller
 
 Despite variations among controllers, they share common elements. These include:
@@ -132,7 +151,7 @@ bool GetButtonsPressUp     (UxrHandSide handSide, UxrInputButtons buttons, bool 
 bool GetButtonsPressUpAny  (UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput)
 ```
 
-In the methods above, `handSide` specifies the hand to check, while `buttons` denotes the specific button or buttons, indicated by combining flags. The parameter `getIgnoredInput` controls whether to retrieve input events for ignored controllers. By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary. Ignoring controller input will be covered [below](#ignoring-input).
+In the methods above, `handSide` specifies the hand to check, while `buttons` denotes the specific button or buttons, indicated by combining flags. The optional parameter `getIgnoredInput` controls whether to retrieve input events for [ignored controllers](#ignoring-input). By default, it's set to `false`; using `true` should be limited to cases where it's truly necessary.
 
 {{% callout tip %}}
 Passing the `Handedness` property as `handSide` will query the primary hand. By maintaining a handedness setting, we can implement logic to support both left-handed and right-handed users.
@@ -230,8 +249,6 @@ bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButton
 ### Button Events
 
 `GlobalButtonStateChanged`
-
-## Ignoring Input
 
 ## `UxrInput1D`
 
