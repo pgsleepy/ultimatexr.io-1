@@ -112,10 +112,41 @@ UltimateXR supports the following buttons through the `UxrInputButtons` flags:
 
 Input components will provide input for their available buttons. There are some special cases, where DPad, for example, will be assigned the joystick data as digital values if no DPad is available. This is to improve support when controllers lack certain elements.
 
-Some buttons are analog in nature but will generate digital values when used with `UxrInputButtons`. For example Joystick values, `Trigger` or `Grip` will report pressed/unpressed values this way.
+Some buttons are analog in nature but will generate digital values when used with `UxrInputButtons`. For example Joystick left/right/up/down values, `Trigger` or `Grip`.
 
 ### Button Input Methods
 
+```c#
+uint GetButtonPressFlags(UxrHandSide handSide, bool getIgnoredInput = false)
+uint GetButtonPressFlagsLastFrame(UxrHandSide handSide, bool getIgnoredInput = false)
+```
+
+```c#
+bool GetButtonsEvent(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput = false)
+bool GetButtonsEventAny(UxrHandSide handSide, UxrInputButtons buttons, UxrButtonEventType buttonEventType, bool getIgnoredInput = false)
+```
+
+```c#
+bool GetButtonsTouch(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsTouchAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsTouchDown(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsTouchDownAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsTouchUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsTouchUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+```
+
+```c#
+bool GetButtonsPress(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsPressAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsPressDown(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsPressDownAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsPressUp(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+bool GetButtonsPressUpAny(UxrHandSide handSide, UxrInputButtons buttons, bool getIgnoredInput = false)
+```
+
+### Button Events
+
+`GlobalButtonStateChanged`
 
 
 ## `UxrInput1D`
