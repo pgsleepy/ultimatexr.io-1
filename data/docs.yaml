@@ -64,7 +64,7 @@
           url: "/docs/programming-guide/input-tracking"
         - title: "Haptics"
           url: "/docs/programming-guide/input-haptics"
-        - title: "Helper Components"
+        - title: "Keyboard"
           url: "/docs/programming-guide/input-keyboard"
     - title: "Avatars"
       url: ""
