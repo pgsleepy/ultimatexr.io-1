@@ -6,6 +6,8 @@ title: "Keyboard"
 
 UltimateXR provides platform independent keyboard input to support both the old and new Unity input systems.
 
+## Methods
+
 The static `UxrKeyboardInput` class has functionality to check for key presses:
 
 Check whether a key is being pressed:
@@ -25,6 +27,8 @@ Check whether a key was released during the present frame:
 ```c#
 static bool GetPressUp(UxrKey key)
 ```
+
+## Examples
 
 **Example 1**: Checks if the A key is being presssed:
 
