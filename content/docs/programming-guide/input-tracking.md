@@ -26,6 +26,9 @@ During avatar setup, these virtual hands will be aligned to the avatar hands, br
 
 This ensures avatar hands stay aligned with real-world hands, regardless of the controller used, all seamlessly.
 
+![](/docs/programming-guide/media/HandsIntegrationAlign.png)
+**Image**: The aligned hand gizmo in HandsIntegration (green)
+
 ## Properties
 
 - `SensorLeftPos`: Gets the left controller sensor world position.
