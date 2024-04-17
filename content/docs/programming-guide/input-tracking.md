@@ -28,12 +28,20 @@ UltimateXR positions the avatar's hands using the sensor data along with a prede
 The HandsIntegration prefab is a special prefab in UltimateXR, added to all avatars at edit-time. It includes `UxrControllerInput` and `UxrControllerTracking` components for all supported controllers, providing automatic device support.
 The `UxrControllerTracking` components keep references to sensor GameObjects for the left and right controllers. These sensor GameObjects have been carefully placed on virtual hand gizmos present in the HandsIntegration prefab.
 
-During avatar setup, these virtual hands will only need to be aligned to the avatar hands, which will include all the sensors in the process. This process is done automatically and can be later adjusted by the user.
+During avatar setup, these virtual hands will only need to be aligned to the avatar hands, which will include all the sensors in the process. This is all done automatically.
 
 This ensures avatar hands stay aligned with real-world hands, regardless of the controller used, all seamlessly.
 
 ![](/docs/programming-guide/media/HandsIntegrationAlign.png)
 **Image**: The aligned hand gizmo in HandsIntegration, colored in green.
+
+## Benefits of HandsIntegration
+
+Using an external prefab for device support offers several key advantages:
+
+- Simplifies the process by eliminating the need for users to manually add device support; adding the prefab is enough.
+- Automatic updates: When new devices are supported by the prefab, all avatars receive the new functionality without additional steps.
+- Streamlined adjustments: Tweaking settings within the prefab enhances functionality on all avatars.
 
 ## Properties
 
