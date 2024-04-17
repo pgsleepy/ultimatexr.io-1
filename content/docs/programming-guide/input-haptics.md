@@ -84,13 +84,9 @@ void SendHapticFeedback(UxrHandSide handSide, UxrHapticClip hapticClip)
 UxrHapticClips can also be created on the fly:
 ```c#
 // Create a clip using an audioClip, with a Click as fallback.
-UxrHapticClip hapticClip = new UxrHapticClip(audioClip,
-							                 1.0f
-											 UxrHapticMode.Mix,
-											 UxrHapticClipType.Click);
+UxrHapticClip hapticClip = new UxrHapticClip(audioClip, 1.0f UxrHapticMode.Mix, UxrHapticClipType.Click);
 											
-UxrAvatar.LocalAvatarInput.SendHapticFeedback(UxrHandSide.Left,
-                                              hapticClip);
+UxrAvatar.LocalAvatarInput.SendHapticFeedback(UxrHandSide.Left, hapticClip);
 ```
 												
 ## Manipulation haptics
