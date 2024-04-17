@@ -13,7 +13,7 @@ UltimateXR supports a wide range of headsets and controllers, with the input bui
 The interface is provided through the `UxrControllerInput` class.
 Developers can create support for new controllers [implementing a derived class](/docs/programming-guide/architecture-extending-ultimatexr#new-device-support).
 
-All supported input controller components are contained within HandsIntegration prefabs, a special type of prefab in the framework to provide common functionality. Two variants are available: SmallHandsIntegration and BigHandsIntegration. Each avatar in the framework incorporates a HandsIntegration instance, selected based on the best fit for the avatar's hands. At runtime, only the component related to the active controllers is enabled.
+All supported input controller components are contained within **HandsIntegration** prefabs, a special type of prefab in the framework to provide common functionality. Two variants are available: SmallHandsIntegration and BigHandsIntegration. Each avatar in the framework incorporates a HandsIntegration instance, selected based on the best fit for the avatar's hands. At runtime, only the component related to the active controllers is enabled.
 
 The active `UxrControllerInput` can be accessed from anywhere in the code using the static property `UxrAvatar.LocalAvatarInput`.
 
