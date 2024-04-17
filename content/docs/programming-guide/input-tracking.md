@@ -45,7 +45,7 @@ This ensures avatar hands stay aligned with real-world hands, regardless of the 
 
 ## Velocity and Averaging
 
-Although `UxrControllerTracking` exposes tracking properties, it contains unprocessed data.
+Although `UxrControllerTracking` exposes tracking properties, they contain unprocessed data.
 
-The `UxrGrabber` component contains special functionality that can compute velocity. It averages values over multiple frames and takes into account the controller's position in the hand, resulting in improved behavior when throwing objects.
+The `UxrGrabber` component has special functionality that can compute velocity. It averages values over multiple frames and takes into account the controller's position in the hand, resulting in improved behavior when throwing objects.
 Consult the  [`UxrGrabber` programming guide](/docs/programming-guide/manipulation-uxrgrabber) for more information.
