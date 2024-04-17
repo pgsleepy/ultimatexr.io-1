@@ -4,7 +4,7 @@ title: "Contributing to the Guide"
 
 # Contributing to the Guide
 
-In this guide, we'll walk you through the process of contributing to the documentation by editing .md pages using the [Hugo Framework](https://gohugo.io/).
+In this guide, we'll walk you through the process of contributing to the documentation by editing .md pages using the [Hugo Framework](https://gohugo.io/). The guide targets mainly beginners to contribution, but can be used by anyone.
 
 Markdown allows us to format text easily, making it accessible to both seasoned developers and newcomers alike.
 
@@ -111,7 +111,15 @@ You can find this on the issues page on GitHub at the start of the second text a
 
 In this case it's #4 so the commit should contain `fixed #4`.
 
-Next up, click the commit button, and finally when you feel like it's ready for publishing, press the `Publish` button, which will publish this to your repository over on GitHub!
+### Separating commits
+
+One of the keys to properly communicate your changes is by staging the commits. Staged files are files that are ready to be committed to the repository.
+
+You can stage a change by clicking the plus button, this will add it to the staged changes, as shown below:
+
+![](/docs/guides/media/contributing/06StageChanges.png)
+
+When you've staged the proper changes, click the `Commit` button to set up your next staged changes and when you finally feel like it's ready for publishing, press the `Publish` button, which will publish this to your repository over on GitHub.
 
 That concludes the contributing guide for Visual Studio Code.
 We appreciate your efforts into contributing to UltimateXR!
