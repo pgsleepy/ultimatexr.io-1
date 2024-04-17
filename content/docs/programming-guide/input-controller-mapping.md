@@ -4,7 +4,7 @@ title: "Controller Mapping"
 
 # Controller Mapping
 
-UltimateXR provides a common interface through `UxrControllerInput` to access all supported controllers. Below we list the mapping used for each controller.
+UltimateXR provides a common interface through `UxrControllerInput` to access all supported controllers. Below we list the mapping used for each controller, sorted alphabetically by vendor.
 
 ## HP ##
 
