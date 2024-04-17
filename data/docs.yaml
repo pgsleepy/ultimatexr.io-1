@@ -49,6 +49,8 @@
           url: "/docs/programming-guide/architecture-singletons"
         - title: "UxrManager"
           url: "/docs/programming-guide/architecture-uxrmanager"
+        - title: "Extending UltimateXR"
+          url: "/docs/programming-guide/architecture-extending-ultimatexr"
     - title: "Input"
       url: ""
       items:
@@ -64,8 +66,6 @@
           url: "/docs/programming-guide/input-haptics"
         - title: "Helper Components"
           url: "/docs/programming-guide/input-helpers"
-        - title: "Extending Input/Tracking"
-          url: "/docs/programming-guide/input-extending-input-tracking"
     - title: "Avatars"
       url: ""
       items:
