@@ -25,10 +25,10 @@ void SendHapticFeedback(UxrHandSide   handSide,
 Where `amplitude` is a value between 0.0 and 1.0. `frequency` will be used if the device supports haptic feedback with variable frequency.
 
 {{% callout info %}}
-Devices based on UnityXR will depend on the presence of `HapticCapabilities.supportsImpulse` on the underlying `InputDevice`.
+Devices based on UnityXR will depend on the presence of [`HapticCapabilities.supportsImpulse`](https://docs.unity3d.com/ScriptReference/XR.HapticCapabilities-supportsImpulse.html) on the underlying [`InputDevice`](https://docs.unity3d.com/ScriptReference/XR.InputDevice.html).
 {{% /callout %}}
 
-The optional `hapticMode` parameter, on devices that support it, controls whether to replace any present haptic feedback, using `UxrHapticMode.Raplace`, or mix it, using `UxrHapticMode.Mix`. `UxrHapticMode.Mix` will be used when omitted.
+The optional `hapticMode` parameter, on devices that support it, controls whether to replace any present haptic feedback, using `UxrHapticMode.Replace`, or mix it, using `UxrHapticMode.Mix`. `UxrHapticMode.Mix` will be used when omitted.
 
 `StopHapticFeedback()` will stop any haptic feedback on a given hand:
 
@@ -51,7 +51,7 @@ To facilitate haptic feedback, UltimateXR supports a set of predefined clips tha
 - `Slide`: A slide.
 - `Explosion`: An explosion.
 
-These predefined clips can be sent using the following method:
+These predefined clips are internally generated through a combination of simpler calls, ensuring compatibility with any haptic-capable device. They can be sent using the following method:
 
 ```c#
 void SendHapticFeedback(UxrHandSide       handSide,
@@ -66,8 +66,31 @@ The `amplitude` parameter provides additional adjustment of the clip intensity. 
 									   
 ### UxrHapticClip ###
 
+The `UxrHapticClip` class includes all the necessary parameters for playing haptic feedback. When using this type for an inspector variable, it will appear like this:
+![](/docs/programming-guide/media/UxrHapticClip.png)
+
+**Clip**: Is an audio clip whose wave can be used for haptic feedback if the device supports playing haptic buffers.
+**Clip Amplitude**: Controls the intensity with which the **Clip** is played.
+**Haptic Mode**: Determines whether to replace the current haptic feedback or mix it.
+**Fallback Clip Type**: [Pre-defined haptic clip](#haptic-clip) that will be played if **Clip** is not assigned or haptic buffers are unsupported.
+**Fallback Amplitude**: Controls the intensity with which the fallback clip is played.
+**Fallback Duration Seconds**: When positive, allows to override the fallback clip playback duration.
+
+`UxrControllerInput` can play `UxrHapticClip` objects using the following method:
 ```c#
 void SendHapticFeedback(UxrHandSide handSide, UxrHapticClip hapticClip)
+```
+
+UxrHapticClips can also be created on the fly:
+```c#
+// Create a clip using an audioClip, with a Click as fallback.
+UxrHapticClip hapticClip = new UxrHapticClip(audioClip,
+							                 1.0f
+											 UxrHapticMode.Mix,
+											 UxrHapticClipType.Click);
+											
+UxrAvatar.LocalAvatarInput.SendHapticFeedback(UxrHandSide.Left,
+                                              hapticClip);
 ```
 												
 ## Manipulation haptics
