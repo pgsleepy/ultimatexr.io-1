@@ -9,7 +9,7 @@ title: "Tracking"
 Each `UxrControllerInput` component has a corresponding `UxrControllerTracking` component that updates the controller positions and orientations in space each frame. These are used by UltimateXR to update the avatar hands.
 
 ![](/docs/programming-guide/media/HandsIntegrationAlign.png)
-**Image**: Example of input and tracking components, giving support for the Quest 3 controlleres.
+**Image**: Example of input and tracking components, giving support for the Quest 3 controllers.
 
 ## Sensor
 
