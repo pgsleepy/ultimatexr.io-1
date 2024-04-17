@@ -8,9 +8,9 @@ Haptic impulses, in the context of VR controllers, refer to tactile feedback gen
 
 ## `UxrControllerInput`
 
-The `UxrControllerInput` component, besides providing input capabilities, also provides haptics functionality.
+The `UxrControllerInput` component, besides providing input capabilities, also provides all the haptics functionality.
 
-### Haptic Impulse ###
+## Haptic Impulse
 
 The following methods sends a simple haptic signal to a controller:
 
@@ -36,7 +36,7 @@ The optional `hapticMode` parameter, on devices that support it, controls whethe
 void StopHapticFeedback(UxrHandSide handSide)
 ```
 
-### Haptic Clip ###
+## Haptic Clip
 
 To facilitate haptic feedback, UltimateXR supports a set of predefined clips that can be used in common scenarios. These clips are defined in `UxrHapticClipType`:
 - `RumbleFreqVeryLow`: A very low frequency rumble.
@@ -64,7 +64,7 @@ void SendHapticFeedback(UxrHandSide       handSide,
 The `amplitude` parameter provides additional adjustment of the clip intensity. `durationSeconds` is an optional parameter that is set to -1 by default. When set to a positive value, it will override the default playback duration.
 `hapticMode`, like in the other methods, will tell whether to replace or mix the clip. If omitted, the clip will be mixed.
 									   
-### UxrHapticClip ###
+## UxrHapticClip
 
 The `UxrHapticClip` class includes all the necessary parameters for playing haptic feedback. When using this type for an inspector variable, it will appear like this:
 ![](/docs/programming-guide/media/UxrHapticClip.png)
