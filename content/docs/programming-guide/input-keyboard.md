@@ -45,5 +45,5 @@ bool wasPressed = UxrKeyboardInput.GetPressDown(UxrKey.Space);
 **Example 3**: Checks if the Enter key was released during the present frame:
 
 ```c#
-bool wasReleased = UxrKeyboardInput.GetPressUp(UxrKey.Space);
+bool wasReleased = UxrKeyboardInput.GetPressUp(UxrKey.Enter);
 ```
