@@ -27,7 +27,7 @@ During avatar setup, these virtual hands will be aligned to the avatar hands, in
 This ensures avatar hands stay aligned with real-world hands, regardless of the controller used, all seamlessly.
 
 ![](/docs/programming-guide/media/HandsIntegrationAlign.png)
-**Image**: The aligned hand gizmo in HandsIntegration (green)
+**Image**: The aligned hand gizmo in HandsIntegration, colored in green.
 
 ## Properties
 
