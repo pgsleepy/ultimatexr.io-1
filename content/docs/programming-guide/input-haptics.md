@@ -8,7 +8,7 @@ Haptic impulses, in the context of VR controllers, refer to tactile feedback gen
 
 ## `UxrControllerInput`
 
-The `UxrControllerInput` component, besides providing input capabilities, also provides all the haptics functionality.
+The `UxrControllerInput` component, besides providing input capabilities, also provides the haptics functionality.
 
 ## Haptic Impulse
 
@@ -25,7 +25,7 @@ void SendHapticFeedback(UxrHandSide   handSide,
 Where `amplitude` is a value between 0.0 and 1.0. `frequency` will be used if the device supports haptic feedback with variable frequency.
 
 {{% callout info %}}
-Devices based on UnityXR will depend on the presence of [`HapticCapabilities.supportsImpulse`](https://docs.unity3d.com/ScriptReference/XR.HapticCapabilities-supportsImpulse.html) on the underlying [`InputDevice`](https://docs.unity3d.com/ScriptReference/XR.InputDevice.html).
+Devices that are supported using UnityXR will depend on the presence of [`HapticCapabilities.supportsBuffer`](https://docs.unity3d.com/ScriptReference/XR.HapticCapabilities-supportsImpulse.html) on the underlying [`InputDevice`](https://docs.unity3d.com/ScriptReference/XR.InputDevice.html) to send haptic buffers with variable frequency.
 {{% /callout %}}
 
 The optional `hapticMode` parameter, on devices that support it, controls whether to replace any present haptic feedback, using `UxrHapticMode.Replace`, or mix it, using `UxrHapticMode.Mix`. `UxrHapticMode.Mix` will be used when omitted.
@@ -66,7 +66,7 @@ The `amplitude` parameter provides additional adjustment of the clip intensity. 
 									   
 ## UxrHapticClip
 
-To facilitate haptic feedback, UltimateXR provides the `UxrHapticClip` class which includes all the necessary parameters. When using this type for an inspector variable, it will appear like this:
+To facilitate haptic feedback, UltimateXR provides the `UxrHapticClip` class which includes all the necessary parameters. When this type is used for an inspector variable, it will appear like this:
 ![](/docs/programming-guide/media/UxrHapticClip.png)
 
 - **Clip**: Is an audio clip whose wave can be used for haptic feedback if the device supports playing haptic buffers.
@@ -91,19 +91,23 @@ UxrAvatar.LocalAvatarInput.SendHapticFeedback(UxrHandSide.Left, hapticClip);
 												
 ## Manipulation haptics
 
+When working with grabbable objects, it can be useful to send haptic feedback to all hands that are grabbing an object. This can be achieved using the following method:
 ```c#
 void SendGrabbableHapticFeedback(UxrGrabbableObject grabbableObject,
                                  UxrHapticClipType  clipType,
-                                 float              amplitude       = DefaultHapticAmplitude,
-                                 float              durationSeconds = -1.0f,
-                                 UxrHapticMode      hapticMode      = UxrHapticMode.Mix)
+                                 float              amplitude,
+                                 float              durationSeconds,
+                                 UxrHapticMode      hapticMode)
 ```
+This will send the haptic feedback data to all controllers that are currently grasping an object.
 
+The variation below will do the same, but using a `UxrHapticClip` instead:
 ```c#
 void SendGrabbableHapticFeedback(UxrGrabbableObject grabbableObject, UxrHapticClip hapticClip)
 ```
 
 ## Events ##
 
-`GlobalHapticRequesting`
-`HapticRequesting`
+`UxrControllerInput` provides access to the following events:
+- `GlobalHapticRequesting`: A global static event raised whenever haptic feedback is requested on any `UxrControllerInput` component.
+- `HapticRequesting`: Raised whenever haptic feedback is requested on the `UxrControllerInput` component of the event subscription.
