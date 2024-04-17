@@ -22,7 +22,7 @@ UltimateXR positions the avatar's hands using the sensor data along with a prede
 The HandsIntegration setup is done at edit-time and works as follows:
 The HandsIntegration prefab is a special prefab in UltimateXR, added to all avatars. It includes `UxrControllerInput` and `UxrControllerTracking` components for all supported controllers, providing automatic device support.
 The `UxrControllerTracking` components keep references to sensor GameObjects for the left and right controllers. These sensor GameObjects are carefully placed on virtual hand gizmos present in the HandsIntegration prefab.
-During avatar setup, these virtual hands will be aligned to the avatar hands, bringing all the sensors too in the process.
+During avatar setup, these virtual hands will be aligned to the avatar hands, including all the sensors in the process.
 
 This ensures avatar hands stay aligned with real-world hands, regardless of the controller used, all seamlessly.
 
@@ -31,7 +31,7 @@ This ensures avatar hands stay aligned with real-world hands, regardless of the 
 
 ## Properties
 
-`UxrControllerInput` exposes the following properties:
+`UxrControllerTracking` exposes the following properties:
 
 - `SensorLeftPos`: Gets the left controller sensor world position.
 - `SensorRightPos`: Gets the right controller sensor world position.
@@ -45,7 +45,7 @@ This ensures avatar hands stay aligned with real-world hands, regardless of the 
 
 ## Velocity and Averaging
 
-Although `UxrControllerInput` exposes tracking properties, it contains unprocessed data.
+Although `UxrControllerTracking` exposes tracking properties, it contains unprocessed data.
 
 The `UxrGrabber` component contains special functionality that can compute velocity. It averages values over multiple frames and takes into account the controller's position in the hand, resulting in improved behavior when throwing objects.
 Consult the  [`UxrGrabber` programming guide](/docs/programming-guide/manipulation-uxrgrabber) for more information.
