@@ -9,7 +9,7 @@ title: "Tracking"
 Each `UxrControllerInput` component has a corresponding `UxrControllerTracking` component that updates the controller positions and orientations in space each frame. These are used by UltimateXR to update the avatar hands.
 
 ![](/docs/programming-guide/media/InputTrackingComponents.png)
-**Image**: Example of input and tracking components, giving support for the Quest 3 controllers.
+**Image**: Example of input and tracking components, giving support for the Quest 3 controllers in SteamVR.
 
 ## Sensor
 
@@ -25,10 +25,10 @@ UltimateXR positions the avatar's hands using the sensor data along with a prede
 ![](/docs/programming-guide/media/HandsIntegrationExample.png)
 **Image**: The HandsIntegration present in the CyborgAvatarExample prefab.
 
-The HandsIntegration setup is done at edit-time and works as follows:
-The HandsIntegration prefab is a special prefab in UltimateXR, added to all avatars. It includes `UxrControllerInput` and `UxrControllerTracking` components for all supported controllers, providing automatic device support.
-The `UxrControllerTracking` components keep references to sensor GameObjects for the left and right controllers. These sensor GameObjects are carefully placed on virtual hand gizmos present in the HandsIntegration prefab.
-During avatar setup, these virtual hands will be aligned to the avatar hands, including all the sensors in the process.
+The HandsIntegration prefab is a special prefab in UltimateXR, added to all avatars at edit-time. It includes `UxrControllerInput` and `UxrControllerTracking` components for all supported controllers, providing automatic device support.
+The `UxrControllerTracking` components keep references to sensor GameObjects for the left and right controllers. These sensor GameObjects have been carefully placed on virtual hand gizmos present in the HandsIntegration prefab.
+
+During avatar setup, these virtual hands will only need to be aligned to the avatar hands, which will include all the sensors in the process. This process is done automatically and can be later adjusted by the user.
 
 This ensures avatar hands stay aligned with real-world hands, regardless of the controller used, all seamlessly.
 
