@@ -80,6 +80,16 @@
       "route": "/guides/example-scene",
       "redirect": "/docs/guides/example-scene",
       "statusCode": 301
+    },
+    {
+      "route": "/guides/avatar",
+      "redirect": "/docs/guides/avatar",
+      "statusCode": 301
+    },
+    {
+      "route": "/docs/guides/avatar",
+      "redirect": "/docs/avatars/overview",
+      "statusCode": 301
     }
   ]
 }
