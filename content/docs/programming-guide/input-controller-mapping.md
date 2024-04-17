@@ -6,9 +6,9 @@ title: "Controller Mapping"
 
 UltimateXR provides a common interface through `UxrControllerInput` to access all supported controllers. Below we list the mapping used for each controller, sorted alphabetically by vendor.
 
-## HP ##
+## HP
 
-### HP Reverb G2 ###
+### HP Reverb G2
 
 | Element  | UltimateXR              | Notes                        |
 | -------- | ----------------------- | ---------------------------- |
@@ -21,9 +21,9 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger  | UxrInput1D.Trigger      | Also UxrInputButtons.Trigger |
 | Grip     | UxrInput1D.Grip         | Also UxrInputButtons.Grip    |
 
-## HTC ##
+## HTC
 
-### HTC Vive ###
+### HTC Vive
 
 | Element  | UltimateXR              | Notes                        |
 | -------- | ----------------------- | ---------------------------- |
@@ -32,7 +32,7 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger  | UxrInput1D.Trigger      | Also UxrInputButtons.Trigger |
 | Grip     | UxrInput1D.Grip         | Also UxrInputButtons.Grip    |
 
-### Vive Cosmos ###
+### Vive Cosmos
 
 | Element  | UltimateXR              | Notes                        |
 | -------- | ----------------------- | ---------------------------- |
@@ -46,7 +46,7 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger  | UxrInput1D.Trigger      | Also UxrInputButtons.Trigger |
 | Grip     | UxrInput1D.Grip         | Also UxrInputButtons.Grip    |
 
-### Vive Focus 3 ###
+### Vive Focus 3
 
 | Element  | UltimateXR              | Notes                        |
 | -------- | ----------------------- | ---------------------------- |
@@ -59,9 +59,9 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger  | UxrInput1D.Trigger      | Also UxrInputButtons.Trigger |
 | Grip     | UxrInput1D.Grip         | Also UxrInputButtons.Grip    |
 
-## Magic Leap ##
+## Magic Leap
 
-### Magic Leap2 ###
+### Magic Leap 2
 
 | Element  | UltimateXR              | Notes                        |
 | -------- | ----------------------- | ---------------------------- |
@@ -71,23 +71,9 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger  | UxrInput1D.Trigger      | Also UxrInputButtons.Trigger |
 | Grip     | UxrInput1D.Grip         | Also UxrInputButtons.Grip    |
 
-## Meta ##
+## Meta
 
-### Meta Quest 2 ###
-
-| Element   | UltimateXR                    | Notes                        |
-| --------- | ----------------------------- | ---------------------------- |
-| Joystick  | UxrInput2D.Joystick           |                              |
-| Button A  | UxrInputButtons.Button1       | Right Side                   |
-| Button B  | UxrInputButtons.Button2       | Right Side                   |
-| Button X  | UxrInputButtons.Button1       | Left Side                    |
-| Button Y  | UxrInputButtons.Button2       | Left Side                    |
-| ThumbRest | UxrInputButtons.ThumbCapSense | Not available using SteamVR  |
-| Menu      | UxrInputButtons.Menu          | Left Side Only               |
-| Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
-| Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
-
-### Meta Quest Pro ###
+### Meta Quest 2
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
@@ -101,7 +87,7 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
 | Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 
-### Meta Quest 3 ###
+### Meta Quest Pro
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
@@ -115,9 +101,7 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
 | Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 
-## Oculus ##
-
-### Oculus Rift ###
+### Meta Quest 3
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
@@ -131,7 +115,9 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
 | Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 
-### Oculus Rift-S ###
+## Oculus
+
+### Oculus Rift
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
@@ -145,7 +131,7 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
 | Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 
-### Oculus Quest ###
+### Oculus Rift-S
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
@@ -159,9 +145,23 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
 | Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 
-## Pico ##
+### Oculus Quest
 
-### Pico Neo 3 ###
+| Element   | UltimateXR                    | Notes                        |
+| --------- | ----------------------------- | ---------------------------- |
+| Joystick  | UxrInput2D.Joystick           |                              |
+| Button A  | UxrInputButtons.Button1       | Right Side                   |
+| Button B  | UxrInputButtons.Button2       | Right Side                   |
+| Button X  | UxrInputButtons.Button1       | Left Side                    |
+| Button Y  | UxrInputButtons.Button2       | Left Side                    |
+| ThumbRest | UxrInputButtons.ThumbCapSense | Not available using SteamVR  |
+| Menu      | UxrInputButtons.Menu          | Left Side Only               |
+| Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
+| Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
+
+## Pico
+
+### Pico Neo 3
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
@@ -175,7 +175,7 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
 | Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 
-### Pico 4 ###
+### Pico 4
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
@@ -189,9 +189,9 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Trigger   | UxrInput1D.Trigger            | Also UxrInputButtons.Trigger |
 | Grip      | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 
-## Valve ##
+## Valve
 
-### Index Controller ###
+### Index Controller
 
 | Element                | UltimateXR                    | Notes                        |
 | ---------------------- | ----------------------------- | ---------------------------- |
@@ -205,9 +205,9 @@ UltimateXR provides a common interface through `UxrControllerInput` to access al
 | Middle finger tracking | UxrInput1D.Grip               | Also UxrInputButtons.Grip    |
 | Finger tracking        | -                             | Tracks finger curl values    |
 
-## Windows Mixed Reality ##
+## Windows Mixed Reality
 
-### Common WMR ###
+### Common WMR
 
 | Element   | UltimateXR                    | Notes                        |
 | --------- | ----------------------------- | ---------------------------- |
