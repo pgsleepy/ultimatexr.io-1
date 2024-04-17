@@ -22,6 +22,9 @@ The process described here is transparent to the user. It is detailed to provide
 The sensor represents the point on the controller that is the origin for its coordinates. At runtime, the XR platform reports the sensor positions and orientations for each controller.
 UltimateXR positions the avatar's hands using the sensor data along with a predefined controller placement in the hand defined in the **HandsIntegration** prefab.
 
+![](/docs/programming-guide/media/HandsIntegrationExample.png)
+**Image**: The HandsIntegration present in the CyborgAvatarExample prefab.
+
 The HandsIntegration setup is done at edit-time and works as follows:
 The HandsIntegration prefab is a special prefab in UltimateXR, added to all avatars. It includes `UxrControllerInput` and `UxrControllerTracking` components for all supported controllers, providing automatic device support.
 The `UxrControllerTracking` components keep references to sensor GameObjects for the left and right controllers. These sensor GameObjects are carefully placed on virtual hand gizmos present in the HandsIntegration prefab.
