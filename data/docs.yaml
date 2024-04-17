@@ -4,6 +4,8 @@
       url: "/docs/guides/what-is-ultimatexr"
     - title: "How to Contribute"
       url: "/docs/guides/how-to-contribute"
+    - title: "Contributing to the Guide"
+      url: "/docs/guides/contributing-to-the-guide"
     - title: "Installation"
       url: "/docs/guides/installation"
     - title: "Supported Platforms"
