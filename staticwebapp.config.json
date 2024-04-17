@@ -90,6 +90,11 @@
       "route": "/docs/guides/avatar",
       "redirect": "/docs/avatars/overview",
       "statusCode": 301
+    },
+    {
+      "route": "/docs/guides/hand-pose-editor",
+      "redirect": "/docs/avatars/the-hand-pose-editor",
+      "statusCode": 301
     }
   ]
 }
