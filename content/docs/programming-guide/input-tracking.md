@@ -8,6 +8,9 @@ title: "Tracking"
 
 Each `UxrControllerInput` component has a corresponding `UxrControllerTracking` component that updates the controller positions and orientations in space each frame.
 
+![](/docs/programming-guide/media/HandsIntegrationAlign.png)
+**Image**: Example of input and tracking components, giving support for the Quest 3 controlleres.
+
 ## Sensor
 
 Positioning avatar hands accurately with controllers poses a significant challenge. The reported position and rotation of the controller **sensor** cannot be directly applied to the hands, as this would result in virtual hands being placed far from the user's actual hands, leading to a sense of disconnection.
