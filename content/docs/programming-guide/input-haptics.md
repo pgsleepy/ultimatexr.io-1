@@ -38,7 +38,7 @@ void StopHapticFeedback(UxrHandSide handSide)
 
 ## Haptic Clip
 
-To facilitate haptic feedback, UltimateXR supports a set of predefined clips that can be used in common scenarios. These clips are defined in `UxrHapticClipType`:
+UltimateXR supports a set of predefined clips that can be used in common scenarios. These clips are defined in `UxrHapticClipType`:
 - `RumbleFreqVeryLow`: A very low frequency rumble.
 - `RumbleFreqLow`: A low frequency rumble.
 - `RumbleFreqNormal`: A normal frequency rumble.
@@ -66,15 +66,15 @@ The `amplitude` parameter provides additional adjustment of the clip intensity. 
 									   
 ## UxrHapticClip
 
-The `UxrHapticClip` class includes all the necessary parameters for playing haptic feedback. When using this type for an inspector variable, it will appear like this:
+To facilitate haptic feedback, UltimateXR provides the `UxrHapticClip` class which includes all the necessary parameters. When using this type for an inspector variable, it will appear like this:
 ![](/docs/programming-guide/media/UxrHapticClip.png)
 
-**Clip**: Is an audio clip whose wave can be used for haptic feedback if the device supports playing haptic buffers.
-**Clip Amplitude**: Controls the intensity with which the **Clip** is played.
-**Haptic Mode**: Determines whether to replace the current haptic feedback or mix it.
-**Fallback Clip Type**: [Pre-defined haptic clip](#haptic-clip) that will be played if **Clip** is not assigned or haptic buffers are unsupported.
-**Fallback Amplitude**: Controls the intensity with which the fallback clip is played.
-**Fallback Duration Seconds**: When positive, allows to override the fallback clip playback duration.
+- **Clip**: Is an audio clip whose wave can be used for haptic feedback if the device supports playing haptic buffers.
+- **Clip Amplitude**: Controls the intensity with which the **Clip** is played.
+- **Haptic Mode**: Determines whether to replace the current haptic feedback or mix it.
+- **Fallback Clip Type**: [Pre-defined haptic clip](#haptic-clip) that will be played if **Clip** is not assigned or haptic buffers are unsupported.
+- **Fallback Amplitude**: Controls the intensity with which the fallback clip is played.
+- **Fallback Duration Seconds**: When positive, allows to override the fallback clip playback duration.
 
 `UxrControllerInput` can play `UxrHapticClip` objects using the following method:
 ```c#
