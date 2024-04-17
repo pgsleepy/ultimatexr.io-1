@@ -31,6 +31,8 @@ This ensures avatar hands stay aligned with real-world hands, regardless of the 
 
 ## Properties
 
+`UxrControllerInput` exposes the following properties:
+
 - `SensorLeftPos`: Gets the left controller sensor world position.
 - `SensorRightPos`: Gets the right controller sensor world position.
 - `SensorLeftRot`: Gets the world rotation of the left controller sensor
@@ -43,5 +45,7 @@ This ensures avatar hands stay aligned with real-world hands, regardless of the 
 
 ## Velocity and Averaging
 
-The `UxrGrabber` component contains special functionality that computes improved velocity values. It averages velocity between multiple frames and considers the controller position in the hand to provide better behavior when throwing objects.
+Although `UxrControllerInput` exposes tracking properties, it contains unprocessed data.
+
+The `UxrGrabber` component contains special functionality that can compute velocity. It averages values over multiple frames and takes into account the controller's position in the hand, resulting in improved behavior when throwing objects.
 Consult the  [`UxrGrabber` programming guide](/docs/programming-guide/manipulation-uxrgrabber) for more information.
