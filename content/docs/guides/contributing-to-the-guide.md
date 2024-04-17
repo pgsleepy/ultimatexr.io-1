@@ -119,7 +119,7 @@ You can stage a change by clicking the plus button, this will add it to the stag
 
 ![](/docs/guides/media/contributing/06StageChanges.png)
 
-When you've staged the proper changes, click the `Commit` button to set up your next staged changes and when you finally feel like it's ready for publishing, press the `Publish` button, which will publish this to your repository over on GitHub.
+When you've staged the proper changes, click the `Commit` button to set up your next staged changes and when you finally feel like it's ready for publishing, press the `Sync Changes` button, which will publish this to your repository over on GitHub.
 
 That concludes the contributing guide for Visual Studio Code.
 We appreciate your efforts into contributing to UltimateXR!
