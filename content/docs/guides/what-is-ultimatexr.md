@@ -4,7 +4,7 @@ title: "What is UltimateXR?"
 
 # What is UltimateXR?
 
-![](/docs/guides/media/getting-starte/UltimateXR.gif)
+![](/docs/guides/media/getting-started/UltimateXR.gif)
 
 **UltimateXR** is a comprehensive, professional-grade, and open-source framework designed for Unity developers. With a focus on simplifying the development process for virtual reality applications, UltimateXR offers a versatile toolkit suitable for a wide range of projects, from immersive simulators to high-quality video games.
 
