@@ -24,7 +24,7 @@ This guide covers everything using Visual Studio Code and Git for a fast and eff
 
 We're going to make our own fork, clone said fork to our local machine, edit the files, and finally make a pull request for the owners to pull your additions.
 
-You will need to have [Visual Studio Code](https://code.visualstudio.com/) and [Git](https://git-scm.com/downloads) installed and you will need to have Git logged into your GitHub account. If you haven't done that yet, [please follow the steps to set up Git.](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git)
+You will need to have [Visual Studio Code](https://code.visualstudio.com/), [Hugo](https://gohugo.io/installation/) and [Git](https://git-scm.com/downloads) installed and you will need to have Git logged into your GitHub account. If you haven't done that yet, [please follow the steps to set up Git.](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git)
 
 ## Forking the Repository
 
