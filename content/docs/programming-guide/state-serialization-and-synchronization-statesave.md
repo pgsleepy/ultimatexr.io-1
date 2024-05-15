@@ -252,7 +252,6 @@ Consult the [Serialization guide](/docs/programming-guide/other-features-seriali
 
 To extend support for new types to work with `SerializeStateValue()`, the following steps can be taken:
 - Implement the `IUxrSerializable` interface.
-- Add a default constructor if one is not already present.
 - Implement the `ICloneable` interface *
 - Override the `bool Equals(object obj)` method *
 
