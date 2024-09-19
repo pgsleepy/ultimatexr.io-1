@@ -57,7 +57,7 @@ public Player : UxrComponent
     // Expose Life property with StateSync support.
     public int Life
     {
-        get => life;
+        get => _life;
         set
         {
             BeginSync();
@@ -71,8 +71,7 @@ public Player : UxrComponent
     public void ChangeTeam(int team, Color color)
     {
         BeginSync();
-        // Do stuff here using the parameters received.
-		
+        // Do stuff here using the parameters received.		
         // Notify of method call using the same parameters.
         EndSyncMethod(new object[] { team, color });
     }
