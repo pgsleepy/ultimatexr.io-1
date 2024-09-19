@@ -67,7 +67,7 @@ public Player : UxrComponent
         }
     }
 
-    // Expose ChangeTeam method call with StateSync support.
+    // Expose ChangeTeam() method call with StateSync support.
     public void ChangeTeam(int team, Color color)
     {
         BeginSync();
@@ -80,9 +80,11 @@ public Player : UxrComponent
 }
 ```
 
-Whenever any component in UltimateXR finishes a synchronization block, a `UxrManager.ComponentStateChanged` event is raised. During multiplayer sessions, the framework intercepts these events, serializes them, and sends them to other users. The events are then deserialized and executed on their end, ensuring that all components stay in sync across all users.
+Changes to the `Life` property on one client will automatically update the value on all other clients. Similarly, calls to the `ChangeTeam()` method will be propagated, ensuring the method is executed with the same parameters on all clients.
 
-All of this functionality is provided by UltimateXR, with the multiplayer SDK used only to broadcast the serialized events.
+But how? Whenever any component in UltimateXR finishes a synchronization block, a `UxrManager.ComponentStateChanged` event is raised. During multiplayer sessions, the framework intercepts these events, serializes them, and sends them to other users. The events are then deserialized and executed on their end, ensuring that all components stay in sync across all users.
+
+All of this functionality is provided by UltimateXR, with the multiplayer SDK used only to broadcast the serialized events through the network.
 
 The diagram describing this process is shown below:
 ![](/docs/programming-guide/media/StateSyncDiagram.png)
