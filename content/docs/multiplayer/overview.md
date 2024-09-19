@@ -39,7 +39,7 @@ Developers can also choose to use or combine native multiplayer SDK code if pref
 
 ## Features
 
-- Native support for the most relevant networking and voice-over-network APIs (NetCode, Photon, Mirror, FishNet, Dissonance...). The modular design allows easy integration of new networking APIs as needed.
+- **Native support** for the most relevant networking and voice-over-network APIs (NetCode, Photon, Mirror, FishNet, Dissonance...). The modular design allows easy integration of new networking APIs as needed.
 - Supports **sync-on-join** and **real-time synchronization**, ensuring new players receive the current session state on joining, while all actions are continuously synced across the network.
 - The UltimateXR **Synchronization API** enables writing network code that works on any platform with any supported SDK. The API enforces a clean architecture, keeping source files free of multiplayer-specific code.
 - **Replay functionality** is automatically supported when using the UltimateXR synchronization API instead of native network SDK code. This allows sessions to be recorded, saved, and replayed later, which is useful for gameplay video stabilization and session reviews.
