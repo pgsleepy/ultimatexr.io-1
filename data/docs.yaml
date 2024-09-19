@@ -316,6 +316,7 @@
       label: "ready"
     - title: "Technical Overview"
       url: "/docs/multiplayer/technical-overview"
+      label: "ready"
     - title: "Supported Platforms"
       url: "/docs/multiplayer/supported-platforms"
       label: "ready"
@@ -323,7 +324,7 @@
       url: "/docs/multiplayer/adding-multiplayer-support"
     - title: "Multiplayer Programming"
       url: "/docs/multiplayer/multiplayer-programming"
-    - title: "Example"
+    - title: "Multiplayer Example"
       url: "/docs/multiplayer/example"
 
 - title: "Troubleshooting"
