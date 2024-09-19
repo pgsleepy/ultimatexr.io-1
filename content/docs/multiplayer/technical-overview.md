@@ -32,10 +32,10 @@ UltimateXR provides all the necessary functionality to serialize and deserialize
 To illustrate how this works, here’s an example of the code that enables full scene serialization and deserialization using the UltimateXR API:
 
 ```c#
-// Save complete scene state and compress it.
+// On the server side: Save complete scene state and compress it.
 byte[] serializedData = UxrManager.Instance.SaveStateChanges(UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryGzip);
 
-// Load scene state. Format is automatically detected.
+// On the joining client side: Load scene state.
 UxrManager.Instance.LoadStateChanges(serializedData);
 ```
 
@@ -67,7 +67,7 @@ public Player : UxrComponent
         }
     }
 
-    // Expose ChangeTeam method call with StateSync support.
+    // Expose ChangeTeam() method call with StateSync support.
     public void ChangeTeam(int team, Color color)
     {
         BeginSync();
@@ -79,6 +79,15 @@ public Player : UxrComponent
     private int _life;
 }
 ```
+
+Changes to the `Life` property on one client will automatically update the value on all other clients. Similarly, calls to the `ChangeTeam()` method will be propagated, ensuring the method is executed with the same parameters on all clients.
+
+But how? Whenever any component in UltimateXR finishes a synchronization block, a `UxrManager.ComponentStateChanged` event is raised. During multiplayer sessions, the framework intercepts these events, serializes them, and sends them to other users. The events are then deserialized and executed on their end, ensuring that all components stay in sync across all users.
+
+All of this functionality is provided by UltimateXR, with the multiplayer SDK used only to broadcast the serialized events through the network.
+
+The diagram describing this process is shown below:
+![](/docs/programming-guide/media/StateSyncDiagram.png)
 
 {{% callout info %}}
 **StateSync** can also be used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
