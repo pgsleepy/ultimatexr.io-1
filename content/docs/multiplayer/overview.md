@@ -17,7 +17,7 @@ UltimateXR fully supports multiplayer by providing an architecture that can sync
 - [Mirror](https://mirror-networking.com/)
 - [Dissonance](https://placeholder-software.co.uk/dissonance/docs/index.html) and [Photon Voice](https://www.photonengine.com/voice) (voice over network).
 
-# How does it work?
+## How does it work?
 
 For a more technical overview, check the [Technical Overview](/docs/multiplayer/technical-overview) section.
 
