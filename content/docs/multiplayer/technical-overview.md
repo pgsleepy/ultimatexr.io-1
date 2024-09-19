@@ -80,7 +80,7 @@ public Player : UxrComponent
 }
 ```
 
-Whenever **any** component in UltimateXR finishes a synchronization block, a UxrManager.ComponentStateChanged event is raised. During multiplayer sessions, the framework intercepts these events, serializes them, and sends them to other users. The events are then deserialized and executed on their end, ensuring that all components stay in sync across all users.
+Whenever **any** component in UltimateXR finishes a synchronization block, a `UxrManager.ComponentStateChanged` event is raised. During multiplayer sessions, the framework intercepts these events, serializes them, and sends them to other users. The events are then deserialized and executed on their end, ensuring that all components stay in sync across all users.
 
 The diagram describing this process is shown below:
 ![](/docs/programming-guide/media/StateSyncDiagram.png)
