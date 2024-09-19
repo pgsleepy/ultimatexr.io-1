@@ -22,3 +22,7 @@ Originally started in 2016 by VRMADA, a company specializing in virtual training
 - Scalable architecture.
 - Clean code; fully documented using standard XML format.
 - Lots of tools, methods and extensions to make development easier.
+
+# Target Audience
+
+UltimateXR isn't just for programmers, it can be used by artists and game or simulation designers too. It offers tools to build fully interactive environments, including multiplayer, using only visual components. For larger projects, it also provides a complete API, allowing developers to create the complex logic needed for enterprise-level projects and professional video games.
