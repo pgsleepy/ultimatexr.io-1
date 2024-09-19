@@ -21,15 +21,17 @@ UltimateXR fully supports multiplayer by providing an architecture that can sync
 
 Why multiplayer? Isn’t it beyond what a VR framework should do? Yes and no.
 
-UltimateXR doesn’t handle the actual connections, that’s what multiplayer SDKs like Unity NetCode or Photon are for. But what UltimateXR provides is an architecture built from the ground up to keep components in sync remotely, with connectors to the networking SDKs, making multiplayer functionality completely transparent to the developer.
+UltimateXR doesn’t handle the actual connections, that’s what multiplayer SDKs like Unity NetCode or Photon are for. But what UltimateXR provides is an architecture built from the ground up to keep remote components in sync, in addition to connectors to the networking SDKs, making multiplayer functionality completely transparent to the developer.
 
 With this setup, all components in UltimateXR sync automatically. In practice, this means avatars will move in sync on every computer, perform the same gestures, and even interact with the same objects at the same time, like grabbing or pulling in real time. All systems in UltimateXR are prepared to work in multiplayer environments.
+
+In summary, we intend to help developers focus on creating fun experiences instead of dealing with technical challenges.
 
 ## How does it work?
 
 A more technical overview is given in the [Technical Overview](/docs/multiplayer/technical-overview) section.
 
-UltimateXR provides multiplayer support out of the box with just a few clicks, using your preferred networking SDK, making it perfect for quick prototyping and indie projects.
+UltimateXR provides multiplayer support out of the box with just a few clicks, using your preferred networking SDK, making it perfect for quick prototyping and indie projects. It can be enabled without any code. We will see this in the upcoming sections.
 
 For larger projects, where custom multiplayer code is required, UltimateXR has a simple yet powerful API that works with any of the supported multiplayer systems. This API has the additional benefit of providing state-saving and replay support seamlessly. [New multiplayer system integrations](/docs/programming-guide/architecture-extending-ultimatexr#new-multiplayer-sdk) will also work automatically.
 
