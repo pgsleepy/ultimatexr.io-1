@@ -77,9 +77,14 @@ public Player : UxrComponent
         EndSyncMethod(new object[] { team, color });
     }
 	
-	  private int _life;
+    private int _life;
 }
 ```
+
+{{% callout info %}}
+StateSync is also used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
+{{% /callout %}}
+
 
 ## More Information
 
