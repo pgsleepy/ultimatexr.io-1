@@ -32,10 +32,10 @@ UltimateXR provides all the necessary functionality to serialize and deserialize
 To illustrate how this works, here’s an example of the code that enables full scene serialization and deserialization using the UltimateXR API:
 
 ```c#
-// Save complete scene state and compress it.
+// On the server side: Save complete scene state and compress it.
 byte[] serializedData = UxrManager.Instance.SaveStateChanges(UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryGzip);
 
-// Load scene state. Format is automatically detected.
+// On the joining client side: Load scene state.
 UxrManager.Instance.LoadStateChanges(serializedData);
 ```
 
