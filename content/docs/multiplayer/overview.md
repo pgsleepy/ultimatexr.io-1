@@ -17,14 +17,13 @@ UltimateXR fully supports multiplayer by providing an architecture that can sync
 - [Mirror](https://mirror-networking.com/)
 - [Dissonance](https://placeholder-software.co.uk/dissonance/docs/index.html) and [Photon Voice](https://www.photonengine.com/voice) (voice over network).
 
+# How does it work?
+
+For a more technical overview, check the [Technical Overview](/docs/multiplayer/technical-overview) section.
+
 UltimateXR is capable of providing multiplayer support out-of-the-box with a few clicks, making it ideal for quick prototyping and indie projects.
 
 For larger projects, where custom multiplayer code is required, UltimateXR has a simple yet powerful API that works with any the supported multiplayer systems. This API has the additional benefit of providing state-saving and replay support seamlessly. New multiplayer system integrations will also work automatically.
 
 Users can also keep using native multiplayer code if preferred.
 
-# How does it work?
-
-For a more technical overview, check the [Technical Overview](/docs/programming-guide/architecture-class-diagram) section.
-
-Essentially, 
