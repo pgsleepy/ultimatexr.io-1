@@ -2,14 +2,19 @@
   items:
     - title: "What is UltimateXR?"
       url: "/docs/guides/what-is-ultimatexr"
+      label: "ready"
     - title: "How to Contribute"
       url: "/docs/guides/how-to-contribute"
+      label: "ready"
     - title: "Contributing to the Guide"
       url: "/docs/guides/contributing-to-the-guide"
+      label: "ready"
     - title: "Installation"
       url: "/docs/guides/installation"
+      label: "ready"
     - title: "Supported Platforms"
       url: ""
+      label: "ready"
       items:
         - title: "Overview"
           url: "/docs/guides/supported-platforms"
@@ -27,15 +32,19 @@
           url: "/docs/guides/windows-mixed-reality"
     - title: "Tools Menu"
       url: "/docs/guides/tools-menu"
+      label: "ready"
     - title: "Example Scene"
       url: "/docs/guides/example-scene"
+      label: "ready"
 
 - title: "Programming Guide"
   items:
     - title: "Overview"
       url: "/docs/programming-guide/overview"
+      label: "ready"
     - title: "Architecture"
       url: ""
+      label: "ready"
       items:
         - title: "Principles"
           url: "/docs/programming-guide/architecture-principles"
@@ -55,6 +64,7 @@
           url: "/docs/programming-guide/architecture-extending-ultimatexr"
     - title: "Input"
       url: ""
+      label: "ready"
       items:
         - title: "Overview"
           url: "/docs/programming-guide/input-overview"
@@ -118,6 +128,7 @@
           url: "/docs/programming-guide/guidance-uxrcompass"
     - title: "State Serialization and Synchronization"
       url: ""
+      label: "ready"
       items:
         - title: "Introduction"
           url: "/docs/programming-guide/state-serialization-and-synchronization-introduction"
@@ -163,6 +174,7 @@
       url: "/docs/tutorials/creating-your-first-scene"
     - title: "Creating a Grabbable Ball"
       url: "/docs/tutorials/creating-a-grabbable-ball"
+      label: "ready"
     - title: "Adding Manipulation Constraints"
       url: "/docs/tutorials/adding-manipulation-constraints"
     - title: "Grab Point Shapes"
@@ -301,6 +313,7 @@
   items:
     - title: "Overview"
       url: "/docs/multiplayer/overview"
+      label: "ready"
     - title: "Technical Overview"
       url: "/docs/multiplayer/technical-overview"
     - title: "Supported Platforms"
