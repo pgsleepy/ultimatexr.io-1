@@ -17,13 +17,21 @@ UltimateXR fully supports multiplayer by providing an architecture that can sync
 - [Mirror](https://mirror-networking.com/)
 - [Dissonance](https://placeholder-software.co.uk/dissonance/docs/index.html) and [Photon Voice](https://www.photonengine.com/voice) (voice over network).
 
+## Why multiplayer?
+
+Why multiplayer? Isn’t it beyond what a VR framework should do? Yes and no.
+
+UltimateXR doesn’t handle the actual connections, that’s what multiplayer SDKs like Unity NetCode or Photon are for. But what UltimateXR does provide is an architecture built from the ground up to make multiplayer easy, along with connectors to those SDKs.
+
+With this setup, all components in UltimateXR sync automatically. This means avatars will move in sync on every computer, perform the same gestures, and even interact with the same objects at the same time, like grabbing or pulling in real time.
+
 ## How does it work?
 
-For a more technical overview, check the [Technical Overview](/docs/multiplayer/technical-overview) section.
+A more technical overview is given in the [Technical Overview](/docs/multiplayer/technical-overview) section.
 
-UltimateXR is capable of providing multiplayer support out-of-the-box with a few clicks, making it ideal for quick prototyping and indie projects.
+UltimateXR provides multiplayer support out of the box with just a few clicks, using your preferred networking SDK, making it perfect for quick prototyping and indie projects.
 
 For larger projects, where custom multiplayer code is required, UltimateXR has a simple yet powerful API that works with any the supported multiplayer systems. This API has the additional benefit of providing state-saving and replay support seamlessly. New multiplayer system integrations will also work automatically.
 
-Users can also keep using native multiplayer code if preferred.
+Developers can also choose to use native multiplayer SDK code if preferred.
 
