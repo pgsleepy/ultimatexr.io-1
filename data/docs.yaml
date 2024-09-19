@@ -318,6 +318,7 @@
       url: "/docs/multiplayer/technical-overview"
     - title: "Supported Platforms"
       url: "/docs/multiplayer/supported-platforms"
+      label: "ready"
     - title: "Adding Multiplayer Support"
       url: "/docs/multiplayer/adding-multiplayer-support"
     - title: "Multiplayer Programming"
