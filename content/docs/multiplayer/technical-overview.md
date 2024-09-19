@@ -6,7 +6,7 @@ title: "Technical Overview"
 
 The following overview is highly technical and intended for programmers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
 
-## `UxrComponent` as base
+## Using `UxrComponent` as a base
 
 A multiplayer session requires two key features:
 
@@ -42,7 +42,7 @@ UxrManager.Instance.LoadStateChanges(serializedData);
 As easy as that!
 
 {{% callout info %}}
-StateSave can be used in fact for much more than sync-on-join. It can be used to create savegame functionality, gameplay replays and much more.
+**StateSave** can be used for much more than just sync-on-join. It can also enable savegame functionality, gameplay replays, and other features.
 {{% /callout %}}
 
 ## State Synchronization
@@ -82,7 +82,7 @@ public Player : UxrComponent
 ```
 
 {{% callout info %}}
-StateSync is also used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
+**StateSync** can also be used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
 {{% /callout %}}
 
 
