@@ -21,9 +21,9 @@ UltimateXR fully supports multiplayer by providing an architecture that can sync
 
 Why multiplayer? Isn’t it beyond what a VR framework should do? Yes and no.
 
-UltimateXR doesn’t handle the actual connections, that’s what multiplayer SDKs like Unity NetCode or Photon are for. But what UltimateXR does provide is an architecture built from the ground up to make multiplayer easy, along with connectors to those SDKs.
+UltimateXR doesn’t handle the actual connections, that’s what multiplayer SDKs like Unity NetCode or Photon are for. But what UltimateXR provides is an architecture built from the ground up to keep components in sync remotely, with connectors to those SDKs, making multiplayer functionality completely transparent to the developer.
 
-With this setup, all components in UltimateXR sync automatically. This means avatars will move in sync on every computer, perform the same gestures, and even interact with the same objects at the same time, like grabbing or pulling in real time.
+With this setup, all components in UltimateXR sync automatically. In practice, this means avatars will move in sync on every computer, perform the same gestures, and even interact with the same objects at the same time, like grabbing or pulling in real time.
 
 ## How does it work?
 
