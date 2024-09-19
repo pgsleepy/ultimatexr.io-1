@@ -14,5 +14,5 @@ The list of supported SDKs may change as we can add support for new systems.
 
 ## Voice over Network
 - [Dissonance](https://placeholder-software.co.uk/dissonance/docs/index.html)
-- [Photon Voice](https://www.photonengine.com/voice) (voice over network).
+- [Photon Voice](https://www.photonengine.com/voice)
 
