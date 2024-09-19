@@ -6,9 +6,9 @@ title: "What is UltimateXR?"
 
 ![](/docs/guides/media/getting-started/UltimateXR.gif)
 
-**UltimateXR** is a comprehensive, professional-grade, and open-source framework designed for Unity developers. With a focus on simplifying the development process for virtual reality applications, UltimateXR offers a versatile toolkit suitable for a wide range of projects, from immersive simulators to high-quality video games.
+**UltimateXR** is a professional-grade, open-source framework designed for Unity developers. It simplifies the development of virtual reality applications by providing a flexible platform that works for a wide range of projects, from immersive simulators to top-quality video games.
 
-Originally started in 2016 by VRMADA, a company specializing in virtual training simulators with a background in video game development, UltimateXR has evolved into a versatile toolkit with a wide range of functionality:
+Originally started in 2016 by VRMADA, a company specializing in virtual training simulators and with a background in video game development, UltimateXR has evolved into a toolkit with extensive functionality:
 
 - Free and open-source under the MIT license.
 - Cross-device compatibility. Support for all major headsets.
@@ -22,3 +22,7 @@ Originally started in 2016 by VRMADA, a company specializing in virtual training
 - Scalable architecture.
 - Clean code; fully documented using standard XML format.
 - Lots of tools, methods and extensions to make development easier.
+
+## Target Audience
+
+UltimateXR isn't just for programmers, it can be used by artists and game or simulation designers too. It offers tools to build fully interactive environments, including multiplayer, using only visual components. For larger projects, it also provides a complete API, allowing developers to create the complex logic needed for enterprise-level projects and professional video games.
