@@ -175,8 +175,8 @@
       url: "/docs/tutorials/creating-a-3d-ui"
     - title: "Adding haptics"
       url: "/docs/tutorials/adding-haptics"
-    - title: "Multiplayer"
-      url: "/docs/tutorials/multiplayer"
+    - title: "Basic Multiplayer"
+      url: "/docs/tutorials/basic-multiplayer"
     - title: "Creating a Weapon"
       url: "/docs/tutorials/creating-a-weapon"
 
@@ -301,12 +301,16 @@
   items:
     - title: "Overview"
       url: "/docs/multiplayer/overview"
+    - title: "Technical Overview"
+      url: "/docs/multiplayer/technical-overview"
     - title: "Supported Platforms"
       url: "/docs/multiplayer/supported-platforms"
     - title: "Adding Multiplayer Support"
       url: "/docs/multiplayer/adding-multiplayer-support"
     - title: "Multiplayer Programming"
       url: "/docs/multiplayer/multiplayer-programming"
+    - title: "Example"
+      url: "/docs/multiplayer/example"
 
 - title: "Troubleshooting"
   items:
