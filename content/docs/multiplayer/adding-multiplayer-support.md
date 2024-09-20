@@ -4,17 +4,17 @@ title: "Adding Multiplayer Support"
 
 # Adding Multiplayer Support
 
-Adding multiplayer support to an application can be intimidating. We’ve put special effort into developing our multiplayer system to offload as much work as possible from the user and simplify the process, all while maintaining maximum flexibility.
+Adding multiplayer support to an application can be intimidating. We’ve put special effort into developing the multiplayer system to offload as much work as possible from the user and simplify the process, all while maintaining maximum flexibility.
 
 The system is simple enough for artists and designers to quickly set up multiplayer support and prototype gameplay, while offering programmers a robust API to implement custom multiplayer logic for videogames and large-scale enterprise projects.
 
-## Installing the networking SDK(s)
+## Installing the networking SDKs
 
 First, it's recommended to choose one of the supported networking SDKs for your application. If the UltimateXR synchronization API is used to write multiplayer code, the SDK can be switched at any point during development, as the API is platform-agnostic. However, if native multiplayer SDK code is used, those sections would need to be rewritten when changing the SDK.
 
 To view the list of available SDKs for installation, open the SDK Manager by navigating to Unity’s Tools menu: UltimateXR -> SDKs -> SDK Manager:
 
-![](/docs/multiplayer/media/supported-platforms/CreateUxrNetworkManager.png)
+![](/docs/multiplayer/media/adding-multiplayer-support/MenuSDKManager.png)
 
 Navigate to the networking tab to view the available networking SDKs. For voice-over-network, select the Voice Over Network tab:
 
@@ -38,7 +38,7 @@ The added GameObject's inspector will look like this uninitialized:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/UxrNetworkManagerInspector01.png)
 
-## Selecting the networking SDK(s)
+## Selecting the networking SDKs
 
 The top part of the `UxrNetworkManager` allows to change the selected SDKs:
 
