@@ -44,13 +44,13 @@ The top part of the `UxrNetworkManager` allows to change the selected network sy
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfo.png)
 
-Whenever the selected networking system is changed, the `UxrNetworkManager` will automatically remove the old components and configure the new ones. These components are (XXX being the selected SDK):
+Whenever the selected networking system is changed, the `UxrNetworkManager` will automatically remove the old components and configure the new ones. These components are (XXX being the selected system):
 - **UltimateXR connectors**: A `UxrXXXNetwork` component for the networking and `UxrXXXVoiceNetwork` component if a voice-over-network was also enabled. These are responsible for adding the other components below.
 - **UltimateXR networking avatar component**: A `UxrXXXAvatar` component is added to each registered avatar prefab. These manage the actual communication through RPCs (Remote Procedure Calls) using the networking SDK.
-- **Native global networking components**: Native network managers and components from the selected SDK, which provide the core networking functionality.
-- **Native GameObject networking components**: Native network components like `NetworkObject` and `NetworkTransform` from the selected SDK, responsible for synchronizing the position and orientation of movable objects, such as avatar heads and hands.
+- **Native global networking components**: Native network managers and components from the selected network system, which provide the core networking functionality.
+- **Native GameObject networking components**: Native network components like `NetworkObject` and `NetworkTransform` from the selected network system, responsible for synchronizing the position and orientation of movable objects, such as avatar heads and hands.
 
-UltimateXR keeps track of all GameObjects and components that have been added, so that it can remove the old components when the SDK is changed. Users who want to see which GameObjects or components were added can use the View Component Info button. This will open a window displaying details of all the added elements:
+UltimateXR keeps track of all GameObjects and components that have been added, so that it can remove the old components when the network system is changed. Users who want to see which GameObjects or components were added can use the View Component Info button. This will open a window displaying details of all the added elements:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfoWindow.png)
 
