@@ -321,6 +321,7 @@
       url: "/docs/multiplayer/adding-multiplayer-support"
     - title: "Multiplayer Example"
       url: "/docs/multiplayer/example"
+      label: "ready"
     - title: "Technical Overview"
       url: "/docs/multiplayer/technical-overview"
       label: "ready"
