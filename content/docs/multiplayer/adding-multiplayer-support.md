@@ -56,6 +56,25 @@ UltimateXR keeps track of all GameObjects and components that have been added, a
 
 ## Setting up the avatar
 
+The next step is to set up the avatar or avatars for multiplayer. During this process, the `UxrNetworkManager` will add the necessary components to synchronize the avatar's head and hands, as well as the specific UltimateXR network avatar component for the selected SDK (e.g., UxrFishNetAvatar, UxrNetCodeAvatar, UxrPhotonFusionAvatar, etc.)."
+
+The Avatar Setup section of the `UxrNetworkManager` allows you to register and unregister avatars:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/RegisterAvatar01.png)
+
+You can drop any avatar prefab here. If you drop an avatar from a scene, it will register the source prefab if one exists. If not, an error message will appear.
+
+{{% callout tip %}}
+The recommended approach is to create a multiplayer prefab variant from an existing avatar prefab, so that multiplayer-specific changes are kept in that prefab. To do this, simply drag an avatar prefab instance from the scene into the project window. A pop-up window will appear where you can select 'Prefab Variant'.
+![](/docs/multiplayer/media/adding-multiplayer-support/PrefabVariant.png)
+{{% /callout %}}
+
+After an avatar has been registered we can also list which components have been added to the avatar for information. If the avatar is unregistered or the SDK is changed, UltimateXR will take care of removing or replacing all GameObjects and components that were added:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/RegisterAvatar02.png)
+
+![](/docs/multiplayer/media/adding-multiplayer-support/ViewAvatarComponents.png)
+
 ## Using the prototyping UI
 
 ## Testing
