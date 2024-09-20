@@ -18,7 +18,7 @@ To view the list of available SDKs for installation, open the SDK Manager by nav
 
 ## Creating the UxrNetworkManager
 
-In the main or boot scene, begin by adding the UxrNetworkManager component through the Tools menu:
+In the main or boot scene, begin by adding the `UxrNetworkManager` component through the Tools menu:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/CreateUxrNetworkManager.png)
 
