@@ -69,11 +69,17 @@ The recommended approach is to create a multiplayer prefab variant from an exist
 ![](/docs/multiplayer/media/adding-multiplayer-support/PrefabVariant.png)
 {{% /callout %}}
 
-After an avatar has been registered we can also list which components have been added to the avatar for information. If the avatar is unregistered or the SDK is changed, UltimateXR will take care of removing or replacing all GameObjects and components that were added:
+After an avatar has been registered we can also list which components have been added to the avatar for information. If the avatar is unregistered or the SDK is changed, UltimateXR will take care of removing or replacing all GameObjects and components that were added.
+
+In this case, we have registered a prefab variant for the CyborgAvatarExample that comes with the UltimateXR full scene sample:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/RegisterAvatar02.png)
 
+Which for Photon Fusion coupled with Photon Voice will list these GameObjects/components when clicking the "View Info" button:
+
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewAvatarComponents.png)
+
+This process happens behind the scenes and can be modified or reverted at any time.
 
 ## Using the prototyping UI
 
