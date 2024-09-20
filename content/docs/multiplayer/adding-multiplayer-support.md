@@ -12,7 +12,11 @@ The system is simple enough for artists and designers to quickly set up multipla
 
 First, it's recommended to choose one of the supported networking SDKs for your application. If the UltimateXR synchronization API is used to write multiplayer code, the SDK can be switched at any point during development, as the API is platform-agnostic. However, if native multiplayer SDK code is used, those sections would need to be rewritten when changing the SDK.
 
-To view the list of available SDKs for installation, open the SDK Manager by navigating to Unity’s Tools menu: UltimateXR -> SDKs -> SDK Manager.
+To view the list of available SDKs for installation, open the SDK Manager by navigating to Unity’s Tools menu: UltimateXR -> SDKs -> SDK Manager:
+
+![](/docs/multiplayer/media/supported-platforms/CreateUxrNetworkManager.png)
+
+Navigate to the networking tab to view the available networking SDKs. For voice-over-network, select the Voice Over Network tab:
 
 ![](/docs/multiplayer/media/supported-platforms/SDKManager.png)
 
