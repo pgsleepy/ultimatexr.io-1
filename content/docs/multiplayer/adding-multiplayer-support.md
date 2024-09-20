@@ -26,7 +26,7 @@ This will add the UxrNetworkManager GameObject to the scene:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/SceneAfter.png)
 
-This GameObject will contain the `UxrNetworkManager` and, if not already present, the UxrInstanceManager. The UxrInstanceManager is very important for multiplayer applications. It ensures that object instantiations are replicated across all clients, keeping consistent IDs.
+This GameObject will contain the `UxrNetworkManager` and, if not already present, the `UxrInstanceManager`. The `UxrInstanceManager` is very important for multiplayer applications. It ensures that object instantiations are replicated across all clients, keeping consistent IDs.
 
 The `UxrNetworkManager` is responsible for setting up all networking functionality. During edit-time, it handles the automatic removal, addition and configuration of the networking components when the selected SDK changes. At runtime, the components that were added are responsible for keeping the communication between the connected clients.
 
