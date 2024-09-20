@@ -8,7 +8,7 @@ Adding multiplayer support to an application can be intimidating. We’ve put sp
 
 The system is simple enough for artists and designers to quickly set up multiplayer support and prototype gameplay, while offering programmers a robust API to implement custom multiplayer logic for videogames and large-scale enterprise projects.
 
-## Choosing the networking SDK(s)
+## Installing the networking SDK(s)
 
 First, it's recommended to choose one of the supported networking SDKs for your application. If the UltimateXR synchronization API is used to write multiplayer code, the SDK can be switched at any point during development, as the API is platform-agnostic. However, if native multiplayer SDK code is used, those sections would need to be rewritten when changing the SDK.
 
@@ -32,17 +32,19 @@ The `UxrNetworkManager` is responsible for setting up all networking functionali
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/UxrNetworkManagerInspector01.png)
 
+## Selecting the networking SDK(s)
+
+The selected SDKs can be changed at any time:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfo.png)
+
 Whenever the selected networking SDK is changed, the `UxrNetworkManager` will automatically remove the old components and configure the new ones. These components are (XXX being the selected SDK):
 - **UltimateXR connectors**: A `UxrXXXNetwork` component for the networking and `UxrXXXVoiceNetwork` component if a voice-over-network was also enabled. These are responsible for adding the other components below.
 - **UltimateXR networking avatar component**: A `UxrXXXAvatar` component is added to each registered avatar prefab. These manage the actual communication through RPCs (Remote Procedure Calls) using the networking SDK.
 - **Native global networking components**: Native network managers and components from the selected SDK, which provide the core networking functionality.
 - **Native GameObject networking components**: Native network components like `NetworkObject` and `NetworkTransform` from the selected SDK, responsible for synchronizing the position and orientation of movable objects, such as avatar heads and hands.
 
-UltimateXR keeps track of all GameObjects and components that have been added, allowing it to remove the old components when the SDK is changed. Users who want to see which GameObjects or components were added can use the View Component Info button:
-
-![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfo.png)
-
-This will open a window displaying details of all the added elements:
+UltimateXR keeps track of all GameObjects and components that have been added, allowing it to remove the old components when the SDK is changed. Users who want to see which GameObjects or components were added can use the View Component Info button. This will open a window displaying details of all the added elements:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfoWindow.png)
 
