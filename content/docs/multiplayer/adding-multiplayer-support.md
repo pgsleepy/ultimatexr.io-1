@@ -38,7 +38,7 @@ The added GameObject's inspector will look like this uninitialized:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/UxrNetworkManagerInspector01.png)
 
-## Selecting the networking SDKs
+## Selecting the networking systems
 
 The top part of the `UxrNetworkManager` allows to change the selected SDKs:
 
