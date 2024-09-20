@@ -1,7 +1,6 @@
 baseURL: 'https://www.ultimatexr.io/'
 languageCode: en-us
 title: UltimateXR
-theme: ultimatexr
 disablePathToLower: true
 
 params:
