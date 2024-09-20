@@ -45,7 +45,7 @@ The top part of the `UxrNetworkManager` allows to change the selected network sy
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfo.png)
 
 Whenever the selected networking system is changed, the `UxrNetworkManager` will automatically remove the old components and configure the new ones. These components are (XXX being the selected system):
-- **UltimateXR connectors**: A `UxrXXXNetwork` component for the networking and `UxrXXXVoiceNetwork` component if a voice-over-network was also enabled. These are responsible for adding the other components below.
+- **UltimateXR connectors**: A `UxrXXXNetwork` component for the networking and `UxrXXXVoiceNetwork` component if a voice-over-network was also enabled. These are responsible for adding the components listed below:
 - **UltimateXR networking avatar component**: A `UxrXXXAvatar` component is added to each registered avatar prefab. These manage the actual communication through RPCs (Remote Procedure Calls) using the networking SDK.
 - **Native global networking components**: Native network managers and components from the selected network system, which provide the core networking functionality.
 - **Native GameObject networking components**: Native network components like `NetworkObject` and `NetworkTransform` from the selected network system, responsible for synchronizing the position and orientation of movable objects, such as avatar heads and hands.
@@ -73,7 +73,7 @@ The recommended approach is to create a multiplayer prefab variant from an exist
 
 After an avatar has been registered we can also list which components have been added to the avatar for information. If the avatar is unregistered or the SDK is changed, UltimateXR will take care of removing or replacing all GameObjects and components that were added.
 
-In this case, we have registered a prefab variant for the CyborgAvatarExample that comes with the UltimateXR full scene sample:
+In this case, we have registered a prefab variant for the **CyborgAvatarExample** that comes with the UltimateXR full scene sample:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/RegisterAvatar02.png)
 
