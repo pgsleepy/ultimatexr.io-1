@@ -14,7 +14,7 @@ First, it's recommended to choose one of the supported networking SDKs for your 
 
 To view the list of available SDKs for installation, open the SDK Manager by navigating to Unity’s Tools menu: UltimateXR -> SDKs -> SDK Manager:
 
-![](/docs/multiplayer/media/supported-platforms/CreateUxrNetworkManager.png)
+![](/docs/multiplayer/media/adding-multiplayer-support/MenuSDKManager.png)
 
 Navigate to the networking tab to view the available networking SDKs. For voice-over-network, select the Voice Over Network tab:
 
