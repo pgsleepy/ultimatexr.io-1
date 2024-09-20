@@ -38,11 +38,12 @@ Whenever the selected networking SDK is changed, the UxrNetworkManager will auto
 - **Native global networking components**: Native network managers and components from the selected SDK, which provide the core networking functionality.
 - **Native GameObject networking components**: Native network components like `NetworkObject` and `NetworkTransform` from the selected SDK, responsible for synchronizing the position and orientation of movable objects, such as avatar heads and hands.
 
-UltimateXR keeps track of all GameObjects and components that have been added, to be able to remove the old components when the SDK changed. Users who want to know which GameObjects or components were added can use the View Component Info button:
+
+UltimateXR keeps track of all GameObjects and components that have been added, allowing it to remove the old components when the SDK is changed. Users who want to see which GameObjects or components were added can use the View Component Info button:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfo.png)
 
-This will open up a window detailing all the elements that were added:
+This will open a window displaying details of all the added elements:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfoWindow.png)
 
