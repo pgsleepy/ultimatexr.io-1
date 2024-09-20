@@ -4,4 +4,4 @@ title: "Example"
 
 # Multiplayer Example
 
-Check the [Basic Multiplayer Tutorial](/docs/tutorials/basic-multiplayer).
+The [Basic Multiplayer Tutorial](/docs/tutorials/basic-multiplayer) in the Tutorials section showcases how to add multiplayer support to the example scene. Check it out!
