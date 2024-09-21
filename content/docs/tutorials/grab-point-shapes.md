@@ -4,6 +4,7 @@ title: "Grab Point Shapes"
 
 # Grab Point Shapes
 
+
 Grab Point Shapes make it simpler and faster to extend your grabs along a shape. If you wanted to extend your grabs to anywhere along a straight line for example, a [UxrGrabPointShape](/api/T_UltimateXR_Manipulation_UxrGrabPointShape#uxrgrabpointshape-class) is a fantastic component to do just that!
 
 # UxrGrabPointShapeAxisAngle - The Straight Line
@@ -56,5 +57,21 @@ If everything was done correctly, we should now see a small line appear near the
 
 First, we'll set the Axis Angle so that it runs along the path we want. In this case, we'll set it to the Y axis.
 ![](/docs/tutorials/media/grabpointshape/07LineAxisChanged.png)
+
+Next, if we look close, the line is still relatively close to the center of our staff. If we try to grab it now, it will work! but only near the middle where that line is. In order to extend it, we'll adjust the *Offset Min* and *Offset Max* values to fit the length of our staff.
+![](/docs/tutorials/media/grabpointshape/08OffsetMinMax.png)
+
+Notice how we left just a little bit of room between the end of the line and the model. This is because, if we extend the line to the very edge of the model, if the player grabs at that end, you could have situations where the grab appears to be halfway off the model. So, by leaving just a little bit of space, you can make sure you have really good visuals and the player gets a "full" grab. This is completely optional though and depends on your specific use case. Tweak the values and test them to find your perfect balance!
+
+Lastly, since its a staff that can be grabbed from any direction, set the *Bidirectional* checkbox to true and that will complete the set up!
+
+## Recap & Test
+Let's recap everything we've done so far:
+1) We created a staff model using a parent and child game object structure.
+2) We added a [UxrGrabbableObject](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class) with a single grab point in the middle of our staff.
+3) We added a [UxrGrabPointShapeAxisAngle](/api/T_UltimateXR_Manipulation_UxrGrabPointShapeAxisAngle#uxrgrabpointshapeaxisangle-class) and adjusted the settings to fit our needs
+4) We created an empty child Game Object, called it Center and added it to the [UxrGrabPointShapeAxisAngle](/api/T_UltimateXR_Manipulation_UxrGrabPointShapeAxisAngle#uxrgrabpointshapeaxisangle-class)
+
+***All that's left to do now is to test it!***
 
 
