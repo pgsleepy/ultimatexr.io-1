@@ -30,7 +30,7 @@ For each networking system, there are always 2 components:
 1) The network implementation, deriving from `UxrNetworkImplementation`. For example `UxrFishNetNetwork` or `UxrUnityNetCodeNetwork`. This component is added by the `UxrNetworkManager` to the same GameObject and is responsible for creating all the other necessary components to enable networking support for the selected networking system SDK, such as:
    - The network avatar, described below.
    - Native Networking Components: These are added to both the scene and the avatar prefab, including elements like the network manager, NetworkObject components, and NetworkTransform components.
-   Additionally, this component includes the prototyping UI code, which helps speed up testing during development.
+Additionally, this component includes the prototyping UI code, which helps speed up testing during development.
 2) The network avatar, implementing the `IUxrNetworkAvatar` interface. For example `UxrFishNetAvatar` or `UxrUnityNetCodeAvatar`. This component is added to the avatar prefab by the UxrNetworkImplementation mentioned above. It contains the communication code, including the RPCs responsible for sync-on-join and state synchronization during runtime.
 
 ## Inheriting from `UxrComponent`
