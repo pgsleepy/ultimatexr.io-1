@@ -83,6 +83,21 @@ Which for Photon Fusion coupled with Photon Voice will list these GameObjects/co
 
 This process happens behind the scenes and can be modified or reverted at any time by clicking 'Remove' next to the registered avatar.
 
+There are other two key things related to the avatar worth mentioning:
+
+- No avatars must be present in the scene during edit-time. **In multiplayer avatars are spawned at runtime**.
+- The avatar will be switched to 'UpdateExternally' by default. Only when the local avatar is spawned it will be switched to 'Local'. Remember that the 'Local' avatar is updated using the connected VR while the 'UpdateExternally' avatars act like puppets that are updated with external data, in this case the other clients.
+
+There are two important points to note about avatars in multiplayer:
+- Avatars should not be present in the scene during edit-time. **In multiplayer, avatars are spawned at runtime**.
+- By default, the multiplayer avatar prefab is set to 'UpdateExternally'. When the local avatar is spawned, it switches to 'Local'. The 'Local' avatar is updated based on the connected VR system, while 'UpdateExternally' avatars act like puppets, receiving updates from external data; in this case, other clients.
+
+![](/docs/multiplayer/media/adding-multiplayer-support/AvatarUpdateExternally.png)
+
+{{% callout caution %}}
+Always make sure that avatars are removed or disabled in the scene when using multiplayer to ensure it works correctly.
+{{% /callout %}}
+
 ## Using the prototyping UI
 
 ## Testing
