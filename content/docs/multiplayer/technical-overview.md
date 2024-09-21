@@ -6,6 +6,12 @@ title: "Technical Overview"
 
 The following overview is highly technical and intended for programmers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
 
+## Simplified connection diagram
+
+This diagram provides a simplified overview of how client connectivity is managed using UltimateXR:
+
+![](/docs/multiplayer/media/technical-overview/ConnectionDiagram.png)
+
 ## Using `UxrComponent` as a base
 
 A multiplayer session requires two key features:
