@@ -112,9 +112,9 @@ UltimateXR's sync-on-join and runtime synchronization will continue to work seam
 ## Testing
 
 So far we've completed the following steps:
-1- Installation of a supported networking SDK.
-2- Creation and setup of the `UxrNetworkManager` GameObject.
-3- Multiplayer avatar setup.
+1) Installation of a supported networking SDK.
+2) Creation and setup of the `UxrNetworkManager` GameObject.
+3) Multiplayer avatar setup.
 
 At this point, we are ready to test our scene.
 
