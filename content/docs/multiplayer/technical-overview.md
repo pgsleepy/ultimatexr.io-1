@@ -8,7 +8,7 @@ The following overview is highly technical and intended for developers who want 
 
 ## Simplified connection diagram
 
-This diagram provides a simplified overview of how client connectivity is managed using UltimateXR:
+This diagram provides a simplified connectivity overview:
 
 ![](/docs/multiplayer/media/technical-overview/ConnectionDiagram.png)
 
@@ -22,16 +22,21 @@ This data is serialized and transmitted through a connector interface, which abs
 
 The UltimateXR network connectors are a small collection of components for each of the supported networking systems (FishNet, Mirror, NetCode, Photon...). They provide a common interface to send and receive the data required by UltimateXR to keep the components in sync during multiplayer sessions. The network connector components are created by the `UxrNetworkManager` whenever the user changes the active networking system.
 
-Network connectors can be found under the directory at /Scripts/Networking/Integrations/Net. Voice will contain the connectors for the voice-over-network SDKs.
+The soruce code for network connectors can be found under the directory at /Scripts/Networking/Integrations/Net. The Voice directory will contain the connectors for the voice-over-network SDKs.
 
 ![](/docs/multiplayer/media/technical-overview/Connectors.png)
 
-For each networking system, there are always 2 components:
-1) The network implementation, deriving from `UxrNetworkImplementation`. For example `UxrFishNetNetwork` or `UxrUnityNetCodeNetwork`. This component is added by the `UxrNetworkManager` to the same GameObject and is responsible for creating all the other necessary components to enable networking support for the selected networking system SDK, such as:
+For each networking system, there are always 2 components that form the connector:
+1) The **network implementation**, deriving from `UxrNetworkImplementation`. For example `UxrFishNetNetwork` or `UxrUnityNetCodeNetwork`. This component is added by the `UxrNetworkManager` to the same GameObject and is responsible for creating all the other necessary components to enable networking support for the selected networking system SDK, such as:
    - The network avatar, described below.
-   - Native Networking Components: These are added to both the scene and the avatar prefab, including elements like the network manager, NetworkObject components, and NetworkTransform components.
-Additionally, this component includes the prototyping UI code, which helps speed up testing during development.
-2) The network avatar, implementing the `IUxrNetworkAvatar` interface. For example `UxrFishNetAvatar` or `UxrUnityNetCodeAvatar`. This component is added to the avatar prefab by the UxrNetworkImplementation mentioned above. It contains the communication code, including the RPCs responsible for sync-on-join and state synchronization during runtime.
+   - Networking system SDK components: These are added to both the scene and the avatar prefab, including specific networking elements like the network manager, NetworkObject components, and NetworkTransform components.
+2) **The network avatar**, implementing the `IUxrNetworkAvatar` interface. For example `UxrFishNetAvatar` or `UxrUnityNetCodeAvatar`. This component is added to the avatar prefab by the UxrNetworkImplementation mentioned above. It contains the communication code, including the RPCs responsible for sync-on-join and state synchronization during runtime.
+
+The network implementation component also includes the connection prototyping code for each SDK. This feature helps speed up testing during development by displaying a UI that allows developers to easily create a multiplayer session as a host or server, connect as a client, and manage other basic multiplayer actions.
+
+{{% callout tip %}}
+Remember that you can list all components that have been added using the buttons on the `UxrNetworkManager`, keeping control over the automated process. By selecting None as networking system, it will remove all components.
+{{% /callout %}}
 
 ## Inheriting from `UxrComponent`
 
