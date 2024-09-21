@@ -4,7 +4,7 @@ title: "Technical Overview"
 
 # Technical Overview
 
-The following overview is highly technical and intended for programmers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
+The following overview is highly technical and intended for developers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
 
 ## Simplified connection diagram
 
