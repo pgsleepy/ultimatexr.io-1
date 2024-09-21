@@ -58,7 +58,7 @@ By tracking the networking components and GameObjects that have been added, user
 
 ## Setting up the avatar
 
-The next step is to set up the avatar or avatars for multiplayer. During this process, the `UxrNetworkManager` will add the necessary components to synchronize the avatar's head and hands, as well as the specific UltimateXR network avatar component for the selected SDK (e.g., UxrFishNetAvatar, UxrNetCodeAvatar, UxrPhotonFusionAvatar, etc.)."
+The next step is to set up the avatar or avatars for multiplayer. During this process, the `UxrNetworkManager` will add the necessary components to synchronize the avatar's head and hands, as well as the specific UltimateXR network avatar component for the selected SDK (e.g., UxrFishNetAvatar, UxrNetCodeAvatar, UxrPhotonFusionAvatar, etc.).
 
 The Avatar Setup section of the `UxrNetworkManager` allows you to register and unregister avatars:
 
@@ -67,7 +67,7 @@ The Avatar Setup section of the `UxrNetworkManager` allows you to register and u
 You can drop any avatar prefab here. If you drop an avatar from a scene, it will register the source prefab if one exists. If not, an error message will appear.
 
 {{% callout tip %}}
-The recommended approach is to create a multiplayer prefab variant from an existing avatar prefab, so that multiplayer-specific changes are kept in that prefab. To do this, simply drag an avatar prefab instance from the scene into the project window. A pop-up window will appear where you can select 'Prefab Variant'.
+The recommended approach is to create a multiplayer prefab variant from an existing avatar prefab, so that multiplayer-specific changes are kept in that prefab when it is registered. To do this, simply drag an avatar prefab instance from the scene into the project window. A pop-up window will appear where you can select 'Prefab Variant'.
 ![](/docs/multiplayer/media/adding-multiplayer-support/PrefabVariant.png)
 {{% /callout %}}
 
@@ -84,20 +84,20 @@ Which for Photon Fusion coupled with Photon Voice will list these GameObjects/co
 This process happens behind the scenes and can be modified or reverted at any time by clicking 'Remove' next to the registered avatar.
 
 There are two important points to note about avatars in multiplayer:
-- Avatars should not be present in the scene during edit-time. **In multiplayer, avatars are spawned at runtime**.
-- By default, the multiplayer avatar prefab is set to 'UpdateExternally'. When the local avatar is spawned, it switches to 'Local'. The 'Local' avatar is updated based on the connected VR system, while 'UpdateExternally' avatars act like puppets, receiving updates from external data; in this case, other clients.
+- Avatars should **not** be present in the scene during edit-time. **In multiplayer, avatars are spawned at runtime**. Delete any avatars that are in the scene to run multiplayer.
+- The `UxrNetworkManager` will set the multiplayer avatar prefab mode to 'UpdateExternally'. When the local avatar is spawned, it switches to 'Local'. The 'Local' avatar is updated based on the connected VR system, while 'UpdateExternally' avatars act like puppets, receiving updates from external data; in this case, other clients.
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/AvatarUpdateExternally.png)
 
 {{% callout caution %}}
-Always make sure that avatars are removed or disabled in the scene when using multiplayer to ensure it works correctly.
+Remember to remove or disable the avatars in the scene when using multiplayer to ensure user spawning works correctly.
 {{% /callout %}}
 
 ## Using the prototyping UI
 
 When a networking system is selected, the appropriate UltimateXR SDK connector components are added to the `UxrNetworkManager` GameObject. We have provided each connector with a 'Use Prototyping UI' checkbox that will visualize a quick connection menu on top during playmode. This checkbox is enabled by default.
 
-Continuing with our sample using Photon Fusion, these are the connector components added to `UxrNetworkManager`. The networking component shows the prototyping UI option:
+Continuing with our example using Photon Fusion, these are the connector components added to `UxrNetworkManager`. The networking component shows the prototyping UI option:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/UsePrototypeUI.png)
 
@@ -111,6 +111,13 @@ UltimateXR's sync-on-join and runtime synchronization will continue to work seam
 
 ## Testing
 
-With the prototyping UI, multiplayer can be quickly tested by creating a build and running it simultaneously in the Unity Editor. It's recommended to run both in windowed mode so they remain visible at the same time. The window in focus will receive the controller input.
+So far we've completed the following steps:
+1) Installation of a supported networking SDK.
+2) Creation and setup of the `UxrNetworkManager` GameObject.
+3) Multiplayer avatar setup.
+
+At this point, we are ready to test our scene.
+
+With the prototyping UI, multiplayer can be quickly tested by creating a build and running it simultaneously in the Unity Editor. One should start as the server/host and the other as client. It's recommended to run both in windowed mode so they remain visible at the same time. The window in focus will receive the controller input.
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/MultiplayerTest.png)
