@@ -38,23 +38,50 @@ The added GameObject's inspector will look like this uninitialized:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/UxrNetworkManagerInspector01.png)
 
-## Selecting the networking SDKs
+## Selecting the network systems
 
-The top part of the `UxrNetworkManager` allows to change the selected SDKs:
+The top part of the `UxrNetworkManager` allows to change the selected network system:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfo.png)
 
-Whenever the selected networking SDK is changed, the `UxrNetworkManager` will automatically remove the old components and configure the new ones. These components are (XXX being the selected SDK):
-- **UltimateXR connectors**: A `UxrXXXNetwork` component for the networking and `UxrXXXVoiceNetwork` component if a voice-over-network was also enabled. These are responsible for adding the other components below.
+Whenever the selected networking system is changed, the `UxrNetworkManager` will automatically remove the old components and configure the new ones. These components are (XXX being the selected system):
+- **UltimateXR connectors**: A `UxrXXXNetwork` component for the networking and `UxrXXXVoiceNetwork` component if a voice-over-network was also enabled. These are responsible for adding the components listed below:
 - **UltimateXR networking avatar component**: A `UxrXXXAvatar` component is added to each registered avatar prefab. These manage the actual communication through RPCs (Remote Procedure Calls) using the networking SDK.
-- **Native global networking components**: Native network managers and components from the selected SDK, which provide the core networking functionality.
-- **Native GameObject networking components**: Native network components like `NetworkObject` and `NetworkTransform` from the selected SDK, responsible for synchronizing the position and orientation of movable objects, such as avatar heads and hands.
+- **Native global networking components**: Native network managers and components from the selected network system, which provide the core networking functionality.
+- **Native GameObject networking components**: Native network components like `NetworkObject` and `NetworkTransform` from the selected network system, responsible for synchronizing the position and orientation of movable objects, such as avatar heads and hands.
 
-UltimateXR keeps track of all GameObjects and components that have been added, allowing it to remove the old components when the SDK is changed. Users who want to see which GameObjects or components were added can use the View Component Info button. This will open a window displaying details of all the added elements:
+UltimateXR keeps track of all GameObjects and components that have been added, so that it can remove the old components when the network system is changed. Users who want to see which GameObjects or components were added can use the View Component Info button. This will open a window displaying details of all the added elements:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/ViewGlobalComponentInfoWindow.png)
 
+By tracking the networking components and GameObjects that have been added, users will never have to manually remove them. Just select 'None' as network system and the components and GameObjects will be automatically removed.
+
 ## Setting up the avatar
+
+The next step is to set up the avatar or avatars for multiplayer. During this process, the `UxrNetworkManager` will add the necessary components to synchronize the avatar's head and hands, as well as the specific UltimateXR network avatar component for the selected SDK (e.g., UxrFishNetAvatar, UxrNetCodeAvatar, UxrPhotonFusionAvatar, etc.)."
+
+The Avatar Setup section of the `UxrNetworkManager` allows you to register and unregister avatars:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/RegisterAvatar01.png)
+
+You can drop any avatar prefab here. If you drop an avatar from a scene, it will register the source prefab if one exists. If not, an error message will appear.
+
+{{% callout tip %}}
+The recommended approach is to create a multiplayer prefab variant from an existing avatar prefab, so that multiplayer-specific changes are kept in that prefab. To do this, simply drag an avatar prefab instance from the scene into the project window. A pop-up window will appear where you can select 'Prefab Variant'.
+![](/docs/multiplayer/media/adding-multiplayer-support/PrefabVariant.png)
+{{% /callout %}}
+
+After an avatar has been registered we can also list which components have been added to the avatar for information. If the avatar is unregistered or the SDK is changed, UltimateXR will take care of removing or replacing all GameObjects and components that were added.
+
+In this case, we have registered a prefab variant for the **CyborgAvatarExample** that comes with the UltimateXR full scene sample:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/RegisterAvatar02.png)
+
+Which for Photon Fusion coupled with Photon Voice will list these GameObjects/components when clicking the "View Info" button:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/ViewAvatarComponents.png)
+
+This process happens behind the scenes and can be modified or reverted at any time by clicking 'Remove' next to the registered avatar.
 
 ## Using the prototyping UI
 
