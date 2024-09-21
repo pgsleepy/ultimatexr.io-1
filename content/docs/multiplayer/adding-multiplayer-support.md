@@ -84,13 +84,13 @@ Which for Photon Fusion coupled with Photon Voice will list these GameObjects/co
 This process happens behind the scenes and can be modified or reverted at any time by clicking 'Remove' next to the registered avatar.
 
 There are two important points to note about avatars in multiplayer:
-- Avatars should not be present in the scene during edit-time. **In multiplayer, avatars are spawned at runtime**.
-- By default, the multiplayer avatar prefab is set to 'UpdateExternally'. When the local avatar is spawned, it switches to 'Local'. The 'Local' avatar is updated based on the connected VR system, while 'UpdateExternally' avatars act like puppets, receiving updates from external data; in this case, other clients.
+- Avatars should **not** be present in the scene during edit-time. **In multiplayer, avatars are spawned at runtime**. Delete any avatars that are in the scene to run multiplayer.
+- The `UxrNetworkManager` will set the multiplayer avatar prefab mode to 'UpdateExternally'. When the local avatar is spawned, it switches to 'Local'. The 'Local' avatar is updated based on the connected VR system, while 'UpdateExternally' avatars act like puppets, receiving updates from external data; in this case, other clients.
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/AvatarUpdateExternally.png)
 
 {{% callout caution %}}
-Always make sure that avatars are removed or disabled in the scene when using multiplayer to ensure it works correctly.
+Remember to remove or disable the avatars in the scene when using multiplayer to ensure user spawning works correctly.
 {{% /callout %}}
 
 ## Using the prototyping UI
@@ -110,6 +110,13 @@ This menu is extremely useful during development. For final builds, the option c
 UltimateXR's sync-on-join and runtime synchronization will continue to work seamlessly, as the network logic is stored in the networking avatar components and is triggered when avatars are spawned. Developers can review the connector's source code for insights into how the prototyping UI works and how to create their own custom connection logic.
 
 ## Testing
+
+So far we've completed the following steps:
+1- Installation of a supported networking SDK.
+2- Creation and setup of the `UxrNetworkManager` GameObject.
+3- Multiplayer avatar setup.
+
+At this point, we are ready to test our scene.
 
 With the prototyping UI, multiplayer can be quickly tested by creating a build and running it simultaneously in the Unity Editor. It's recommended to run both in windowed mode so they remain visible at the same time. The window in focus will receive the controller input.
 
