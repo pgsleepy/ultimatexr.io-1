@@ -4,9 +4,21 @@ title: "Technical Overview"
 
 # Technical Overview
 
-The following overview is highly technical and intended for programmers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
+The following overview is highly technical and intended for developers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
 
-## Using `UxrComponent` as a base
+## Simplified connection diagram
+
+This diagram provides a simplified overview of how client connectivity is managed using UltimateXR:
+
+![](/docs/multiplayer/media/technical-overview/ConnectionDiagram.png)
+
+The colored dots represent components in the scene that require network synchronization: UltimateXR components and custom user components that use the UltimateXR synchronization API.
+
+UltimateXR monitors all changes in these components and automatically synchronizes them with their counterparts on other clients during multiplayer sessions. These changes could be a property update, such as `player.Color = Color.red`, or a method invocation like `player.Shoot(pos, dir);`.
+
+This data is serialized and transmitted through a connector interface, which abstracts the underlying networking implementation. This flexibility allows UltimateXR to seamlessly integrate with a variety of networking solutions.
+
+## Inheriting from `UxrComponent`
 
 A multiplayer session requires two key features:
 
@@ -20,6 +32,10 @@ With this in mind, UltimateXR provides through its base `UxrComponent` class the
 3) Notify and replicate any state changes. We call this **StateSync**.
 
 All components in UltimateXR and user created components that inherit from `UxrComponent` have these abilities.
+
+{{% callout info %}}
+When users cannot inherit from `UxrComponent` because their class already inherits from another common base class, UltimateXR provides a way to use interfaces instead.
+{{% /callout %}}
 
 ## Sync-on-join
 
@@ -92,7 +108,6 @@ The diagram describing this process is shown below:
 {{% callout info %}}
 **StateSync** can also be used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
 {{% /callout %}}
-
 
 ## More Information
 

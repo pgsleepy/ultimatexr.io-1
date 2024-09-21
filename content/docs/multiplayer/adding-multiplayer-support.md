@@ -34,7 +34,7 @@ This GameObject will contain the `UxrNetworkManager` and, if not already present
 
 The `UxrNetworkManager` is responsible for setting up all networking functionality. During edit-time, it handles the automatic removal, addition and configuration of the networking components when the selected SDK changes. At runtime, the components that were added are responsible for keeping the communication between the connected clients.
 
-The added GameObject's inspector will look like this uninitialized:
+The added GameObject's inspector will look like this:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/UxrNetworkManagerInspector01.png)
 
