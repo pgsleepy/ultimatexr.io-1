@@ -83,11 +83,6 @@ Which for Photon Fusion coupled with Photon Voice will list these GameObjects/co
 
 This process happens behind the scenes and can be modified or reverted at any time by clicking 'Remove' next to the registered avatar.
 
-There are other two key things related to the avatar worth mentioning:
-
-- No avatars must be present in the scene during edit-time. **In multiplayer avatars are spawned at runtime**.
-- The avatar will be switched to 'UpdateExternally' by default. Only when the local avatar is spawned it will be switched to 'Local'. Remember that the 'Local' avatar is updated using the connected VR while the 'UpdateExternally' avatars act like puppets that are updated with external data, in this case the other clients.
-
 There are two important points to note about avatars in multiplayer:
 - Avatars should not be present in the scene during edit-time. **In multiplayer, avatars are spawned at runtime**.
 - By default, the multiplayer avatar prefab is set to 'UpdateExternally'. When the local avatar is spawned, it switches to 'Local'. The 'Local' avatar is updated based on the connected VR system, while 'UpdateExternally' avatars act like puppets, receiving updates from external data; in this case, other clients.
@@ -100,8 +95,22 @@ Always make sure that avatars are removed or disabled in the scene when using mu
 
 ## Using the prototyping UI
 
+When a networking system is selected, the appropriate UltimateXR SDK connector components are added to the `UxrNetworkManager` GameObject. We have provided each connector with a 'Use Prototyping UI' checkbox that will visualize a quick connection menu on top during playmode. This checkbox is enabled by default.
+
+Continuing with our sample using Photon Fusion, these are the connector components added to `UxrNetworkManager`. The networking component shows the prototyping UI option:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/UsePrototypeUI.png)
+
+When the prototyping UI is enabled, the following menu appears during playmode:
+
+![](/docs/multiplayer/media/adding-multiplayer-support/PrototypeUIRuntime.png)
+
+This menu is extremely useful during development. For final builds, the option can be disabled, and developers can add their custom connection logic.
+
+UltimateXR's sync-on-join and runtime synchronization will continue to work seamlessly, as the network logic is stored in the networking avatar components and is triggered when avatars are spawned. Developers can review the connector's source code for insights into how the prototyping UI works and how to create their own custom connection logic.
+
 ## Testing
 
-## Where from here?
+With the prototyping UI, multiplayer can be quickly tested by creating a build and running it simultaneously in the Unity Editor. It's recommended to run both in windowed mode so they remain visible at the same time. The window in focus will receive the controller input.
 
-
+![](/docs/multiplayer/media/adding-multiplayer-support/MultiplayerTest.png)
