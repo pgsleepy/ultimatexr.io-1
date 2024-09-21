@@ -14,9 +14,9 @@ This diagram provides a simplified overview of how client connectivity is manage
 
 The colored dots represent components in the scene that require network synchronization: UltimateXR components and custom user components that use the UltimateXR synchronization API.
 
-UltimateXR monitors all changes in these components and automatically synchronizes them with their counterparts on other clients during multiplayer sessions.
+UltimateXR monitors all changes in these components and automatically synchronizes them with their counterparts on other clients during multiplayer sessions. These changes could be a property update, such as `player.Color = Color.red`, or a method invocation like `player.Shoot(pos, dir);`.
 
-This data is transmitted through a connector interface, which abstracts the underlying networking implementation. This flexibility allows UltimateXR to seamlessly integrate with a variety of networking solutions.
+This data is serialized and transmitted through a connector interface, which abstracts the underlying networking implementation. This flexibility allows UltimateXR to seamlessly integrate with a variety of networking solutions.
 
 ## Inheriting from `UxrComponent`
 
