@@ -34,7 +34,7 @@ For each networking system, there are always 2 components that form the connecto
 
 The network implementation component also includes the connection prototyping code for each SDK. This feature helps speed up testing during development by displaying a UI that allows developers to easily create a multiplayer session as a host or server, connect as a client, and manage other basic multiplayer actions.
 
-{{% callout info %}}
+{{% callout tip %}}
 Remember that you can list all components that have been added using the buttons on the `UxrNetworkManager`, keeping control over the automated process. By selecting None as networking system, it will remove all components.
 {{% /callout %}}
 
