@@ -8,7 +8,7 @@ The following overview is highly technical and intended for developers who want 
 
 ## Simplified connection diagram
 
-This diagram provides a simplified overview of how client connectivity is managed using UltimateXR:
+This diagram provides a simplified connectivity overview:
 
 ![](/docs/multiplayer/media/technical-overview/ConnectionDiagram.png)
 
