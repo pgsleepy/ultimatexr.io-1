@@ -12,7 +12,13 @@ This diagram provides a simplified overview of how client connectivity is manage
 
 ![](/docs/multiplayer/media/technical-overview/ConnectionDiagram.png)
 
-## Using `UxrComponent` as a base
+The colored dots represent components in the scene that require network synchronization. This includes both internal UltimateXR components and any custom application components that developers have created using the UltimateXR synchronization API.
+
+UltimateXR monitors all changes in these components and automatically sends them to the corresponding components from other users during a multiplayer session. The `UxrManager` singleton is responsible for tracking these changes. When a change occurs, it sends the updated data to other users through a common connector interface.
+
+This connector interface abstracts the underlying networking implementation, making it possible to integrate UltimateXR with various networking solutions.
+
+## Inheriting from `UxrComponent`
 
 A multiplayer session requires two key features:
 
@@ -26,6 +32,10 @@ With this in mind, UltimateXR provides through its base `UxrComponent` class the
 3) Notify and replicate any state changes. We call this **StateSync**.
 
 All components in UltimateXR and user created components that inherit from `UxrComponent` have these abilities.
+
+{{% callout info %}}
+When users cannot inherit from `UxrComponent` because their class already inherits from another common base class, UltimateXR provides a way to use interfaces instead.
+{{% /callout %}}
 
 ## Sync-on-join
 
@@ -98,7 +108,6 @@ The diagram describing this process is shown below:
 {{% callout info %}}
 **StateSync** can also be used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
 {{% /callout %}}
-
 
 ## More Information
 
