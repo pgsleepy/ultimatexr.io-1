@@ -22,7 +22,7 @@ This data is serialized and transmitted through a connector interface, which abs
 
 The UltimateXR network connectors are a small collection of components for each of the supported networking systems (FishNet, Mirror, NetCode, Photon...). They provide a common interface to send and receive the data required by UltimateXR to keep the components in sync during multiplayer sessions. The network connector components are created by the `UxrNetworkManager` whenever the user changes the active networking system.
 
-The soruce code for network connectors can be found under the directory at /Scripts/Networking/Integrations/Net. The Voice directory will contain the connectors for the voice-over-network SDKs.
+The source code for network connectors can be found under the directory at /Scripts/Networking/Integrations/Net. The Voice directory will contain the connectors for the voice-over-network SDKs.
 
 ![](/docs/multiplayer/media/technical-overview/Connectors.png)
 
@@ -35,7 +35,7 @@ For each networking system, there are always 2 components that form the connecto
 The network implementation component also includes the connection prototyping code for each SDK. This feature helps speed up testing during development by displaying a UI that allows developers to easily create a multiplayer session as a host or server, connect as a client, and manage other basic multiplayer actions.
 
 {{% callout tip %}}
-Remember that you can list all components that have been added using the buttons on the `UxrNetworkManager`, keeping control over the automated process. By selecting None as networking system, it will remove all components.
+Remember that you can view all the components added by the system using the buttons on the `UxrNetworkManager`, allowing you to maintain full control over the automated process. If you select "None" as the networking system, all the added components will be automatically removed.
 {{% /callout %}}
 
 ## Inheriting from `UxrComponent`
