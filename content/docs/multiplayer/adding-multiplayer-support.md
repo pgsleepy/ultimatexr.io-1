@@ -20,6 +20,8 @@ Navigate to the networking tab to view the available networking SDKs. For voice-
 
 ![](/docs/multiplayer/media/supported-platforms/SDKManager.png)
 
+After the installation, follow the SDK instructions for setup guidance.
+
 ## Creating the UxrNetworkManager
 
 In the main or boot scene, begin by adding the `UxrNetworkManager` component through the Tools menu:
