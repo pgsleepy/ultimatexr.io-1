@@ -81,6 +81,8 @@ As easy as that!
 **StateSave** can be used for much more than just sync-on-join. It can also enable savegame functionality, gameplay replays, and other features.
 {{% /callout %}}
 
+After the sync-on-join process, the user will continue the session with state synchronization, which ensures that all changes made by the user are propagated to others, while also receiving updates from other users in real time.
+
 ## State Synchronization
 
 During a session, users will trigger changes in components through gameplay, such as updates to property values or method calls that need to be executed on other clients. UltimateXR offers a simple yet powerful synchronization API that we call **StateSync**.
