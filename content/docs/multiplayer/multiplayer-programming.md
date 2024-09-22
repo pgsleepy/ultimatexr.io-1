@@ -10,21 +10,86 @@ Without it, actions like a player jumping or shooting on one computer wouldn't b
 
 ## Multiplayer programming in UltimateXR
 
-UltimateXR’s core functionality supports multiplayer out of the box. All key components such as avatars, grabbing and manipulation come with built-in state synchronization, allowing multiple users to join a session and interact seamlessly.
+UltimateXR’s core functionality has multiplayer support. All key components such as avatars, grabbing and manipulation come with built-in state synchronization, allowing multiple users to join a session and interact seamlessly. While UltimateXR handles the synchronization logic, the actual data transfer is managed by the networking system being used, like NetCode or Photon.
 
-However, when developers introduce new custom functionality, additional multiplayer programming will be required to enable that functionality in a multiplayer environment.
+However, when developers introduce new custom functionality in their application, additional multiplayer programming will be required to enable that functionality in a multiplayer environment.
 
-In these cases, UltimateXR developers have 3 different options to implement new multiplayer functionality:
+In these cases, UltimateXR developers can choose how to to implement new multiplayer functionality:
 
-1) Use the **UltimateXR Sync API**: A simple yet powerful, platform-agnostic API that not only facilitates multiplayer functionality but also enables automatic support for replays and game saves.
-2) Use the **native networking API**: Implements the new multiplayer functionality using the chosen networking system (Mirror, FishNet, NetCode, Photon, etc.).
-3) Mix both
+1) Using the **UltimateXR Sync API**: A simple yet powerful, platform-agnostic API that not only facilitates multiplayer functionality but also enables automatic support for replays and game saves.
+2) Using the **native networking API**: Implements the new multiplayer functionality using the chosen networking system (Mirror, FishNet, NetCode, Photon, etc.).
+
+### Pros of using the UltimateXR Sync API:
+  - **Clean and Simple**: It keeps your codebase clean by avoiding platform-specific networking code.
+  - **Cross-Networking Support**: Works seamlessly across all supported networking systems without requiring code changes.
+  - **Enhanced Functionality**: Enables additional features like replays and game saves with no extra effort.
+
+### Cons of using the UltimateXR Sync API:
+  - **Familiarity with Native APIs**: Developers may be more familiar with the networking API of their chosen system.
+  - **Sync Variables**: The native networking system is required for using sync variables, though this will be addressed in future updates.
+  - **No Built-in Anti-Cheating Support Yet**: The current version lacks built-in anti-cheating mechanisms, but this feature is planned for future releases.
+
+### Additional Notes:
+Certain aspects of network programming, such as lobbies, match-making, and connections, have intentionally been left to the native networking system. These parts are highly specific to each application and are currently beyond the scope of UltimateXR. However, during development, the Prototyping UI provided by UltimateXR for each supported networking module offers a quick solution for testing multiplayer features.
 
 ## UltimateXR Sync API
 
-In UltimateXR, multiplayer functionality is platform-independent and relies on two key features:
-- [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave), for serializing component states. This allows the server to send the updated scene state to new clients when they join.
-- [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync), for synchronizing component state changes. This facilitates the propagation of component state changes among clients.
+In UltimateXR, multiplayer functionality can be implemented using the Sync API and has two key features:
+- [**StateSave**](/docs/programming-guide/state-serialization-and-synchronization-statesave): This serializes the states of components, enabling the server to send the current scene state to new clients upon joining.
+- [**StateSync**](/docs/programming-guide/state-serialization-and-synchronization-statesync): This synchronizes state changes in components, ensuring that changes are properly shared across clients.
 
-Other functionality, such as Transform synchronization, is provided through native components.
+Other functionality, such as Transform synchronization, is provided through native networking components that are automatically added to selected objects, such as avatars.
 
+## Example
+
+Here's an example that implements **StateSave** and **StateSync** functionality for a `Player` component, inheriting from `UxrComponent`.
+
+- **StateSave**: By overriding the `SerializeState()` method, which can be used for both loading and for saving.
+- **StateSync**: The player's `IsInvincible` property is synchronized across clients. Additionally, the `Shoot()` method is called on all other clients whenever it's invoked by the local player.
+
+```c#
+public Player : UxrComponent
+{
+    // IsInvincible property has setter with StateSync support. When it changes, other clients will also be changed.
+    public bool IsInvincible
+    {
+        get => _isInvincible;
+        set
+        {
+            // Notify of new property value.
+            BeginSync();
+            _isInvincible = value;
+            EndSyncProperty(value);
+        }
+    }
+
+    // Shoot() method has StateSync support. When it's called, other clients will call Shoot() too.
+    public void Shoot(Vector3 pos, Vector3 dir)
+    {
+        BeginSync();
+        // Perform shooting logic here.
+        // Notify of a method call with parameters.
+        EndSyncMethod(new object[] { enabled, color });
+    }
+
+    // SerializeState() is used for StateSave support. It is used for both serialization and deserialization to
+    // avoid requiring separate read and write methods.
+    protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+    {
+        // Always call base implementation first using the same parameters
+        base.SerializeState(isReading, stateSerializationVersion, level, options);
+    
+        // We only have our _isInvincible variable to serialize/deserialize.
+        SerializeStateValue(level, options, nameof(_isInvincible), ref _isInvincible);
+    }
+
+    private bool _isInvincible;
+}
+
+```
+
+This `Player` component demonstrates how StateSave and StateSync can quickly add multiplayer functionality to a component. The use of the sync API avoids cluttering the code with SDK-specific networking logic, making it easier to maintain and adapt to different networking systems.
+
+## Next Steps
+
+For a complete guide on **StateSave** and **StateSync** functionality please visit the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide.
