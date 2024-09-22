@@ -44,8 +44,8 @@ Other functionality, such as Transform synchronization, is provided through nati
 
 Here's an example that implements **StateSave** and **StateSync** functionality for a `Player` component, inheriting from `UxrComponent`.
 
-The player has a `IsInvincible` property that is synchronized across clients. It also has a `Shoot()` method that is called on all other clients whenever it's invoked by the local player.
-The state saving is handled by overriding the `SerializeState()` which is used for both loading and for saving.
+- **StateSave**: By overriding the `SerializeState()` method, which can be used for both loading and for saving.
+- **StateSync**: The player's `IsInvincible` property is synchronized across clients. Additionally, the `Shoot()` method is called on all other clients whenever it's invoked by the local player.
 
 ```c#
 public Player : UxrComponent
@@ -88,5 +88,8 @@ public Player : UxrComponent
 
 ```
 
-This `Player`component 
+This `Player` component demonstrates how StateSave and StateSync can quickly add multiplayer functionality to a component. The use of the sync API avoids cluttering the code with SDK-specific networking logic, making it easier to maintain and adapt to different networking systems.
 
+## Next Steps
+
+For a complete guide on **StateSave** and **StateSync** functionality please visit the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide.
