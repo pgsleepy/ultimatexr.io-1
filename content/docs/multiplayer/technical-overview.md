@@ -26,7 +26,7 @@ The source code for network connectors can be found under the directory at /Scri
 
 ![](/docs/multiplayer/media/technical-overview/Connectors.png)
 
-For each networking system, there are always 2 components that form the connector:
+For each networking system, there are always 2 key components that form the connector:
 1) The **network implementation**, deriving from `UxrNetworkImplementation`. For example `UxrFishNetNetwork` or `UxrUnityNetCodeNetwork`. This component is added by the `UxrNetworkManager` to the same GameObject and is responsible for creating all the other necessary components to enable networking support for the selected networking system SDK, such as:
    - The network avatar, described below.
    - Networking system SDK components: These are added to both the scene and the avatar prefab, including specific networking elements like the network manager, NetworkObject components, and NetworkTransform components.
