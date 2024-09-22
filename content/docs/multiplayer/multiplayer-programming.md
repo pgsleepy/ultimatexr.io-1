@@ -91,4 +91,4 @@ This `Player` component demonstrates how StateSave and StateSync can quickly add
 
 ## Next Steps
 
-For a complete guide on **StateSave** and **StateSync** functionality please visit the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide.
+Head over to the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide for a complete guide on **StateSave** and **StateSync** functionality.
