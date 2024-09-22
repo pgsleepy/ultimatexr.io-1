@@ -10,7 +10,7 @@ Without it, actions like a player jumping or shooting on one computer wouldn't b
 
 ## Multiplayer programming in UltimateXR
 
-UltimateXR’s core functionality has multiplayer support. All key components such as avatars, grabbing and manipulation come with built-in state synchronization, allowing multiple users to join a session and interact seamlessly.
+UltimateXR’s core functionality has multiplayer support. All key components such as avatars, grabbing and manipulation come with built-in state synchronization, allowing multiple users to join a session and interact seamlessly. While UltimateXR handles the synchronization logic, the actual data transfer is managed by the networking system being used, like NetCode or Photon.
 
 However, when developers introduce new custom functionality in their application, additional multiplayer programming will be required to enable that functionality in a multiplayer environment.
 
