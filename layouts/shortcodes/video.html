@@ -1,0 +1,87 @@
+{{- /* Get parameters with default values */ -}}
+{{- $params := dict
+    "src" (.Get "src")
+    "type" (.Get "type")
+    "poster" (.Get "poster")
+    "autoplay" (.Get "autoplay" | default "true")
+    "playsinline" (.Get "playsinline")
+    "muted" (.Get "muted")
+    "loop" (.Get "loop")
+    "controls" (.Get "controls")
+    "preload" (.Get "preload")
+-}}
+
+{{- /* Initialize attributes dictionary */ -}}
+{{- $attrs := dict -}}
+
+{{- /* Add 'poster' and 'preload' if provided */ -}}
+{{- if $params.poster -}}
+    {{- $attrs = merge $attrs (dict "poster" $params.poster) -}}
+{{- end -}}
+{{- if $params.preload -}}
+    {{- $attrs = merge $attrs (dict "preload" $params.preload) -}}
+{{- end -}}
+
+{{- /* List of boolean attributes to process */ -}}
+{{- $boolAttrs := slice "autoplay" "playsinline" "muted" "loop" "controls" -}}
+
+{{- /* Process boolean attributes */ -}}
+{{- range $attr := $boolAttrs -}}
+    {{- $value := index $params $attr -}}
+    {{- if eq $value "true" -}}
+        {{- $attrs = merge $attrs (dict $attr "") -}}
+    {{- else if not $value -}}
+        {{- /* Default attributes when 'autoplay' is true */ -}}
+        {{- if and (eq $params.autoplay "true") (in (slice "autoplay" "playsinline" "muted" "loop") $attr) -}}
+            {{- $attrs = merge $attrs (dict $attr "") -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Build the attributes string */ -}}
+{{- $attrsList := slice -}}
+{{- range $key, $value := $attrs -}}
+    {{- if eq $value "" -}}
+        {{- $attrsList = $attrsList | append $key -}}
+    {{- else -}}
+        {{- $attrsList = $attrsList | append (printf "%s=\"%s\"" $key $value) -}}
+    {{- end -}}
+{{- end -}}
+{{- $attrsString := delimit $attrsList " " -}}
+
+{{- /* Determine the video URL */ -}}
+{{- $src := $params.src -}}
+{{- $videoURL := "" -}}
+
+{{- /* Handle external or local video asset */ -}}
+{{- if or (strings.HasPrefix $src "http://") (strings.HasPrefix $src "https://") -}}
+    {{- /* External video, use the URL directly */ -}}
+    {{- $videoURL = $src -}}
+{{- else if strings.HasPrefix $src "/videos/" -}}
+    {{- /* Video under assets/videos/, fingerprint it */ -}}
+    {{- $cleanedSrc := strings.TrimPrefix "/" $src -}}
+    {{- $videoResource := resources.Get "videos/video.mp4" -}}
+    {{- if $videoResource -}}
+        {{- $fingerprint := $videoResource | resources.Fingerprint "sha256" -}}
+        {{- $videoURL = $fingerprint.RelPermalink -}}
+    {{- else -}}
+        {{- errorf "Video resource '%s' not found in assets" $src -}}
+    {{- end -}}
+{{- else -}}
+    {{- /* Handle videos as page resources */ -}}
+    {{- $videoResource := .Page.Resources.GetMatch $src -}}
+    {{- if $videoResource -}}
+        {{- $videoURL = $videoResource.Permalink -}}
+    {{- else -}}
+        {{- errorf "Video resource '%s' not found" $src -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Determine the MIME type */ -}}
+{{- $mimeType := $params.type -}}
+{{- if not $mimeType -}}
+    {{- $ext := path.Ext $src | lower -}}
+    {{- $mimeType = printf "video/%s" (strings.TrimPrefix "." $ext) -}}
+{{- end -}}
+
+<p><video {{ $attrsString | safeHTMLAttr }}><source src="{{- $videoURL -}}" type="{{- $mimeType -}}"></video></p>
