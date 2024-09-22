@@ -53,10 +53,12 @@ main {
   overflow-x: hidden;
 }
 
-main img {
+main img,
+main video {
   display: block;
   max-width: 100%;
   margin: var(--uxr-el-vertical-margin) auto;
+  background-color: var(--uxr-color-light-2);
 }
 
 @media (min-width: 768px) {

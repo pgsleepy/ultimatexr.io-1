@@ -4,9 +4,41 @@ title: "Technical Overview"
 
 # Technical Overview
 
-The following overview is highly technical and intended for programmers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
+The following overview is highly technical and intended for developers who want to learn more about the details of how multiplayer functionality is implemented in UltimateXR.
 
-## Using `UxrComponent` as a base
+## Simplified connection diagram
+
+This diagram provides a simplified connectivity overview:
+
+![](/docs/multiplayer/media/technical-overview/ConnectionDiagram.png)
+
+The colored dots represent components in the scene that require network synchronization: UltimateXR components and custom user components that use the UltimateXR synchronization API.
+
+UltimateXR monitors all changes in these components and automatically synchronizes them with their counterparts on other clients during multiplayer sessions. These changes could be a property update, such as `player.Color = Color.red`, or a method invocation like `player.Shoot(pos, dir);`.
+
+This data is serialized and transmitted through a connector interface, which abstracts the underlying networking implementation. This flexibility allows UltimateXR to seamlessly integrate with a variety of networking solutions.
+
+## Inside the Network Connectors
+
+The UltimateXR network connectors are a small collection of components for each of the supported networking systems (FishNet, Mirror, NetCode, Photon...). They provide a common interface to send and receive the data required by UltimateXR to keep the components in sync during multiplayer sessions. The network connector components are created by the `UxrNetworkManager` whenever the user changes the active networking system.
+
+The source code for network connectors can be found under the directory at /Scripts/Networking/Integrations/Net. The Voice directory will contain the connectors for the voice-over-network SDKs.
+
+![](/docs/multiplayer/media/technical-overview/Connectors.png)
+
+For each networking system, there are always 2 key components that form the connector:
+1) The **network implementation**, deriving from `UxrNetworkImplementation`. For example `UxrFishNetNetwork` or `UxrUnityNetCodeNetwork`. This component is added by the `UxrNetworkManager` to the same GameObject and is responsible for creating all the other necessary components to enable networking support for the selected networking system SDK, such as:
+   - The network avatar, described below.
+   - Networking system SDK components: These are added to both the scene and the avatar prefab, including specific networking elements like the network manager, NetworkObject components, and NetworkTransform components.
+2) **The network avatar**, implementing the `IUxrNetworkAvatar` interface. For example `UxrFishNetAvatar` or `UxrUnityNetCodeAvatar`. This component is added to the avatar prefab by the UxrNetworkImplementation mentioned above. It contains the communication code, including the RPCs responsible for sync-on-join and state synchronization during runtime.
+
+The network implementation component also includes the connection prototyping code for each SDK. This feature helps speed up testing during development by displaying a UI that allows developers to easily create a multiplayer session as a host or server, connect as a client, and manage other basic multiplayer actions.
+
+{{% callout tip %}}
+Remember that you can view all the components added by the system using the buttons on the `UxrNetworkManager`, allowing you to maintain full control over the automated process. If you select "None" as the networking system, all the added components will be automatically removed.
+{{% /callout %}}
+
+## Inheriting from `UxrComponent`
 
 A multiplayer session requires two key features:
 
@@ -20,6 +52,10 @@ With this in mind, UltimateXR provides through its base `UxrComponent` class the
 3) Notify and replicate any state changes. We call this **StateSync**.
 
 All components in UltimateXR and user created components that inherit from `UxrComponent` have these abilities.
+
+{{% callout info %}}
+When users cannot inherit from `UxrComponent` because their class already inherits from another common base class, UltimateXR provides a way to use interfaces instead.
+{{% /callout %}}
 
 ## Sync-on-join
 
@@ -44,6 +80,8 @@ As easy as that!
 {{% callout info %}}
 **StateSave** can be used for much more than just sync-on-join. It can also enable savegame functionality, gameplay replays, and other features.
 {{% /callout %}}
+
+After the sync-on-join process, the user will continue the session with state synchronization, which ensures that all changes made by the user are propagated to others, while also receiving updates from other users in real time.
 
 ## State Synchronization
 
@@ -92,7 +130,6 @@ The diagram describing this process is shown below:
 {{% callout info %}}
 **StateSync** can also be used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
 {{% /callout %}}
-
 
 ## More Information
 

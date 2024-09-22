@@ -22,7 +22,7 @@ header a {
 header .logo-ultimatexr {
   width: 160px;
   height: 28px;
-  background-image: url('/images/logo-ultimatexr.svg');
+  background-image: url('{{ ("images/logo-ultimatexr.svg" | resources.Get | fingerprint).RelPermalink }}');
   background-repeat: no-repeat;
   background-position: center left;
 }

@@ -1,7 +1,6 @@
 baseURL: 'https://www.ultimatexr.io/'
 languageCode: en-us
 title: UltimateXR
-theme: ultimatexr
 disablePathToLower: true
 
 params:
@@ -11,6 +10,8 @@ params:
   website_repo_url: https://github.com/VRMADA/ultimatexr.io
   website_contributing_branch: dev
   discord_server_url: https://discord.gg/GXHdneaFjA
+  algolia_app_id: es5exujlvc
+  google_tag_id: G-MC0JGRZ79C
 
 menu:
   main:
