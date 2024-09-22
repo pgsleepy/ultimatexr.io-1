@@ -43,7 +43,7 @@
 
 {{/* Fingerprint JavaScript assets */}}
 {{ $turbo_js := resources.Get "js/lib/turbo.es2017-esm.js" | fingerprint }}
-{{ $theme_manager_js := resources.Get "js/components/theme_manager.js" | fingerprint }}
+{{ $components_theme_manager_js := resources.Get "js/components/theme_manager.js" | fingerprint }}
 {{ $icons_js := resources.Get "js/icons.js" | fingerprint }}
 {{ $navigation_js := resources.Get "js/navigation.js" | fingerprint }}
 {{ $trailer_js := resources.Get "js/trailer.js" | fingerprint }}
@@ -93,7 +93,7 @@
 {
   "imports": {
     "turbo": "{{ $turbo_js.RelPermalink }}",
-    "theme_manager": "{{ $theme_manager_js.RelPermalink }}",
+    "components/theme_manager": "{{ $components_theme_manager_js.RelPermalink }}",
     "icons": "{{ $icons_js.RelPermalink }}",
     "navigation": "{{ $navigation_js.RelPermalink }}",
     "trailer": "{{ $trailer_js.RelPermalink }}",
@@ -106,7 +106,7 @@
 
 <!-- Fingerprinted JavaScript Assets -->
 <script src="{{ $turbo_js.RelPermalink }}" type="module"></script>
-<script src="{{ $theme_manager_js.RelPermalink }}" type="module"></script>
+<script src="{{ $components_theme_manager_js.RelPermalink }}" type="module"></script>
 <script src="{{ $icons_js.RelPermalink }}"></script> 
 <script src="{{ $navigation_js.RelPermalink }}"></script>
 <script src="{{ $trailer_js.RelPermalink }}"></script>

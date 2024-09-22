@@ -328,7 +328,7 @@
       label: "ready"
     - title: "Multiplayer Programming"
       url: "/docs/multiplayer/multiplayer-programming"
-      label: "in progress"
+      label: "ready"
 
 - title: "Troubleshooting"
   items:
