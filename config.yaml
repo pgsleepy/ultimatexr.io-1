@@ -11,6 +11,7 @@ params:
   website_contributing_branch: dev
   discord_server_url: https://discord.gg/GXHdneaFjA
   algolia_app_id: es5exujlvc
+  google_tag_id: G-MC0JGRZ79C
 
 menu:
   main:
