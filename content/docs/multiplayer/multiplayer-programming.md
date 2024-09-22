@@ -42,13 +42,16 @@ Other functionality, such as Transform synchronization, is provided through nati
 
 ## Example
 
-Here's an example that showcases StateSave and StateSync functionality for a player
+Here's an example that implements **StateSave** and **StateSync** functionality for a `Player` component, inheriting from `UxrComponent`.
+
+The player has a `IsInvincible` property that is synchronized across clients. It also has a `Shoot()` method that is called on all other clients whenever it's invoked by the local player.
+The state saving is handled by overriding the `SerializeState()` which is used for both loading and for saving.
 
 ```c#
 public Player : UxrComponent
 {
-    // IsInvincible property has setter with StateSync support.
-    public Color LightColor
+    // IsInvincible property has setter with StateSync support. When it changes, other clients will also be changed.
+    public bool IsInvincible
     {
         get => _isInvincible;
         set
@@ -60,7 +63,7 @@ public Player : UxrComponent
         }
     }
 
-    // Expose Shoot() method call with StateSync support.
+    // Shoot() method has StateSync support. When it's called, other clients will call Shoot() too.
     public void Shoot(Vector3 pos, Vector3 dir)
     {
         BeginSync();
@@ -69,21 +72,21 @@ public Player : UxrComponent
         EndSyncMethod(new object[] { enabled, color });
     }
 
-    // Override SerializeState() to provice StateSave support.
+    // SerializeState() is used for StateSave support. It is used for both serialization and deserialization to
+    // avoid requiring separate read and write methods.
     protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
     {
         // Always call base implementation first using the same parameters
         base.SerializeState(isReading, stateSerializationVersion, level, options);
     
-        if (level >= UxrStateSaveLevel.ChangesSinceBeginning)
-        {
-            // This line can serialize and deserialize.
-            SerializeStateValue(level, options, nameof(_isInvincible), ref _isInvincible);
-        }
+        // We only have our _isInvincible variable to serialize/deserialize.
+        SerializeStateValue(level, options, nameof(_isInvincible), ref _isInvincible);
     }
 
     private bool _isInvincible;
 }
 
 ```
+
+This `Player`component 
 
