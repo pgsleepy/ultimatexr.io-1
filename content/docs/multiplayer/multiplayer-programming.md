@@ -49,7 +49,7 @@ Here's an example that implements **StateSave** and **StateSync** functionality 
 ```c#
 public Player : UxrComponent
 {
-    // IsInvincible property has setter with StateSync support. When it changes, other clients will also be changed.
+    // IsInvincible property has setter with StateSync support. Whenever it changes, it will be changed in the same instance on all other clients too.
     public bool IsInvincible
     {
         get => _isInvincible;
@@ -62,7 +62,7 @@ public Player : UxrComponent
         }
     }
 
-    // Shoot() method has StateSync support. When it's called, other clients will call Shoot() too.
+    // Shoot() method has StateSync support. Whenever it's called, it will be called on the same instance on all other clients too.
     public void Shoot(Vector3 pos, Vector3 dir)
     {
         BeginSync();
