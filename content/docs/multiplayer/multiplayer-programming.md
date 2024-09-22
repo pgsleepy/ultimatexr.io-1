@@ -34,9 +34,56 @@ Certain aspects of network programming, such as lobbies, match-making, and conne
 
 ## UltimateXR Sync API
 
-In UltimateXR, multiplayer functionality is platform-independent and relies on two key features:
-- [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave), for serializing component states. This allows the server to send the updated scene state to new clients when they join.
-- [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync), for synchronizing component state changes. This facilitates the propagation of component state changes among clients.
+In UltimateXR, multiplayer functionality can be implemented using the Sync API and has two key features:
+- [**StateSave**](/docs/programming-guide/state-serialization-and-synchronization-statesave): This serializes the states of components, enabling the server to send the current scene state to new clients upon joining.
+- [**StateSync**](/docs/programming-guide/state-serialization-and-synchronization-statesync): This synchronizes state changes in components, ensuring that changes are properly shared across clients.
 
-Other functionality, such as Transform synchronization, is provided through native components.
+Other functionality, such as Transform synchronization, is provided through native networking components that are automatically added to selected objects, such as avatars.
+
+## Example
+
+Here's an example that showcases StateSave and StateSync functionality for a player
+
+```c#
+public Player : UxrComponent
+{
+    // IsInvincible property has setter with StateSync support.
+    public Color LightColor
+    {
+        get => _isInvincible;
+        set
+        {
+            // Notify of new property value.
+            BeginSync();
+            _isInvincible = value;
+            EndSyncProperty(value);
+        }
+    }
+
+    // Expose Shoot() method call with StateSync support.
+    public void Shoot(Vector3 pos, Vector3 dir)
+    {
+        BeginSync();
+        // Perform shooting logic here.
+        // Notify of a method call with parameters.
+        EndSyncMethod(new object[] { enabled, color });
+    }
+
+    // Override SerializeState() to provice StateSave support.
+    protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+    {
+        // Always call base implementation first using the same parameters
+        base.SerializeState(isReading, stateSerializationVersion, level, options);
+    
+        if (level >= UxrStateSaveLevel.ChangesSinceBeginning)
+        {
+            // This line can serialize and deserialize.
+            SerializeStateValue(level, options, nameof(_isInvincible), ref _isInvincible);
+        }
+    }
+
+    private bool _isInvincible;
+}
+
+```
 
