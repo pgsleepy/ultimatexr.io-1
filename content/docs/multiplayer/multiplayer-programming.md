@@ -26,7 +26,6 @@ In these cases, UltimateXR developers can choose how to to implement new multipl
 
 ### Cons of using the UltimateXR Sync API:
   - **Familiarity with Native APIs**: Developers may be more familiar with the networking API of their chosen system.
-  - **Sync Variables**: The native networking system is required for using sync variables, though this will be addressed in future updates.
   - **No Built-in Anti-Cheating Support Yet**: The current version lacks built-in anti-cheating mechanisms, but this feature is planned for future releases.
 
 ### Additional Notes:
