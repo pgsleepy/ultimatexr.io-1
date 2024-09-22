@@ -60,12 +60,12 @@
 {{- else if strings.HasPrefix $src "/videos/" -}}
     {{- /* Video under assets/videos/, fingerprint it */ -}}
     {{- $cleanedSrc := strings.TrimPrefix "/" $src -}}
-    {{- $videoResource := resources.Get "videos/video.mp4" -}}
+    {{- $videoResource := resources.Get $cleanedSrc -}}
     {{- if $videoResource -}}
         {{- $fingerprint := $videoResource | resources.Fingerprint "sha256" -}}
         {{- $videoURL = $fingerprint.RelPermalink -}}
     {{- else -}}
-        {{- errorf "Video resource '%s' not found in assets" $src -}}
+        {{- errorf "Video resource '%s' not found in assets" $cleanedSrc -}}
     {{- end -}}
 {{- else -}}
     {{- /* Handle videos as page resources */ -}}
@@ -73,7 +73,7 @@
     {{- if $videoResource -}}
         {{- $videoURL = $videoResource.Permalink -}}
     {{- else -}}
-        {{- errorf "Video resource '%s' not found" $src -}}
+        {{- errorf "Video resource '%s' not found" $cleanedSrc -}}
     {{- end -}}
 {{- end -}}
 
