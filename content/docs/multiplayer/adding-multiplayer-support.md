@@ -20,6 +20,8 @@ Navigate to the networking tab to view the available networking SDKs. For voice-
 
 ![](/docs/multiplayer/media/supported-platforms/SDKManager.png)
 
+After the installation, follow the SDK instructions for setup guidance.
+
 ## Creating the UxrNetworkManager
 
 In the main or boot scene, begin by adding the `UxrNetworkManager` component through the Tools menu:
@@ -34,7 +36,7 @@ This GameObject will contain the `UxrNetworkManager` and, if not already present
 
 The `UxrNetworkManager` is responsible for setting up all networking functionality. During edit-time, it handles the automatic removal, addition and configuration of the networking components when the selected SDK changes. At runtime, the components that were added are responsible for keeping the communication between the connected clients.
 
-The added GameObject's inspector will look like this uninitialized:
+The added GameObject's inspector will look like this:
 
 ![](/docs/multiplayer/media/adding-multiplayer-support/UxrNetworkManagerInspector01.png)
 
