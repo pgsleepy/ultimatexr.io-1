@@ -1,7 +1,12 @@
 <div id="banner-vrmada" data-turbo-permanent>
   <div class="container">
-    <a href="https://www.vrmada.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website" class="logo-vrmada"><img src="/images/logo-vrmada-white.svg"></a>
-    <a href="https://www.vrmada.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website">Enterprise VR and AR consulting and development</a>
+    {{ $vrmada_logo := "images/logo-vrmada-white.svg" | resources.Get | fingerprint }}
+    <a href="https://www.vrmada.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website" class="logo-vrmada">
+      <img src="{{ $vrmada_logo.RelPermalink }}" alt="VRMADA Logo">
+    </a>
+    <a href="https://www.vrmada.com/?utm_source=ultimatexr-site&amp;utm_medium=banner&amp;utm_campaign=ultimatexr-website" rel="noopener noreferrer" target="_blank" title="Go to the VRMADA website">
+      Enterprise VR and AR consulting and development
+    </a>
   </div>
 </div>
 
