@@ -1,4 +1,4 @@
-import { ThemeManager } from './components/theme.js';
+import { ThemeManager } from "theme_manager";
 
 let themeToggleButtonElement = document.querySelector('[data-theme-toggle]');
 let themeManager = new ThemeManager(themeToggleButtonElement);

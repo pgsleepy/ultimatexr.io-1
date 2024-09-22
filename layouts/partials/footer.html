@@ -1,3 +1,5 @@
+{{ $theme_js := resources.Get "js/theme.js" | fingerprint }}
+
 <footer>
   <p>
     Copyright © {{ now.Year }} VRMADA. All rights reserved.
@@ -13,4 +15,4 @@
     htmlElement.classList.remove('theme-dark');
   }
 </script>
-<script src="/js/theme.js" type="module" data-turbo-eval="false"></script>
+<script src="{{ $theme_js.Permalink }}" type="module" data-turbo-eval="false"></script>

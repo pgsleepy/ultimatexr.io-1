@@ -22,7 +22,7 @@ body.kind-home #nav-local {
 }
 
 body.kind-home header .logo-ultimatexr {
-  background-image: url('/images/logo-ultimatexr-white.svg');
+  background-image: url('{{ ("images/logo-ultimatexr-white.svg" | resources.Get | fingerprint).RelPermalink }}');
 }
 
 body.kind-home #menu-button-open {

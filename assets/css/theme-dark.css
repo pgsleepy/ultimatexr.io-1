@@ -24,7 +24,7 @@ html.theme-dark body:not(.kind-home) {
 }
 
 html.theme-dark body:not(.kind-home) header .logo-ultimatexr {
-  background-image: url('/images/logo-ultimatexr-white.svg');
+  background-image: url('{{ ("images/logo-ultimatexr-white.svg" | resources.Get | fingerprint).RelPermalink }}');
 }
 
 @media (min-width: 768px) {
