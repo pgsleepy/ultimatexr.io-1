@@ -10,6 +10,7 @@ params:
   website_repo_url: https://github.com/VRMADA/ultimatexr.io
   website_contributing_branch: dev
   discord_server_url: https://discord.gg/GXHdneaFjA
+  algolia_app_id: es5exujlvc
 
 menu:
   main:
