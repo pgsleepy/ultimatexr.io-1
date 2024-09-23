@@ -6,7 +6,7 @@ title: "Hand Pose Editor"
 
 The UltimateXR Hand Pose Editor is an important tool when adding interactivity to our avatars. It simplifies the creation of hand poses that can be used at runtime to make hand gestures or to grab objects with different shapes.
 
-![](/docs/avatars/media/01Editor.png)
+![](/media/docs/avatars/the-hand-pose-editor/01Editor.png)
  
 Hand poses are used primarily by these components:
 
@@ -20,11 +20,11 @@ There are different pose types that can be specified:
 
 You can access the hand pose editor using the Hand Poses section in the UxrAvatar component of an avatar in the scene.
 
-![](/docs/avatars/media/02UxrAvatar.png)
+![](/media/docs/avatars/the-hand-pose-editor/02UxrAvatar.png)
  
 Or by using the Tools -> UltimateXR -> Hand Pose Editor menu.
 
-![](/docs/avatars/media/03Menu.png)
+![](/media/docs/avatars/the-hand-pose-editor/03Menu.png)
  
 Let’s first list some important concepts to understand how hand poses work:
 
@@ -41,11 +41,11 @@ Let’s first list some important concepts to understand how hand poses work:
 
 Being able to work with avatar prefab variants and inherit poses is a powerful feature. Among other things, it allows you to separate functionality and create specializations. For example, our sample scene uses prefab variants for all avatars (cyborg, big hands, small hands). This allows us to inherit all basic hand poses available in the parent prefabs but still add new ones that do not belong to the core functionality, such as grabbing the shooting range weapons and using the laser in the lab. These poses are specific to the example scene, and do not belong in the UltimateXR core prefabs.
 
-![](/docs/avatars/media/04PoseInheritance.png)
+![](/media/docs/avatars/the-hand-pose-editor/04PoseInheritance.png)
 
 ## Using the main menu
 
-![](/docs/avatars/media/05MainMenu.png)
+![](/media/docs/avatars/the-hand-pose-editor/05MainMenu.png)
  
 *Create*
 
@@ -72,7 +72,7 @@ Being able to work with avatar prefab variants and inherit poses is a powerful f
  
 ## Using the pose menu
 
-![](/docs/avatars/media/06PoseMenu.png)
+![](/media/docs/avatars/the-hand-pose-editor/06PoseMenu.png)
  
 - Show inherited poses: Lets you choose between showing only the poses stored in the avatar being edited or also include the poses inherited through parent prefabs. Inherited poses will be read-only and can only be edited using the appropriate parent prefab.
 - Pose: Lets you select the current pose being edited. When you switch between poses, the avatar hands in the scene window will preview the transforms of each pose.
@@ -84,7 +84,7 @@ Being able to work with avatar prefab variants and inherit poses is a powerful f
 
 ## Using the Hand Controls
 
-![](/docs/avatars/media/07HandsEdition.png)
+![](/media/docs/avatars/the-hand-pose-editor/07HandsEdition.png)
  
 The hand controls provide an easy way to rotate individual finger bones and to copy data from one hand to the other. When the hands show up without the spinners it means that there is no pose currently selected, or the selected pose is read-only because it’s from a parent prefab.
 There are two ways finger transforms can be edited:
@@ -105,7 +105,7 @@ The created snap transform can later be assigned in the UxrGrabbableObject compo
 
 ## Using the hand pose presets
 
-![](/docs/avatars/media/08Presets.png)
+![](/media/docs/avatars/the-hand-pose-editor/08Presets.png)
  
 The presets window contains a set of commonly used poses that can speed up the creation process. By clicking on any preset, the editor will automatically load it into the avatar pose being edited.
 
