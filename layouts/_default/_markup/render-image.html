@@ -1,0 +1,26 @@
+{{- /* Get image source */ -}}
+{{- $src := .Destination -}}
+
+{{- /* Initialize image URL variable */ -}}
+{{- $imageURL := "" -}}
+
+{{- /* Handle media images or external images */ -}}
+{{- if strings.HasPrefix $src "/media/" -}}
+    {{- /* Image under assets/, fingerprint it */ -}}
+    {{- $imageResource := resources.GetMatch $src -}}
+    {{- if $imageResource -}}
+        {{- $fingerprint := $imageResource | resources.Fingerprint "sha256" -}}
+        {{- $imageURL = $fingerprint.RelPermalink -}}
+    {{- else -}}
+        {{- errorf "Image resource '%s' not found in assets" $src -}}
+    {{- end -}}
+{{- else -}}
+    {{- /* External or non-/media/ image, use as is */ -}}
+    {{- $imageURL = $src -}}
+{{- end -}}
+
+<img src="{{ $imageURL | safeURL }}"
+  {{- with .Text }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- /* chomp trailing newline */ -}}
