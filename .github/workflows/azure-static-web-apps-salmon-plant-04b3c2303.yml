@@ -20,8 +20,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-        env:
-          HUGO_ENV: staging
 
       - name: Build And Deploy
         id: builddeploy
@@ -34,6 +32,8 @@ jobs:
           api_location: "" # API source code path - optional
           output_location: "public" # Built app content directory - optional
           production_branch: "master"
+        env:
+          HUGO_ENV: staging
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
