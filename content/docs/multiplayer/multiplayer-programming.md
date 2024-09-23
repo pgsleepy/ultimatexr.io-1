@@ -93,4 +93,4 @@ This `Player` component demonstrates how StateSave and StateSync can quickly add
 
 Head over to the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide for a complete guide on **StateSave** and **StateSync** functionality.
 
-Check the [Basic Multiplayer Tutorial](/docs/tutorials/basic-multiplayer) in the Tutorials section for an example showcasing how to add multiplayer support to the UltimateXR example scene.
+Check the [Basic Multiplayer Tutorial](/docs/tutorials/multiplayer/basic-multiplayer) in the Tutorials section for an example showcasing how to add multiplayer support to the UltimateXR example scene.

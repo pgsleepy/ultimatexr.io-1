@@ -42,7 +42,7 @@ You can. However, the base cylinder is usually too big and not long enough for a
 
 #### Component Setup
 
-- Next, set up your "Base" grabs on the main parent object, in our example that would is the *Staff* Game Object. If you need assistance, check out [Create a Grabbable Ball](/docs/tutorials/creating-a-grabbable-ball) for details on setting up the [UxrGrabbableObject](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class). The settings can be different to fit your needs, but the *Grip Pose*, *Grip Snap Left Hand* and *Grip Snap Right Hand* values need to be set up.
+- Next, set up your "Base" grabs on the main parent object, in our example that would is the *Staff* Game Object. If you need assistance, check out [Create a Grabbable Ball](/docs/tutorials/manipulation/creating-a-grabbable-ball) for details on setting up the [UxrGrabbableObject](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class). The settings can be different to fit your needs, but the *Grip Pose*, *Grip Snap Left Hand* and *Grip Snap Right Hand* values need to be set up.
 ![](/docs/tutorials/media/grabpointshape/04GrabbableComponent.png)
 -  To set up the [UxrGrabPointShapeAxisAngle](/api/T_UltimateXR_Manipulation_UxrGrabPointShapeAxisAngle#uxrgrabpointshapeaxisangle-class), add the component onto the same object as your [UxrGrabbableObject](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class)
 

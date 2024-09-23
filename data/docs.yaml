@@ -39,7 +39,7 @@
     - title: "Overview"
       url: "/docs/contributing-to-the-guide/overview"
     - title: "Submitting a Simple Edit"
-      url: "/docs/contributing-to-the-guide/overview"
+      url: "/docs/contributing-to-the-guide/submitting-a-simple-edit"
     - title: "Submitting a New Article"
       url: "/docs/contributing-to-the-guide/submitting-a-new-article"
     - title: "Previewing New Articles"
@@ -206,7 +206,7 @@
           url: "/docs/tutorials/manipulation/creating-a-staff"
           label: "in progress"
         - title: "Using Constraints"
-          url: "/docs/tutorials/using-constraints"
+          url: "/docs/tutorials/manipulation/using-constraints"
     - title: "Multiplayer"
       url: ""
       items:
