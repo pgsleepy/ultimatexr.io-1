@@ -41,7 +41,7 @@ Other functionality, such as Transform synchronization, is provided through nati
 
 ## Example
 
-Here's an example that implements **StateSave** and **StateSync** functionality for a `Player` component, inheriting from `UxrComponent`.
+Here's an example that implements **StateSave** and **StateSync** functionality in a simple `Player` component, inheriting from `UxrComponent`.
 
 - **StateSave**: By overriding the `SerializeState()` method, which can be used for both loading and for saving.
 - **StateSync**: The player's `IsInvincible` property is synchronized across clients. Additionally, the `Shoot()` method is called on all other clients whenever it's invoked by the local player.
@@ -49,7 +49,7 @@ Here's an example that implements **StateSave** and **StateSync** functionality 
 ```c#
 public Player : UxrComponent
 {
-    // IsInvincible property has setter with StateSync support. When it changes, other clients will also be changed.
+    // IsInvincible property has setter with StateSync support. Whenever it changes, it will be changed in the same instance on all other clients too.
     public bool IsInvincible
     {
         get => _isInvincible;
@@ -62,7 +62,7 @@ public Player : UxrComponent
         }
     }
 
-    // Shoot() method has StateSync support. When it's called, other clients will call Shoot() too.
+    // Shoot() method has StateSync support. Whenever it's called, it will be called on the same instance on all other clients too.
     public void Shoot(Vector3 pos, Vector3 dir)
     {
         BeginSync();
@@ -91,4 +91,6 @@ This `Player` component demonstrates how StateSave and StateSync can quickly add
 
 ## Next Steps
 
-For a complete guide on **StateSave** and **StateSync** functionality please visit the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide.
+Head over to the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide for a complete guide on **StateSave** and **StateSync** functionality.
+
+Check the [Basic Multiplayer Tutorial](/docs/tutorials/basic-multiplayer) in the Tutorials section for an example showcasing how to add multiplayer support to the UltimateXR example scene.
