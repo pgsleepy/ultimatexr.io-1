@@ -1,8 +1,8 @@
 ---
-title: "Supported platforms"
+title: "Platforms"
 ---
 
-# Supported XR platforms
+# Platforms
 
 UltimateXR currently supports the following platforms and devices:
 
@@ -26,7 +26,7 @@ UltimateXR currently supports the following platforms and devices:
   - Standard WMR headsets
   - Samsung Reverb G2
 
-## Installing integrations
+## Installing SDKs
 
 Open the UltimateXR SDK Manager window using the top menu Tools -> UltimateXR -> SDK Manager
 
