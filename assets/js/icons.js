@@ -1,5 +1,3 @@
-function initializeLucide() {
-  lucide.createIcons();
-}
-
-document.addEventListener("turbo:load", initializeLucide);
+// Lucide
+import { createIcons, icons } from "lucide"
+document.addEventListener("turbo:load", () => createIcons({ icons }))

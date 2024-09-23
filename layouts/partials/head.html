@@ -1,21 +1,23 @@
-{{/* Set the page title */}}
-{{ $title := .Title }}
-{{ if .Scratch.Get "title" }}
-  {{ $title = printf "%s - %s" (.Scratch.Get "title") .Site.Title }}
-{{ else if not .IsHome }}
-  {{ $title = printf "%s - %s" .Title .Site.Title }}
-{{ end }}
+<!-- Set the page title -->
+{{- $title := .Title -}}
+{{- if .Scratch.Get "title" -}}
+  {{- $title = printf "%s - %s" (.Scratch.Get "title") .Site.Title -}}
+{{- else if not .IsHome -}}
+  {{- $title = printf "%s - %s" .Title .Site.Title -}}
+{{- end -}}
 
-{{/* Fingerprint image assets */}}
-{{ $social_image := resources.Get "images/ultimatexr-social.jpg" | fingerprint }}
-{{ $apple_touch_icon := resources.Get "images/apple-touch-icon.png" | fingerprint }}
-{{ $favicon_32x32 := resources.Get "images/favicon-32x32.png" | fingerprint }}
-{{ $favicon_16x16 := resources.Get "images/favicon-16x16.png" | fingerprint }}
-{{ $site_webmanifest := resources.Get "site.webmanifest" | fingerprint }}
-{{ $favicon := resources.Get "images/favicon.ico" | fingerprint }}
+<!-- Fingerprint image assets -->
+{{- $social_image := resources.Get "images/ultimatexr-social.jpg" | fingerprint -}}
+{{- $apple_touch_icon := resources.Get "images/apple-touch-icon.png" | fingerprint -}}
+{{- $favicon_32x32 := resources.Get "images/favicon-32x32.png" | fingerprint -}}
+{{- $favicon_16x16 := resources.Get "images/favicon-16x16.png" | fingerprint -}}
+{{- $android_chrome_192x192 := resources.Get "images/android-chrome-192x192.png" | fingerprint -}}
+{{- $android_chrome_512x512 := resources.Get "images/android-chrome-512x512.png" | fingerprint -}}
+{{- $site_webmanifest := (resources.Get "site.webmanifest" | resources.ExecuteAsTemplate "site.webmanifest" . | fingerprint) -}}
+{{- $favicon := resources.Get "images/favicon.ico" | fingerprint -}}
 
-{{/* Concatenate and fingerprint CSS assets */}}
-{{ $style_css := slice
+<!-- Concatenate and fingerprint CSS assets -->
+{{- $style_css := slice
   (resources.Get "css/reset.css" | resources.ExecuteAsTemplate "reset.css" .)
   (resources.Get "css/variables.css" | resources.ExecuteAsTemplate "variables.css" .)
   (resources.Get "css/theme-dark.css" | resources.ExecuteAsTemplate "theme-dark.css" .)
@@ -39,31 +41,23 @@
   (resources.Get "css/home.css" | resources.ExecuteAsTemplate "home.css" .)
   (resources.Get "css/api.css" | resources.ExecuteAsTemplate "api.css" .)
   (resources.Get "css/docsearch.css" | resources.ExecuteAsTemplate "docsearch.css" .)
-| resources.Concat "css/style.css" | minify | fingerprint }}
-
-{{/* Fingerprint JavaScript assets */}}
-{{ $turbo_js := resources.Get "js/lib/turbo.es2017-esm.js" | fingerprint }}
-{{ $components_theme_manager_js := resources.Get "js/components/theme_manager.js" | fingerprint }}
-{{ $icons_js := resources.Get "js/icons.js" | fingerprint }}
-{{ $navigation_js := resources.Get "js/navigation.js" | fingerprint }}
-{{ $trailer_js := resources.Get "js/trailer.js" | fingerprint }}
-{{ $toc_js := resources.Get "js/toc.js" | fingerprint }}
-{{ $api_js := resources.Get "js/api.js" | fingerprint }}
-{{ $docsearch_js := resources.Get "js/docsearch.js" | fingerprint }}
+| resources.Concat "css/style.css" | minify | fingerprint -}}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 
 <!-- Use the concatenated and fingerprinted CSS file -->
-<link rel="stylesheet" type="text/css" href="{{ $style_css.RelPermalink }}">
+<link rel="stylesheet" type="text/css" href="{{- $style_css.RelPermalink -}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://{{ .Site.Params.algolia_app_id }}.algolia.net" crossorigin>
-<link rel="apple-touch-icon" sizes="180x180" href="{{ $apple_touch_icon.RelPermalink }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon_32x32.RelPermalink }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon_16x16.RelPermalink }}">
-<link rel="manifest" href="{{ $site_webmanifest.RelPermalink }}">
-<link rel="icon" type="image/x-icon" href="{{ $favicon.RelPermalink }}">
+<link rel="preconnect" href="https://{{- .Site.Params.algolia_app_id -}}.algolia.net" crossorigin>
+<link rel="apple-touch-icon" sizes="180x180" href="{{- $apple_touch_icon.RelPermalink -}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{- $favicon_32x32.RelPermalink -}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{- $favicon_16x16.RelPermalink -}}">
+<link rel="icon" type="image/png" sizes="192x192" href="{{- $android_chrome_192x192.RelPermalink -}}">
+<link rel="icon" type="image/png" sizes="512x512" href="{{- $android_chrome_512x512.RelPermalink -}}">
+<link rel="manifest" href="{{- $site_webmanifest.RelPermalink -}}">
+<link rel="icon" type="image/x-icon" href="{{- $favicon.RelPermalink -}}">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
@@ -72,60 +66,20 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ultimate_xr">
 <meta name="twitter:creator" content="@ultimate_xr">
-<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:title" content="{{- $title -}}">
 <meta name="twitter:description" content="The free open source VR and AR Framework for Unity">
-<meta name="twitter:image" content="{{ $social_image.RelPermalink }}">
+<meta name="twitter:image" content="{{- $social_image.RelPermalink -}}">
 
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://www.ultimatexr.io/">
-<meta property="og:title" content="{{ $title }}">
+<meta property="og:title" content="{{- $title -}}">
 <meta property="og:description" content="The free open source VR and AR Framework for Unity">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ $social_image.RelPermalink }}">
+<meta property="og:image" content="{{- $social_image.RelPermalink -}}">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
-<title>{{ $title }}</title>
+<title>{{- $title -}}</title>
 
-<!-- Import Map -->
-<script type="importmap">
-{
-  "imports": {
-    "turbo": "{{ $turbo_js.RelPermalink }}",
-    "components/theme_manager": "{{ $components_theme_manager_js.RelPermalink }}",
-    "icons": "{{ $icons_js.RelPermalink }}",
-    "navigation": "{{ $navigation_js.RelPermalink }}",
-    "trailer": "{{ $trailer_js.RelPermalink }}",
-    "toc": "{{ $toc_js.RelPermalink }}",
-    "api": "{{ $api_js.RelPermalink }}",
-    "docsearch": "{{ $docsearch_js.RelPermalink }}"
-  }
-}
-</script>
-
-<!-- Fingerprinted JavaScript Assets -->
-<script src="{{ $turbo_js.RelPermalink }}" type="module"></script>
-<script src="{{ $components_theme_manager_js.RelPermalink }}" type="module"></script>
-<script src="{{ $icons_js.RelPermalink }}"></script> 
-<script src="{{ $navigation_js.RelPermalink }}"></script>
-<script src="{{ $trailer_js.RelPermalink }}"></script>
-<script src="{{ $toc_js.RelPermalink }}"></script>
-<script src="{{ $api_js.RelPermalink }}"></script>
-<script src="{{ $docsearch_js.RelPermalink }}"></script>
-
-<!-- External JavaScript Assets -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
-
-{{ if hugo.IsProduction }}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_tag_id }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ .Site.Params.google_tag_id }}');
-  </script>
-{{ end }}
+{{- partial "scripts" . -}}

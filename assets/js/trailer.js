@@ -1,6 +1,8 @@
+import videoJs from "videojs"
+
 var initTrailer = function() {
   var trailer = document.querySelector('#trailer');
-  var video = videojs(trailer);
+  var video = videoJs(trailer);
   var overlay = document.querySelector('.overlay');
   var button = document.querySelector('.btn-primary');
   var containerTrailer = document.querySelector('#container-trailer');

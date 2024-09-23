@@ -1,0 +1,15 @@
+importmap:
+  imports:
+    application: "js/application.js"
+    components/theme_manager: "js/components/theme_manager.js"
+    theme: "js/theme.js"
+    icons: "js/icons.js"
+    navigation: "js/navigation.js"
+    trailer: "js/trailer.js"
+    toc: "js/toc.js"
+    api: "js/api.js"
+    search: "js/search.js"
+    lucide: "https://cdn.jsdelivr.net/npm/lucide@0.445.0/dist/esm/lucide.min.js"
+    docsearch: "https://cdn.jsdelivr.net/npm/@docsearch/js@3.6.1/+esm"
+    videojs: "https://cdn.jsdelivr.net/npm/video.js@7.19.2/+esm"
+    "@hotwired/turbo": "https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.10/+esm"

@@ -1,3 +1,5 @@
+import docsearch from "docsearch"
+
 function initializeDocSearch() {
   docsearch({
     container: "#docsearch",

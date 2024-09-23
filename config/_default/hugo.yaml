@@ -40,3 +40,12 @@ markup:
   highlight:
     style: vs
     noClasses: false
+
+module:
+  mounts:
+    - source: node_modules/@hotwired/turbo/dist
+      target: assets/js/lib/turbo
+    - source: node_modules/lucide/dist/esm
+      target: assets/js/lib/lucide
+    - source: assets
+      target: assets

@@ -38,3 +38,6 @@ hugo.linux
 nbproject
 Thumbs.db
 /.vscode/
+
+# Others
+/node_modules/

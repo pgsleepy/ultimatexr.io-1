@@ -1,0 +1,66 @@
+<!-- Load importmap.json from Site.Data -->
+{{- $importmap := .Site.Params.Importmap -}}
+
+<!-- Initialize an empty dictionary for processed JS -->
+{{- $processedJs := dict -}}
+
+{{- range $importName, $path := $importmap.imports -}}
+
+  <!-- Skip processing for external URLs (http:// or https://) -->
+  {{- if or (strings.HasPrefix $path "http://") (strings.HasPrefix $path "https://") -}}
+    {{- $processedJs = merge $processedJs (dict $importName $path) -}}
+
+  {{- else -}}
+    {{- $resource := resources.Get $path -}}
+
+    {{- if $resource -}}
+      <!-- Initialize variable for processed resource -->
+      {{- $builtResource := $resource -}}
+
+      <!-- Only process JS files that start with "js/lib/" -->
+      {{- if strings.HasPrefix $path "js/lib/" -}}
+        {{- $builtResource = $resource | js.Build (dict "minify" true "format" "esm" "target" "esnext") | fingerprint -}}
+      {{- else -}}
+        <!-- If not in "js/lib/", just fingerprint without js.Build -->
+        {{- $builtResource = $resource | fingerprint -}}
+      {{- end -}}
+
+      <!-- Merge the processed resource into $processedJs -->
+      {{- $processedJs = merge $processedJs (dict $importName $builtResource.RelPermalink) -}}
+    
+    {{- else -}}
+      <!-- Log a warning if the resource doesn't exist -->
+      {{- warnf "Resource not found: %s (import '%s')" $path $importName -}}
+    {{- end -}}
+
+  {{- end -}}
+
+{{- end -}}
+
+<!-- Output the import map -->
+<script type="importmap">
+  {{-
+    dict "imports" $processedJs | jsonify | safeHTML
+  -}}
+</script>
+
+<!-- Preload the processed JavaScript assets -->
+{{- range $importName, $RelPermalink := $processedJs -}}
+  <link rel="modulepreload" href="{{- $RelPermalink -}}">
+{{- end -}}
+
+<!-- Initialize the main JavaScript module -->
+<script type="module">
+  import "application"
+</script>
+
+{{- if hugo.IsProduction -}}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.Params.google_tag_id -}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{- .Site.Params.google_tag_id -}}');
+  </script>
+{{- end -}}
