@@ -57,8 +57,8 @@
 {{- if or (strings.HasPrefix $src "http://") (strings.HasPrefix $src "https://") -}}
     {{- /* External video, use the URL directly */ -}}
     {{- $videoURL = $src -}}
-{{- else if strings.HasPrefix $src "/videos/" -}}
-    {{- /* Video under assets/videos/, fingerprint it */ -}}
+{{- else if or (strings.HasPrefix $src "/videos/") (strings.HasPrefix $src "/media/") -}}
+    {{- /* Video under assets/, fingerprint it */ -}}
     {{- $cleanedSrc := strings.TrimPrefix "/" $src -}}
     {{- $videoResource := resources.Get $cleanedSrc -}}
     {{- if $videoResource -}}
