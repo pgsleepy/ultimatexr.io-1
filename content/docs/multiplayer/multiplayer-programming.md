@@ -41,7 +41,7 @@ Other functionality, such as Transform synchronization, is provided through nati
 
 ## Example
 
-Here's an example that implements **StateSave** and **StateSync** functionality for a `Player` component, inheriting from `UxrComponent`.
+Here's an example that implements **StateSave** and **StateSync** functionality in a simple `Player` component, inheriting from `UxrComponent`.
 
 - **StateSave**: By overriding the `SerializeState()` method, which can be used for both loading and for saving.
 - **StateSync**: The player's `IsInvincible` property is synchronized across clients. Additionally, the `Shoot()` method is called on all other clients whenever it's invoked by the local player.
