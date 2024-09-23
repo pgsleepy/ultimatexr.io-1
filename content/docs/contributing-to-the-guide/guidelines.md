@@ -11,3 +11,4 @@ title: "Guidelines"
 - Advanced features: Use of video links and callouts.
 - Reminder of directory structure. Reference "submitting a new article".
 - Tutorials: Begin with Objectives, end with Recap and Continue Reading after that.
+
