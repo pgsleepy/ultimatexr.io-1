@@ -229,10 +229,13 @@
   items:
     - title: "Overview"
       url: "/docs/avatars/overview"
+      label: "ready"
     - title: "Using Built-in Avatars"
       url: "/docs/avatars/using-built-in-avatars"
+      label: "ready"
     - title: "Creating a Custom Avatar"
       url: "/docs/avatars/creating-a-custom-avatar"
+      label: "ready"
     - title: "UxrAvatar"
       url: "/docs/avatars/uxravatar"
     - title: "UxrStandardAvatarController"
@@ -244,16 +247,20 @@
 
 - title: "Locomotion"
   items:
-    - title: "Overview"
-      url: "/docs/locomotion/overview"
+    - title: "Introduction"
+      url: "/docs/locomotion/introduction"
+      label: "in progress"
     - title: "Teleporting"
       url: "/docs/locomotion/teleporting"
+      label: "in progress"
     - title: "Smooth Locomotion"
       url: "/docs/locomotion/smooth-locomotion"
+      label: "in progress"
     - title: "Locomotion Helper Components"
       url: "/docs/locomotion/locomotion-helper-components"
     - title: "Extending Locomotion"
       url: "/docs/locomotion/extending-locomotion"
+      label: "in progress"
 
 - title: "Manipulation"
   items:
