@@ -30,7 +30,7 @@ You will need to have [Visual Studio Code](https://code.visualstudio.com/), [Hug
 
 First things foremost, we will need to fork the repository.
 You do this using the fork button on the [GitHub repository](https://github.com/VRMADA/ultimatexr.io).
-![](/docs/guides/media/contributing/01ForkButton.png)
+![](/assets/media/docs/contributing-to-the-guide/previewing-new-articles/01ForkButton.png)
 
 Here you'll be greeted with a page to create a new fork of the repository, choose the profile you would want to give ownership of the fork repository, deselect `Copy the master branch only` and click `Create fork.`.
 
@@ -48,7 +48,7 @@ First things foremost, open up your Command Prompt / PowerShell / Terminal and n
 
 For Windows, you can do this by copying the link to the folder in your File Explorer, typing `cd ` in your command line and finally pasting the link there.
 It would look something like this:
-![](/docs/guides/media/contributing/02CmdCd.png)
+![](/assets/media/docs/contributing-to-the-guide/previewing-new-articles/02CmdCd.png)
 
 From there, we will need to actually clone the repository here.
 
@@ -73,7 +73,7 @@ hugo server
 Finally, after it's done compiling you will see the pages it has rendered but more importantly, it gives you the URL where you can see the compiled website.
 Your command prompt should look something like this.
 
-![](/docs/guides/media/contributing/03CmdHugoServer.png)
+![](/assets/media/docs/contributing-to-the-guide/previewing-new-articles/03CmdHugoServer.png)
 
 On the bottom part it shows you what the web server address is.
 In this example it's `http://localhost:1313/` which is the default for the Hugo server.
@@ -97,7 +97,7 @@ Simply with Visual Studio Code, you can open the `ultimatexr.io` folder up, and 
 On the left bar, which has all the icons in it, you can find the Git icon.
 It looks like this:
 
-![](/docs/guides/media/contributing/04SourceControl.png)
+![](/assets/media/docs/contributing-to-the-guide/previewing-new-articles/04SourceControl.png)
 
 You can also press `CTRL + SHIFT + G`, which opens this menu up too.
 
@@ -107,7 +107,7 @@ Communication is key, especially in an open-source project, so we would highly a
 
 You can find this on the issues page on GitHub at the start of the second text as shown below:
 
-![](/docs/guides/media/contributing/05GitHubIssueNo.png)
+![](/assets/media/docs/contributing-to-the-guide/previewing-new-articles/05GitHubIssueNo.png)
 
 In this case it's #4 so the commit should contain `fixed #4`.
 
@@ -117,7 +117,7 @@ One of the keys to properly communicating your changes is by staging the commits
 
 You can stage a change by clicking the plus button, this will add it to the staged changes, as shown below:
 
-![](/docs/guides/media/contributing/06StageChanges.png)
+![](/assets/media/docs/contributing-to-the-guide/previewing-new-articles/06StageChanges.png)
 
 When you've staged the proper changes, click the `Commit` button to set up your next staged changes and when you finally feel like it's ready for publishing, press the `Sync Changes` button, which will publish this to your repository over on GitHub.
 
