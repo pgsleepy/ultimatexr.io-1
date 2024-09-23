@@ -244,6 +244,7 @@
       url: "/docs/avatars/uxrstandardavatarcontroller"
     - title: "The Hand Pose Editor"
       url: "/docs/avatars/the-hand-pose-editor"
+      label: "ready"
     - title: "Avatar Camera Component"
       url: "/docs/avatars/avatar-camera-component"
 
