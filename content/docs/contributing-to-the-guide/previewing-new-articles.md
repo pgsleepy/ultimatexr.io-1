@@ -1,8 +1,8 @@
 ---
-title: "Contributing to the Guide"
+title: "Previewing New Articles"
 ---
 
-# Contributing to the Guide
+# Previewing New Articles
 
 In this guide, we'll walk you through the process of contributing to the documentation by editing .md pages using the [Hugo Framework](https://gohugo.io/). The guide targets mainly beginners to contribution, but can be used by anyone.
 
