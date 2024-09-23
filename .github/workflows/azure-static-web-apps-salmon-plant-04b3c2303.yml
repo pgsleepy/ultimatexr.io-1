@@ -45,7 +45,6 @@ jobs:
           api_location: "" # API source code path - optional
           output_location: "public" # Built app content directory - optional
           production_branch: "master"
-          environment: ${{ github.ref == 'refs/heads/master' && 'production' || 'staging' }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
