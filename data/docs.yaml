@@ -42,6 +42,8 @@
       url: "/docs/contributing-to-the-guide/submitting-a-simple-edit"
     - title: "Submitting a New Article"
       url: "/docs/contributing-to-the-guide/submitting-a-new-article"
+    - title: "Guidelines"
+      url: "/docs/contributing-to-the-guide/guidelines"
     - title: "Previewing New Articles"
       url: "/docs/contributing-to-the-guide/previewing-new-articles"
       label: "in progress"
