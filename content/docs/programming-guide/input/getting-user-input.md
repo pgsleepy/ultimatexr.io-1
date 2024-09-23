@@ -247,7 +247,7 @@ bool areBothPressed = (UxrAvatar.LocalAvatarInput.GetButtonPressFlags(UxrHandSid
 ```
 
 {{% callout caution %}}
-When using input functionality that relies on values from the current or previous frames, it's crucial to make sure that the queries are performed [after the input was updated](/docs/programming-guide/architecture-uxrmanager#stage-update-events). 
+When using input functionality that relies on values from the current or previous frames, it's crucial to make sure that the queries are performed [after the input was updated](/docs/programming-guide/architecture/uxrmanager#stage-update-events). 
 {{% /callout %}}
 
 #### Event Querying
@@ -459,7 +459,7 @@ public class MyComponent : MonoBehaviour
 ## DebugInputPanel
 
 The DebugInputPanel is a prefab located at /Prefabs/UI/DebugInput/DebugInputPanel that can be used to debug controller input. It can be dropped in any scene and will show the input state of the connected controllers at runtime.
-It can also be found in the [example scene](/docs/guides/example-scene).
+It can also be found in the [example scene](/docs/getting-started/example-scene).
 
 It will show all 3 input element types. From top to bottom:
 - `UxrInput1D` elements, as a white dot inside a vertical bar.

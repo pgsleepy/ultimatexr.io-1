@@ -87,7 +87,7 @@ and
 
 {{% callout info %}}
 Normally custom components use `AvatarsUpdated` event to make sure the code is executed after UltimateXR finished updating.
-For components using grababble objects there are specific events detailed in the [manipulation guide](/docs/programming-guide/manipulation-update).
+For components using grababble objects there are specific events detailed in the [manipulation guide](/docs/programming-guide/manipulation/update).
 {{% /callout %}}
 
 ### Precaching Events
@@ -109,7 +109,7 @@ This feature plays a big role in the implementation of multiplayer and replays w
 
 For a full description of this method, consult the `UxrManager` [API reference](/api/T_UltimateXR_Core_UxrManager_ComponentStateChanged).
 
-State synchronization is covered in detail in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+State synchronization is covered in detail in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization/statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) guide.
 
 ## Teleporting
 
@@ -146,4 +146,4 @@ This functionality is crucial for multiplayer support, saving game states, and f
 
 For a full description of these methods, consult the `UxrManager` [API reference](/api/T_UltimateXR_Core_UxrManager#methods).
 
-State serialization is covered in detail in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+State serialization is covered in detail in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization/statesave) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) guide.

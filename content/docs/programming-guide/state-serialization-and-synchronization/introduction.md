@@ -126,7 +126,7 @@ All 3 interfaces are implemented by `UxrComponent`. Inheriting from `UxrComponen
 {{% callout info %}}
 If teams are already using a custom parent class in their codebase, C# does not support multiple inheritance, making it impossible to directly utilize UltimateXR's functionality in this manner. To address this limitation, UltimateXR offers implementer classes for IUxrUniqueId, IUxrStateSave, and IUxrStateSync. These implementer classes facilitate the implementation of the required interfaces.
 
-Consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for the implementation details.
+Consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization/custom-parent-class) for the implementation details.
 {{% /callout %}}
 
 Now let's start by knowing a little more about unique ids and why they're important.

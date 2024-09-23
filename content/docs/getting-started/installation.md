@@ -1,8 +1,8 @@
 ---
-title: "Getting started"
+title: "Installation"
 ---
 
-# Getting started
+# Installation
 
 ## Requirements
 

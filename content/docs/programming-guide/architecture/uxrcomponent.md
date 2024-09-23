@@ -14,7 +14,7 @@ We also encourage users to inherit from `UxrComponent`, or any of the core compo
 
 {{% callout info %}}
 If inheriting directly from `UxrComponent` is not possible, as C# does not support multiple inheritance, we offer an alternative method to implement the necessary interfaces.
-Please refer to the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for detailed implementation instructions.
+Please refer to the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization/custom-parent-class) for detailed implementation instructions.
 {{% /callout %}}
 
 ## Inheriting from `UxrComponent`
@@ -131,11 +131,11 @@ Besides the `UxrComponent<T>` and `UxrComponent<TP, TC>` variations, there are o
 
 ### `UxrGrabbableObjectComponent<T>`
 
-This component is covered in the [Manipulation](/docs/programming-guide/manipulation-uxrgrabbableobjectcomponent) section.
+This component is covered in the [Manipulation](/docs/programming-guide/manipulation/uxrgrabbableobjectcomponent) section.
 
 ### `UxrAbstractSingleton<T>` and `UxrSingleton<T>`
 
-These singleton components will be covered in the [next](/docs/programming-guide/architecture-singletons) section.
+These singleton components will be covered in the [next](/docs/programming-guide/architecture/singletons) section.
 
 ## Properties
 
@@ -147,7 +147,7 @@ UltimateXR provides a unique identifier to components within instances or prefab
 It is a key component used by other modules such as networking, save files and replays.
 
 {{% callout info %}}
-For a detailed view of the unique ID functionality, refer to the dedicated section on [unique ID](/docs/programming-guide/state-serialization-and-synchronization-unique-id) in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+For a detailed view of the unique ID functionality, refer to the dedicated section on [unique ID](/docs/programming-guide/state-serialization-and-synchronization/unique-id) in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) guide.
 {{% /callout %}}
 
 ### `IsBeingDestroyed` and `IsApplicationQuitting`
@@ -221,7 +221,7 @@ Whether to use the local or world version of the methods depends on whether the 
 
 `UxrComponent` implements 3 core interfaces: `IUxrUnique`, `IUxrStateSave` and `IUxrStateSync`. They provide high level functionality used in modules such as multiplayer, state-saving and replays.
 
-We present a brief overview of these methods below, with detailed technical documentation available in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide
+We present a brief overview of these methods below, with detailed technical documentation available in the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) guide
 
 ### IUxrUnique
 
@@ -229,7 +229,7 @@ The implementation of this interface provides unique id functionality.
 Besides the `UniqueId` property described earlier, this interface also has the following methods:
 
 {{% callout info %}}
-This functionality is fully detailed in the [unique ID](/docs/programming-guide/state-serialization-and-synchronization-unique-id) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+This functionality is fully detailed in the [unique ID](/docs/programming-guide/state-serialization-and-synchronization/unique-id) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) guide.
 {{% /callout %}}
 
 - `RegisterIfNecessary()`: Forces the component to be registered. This can be used in disabled components, where `Awake()` is not called until the object is enabled.
@@ -242,7 +242,7 @@ The implementation of this interface provides the ability for a component to ser
 It is used extensively by UltimateXR to provide high-level functionality such as multiplayer, save file and replay support.
 
 {{% callout info %}}
-This functionality is fully detailed in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization-statesave) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+This functionality is fully detailed in the [StateSave](/docs/programming-guide/state-serialization-and-synchronization/statesave) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) guide.
 {{% /callout %}}
 
 #### IUxrStateSave Related Properties
@@ -273,7 +273,7 @@ The implementation of this interface provides the ability for a component to rep
 It is used extensively by UltimateXR to provide high-level functionality such as multiplayer synchronization and replay support.
 
 {{% callout info %}}
-This functionality is fully detailed in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization-statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) guide.
+This functionality is fully detailed in the [StateSync](/docs/programming-guide/state-serialization-and-synchronization/statesync) section of the [state serialization and synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) guide.
 {{% /callout %}}
 
 #### IUxrStateSave Events

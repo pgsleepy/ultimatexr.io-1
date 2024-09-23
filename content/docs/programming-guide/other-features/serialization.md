@@ -12,10 +12,10 @@ title: "Serialization"
 
 ## Serialization Extensions
 
-## BinaryReaderExt
+## `BinaryReaderExt`
 
-## BinaryWriterExt
+## `BinaryWriterExt`
 
-## UxrBinarySerializer
+## `UxrBinarySerializer`
 
 ## Implementing `IUxrSerializable`

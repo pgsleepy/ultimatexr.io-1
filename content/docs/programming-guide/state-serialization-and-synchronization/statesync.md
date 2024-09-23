@@ -11,7 +11,7 @@ title: "State serialization and synchronization: StateSync"
 Any component that implements the `IUxrStateSync` interface, such as those derived from `UxrComponent`, automatically acquires this functionality.
 
 In cases where components are already derived from another class that cannot be modified, an implementer helper is available.
-Consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization-custom-parent-class) for the implementation details.
+Consult the [Custom Parent Class guide](/docs/programming-guide/state-serialization-and-synchronization/custom-parent-class) for the implementation details.
 
 **StateSync** and **StateSave** complement each other to facilitate the high-level functionalities discussed in other sections. **StateSync** assumes a pivotal role in:
 
@@ -95,9 +95,9 @@ In a standard single-user mode without active replay recording, these statements
 The `EndSyncProperty()` method requires the new property value as only parameter. Passing another value would change 
 the ammo that the multiplayer clients or replay will receive.
 
-Internally, the framework is be able to store the property and the component that is synchronized. A detailed examination of this process will be provided in the [Implementation Details](/docs/programming-guide/state-serialization-and-synchronization-statesync#implementation-details) section.
+Internally, the framework is be able to store the property and the component that is synchronized. A detailed examination of this process will be provided in the [Implementation Details](/docs/programming-guide/state-serialization-and-synchronization/statesync#implementation-details) section.
 
-UltimateXR is able to synchronize all [serializable](/docs/programming-guide/other-features-serialization#supported-types) property types. New types can be supported by [implementing](/docs/programming-guide/other-features-serialization#implementing-iuxrserializable) the `IUxrSerializable` interface.
+UltimateXR is able to synchronize all [serializable](/docs/programming-guide/other-features/serialization#supported-types) property types. New types can be supported by [implementing](/docs/programming-guide/other-features/serialization#implementing-iuxrserializable) the `IUxrSerializable` interface.
 
 Lastly, it's worth noting that unnecessary synchronization can be avoided by checking if the value is actually being changed:
 ```c#
@@ -142,7 +142,7 @@ public void Shoot(Vector3 startPosition, Vector3 direction, float speed, int dam
 In this case, the corresponding end statement is `EndSyncMethod()`. It requires an object array passing the same parameters the method was invoked with. These parameters will be used to replicate the call in other clients and register it in a replay recording.
 If the method is parameterless, it can be simply invoked using `EndSyncMethod()` without any arguments.
 
-UltimateXR is able to synchronize all [serializable](/docs/programming-guide/other-features-serialization#supported-types) method parameter types. New types can be supported by [implementing](/docs/programming-guide/other-features-serialization#implementing-iuxrserializable) the `IUxrSerializable` interface.
+UltimateXR is able to synchronize all [serializable](/docs/programming-guide/other-features/serialization#supported-types) method parameter types. New types can be supported by [implementing](/docs/programming-guide/other-features/serialization#implementing-iuxrserializable) the `IUxrSerializable` interface.
 
 ## Synchronization and flow control
 
