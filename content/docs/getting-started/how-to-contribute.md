@@ -21,7 +21,7 @@ One simple yet impactful way to support UltimateXR is by [starring the project o
 ### Code Contributions
 
 Found a bug? Have a brilliant idea for a new feature? We welcome all code contributions! Fork our repository, make your changes, and submit a pull request. Our team will review it promptly.
-Check the [Extending UltimateXR](/docs/programming-guide/architecture-extending-ultimatexr) section for ideas.
+Check the [Extending UltimateXR](/docs/programming-guide/architecture/extending-ultimatexr) section for ideas.
 
 ### Documentation Improvements
 

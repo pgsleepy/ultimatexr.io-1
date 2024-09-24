@@ -14,7 +14,7 @@ Keep an eye out for regular updates, as new features will be periodically added 
 
 While the example scene currently targets the Universal Render Pipeline (URP), we're actively working to extend support to other pipelines such as the High Definition Render Pipeline (HDRP) in the near future. Stay tuned for more updates on this front!
 
-![](/docs/guides/media/getting-started/01Avatar.png)
-![](/docs/guides/media/getting-started/02Lab.png)
-![](/docs/guides/media/getting-started/03ShootingRange.png)
-![](/docs/guides/media/getting-started/04Console.png)
+![](/media/docs/getting-started/example-scene/01Avatar.png)
+![](/media/docs/getting-started/example-scene/02Lab.png)
+![](/media/docs/getting-started/example-scene/03ShootingRange.png)
+![](/media/docs/getting-started/example-scene/04Console.png)

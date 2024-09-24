@@ -8,17 +8,17 @@ title: "PicoXR"
 
 Switch to Android using File -> Buid Settings.
 
-![](/docs/guides/media/supported-platforms/PicoXR01Android.png)
+![](/docs/guides/media/supported-platforms/picoxr/PicoXR01Android.png)
  
-Open the UltimateXR SDK Manager using the menu Tools -> UltimateXR -> SDK Manager. Click Get SDK under the Pico XR section. This will open the link to install the PicoXR support.
+Open the UltimateXR SDK Manager using the menu Tools -> UltimateXR -> SDKs -> SDK Manager. Click Get SDK under the Pico XR section. This will open the link to install the PicoXR support.
 
-![](/docs/guides/media/supported-platforms/PicoXR02SDKManager.png)
+![](/docs/guides/media/supported-platforms/picoxr/PicoXR02SDKManager.png)
  
 Download and unzip the package to a folder. If you are using versioning software you may want to unzip the package to a folder under version control, while keeping it outside of the project’s Assets folder. This will make sure the package is available to all users.
 
 Go to the Unity Package Manager using the menu Window -> Package Manager. Click on the + and select Add package from disk…
 
-![](/docs/guides/media/supported-platforms/PicoXR03AddPackage.png)
+![](/docs/guides/media/supported-platforms/picoxr/PicoXR03AddPackage.png)
  
 Navigate to the unzipped folder and select the package.json to install the Pico XR support.
 
@@ -26,11 +26,11 @@ Follow [these instructions](https://developer-global.pico-interactive.com/docume
 
 Go to Edit -> Project Settings and enable PicoXR support for both the desktop and Android platforms.
  
-![](/docs/guides/media/supported-platforms/PicoXR04AddSupport.png)
+![](/docs/guides/media/supported-platforms/picoxr/PicoXR04AddSupport.png)
 
 Enable Multiview under the Android PicoXR settings
 
-![](/docs/guides/media/supported-platforms/PicoXR05Multiview.png)
+![](/docs/guides/media/supported-platforms/picoxr/PicoXR05Multiview.png)
  
 Your application should now be compatible with the Pico headset and controllers.
 To be able to use Play Mode to preview the scene in Unity, and not just create Pico-compatible builds, you will need to install the Pico Developer Center (PDC).

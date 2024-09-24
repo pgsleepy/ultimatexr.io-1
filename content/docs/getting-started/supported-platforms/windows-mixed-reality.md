@@ -8,11 +8,11 @@ title: "Windows Mixed Reality"
 
 Open Edit -> Project Settings and enable Open XR support. You may get a warning to activate the new input system. Select Yes.
 
-![](/docs/guides/media/supported-platforms/WMR01OpenXR.png)
+![](/docs/guides/media/supported-platforms/windows-mixed-reality/WMR01OpenXR.png)
 
 After enabling Open XR support go to the OpenXR settings and add the Microsoft Motion Controller Profile.
 
-![](/docs/guides/media/supported-platforms/WMR02AddProfile.png)
+![](/docs/guides/media/supported-platforms/windows-mixed-reality/WMR02AddProfile.png)
 
 You will now have support for the standard Microsoft Motion Controllers.
 
@@ -24,18 +24,18 @@ Unzip the downloaded file to a folder and run the MixedRealityFeatureTool.exe.
 
 Click Start.
 
-![](/docs/guides/media/supported-platforms/WMR03ClickStart.png)
+![](/docs/guides/media/supported-platforms/windows-mixed-reality/WMR03ClickStart.png)
  
 Choose the project folder and click Discover Features.
 
-![](/docs/guides/media/supported-platforms/WMR04SetupProjectFolder.png)
+![](/docs/guides/media/supported-platforms/windows-mixed-reality/WMR04SetupProjectFolder.png)
  
 Only select the Mixed Reality Open_XR Plugin and click Get Features. The content will be downloaded.
 
-![](/docs/guides/media/supported-platforms/WMR05OpenXRPlugin.png)
+![](/docs/guides/media/supported-platforms/windows-mixed-reality/WMR05OpenXRPlugin.png)
  
 Click Import, then Approve and Exit.
 
 Back in Unity you should now be able to install the HP Reverb G2 Controller Profile.
 
-![](/docs/guides/media/supported-platforms/WMR06NewProfile.png)
+![](/docs/guides/media/supported-platforms/windows-mixed-reality/WMR06NewProfile.png)
