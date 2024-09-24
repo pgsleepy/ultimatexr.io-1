@@ -2,6 +2,8 @@
 title: "Creating a Staff"
 ---
 
+/media/docs/tutorials/manipulation/creating-a-staff/staff_twirl.mp4
+
 # Creating a Staff
 
 
