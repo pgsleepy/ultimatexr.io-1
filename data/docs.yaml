@@ -200,6 +200,7 @@
           url: "/docs/tutorials/locomotion/using-teleport-spawn-colliders"
     - title: "Manipulation"
       url: ""
+      label: "in progress"
       items:
         - title: "Creating a Grabbable Ball"
           url: "/docs/tutorials/manipulation/creating-a-grabbable-ball"
