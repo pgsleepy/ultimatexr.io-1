@@ -10,7 +10,7 @@ Grab Point Shapes make it simpler and faster to extend your grabs along a shape.
 #### UxrGrabPointShapeAxisAngle - The Straight Line
 In this section, we'll take a look at the Axis Angle. This Grab Point Shape extends grabs in a straight line along a single axis. Once added, a white line will appear on your object. Note that, depending on your models initial orientiation, the line may be set correctly and be visible inside your model or perpendicular. Ensure your *Gizmos* are turned in the Scene view to see it.
 
-![](/docs/tutorials/media/grabpointshape/02AxisAngleComponent.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/02AxisAngleComponent.png)
 
 **Component Definitions**
 1) **Grab Point Index** - The index of the grab point that the axis angle will use as its base.
@@ -34,7 +34,7 @@ In this section, we'll apply what we've learned so far and make a staff that we 
 #### Model Setup
 First, we'll set up our staff with an Empty Object as our base. Then as a child object, create a second empty object and we'll call this Staff Model. Finally, as a child object of the Staff Model object, create a Cylinder. 
 
-![](/docs/tutorials/media/grabpointshape/01StaffSetup.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/01StaffSetup.png)
 
 - **Why don't I just use the cylinder instead of all these empty objects?** 
 
@@ -43,23 +43,23 @@ You can. However, the base cylinder is usually too big and not long enough for a
 #### Component Setup
 
 - Next, set up your "Base" grabs on the main parent object, in our example that would is the *Staff* Game Object. If you need assistance, check out [Create a Grabbable Ball](/docs/tutorials/manipulation/creating-a-grabbable-ball) for details on setting up the [UxrGrabbableObject](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class). The settings can be different to fit your needs, but the *Grip Pose*, *Grip Snap Left Hand* and *Grip Snap Right Hand* values need to be set up.
-![](/docs/tutorials/media/grabpointshape/04GrabbableComponent.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/04GrabbableComponent.png)
 -  To set up the [UxrGrabPointShapeAxisAngle](/api/T_UltimateXR_Manipulation_UxrGrabPointShapeAxisAngle#uxrgrabpointshapeaxisangle-class), add the component onto the same object as your [UxrGrabbableObject](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class)
 
-![](/docs/tutorials/media/grabpointshape/02AxisAngleComponent.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/02AxisAngleComponent.png)
 
 - Create an Empty GameObject as a child of your parent Game Object. Set the name to "Center" for organization purposes and position it in the center of your model.
-![](/docs/tutorials/media/grabpointshape/03CenterObject.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/03CenterObject.png)
 - Select the [UxrGrabPointShapeAxisAngle](/api/T_UltimateXR_Manipulation_UxrGrabPointShapeAxisAngle#uxrgrabpointshapeaxisangle-class) component on your object and drag your new Center object into the Center Transform slot in the Inspector.
-![](/docs/tutorials/media/grabpointshape/05CenterTransformInComponent.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/05CenterTransformInComponent.png)
 
 If everything was done correctly, we should now see a small line appear near the Center of the staff. This line represents the path along which grabs will be available. Obviously we dont want the player to be able to grab the air around the side of the staff so lets tweak the settings in the [UxrGrabPointShapeAxisAngle](/api/T_UltimateXR_Manipulation_UxrGrabPointShapeAxisAngle#uxrgrabpointshapeaxisangle-class) to get it to fit our needs.
 
 First, we'll set the Axis Angle so that it runs along the path we want. In this case, we'll set it to the Y axis.
-![](/docs/tutorials/media/grabpointshape/07LineAxisChanged.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/07LineAxisChanged.png)
 
 Next, if we look close, the line is still relatively close to the center of our staff. If we try to grab it now, it will work! but only near the middle where that line is. In order to extend it, we'll adjust the *Offset Min* and *Offset Max* values to fit the length of our staff.
-![](/docs/tutorials/media/grabpointshape/08OffsetMinMax.png)
+![](/media/docs/tutorials/manipulation/creating-a-staff/08OffsetMinMax.png)
 
 Notice how we left just a little bit of room between the end of the line and the model. This is because, if we extend the line to the very edge of the model, if the player grabs at that end, you could have situations where the grab appears to be halfway off the model. So, by leaving just a little bit of space, you can make sure you have really good visuals and the player gets a "full" grab. This is completely optional though and depends on your specific use case. Tweak the values and test them to find your perfect balance!
 
