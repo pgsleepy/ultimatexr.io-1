@@ -12,8 +12,22 @@
   padding: 0;
 }
 
+.pagination ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination ul li a {
+  display: flex;
+  flex-direction: column;
+}
+
 .pagination ul li:last-of-type {
   text-align: end;
+}
+
+.pagination ul li:last-of-type a {
+  align-items: flex-end;
 }
 
 .pagination-label {
