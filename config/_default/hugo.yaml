@@ -17,7 +17,7 @@ menu:
   main:
     - identifier: docs
       name: Docs
-      url: /docs/guides/what-is-ultimatexr
+      url: /docs/getting-started/what-is-ultimatexr
       weight: 10
     - identifier: scripting
       name: API
