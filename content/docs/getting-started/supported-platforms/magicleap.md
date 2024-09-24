@@ -9,7 +9,7 @@ title: "Magic Leap"
 Make sure you're using Unity 2022.3 LTS or higher.
 Switch to Android using File -> Buid Settings.
 
-![](/media/docs/getting-started/supported-platforms/magicleap/PicoXR01Android.png)
+![](/media/docs/_common/AndroidPlatform.png)
  
 Open the UltimateXR SDK Manager using the menu Tools -> UltimateXR -> SDKs -> SDK Manager. Click Get SDK under the Magic Leap section. This will open a page with instructions to install all the required elements.
 

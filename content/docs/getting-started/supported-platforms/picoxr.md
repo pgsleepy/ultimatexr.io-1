@@ -8,7 +8,7 @@ title: "PicoXR"
 
 Switch to Android using File -> Buid Settings.
 
-![](/docs/guides/media/supported-platforms/picoxr/PicoXR01Android.png)
+![](/media/docs/_common/AndroidPlatform.png)
  
 Open the UltimateXR SDK Manager using the menu Tools -> UltimateXR -> SDKs -> SDK Manager. Click Get SDK under the Pico XR section. This will open the link to install the PicoXR support.
 
