@@ -69,14 +69,14 @@ URP is recommended when creating Virtual Reality applications in Unity for the f
  
 To create a project using the Universal Render Pipeline, create a new project and select the URP template:
 
-![](![](/media/docs/getting-started/installation/02NewProject.png)
+![](/media/docs/getting-started/installation/02NewProject.png)
 
 Now go to Edit -> Project settings. Select XR Plugin Management and install the XR Plugin Management package. This will enable the creation of virtual reality applications.
 
-![](![](/media/docs/getting-started/installation/03XRPluginManagement1.png)
+![](/media/docs/getting-started/installation/03XRPluginManagement1.png)
  
 After installing the XR Plugin Management you may activate support for some of the devices that have out-of-the-box integration with Unity. Remember to activate them in desktop, which is used both by the editor in play mode and by desktop builds, and also in the destination platform for your builds, which may be different.
 
-![](![](/media/docs/getting-started/installation/04XRPluginManagement2.png)
+![](/media/docs/getting-started/installation/04XRPluginManagement2.png)
  
 Your project is now ready to go! You may want to add support for different XR devices next. Luckily UltimateXR takes care of seamlessly integrating with different XR APIs. Go to the Integrations section to check how to add support for your target devices.
