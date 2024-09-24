@@ -1,62 +1,43 @@
-<!-- Load importmap.json from Site.Data -->
-{{- $importmap := .Site.Params.Importmap -}}
+<!-- Retrieve modules from site params -->
+{{- $modules := .Site.Params.jsmodules -}}
 
-<!-- Initialize an empty dictionary for processed JS -->
-{{- $processedJs := dict -}}
+<!-- Initialize an empty dictionary for imports -->
+{{- $imports := dict -}}
 
-{{- range $importName, $path := $importmap.imports -}}
-
-  <!-- Skip processing for external URLs (http:// or https://) -->
-  {{- if or (strings.HasPrefix $path "http://") (strings.HasPrefix $path "https://") -}}
-    {{- $processedJs = merge $processedJs (dict $importName $path) -}}
-
+<!-- Process each module -->
+{{- range $key, $value := $modules -}}
+  {{- $path := "" -}}
+  {{- if or (hasPrefix $value "http://") (hasPrefix $value "https://") -}}
+    {{- $path = $value -}}
   {{- else -}}
-    {{- $resource := resources.Get $path -}}
-
-    {{- if $resource -}}
-      <!-- Initialize variable for processed resource -->
-      {{- $builtResource := $resource -}}
-
-      <!-- Only process JS files that start with "js/lib/" -->
-      {{- if strings.HasPrefix $path "js/lib/" -}}
-        {{- $builtResource = $resource | js.Build (dict "minify" true "format" "esm" "target" "esnext") | fingerprint -}}
-      {{- else -}}
-        <!-- If not in "js/lib/", just fingerprint without js.Build -->
-        {{- $builtResource = $resource | fingerprint -}}
-      {{- end -}}
-
-      <!-- Merge the processed resource into $processedJs -->
-      {{- $processedJs = merge $processedJs (dict $importName $builtResource.RelPermalink) -}}
-    
-    {{- else -}}
-      <!-- Log a warning if the resource doesn't exist -->
-      {{- warnf "Resource not found: %s (import '%s')" $path $importName -}}
-    {{- end -}}
-
+    {{- $resource := resources.Get $value | fingerprint -}}
+    {{- $path = $resource.RelPermalink -}}
   {{- end -}}
-
+  {{- $imports = merge $imports (dict $key $path) -}}
 {{- end -}}
 
-<!-- Output the import map -->
-<script type="importmap">
-  {{-
-    dict "imports" $processedJs | jsonify | safeHTML
-  -}}
+<!-- Import Map -->
+<script type="importmap" data-turbo-track="reload">
+{
+  "imports": {{ $imports | jsonify (dict "indent" "  ") }}
+}
 </script>
 
-<!-- Preload the processed JavaScript assets -->
-{{- range $importName, $RelPermalink := $processedJs -}}
-  <link rel="modulepreload" href="{{- $RelPermalink -}}">
-{{- end -}}
+<!-- Module Preloads -->
+{{- range $key, $path := $imports -}}
+<link rel="modulepreload" href="{{ $path }}">
+{{ end }}
 
 <!-- Initialize the main JavaScript module -->
 <script type="module">
   import "application"
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/video.js@7.19.2/dist/video.min.js"></script>
+
 {{- if hugo.IsProduction -}}
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{- .Site.Params.google_tag_id -}}"></script>
+  <script async src="https://www.js?id={{- .Site.Params.google_tag_id -}}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
