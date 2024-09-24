@@ -23,7 +23,7 @@ That's it! With the default settings, you can now smoothly move with the left co
 
 What's Next? Tweak the following parameters to dial in the precise movement you desire.
 
-![](/docs/guides/media/locomotion/04SmoothLocomotion.jpg)
+![](/docs/guides/media/locomotion/smooth-locomotion/SmoothLocomotion.jpg)
  
 ### General parameters
 - *Parent To Destination*: Whether to parent the avatar to the destination object after teleport. Use it when building applications with moving vehicles or platforms the avatar can move on, so that the avatar keeps the relative position/orientation after teleporting.
