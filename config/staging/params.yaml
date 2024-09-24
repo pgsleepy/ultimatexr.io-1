@@ -1,4 +1,0 @@
-importmap:
-  imports:
-    lucide: "js/lib/lucide/lucide.js"
-    "@hotwired/turbo": "js/lib/turbo/turbo.es2017-esm.js"

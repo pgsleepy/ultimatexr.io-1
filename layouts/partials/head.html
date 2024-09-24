@@ -19,6 +19,8 @@
 <!-- Concatenate and fingerprint CSS assets -->
 {{- $style_css := slice
   (resources.Get "css/reset.css" | resources.ExecuteAsTemplate "reset.css" .)
+  (resources.Get "css/lib/videojs.css" | resources.ExecuteAsTemplate "videojs.css" .)
+  (resources.Get "css/lib/docsearch.css" | resources.ExecuteAsTemplate "docsearch.css" .)
   (resources.Get "css/variables.css" | resources.ExecuteAsTemplate "variables.css" .)
   (resources.Get "css/theme-dark.css" | resources.ExecuteAsTemplate "theme-dark.css" .)
   (resources.Get "css/trailer.css" | resources.ExecuteAsTemplate "trailer.css" .)
@@ -40,14 +42,14 @@
   (resources.Get "css/footer.css" | resources.ExecuteAsTemplate "footer.css" .)
   (resources.Get "css/home.css" | resources.ExecuteAsTemplate "home.css" .)
   (resources.Get "css/api.css" | resources.ExecuteAsTemplate "api.css" .)
-  (resources.Get "css/docsearch.css" | resources.ExecuteAsTemplate "docsearch.css" .)
+  (resources.Get "css/search.css" | resources.ExecuteAsTemplate "search.css" .)
 | resources.Concat "css/style.css" | minify | fingerprint -}}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 
 <!-- Use the concatenated and fingerprinted CSS file -->
-<link rel="stylesheet" type="text/css" href="{{- $style_css.RelPermalink -}}">
+<link rel="stylesheet" type="text/css" href="{{- $style_css.RelPermalink -}}" data-turbo-track="reload">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://{{- .Site.Params.algolia_app_id -}}.algolia.net" crossorigin>
@@ -59,8 +61,6 @@
 <link rel="manifest" href="{{- $site_webmanifest.RelPermalink -}}">
 <link rel="icon" type="image/x-icon" href="{{- $favicon.RelPermalink -}}">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" rel="stylesheet">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">

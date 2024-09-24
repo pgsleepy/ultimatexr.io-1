@@ -12,6 +12,20 @@ params:
   discord_server_url: https://discord.gg/GXHdneaFjA
   algolia_app_id: es5exujlvc
   google_tag_id: G-MC0JGRZ79C
+  jsmodules:
+    application: "js/application.js"
+    api: "js/api.js"
+    icons: "js/icons.js"
+    navigation: "js/navigation.js"
+    search: "js/search.js"
+    theme: "js/theme.js"
+    toc: "js/toc.js"
+    trailer: "js/trailer.js"
+    components/theme_manager: "js/components/theme_manager.js"
+    lucide: "js/lib/lucide.js"
+    "@hotwired/turbo": "js/lib/turbo.es2017-esm.js"
+    docsearch: "js/lib/docsearch.js"
+    videojs: "https://cdn.jsdelivr.net/npm/video.js@7.19.2/+esm"
 
 menu:
   main:
@@ -40,12 +54,3 @@ markup:
   highlight:
     style: vs
     noClasses: false
-
-module:
-  mounts:
-    - source: node_modules/@hotwired/turbo/dist
-      target: assets/js/lib/turbo
-    - source: node_modules/lucide/dist/esm
-      target: assets/js/lib/lucide
-    - source: assets
-      target: assets
