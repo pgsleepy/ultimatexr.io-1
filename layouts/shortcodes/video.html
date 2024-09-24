@@ -59,13 +59,12 @@
     {{- $videoURL = $src -}}
 {{- else if or (strings.HasPrefix $src "/videos/") (strings.HasPrefix $src "/media/") -}}
     {{- /* Video under assets/, fingerprint it */ -}}
-    {{- $cleanedSrc := strings.TrimPrefix "/" $src -}}
-    {{- $videoResource := resources.Get $cleanedSrc -}}
+    {{- $videoResource := resources.Get $src -}}
     {{- if $videoResource -}}
         {{- $fingerprint := $videoResource | resources.Fingerprint "sha256" -}}
         {{- $videoURL = $fingerprint.RelPermalink -}}
     {{- else -}}
-        {{- errorf "Video resource '%s' not found in assets" $cleanedSrc -}}
+        {{- errorf "Video resource '%s' not found in assets" $src -}}
     {{- end -}}
 {{- else -}}
     {{- /* Handle videos as page resources */ -}}
@@ -73,15 +72,8 @@
     {{- if $videoResource -}}
         {{- $videoURL = $videoResource.Permalink -}}
     {{- else -}}
-        {{- errorf "Video resource '%s' not found" $cleanedSrc -}}
+        {{- errorf "Video resource '%s' not found" $src -}}
     {{- end -}}
 {{- end -}}
 
-{{- /* Determine the MIME type */ -}}
-{{- $mimeType := $params.type -}}
-{{- if not $mimeType -}}
-    {{- $ext := path.Ext $src | lower -}}
-    {{- $mimeType = printf "video/%s" (strings.TrimPrefix "." $ext) -}}
-{{- end -}}
-
-<p><video {{ $attrsString | safeHTMLAttr }}><source src="{{- $videoURL -}}" type="{{- $mimeType -}}"></video></p>
+<p><div data-controller="media"><video {{ $attrsString | safeHTMLAttr }} src="{{- $videoURL -}}" data-media-target="mediaElement"></div></p>

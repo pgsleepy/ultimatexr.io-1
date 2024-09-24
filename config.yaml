@@ -24,6 +24,7 @@ params:
     components/theme_manager: "js/components/theme_manager.js"
     lucide: "js/lib/lucide.js"
     "@hotwired/turbo": "js/lib/turbo.es2017-esm.js"
+    "@hotwired/stimulus": "js/lib/stimulus.js"
     docsearch: "js/lib/docsearch.js"
     videojs: "https://cdn.jsdelivr.net/npm/video.js@7.19.2/+esm"
 
