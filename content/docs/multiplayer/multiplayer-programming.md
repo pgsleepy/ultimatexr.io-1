@@ -49,7 +49,8 @@ Here's an example that implements **StateSave** and **StateSync** functionality 
 ```c#
 public Player : UxrComponent
 {
-    // IsInvincible property has setter with StateSync support. Whenever it changes, it will be changed in the same instance on all other clients too.
+    // IsInvincible property has setter with StateSync support.
+    // Whenever it changes, it will be changed in the same instance on all other clients too.
     public bool IsInvincible
     {
         get => _isInvincible;
@@ -62,7 +63,8 @@ public Player : UxrComponent
         }
     }
 
-    // Shoot() method has StateSync support. Whenever it's called, it will be called on the same instance on all other clients too.
+    // Shoot() method has StateSync support. Whenever it's called,
+    // it will be called on the same instance on all other clients too.
     public void Shoot(Vector3 pos, Vector3 dir)
     {
         BeginSync();
@@ -71,8 +73,8 @@ public Player : UxrComponent
         EndSyncMethod(new object[] { enabled, color });
     }
 
-    // SerializeState() is used for StateSave support. It is used for both serialization and deserialization to
-    // avoid requiring separate read and write methods.
+    // SerializeState() is used for StateSave support. It is used for both
+    // serialization and deserialization to avoid requiring separate read and write methods.
     protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
     {
         // Always call base implementation first using the same parameters
