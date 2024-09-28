@@ -1,0 +1,12 @@
+params:
+  website_contributing_branch: dev
+
+module:
+  mounts:
+  - source: content
+    target: content
+    excludeFiles: []
+  - source: content/api/src
+    target: content/api
+  - source: content/api/src/R_Project_UltimateXR.md
+    target: content/api/_index.md

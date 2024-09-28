@@ -1,5 +1,6 @@
 {{ define "head" }}
   <base href="/api/">
+  {{ .Scratch.Set "title" "API Reference" }}
 {{ end }}
 
 {{ define "sidebar" }}
@@ -7,13 +8,11 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ with .Site.GetPage "/api/R_Project_UltimateXR.md" }}
-    {{ $content := .Content }}
-    {{ $content = replaceRE `\((((\<em\>)?(T\S?)(\<\/em\>)?(,\s?)?)+)\)` `&lt;$1&gt;` $content }}
-    {{ $content = replaceRE `<a href="(.+)" rel="noopener noreferrer" title="View the source code">View Source</a>` `` $content }}
-    {{ $content = replaceRE `<a href="(.+)">Back to Top</a>` `` $content }}
-    {{ $content = replaceRE `(<p>| |\s)*<table>` `<table>` $content }}
-    {{ $content = replaceRE `</table>(</p>| |\s)*` `</table>` $content }}
-    {{ $content | safeHTML }}
-  {{ end }}
+  {{ $content := .Content }}
+  {{ $content = replaceRE `\((((\<em\>)?(T\S?)(\<\/em\>)?(,\s?)?)+)\)` `&lt;$1&gt;` $content }}
+  {{ $content = replaceRE `<a href="(.+)" rel="noopener noreferrer" title="View the source code">View Source</a>` `` $content }}
+  {{ $content = replaceRE `<a href="(.+)">Back to Top</a>` `` $content }}
+  {{ $content = replaceRE `(<p>| |\s)*<table>` `<table>` $content }}
+  {{ $content = replaceRE `</table>(</p>| |\s)*` `</table>` $content }}
+  {{ $content | safeHTML }}
 {{ end }}

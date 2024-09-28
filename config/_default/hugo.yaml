@@ -11,7 +11,7 @@ params:
   website_contributing_branch: dev
   discord_server_url: https://discord.gg/GXHdneaFjA
   algolia_app_id: es5exujlvc
-  google_tag_id: G-MC0JGRZ79C
+  google_tag_id: G-XXXXXXXXXX
   jsmodules:
     application: "js/application.js"
     api: "js/api.js"
@@ -54,3 +54,9 @@ markup:
   highlight:
     style: vs
     noClasses: false
+
+module:
+  mounts:
+  - source: content
+    target: content
+    excludeFiles: ['api/src']
