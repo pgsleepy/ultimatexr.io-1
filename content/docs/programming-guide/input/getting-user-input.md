@@ -19,7 +19,7 @@ A dummy controller input removes the need for null checks and will not generate 
 - `UxrControllerSetupType.Single`: Single controller setup, such as a gamepad, remote or a gun.
 - `UxrControllerSetupType.Dual`: Dual controller setup (left+right controllers).
 
-![](/docs/programming-guide/media/ControllerTypes.png)
+![](/media/docs/programming-guide/input/getting-user-input/ControllerTypes.png)
 **Image**: A dual controller setup on the left (Quest 3 controllers) and single controllers on the right (Oculus Go and Gamepad).
 
 ## Controller Capabilities
@@ -67,7 +67,8 @@ static void SetIgnoreControllerInput(UxrHandSide handSide, bool ignore)
 It is still possible, however, to get input from a controller that is being ignored. By default, all methods that query for user input will not return any data. These methods have an optional `getIgnoredInput` parameter that can be set to `true` to get input even if the controller is set to be ignored.
 
 This functionality can be used to, for example, ignore input while a virtual controller is being manipulated to avoid teleporting:
-![](/docs/programming-guide/media/ControllerMapping.gif)
+
+/media/docs/programming-guide/input/getting-user-input/ControllerMapping.mp4
 
 ## Controller Elements
 
@@ -329,7 +330,7 @@ UltimateXR supports `Grip`, `Trigger` and `Trigger2`. While `Grip` and `Trigger`
 The `Input1DToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given element is present on the active controllers.
 {{% /callout %}}
 
-![](/docs/programming-guide/media/GripAndTrigger.png)
+![](/media/docs/programming-guide/input/getting-user-input/GripAndTrigger.png)
 **Image**: Examples of 1. Trigger, 2. Grip
 
 ### `UxrInput1D` Input Methods
@@ -389,7 +390,7 @@ UltimateXR supports `Joystick` and `Joystick2`. Most controllers come with a `Jo
 The `Input2DToControllerElement()` method can be used together with `HasControllerElements()` to check whether a given element is present on the active controllers.
 {{% /callout %}}
 
-![](/docs/programming-guide/media/WMR_Index.png)
+![](/media/docs/programming-guide/input/getting-user-input/WMR_Index.png)
 **Image**: Examples of controllers with 2 joysticks. The windows Mixed Reality controllers (Left) have a joystick and a circular touchpad. Valve Index controllers (right) also have a joystick and touchpad. Even though the Valve Index touchpad has a more vertical shape, the input it provides is 2D.
 
 It is possible to retrieve whether a controller has a joystick or touchpad as primary `Joystick` element using the `MainJoystickIsTouchpad` property.
@@ -472,4 +473,4 @@ It will show all 3 input element types. From top to bottom:
   - `PressDown`: whether the button started being pressed the present frame.
   - `PressUp`: whether the press was released.
 
-![](/docs/programming-guide/media/DebugInputPanel.gif)
+/media/docs/programming-guide/input/getting-user-input/DebugInputPanel.mp4

@@ -8,7 +8,7 @@ The list of supported SDKs may change as we can add support for new systems.
 
 To check the list of available SDKs and install them, open the SDK Manager using the Unity Tools Menu -> UltimateXR -> SDKs -> SDK Manager.
 
-![](/docs/multiplayer/media/supported-platforms/SDKManager.png)
+![](/media/docs/multiplayer/supported-platforms/SDKManager.png)
 
 Use the tabs on top of the SDK Manager to navigate to the Networking SDKs or the Voice over Network SDKs.
 

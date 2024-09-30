@@ -64,7 +64,7 @@
         - title: "Assemblies and Namespaces"
           url: "/docs/programming-guide/architecture/assemblies-and-namespaces"
         - title: "Core Components Diagram"
-          url: "/docs/programming-guide/architecture/class-diagram"
+          url: "/docs/programming-guide/architecture/core-components-diagram"
         - title: "UxrComponent"
           url: "/docs/programming-guide/architecture/uxrcomponent"
         - title: "Singletons"

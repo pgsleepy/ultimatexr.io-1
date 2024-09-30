@@ -65,7 +65,7 @@ The different stages are defined by the `UxrUpdateStage` enum:
 
 The following diagram provides on the left a high level view of the stages involved in the update during a single frame. On the right it shows the events triggered before and after each stage.
 
-![](/docs/programming-guide/media/UxrManagerUpdateOrder.png)
+![](/media/docs/programming-guide/architecture/uxrmanager/UxrManagerUpdateOrder.png)
 
 The `Update` stage runs within the Unity `Update()` method of `UxrManager`. All the other stages, known collectively as **PostUpdate**, are normally executed within the `LateUpdate()` method of `UxrManager`. This behavior can be adjusted using the `PostUpdateMode` property or inspector variable. It can be set to either `Update`, for execution during `Update()`, or `LateUpdate`, for execution during `LateUpdate()`.
 
@@ -103,7 +103,7 @@ It acts as a central point for capturing component changes, useful for synchroni
 
 The descriptor passed to the `ComponentStateChanged` event can be serialized into a byte stream and deserialized back, enabling the replication of the same changes they represent using the `ExecuteStateSyncEvent` method in `UxrManager`.
 
-![](/docs/programming-guide/media/StateSyncDiagram.png)
+![](/media/docs/programming-guide/architecture/uxrmanager/StateSyncDiagram.png)
 
 This feature plays a big role in the implementation of multiplayer and replays within UltimateXR.
 
