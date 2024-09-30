@@ -6,7 +6,7 @@ title: "UxrLaserPointer"
 
 The *UxrLaserPointer* shows the following parameters:
 
-![](/docs/guides/media/ui/07LaserPointerComponent.jpg)
+![](/media/docs/ui-interaction/uxrlaserpointer/07LaserPointerComponent.jpg)
  
 ### General properties
 

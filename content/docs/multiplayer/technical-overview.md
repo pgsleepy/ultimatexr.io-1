@@ -10,7 +10,7 @@ The following overview is highly technical and intended for developers who want 
 
 This diagram provides a simplified connectivity overview:
 
-![](/docs/multiplayer/media/technical-overview/ConnectionDiagram.png)
+![](/media/docs/multiplayer/technical-overview/ConnectionDiagram.png)
 
 The colored dots represent components in the scene that require network synchronization: UltimateXR components and custom user components that use the UltimateXR synchronization API.
 
@@ -24,7 +24,7 @@ The UltimateXR network connectors are a small collection of components for each 
 
 The source code for network connectors can be found under the directory at /Scripts/Networking/Integrations/Net. The Voice directory will contain the connectors for the voice-over-network SDKs.
 
-![](/docs/multiplayer/media/technical-overview/Connectors.png)
+![](/media/docs/multiplayer/technical-overview/Connectors.png)
 
 For each networking system, there are always 2 key components that form the connector:
 1) The **network implementation**, deriving from `UxrNetworkImplementation`. For example `UxrFishNetNetwork` or `UxrUnityNetCodeNetwork`. This component is added by the `UxrNetworkManager` to the same GameObject and is responsible for creating all the other necessary components to enable networking support for the selected networking system SDK, such as:
@@ -125,7 +125,7 @@ But how? Whenever any component in UltimateXR finishes a synchronization block, 
 All of this functionality is provided by UltimateXR, with the multiplayer SDK used only to broadcast the serialized events through the network.
 
 The diagram describing this process is shown below:
-![](/docs/programming-guide/media/StateSyncDiagram.png)
+![](/media/docs/programming-guide/architecture/uxrmanager/StateSyncDiagram.png)
 
 {{% callout info %}}
 **StateSync** can also be used beyond multiplayer. Keeping track of all changes and storing them in a timeline is the basis of our replay system.
