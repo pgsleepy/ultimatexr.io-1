@@ -12,11 +12,11 @@ The *UxrControlInput* is a very useful component that provides additional functi
 
 Audio and haptic feedback can be configured using the *UxrControlInput* inspector:
 
-![](/docs/guides/media/ui/08ControlInput.jpg)
+![](/media/docs/ui-interaction/uxrcontrolinput/08ControlInput.jpg)
  
 Which completely expanded looks like this:
 
-![](/docs/guides/media/ui/09ExpandedControlInput.jpg) 
+![](/media/docs/ui-interaction/uxrcontrolinput/09ExpandedControlInput.jpg) 
 
 Each press/release/click event allows to specify an optional audio clip that should be played and optional haptic feedback.
 
