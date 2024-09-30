@@ -3,8 +3,8 @@
 {{ $rawContent = replaceRE `(## Inheritance Hierarchy)(?:[^\n])` "$1\n" $rawContent }}
 {{ $rawContent = replaceRE `<a href="(.+)" rel="noopener noreferrer" title="View the source code">View Source</a><br />` `` $rawContent }}
 {{ $rawContent = replaceRE `<a href="(.+)">Back to Top</a>` `` $rawContent }}
-{{ $rawContent = replaceRE `&nbsp;<table>` `<table>` $rawContent }}
-{{ $rawContent = replaceRE `</table>&nbsp;` `</table>` $rawContent }}
+{{ $rawContent = replaceRE `&nbsp;<(table|dl)>` "<$1>" $rawContent }}
+{{ $rawContent = replaceRE `</(table|dl)>&nbsp;` "</$1>" $rawContent }}
 {{ $rawContent = replaceRE `(!\[[^\]]*\]\([^\)]+\))` "\n\n$1\n\n" $rawContent }}
 {{ $rawContent = replaceRE `media/([^\)]+)` "/media/api/$1" $rawContent }}
 {{ $rawContent | .RenderString }}
