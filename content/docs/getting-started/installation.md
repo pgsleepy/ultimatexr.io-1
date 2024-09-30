@@ -32,7 +32,7 @@ UltimateXR can be installed by downloading the latest [.unitypackage]({{< param 
 - Download the latest UltimateXR [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}). It contains a big sample scene so the file size is larger than usual. The core package and sample scene will be split in two different packages in the future to limit disk size and lower installation time.
 - Right click on the Project Window and select Import Package -> Custom Package…. 
 
-![ImportPackage](![](/media/docs/getting-started/installation/01ImportPackage.png)
+![ImportPackage](/media/docs/getting-started/installation/01ImportPackage.png)
   
 - Select the downloaded file and click Import. Importing assets may take a while due to the included sample scene.
 

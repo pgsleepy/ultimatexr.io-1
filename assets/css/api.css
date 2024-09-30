@@ -22,6 +22,11 @@ body.type-api #content .sidebar em {
   font-weight: normal;
 }
 
+/* Remove margins from paragraphs inside tables */
+body.type-api #content table p {
+  display: none;
+}
+
 /* Remove side padding of empty headings to avoid unnecessary spacing with narrow icons */
 body.type-api #content table tr th:empty {
   padding-left: 0px;

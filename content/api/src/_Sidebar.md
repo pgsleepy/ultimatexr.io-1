@@ -1,5 +1,3 @@
----
----
 ### UltimateXR Namespaces
 - [UltimateXR.Animation](N_UltimateXR_Animation)
   - [<span class="namespace">namespace</span> Avatars](N_UltimateXR_Animation_Avatars)
