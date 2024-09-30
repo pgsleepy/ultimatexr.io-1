@@ -30,11 +30,11 @@ UltimateXR currently supports the following platforms and devices:
 
 Open the UltimateXR SDK Manager window using the top menu Tools -> UltimateXR -> SDKs -> SDK Manager
 
-![](/docs/guides/media/_common/MenuSDKManager.png)
+![](/media/docs/_common/MenuSDKManager.png)
  
 The SDK Manager is the main place to check the status of all supported integrations and add or remove SDKs.
 
-![](/docs/guides/media/_common/SdkManagerInputTracking.png)
+![](/media/docs/_common/SdkManagerInputTracking.png)
  
 - [Setting up Magic Leap SDK](/docs/getting-started/supported-platforms/magicleap)
 - [Setting up Oculus SDK](/docs/getting-started/supported-platforms/oculus)

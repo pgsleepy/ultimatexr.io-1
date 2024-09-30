@@ -35,7 +35,7 @@ Use Ctrl+M followed by Ctrl+O to collapse definitions.
 
 The collapsed view provides an overview of available elements and the file's organization. Public properties, events, and methods are prioritized at the top, giving immediate understanding of component usage and functionality.
 
-![](/docs/guides/media/scripting/01Collapsed.png)
+![](/media/docs/programming-guide/architecture/source-file-layout/01Collapsed.png)
 
 ## Expanded view
 
@@ -46,10 +46,10 @@ Use Ctrl+M followed by Ctrl+L to expand the definitions.
 The expanded view provides a full view of the whols sourcecode.
 Alternating between the two views will help to quickly navigate through the code.
 
-![](/docs/guides/media/scripting/02Expanded.png)
+![](/media/docs/programming-guide/architecture/source-file-layout/02Expanded.png)
 
 ## Code completion
 
 Use the autocompletion and tooltips available in your Integrated Development Environment (IDE), such as Intellisense in Visual Studio or the built-in capabilities in Rider. The framework provides extensive XML documentation, which will be displayed as you write code.
 
-![](/docs/guides/media/scripting/03AutoCompletion.png)
+![](/media/docs/programming-guide/architecture/source-file-layout/03AutoCompletion.png)
