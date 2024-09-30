@@ -8,11 +8,5 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ $content := .Content }}
-  {{ $content = replaceRE `\((((\<em\>)?(T\S?)(\<\/em\>)?(,\s?)?)+)\)` `&lt;$1&gt;` $content }}
-  {{ $content = replaceRE `<a href="(.+)" rel="noopener noreferrer" title="View the source code">View Source</a>` `` $content }}
-  {{ $content = replaceRE `<a href="(.+)">Back to Top</a>` `` $content }}
-  {{ $content = replaceRE `(<p>| |\s)*<table>` `<table>` $content }}
-  {{ $content = replaceRE `</table>(</p>| |\s)*` `</table>` $content }}
-  {{ $content | safeHTML }}
+  {{ partial "api-main.html" . }}
 {{ end }}

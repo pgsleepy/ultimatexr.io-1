@@ -51,6 +51,8 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    parser:
+      wrapStandAloneImageWithinParagraph: false
   highlight:
     style: vs
     noClasses: false
