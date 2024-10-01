@@ -63,7 +63,7 @@ Use this callout to share helpful information or general facts.
 {{% /callout %}}
 
 Source code:
-```
+```md
 {{% callout info %}}
 Use this callout to share helpful information or general facts.
 {{% /callout %}}
@@ -76,7 +76,7 @@ This is for giving practical advice or shortcuts that can help the reader.
 {{% /callout %}}
 
 Source code:
-```
+```md
 {{% callout tip %}}
 This is for giving practical advice or shortcuts that can help the reader.
 {{% /callout %}}
@@ -89,7 +89,7 @@ Use this when there's something the reader should be careful about, like potenti
 {{% /callout %}}
 
 Source code:
-```
+```md
 {{% callout caution %}}
 Use this when there's something the reader should be careful about, like potential mistakes.
 {{% /callout %}}
@@ -102,7 +102,7 @@ This highlights something serious that could cause problems or risks.
 {{% /callout %}}
 
 Source code:
-```
+```md
 {{% callout warning %}}
 This highlights something serious that could cause problems or risks.
 {{% /callout %}}
