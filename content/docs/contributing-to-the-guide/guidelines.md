@@ -135,7 +135,7 @@ For example, the following code will embed the video below:
 
 ```md
 
-{{< video src="/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4" >}}
+TODO: Add path to video without being embedded inside the code block.
 
 ```
 
