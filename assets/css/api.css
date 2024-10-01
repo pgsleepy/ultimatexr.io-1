@@ -65,7 +65,6 @@ body.type-api h4#parameters + p + dl dt {
 }
 
 body.type-api h4#parameters + p + dl dd {
-  margin-bottom: 1.2em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;

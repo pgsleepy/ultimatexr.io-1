@@ -33,7 +33,7 @@
   --uxr-header-height-tablet: 64px;
   --uxr-header-height-desktop: 64px;
 
-  --uxr-el-vertical-margin: 20px;
+  --uxr-el-vertical-margin: 1.25em;
   --uxr-page-padding: 15px;
 
   --uxr-max-width: 1520px;
@@ -47,13 +47,13 @@
 
 @media (min-width: 992px) {
   :root {
-    --uxr-el-vertical-margin: 25px;
+    --uxr-el-vertical-margin: 1.8em;
     --uxr-page-padding: 20px;
   }
 }
 
 @media (min-width: 1200px) {
   :root {
-    --uxr-el-vertical-margin: 30px;
+    --uxr-el-vertical-margin: 2.2857em;
   }
 }

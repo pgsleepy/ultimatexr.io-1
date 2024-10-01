@@ -76,4 +76,7 @@
     {{- end -}}
 {{- end -}}
 
-<p><div data-controller="media"><video {{ $attrsString | safeHTMLAttr }} src="{{- $videoURL -}}" data-media-target="mediaElement"></div></p>
+<div data-controller="media">
+    <video {{ $attrsString | safeHTMLAttr }} src="{{- $videoURL -}}" data-media-target="mediaElement">
+</div>
+{{- /* chomp trailing newline */ -}}

@@ -1,6 +1,6 @@
 .callout {
   position: relative;
-  margin-block: 1em 1em;
+  margin-block: 2em 2em;
   padding: 1em;
   color: oklch(from var(--uxr-color-callout-info) calc(l / 1.2) c h);
   background-color: hsl(from var(--uxr-color-callout-info) h s l / .1);
