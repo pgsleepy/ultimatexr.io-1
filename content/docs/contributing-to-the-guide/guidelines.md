@@ -22,7 +22,7 @@ We use Markdown to format the UltimateXR documentation, as it's a simple and eff
 
 If you're new to Markdown or need a refresher, check out this [Markdown guide](https://www.markdownguide.org/) for a complete guide on how to use it.
 
-You can also click on the "Edit this page on GitHub" link on the right side of each documentation page to view the Markdown source. This can help you understand how specific sections are written.
+You can also click on the *Edit this page on GitHub* link on the right side of each documentation page to view the Markdown source. This can help you understand how specific sections are written:
 
 ![](/media/docs/contributing-to-the-guide/_common/CommunityMenu.png)
 
@@ -44,7 +44,9 @@ The first part between the two `---` is used to include metadata for Hugo, the s
 
 The single `#` symbol marks the top level heading, which is reserved for the page name. Following this, there should usually be a brief introduction or overview.
 
-Articles should be divided into a sequence of `##` level subheadings whenever possible. These subheadings should have descriptive titles and are important because they will appear as quick access items in the top right menu titled "ON THIS PAGE." Each of these subsections represents a logical subdivision of the article, especially if the content is extensive and requires clear organization:
+Articles should be divided into a sequence of `##` level subheadings whenever possible. These subheadings should have descriptive titles and are important because they will appear as quick access items in the top right navigation menu. Each of these subsections represents a logical subdivision of the article, especially if the content is extensive and requires clear organization.
+
+For example, the [Adding Multiplayer Support](/docs/multiplayer/adding-multiplayer-support) guide shows the following top right navigation menu:
 
 ![](/media/docs/contributing-to-the-guide/_common/OnThisPageMenu.png)
 
@@ -54,8 +56,8 @@ All headings/subheadings should use *title casing*:
 - Do not capitalize minor words like articles (a, an, the), conjunctions (and, but, or), and prepositions (in, on, with, by), unless they are the first or last word of the title.
 
 For example:
-- Title case: "The Quick Brown Fox Jumps Over the Lazy Dog"
-- Not title case: "the quick brown fox jumps over the lazy dog"
+- Title case: The Quick Brown Fox Jumps Over the Lazy Dog
+- Not title case: the quick brown fox jumps over the lazy dog
 
 As always, we recommend visiting existing articles to use as references when creating new content.
 
@@ -133,7 +135,7 @@ For example, the following code will embed the video below:
 
 ```md
 
-[remove this]/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4
+{{< video src="/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4" >}}
 
 ```
 
