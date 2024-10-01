@@ -22,7 +22,7 @@ We use Markdown to format the UltimateXR documentation, as it's a simple and eff
 
 If you're new to Markdown or need a refresher, check out this [Markdown guide](https://www.markdownguide.org/) for a complete guide on how to use it.
 
-You can also click on the *Edit this page on GitHub* link on the right side of each documentation page to view the Markdown source. This can help you understand how specific sections are written:
+You can also click on the _Edit this page on GitHub_ link on the right side of each documentation page to view the Markdown source. This can help you understand how specific sections are written:
 
 ![](/media/docs/contributing-to-the-guide/_common/CommunityMenu.png)
 
@@ -158,10 +158,10 @@ Navigate the [repository](https://github.com/VRMADA/ultimatexr.io) to familiariz
 
 Tutorials should keep a similar structure for consistency:
 
-- The top level heading should be the tutorial's name (e.g., *Creating a Grabbable Ball*).
+- The top level heading should be the tutorial's name (e.g., _Creating a Grabbable Ball_).
 - Use the text right below the top level heading for a brief introduction/overview of the tutorial's goals.
 - Consider adding a screenshot or short video of the final result. This visual will give users a clear idea of what they will accomplish.
-- The first `##` subheading should be *Objectives*, containing a bullet point list of key learning outcomes.
-- The third to last `##` subheading should be *Recap*. This section will provide a numbered summary of the major steps taken to get to the end result.
-- The second to last `##` subheading should be *End Result*. Use this section to write some closing words, and consider adding a video or screenshot showcasing what has been accomplished. It can offer more detail or context than the introductory video. If it feels redundant, feel free to skip it.
-- The last `##` subheading should be *Continue Reading*, when applicable. Link to relevant tutorials or sections where users can learn more. If there’s nothing to add, this section can be skipped.
+- The first `##` subheading should be _Objectives_, containing a bullet point list of key learning outcomes.
+- The third to last `##` subheading should be _Recap_. This section will provide a numbered summary of the major steps taken to get to the end result.
+- The second to last `##` subheading should be _End Result_. Use this section to write some closing words, and consider adding a video or screenshot showcasing what has been accomplished. It can offer more detail or context than the introductory video. If it feels redundant, feel free to skip it.
+- The last `##` subheading should be _Continue Reading_, when applicable. Link to relevant tutorials or sections where users can learn more. If there’s nothing to add, this section can be skipped.
