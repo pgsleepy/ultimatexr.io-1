@@ -64,9 +64,9 @@ Use this callout to share helpful information or general facts.
 
 Source code:
 ```md
-{{% callout info %}}
+{{%/* callout info */%}}
 Use this callout to share helpful information or general facts.
-{{% /callout %}}
+{{%/* /callout */%}}
 ```
 
 #### Tip
@@ -77,9 +77,9 @@ This is for giving practical advice or shortcuts that can help the reader.
 
 Source code:
 ```md
-{{% callout tip %}}
+{{%/* callout tip */%}}
 This is for giving practical advice or shortcuts that can help the reader.
-{{% /callout %}}
+{{%/* /callout */%}}
 ```
 
 #### Caution
@@ -90,9 +90,9 @@ Use this when there's something the reader should be careful about, like potenti
 
 Source code:
 ```md
-{{% callout caution %}}
+{{%/* callout caution */%}}
 Use this when there's something the reader should be careful about, like potential mistakes.
-{{% /callout %}}
+{{%/* /callout */%}}
 ```
 
 #### Warning
@@ -103,9 +103,9 @@ This highlights something serious that could cause problems or risks.
 
 Source code:
 ```md
-{{% callout warning %}}
+{{%/* callout warning */%}}
 This highlights something serious that could cause problems or risks.
-{{% /callout %}}
+{{%/* /callout */%}}
 ```
 
 ### Embedded Videos
