@@ -80,6 +80,7 @@ Source code:
 {{% callout tip %}}
 This is for giving practical advice or shortcuts that can help the reader.
 {{% /callout %}}
+```
 
 #### Caution
 
@@ -92,6 +93,7 @@ Source code:
 {{% callout caution %}}
 Use this when there's something the reader should be careful about, like potential mistakes.
 {{% /callout %}}
+```
 
 #### Warning
 
@@ -104,6 +106,7 @@ Source code:
 {{% callout warning %}}
 This highlights something serious that could cause problems or risks.
 {{% /callout %}}
+```
 
 ### Embedded Videos
  
