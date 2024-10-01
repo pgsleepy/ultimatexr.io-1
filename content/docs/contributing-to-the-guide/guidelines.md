@@ -10,11 +10,11 @@ This section provides some easy guidelines to help maintain the quality and cons
 
 When contributing to the UltimateXR documentation, please keep in mind the following principles:
 
-- Quality Content: Ensure the information is accurate, clear, and helpful. Content should add value and be useful to developers using UltimateXR.
-- Clean Documentation: Organize the documentation in a way that is easy to read and navigate. Keep sentences concise and use consistent formatting.
-- Common Style: Follow the existing documentation as a reference for writing style and structure.
-- Spelling and Grammar: Double-check for spelling, grammar, and punctuation errors. This ensures the documentation maintains a professional standard.
-- Images and Videos: Use the .png format for images and .mp4 for videos. Limit video use to when it is truly necessary. For video exports, aim for a resolution between 720p and 1080p, or smaller if capturing a specific region instead of fullscreen. Use Variable Bit Rate (VBR) encoding, with a target bitrate of 1 Mbps, and a maximum bitrate of 2 Mbps.
+- **Quality Content**: Ensure the information is accurate, clear, and helpful. Content should add value and be useful to developers using UltimateXR.
+- **Clean Documentation**: Organize the documentation in a way that is easy to read and navigate. Keep sentences concise and use consistent formatting.
+- **Common Style**: Follow the existing documentation as a reference for writing style and structure.
+- **Spelling and Grammar**: Double-check for spelling, grammar, and punctuation errors. This ensures the documentation maintains a professional standard.
+- **Images and Videos**: Use the .png format for images and .mp4 for videos. Check the [Embedded Videos](#embedded-videos) section for general rules.
 
 ## Use of Markdown
 
@@ -30,7 +30,7 @@ By following Markdown standards, we ensure that the documentation remains consis
 
 Each page in this documentation starts with the following code:
 
-```
+```md
 ---
 title: "Page Title"
 ---
@@ -109,6 +109,23 @@ This highlights something serious that could cause problems or risks.
 ```
 
 ### Embedded Videos
+
+Embedded videos are great for demonstrating step-by-step instructions or visual explanations that are hard to convey through text or images alone. They can also make articles more engaging by providing real-time examples of how something works.
+
+Videos are embedded simply by writing the path to the .mp4 file in between empty lines. The path should start with /media/docs/. The /media/docs/ directory is where all the article images and videos are stored, using a directory structure mirroring the article hierarchy.
+The /media/docs/ directory is explained in detail in the [Submitting a New Article](/docs/contributing-to-the-guide/submitting-a-new-article) guide.
+
+For example, the following code will embed the video below:
+
+```md
+
+/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4
+
+```
+
+/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4
+
+Limit video use to when it is truly necessary. For video exports, aim for a resolution between 720p and 1080p, or smaller if capturing a specific region instead of fullscreen. Use Variable Bit Rate (VBR) encoding, with a target bitrate of 1 Mbps, and a maximum bitrate of 2 Mbps.
  
 ## Directory Structure
 
