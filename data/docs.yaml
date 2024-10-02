@@ -1,5 +1,8 @@
 - title: "Getting started"
   items:
+    - title: "Knowledge Hub"
+      url: "/docs/getting-started/knowledge-hub"
+      label: "in progress"
     - title: "What is UltimateXR?"
       url: "/docs/getting-started/what-is-ultimatexr"
       label: "ready"
