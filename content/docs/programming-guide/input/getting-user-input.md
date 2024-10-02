@@ -68,7 +68,7 @@ It is still possible, however, to get input from a controller that is being igno
 
 This functionality can be used to, for example, ignore input while a virtual controller is being manipulated to avoid teleporting:
 
-/media/docs/programming-guide/input/getting-user-input/ControllerMapping.mp4
+{{< video src="/media/docs/programming-guide/input/getting-user-input/ControllerMapping.mp4" >}}
 
 ## Controller Elements
 
@@ -473,4 +473,4 @@ It will show all 3 input element types. From top to bottom:
   - `PressDown`: whether the button started being pressed the present frame.
   - `PressUp`: whether the press was released.
 
-/media/docs/programming-guide/input/getting-user-input/DebugInputPanel.mp4
+{{< video src="/media/docs/programming-guide/input/getting-user-input/DebugInputPanel.mp4" >}}

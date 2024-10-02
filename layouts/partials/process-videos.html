@@ -1,5 +1,0 @@
-{{- $rawContent := . -}}
-{{- $pattern := `(?mi)((?:\/|https?:\/\/)[^\s]+?\.(?:mp4|webm|ogg))` -}}
-{{- $replacement := `{{< video src="$1" >}}` -}}
-{{- $processedRawContent := replaceRE $pattern $replacement $rawContent -}}
-{{- return $processedRawContent -}}

@@ -7,9 +7,7 @@
 {{ end }}
 
 {{ define "main" }}
-  {{/* Process the content to replace video URLs with video shortcodes */}}
-  {{ $processedRawContent := partial "process-videos.html" .RawContent }}
-  {{ $processedRawContent | .RenderString }}
+  {{ .Content }}
 
   {{/* Flatten the menu items and pass them to the pagination partial to build the prev/next links */}}
   {{ $result := partial "flatten-dict.html" (dict "data" .Site.Data.docs) }}

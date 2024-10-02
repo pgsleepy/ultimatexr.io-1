@@ -137,7 +137,7 @@ For example, this code will embed the video that follows:
 {{</* video src="/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4" */>}}
 ```
 
-/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4
+{{< video src="/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4" >}}
 
 From this path, `/media/docs` is located directly under `/assets`, which is a root directory in the repository. The subdirectories, in this example `/getting-started/what-is-ultimatexr/`, follow the same structure as the article it is located in.
 
