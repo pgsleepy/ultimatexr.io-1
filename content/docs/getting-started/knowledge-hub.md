@@ -2,7 +2,9 @@
 
 Welcome to the Knowledge Hub!
 
-This guide will help you navigate through the UltimateXR documentation. Below, you'll find a curated selection of recommended articles and tutorials, organized by the skill level needed to follow them.
+This guide will help you navigate through the UltimateXR documentation.
+
+The left navigation bar is your main tool for exploring the documentation. It provides a structured overview of all available topics, organized by categories and subcategories. With a wide range of topics covered, it can be challenging to know where to begin. That’s why the Knowledge Hub is here: to help you get started more easily.
 
 You will also find the latest additions and modifications to our guide, so you can stay updated on what’s new.
 
@@ -16,6 +18,8 @@ If it's your first time using UltimateXR, start here:
 - [Creating Your First Scene](/docs/tutorials/creating-your-first-scene): Follow this step-by-step guide to create your first VR scene using UltimateXR.
 
 ## Suggested Reading
+
+Here you can find a curated selection of recommended articles and tutorials, organized by the skill level needed to follow them.
 
 ### Beginner Documentation
 - [Using Built-in Avatars](/docs/avatars/using-built-in-avatars): A guide to integrating UltimateXR's built-in avatars for your projects.
@@ -35,13 +39,13 @@ If it's your first time using UltimateXR, start here:
 - [Adding Multiplayer Support](/docs/multiplayer/adding-multiplayer-support): Learn to set up multiplayer in UltimateXR projects.
 - [Multiplayer Technical Overview](/docs/multiplayer/technical-overview): Understand how multiplayer support works under the hood.
 
-## For Programmers
+## Programming Documentation
 
 The [Programming Guide](/docs/programming-guide/overview) contains a collection of articles to help you learn various aspects of programming with UltimateXR. For detailed information on specific functions and classes, check out the [API Guide](/api).
 
-A special section is the [How do I...?](/docs/programming-guide/how-do-i) guide, which is a collection of frequently asked questions and practical coding solutions.
+A key resource is the [How do I...?](/docs/programming-guide/how-do-i) section, which is a collection of frequently asked questions and practical coding solutions.
 
-This is the suggested reading for programmers, organized by the skill level needed to follow them:
+This is the suggested reading for programmers, organized by the required skill level:
 
 ### Beginner
 - [Source File Layout](/docs/programming-guide/architecture/source-file-layout): Explore how the UltimateXR source files are structured to facilitate collaboration.
@@ -54,7 +58,7 @@ This is the suggested reading for programmers, organized by the skill level need
 - [Core Components Diagram](/docs/programming-guide/architecture/core-components-diagram): Visualize the core components and structure of the UltimateXR framework.
 - [UxrComponent](/docs/programming-guide/architecture/uxrcomponent): Understand the UxrComponent, the building block for UltimateXR components.
 - [UxrManager](/docs/programming-guide/architecture/uxrmanager): The central manager coordinating UltimateXR’s functionality.
-- [UxrAvatar](/docs/programming-guide/avatars/uxravatar): The component representing users in VR.
+- [UxrAvatar](/docs/programming-guide/avatars/uxravatar): The component responsible for representing users in VR.
 - [UxrGrabManager](/docs/programming-guide/manipulation/uxrgrabmanager): Manage object interactions and grabbing functionality using UxrGrabManager.
 - [UxrControlInput](/docs/programming-guide/ui-interaction/uxrcontrolinput): Get to know UxrControlInput for handling UI input events in an easy way.
 - [Math](/docs/programming-guide/other-features/math): Discover the math utilities provided by UltimateXR.
