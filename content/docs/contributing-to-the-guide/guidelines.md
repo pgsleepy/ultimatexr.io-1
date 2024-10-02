@@ -127,21 +127,21 @@ This highlights something serious that could cause problems or risks.
 
 Embedded videos are great for demonstrating step-by-step instructions or visual explanations that are hard to convey through text or images alone. They can also make articles more engaging by providing real-time examples of how something works.
 
-Videos can be embedded by simply writing the path to the .mp4 file between two empty lines. The path should start with `/media/docs/`, which is where all article images and videos are stored, using a directory structure that mirrors the article hierarchy.
+Videos can be embedded using the shortcode described below, using a path to the .mp4 file. The path should start with `/media/docs/`, which is where all article images and videos are stored, using a directory structure that mirrors the article hierarchy.
 
 The `/media/docs/` directory is explained in detail in the [Submitting a New Article](/docs/contributing-to-the-guide/submitting-a-new-article) guide.
 
-For example, the following code will embed the video below:
+For example, this code will embed the video that follows:
 
 ```md
-
-TODO: Add path to video without being embedded inside the code block.
-
+{{</* video src="/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4" */>}}
 ```
 
-/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4
+{{< video src="/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4" >}}
 
-The `/media` directory is located directly under `/assets`, which is a root directory in the repository. As shown, the `/getting-started/what-is-ultimatexr/` subdirectories follow the same structure as the article hierarchy.
+From this path, `/media/docs` is located directly under `/assets`, which is a root directory in the repository. The subdirectories, in this example `/getting-started/what-is-ultimatexr/`, follow the same structure as the article it is located in.
+
+#### Video Export Settings
 
 Limit video use to when it is truly necessary. For video exports, aim for a resolution between 720p and 1080p, or smaller if capturing a specific region instead of fullscreen. Use Variable Bit Rate (VBR) encoding, with a target bitrate of 1 Mbps, and a maximum bitrate of 2 Mbps.
  
