@@ -274,8 +274,10 @@
   items:
     - title: "Overview"
       url: "/docs/manipulation/overview"
+      label: "in progress"
     - title: "UxrGrabbableObject"
       url: "/docs/manipulation/uxrgrabbableobject"
+      label: "in progress"
     - title: "UxrGrabbableObjectAnchor"
       url: "/docs/manipulation/uxrgrabbableobjectanchor"
     - title: "UxrGrabber"
@@ -387,5 +389,6 @@
   items:
     - title: "Common Errors"
       url: "/docs/troubleshooting/common-errors"
+      label: "ready"
     - title: "Frequently Asked Questions"
       url: "/docs/troubleshooting/frequently-asked-questions"
