@@ -11,8 +11,3 @@ In UltimateXR, avatars are managed through two primary components:
 - `UxrAvatarController`: This component is responsible for updating the avatar's movements and behaviors. The built-in controller, `UxrStandardAvatarController`, offers features like inverse kinematics, hand tracking, and action binding.
 
 The following guides will explain the features these two components offer and how to use them in programming.
-
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <img src="/media/docs/_common/UxrAvatar.png" style="width: 45%;margin-right: 5%;"/>
-  <img src="/media/docs/_common/UxrStandardAvatarController.png" style="width: 45%;"/>
-</div>
