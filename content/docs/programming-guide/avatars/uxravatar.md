@@ -8,7 +8,7 @@ The `UxrAvatar` component provides properties, methods, and events to control av
 
 Below is a list of the most relevant elements you might use frequently.
 
-## `AvatarMode` Property
+## `AvatarMode`
 
 Avatars can either be local or external. Typically, there is one avatar in the scene, the local avatar, which has its `AvatarMode` property set to `Local`. This avatar is controlled directly by the user with the connected VR device.
 
@@ -16,7 +16,7 @@ In multiplayer sessions, however, additional avatars may be spawned in the scene
 
 Avatars with their `AvatarMode` set to `UpdateExternally` are limited to features like inverse kinematics and other cosmetic functionalities. These external avatars can be seen as puppets, as they are controlled by external processes instead of their avatar controller. Common scenarios where avatars are updated externally include multiplayer remote clients and replay sessions.
 
-## The local avatar
+## The Local Avatar
 
 `LocalAvatar`: is a static property that allows you to access the `UxrAvatar` component controlled by the user. It returns the first avatar in the scene with the `AvatarMode` property set to `Local`.
 
@@ -37,23 +37,75 @@ Example that uses `LocalAvatarInput` to check whether the right trigger button i
 bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Right, UxrInputButtons.Trigger);
 ```
 
-### Other properties
+## Main Properties
 
 Here is a list of frequently used `UxrAvatar` properties:
 
+### Avatar Mode
+
+- `AvatarMode`: .
+
+### Avatar Controller
+
+- `AvatarController`: .
+
+### Avatar Rendering
+
+- `RenderMode`: .
+- `ShowControllerHands`: .
+- `AvatarRenderers`: .
+
+### Avatar Rig
+
+Features, Rig.
+
+- `AvatarRigType`: .
 - `AvatarRig`: .
 - `AvatarRigInfo`: .
+- `LeftHand`: .
+- `RightHand`: .
+- `LeftHandBone`: .
+- `RightHandBone`: .
+
+### Avatar Camera
+
+- `CameraComponent`: .
+- `CameraTransform`: .
 - `CameraPosition`: .
 - `CameraFloorPosition`: .
 - `CameraForward`: .
 - `ProjectedCameraForward`: .
+- `CameraController`: .
+- `CameraFade`: .
 
-### More
+### Input/Tracking
 
-The local avatar, avatar modes, render modes.
-Features, rig, hand poses.
-UxrControllerInput/Tracking.
+- `EnabledControllerInputs`: .
+- `TrackingDevices`: .
+- `FirstControllerTracking`: .
+- `CameraTrackingEnabled`: .
 
-## Events
+### UI
 
-## Methods
+- `FingerTips`: .
+- `LaserPointers`: .
+
+### Prefab Info
+
+- `PrefabGuid`: .
+- `ParentPrefab`: .
+- `ParentAvatarPrefab`: .
+- `IsPrefabVariant`: .
+
+### Manipulation
+
+- `LeftGrabber`: .
+- `RightGrabber`: .
+
+### Hand Poses
+
+- `DefaultHandPoseName`: .
+
+## Main Methods
+
+## Avatar Events
