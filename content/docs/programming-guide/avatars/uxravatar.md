@@ -37,7 +37,7 @@ Example that uses `LocalAvatarInput` to check whether the right trigger button i
 bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Right, UxrInputButtons.Trigger);
 ```
 
-## Main Properties
+## Frequently Used Properties
 
 Here is a list of frequently used `UxrAvatar` properties:
 
@@ -85,11 +85,6 @@ Features, Rig.
 - `FirstControllerTracking`: .
 - `CameraTrackingEnabled`: .
 
-### UI
-
-- `FingerTips`: .
-- `LaserPointers`: .
-
 ### Prefab Info
 
 - `PrefabGuid`: .
@@ -97,15 +92,83 @@ Features, Rig.
 - `ParentAvatarPrefab`: .
 - `IsPrefabVariant`: .
 
+### Hand Poses
+
+- `DefaultHandPoseName`: .
+
 ### Manipulation
 
 - `LeftGrabber`: .
 - `RightGrabber`: .
 
+### UI
+
+- `FingerTips`: .
+- `LaserPointers`: .
+
+## Frequently Used Methods
+
+### Avatar Rendering
+
+- `GetAllAvatarRendererComponents()`: .
+
+### Avatar Rig
+
+- `GetInitialBoneLocalPosition()`: .
+- `GetInitialBoneLocalRotation()`: .
+- `GetArm()`: .
+- `GetHand()`: .
+- `GetHandBone()`: .
+- `SetupRigElementsFromAnimator()`: .
+- `ClearRigElements()`: .
+- `TryToInferMissingRigElements()`: .
+
+### Avatar Camera
+
+- `IsLookingAt()`: .
+
+### Input/Tracking
+
+- `GetControllerInputForward()`: .
+
+### Prefab Info
+
+- `GetAvatarChain()`: .
+- `GetPrefabGuidChain()`: .
+- `GetParentPrefabChain()`: .
+- `GetParentPrefab()`: .
+- `IsPrefabCompatibleWith()`: .
+
 ### Hand Poses
 
-- `DefaultHandPoseName`: .
+- `GetAllHandPoses()`: .
+- `GetHandPoses()`: .
+- `GetHandPose()`: .
+- `IsHandPoseOverriden()`: .
+- `GetRuntimeHandPose()`: .
+- `GetCurrentRuntimeHandPose()`: .
+- `GetCurrentHandPoseBlendValue()`: .
+- `SetCurrentHandPose()`: .
+- `SetCurrentHandPoseBlendValue()`: .
+- `SetCurrentHandPoseImmediately()`: .
 
-## Main Methods
+### Manipulation
+
+- `GetGrabber()`: .
+
+### UI
+
+- `EnableFingerTips()`: .
+- `EnableLaserPointers()`: .
+
+### Locomotion
+
+- `EnableLocomotion()`: .
 
 ## Avatar Events
+
+### Static Events
+
+These events are static so that...
+
+### Non-Static Events
