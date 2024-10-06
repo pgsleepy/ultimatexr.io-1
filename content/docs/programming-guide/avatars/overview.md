@@ -13,6 +13,6 @@ In UltimateXR, avatars are managed through two primary components:
 The following guides will explain the features these two components offer and how to use them in programming.
 
 <div style="display: flex; justify-content: space-between; align-items: center;">
-  <img src="/assets/media/docs/_common/UxrAvatar.png" style="width: 45%;margin-right: 5%;"/>
-  <img src="/assets/media/docs/_common/UxrStandardAvatarController.png" style="width: 45%;"/>
+  <img src="/media/docs/_common/UxrAvatar.png" style="width: 45%;margin-right: 5%;"/>
+  <img src="/media/docs/_common/UxrStandardAvatarController.png" style="width: 45%;"/>
 </div>
