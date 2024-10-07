@@ -6,9 +6,9 @@ title: "UxrAvatar"
 
 The `UxrAvatar` component provides properties, methods, and events to control avatars at runtime. The full API can be explored on the [UxrAvatar API Reference](/api/T_UltimateXR_Avatar_UxrAvatar#uxravatar-class).
 
-Below is a list of the most relevant elements you might use frequently.
+Below is a list of the most relevant elements that are used more frequently, by category.
 
-## `AvatarMode`
+## Avatar Mode
 
 Avatars can either be local or external. Typically, there is one avatar in the scene, the local avatar, which has its `AvatarMode` property set to `Local`. This avatar is controlled directly by the user with the connected VR device.
 
@@ -16,64 +16,48 @@ In multiplayer sessions, however, additional avatars may be spawned in the scene
 
 Avatars with their `AvatarMode` set to `UpdateExternally` are limited to features like inverse kinematics and other cosmetic functionalities. These external avatars can be seen as puppets, as they are controlled by external processes instead of their avatar controller. Common scenarios where avatars are updated externally include multiplayer remote clients and replay sessions.
 
-## The Local Avatar
+### Static Properties
 
-`LocalAvatar`: is a static property that allows you to access the `UxrAvatar` component controlled by the user. It returns the first avatar in the scene with the `AvatarMode` property set to `Local`.
+- `LocalAvatar` (static): is a static property that allows you to access the `UxrAvatar` component controlled by the user, from anywhere in the code. It returns the first avatar in the scene with the `AvatarMode` property set to `Local`.
 
-Example:
+### Properties
+
+- `AvatarMode`: .
+
+### Examples
+
+Example that uses `LocalAvatar` to get the avatar position from anywhere in the code:
 ```c#
 Debug.Log($"The user avatar is at {UxrAvatar.LocalAvatar.transform.position}.");
 ```
 
-Similar to the static `LocalAvatar` property, there are other static shortcuts to frequently used local avatar properties.
+## Avatar Controller
 
-- `LocalAvatarInput`: Gets the local avatar's input component that can be used to query for controller input data.
-- `LocalAvatarCamera`: Gets the local avatar's `Camera` component for the local avatar
-- `LocalOrFirstEnabledCamera`: This property get the local avatar's camera. If there is no local avatar, it returns the first camera found in the enabled `UpdateExternally` avatars. If no enabled avatars are present, it will return `Camera.main`. This can be useful for observing during multiplayer sessions or replays, where there are no avatars controlled by XR devices.
+### Static Properties
+
 - `LocalStandardAvatarController`: This property attempts to retrieve the local avatar's controller, provided it uses the built-in `UxrStandardAvatarController` type. While UltimateXR allows developers to create their own `UxrAvatarController` for added flexibility, most users will use the built-in controller, which provides access to important features like inverse kinematics (IK), grabbing, UI interaction, and more.
 
-Example that uses `LocalAvatarInput` to check whether the right trigger button is being pressed:
-```c#
-bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Right, UxrInputButtons.Trigger);
-```
-
-## Frequently Used Functionality
-
-Here is a list of frequently used `UxrAvatar` properties and methods, by category:
-
----
-
-### Avatar Mode
-
-- `AvatarMode`: .
-
----
-
-### Avatar Controller
+### Properties
 
 - `AvatarController`: .
 
----
+## Avatar Rendering
 
-### Avatar Rendering
-
-#### Properties
+### Properties
 
 - `RenderMode`: .
 - `ShowControllerHands`: .
 - `AvatarRenderers`: .
 
-#### Methods
+### Methods
 
 - `GetAllAvatarRendererComponents()`: .
 
----
-
-### Avatar Rig
+## Avatar Rig
 
 Features, Rig.
 
-#### Properties
+### Properties
 
 - `AvatarRigType`: .
 - `AvatarRig`: .
@@ -83,7 +67,7 @@ Features, Rig.
 - `LeftHandBone`: .
 - `RightHandBone`: .
 
-#### Methods
+### Methods
 
 - `GetInitialBoneLocalPosition()`: .
 - `GetInitialBoneLocalRotation()`: .
@@ -93,9 +77,11 @@ Features, Rig.
 - `SetupRigElementsFromAnimator()`: .
 - `ClearRigElements()`: .
 - `TryToInferMissingRigElements()`: .
----
-### Avatar Camera
 
+## Avatar Camera
+
+- `LocalAvatarCamera` (static): Gets the local avatar's `Camera` component for the local avatar
+- `LocalOrFirstEnabledCamera` (static): This property get the local avatar's camera. If there is no local avatar, it returns the first camera found in the enabled `UpdateExternally` avatars. If no enabled avatars are present, it will return `Camera.main`. This can be useful for observing during multiplayer sessions or replays, where there are no avatars controlled by XR devices.
 - `CameraComponent`: .
 - `CameraTransform`: .
 - `CameraPosition`: .
@@ -105,59 +91,36 @@ Features, Rig.
 - `CameraController`: .
 - `CameraFade`: .
 
-### Input/Tracking
+- `IsLookingAt()`: .
+
+## Input/Tracking
 
 In addition to the static properties discussed in the [Local Avatar](#the-local-avatar) section, there are other frequently used properties:
 
+- `LocalAvatarInput` (static): Gets the local avatar's input component that can be used to query for controller input data.
 - `EnabledControllerInputs`: .
 - `TrackingDevices`: .
 - `FirstControllerTracking`: .
 - `CameraTrackingEnabled`: .
 
-### Prefab Info
+- `GetControllerInputForward()`: .
 
-- `PrefabGuid`: .
-- `ParentPrefab`: .
-- `ParentAvatarPrefab`: .
-- `IsPrefabVariant`: .
+Example that uses `LocalAvatarInput` to check, from anywhere in the code, whether the right trigger button is being pressed:
+```c#
+bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Right, UxrInputButtons.Trigger);
+```
 
-### Hand Poses
+## Locomotion
+
+- `EnableLocomotion()`: .
+
+## Hand Poses
+
+### Properties
 
 - `DefaultHandPoseName`: .
 
-### Manipulation
-
-- `LeftGrabber`: .
-- `RightGrabber`: .
-
-### UI
-
-- `FingerTips`: .
-- `LaserPointers`: .
-
-## Frequently Used Methods
-
-### Avatar Rendering
-
-### Avatar Rig
-
-### Avatar Camera
-
-- `IsLookingAt()`: .
-
-### Input/Tracking
-
-- `GetControllerInputForward()`: .
-
-### Prefab Info
-
-- `GetAvatarChain()`: .
-- `GetPrefabGuidChain()`: .
-- `GetParentPrefabChain()`: .
-- `GetParentPrefab()`: .
-- `IsPrefabCompatibleWith()`: .
-
-### Hand Poses
+### Methods
 
 - `GetAllHandPoses()`: .
 - `GetHandPoses()`: .
@@ -170,23 +133,46 @@ In addition to the static properties discussed in the [Local Avatar](#the-local-
 - `SetCurrentHandPoseBlendValue()`: .
 - `SetCurrentHandPoseImmediately()`: .
 
-### Manipulation
+## Manipulation
+
+- `LeftGrabber`: .
+- `RightGrabber`: .
 
 - `GetGrabber()`: .
 
-### UI
+## UI
+
+### Properties
+
+- `FingerTips`: .
+- `LaserPointers`: .
+
+### Methods
 
 - `EnableFingerTips()`: .
 - `EnableLaserPointers()`: .
 
-### Locomotion
+## Prefab Info
 
-- `EnableLocomotion()`: .
+### Properties
+
+- `PrefabGuid`: .
+- `ParentPrefab`: .
+- `ParentAvatarPrefab`: .
+- `IsPrefabVariant`: .
+
+### Methods
+
+- `GetAvatarChain()`: .
+- `GetPrefabGuidChain()`: .
+- `GetParentPrefabChain()`: .
+- `GetParentPrefab()`: .
+- `IsPrefabCompatibleWith()`: .
 
 ## Avatar Events
 
-### Static Events
+## Static Events
 
 These events are static so that...
 
-### Non-Static Events
+## Non-Static Events
