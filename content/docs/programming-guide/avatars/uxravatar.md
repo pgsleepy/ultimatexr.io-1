@@ -41,13 +41,19 @@ bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrH
 
 Here is a list of frequently used `UxrAvatar` properties and methods, by category:
 
+---
+
 ### Avatar Mode
 
 - `AvatarMode`: .
 
+---
+
 ### Avatar Controller
 
 - `AvatarController`: .
+
+---
 
 ### Avatar Rendering
 
@@ -60,6 +66,8 @@ Here is a list of frequently used `UxrAvatar` properties and methods, by categor
 #### Methods
 
 - `GetAllAvatarRendererComponents()`: .
+
+---
 
 ### Avatar Rig
 
@@ -85,7 +93,7 @@ Features, Rig.
 - `SetupRigElementsFromAnimator()`: .
 - `ClearRigElements()`: .
 - `TryToInferMissingRigElements()`: .
-
+---
 ### Avatar Camera
 
 - `CameraComponent`: .
