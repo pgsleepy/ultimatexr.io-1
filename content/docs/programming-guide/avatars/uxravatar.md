@@ -37,9 +37,9 @@ Example that uses `LocalAvatarInput` to check whether the right trigger button i
 bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrHandSide.Right, UxrInputButtons.Trigger);
 ```
 
-## Frequently Used Properties
+## Frequently Used Functionality
 
-Here is a list of frequently used `UxrAvatar` properties:
+Here is a list of frequently used `UxrAvatar` properties and methods, by category:
 
 ### Avatar Mode
 
@@ -51,13 +51,21 @@ Here is a list of frequently used `UxrAvatar` properties:
 
 ### Avatar Rendering
 
+#### Properties
+
 - `RenderMode`: .
 - `ShowControllerHands`: .
 - `AvatarRenderers`: .
 
+#### Methods
+
+- `GetAllAvatarRendererComponents()`: .
+
 ### Avatar Rig
 
 Features, Rig.
+
+#### Properties
 
 - `AvatarRigType`: .
 - `AvatarRig`: .
@@ -66,6 +74,17 @@ Features, Rig.
 - `RightHand`: .
 - `LeftHandBone`: .
 - `RightHandBone`: .
+
+#### Methods
+
+- `GetInitialBoneLocalPosition()`: .
+- `GetInitialBoneLocalRotation()`: .
+- `GetArm()`: .
+- `GetHand()`: .
+- `GetHandBone()`: .
+- `SetupRigElementsFromAnimator()`: .
+- `ClearRigElements()`: .
+- `TryToInferMissingRigElements()`: .
 
 ### Avatar Camera
 
@@ -79,6 +98,8 @@ Features, Rig.
 - `CameraFade`: .
 
 ### Input/Tracking
+
+In addition to the static properties discussed in the [Local Avatar](#the-local-avatar) section, there are other frequently used properties:
 
 - `EnabledControllerInputs`: .
 - `TrackingDevices`: .
@@ -110,18 +131,7 @@ Features, Rig.
 
 ### Avatar Rendering
 
-- `GetAllAvatarRendererComponents()`: .
-
 ### Avatar Rig
-
-- `GetInitialBoneLocalPosition()`: .
-- `GetInitialBoneLocalRotation()`: .
-- `GetArm()`: .
-- `GetHand()`: .
-- `GetHandBone()`: .
-- `SetupRigElementsFromAnimator()`: .
-- `ClearRigElements()`: .
-- `TryToInferMissingRigElements()`: .
 
 ### Avatar Camera
 
