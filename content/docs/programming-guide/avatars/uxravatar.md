@@ -37,9 +37,13 @@ Debug.Log($"The user avatar is at {UxrAvatar.LocalAvatar.transform.position}.");
 
 ## Avatar Controller
 
+The avatar controller a the component on the same GameObject as the `UxrAvatar` component and is responsible for updating the avatar using all the functionality that it supports.
+
+While UltimateXR allows developers to create their own `UxrAvatarController` for added flexibility, most users will use the built-in `UxrStandardAvatarController` component, which provides access to important features like inverse kinematics (IK), grabbing, UI interaction, and more.
+
 ### Static Properties
 
-- `LocalStandardAvatarController`: This property attempts to retrieve the local avatar's controller, provided it uses the built-in `UxrStandardAvatarController` type. While UltimateXR allows developers to create their own `UxrAvatarController` for added flexibility, most users will use the built-in controller, which provides access to important features like inverse kinematics (IK), grabbing, UI interaction, and more.
+- `LocalStandardAvatarController`: This property attempts to retrieve the local avatar's controller, provided it uses the built-in `UxrStandardAvatarController` type.
 
 ### Properties
 
@@ -90,6 +94,8 @@ The following properties and methods give access to information about the avatar
 
 ## Avatar Camera
 
+All avatars have a camera that, when the avatar is in `Local` mode, will render the view from the avatar.
+
 ### Static Properties
 
 - `LocalAvatarCamera`: Gets the local avatar's `Camera` component.
@@ -111,6 +117,10 @@ The following properties and methods give access to information about the avatar
 - `IsLookingAt()`: Determines if the avatar’s camera is looking at a specific point or object.
 
 ## Input/Tracking
+
+The input and tracking components are responsible for collecting input and positional data from the controllers. In UltimateXR, each avatar contains a special GameObject called **HandsIntegration**, which holds the input and tracking components for all supported devices. The goal of this system is to automatically handle the setup, so users don’t need to configure these components themselves.
+
+The following properties and methods provide access to input and tracking data:
 
 ### Static Properties
 
@@ -136,11 +146,27 @@ bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrH
 
 ## Locomotion
 
+Avatar movement is managed through locomotion components that are added to the avatar. Some default locomotion components are included under the **HandsIntegration** GameObject, which is present on all avatars to provide built-in functionality.
+
+You can retrieve locomotion components through enumeration because `UxrLocomotion` inherits from `UxrAvatarComponent<UxrLocomotion>`.
+
+For example:
+```c#
+IEnumerable<UxrLocomotion> allLocomotions = UxrLocomotion.GetComponents(UxrAvatar.LocalAvatar, true);
+IEnumerable<UxrTeleportLocomotion> enabledTeleportsOnly = UxrLocomotion.GetComponents(UxrAvatar.LocalAvatar).OfType<UxrTeleportLocomotion>();
+```
+
 ### Methods
 
 - `EnableLocomotion()`: Enables or disables locomotion for the avatar, allowing or preventing movement.
 
 ## Hand Poses
+
+Hand poses are predefined finger configurations used for actions like gestures or object grabbing, created using the [Hand Pose Editor](/docs/avatars/the-hand-pose-editor).
+
+There are two types of hand poses: Fixed and Blend. Fixed poses are a single static configuration, while Blend poses allow any configuration between a start and end pose, controlled by a blend factor between 0 and 1. Blend poses are especially useful for adjusting grab poses to fit different object sizes, although they can be used for animations too.
+
+When changing the current hand pose, you can choose whether to transition smoothly or apply the change instantly.
 
 ### Properties
 
@@ -161,12 +187,22 @@ bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrH
 
 ## Manipulation
 
+Object manipulation is a core feature in UltimateXR. Avatars can grab objects using the `UxrGrabber` component, which is attached to specific points on their hands.
+
+You can learn more about the mechanics in the [user guide](/docs/manipulation/overview), and they can also be controlled programmatically, as detailed in the [Programming Guide](/docs/programming-guide/manipulation/overview).
+
+### Properties
+
 - `LeftGrabber`: Accesses the grabber component for the avatar's left hand, responsible for handling interactions like picking up objects.
 - `RightGrabber`: Accesses the grabber component for the avatar's right hand, responsible for handling interactions like picking up objects.
+
+### Methods
 
 - `GetGrabber()`: Accesses the grabber component for any of the avatar's hands.
 
 ## UI
+
+The UI system in UltimateXR allows avatars to interact with user interfaces using their hands. Components like fingertip interaction and laser pointers are available to enable precise control of UI elements. You can enable or disable these interaction modes based on the needs of your application.
 
 ### Properties
 
@@ -179,6 +215,10 @@ bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrH
 - `EnableLaserPointers()`: Enables or disables the user of `UxrLaserPointer` components in the avatar.
 
 ## Prefab Info
+
+UltimateXR avatars are based on prefabs. The system can manage prefab variants, track parent prefabs, and check compatibility to reuse grab poses during manipulation.
+
+The use of prefabs and prefab variants makes the customization and reuse of avatars easier.
 
 ### Properties
 
@@ -197,12 +237,14 @@ bool isRightTriggerPressed = UxrAvatar.LocalAvatarInput.GetButtonsPressDown(UxrH
 
 ## Avatar Events
 
+Avatar events let developers respond to specific actions or changes related to avatars, such as when an avatar is spawned, it moved, or hand poses are switched.
+
 ### Static Events
 
 - `LocalAvatarStarted`: Raised right after the local avatar called its `Start()`.
 - `LocalAvatarChanged`: Raised right after the local avatar changed. This is useful when the avatar is instantiated in a deferred way, such as a networking environment, and the avatar isn't ready during `Awake()`/`OnEnable()`/`Start()`.
-- `GlobalAvatarMoving`: Raised right before an avatar is about to be moved.
-- `GlobalAvatarMoved`: Raised right after an avatar moved.
+- `GlobalAvatarMoving`: Raised right before **any** avatar is about to be moved.
+- `GlobalAvatarMoved`: Raised right after **any** avatar moved.
 
 ### Non-Static Events
 
