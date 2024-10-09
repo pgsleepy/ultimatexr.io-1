@@ -52,9 +52,11 @@ UltimateXR comes with a fully-featured built-in controller called `UxrStandardAv
 
 While the built-in `UxrStandardAvatarController` provides complete functionality, there may be cases where you need a custom controller to handle unique behaviors or advanced functionality in your project.
 
-### Steps
+Follow these steps to create your own avatar controller:
 
-1. Create a New Class: Start by creating a new class that inherits from `UxrAvatarController`. This will give you access to all the base functionality that you can override and extend.
+### Step 1: Create a New Class
+
+Start by creating a new class that inherits from `UxrAvatarController`. This will give you access to all the base functionality that you can override and extend.
 
 ```c#
 public class MyCustomAvatarController : UxrAvatarController
@@ -63,11 +65,17 @@ public class MyCustomAvatarController : UxrAvatarController
 }
 ```
 
-2. Override Properties:
+### Step 2: Override Properties
+
+Override the following properties:
+
 - `Initialized` to return `true` once the component has finished its `Awake()` or `Start()`, depending on the implementation, and can be used.
 - `UsesSmoothLocomotion` depending on how the controller will move the avatar. This is used by certain components such as `UxrLodGroup` to know whether to execute certain logic (e.g., LOD switch per frame or only on teleport).
 
-3. Override Key Methods: Override the relevant methods to implement your own avatar update logic. These include:
+### Step 3: Override Key Methods
+
+Override the relevant methods to implement your own avatar update logic. These include:
+
 - `UpdateAvatar()` for gathering input and tracking data.
 - `UpdateAvatarAnimation()` for controlling animations and updating rig transforms.
 - `UpdateAvatarManipulation()` for handling grabbing and manipulation.
@@ -122,7 +130,7 @@ public class MyCustomAvatarController : UxrAvatarController
 
 	protected override void UpdateAvatarManipulation()
 	{
-		// To integrate with the grab manager, check the user input and do:
+		// To integrate with the grab manager, check for user input and use:
 		
 		// When the user presses a grab:
 		// UxrGrabManager.Instance.TryGrab(Avatar, handSide);
@@ -146,4 +154,6 @@ public class MyCustomAvatarController : UxrAvatarController
 Check the [UxrManager Update Sequence](/docs/programming-guide/architecture/uxrmanager#update-sequence) to see how the update process flows during each frame.
 {{% /callout %}}
 
-4. Assign the custom controller: Once your custom controller is ready, add it to your avatar in the scene. Replace the standard avatar controller with your new custom controller component.
+### Step 4: Assign the custom controller
+
+Once your custom controller is ready, add it to your avatar in the scene. Replace the standard avatar controller with your new custom controller component.
