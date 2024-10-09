@@ -105,6 +105,7 @@
           url: "/docs/programming-guide/avatars/uxravatarcontroller"
     - title: "Manipulation"
       url: ""
+      label: "in progress"
       items:
         - title: "Overview"
           url: "/docs/programming-guide/manipulation/overview"
