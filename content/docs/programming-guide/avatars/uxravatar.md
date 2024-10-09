@@ -4,7 +4,7 @@ title: "UxrAvatar"
 
 # UxrAvatar
 
-The `UxrAvatar` component provides properties, methods, and events to control avatars at runtime. The full API can be explored on the [UxrAvatar API Reference](/api/T_UltimateXR_Avatar_UxrAvatar#uxravatar-class).
+The `UxrAvatar` component provides properties, methods, and events to control avatars at runtime. The full API can be explored on the [UxrAvatar API Reference](/api/T_UltimateXR_Avatar_UxrAvatar#uxravatar-class) and the user guide can be found in the [UxrAvatar component guide](/docs/avatars/uxravatar).
 
 The static `UxrAvatar.LocalAvatar` property allows you to access the `UxrAvatar` component representing the user, from anywhere in the code. It returns the first avatar in the scene with the `AvatarMode` property set to `Local`.
 
@@ -51,7 +51,7 @@ While UltimateXR allows developers to create their own `UxrAvatarController` for
 
 ## Avatar Rendering
 
-Although the appearance of avatars is determined by the user, UltimateXR has a cool feature that allows to display hands and controllers to visualize the current state of user input, as shown in the video below:
+Although the appearance of avatars is determined by the user, UltimateXR has a cool feature that allows to display hands and controllers to visualize the current state of user input.
 
 To toggle between showing the avatar and the controllers, you can combine the `UxrAvatarRenderModes` flags: `LeftController`, `RightController`, and `Avatar`. There are also pre-defined combinations such as `AllControllers` and `AllControllersAndAvatar` for convenience.
 

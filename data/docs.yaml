@@ -95,6 +95,7 @@
           url: "/docs/programming-guide/input/keyboard"
     - title: "Avatars"
       url: ""
+      label: "ready"
       items:
         - title: "Overview"
           url: "/docs/programming-guide/avatars/overview"
