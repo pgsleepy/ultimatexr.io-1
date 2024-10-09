@@ -20,6 +20,8 @@ UltimateXR comes with a fully-featured built-in controller called `UxrStandardAv
 
 ## UxrStandardAvatarController
 
+This is the built-in avatar controller.
+
 ### Properties
 
 - `ControllerEvents`: Gets the list of controller events for both hands.
