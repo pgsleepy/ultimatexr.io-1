@@ -111,4 +111,4 @@ UltimateXR comes with the built-in `UxrStandardAvatarController` component, desi
 
 Developers have the flexibility to create custom avatar controllers tailored to specific avatar requirements. At VRMADA, for instance, we developed the `UxrSpectatorAvatarController` for spectator mode during multiuser sessions or replays.
 
-For a complete step by step, check the [Implementing a Custom Avatar Controller](/docs/programming-guide/avatars/uxravatarcontroller#steps-to-create-a-custom-avatar-controller) section from the UxrAvatarController Programming Guide.
+For a complete step by step, check the [Implementing a Custom Avatar Controller](/docs/programming-guide/avatars/uxravatarcontroller#implementing-a-custom-avatar-controller) section from the UxrAvatarController Programming Guide.
