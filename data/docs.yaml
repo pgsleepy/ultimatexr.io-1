@@ -186,6 +186,8 @@
       url: "/docs/programming-guide/how-do-i/overview"
       label: "ready"
       items:
+        - title: "Overview"
+          url: "/docs/programming-guide/how-do-i/overview"
         - title: "Animation"
           url: "/docs/programming-guide/how-do-i/animation"
         - title: "Avatar"
