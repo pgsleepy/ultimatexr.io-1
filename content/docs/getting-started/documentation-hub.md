@@ -6,7 +6,7 @@ title: "UltimateXR Documentation Hub"
 
 ![](/media/docs/getting-started/documentation-hub/TopBanner.png)
 
-Welcome to the Documentation Hub!
+Welcome to the **Documentation Hub**!
 
 This guide will help you navigate through the UltimateXR documentation.
 

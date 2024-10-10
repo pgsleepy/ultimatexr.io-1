@@ -183,7 +183,8 @@
         - title: "Task Controllers"
           url: "/docs/programming-guide/other-features/task-controllers"
     - title: "How do I...?"
-      url: "/docs/programming-guide/how-do-i"
+      url: "/docs/programming-guide/how-do-i/overview"
+      label: "ready"
 
 - title: "Tutorials"
   items:
