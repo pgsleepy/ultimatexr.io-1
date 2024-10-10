@@ -185,6 +185,7 @@
     - title: "How do I...?"
       url: "/docs/programming-guide/how-do-i/overview"
       label: "ready"
+      items:
         - title: "Animation"
           url: "/docs/programming-guide/how-do-i/animation"
         - title: "Avatar"
