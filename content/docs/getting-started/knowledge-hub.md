@@ -1,6 +1,10 @@
-![](/media/docs/getting-started/knowledge-hub/TopBanner.png)
+---
+title: "UltimateXR Knowledge Hub"
+---
 
 # Knowledge Hub
+
+![](/media/docs/getting-started/knowledge-hub/TopBanner.png)
 
 Welcome to the Knowledge Hub!
 
