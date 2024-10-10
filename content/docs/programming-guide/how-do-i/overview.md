@@ -4,11 +4,7 @@ title: "Programming: How do I...?"
 
 # Programming: How do I...?
 
-The goal of this section is to offer brief code snippets to solve frequent problems.
-
-For a full programming reference please visit the [API section](/api).
-
-Snippets by category:
+Here you'll find code snippets that provide solutions to common problems, grouped by category:
 - [Avatar](/docs/programming-guide/how-do-i/avatar).
 - [Guides](/docs/programming-guide/how-do-i/guides).
 - [Haptics](/docs/programming-guide/how-do-i/haptics).
