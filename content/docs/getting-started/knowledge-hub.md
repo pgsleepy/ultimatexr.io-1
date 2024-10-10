@@ -1,3 +1,5 @@
+![](/media/docs/getting-started/knowledge-hub/TopBanner.png)
+
 # Knowledge Hub
 
 Welcome to the Knowledge Hub!
