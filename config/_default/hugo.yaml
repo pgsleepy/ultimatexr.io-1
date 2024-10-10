@@ -31,7 +31,7 @@ menu:
   main:
     - identifier: docs
       name: Docs
-      url: /docs/getting-started/knowledge-hub
+      url: /docs/getting-started/documentation-hub
       weight: 10
     - identifier: scripting
       name: API
