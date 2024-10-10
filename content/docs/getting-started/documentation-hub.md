@@ -12,7 +12,7 @@ This guide will help you navigate through the UltimateXR documentation.
 
 The left navigation bar is your main tool for exploring the documentation. It provides a structured overview of all available topics, organized by categories and subcategories. With a wide range of topics covered, it can be challenging to know where to begin. That’s why the Documentation Hub is here: to help you get started more easily.
 
-You will also find the latest additions and modifications to our guide, so you can stay updated on what’s new.
+You will also find the [latest additions and modifications](#latest-updates) to our guide, so you can stay updated on what’s new.
 
 ## First-Time Users
 
