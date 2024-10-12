@@ -109,8 +109,6 @@
       items:
         - title: "Overview"
           url: "/docs/programming-guide/manipulation/overview"
-        - title: "Manipulation Update"
-          url: "/docs/programming-guide/manipulation/update"
         - title: "Events"
           url: "/docs/programming-guide/manipulation/events"
         - title: "Applying Constraints"
@@ -125,6 +123,8 @@
           url: "/docs/programming-guide/manipulation/uxrgrabbableobjectanchor"
         - title: "UxrGrabber"
           url: "/docs/programming-guide/manipulation/uxrgrabber"
+        - title: "UxrGrabPointShape"
+          url: "/docs/programming-guide/manipulation/uxrgrabpointshape"
         - title: "Other Components"
           url: "/docs/programming-guide/manipulation/other-components"
     - title: "UI interaction"

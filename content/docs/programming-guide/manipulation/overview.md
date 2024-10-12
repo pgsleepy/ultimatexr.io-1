@@ -10,6 +10,8 @@ This guide offers a programmatic perspective. For detailed instructions on setti
 
 ## Key Components
 
+The manipulation system relies on four key components, which work together to enable object interaction in VR:
+
 ### UxrGrabber
 
 The `UxrGrabber` component is added to the avatar's hands, allowing them to grab objects in the scene.
@@ -25,3 +27,16 @@ The `UxrGrabbableObjectAnchor` component is added to specific GameObjects where 
 ### UxrGrabManager
 
 The `UxrGrabManager` component is a singleton in the scene that manages all grab interactions between avatars and grabbable objects. It provides functionality to create manipulations programmatically and includes events to respond to specific interaction changes.
+
+## Other Components
+
+These components provide additional functionality and extensibility:
+
+### UxrGrabbableObjectComponent
+
+Base class for creating components that interact with a `UxrGrabbableObject`. It simplifies the handling of manipulation events by allowing you to override methods, eliminating the need for manual event subscription.
+
+### UxrGrabPointShape
+
+Base class for extending grab points on objects to support more complex shapes. This allows to create grabbable objects like cylinders, boxes, and spheres, which can be grabbed from any point and angle, rather than just a single defined spot.
+For example, the `UxrGrabPointAxisAngle` component enables the manipulation of cylindrical shapes.
