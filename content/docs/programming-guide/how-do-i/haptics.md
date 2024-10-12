@@ -23,3 +23,10 @@ AudioClip audioClip = ...
 
 UxrAvatar.LocalAvatar.ControllerInput.SendHapticFeedback(UxrHandSide.Left, new UxrHapticClip(audioClip, UxrHapticClickType.Click));
 ```
+
+How can I stop haptic feedback?
+
+```c#
+UxrAvatar.LocalAvatar.ControllerInput.StopHapticFeedback(UxrHandSide.Left);
+UxrAvatar.LocalAvatar.ControllerInput.StopHapticFeedback(UxrHandSide.Right);
+```
