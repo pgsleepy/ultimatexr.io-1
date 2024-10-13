@@ -1,5 +1,0 @@
-{{- $content := . -}}
-{{- $pattern := `(?mi)<p>\s*(?:<a[^>]*>)?((\/|https?:\/\/)[^\s]+?\.(mp4|webm|ogg))(?:<\/a>)?\s*<\/p>` -}}
-{{- $replacement := `{{< video src="$1" >}}` -}}
-{{- $processedContent := replaceRE $pattern $replacement $content -}}
-{{- return $processedContent -}}

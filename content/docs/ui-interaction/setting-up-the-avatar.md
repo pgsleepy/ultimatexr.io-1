@@ -6,7 +6,7 @@ title: "Setting up the Avatar"
 
 The built-in avatars in UltimateXR already come with fingertips and laser pointers pre-configured. The prefabs have the fingertips enabled and the laser pointers disabled by default. If you want to use laser pointers instead, you can enable them by enabling the GameObjects hanging from the HandsIntegration object as shown below:
 
-![](/docs/guides/media/ui/05LaserPointers.jpg)
+![](/media/docs/ui-interaction/setting-up-the-avatar/05LaserPointers.jpg)
 
 ## Setting up fingertips in a custom avatar
 
@@ -14,7 +14,7 @@ Fingertips are enabled using the *UxrFingerTip* component and are normally added
 
 An important consideration is to align the forward vector of the GameObject containing the *UxrFingerTip* component in the direction the pressing is performed. Using a slight downward angle is desired because press actions are normally performed that way. UltimateXR filters out press actions that aren’t performed in a natural angle, so be careful with this step. The right and up vectors do not require to have a specific orientation.
 
-![](/docs/guides/media/ui/06FingerTip.jpg)
+![](/media/docs/ui-interaction/setting-up-the-avatar/06FingerTip.jpg)
  
 ## Setting up laser pointers in a custom avatar.
 

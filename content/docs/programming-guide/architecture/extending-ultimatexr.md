@@ -68,7 +68,7 @@ public abstract void GetClosestSnap(UxrGrabber grabber, Transform snapTransform,
   - `objectDistanceTransform` is the `Transform` on the grabbable object that is used to compute the distance from the grabber to the grab point.
   - `grabberDistanceTransform` is the `Transform` on the grabber that is used to compute the distance to the `UxrGrabbableObject`. It normally is the grabber itself, placed on the palm, but additional points can be defined to specify distances from other parts in the hand such as the finger tips.
   
-  `GetClosestSnap()` returns the most suitable snap position and rotation for a given grabber:
+`GetClosestSnap()` returns the most suitable snap position and rotation for a given grabber:
   - `grabber`, `snapTransform`, `distanceTransform` and `grabberDistanceTransform` are the same parameters as `GetDistanceFromGrabber()`.
   - `position` (`out`) will return the snap position.
   - `rotation` (`out`) will return the snap rotation.
@@ -110,4 +110,5 @@ Avatar controllers are the components responsible for updating an avatar and pro
 UltimateXR comes with the built-in `UxrStandardAvatarController` component, designed to facilitate hand poses, manipulation, inverse kinematics, and UI interaction, among other features.
 
 Developers have the flexibility to create custom avatar controllers tailored to specific avatar requirements. At VRMADA, for instance, we developed the `UxrSpectatorAvatarController` for spectator mode during multiuser sessions or replays.
-Developing a custom avatar controller allows for adjustments in the avatar behavior while retaining the framework's core functionality.
+
+For a complete step by step, check the [Implementing a Custom Avatar Controller](/docs/programming-guide/avatars/uxravatarcontroller#implementing-a-custom-avatar-controller) section from the UxrAvatarController Programming Guide.

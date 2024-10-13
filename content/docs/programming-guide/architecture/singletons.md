@@ -13,7 +13,7 @@ A singleton is a design pattern used in software engineering to ensure that a cl
 Singleton support in UltimateXR is facilitated by two main classes: `UxrAbstractSingleton<T>` and `UxrSingleton<T>`.
 
 {{% callout info %}}
-As observed on the [Core Components Diagram](/docs/programming-guide/architecture-class-diagram), `UxrSingleton` is a subclass from `UxrAbstractSingleton<T>`, which in turn inherits from `UxrComponent`.
+As observed on the [Core Components Diagram](/docs/programming-guide/architecture/core-components-diagram), `UxrSingleton` is a subclass from `UxrAbstractSingleton<T>`, which in turn inherits from `UxrComponent`.
 {{% /callout %}}
 
 `UxrAbstractSingleton<T>` is a singleton designed to work with abstract classes, which can then serve as a foundation for creating instantiable concrete classes.

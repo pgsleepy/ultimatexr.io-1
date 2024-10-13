@@ -68,9 +68,9 @@ By default, UltimateXR hides the `UxrComponent` inspector properties for `Unique
 
 The `HideInNormalInspector` attribute, however, will make sure that these properties are visible in the Debug version of the inspector to help with debugging if necessary:
 
-![](/docs/programming-guide/media/DebugMode.png)
+![](/media/docs/programming-guide/state-serialization-and-synchronization/unique-id/DebugMode.png)
 
-![](/docs/programming-guide/media/DebugModeComponent.png)
+![](/media/docs/programming-guide/state-serialization-and-synchronization/unique-id/DebugModeComponent.png)
 
 ## Unique ids for objects instantiated at runtime
 
@@ -123,7 +123,7 @@ GameObject instance = UxrInstanceManager.Instance.InstantiateGameObject(prefab, 
 
 All instantiable prefabs are automatically detected by the `UxrInstanceManager`. They are visible on the inspector panel:
 
-![](/docs/programming-guide/media/UxrInstanceManager.png)
+![](/media/docs/programming-guide/state-serialization-and-synchronization/unique-id/UxrInstanceManager.png)
 
 The `UxrInstanceManager` can be added to a GameObject in the startup/main scene. In applications with multiplayer support, the `UxrNetworkManager` will take care of adding the `UxrInstanceManager` if it's not present.
 More in-depth information about the`UxrInstanceManager` can be found in the guide and API section of the documentation.
@@ -143,7 +143,7 @@ Unique ids were first introduced in UltimateXR version 1.0.0 preview. Older vers
 To help port older projects we provide a tool that can check for components that are missing unique ids. This tool can also help verify correct unique id information in new projects.
 The tool can be opened using the menu Tools->UltimateXR->Networking->Check Unique IDs.
 
-![](/docs/programming-guide/media/UniqueIdTool.png)
+![](/media/docs/programming-guide/state-serialization-and-synchronization/unique-id/UniqueIdTool.png)
 
 {{% callout tip %}}
 The "Only Log, Don't Modify" option will execute a dry run that will log the changes that would be made to the console, without actually making the changes.

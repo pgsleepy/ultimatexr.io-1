@@ -6,7 +6,7 @@ title: "UxrComponent"
 
 ## Common parent
 
-All components in UltimateXR originate from one of the core components shown in the [Class Diagram](/docs/programming-guide/architecture-class-diagram), all of which inherit from `UxrComponent`.
+All components in UltimateXR originate from one of the core components shown in the [Class Diagram](/docs/programming-guide/architecture/core-components-diagram), all of which inherit from `UxrComponent`.
 
 Having `UxrComponent` as a common parent for all components in the framework helps consolidating core functionalities like unique identifiers, synchronization mechanisms, and state management. It also simplifies future expansion by providing a common source where new functionality can be added.
 
@@ -81,7 +81,7 @@ foreach (UxrComponent component in UxrComponent.AllComponents)
 In the code above, through the static `AllComponents` property, it is possible to access all components in the scene that inherit from `UxrComponent`.
 To iterate over the enabled components only, the property `EnabledComponents` can be used instead.
 
-In the previous [Class Diagram](/docs/programming-guide/architecture-class-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`:
+In the previous [Class Diagram](/docs/programming-guide/core-components-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`:
 
 ### `UxrComponent<T>`
 In `UxrComponent<T>`, `AllComponents` and `EnabledComponents` are redefined to return only the components of the specific type `T`. For instance using `UxrAvatar`, which is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`:
