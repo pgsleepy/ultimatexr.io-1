@@ -2,10 +2,9 @@
 title: "Creating a Staff"
 ---
 
-/media/docs/tutorials/manipulation/creating-a-staff/staff_twirl.mp4
-
 # Creating a Staff
 
+{{< video src="/media/docs/tutorials/manipulation/creating-a-staff/staff_twirl.mp4" >}}
 
 Grab Point Shapes make it simpler and faster to extend your grabs along a shape. If you wanted to extend your grabs to anywhere along a straight line for example, a [UxrGrabPointShape](/api/T_UltimateXR_Manipulation_UxrGrabPointShape#uxrgrabpointshape-class) is a fantastic component to do just that!
 
@@ -76,6 +75,4 @@ Let's recap everything we've done so far:
 
 ***All that's left to do now is to test it!***
 
-
-/media/docs/tutorials/manipulation/creating-a-staff/staff.mp4
-
+{{< video src="/media/docs/tutorials/manipulation/creating-a-staff/staff.mp4" >}}

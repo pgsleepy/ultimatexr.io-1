@@ -295,7 +295,7 @@ UxrManager.Instance.ExecuteStateSyncEvent(serializedEvent);
 
 This is how multiplayer synchronization is implemented internally:
 
-![](/docs/programming-guide/media/StateSyncDiagram.png)
+![](/media/docs/programming-guide/architecture/uxrmanager/StateSyncDiagram.png)
 
 ## Nested synchronization
 

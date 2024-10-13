@@ -8,7 +8,7 @@ title: "Tracking"
 
 Each `UxrControllerInput` component has a corresponding `UxrControllerTracking` component that updates the controller positions and orientations in space each frame. These are used by UltimateXR to update the avatar hands.
 
-![](/docs/programming-guide/media/InputTrackingComponents.png)
+![](/media/docs/programming-guide/input/tracking/InputTrackingComponents.png)
 **Image**: Example of input and tracking components, giving support for the Quest 3 controllers in SteamVR.
 
 ## Sensor
@@ -22,7 +22,7 @@ The process described here is transparent to the user. It is detailed to provide
 The sensor represents the point on the controller that is the origin for its coordinates. At runtime, the XR platform reports the sensor positions and orientations for each controller.
 UltimateXR positions the avatar's hands using the sensor data along with a predefined controller placement in the hand defined in the **HandsIntegration** prefab.
 
-![](/docs/programming-guide/media/HandsIntegrationExample.png)
+![](/media/docs/programming-guide/input/tracking/HandsIntegrationExample.png)
 **Image**: The HandsIntegration present in the CyborgAvatarExample prefab.
 
 The HandsIntegration prefab is a special prefab in UltimateXR, added to all avatars at edit-time. It includes `UxrControllerInput` and `UxrControllerTracking` components for all supported controllers, providing automatic device support.
@@ -32,7 +32,7 @@ During avatar setup, these virtual hands will only need to be aligned to the ava
 
 This ensures avatar hands stay aligned with real-world hands, regardless of the controller used, all seamlessly.
 
-![](/docs/programming-guide/media/HandsIntegrationAlign.png)
+![](/media/docs/programming-guide/input/tracking/HandsIntegrationAlign.png)
 **Image**: The aligned hand gizmo in HandsIntegration, colored in green.
 
 ## Benefits of HandsIntegration

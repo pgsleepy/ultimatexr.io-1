@@ -67,7 +67,7 @@ The `amplitude` parameter provides additional adjustment of the clip intensity. 
 ## UxrHapticClip
 
 To facilitate haptic feedback, UltimateXR provides the `UxrHapticClip` class which includes all the necessary parameters. When this type is used for an inspector variable, it will appear like this:
-![](/docs/programming-guide/media/UxrHapticClip.png)
+![](/media/docs/programming-guide/input/haptics/UxrHapticClip.png)
 
 - **Clip**: Is an audio clip whose wave can be used for haptic feedback if the device supports playing haptic buffers.
 - **Clip Amplitude**: Controls the intensity with which the **Clip** is played.
