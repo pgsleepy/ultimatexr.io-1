@@ -5,7 +5,7 @@
       {{- partial "head.html" . -}}
     {{- end -}}
   </head>
-  <body id="top" class="type-{{ .Type }} kind-{{ .Kind }}" data-controller="navigation theme api trailer">
+  <body id="top" class="type-{{ .Type }} kind-{{ .Kind }}" data-controller="navigation theme api trailer icons">
     <div class="overlay" data-navigation-target="overlay" data-action="click->navigation#dismissOverlay click->trailer#close"></div>
     {{- block "top" . }}{{- end }}
     {{- partial "header.html" . -}}

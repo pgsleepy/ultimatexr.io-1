@@ -14,8 +14,8 @@ params:
   google_tag_id: G-XXXXXXXXXX
   jsmodules:
     application: "js/application.js"
-    icons: "js/icons.js"
     controllers/media: "js/controllers/media_controller.js"
+    controllers/icons: "js/controllers/icons_controller.js"
     controllers/api: "js/controllers/api_controller.js"
     controllers/navigation: "js/controllers/navigation_controller.js"
     controllers/search: "js/controllers/search_controller.js"

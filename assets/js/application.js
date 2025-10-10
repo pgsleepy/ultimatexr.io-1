@@ -1,9 +1,8 @@
 import "@hotwired/turbo";
 
-import "icons";
-
 import { Application } from "@hotwired/stimulus";
 import ApiController from "controllers/api";
+import IconsController from "controllers/icons";
 import MediaController from "controllers/media";
 import NavigationController from "controllers/navigation";
 import SearchController from "controllers/search";
@@ -14,6 +13,7 @@ import TrailerController from "controllers/trailer";
 
 const application = Application.start();
 application.register("api", ApiController);
+application.register("icons", IconsController);
 application.register("media", MediaController);
 application.register("navigation", NavigationController);
 application.register("search", SearchController);
