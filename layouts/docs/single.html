@@ -13,8 +13,6 @@
 
   {{ range $matches }}
     {{ $str := replace . "`" "" }} <!-- The captured content inside backticks -->
-    <p>{{ $str }}</p>
-
     {{ if not (in $str "```") }}
       <!-- Process the string (e.g., replace periods with underscores and remove non-word characters) -->
       {{ $processedStr := replace $str "." "_" }}
