@@ -1,45 +1,48 @@
-<!-- Retrieve modules from site params -->
-{{- $modules := .Site.Params.jsmodules -}}
-
-<!-- Initialize an empty dictionary for imports -->
+{{- /* Build import map for JS modules */ -}}
+{{- $modules := .Site.Params.jsmodules | default dict -}}
 {{- $imports := dict -}}
-
-<!-- Process each module -->
 {{- range $key, $value := $modules -}}
   {{- $path := "" -}}
   {{- if or (hasPrefix $value "http://") (hasPrefix $value "https://") -}}
     {{- $path = $value -}}
   {{- else -}}
-    {{- $resource := resources.Get $value | fingerprint -}}
-    {{- $path = $resource.RelPermalink -}}
+    {{- with resources.Get $value }}
+      {{- $fingerprinted := . | fingerprint -}}
+      {{- $path = $fingerprinted.RelPermalink -}}
+    {{- end -}}
   {{- end -}}
-  {{- $imports = merge $imports (dict $key $path) -}}
+  {{- if $path -}}
+    {{- $imports = merge $imports (dict $key $path) -}}
+  {{- end -}}
 {{- end -}}
 
-<!-- Import Map -->
+{{- if gt (len $imports) 0 }}
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/video.js@7.19.2/dist/video.min.js" as="script">
 <script type="importmap" data-turbo-track="reload">
 {
   "imports": {{ $imports | jsonify (dict "indent" "  ") }}
 }
 </script>
 
-<!-- Module Preloads -->
-{{- range $key, $path := $imports -}}
-<link rel="modulepreload" href="{{ $path }}">
-{{ end }}
+{{- range $imports }}
+<link rel="modulepreload" href="{{ . }}">
+{{- end }}
 
-<!-- Initialize the main JavaScript module -->
 <script type="module">
-  import "application"
+  import "application";
 </script>
+{{- end }}
 
-<script src="https://cdn.jsdelivr.net/npm/video.js@7.19.2/dist/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/video.js@7.19.2/dist/video.min.js" defer></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.js?id={{- .Site.Params.google_tag_id -}}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{- .Site.Params.google_tag_id -}}');
-</script>
+{{- with .Site.Params.google_tag_id }}
+  {{- if ne . "" }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ . }}');
+    </script>
+  {{- end }}
+{{- end }}

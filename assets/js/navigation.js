@@ -7,6 +7,7 @@ document.addEventListener("turbo:load", cleanup);
 document.addEventListener("turbo:load", initialize);
 
 function addEventListenerWithReference(element, event, handler) {
+  if (!element) return;
   element.addEventListener(event, handler);
   eventListeners.push({ element, event, handler });
 }
@@ -37,9 +38,11 @@ function initialize() {
     initSidebarResize(elements.sidebar);
   }
 
-  const scrollManager = maintainScrollPosition(elements.sidebar);
-  addEventListenerWithReference(document, "turbo:click", scrollManager.saveScroll);
-  addEventListenerWithReference(document, "turbo:render", scrollManager.restoreScroll);
+  if (elements.sidebar) {
+    const scrollManager = maintainScrollPosition(elements.sidebar);
+    addEventListenerWithReference(document, "turbo:click", scrollManager.saveScroll);
+    addEventListenerWithReference(document, "turbo:render", scrollManager.restoreScroll);
+  }
 
   if (elements.buttonOpenLocal && elements.overlay) {
     initLocalNavigation(elements);
@@ -53,24 +56,53 @@ function cleanup() {
 }
 
 function initMobileNavigation({ buttonOpenMobile, buttonCloseMobile, navigation }) {
-  addEventListenerWithReference(buttonOpenMobile, 'click', () => navigation.classList.add('open'));
-  addEventListenerWithReference(buttonCloseMobile, 'click', () => navigation.classList.remove('open'));
+  addEventListenerWithReference(buttonOpenMobile, 'click', () => {
+    if (navigation) {
+      navigation.classList.add('open');
+    }
+  });
+  addEventListenerWithReference(buttonCloseMobile, 'click', () => {
+    if (navigation) {
+      navigation.classList.remove('open');
+    }
+  });
 }
 
 function initLocalNavigation({ buttonOpenLocal, buttonCloseLocal, sidebar, overlay }) {
   addEventListenerWithReference(buttonOpenLocal, 'click', () => {
-    sidebar.classList.add('open');
-    overlay.classList.add('open');
+    if (sidebar) {
+      sidebar.classList.add('open');
+    }
+    if (overlay) {
+      overlay.classList.add('open');
+    }
+    if (buttonOpenLocal) {
+      buttonOpenLocal.setAttribute('aria-expanded', 'true');
+    }
   });
 
   addEventListenerWithReference(buttonCloseLocal, 'click', () => {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('open');
+    if (sidebar) {
+      sidebar.classList.remove('open');
+    }
+    if (overlay) {
+      overlay.classList.remove('open');
+    }
+    if (buttonOpenLocal) {
+      buttonOpenLocal.setAttribute('aria-expanded', 'false');
+    }
   });
 
   addEventListenerWithReference(overlay, 'click', () => {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('open');
+    if (sidebar) {
+      sidebar.classList.remove('open');
+    }
+    if (overlay) {
+      overlay.classList.remove('open');
+    }
+    if (buttonOpenLocal) {
+      buttonOpenLocal.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
@@ -95,12 +127,13 @@ function initSidebarResize(sidebar) {
 }
 
 function initSidebarMenu(sidebar) {
+  if (!sidebar) return;
   const linksWithSubmenu = sidebar.querySelectorAll('li:has( > .wrapper) > a');
   const leafLinks = sidebar.querySelectorAll('li:not(:has( > .wrapper)) > a');
   const currentHref = (location.protocol + '//' + location.host + location.pathname).replace(/\/$/, '');
 
   // Close sidebar
-  elements.sidebar.classList.remove('open');
+  sidebar.classList.remove('open');
 
   const toggleSubmenu = (event) => {
     event.preventDefault();
@@ -141,6 +174,12 @@ function initSidebarMenu(sidebar) {
 }
 
 function maintainScrollPosition(sidebar) {
+  if (!sidebar) {
+    return {
+      saveScroll: () => {},
+      restoreScroll: () => {}
+    };
+  }
   let scrollTop = 0;
 
   return {

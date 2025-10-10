@@ -1,26 +1,40 @@
-{{- /* Get image source */ -}}
 {{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
+{{- $imageURL := $src -}}
+{{- $srcset := slice -}}
+{{- $sizesAttr := "100vw" -}}
 
-{{- /* Initialize image URL variable */ -}}
-{{- $imageURL := "" -}}
-
-{{- /* Handle media images or external images */ -}}
 {{- if strings.HasPrefix $src "/media/" -}}
-    {{- /* Image under assets/, fingerprint it */ -}}
-    {{- $imageResource := resources.GetMatch $src -}}
-    {{- if $imageResource -}}
-        {{- $fingerprint := $imageResource | resources.Fingerprint "sha256" -}}
-        {{- $imageURL = $fingerprint.RelPermalink -}}
-    {{- else -}}
-        {{- errorf "Image resource '%s' not found in assets" $src -}}
-    {{- end -}}
-{{- else -}}
-    {{- /* External or non-/media/ image, use as is */ -}}
-    {{- $imageURL = $src -}}
-{{- end -}}
+  {{- $relativePath := strings.TrimPrefix "/media/" $src -}}
+  {{- $resourcePath := printf "media/%s" $relativePath -}}
+  {{- with resources.GetMatch $resourcePath }}
+    {{- $imageResource := . -}}
+    {{- $imageURL = ($imageResource | fingerprint).RelPermalink -}}
+    {{- if and (eq $imageResource.MediaType.Type "image") (ne $imageResource.MediaType.SubType "svg+xml") }}
+      {{- $widths := slice 480 768 1024 1440 -}}
+      {{- range $widths }}
+        {{- $resized := $imageResource.Fit (printf "%dx" .) -}}
+        {{- if $resized }}
+          {{- $srcset = $srcset | append (printf "%s %dw" $resized.RelPermalink .) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt (len $srcset) 0 }}
+        {{- $sizesAttr = "(min-width: 992px) 75vw, 100vw" -}}
+        {{- $firstCandidate := index (split (index $srcset (sub (len $srcset) 1)) " ") 0 -}}
+        {{- if $firstCandidate }}
+          {{- $imageURL = $firstCandidate -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end }}
+  {{- else }}
+    {{- warnf "Image resource '%s' not found in assets" $resourcePath -}}
+  {{- end }}
+{{- end }}
 
 <img src="{{ $imageURL | safeURL }}"
-  {{- with .Text }} alt="{{ . }}"{{ end -}}
-  {{- with .Title }} title="{{ . }}"{{ end -}}
->
-{{- /* chomp trailing newline */ -}}
+  {{- with $alt }} alt="{{ . }}"{{ else }} alt=""{{ end -}}
+  {{- with $title }} title="{{ . }}"{{ end -}}
+  loading="lazy"
+  decoding="async"
+  {{- if gt (len $srcset) 0 }} srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizesAttr }}"{{ end -}}>

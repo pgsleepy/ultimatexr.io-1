@@ -1,4 +1,4 @@
-<!-- Set the page title -->
+{{- /* Compute the page title */ -}}
 {{- $title := .Title -}}
 {{- if .Scratch.Get "title" -}}
   {{- $title = printf "%s - %s" (.Scratch.Get "title") .Site.Title -}}
@@ -6,7 +6,7 @@
   {{- $title = printf "%s - %s" .Title .Site.Title -}}
 {{- end -}}
 
-<!-- Fingerprint image assets -->
+{{- /* Fingerprint image assets */ -}}
 {{- $social_image := resources.Get "images/ultimatexr-social.jpg" | fingerprint -}}
 {{- $apple_touch_icon := resources.Get "images/apple-touch-icon.png" | fingerprint -}}
 {{- $favicon_32x32 := resources.Get "images/favicon-32x32.png" | fingerprint -}}
@@ -16,7 +16,7 @@
 {{- $site_webmanifest := (resources.Get "site.webmanifest" | resources.ExecuteAsTemplate "site.webmanifest" . | fingerprint) -}}
 {{- $favicon := resources.Get "images/favicon.ico" | fingerprint -}}
 
-<!-- Concatenate and fingerprint CSS assets -->
+{{- /* Concatenate and fingerprint CSS assets */ -}}
 {{- $style_css := slice
   (resources.Get "css/reset.css" | resources.ExecuteAsTemplate "reset.css" .)
   (resources.Get "css/lib/videojs.css" | resources.ExecuteAsTemplate "videojs.css" .)
@@ -45,14 +45,25 @@
   (resources.Get "css/search.css" | resources.ExecuteAsTemplate "search.css" .)
 | resources.Concat "css/style.css" | minify | fingerprint -}}
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- with .Description }}
+<meta name="description" content="{{ . }}">
+{{- end }}
+
+<title>{{- $title -}}</title>
+
+{{- if .Permalink }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- end }}
 
 <!-- Use the concatenated and fingerprinted CSS file -->
 <link rel="stylesheet" type="text/css" href="{{- $style_css.RelPermalink -}}" data-turbo-track="reload">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://{{- .Site.Params.algolia_app_id -}}.algolia.net" crossorigin>
+{{- with .Site.Params.algolia_app_id }}
+<link rel="preconnect" href="https://{{ . }}.algolia.net" crossorigin>
+{{- end }}
 <link rel="apple-touch-icon" sizes="180x180" href="{{- $apple_touch_icon.RelPermalink -}}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{- $favicon_32x32.RelPermalink -}}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{- $favicon_16x16.RelPermalink -}}">
@@ -67,19 +78,15 @@
 <meta name="twitter:site" content="@ultimate_xr">
 <meta name="twitter:creator" content="@ultimate_xr">
 <meta name="twitter:title" content="{{- $title -}}">
-<meta name="twitter:description" content="The free open source VR and AR Framework for Unity">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}The free open source VR and AR Framework for Unity{{ end }}">
 <meta name="twitter:image" content="{{- $social_image.RelPermalink -}}">
 
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://www.ultimatexr.io/">
+<!-- Open Graph Meta Tags -->
+<meta property="og:url" content="{{- .Permalink | default "https://www.ultimatexr.io/" -}}">
 <meta property="og:title" content="{{- $title -}}">
-<meta property="og:description" content="The free open source VR and AR Framework for Unity">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}The free open source VR and AR Framework for Unity{{ end }}">
 <meta property="og:type" content="website">
 <meta property="og:image" content="{{- $social_image.RelPermalink -}}">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-
-<title>{{- $title -}}</title>
-
-{{- partial "scripts" . -}}

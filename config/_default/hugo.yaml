@@ -22,6 +22,7 @@ params:
     toc: "js/toc.js"
     trailer: "js/trailer.js"
     components/theme_manager: "js/components/theme_manager.js"
+    controllers/media: "js/controllers/media_controller.js"
     lucide: "js/lib/lucide.js"
     "@hotwired/turbo": "js/lib/turbo.es2017-esm.js"
     "@hotwired/stimulus": "js/lib/stimulus.js"

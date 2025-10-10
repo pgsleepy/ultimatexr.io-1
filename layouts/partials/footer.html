@@ -1,18 +1,5 @@
-{{ $theme_js := resources.Get "js/theme.js" | fingerprint }}
-
 <footer>
   <p>
     Copyright © {{ now.Year }} VRMADA. All rights reserved.
   </p>
 </footer>
-<script>
-  var savedTheme = localStorage.getItem('theme');
-  var htmlElement = document.documentElement;
-
-  if (savedTheme === 'dark') {
-    htmlElement.classList.add('theme-dark');
-  } else {
-    htmlElement.classList.remove('theme-dark');
-  }
-</script>
-<script src="{{ $theme_js.RelPermalink }}" type="module" data-turbo-eval="false"></script>

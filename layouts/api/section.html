@@ -1,6 +1,7 @@
 {{ define "head" }}
-  <base href="/api/">
   {{ .Scratch.Set "title" "API Reference" }}
+  {{- partial "head.html" . -}}
+  <base href="/api/">
 {{ end }}
 
 {{ define "sidebar" }}
@@ -8,5 +9,5 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "api-main.html" . }}
+  {{ partialCached "api-main.html" . .RelPermalink }}
 {{ end }}

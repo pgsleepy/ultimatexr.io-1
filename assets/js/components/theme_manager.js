@@ -10,12 +10,18 @@ export class ThemeManager {
   }
   
   toggleTheme = (event) => {
+    if (event) {
+      event.preventDefault();
+    }
+
     const theme = this.rootElement.classList.contains('theme-dark') ? 'light' : 'dark';
 
-    event.preventDefault();
     localStorage.setItem('theme', theme);
     this.rootElement.classList.toggle('theme-dark');
-    event.target.closest('a').blur();
+    this.updateControlState(theme);
+    if (event && event.target.closest('[data-theme-toggle]')) {
+      event.target.closest('[data-theme-toggle]').blur();
+    }
   }
 
   applySavedTheme() {
@@ -23,14 +29,35 @@ export class ThemeManager {
 
     if (savedTheme === 'dark') {
       this.rootElement.classList.add('theme-dark');
+    } else {
+      this.rootElement.classList.remove('theme-dark');
     }
+
+    this.updateControlState(savedTheme === 'dark' ? 'dark' : 'light');
+  }
+
+  updateControlState(theme) {
+    if (!this.toggleButtonElement) {
+      return;
+    }
+
+    const isDark = theme === 'dark';
+    this.toggleButtonElement.setAttribute('aria-pressed', isDark.toString());
   }
 
   addEventListeners() {
+    if (!this.toggleButtonElement) {
+      return;
+    }
+
     this.toggleButtonElement.addEventListener('click', this.toggleTheme);
   }
 
   removeEventListeners() {
+    if (!this.toggleButtonElement) {
+      return;
+    }
+
     this.toggleButtonElement.removeEventListener('click', this.toggleTheme);
   }
 
@@ -42,5 +69,6 @@ export class ThemeManager {
     this.reset();
     this.toggleButtonElement = toggleButtonElement;
     this.addEventListeners();
+    this.applySavedTheme();
   }
 }

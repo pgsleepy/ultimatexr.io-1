@@ -1,9 +1,11 @@
 {{ define "head" }}
+  {{- $matches := findRE `<h1.*?>(.|\n)*?</h1>` .Content -}}
+  {{- with index $matches 0 }}
+    {{- $title := replaceRE `<h1.*?>(.*)</h1>` `$1` . -}}
+    {{- $.Scratch.Set "title" $title -}}
+  {{- end }}
+  {{- partial "head.html" . -}}
   <base href="/api/">
-  {{ $title := findRE "<h1.*?>(.|\n)*?</h1>" .Content 1 | }}
-  {{ $title = index ($title) 0 }}
-  {{ $title = replaceRE `<h1.*?>(.*)</h1>` `$1` $title }}
-  {{ .Scratch.Set "title" $title }}
 {{ end }}
 
 {{ define "sidebar" }}
@@ -11,5 +13,5 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ partial "api-main.html" . }}
+  {{ partialCached "api-main.html" . .RelPermalink }}
 {{ end }}

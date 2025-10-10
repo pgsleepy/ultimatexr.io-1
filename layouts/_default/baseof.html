@@ -1,32 +1,38 @@
 <!DOCTYPE html>
-<html>
-    {{- block "head" . }}{{- end }}
-    {{- partial "head.html" . -}}
-    <body class="type-{{ .Type }} kind-{{ .Kind }}">
-        <div class="overlay"></div>
-        {{- block "top" . }}{{- end }}
-        {{- partial "header.html" . -}}
-        {{- partial "nav-local.html" . -}}
-        <div id="content">
-          <div class="container">
-            <aside class="sidebar" id="sidebar-{{ .Type }}" data-turbo-permanent>
-              <a href="javascript:;" class="btn-close">
-                <i data-lucide="x"></i>
-              </a>
-              {{- block "sidebar" . }}{{- end }}
-            </aside>
-            <main>
-              {{- block "main" . }}{{- end }}
-            </main>
-            <aside id="sidepane">
-              <div class="wrapper">
-                {{- block "sidepane" . }}
-                  {{- partial "community-links.html" . -}}
-                {{- end }}
-              </div>
-            </aside>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+  <head>
+    {{- block "head" . -}}
+      {{- partial "head.html" . -}}
+    {{- end -}}
+  </head>
+  <body id="top" class="type-{{ .Type }} kind-{{ .Kind }}">
+    <div class="overlay"></div>
+    {{- block "top" . }}{{- end }}
+    {{- partial "header.html" . -}}
+    {{- partial "nav-local.html" . -}}
+    <div id="content">
+      <div class="container">
+        <aside class="sidebar" id="sidebar-{{ .Type }}" data-turbo-permanent>
+          <a href="javascript:;" class="btn-close">
+            <i data-lucide="x"></i>
+          </a>
+          {{- block "sidebar" . }}{{- end }}
+        </aside>
+        <main>
+          {{- block "main" . }}{{- end }}
+        </main>
+        <aside id="sidepane">
+          <div class="wrapper">
+            {{- block "sidepane" . }}
+              {{- partial "community-links.html" . -}}
+            {{- end }}
           </div>
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+        </aside>
+      </div>
+    </div>
+    {{- partial "footer.html" . -}}
+    {{- block "scripts" . -}}
+      {{- partial "scripts.html" . -}}
+    {{- end }}
+  </body>
 </html>

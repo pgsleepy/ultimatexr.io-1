@@ -78,5 +78,7 @@
 
 <div data-controller="media">
     <video {{ $attrsString | safeHTMLAttr }} src="{{- $videoURL -}}" data-media-target="mediaElement">
+        Sorry, your browser doesn't support embedded videos.
+    </video>
 </div>
 {{- /* chomp trailing newline */ -}}
