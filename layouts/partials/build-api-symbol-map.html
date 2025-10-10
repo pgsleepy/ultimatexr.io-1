@@ -1,0 +1,93 @@
+{{- /* 
+  This partial builds a map of API symbols to their permalinks.
+  Uses filesystem I/O to work even when API content is not mounted.
+  
+  Returns the symbol map as a dict
+*/ -}}
+
+{{- /* Step 1: Build reverse index from API filesystem */ -}}
+{{- $scratch := newScratch -}}
+{{- $apiSourcePath := "content/api/src" -}}
+
+{{- with os.ReadDir $apiSourcePath -}}
+  {{- range . -}}
+    {{- if and (not .IsDir) (strings.HasSuffix .Name ".md") -}}
+      {{- $filename := replaceRE `\.md$` "" .Name -}}
+      
+      {{- /* Only process API files that start with uppercase letter + underscore (e.g., T_, M_, P_, E_) */ -}}
+      {{- /* Skip aggregate pages like Methods_, Events_, Overload_, etc. */ -}}
+      {{- $startsWithSingleLetter := findRE `^[A-Z]_` $filename -}}
+      {{- if $startsWithSingleLetter -}}
+        {{- $permalink := printf "/api/%s/" $filename -}}
+        
+        {{- /* Strategy 1: Store by processed filename */ -}}
+        {{- $processedName := replace $filename "." "_" -}}
+        {{- $processedName = replaceRE `\W` "" $processedName -}}
+        {{- $scratch.SetInMap "index" $processedName $permalink -}}
+        
+        {{- /* Strategy 2: Extract short name from filename for direct lookups */ -}}
+        {{- /* E.g., T_UltimateXR_Avatar_UxrAvatar -> UxrAvatar */ -}}
+        {{- $parts := split $filename "_" -}}
+        {{- if gt (len $parts) 0 -}}
+          {{- $shortName := index $parts (sub (len $parts) 1) -}}
+          {{- if not ($scratch.Get "index") -}}
+            {{- $scratch.SetInMap "index" $shortName $permalink -}}
+          {{- else if not (index ($scratch.Get "index") $shortName) -}}
+            {{- $scratch.SetInMap "index" $shortName $permalink -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $reverseIndex := $scratch.Get "index" -}}
+{{- if not $reverseIndex -}}
+  {{- $reverseIndex = dict -}}
+{{- end -}}
+
+{{- /* Step 2: Collect all Uxr symbols from docs pages */ -}}
+{{- $docsPages := where site.RegularPages "Section" "docs" -}}
+{{- $allSymbols := slice -}}
+
+{{- range $docsPages -}}
+  {{- $content := .RawContent -}}
+  {{- $matches := findRE "`([^`\n]+)`" $content -}}
+  
+  {{- range $matches -}}
+    {{- $symbol := trim (replace . "`" "") " " -}}
+    {{- if hasPrefix $symbol "Uxr" -}}
+      {{- if not (in $allSymbols $symbol) -}}
+        {{- $allSymbols = $allSymbols | append $symbol -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Step 3: Build symbol map using O(1) dict lookups */ -}}
+{{- range $symbol := $allSymbols -}}
+  {{- $link := "" -}}
+  
+  {{- /* Try direct lookup first */ -}}
+  {{- with index $reverseIndex $symbol -}}
+    {{- $link = . -}}
+  {{- else -}}
+    {{- /* Try with underscore/dot conversion */ -}}
+    {{- $processed := replace $symbol "." "_" -}}
+    {{- $processed = replaceRE `\W` "" $processed -}}
+    {{- with index $reverseIndex $processed -}}
+      {{- $link = . -}}
+    {{- end -}}
+  {{- end -}}
+  
+  {{- if $link -}}
+    {{- $scratch.SetInMap "symbolMap" $symbol $link -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $symbolMap := $scratch.Get "symbolMap" -}}
+{{- if not $symbolMap -}}
+  {{- $symbolMap = dict -}}
+{{- end -}}
+
+{{- return $symbolMap -}}

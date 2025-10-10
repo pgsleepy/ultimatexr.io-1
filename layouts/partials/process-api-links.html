@@ -1,0 +1,45 @@
+{{- /* 
+  This partial processes raw content to add API symbol links.
+  Skips headings and code blocks.
+  
+  Expects context dict with:
+  - content: raw markdown content
+  - symbolMap: dict of symbols to permalinks
+  
+  Returns the processed content
+*/ -}}
+
+{{- $rawContent := .content -}}
+{{- $symbolMap := .symbolMap -}}
+
+{{- $lines := split $rawContent "\n" -}}
+{{- $processedLines := slice -}}
+{{- $inCodeBlock := false -}}
+
+{{- /* Process each line, skipping headings and code blocks */ -}}
+{{- range $lines -}}
+  {{- $line := . -}}
+  {{- $trimmedLine := strings.TrimSpace $line -}}
+  
+  {{- /* Track code block boundaries (triple backticks) */ -}}
+  {{- if hasPrefix $trimmedLine "```" -}}
+    {{- $inCodeBlock = not $inCodeBlock -}}
+  {{- end -}}
+  
+  {{- $isHeading := hasPrefix $trimmedLine "#" -}}
+  
+  {{- if and (not $isHeading) (not $inCodeBlock) -}}
+    {{- /* Replace symbols with links only in non-heading, non-code-block lines */ -}}
+    {{- range $symbol, $link := $symbolMap -}}
+      {{- $pattern := printf "`%s`" $symbol -}}
+      {{- $replacement := printf "<code><a href=\"%s\">%s</a></code>" $link $symbol -}}
+      {{- $line = replace $line $pattern $replacement -}}
+    {{- end -}}
+  {{- end -}}
+  
+  {{- $processedLines = $processedLines | append $line -}}
+{{- end -}}
+
+{{- /* Rejoin and return */ -}}
+{{- return delimit $processedLines "\n" -}}
+

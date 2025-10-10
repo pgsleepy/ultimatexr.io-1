@@ -7,33 +7,14 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ $rawContent := .RawContent }} <!-- Get the raw content of the page -->
-  {{ $backtickPattern := "`([^`]*)`" }} <!-- Regex pattern to capture content inside backticks -->
-  {{ $matches := findRE $backtickPattern $rawContent }} <!-- Find all matches inside backticks -->
-
-  {{ range $matches }}
-    {{ $str := replace . "`" "" }} <!-- The captured content inside backticks -->
-    {{ if not (in $str "```") }}
-      <!-- Process the string (e.g., replace periods with underscores and remove non-word characters) -->
-      {{ $processedStr := replace $str "." "_" }}
-      {{ $processedStr = replaceRE "\\W" "" $processedStr }}
-
-      <!-- Construct a pattern to search for matching pages -->
-      {{ $pattern := printf "^/api/[A-Z]_(.*)%s/$" $processedStr }}
-
-      <!-- Find matching pages -->
-      {{ $matchingPage := index (where $.Site.RegularPages "RelPermalink" "like" $pattern) 0 }}
-
-      {{ if $matchingPage }}
-        <!-- If a matching page is found, replace the content inside backticks with a link -->
-        {{ $rawContent = replace $rawContent (printf "`%s`" $str) (printf "<code>[%s](%s)</code>" $str $matchingPage.RelPermalink) }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-
-  <!-- Render the final content -->
-  {{ $renderedContent := $rawContent | .RenderString }}
-  {{ $renderedContent }}
+  {{- /* Build the symbol map once (cached across all pages) */ -}}
+  {{- $symbolMap := partialCached "build-api-symbol-map.html" . "api-symbol-map" -}}
+  
+  {{- /* Process content to add API links */ -}}
+  {{- $processedContent := partial "process-api-links.html" (dict "content" .RawContent "symbolMap" $symbolMap) -}}
+  
+  {{- /* Render final content */ -}}
+  {{- $processedContent | .RenderString -}}
 
   {{/* Flatten the menu items and pass them to the pagination partial to build the prev/next links */}}
   {{ $result := partial "flatten-dict.html" (dict "data" .Site.Data.docs) }}
