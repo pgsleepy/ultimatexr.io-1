@@ -19,7 +19,7 @@
 {{- /* Process each line, skipping headings and code blocks */ -}}
 {{- range $lines -}}
   {{- $line := . -}}
-  {{- $trimmedLine := strings.TrimSpace $line -}}
+  {{- $trimmedLine := trim $line " \t\r\n" -}}
   
   {{- /* Track code block boundaries (triple backticks) */ -}}
   {{- if hasPrefix $trimmedLine "```" -}}
@@ -42,4 +42,3 @@
 
 {{- /* Rejoin and return */ -}}
 {{- return delimit $processedLines "\n" -}}
-
