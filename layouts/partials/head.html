@@ -53,6 +53,25 @@
 
 <title>{{- $title -}}</title>
 
+<script>
+  (function () {
+    try {
+      var storage = window.localStorage;
+      if (!storage) {
+        return;
+      }
+      var theme = storage.getItem("theme");
+      if (theme === "dark") {
+        document.documentElement.classList.add("theme-dark");
+      } else if (theme === "light") {
+        document.documentElement.classList.remove("theme-dark");
+      }
+    } catch (error) {
+      /* localStorage not available */
+    }
+  })();
+</script>
+
 {{- if .Permalink }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end }}
