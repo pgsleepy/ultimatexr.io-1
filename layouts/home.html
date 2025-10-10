@@ -2,7 +2,7 @@
   <h1 class="heading">{{ safeHTML .Params.heading }}</h1>
   <p class="subheading">{{ .Params.subheading }}</p>
   <div class="actions">
-    <a class="btn btn-primary" href="javascript:;" data-trailer-trigger>
+    <a class="btn btn-primary" href="#" data-trailer-target="trigger" data-action="click->trailer#open" aria-expanded="false">
       <i data-lucide="circle-play"></i>Watch teaser
     </a>
     <a class="btn" href="/docs/getting-started/documentation-hub">Get started</a>
@@ -27,13 +27,14 @@
 {{ end }}
 
 {{ define "top" }}
-  <div id="container-trailer">
+  <div id="container-trailer" data-trailer-target="container">
     <video
       id="trailer"
       class="video-js"
       controls
       preload="none"
       data-setup="{}"
+      data-trailer-target="video"
       >
       <source src="https://www.vrmada.com/assets/TeaserUltimateXR.mp4" type="video/mp4">
     </video>

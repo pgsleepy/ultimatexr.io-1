@@ -5,15 +5,15 @@
       {{- partial "head.html" . -}}
     {{- end -}}
   </head>
-  <body id="top" class="type-{{ .Type }} kind-{{ .Kind }}">
-    <div class="overlay"></div>
+  <body id="top" class="type-{{ .Type }} kind-{{ .Kind }}" data-controller="navigation theme api trailer">
+    <div class="overlay" data-navigation-target="overlay" data-action="click->navigation#dismissOverlay click->trailer#close"></div>
     {{- block "top" . }}{{- end }}
     {{- partial "header.html" . -}}
     {{- partial "nav-local.html" . -}}
     <div id="content">
       <div class="container">
-        <aside class="sidebar" id="sidebar-{{ .Type }}" data-turbo-permanent>
-          <a href="javascript:;" class="btn-close">
+        <aside class="sidebar" id="sidebar-{{ .Type }}" data-controller="sidebar" data-navigation-target="sidebar" data-turbo-permanent>
+          <a href="javascript:;" class="btn-close" data-action="click->navigation#closeSidebar">
             <i data-lucide="x"></i>
           </a>
           {{- block "sidebar" . }}{{- end }}
@@ -22,7 +22,7 @@
           {{- block "main" . }}{{- end }}
         </main>
         <aside id="sidepane">
-          <div class="wrapper">
+          <div class="wrapper" data-controller="toc">
             {{- block "sidepane" . }}
               {{- partial "community-links.html" . -}}
             {{- end }}
