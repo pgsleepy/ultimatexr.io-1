@@ -18,7 +18,7 @@
 
 {{- if gt (len $imports) 0 }}
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/video.js@7.19.2/dist/video.min.js" as="script">
-<script type="importmap" data-turbo-track="reload">
+<script id="import-map" type="importmap" data-turbo-track="reload" data-turbo-permanent>
 {
   "imports": {{ $imports | jsonify (dict "indent" "  ") }}
 }
@@ -28,7 +28,7 @@
 <link rel="modulepreload" href="{{ . }}">
 {{- end }}
 
-<script type="module">
+<script id="application-module" type="module" data-turbo-permanent>
   import "application";
 </script>
 {{- end }}
