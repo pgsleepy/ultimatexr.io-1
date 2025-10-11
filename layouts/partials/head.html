@@ -54,22 +54,17 @@
 <title>{{- $title -}}</title>
 
 <script>
-  (function () {
+  (function (root) {
     try {
-      var storage = window.localStorage;
-      if (!storage) {
-        return;
-      }
-      var theme = storage.getItem("theme");
-      if (theme === "dark") {
-        document.documentElement.classList.add("theme-dark");
-      } else if (theme === "light") {
-        document.documentElement.classList.remove("theme-dark");
-      }
+      var stored = localStorage.getItem("theme");
+      var prefersDark =
+        stored === "dark" ||
+        (stored === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      root.classList.toggle("theme-dark", prefersDark);
     } catch (error) {
-      /* localStorage not available */
+      /* Leave the default theme when storage or matchMedia is unavailable */
     }
-  })();
+  })(document.documentElement);
 </script>
 
 {{- if .Permalink }}
