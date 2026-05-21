@@ -58,7 +58,6 @@ UltimateXR includes `UxrGrabPointShapeAxisAngle`, a built-in implementation of `
 
 - Grabbing a pipe or railing from any point along its length.
 - Grabbing a lever or handle that can be gripped at different positions and angles.
-- Grabbing a cylindrical tool like a flashlight or a bat.
 
 ## Creating Custom Grab Shapes
 
@@ -80,7 +79,7 @@ public class UxrGrabPointShapeBox : UxrGrabPointShape
 ```
 
 {{% callout info %}}
-The `UxrGrabPointShape` component requires a `UxrGrabbableObject` on the same GameObject. This is enforced by the `[RequireComponent]` attribute.
+The `UxrGrabPointShape` component requires a `UxrGrabbableObject` on the same GameObject.
 {{% /callout %}}
 
 ## API Reference

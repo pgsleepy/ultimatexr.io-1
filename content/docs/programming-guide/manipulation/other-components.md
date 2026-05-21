@@ -16,11 +16,8 @@ For a detailed guide, refer to the [UxrGrabbableObjectComponent Programming Guid
 
 ### Key Features
 
-- **Automatic event wiring**: The component automatically subscribes to all `UxrGrabbableObject` events on enable and unsubscribes on disable.
-- **Method overriding**: Instead of subscribing to events, simply override methods like `OnObjectGrabbed()`, `OnObjectReleased()`, `OnObjectPlaced()`, and more.
+- **Event handling by method overriding**: Instead of subscribing to events, simply override methods like `OnObjectGrabbed()`, `OnObjectReleased()`, `OnObjectPlaced()`, and more.
 - **Constraint events**: Override `OnObjectConstraintsApplying()`, `OnObjectConstraintsApplied()`, and `OnObjectConstraintsFinished()` to implement custom constraint logic.
-- **Easy access**: The `GrabbableObject` property provides direct access to the associated `UxrGrabbableObject`.
-- **Grab state**: The `IsBeingGrabbed` property provides a quick check for whether the object is currently being grabbed.
 
 ## UxrGrabPointShape
 
@@ -50,11 +47,11 @@ Aligns a `UxrGrabbableObject` to a specific orientation when it is released. Thi
 
 ### UxrDependentGrabbable
 
-Manages dependencies between `UxrGrabbableObject` entities. This component can be used to create relationships where grabbing or releasing one object affects another.
+Component that allows a `UxrGrabbableObject` object be grabbed only if another object is being grabbed. For instance, it can be added to a grenade pin to make sure the pin is never grabbed unless the grenade is being grabbed too. Otherwise the pin could be removed by mistake when trying to grab the grenade.
 
 ### UxrGrabbableResizable
 
-Allows a `UxrGrabbableObject` to be resized during manipulation. This enables interactions where users can scale objects by grabbing them with two hands and moving them apart or together.
+Allows a `UxrGrabbableObject` to be resized using two-handed manipulation. This enables interactions where users can scale objects by grabbing them with two hands and moving them apart or together.
 
 ### UxrEnableComponentWhileGrabbable
 

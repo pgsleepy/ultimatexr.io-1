@@ -14,7 +14,7 @@ The full API can be explored in the [UxrGrabbableObjectAnchor API Reference](/ap
 
 Some key features include:
 - **Automatic handling**: Placement mechanics are handled automatically by the `UxrGrabManager`. There is no special requirement to set it up in a scene; the grab manager will be available as soon as it is required.
-- **Compatible tags**: Tags allow to model which objects can be placed on the anchor. If the list is empty, the anchor is compatible with all `UxrGrabbableObject` entities that do not have a tag.
+- **Compatible tags**: Tags allow to model which objects can be placed on the anchor, using `UxrGrabbableObject`'s `Tag` property. If the list is empty, the anchor is compatible with all `UxrGrabbableObject` entities that do not have a tag.
 - **Placing validators**: In addition to tags, custom validator functions can be registered to implement complex compatibility behavior that changes at runtime.
 - **Visual feedback**: GameObjects can be assigned to activate or deactivate automatically based on manipulation events, providing visual cues to the user.
 - **Event support**: Events such as `Placing`, `Placed`, `Removing`, and `Removed` allow custom logic to be executed when users interact with the anchor.

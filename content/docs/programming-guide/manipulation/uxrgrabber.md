@@ -13,7 +13,7 @@ The full API can be explored in the [UxrGrabber API Reference](/api/T_UltimateXR
 {{% /callout %}}
 
 Some key features include:
-- **Automatic setup**: The `UxrGrabber` is typically set up automatically when configuring an avatar. The `UxrGrabManager` handles all interactions between grabbers and grabbable objects.
+- **Automatic setup**: The `UxrGrabber` is typically set up automatically when configuring an avatar, through the HandsIntegration prefab. The `UxrGrabManager` handles all interactions between grabbers and grabbable objects.
 - **Proximity transforms**: By default, the grabber's own transform is used to compute distances to grabbable objects. Additional proximity transforms can be specified so that grabbable objects can choose which one to use. For example, in an aircraft cockpit, knobs may prefer the distance from the tip of the index finger, while bigger objects prefer the palm of the hand.
 - **Hand orientation info**: The component provides directional information about the hand, such as finger direction, palm direction, and thumb direction.
 - **Velocity tracking**: Current and smoothed velocity and angular velocity are available, useful for throwing mechanics.
@@ -36,19 +36,19 @@ These properties provide directional information about the hand, useful for comp
 ### Properties
 
 - `Vector3` `LocalFingerDirection`  
-  Gets the local-space axis pointing towards the fingers, excluding the thumb.
+  Gets the 'UxrGrabber' positive or negative local axis that points towards the fingers, excluding the thumb.
 - `Vector3` `FingerDirection`  
-  Gets the world-space axis pointing towards the fingers, excluding the thumb.
+  Gets `LocalFingerDirection` in world-space.
 - `Vector3` `LocalPalmOutDirection`  
-  Gets the local-space axis pointing outwards from the palm.
+  Gets the 'UxrGrabber' positive or negative local axis pointing outwards from the palm.
 - `Vector3` `PalmOutDirection`  
-  Gets the world-space axis pointing outwards from the palm.
+  Gets `PalmOutDirection` in world-space.
 - `Vector3` `LocalPalmThumbDirection`  
-  Gets the local-space axis pointing towards the thumb.
+  Gets the 'UxrGrabber' positive or negative local axis pointing towards the thumb.
 - `Vector3` `PalmThumbDirection`  
-  Gets the world-space axis pointing towards the thumb.
+  Gets `PalmThumbDirection` in world-space.
 - `TransformExt.MirrorType` `RequiredMirrorType`  
-  Gets which mirroring type snap transforms should use with the grabber if they want to be mirrored. Snap transforms are GameObjects in `UxrGrabbableObject` that determine where the hand should be placed during grabs.
+  Gets which mirroring type snap transforms should use with the grabber if they want to be mirrored. Snap transforms are GameObjects in `UxrGrabbableObject` that determine where they should be placed in the grabber during grabs.
 
 ## Hand Bone
 
