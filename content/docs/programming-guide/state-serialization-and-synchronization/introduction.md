@@ -33,7 +33,7 @@ Let's see some quick examples first of how easy it is to implement and use **Sta
 
 ```c#
 // Save complete scene state
-byte[] serializedData = UxrManager.Instance.SaveStateChanges(UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryUncompressed);
+byte[] serializedData = UxrManager.Instance.SaveStateChanges(null, null, UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryUncompressed);
 
 // Load state
 UxrManager.Instance.LoadStateChanges(serializedData);
@@ -69,7 +69,7 @@ public Flashlight : UxrComponent
 		_light.enabled = enabled;
 		LightColor = color;
 		// Notify of a method call with parameters.
-		EndSyncMethod(new object[] { enabled, color });
+		EndSyncMethod(SyncParams(enabled, color));
 	}
 }
 ```
@@ -77,13 +77,18 @@ public Flashlight : UxrComponent
 **Example 2.b**: Add **StateSave** support to the Flashlight component. This will automatically include the color and toggled state when saving or loading.
 Please note that this example is more complex than typical scenarios because it involves serializing properties for a Unity `Light` component that require explicit get/set calls.
 ```c#
+private const int StateSerializationVersion = 0;
+
 // Override SerializeState() to include our own data.
 // Note that SerializeState is used for both Serialize and Deserialize operations, which
 // simplifies and reduces the chance of errors.
-protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
 {
 	// Always call base implementation first using the same parameters
-	base.SerializeState(isReading, stateSerializationVersion, level, options);
+	base.SerializeState(isReading, level, options);
+
+	// Serialize version for backwards compatibility
+	SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
 
 	if (level >= UxrStateSaveLevel.ChangesSinceBeginning)
 	{

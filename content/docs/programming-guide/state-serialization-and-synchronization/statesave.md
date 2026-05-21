@@ -13,7 +13,7 @@ Let's remember our first example, given in the introduction section:
 
 ```c#
 // Save complete scene state
-byte[] serializedData = UxrManager.Instance.SaveStateChanges(UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryUncompressed);
+byte[] serializedData = UxrManager.Instance.SaveStateChanges(null, null, UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryUncompressed);
 
 // Load state
 UxrManager.Instance.LoadStateChanges(serializedData);
@@ -38,10 +38,13 @@ Adding StateSave support to our components is pretty straightforward:
 Let's get back to the StateSave example given in the introduction section. We were adding StateSave support to a flashlight component that had a light with a color and an enabled state:
 
 ```c#
-protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
 {
 	// Always call base implementation first using the same parameters
-	base.SerializeState(isReading, stateSerializationVersion, level, options);
+	base.SerializeState(isReading, level, options);
+	
+	// Serialize version for backwards compatibility
+	SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
 
 	if (level >= UxrStateSaveLevel.ChangesSinceBeginning)
 	{
@@ -82,12 +85,15 @@ In our flashlight example, the read mode will update the `Light` component with 
 Dealing with variables that don't require access to another component's getter/setter would simplify the code even more:
 
 ```c#
+private const int StateSerializationVersion = 0;
 private int _life;
 private int _ammo;
 
-protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
 {
-	base.SerializeState(isReading, stateSerializationVersion, level, options);
+	base.SerializeState(isReading, level, options);
+	
+	SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
 
 	if (level >= UxrStateSaveLevel.ChangesSinceBeginning)
 	{
@@ -98,7 +104,7 @@ protected override void SerializeState(bool isReading, int stateSerializationVer
 ```
 
 At this point there are many questions left:
-- What are `stateSerializationVersion`, `level` and `options`?
+- What are `level` and `options`?
 - What type of variables can I serialize? Do you support xxx?
 - What about transforms?
 - Why is `nameof()` used? is the name serialized? should I use shorter names to take up less space?
@@ -107,19 +113,24 @@ At this point there are many questions left:
 - What if I have 10k components in my scene? Won't that require a lot of space?
 - You mentioned state interpolation. How does that work?
 
-## `stateSerializationVersion`
+## State versioning
 
 It is very common to add or remove parameters during an application lifecycle. When data is changed in newer versions it is essential to provide backwards compatibility to keep the ability to deserialize old data.
-The `IUxrStateSave` interface provides a `StateSerializationVersion` parameter which is an `int` that can be overriden on any component. Starting with 0, it should be incremented each time a change is made in the state format that breaks compatibility with the current version.
+Versioning is handled using the `SerializeStateVersion()` method, which is called explicitly inside `SerializeState()`. Each component defines a `StateSerializationVersion` constant (starting at 0) that should be incremented each time a change is made in the state format that breaks compatibility with the current version.
+
+The `SerializeStateVersion()` call takes the current version and outputs an `effectiveVersion`. When writing, `effectiveVersion` will be the same as the current version. When reading, `effectiveVersion` will be the version the data was originally serialized with, allowing for backwards compatibility.
 
 Let's say we want to add `intensity` support for our `Light` component on the flashlight. Assuming the `StateSerializationVersion` was 0, we can integrate this change while keeping compatibility with the previous versions like this:
 
 ```c#
-protected override int StateSerializationVersion => 1; // Was 0, now is 1.
+private const int StateSerializationVersion = 1; // Was 0, now is 1.
 
-protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
 {
-	base.SerializeState(isReading, stateSerializationVersion, level, options);
+	base.SerializeState(isReading, level, options);
+
+	// Serialize version for backwards compatibility
+	SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
 
 	if (level >= UxrStateSaveLevel.ChangesSinceBeginning)
 	{
@@ -130,7 +141,7 @@ protected override void SerializeState(bool isReading, int stateSerializationVer
 		SerializeStateValue(level, options, nameof(color),        ref color);
 		SerializeStateValue(level, options, nameof(lightEnabled), ref lightEnabled);
 
-		if (StateSerializationVersion >= 1)
+		if (effectiveVersion >= 1)
 		{
 			// We are serializing/deserializing the new version.
 			SerializeStateValue(level, options, nameof(intensity), ref intensity);
@@ -150,7 +161,7 @@ protected override void SerializeState(bool isReading, int stateSerializationVer
 }
 ```
 
-When reading, the `stateSerializationVersion` method parameter will be the value of the component's `StateSerializationVersion` at the moment the component was serialized. When writing, it will take the current component's `StateSerializationVersion` value.
+When reading, the `effectiveVersion` output will be the value of the component's `StateSerializationVersion` at the moment the component was serialized. When writing, it will be the current component's `StateSerializationVersion` value.
 Using the updated version, the flashlight component has now support for the `intensity` parameter in the `Light` while still keeping support for the old version.
 
 ## `UxrStateSaveLevel`
@@ -186,9 +197,11 @@ But we have good news: **UltimateXR will take care of everything**. `SerializeSt
 This means it's perfectly valid to write this:
 
 ```c#
-protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
 {
-	base.SerializeState(isReading, stateSerializationVersion, level, options);
+	base.SerializeState(isReading, level, options);
+
+	SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
 
 	SerializeStateValue(level, options, nameof(_life), ref _life);
 	SerializeStateValue(level, options, nameof(_ammo), ref _ammo);
@@ -209,9 +222,11 @@ This is the primary consideration when implementing `SerializeState()`. This lin
 Let's see what difference it makes:
 
 ```c#
-protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
 {
-	base.SerializeState(isReading, stateSerializationVersion, level, options);
+	base.SerializeState(isReading, level, options);
+	
+	SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
 	
 	if (level >= UxrStateSaveLevel.ChangesSinceBeginning)
 	{
@@ -235,13 +250,15 @@ You might still be unfamiliar with StateSync. This functionality will be covered
 If the variable is only modified in **StateSync** blocks, these are already handled by the replay system. In our example, `_life` is likely already synchronized in a method `ApplyDamage()` or similar, and `_ammo` will also be probably updated by a synchronized `Shoot()` method.
 Not filtering out `ChangesSinceBeginning` in this case would be less performant and would cause small stutters/inconsistencies in the variables right around when they change in the replay. The replay system will call the synced method on the exact timestamp, which is the desired result. At the same time, the variables will also be updated by the `ChangesSinceBeginning` deserialization and interpolated a little before and after the timestamp, which is not desired.
 
-Finally, ensure that this `if` statement doesn't encompass the call to the `base.SerializeState()`  implementation. This call handles common state variables and leverages the user from implementing `enabled`, `active` or `Transform` states. We will cover this later.
+Finally, ensure that this `if` statement doesn't encompass the call to the `base.SerializeState()` implementation. This call handles common state variables, including the base version serialization, and leverages the user from implementing `enabled`, `active` or `Transform` states. We will cover this later.
 
 ## `UxrStateSaveOptions`
 
 The `options` parameter only needs to be passed on to the `SerializeStateValue()` calls. It includes flags that are internally used to implement features like automatic variable change tracking.
 
 For example, the system will perform a "dummy" component serialization at the end of the first frame to capture the values of all component variables and store them as the initial state. This initial state serves as a reference when serializing at the `ChangesSinceBeginning` level. This is accomplished by combining the `DontSerialize`, `ResetChangesCache`, and `FirstFrame` flags.
+
+Other available flags include `DontCacheChanges`, which prevents updating the changes cache, `DontCheckCache`, which forces serialization regardless of whether values changed, and `DontWriteVersions`, which suppresses version information output during serialization.
 
 As mentioned, these options are exclusively used internally, but understanding their purpose can help paint a better picture of their role.
 
@@ -291,9 +308,11 @@ protected override bool RequiresTransformSerialization(UxrStateSaveLevel level)
     return true;
 }
 
-protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
 {
-	base.SerializeState(isReading, stateSerializationVersion, level, options);
+	base.SerializeState(isReading, level, options);
+	
+	SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
 
 	// Here serialize the rest of the state.
 }
@@ -451,7 +470,7 @@ Serialization details:
 	- The variable itself serialized in binary form. `int` and `long` types will use variable length encoding to only use the required number of bytes to store the value.
 - A full component will be serialized as a binary stream consisting of:
 	- 16 bytes for the unique id, a `Guid` serialized in binary format.
-	- 1-4 bytes for the component's serialization version (`int` using variable length encoding). 1 byte for values <= 127.
+	- The version information serialized by `SerializeStateVersion()`, using variable length encoding.
 	- A sequence of all variables.
 
 Some technical details about `SerializeStateValue()`'s automatic detection of state variables changes:

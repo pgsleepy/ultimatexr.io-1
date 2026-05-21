@@ -54,7 +54,7 @@ public Flashlight : UxrComponent
 		_light.enabled = enabled;
 		LightColor = color;
 		// Notify of a method call with parameters.
-		EndSyncMethod(new object[] { enabled, color });
+		EndSyncMethod(SyncParams(enabled, color));
 	}
 }
 ```
@@ -135,14 +135,18 @@ public void Shoot(Vector3 startPosition, Vector3 direction, float speed, int dam
 	StartProjectile(startPosition, direction, speed, damage);
 	// Decrease rounds available.
 	Rounds--;
-	EndSyncMethod(new object[] { startPosition, direction, speed, damage });
+	EndSyncMethod(SyncParams(startPosition, direction, speed, damage));
 }
 ```
 
-In this case, the corresponding end statement is `EndSyncMethod()`. It requires an object array passing the same parameters the method was invoked with. These parameters will be used to replicate the call in other clients and register it in a replay recording.
+In this case, the corresponding end statement is `EndSyncMethod()`. It requires passing the same parameters the method was invoked with, wrapped using `SyncParams()`. These parameters will be used to replicate the call in other clients and register it in a replay recording.
 If the method is parameterless, it can be simply invoked using `EndSyncMethod()` without any arguments.
 
 UltimateXR is able to synchronize all [serializable](/docs/programming-guide/other-features/serialization#supported-types) method parameter types. New types can be supported by [implementing](/docs/programming-guide/other-features/serialization#implementing-iuxrserializable) the `IUxrSerializable` interface.
+
+## SyncParams
+
+`SyncParams()` is a helper method that simplifies the creation of the `object[]` array required by `EndSyncMethod()`. Instead of writing `EndSyncMethod(new object[] { param1, param2 })`, you can use `EndSyncMethod(SyncParams(param1, param2))`. It accepts a variable number of parameters using `params`.
 
 ## Synchronization and flow control
 
@@ -168,7 +172,7 @@ public void SetEnabled(bool enabled, Color color)
 	}
 	_light.enabled = enabled;
 	LightColor = color;
-	EndSyncMethod(new object[] { enabled, color });
+	EndSyncMethod(SyncParams(enabled, color));
 }
 ```
 
@@ -185,7 +189,7 @@ public void SetEnabled(bool enabled, Color color)
 	}
 	_light.enabled = enabled;
 	LightColor = color;
-	EndSyncMethod(new object[] { enabled, color });
+	EndSyncMethod(SyncParams(enabled, color));
 }
 ```
 
@@ -202,7 +206,7 @@ public void SetEnabled(bool enabled, Color color)
 	BeginSync();
 	_light.enabled = enabled;
 	LightColor = color;
-	EndSyncMethod(new object[] { enabled, color });
+	EndSyncMethod(SyncParams(enabled, color));
 }
 ```
 
@@ -222,19 +226,19 @@ event EventHandler<UxrSyncEventArgs> StateChanged;
 void SyncState(UxrSyncEventArgs e);
 ```
 
-`StateChanged` is an event triggered whenever a state in the component is changed. Synchronized property changes or method calls will trigger the `StateChanged` event. The change is described by a `UxrStateSyncEventArgs` object.
+`StateChanged` is an event triggered whenever a state in the component is changed. Synchronized property changes or method calls will trigger the `StateChanged` event. The change is described by a `UxrSyncEventArgs` object.
 
-`SyncState()` is a method that can execute the change described by a `UxrStateSyncEventArgs` object.
+`SyncState()` is a method that can execute the change described by a `UxrSyncEventArgs` object.
 
 These two elements provide an extremely simple yet powerful way to keep components in sync: one notifies about state changes, the other mirrors them.
 
-Using synchronization, the framework will listen for change events on all component in the scene. These changes can be the property changes or method calls seen earlier. Whenever a change is notified, the framework will intercept the event and send it to any of the systems that use it. If a network session is taking place, the networking system will serialize the `UxrStateSyncEventArgs` object and send it to all clients where it will be mirrored using `SyncState()`. In case there is a replay being recorded, the serialized `UxrStateSyncEventArgs` object will be saved in the timeline together with its timestamp.
+Using synchronization, the framework will listen for change events on all component in the scene. These changes can be the property changes or method calls seen earlier. Whenever a change is notified, the framework will intercept the event and send it to any of the systems that use it. If a network session is taking place, the networking system will serialize the `UxrSyncEventArgs` object and send it to all clients where it will be mirrored using `SyncState()`. In case there is a replay being recorded, the serialized `UxrSyncEventArgs` object will be saved in the timeline together with its timestamp.
 
 The unique id functionality described in earlier sections makes it possible to retrieve the target component in remote clients or during replay playback. This target component will invoke the `SyncState()` call to mirror the same code as the source component.
 
 ### Raising `StateChanged`
 
-Synchronized property changes and method calls will raise the `StateChanged` event. Internally, the `EndSyncProperty()` and `EndSyncMethod()` implementations will create a `UxrStateSyncEventArgs` object containing the necessary information and raise the event. Property changes will use a specialized `UxrPropertyChangedSyncEventArgs` object, while method calls will use `UxrMethodInvokedSyncEventArgs`.
+Synchronized property changes and method calls will raise the `StateChanged` event. Internally, the `EndSyncProperty()` and `EndSyncMethod()` implementations will create a `UxrSyncEventArgs` object containing the necessary information and raise the event. Property changes will use a specialized `UxrPropertyChangedSyncEventArgs` object, while method calls will use `UxrMethodInvokedSyncEventArgs`.
 
 For a property change, this object will store the component reference, as a unique id, the property name, as a string, and the new value.
 For a method call, it will store the component reference, as a unique id, the method name, as a string, and all the parameters.
@@ -244,13 +248,13 @@ When a `UxrSyncEventArgs` object is intercepted, besides inspecting it, it can b
 
 ### Mirroring using `SyncState()`
 
-The other side of the synchronization is the `SyncState)` method. `SyncState)` takes a `UxrStateSyncEventArgs` object and replicates the original code, either a property change or a method call.
-In a multiplayer session, these objects are serialized to a `byte[]` array using the `SerializeEventBinary()` method in `UxrStateSyncEventArgs`. A static `DeserializeEventBinary()` method is also available to deserialize a `byte[]` to the target `IUxrStateSync` component and the `UxrStateSyncEventArgs` object. Once deserialized, the original code can be mirrored using:
+The other side of the synchronization is the `SyncState()` method. `SyncState()` takes a `UxrSyncEventArgs` object and replicates the original code, either a property change or a method call.
+In a multiplayer session, these objects are serialized to a `byte[]` array using the `SerializeEventBinary()` method in `UxrSyncEventArgs`. A static `DeserializeEventBinary()` method is also available to deserialize a `byte[]` to the target `IUxrStateSync` component and the `UxrSyncEventArgs` object. Once deserialized, the original code can be mirrored using:
 ```c#
-stateSync.SyncState(stateSyncEventArgs);
+stateSync.SyncState(syncEventArgs);
 ```
 
-Internally, the implementation will use reflection on the component to modify the property or invoke the method, depending on the type of stateSyncEventArgs.
+Internally, the implementation will use reflection on the component to modify the property or invoke the method, depending on the type of syncEventArgs.
 
 ### `UxrManager` and state change monitoring
 
@@ -316,7 +320,7 @@ public void Shoot(Vector3 startPosition, Vector3 direction, float speed, int dam
 {
 	BeginSync();
 	Rounds--;
-	EndSyncMethod(new object[] { startPosition, direction, speed, damage });
+	EndSyncMethod(SyncParams(startPosition, direction, speed, damage));
 }
 ```
 The `Shoot()` method is synchronized and so is the `Rounds` property. If `Shoot()` is called, how are the nested synchronized blocks treated? The answer is the main reason why `BeginSync()` exists.

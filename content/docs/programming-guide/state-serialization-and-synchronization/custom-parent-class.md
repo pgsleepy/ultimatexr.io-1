@@ -14,8 +14,10 @@ This setup enables `UxrComponent` to implement these functionalities while also 
 
 ## Full Base class
 
+Integrate the following implementation into your base class to make it fully UltimateXR-compliant.
+
 ```c#
-class CustomParentClass : MonoBehaviour
+class CustomParentClass : MonoBehaviour, IUxrStateSave, IUxrStateSync
 {
 	[SerializeField] [HideInNormalInspector] private string _uxrUniqueId = string.Empty;
 	[SerializeField] [HideInNormalInspector] private string __prefabGuid = string.Empty;
@@ -59,12 +61,21 @@ class CustomParentClass : MonoBehaviour
 		}
 	}
 
+	public event Action<IUxrUniqueId> Destroying;
+
 	public void RegisterIfNecessary()
 	{
 		UniqueIdImplementer.InitializeUniqueIdIfNecessary(this, c => c.UniqueIdImplementer, (c, id) => c.UniqueId = id);
 
 		StateSaveImplementer.RegisterIfNecessary();
 		StateSyncImplementer.RegisterIfNecessary();
+	}
+
+	public void Unregister()
+	{
+		UniqueIdImplementer.Unregister();
+		StateSaveImplementer.Unregister();
+		StateSyncImplementer.Unregister();
 	}
 
 	public Guid ChangeUniqueId(Guid newUniqueId)
@@ -81,12 +92,20 @@ class CustomParentClass : MonoBehaviour
 	{
 		UniqueIdImplementer.CombineUniqueId(guid, c => c.UniqueIdImplementer, (c, id) => c.UniqueId = id, null, null, null, null, recursive);
 
-		UxrComponent[] childComponents = GetComponentsInChildren<UxrComponent>(true);
-
-		foreach (UxrComponent c in childComponents)
+		if (recursive)
 		{
-			c.StateSaveImplementer.RegisterIfNecessary();
-			c.StateSyncImplementer.RegisterIfNecessary();
+			UxrComponent[] childComponents = GetComponentsInChildren<UxrComponent>(true);
+
+			foreach (UxrComponent c in childComponents)
+			{
+				c.StateSaveImplementer.RegisterIfNecessary();
+				c.StateSyncImplementer.RegisterIfNecessary();
+			}
+		}
+		else
+		{
+			StateSaveImplementer.RegisterIfNecessary();
+			StateSyncImplementer.RegisterIfNecessary();
 		}
 	}
 
@@ -94,7 +113,6 @@ class CustomParentClass : MonoBehaviour
 
 	#region Explicit IUxrStateSave
 
-	int               IUxrStateSave.StateSerializationVersion      => StateSerializationVersion;
 	int               IUxrStateSave.SerializationOrder             => SerializationOrder;
 	bool              IUxrStateSave.SaveStateWhenDisabled          => SaveStateWhenDisabled;
 	bool              IUxrStateSave.SerializeActiveAndEnabledState => SerializeActiveAndEnabledState;
@@ -105,7 +123,7 @@ class CustomParentClass : MonoBehaviour
 		return RequiresTransformSerialization(level);
 	}
 
-	bool IUxrStateSave.SerializeState(IUxrSerializer serializer, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+	bool IUxrStateSave.SerializeState(IUxrSerializer serializer, UxrStateSaveLevel level, UxrStateSaveOptions options)
 	{
 		int serializeCounter = StateSaveImplementer.SerializeCounter;
 
@@ -136,6 +154,7 @@ class CustomParentClass : MonoBehaviour
 	GameObject IUxrUniqueId.GameObject         => this != null ? gameObject : null;
 	Transform  IUxrUniqueId.Transform          => this != null ? transform : null;
 	bool       IUxrUniqueId.UniqueIdIsTypeName => UniqueIdIsTypeName;
+	bool       IUxrUniqueId.PreferForTracking  => PreferForTracking;
 
 	#endregion
 	
@@ -155,9 +174,13 @@ class CustomParentClass : MonoBehaviour
 
 	protected virtual void OnDestroy()
 	{
-		UniqueIdImplementer.NotifyOnDestroy();
-		StateSaveImplementer.NotifyOnDestroy();
-		StateSyncImplementer.NotifyOnDestroy();
+		if (!Application.isPlaying)
+		{
+			return;
+		}
+
+		Destroying?.Invoke(this);
+		Unregister();
 	}
 
 	/// <summary>
@@ -165,6 +188,11 @@ class CustomParentClass : MonoBehaviour
 	/// </summary>
 	protected virtual void OnEnable()
 	{
+		if (!Application.isPlaying)
+		{
+			return;
+		}
+
 		StateSaveImplementer.NotifyOnEnable();
 		GlobalEnabled?.Invoke(this);
 	}
@@ -174,6 +202,11 @@ class CustomParentClass : MonoBehaviour
 	/// </summary>
 	protected virtual void OnDisable()
 	{
+		if (!Application.isPlaying)
+		{
+			return;
+		}
+
 		StateSaveImplementer.NotifyOnDisable();
 		GlobalDisabled?.Invoke(this);
 	}
@@ -200,6 +233,144 @@ class CustomParentClass : MonoBehaviour
 	{
 		UniqueIdImplementer.NotifyOnValidate((c, id) => c.UniqueId = id, ref __isInPrefab, ref __prefabGuid);
 	}
+
+	#endregion
+
+	#region Event Trigger Methods
+
+	private void OnStateChanged(UxrSyncEventArgs e)
+	{
+		StateChanged?.Invoke(this, e);
+	}
+
+	#endregion
+
+	#region Protected Types & Data
+
+	protected virtual bool UniqueIdIsTypeName             => false;
+	protected virtual bool PreferForTracking              => false;
+	protected virtual int SerializationOrder              => UxrConstants.Serialization.SerializationOrderDefault;
+	protected virtual bool SaveStateWhenDisabled          => false;
+	protected virtual bool SerializeActiveAndEnabledState => false;
+	protected virtual UxrTransformSpace TransformStateSaveSpace => UxrTransformSpace.World;
+
+	#endregion
+
+	#region Protected Methods
+
+	protected static object[] SyncParams(params object[] parameters)
+	{
+		return parameters;
+	}
+
+	protected virtual bool RequiresTransformSerialization(UxrStateSaveLevel level)
+	{
+		return false;
+	}
+
+	protected virtual void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
+	{
+		StateSaveImplementer.SerializeStateVersion(_stateSerializer, level, options, StateSerializationVersion, out int effectiveVersion);
+	}
+
+	protected virtual void InterpolateState(in UxrStateInterpolationVars vars, float t)
+	{
+	}
+
+	protected virtual UxrVarInterpolator GetInterpolator(string varName)
+	{
+		return StateSaveImplementer.GetDefaultInterpolator(varName);
+	}
+
+	protected virtual void SyncStateInternal(UxrSyncEventArgs e)
+	{
+	}
+
+	protected void SerializeStateVersion(UxrStateSaveLevel level, UxrStateSaveOptions options, int version, out int effectiveVersion)
+	{
+		StateSaveImplementer.SerializeStateVersion(_stateSerializer, level, options, version, out effectiveVersion);
+	}
+
+	protected void SerializeStateValue<T>(UxrStateSaveLevel level, UxrStateSaveOptions options, string varName, ref T value)
+	{
+		StateSaveImplementer.SerializeStateValue(_stateSerializer, level, options, varName, ref value);
+	}
+
+	protected void BeginSync(UxrStateSyncOptions options = UxrStateSyncOptions.Default)
+	{
+		StateSyncImplementer.BeginSync(options);
+	}
+
+	protected void CancelSync()
+	{
+		StateSyncImplementer.CancelSync();
+	}
+
+	protected void EndSyncProperty(in object value, [CallerMemberName] string propertyName = null)
+	{
+		StateSyncImplementer.EndSyncProperty(OnStateChanged, value, propertyName);
+	}
+
+	protected void EndSyncMethod(object[] parameters = null, [CallerMemberName] string methodName = null)
+	{
+		StateSyncImplementer.EndSyncMethod(OnStateChanged, parameters, methodName);
+	}
+
+	protected void EndSyncState(UxrSyncEventArgs e)
+	{
+		StateSyncImplementer.EndSyncState(OnStateChanged, e);
+	}
+
+	#endregion
+
+	#region Private Types & Data
+
+	private const int StateSerializationVersion = 0;
+
+	private UxrUniqueIdImplementer<CustomParentClass> UniqueIdImplementer
+	{
+		get
+		{
+			if (_uniqueIdImplementer == null)
+			{
+				_uniqueIdImplementer = new UxrUniqueIdImplementer<CustomParentClass>(this);
+			}
+
+			return _uniqueIdImplementer;
+		}
+	}
+
+	private UxrStateSaveImplementer<CustomParentClass> StateSaveImplementer
+	{
+		get
+		{
+			if (_stateSaveImplementer == null)
+			{
+				_stateSaveImplementer = new UxrStateSaveImplementer<CustomParentClass>(this);
+			}
+
+			return _stateSaveImplementer;
+		}
+	}
+
+	private UxrStateSyncImplementer<CustomParentClass> StateSyncImplementer
+	{
+		get
+		{
+			if (_stateSyncImplementer == null)
+			{
+				_stateSyncImplementer = new UxrStateSyncImplementer<CustomParentClass>(this);
+			}
+
+			return _stateSyncImplementer;
+		}
+	}
+
+	private Guid                                        _cachedGuid;
+	private UxrUniqueIdImplementer<CustomParentClass>   _uniqueIdImplementer;
+	private UxrStateSaveImplementer<CustomParentClass>  _stateSaveImplementer;
+	private UxrStateSyncImplementer<CustomParentClass>  _stateSyncImplementer;
+	private IUxrSerializer                              _stateSerializer;
 
 	#endregion
 }
