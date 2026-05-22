@@ -6,24 +6,7 @@ title: "Other Manipulation Components"
 
 ## Introduction
 
-In addition to the core manipulation components (`UxrGrabber`, `UxrGrabbableObject`, `UxrGrabbableObjectAnchor`, and `UxrGrabManager`), UltimateXR provides several helper components that extend and simplify common manipulation tasks. These components are designed to work alongside the core system, adding functionality like automatic object return, slide-in behavior, alignment on release, and more.
-
-## UxrGrabbableObjectComponent
-
-`UxrGrabbableObjectComponent<T>` is a generic base class for creating components that belong to a GameObject with a `UxrGrabbableObject` (or any of its parents). It simplifies the handling of manipulation events by allowing you to override methods instead of manually subscribing and unsubscribing to events.
-
-For a detailed guide, refer to the [UxrGrabbableObjectComponent Programming Guide](/docs/programming-guide/manipulation/uxrgrabbableobjectcomponent).
-
-### Key Features
-
-- **Event handling by method overriding**: Instead of subscribing to events, simply override methods like `OnObjectGrabbed()`, `OnObjectReleased()`, `OnObjectPlaced()`, and more.
-- **Constraint events**: Override `OnObjectConstraintsApplying()`, `OnObjectConstraintsApplied()`, and `OnObjectConstraintsFinished()` to implement custom constraint logic.
-
-## UxrGrabPointShape
-
-`UxrGrabPointShape` is an abstract base class used to extend grab points on `UxrGrabbableObject` entities to support more complex shapes like cylinders, boxes, and spheres. This allows objects to be grabbed from any point along a shape, rather than just a single defined spot.
-
-For a detailed guide, refer to the [UxrGrabPointShape Programming Guide](/docs/programming-guide/manipulation/uxrgrabpointshape).
+In addition to the core manipulation components, UltimateXR provides several helper components that extend and simplify common manipulation tasks. These components are designed to work alongside the core system, adding functionality like automatic object return, slide-in behavior, alignment on release, and more.
 
 ## Helper Components
 
