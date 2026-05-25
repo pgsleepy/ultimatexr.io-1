@@ -70,19 +70,24 @@ public Player : UxrComponent
         BeginSync();
         // Perform shooting logic here.
         // Notify of a method call with parameters.
-        EndSyncMethod(new object[] { enabled, color });
+        EndSyncMethod(SyncParams(pos, dir));
     }
 
     // SerializeState() is used for StateSave support. It is used for both
     // serialization and deserialization to avoid requiring separate read and write methods.
-    protected override void SerializeState(bool isReading, int stateSerializationVersion, UxrStateSaveLevel level, UxrStateSaveOptions options)
+    protected override void SerializeState(bool isReading, UxrStateSaveLevel level, UxrStateSaveOptions options)
     {
         // Always call base implementation first using the same parameters
-        base.SerializeState(isReading, stateSerializationVersion, level, options);
+        base.SerializeState(isReading, level, options);
+		
+		// Serialize the version first
+		SerializeStateVersion(level, options, StateSerializationVersion, out int effectiveVersion);
     
         // We only have our _isInvincible variable to serialize/deserialize.
         SerializeStateValue(level, options, nameof(_isInvincible), ref _isInvincible);
     }
+	
+	private const int StateSerializationVersion = 0;
 
     private bool _isInvincible;
 }

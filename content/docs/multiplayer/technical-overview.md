@@ -69,7 +69,7 @@ To illustrate how this works, here’s an example of the code that enables full 
 
 ```c#
 // On the server side: Save complete scene state and compress it.
-byte[] serializedData = UxrManager.Instance.SaveStateChanges(UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryGzip);
+byte[] serializedData = UxrManager.Instance.SaveStateChanges(null, null, UxrStateSaveLevel.Complete, UxrSerializationFormat.BinaryGzip);
 
 // On the joining client side: Load scene state.
 UxrManager.Instance.LoadStateChanges(serializedData);
@@ -111,7 +111,7 @@ public Player : UxrComponent
         BeginSync();
         // Do stuff here using the parameters received.		
         // Notify of method call using the same parameters.
-        EndSyncMethod(new object[] { team, color });
+        EndSyncMethod(SyncParams(team, color));
     }
 	
     private int _life;
