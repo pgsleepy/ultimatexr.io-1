@@ -4,15 +4,17 @@ title: "Overview"
 
 # Overview
 
-In a VR application, a crucial step is to add an avatar to the scenes.
+In a VR application, one of the first steps is to add an avatar to the scene.
 
-An avatar serves as the user's visual representation within the application. At its core, it consists of a single camera allowing exploration of the virtual environment. However, avatars can include additional elements like hands for interaction or a complete body for immersion.
+An avatar is the user's visual representation inside the application. At its simplest, it can be just a camera that allows the user to look around and explore the virtual environment. More advanced avatars can include additional elements, such as hands for interaction or a full body to improve immersion.
 
-A very special avatar is the **local avatar**, which is the avatar controlled directly by the user. Non-local avatars, on the other hand, are controlled externally; they can represent the user during a replay or other users in a network setting.
+The **local avatar** is the avatar controlled directly by the user. **Non-local avatars** are controlled externally. They can represent the same user during a replay, or other users in a networked session.
 
-When integrating avatars, two main options are available:
+UltimateXR provides two main ways to add avatars to a scene:
 
-1. Using any of the built-in avatar prefabs provided by UltimateXR
-2. Creating an avatar from scratch.
+1. Use one of the built-in avatar prefabs provided by UltimateXR.
+2. Create an avatar from scratch.
+
+The following sections describe both options.
 
 Let's explore the two options in the next sections.

@@ -88,7 +88,7 @@ Possible next steps setting up your avatar:
 
 - On the root GameObject, setting up the UxrStandardAvatarController component to add hand gestures based on user input.
 - On the root GameObject, adding new poses to the UxrAvatar component by going to the bottom of the Hand Poses section and opening the Hand Pose Editor.
+- On the Root GameObject, adding a UxrStandardSmoothLocomotion component if you want smooth locomotion instead of the default teleportation.
 - Inside the BigHandsIntegration GameObject, setting up teleportation hanging from the ForwardLeft/ForwardRight objects.
 - Inside the BigHandsIntegration GameObject, enabling laser pointers hanging from the ForwardLeft/ForwardRight objects to interact with Unity UIs. This will require creating an EventSystem in the scene (menu GameObject -> UI -> EventSystem) and adding a UxrPointerInputModule component to the EventSystem GameObject.
 - Adding a UxrCameraWallFade component to the avatar’s Camera if you want to fade the screen to black whenever the user clips through colliders. “Allow Traverse” will only fade through the geometry while “Strict” will keep the screen black until the user returns to the original position.
-
