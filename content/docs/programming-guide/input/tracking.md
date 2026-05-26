@@ -53,7 +53,7 @@ Using an external prefab for device support offers several key advantages:
 - `SensorRightRot`: Gets the world rotation of the right controller sensor
 
 - `SensorLeftHandPos`: Gets the world position of the left avatar hand using the left sensor position.
-- `SensorRightHandPos`: Gets the world position of the right avatar hand using the left sensor position.
+- `SensorRightHandPos`: Gets the world position of the right avatar hand using the right sensor position.
 - `SensorLeftHandRot`: Gets the world rotation of the left avatar hand using the left sensor rotation.
 - `SensorRightHandRot`: Gets the world rotation of the right avatar hand using the right sensor rotation.
 
@@ -62,4 +62,4 @@ Using an external prefab for device support offers several key advantages:
 Although `UxrControllerTracking` exposes tracking properties, they contain unprocessed data.
 
 The `UxrGrabber` component has special functionality that can compute velocity. It averages values over multiple frames and takes into account the controller's position in the hand, resulting in improved behavior when throwing objects.
-Consult the  [`UxrGrabber` programming guide](/docs/programming-guide/manipulation-uxrgrabber) for more information.
+Consult the  [`UxrGrabber` programming guide](/docs/programming-guide/manipulation/uxrgrabber) for more information.

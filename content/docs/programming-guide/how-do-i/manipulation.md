@@ -87,10 +87,10 @@ How do I place a grabbable object on an anchor?
 
 ```c#
 // Instant placement
-UxrGrabManager.Instance.PlaceObject(grabbableObject, GrabbleObjectAnchor, UxrPlacementType.Immediate, true);
+UxrGrabManager.Instance.PlaceObject(grabbableObject, GrabbleObjectAnchor, UxrPlacementOptions.None, true);
 
 // Smooth placement
-UxrGrabManager.Instance.PlaceObject(grabbableObject, GrabbleObjectAnchor, UxrPlacementType.Smooth, true);
+UxrGrabManager.Instance.PlaceObject(grabbableObject, GrabbleObjectAnchor, UxrPlacementOptions.Smooth, true);
 ```
 
 How do I get the velocity of an object being grabbed?

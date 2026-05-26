@@ -21,7 +21,7 @@ How can I send a haptic clip based on an audio file but if the device does not s
 ```c#
 AudioClip audioClip = ...
 
-UxrAvatar.LocalAvatar.ControllerInput.SendHapticFeedback(UxrHandSide.Left, new UxrHapticClip(audioClip, UxrHapticClickType.Click));
+UxrAvatar.LocalAvatar.ControllerInput.SendHapticFeedback(UxrHandSide.Left, new UxrHapticClip(audioClip, UxrHapticClipType.Click));
 ```
 
 How can I stop haptic feedback?

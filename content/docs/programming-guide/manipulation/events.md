@@ -98,8 +98,8 @@ Raised right before an object is being placed on an anchor (`UxrGrabManager.Obje
 ### ObjectRemoving/ObjectRemoved
 Raised right before an object is being grabbed or removed from its anchor (`UxrGrabManager.ObjectRemoving`) and after (`UxrGrabManager.ObjectRemoved`).
 
-### AnchorRangeEntering/AnchorRangeLeft
-Raised when a grabbed object enters (`UxrGrabManager.AnchorRangeEntering`) or leaves (`UxrGrabManager.AnchorRangeLeft`) the proximity of an empty anchor, meaning it can be placed.
+### AnchorRangeEntered/AnchorRangeLeft
+Raised when a grabbed object enters (`UxrGrabManager.AnchorRangeEntered`) or leaves (`UxrGrabManager.AnchorRangeLeft`) the proximity of an empty anchor, meaning it can be placed.
 
 ### PlacedObjectRangeEntered/PlacedObjectRangeLeft
 Raised when an empty grabber enters (`UxrGrabManager.PlacedObjectRangeEntered`) or leaves (`UxrGrabManager.PlacedObjectRangeLeft`) the range of a grabbable object that is placed on an anchor, meaning it can be grabbed.

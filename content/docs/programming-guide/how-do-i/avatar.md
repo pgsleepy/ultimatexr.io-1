@@ -120,7 +120,7 @@ Vector3 thumbTip = leftHand.Thumb.Distal.position;
 Example 2: Head
 
 ```c#
-Vector3 headPos = UxrAvatar.LocalAvatar. AvatarRig.Head.Head.position;
+Vector3 headPos = UxrAvatar.LocalAvatar.AvatarRig.Head.Head.position;
 ```
 
 Example 3: All bones in left hand
@@ -181,7 +181,7 @@ How can I between showing the avatar and showing a virtual representation of the
 
 ```c#
 // Hide the avatar and show the controllers
-UxrAvatar.LocalAvatar.RenderMode = UxrAvatarRenderModes.AllControllers;
+UxrAvatar.LocalAvatar.RenderMode = UxrAvatarRenderMode.Controllers;
 
 // Show hands grabbing the controllers using inverse kinematics and mimicking user input
 UxrAvatar.LocalAvatar.ShowControllerHands = true;
@@ -190,13 +190,13 @@ UxrAvatar.LocalAvatar.ShowControllerHands = true;
 UxrAvatar.LocalAvatar.ShowControllerHands = false;
 
 // Switch back to showing the avatar
-UxrAvatar.LocalAvatar.RenderMode = UxrAvatarRenderModes.Avatar;
+UxrAvatar.LocalAvatar.RenderMode = UxrAvatarRenderMode.Avatar;
 ```
 
 How can I list the hand pose names in the avatar?
 
 ```c#
-foreach (UxrHandPoseAsset handPose in UxrAvatar.LocalAvatar.GetAllHandPoses)
+foreach (UxrHandPoseAsset handPose in UxrAvatar.LocalAvatar.GetAllHandPoses())
 {
     Debug.Log(HandPose.name);
 }
