@@ -105,7 +105,7 @@
           url: "/docs/programming-guide/avatars/uxravatarcontroller"
     - title: "Manipulation"
       url: ""
-      label: "in progress"
+      label: "ready"
       items:
         - title: "Overview"
           url: "/docs/programming-guide/manipulation/overview"
@@ -129,6 +129,7 @@
           url: "/docs/programming-guide/manipulation/other-components"
     - title: "UI interaction"
       url: ""
+      label: "ready"
       items:
         - title: "Overview"
           url: "/docs/programming-guide/ui-interaction/overview"
@@ -138,6 +139,7 @@
           url: "/docs/programming-guide/ui-interaction/other-components"
     - title: "Guidance"
       url: ""
+      label: "ready"
       items:
         - title: "Overview"
           url: "/docs/programming-guide/guidance/overview"
@@ -159,16 +161,19 @@
           url: "/docs/programming-guide/state-serialization-and-synchronization/custom-parent-class"
     - title: "Rendering"
       url: ""
+      label: "ready"
       items:
         - title: "UxrLODGroup"
           url: "/docs/programming-guide/rendering/uxrlodgroup"
     - title: "Weapon System"
       url: ""
+      label: "ready"
       items:
         - title: "Overview"
           url: "/docs/programming-guide/weapon-system/overview"
     - title: "Other features"
       url: ""
+      label: "ready"
       items:
         - title: "Animation"
           url: "/docs/programming-guide/other-features/animation"
