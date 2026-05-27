@@ -8,9 +8,7 @@ title: "Attributes"
 
 UltimateXR provides a set of custom attributes to enhance the Unity inspectors. These attributes can be applied to serialized fields to control their visibility, behavior, and appearance.
 
-## Available Attributes
-
-### ReadOnlyAttribute
+## ReadOnly
 
 Marks a serialized field as read-only in the Inspector. The field remains visible but cannot be edited, which is useful for exposing runtime or computed values for debugging purposes.
 
@@ -46,7 +44,7 @@ Examples:
 [SerializeField] private float _editModeDebugValue;
 ```
 
-### ShowIfAttribute
+## ShowIf
 
 Shows a serialized field in the inspector only when a specified condition is met. The condition is evaluated based on the value of another serialized field.
 
@@ -72,7 +70,7 @@ private enum MovementType
 [SerializeField][ShowIf(nameof(movementType), MovementType.Fly, MovementType.Swim)] private float        _flightOrSwimSpeed;
 ```
 
-### HideIfAttribute
+## HideIf
 
 Hides a serialized field in the inspector when a specified condition is met. This is the inverse of `ShowIfAttribute`.
 
@@ -81,7 +79,7 @@ Hides a serialized field in the inspector when a specified condition is met. Thi
 [HideIf("_useDefaults")][SerializeField] private float _customValue;
 ```
 
-### HideInNormalInspectorAttribute
+## HideInNormalInspector
 
 Hides a serialized field in the default Unity inspector and shows it only in debug mode. This is useful for fields that should only be hidden but still visible while debugging.
 
@@ -89,7 +87,7 @@ Hides a serialized field in the default Unity inspector and shows it only in deb
 [HideInNormalInspector] private float _debugValue;
 ```
 
-### LayerAttribute
+## Layer
 
 Displays a serialized `int` field as a layer dropdown in the Inspector. Unlike a `LayerMask`, which allows selecting multiple layers using flags, this attribute shows a dropdown where a single layer can be selected.
 
@@ -99,7 +97,7 @@ Displays a serialized `int` field as a layer dropdown in the Inspector. Unlike a
 
 ![](/media/docs/programming-guide/other-features/AttributeLayer.png)
 
-### InspectorButtonAttribute
+## InspectorButton
 
 Adds a button to the inspector that calls a specified method when clicked. This is useful for triggering actions directly from the inspector during development.
 
@@ -114,7 +112,7 @@ private void AddCharacterController()
 
 ![](/media/docs/programming-guide/other-features/AttributeInspectorButton.png)
 
-### StylishFoldoutAttribute
+## StylishFoldout
 
 Groups serialized fields under a styled foldout section in the inspector, providing a cleaner and more organized layout for components with many properties.
 
@@ -127,7 +125,7 @@ Use parameter classes for grouping:
 [SerializeField] [StylishFoldout("Collider")] private ColliderParameters _colliderParameters;
 ```
 
-Where a parameter class looks like this:
+Where a parameter class looks like this, including tooltips:
 ```c#
 [Serializable]
 private class GravityParameters
