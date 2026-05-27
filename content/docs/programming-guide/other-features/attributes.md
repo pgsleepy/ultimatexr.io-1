@@ -15,9 +15,11 @@ UltimateXR provides a set of custom attributes to enhance the Unity inspectors. 
 Marks a serialized field as read-only in the Inspector. The field remains visible but cannot be edited, which is useful for exposing runtime or computed values for debugging purposes.
 
 ```csharp
-[ReadOnly]
-[SerializeField] private float _computedValue;
+[ReadOnly] [SerializeField] private int _readOnlyValue;
+[SerializeField]            private int _writableValue;
 ```
+
+![](/media/docs/programming-guide/other-features/AttributeReadOnly.png)
 
 The attribute can also be configured to control when the field is read-only or visible.
 
