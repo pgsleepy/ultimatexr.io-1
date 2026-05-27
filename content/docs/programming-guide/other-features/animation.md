@@ -53,8 +53,7 @@ Available tweens:
 UxrCanvasAlphaTween.FadeIn(canvasGroup, 0.5f);
 
 // Animate a color
-UxrColorTween.Animate(graphic, startColor, endColor, 
-    new UxrInterpolationSettings(1.0f, UxrEasing.EaseOutQuad));
+UxrColorTween.Animate(graphic, startColor, endColor, new UxrInterpolationSettings(1.0f, UxrEasing.EaseOutQuad));
 ```
 
 ## Material Animation
@@ -121,6 +120,12 @@ string resultText = UxrInterpolator.InterpolateText(t, true, "{0}: {1:0.0}%", st
 
 The `UxrEasing` enum provides a variety of easing functions: linear, ease-in, ease-out, ease-in-out, and their quadratic, cubic, and quartic variants.
 Using it as an inspector type will draw a graph next to the variable.
+
+```c#
+[SerializeField] private UxrEasing _easing;
+```
+
+![](/media/docs/programming-guide/other-features/AnimationUxrEasing.png)
 
 ## Splines
 
