@@ -6,19 +6,42 @@ title: "Attributes"
 
 ## Overview
 
-UltimateXR provides a set of custom attributes that enhance the Unity inspector experience. These attributes can be applied to serialized fields to control their visibility, behavior, and appearance.
-
-You can also check the [Attributes API Reference](/api/N_UltimateXR_Attributes).
+UltimateXR provides a set of custom attributes to enhance the Unity inspectors. These attributes can be applied to serialized fields to control their visibility, behavior, and appearance.
 
 ## Available Attributes
 
 ### ReadOnlyAttribute
 
-Marks a serialized field as read-only in the inspector. The field will be displayed but cannot be edited.
+Marks a serialized field as read-only in the Inspector. The field remains visible but cannot be edited, which is useful for exposing runtime or computed values for debugging purposes.
 
-```c#
+```csharp
 [ReadOnly]
 [SerializeField] private float _computedValue;
+```
+
+The attribute can also be configured to control when the field is read-only or visible.
+
+- *OnlyWhilePlaying*: Makes the field read-only only while the application is running. In edit mode, the field remains editable.
+- *HideInEditMode*: Hides the field in the Inspector while the application is not running.
+- *HideInPlayMode*: Hides the field in the Inspector while the application is running.
+
+Examples:
+```csharp
+// Always visible, always read-only.
+[ReadOnly]
+[SerializeField] private float _computedValue;
+
+// Editable in edit mode, read-only in play mode.
+[ReadOnly(OnlyWhilePlaying = true)]
+[SerializeField] private float _runtimeValue;
+
+// Hidden in edit mode, visible as read-only in play mode.
+[ReadOnly(HideInEditMode = true)]
+[SerializeField] private float _playModeDebugValue;
+
+// Visible as read-only in edit mode, hidden in play mode.
+[ReadOnly(HideInPlayMode = true)]
+[SerializeField] private float _editModeDebugValue;
 ```
 
 ### ShowIfAttribute
@@ -31,7 +54,21 @@ Shows a serialized field in the inspector only when a specified condition is met
 [ShowIf(nameof(_useAcceleration), true)] public float _deceleration    = 40.0f;
  ```
  
- ![](/media/docs/programming-guide/other-features/AttributeShowIf.mp4)
+{{< video src="/media/docs/programming-guide/other-features/AttributeShowIf.mp4" >}}
+
+Another example using an enum and multiple valid values:
+
+```c#
+private enum MovementType
+{
+    Walk,
+    Fly,
+    Swim
+}
+
+[SerializeField]                                                                    private MovementType _movementType;
+[SerializeField][ShowIf(nameof(movementType), MovementType.Fly, MovementType.Swim)] private float        _flightOrSwimSpeed;
+```
 
 ### HideIfAttribute
 
@@ -44,11 +81,15 @@ Hides a serialized field in the inspector when a specified condition is met. Thi
 
 ### HideInNormalInspectorAttribute
 
-Hides a serialized field in the default Unity inspector. This is useful for fields that should only be visible in custom editors or through other means.
+Hides a serialized field in the default Unity inspector and shows it only in debug mode. This is useful for fields that should only be hidden but still visible while debugging.
+
+```c#
+[HideInNormalInspector] private float _debugValue;
+```
 
 ### LayerAttribute
 
-Displays a serialized `int` field as a layer dropdown in the inspector, similar to how Unity's built-in layer fields work.
+Displays a serialized `int` field as a layer dropdown in the Inspector. Unlike a `LayerMask`, which allows selecting multiple layers using flags, this attribute shows a dropdown where a single layer can be selected.
 
 ```c#
 [Layer][SerializeField] private int _targetLayer;
@@ -99,7 +140,7 @@ private class GravityParameters
 }
 ```
 
-![](/media/docs/programming-guide/other-features/AttributeStylishFoldout.mp4)
+{{< video src="/media/docs/programming-guide/other-features/AttributeStylishFoldout.mp4" >}}
 
 ## API Reference
 
