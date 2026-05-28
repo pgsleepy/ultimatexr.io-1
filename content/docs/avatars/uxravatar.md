@@ -29,9 +29,9 @@ The **Render Mode** property controls what visual elements are displayed.
 - **Controllers and Partial Avatar**: Both the controller models and the avatar are rendered, but a subset of the avatar renderers is hidden to avoid the two meshes intersecting visually. The renderers to hide are configured in the **Partial Avatar Hidden Renderers** list.
 - **None**: Nothing is rendered, but all avatar systems remain fully active. Collision, grabbing, and locomotion all keep working. Useful in mixed reality scenarios where real-world hands replace the virtual ones.
 
-**Avatar** render mode:
-
 **Controllers and Partial Avatar** render mode, using the generic OpenXR controller. Notice the avatar hands are hidden so that they don't overlap with the controller hands:
+
+![](/media/docs/avatars/uxravatar/ControllerAndPartialAvatar.png)
 
 ## Rig Type
 
