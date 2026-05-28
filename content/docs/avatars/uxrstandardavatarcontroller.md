@@ -8,7 +8,7 @@ title: "UxrStandardAvatarController"
 
 The default view is very simple, but will change once the avatar has hand poses and enough rig information to enable IK.
 
-![](/media/docs/avatars/uxrstandardavatarcontroller/01Component.png)
+![](/media/docs/avatars/uxrstandardavatarcontroller/UxrStandardAvatarController.png)
 
 ## Controller Events
 
