@@ -15,6 +15,4 @@ UltimateXR provides two main ways to add avatars to a scene:
 1. Use one of the built-in avatar prefabs provided by UltimateXR.
 2. Create an avatar from scratch.
 
-The following sections describe both options.
-
 Let's explore the two options in the next sections.
