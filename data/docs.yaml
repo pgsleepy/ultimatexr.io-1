@@ -273,13 +273,16 @@
       label: "ready"
     - title: "UxrAvatar"
       url: "/docs/avatars/uxravatar"
+      label: "ready"
     - title: "UxrStandardAvatarController"
       url: "/docs/avatars/uxrstandardavatarcontroller"
+      label: "ready"
     - title: "The Hand Pose Editor"
       url: "/docs/avatars/the-hand-pose-editor"
       label: "ready"
     - title: "Avatar Camera Component"
       url: "/docs/avatars/avatar-camera-component"
+      label: "ready"
 
 - title: "Locomotion"
   items:
@@ -364,8 +367,6 @@
     - title: "Effects"
       url: ""
       items:
-        - title: "Camera Color Fade"
-          url: "/docs/rendering/effects/camera-color-fade"
         - title: "Magnifying glass"
           url: "/docs/rendering/effects/magnifying-glass"
         - title: "Planar reflection"
