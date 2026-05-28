@@ -112,7 +112,9 @@ private void AddCharacterController()
 
 ![](/media/docs/programming-guide/other-features/AttributeInspectorButton.png)
 
+{{% callout tip %}}
 If the button field is inside a nested class, the method does not have to be in that class. It can also be defined in the parent `MonoBehaviour`.
+{{% /callout %}}
 
 ## StylishFoldout
 
@@ -143,6 +145,11 @@ private class GravityParameters
 ```
 
 {{< video src="/media/docs/programming-guide/other-features/AttributeStylishFoldout.mp4" >}}
+
+{{% callout tip %}}
+`StylishFoldout` does more than improve the inspector layout. It also helps organize your code by grouping related fields into parameter classes, where you can also define their tooltips.
+To keep the rest of your code clean, expose the values in the `MonoBehaviour` through properties instead of accessing them directly with expressions like `_gravityParameters._gravity`.
+{{% /callout %}}
 
 ## API Reference
 
