@@ -32,6 +32,8 @@ Add it to the avatar's Camera GameObject.
 
 When the user is fully inside geometry, a portal opening is rendered pointing back toward the safe space. This gives the user a clear visual cue for where to move.
 
+![](/media/docs/avatars/avatar-camera-component/Portal.png)
+
 - **Portal Hole Radius**: The radius of the portal opening.
 - **Portal Hole Radius Min**: The minimum size the portal can shrink to as the user moves deeper into geometry.
 - **Portal Hole Edge Softness**: How soft or sharp the edge of the portal appears.
