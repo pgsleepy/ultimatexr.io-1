@@ -112,6 +112,8 @@ private void AddCharacterController()
 
 ![](/media/docs/programming-guide/other-features/AttributeInspectorButton.png)
 
+If the button field is inside a nested class, the method does not have to be in that class. It can also be defined in the parent `MonoBehaviour`.
+
 ## StylishFoldout
 
 Groups serialized fields under a styled foldout section in the inspector, providing a cleaner and more organized layout for components with many properties.
