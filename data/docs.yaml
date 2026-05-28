@@ -18,6 +18,8 @@
       items:
         - title: "Platforms"
           url: "/docs/getting-started/supported-platforms/platforms"
+        - title: "OpenXR"
+          url: "/docs/getting-started/supported-platforms/openxr"
         - title: "Magic Leap SDK"
           url: "/docs/getting-started/supported-platforms/magicleap"
         - title: "Meta SDK"

@@ -4,7 +4,15 @@ title: "Platforms"
 
 # Platforms
 
-UltimateXR currently supports the following platforms and devices:
+## OpenXR
+
+UltimateXR supports **OpenXR**, the recommended cross-platform XR standard for Unity. This lets UltimateXR support all OpenXR-compatible headsets through a single integration, while still keeping native SDK support when needed.
+
+[Setting up OpenXR](/docs/getting-started/supported-platforms/openxr)
+
+## Native SDK support
+
+UltimateXR currently also supports the following platforms and devices using native SDK integration:
 
 - *Magic Leap*:
   - Magic Leap 2
@@ -26,7 +34,7 @@ UltimateXR currently supports the following platforms and devices:
   - Standard WMR headsets
   - Samsung Reverb G2
 
-## Installing SDKs
+## Installing Native SDKs
 
 Open the UltimateXR SDK Manager window using the top menu Tools -> UltimateXR -> SDKs -> SDK Manager
 
@@ -38,6 +46,7 @@ The SDK Manager is the main place to check the status of all supported integrati
  
 - [Setting up Magic Leap SDK](/docs/getting-started/supported-platforms/magicleap)
 - [Setting up Oculus SDK](/docs/getting-started/supported-platforms/oculus)
+- [Setting up OpenXR](/docs/getting-started/supported-platforms/openxr)
 - [Setting up Pico XR SDK](/docs/getting-started/supported-platforms/picoxr)
 - [Setting up SteamVR](/docs/getting-started/supported-platforms/steamvr)
 - [Setting up WaveXR](/docs/getting-started/supported-platforms/wavexr)
