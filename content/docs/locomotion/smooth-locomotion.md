@@ -4,47 +4,79 @@ title: "Smooth Locomotion"
 
 # Smooth Locomotion
 
-Smooth Locomotion is an alternative movement system to Teleport Locomotion that uses continuous movement to travel across the virtual world. It can provide better immersion but is more prone to induce motion sickness. It is very popular among advanced videogames users.
-The controls are similar to FPS (First Person Shooter) games, where the left joystick is used to move and the right is used to turn. 
+Smooth locomotion is a continuous movement system that lets users travel through the scenario using the joysticks, similar to a first-person shooter. The left joystick moves the avatar and the right joystick turns it. Pressing the left joystick in sprints.
 
-## The UxrSmoothLocomotion component
+Smooth locomotion gives more direct control than teleportation but can cause motion sickness in some users, particularly when combined with free smooth turning. For users prone to discomfort, consider using snap or fade turning instead.
 
-The `UxrSmoothLocomotion` component in UltimateXR provides smooth locomotion capabilities to an avatar. It also serves as a demonstration of a possible subclass implementation of the `UxrLocomotion` component.
+## The `UxrStandardSmoothLocomotion` component
 
-*Note*: The current smooth locomotion provided by `UxrSmoothLocomotion` is very basic. A more robust implementation will be released very soon.
+`UxrStandardSmoothLocomotion` is the built-in smooth locomotion component provided by UltimateXR. It derives from `UxrSmoothLocomotion`, which handles most of the processing. You can also subclass `UxrSmoothLocomotion` directly if you need a custom implementation.
 
-Setting up `UxrSmoothLocomotion` on an avatar:
+Smooth locomotion uses Unity's `CharacterController` to drive movement. You will need one on the root of your avatar.
 
-1. Have an avatar instantiated in the scene. You can use any of the UltimateXR avatar prefabs located in /UltimateXR/Prefabs/Avatars
-2. Make sure that any `UxrTeleportLocomotion` components on your Avatar are inactive
-3. Add the `UxrSmoothLocomotion` component anywhere in your Avatar's hierarchy
+Setting up `UxrStandardSmoothLocomotion` on an avatar:
 
-That's it! With the default settings, you can now smoothly move with the left controller joystick, and smoothly rotate with the right controller joystick.
+1. Open your avatar prefab or select the avatar in the scene.
+2. Add the `UxrStandardSmoothLocomotion` component to the root GameObject of the avatar.
+3. If no `CharacterController` exists on the root yet, click **Add CharacterController** in the component inspector. Then click **Adjust Collider** to size it automatically to the avatar.
+4. Disable any `UxrTeleportLocomotion` components if you want smooth locomotion only.
 
-What's Next? Tweak the following parameters to dial in the precise movement you desire.
+![](/media/docs/locomotion/smooth-locomotion/UxrStandardSmoothLocomotion.png)
 
-![](/media/docs/locomotion/smooth-locomotion/SmoothLocomotion.jpg)
- 
-### General parameters
-- *Parent To Destination*: Whether to parent the avatar to the destination object after teleport. Use it when building applications with moving vehicles or platforms the avatar can move on, so that the avatar keeps the relative position/orientation after teleporting.
-- *Meters Per Second Normal*: Speed of normal joystick movement.
-- *Meters Per Second Print*: Speed of movement while pressing the sprint button.
-- *Walk Direction: Options for what the Up/Forward on the Joystick is based on*:
-  - Controller Forward - Forward direction of your left controller.
-  - Avatar Forward - Forward direction your Avatar.
-  - Look Direction - Forward direction of your Camera.
-- *Rotation Degrees Per Second Normal*: Speed of normal smooth rotation.
-- *Rotation Degrees Per Second Sprint*: Speed of smooth rotation while sprinting.
-- *Gravity*: Gravity Acceleration to apply in the Y direction. -9.81 approximates Earth gravity.
+That's it! With the default settings you can now move with the left joystick, turn with the right joystick, and sprint by pressing the left joystick in.
 
-### Input parameters
-Sprint Button Hand: Which Hand can enable sprint.
-Sprint Button: Button to press to enable sprint.
+## The `UxrStandardSmoothLocomotion` component
 
-### Constraints
-- *Trigger Colliders Interaction*: Whether colliders with the trigger property set will interact with the teleport raycasts.
-- *Collision Layer Mask*: Layers of colliders that will block your movement.
-- *Capsule Radius*: In Meters, size of your body collider.
-- *Max Step Height*: In Meters, you will climb geometry if it is within this height of your current ground.
-- *Max Slope Degrees*: You will climb geometry if the slope is less than this amount.
-- *Step Distance Check*: How far forwards to check for Max Steps & Max Slopes.
+### Movement
+
+- *Character Controller*: A reference to Unity's Character Controller on the avatar. Use the button below to set it up automatically.
+
+### Movement
+
+- *Max Speed*: Maximum horizontal movement speed in units per second.
+- *Use Acceleration*: When enabled, speed builds up and winds down gradually rather than changing instantly. This feels more natural but may feel sluggish to some users.
+- *Acceleration*: How quickly movement speed increases until it reaches *Max Speed*. Only relevant when *Use Acceleration* is enabled.
+- *Deceleration*: How quickly movement speed decreases when the joystick is released or input is reduced. Only relevant when *Use Acceleration* is enabled.
+- *Sprint Modifier*: Speed multiplier applied on top of *Max Speed* while the sprint input is held.
+- *Deadzone*: Minimum joystick input required before movement begins. Increase this if you notice the avatar drifting from unwanted stick input.
+- *Snap Back Distance Threshold*: Minimum distance required to snap the avatar back to its last valid position when the `CharacterController` gets stuck against geometry.
+
+### Rotation
+
+- *Turn Type*: How the avatar turns when the horizontal rotation input is applied. Available modes:
+  - *Not Allowed*: Turning is disabled. Useful if you want to restrict avatar rotation entirely.
+  - *Snap*: The avatar immediately rotates by *Turn Step Degrees* each time the turn input passes the deadzone. This is the most comfortable option for users prone to motion sickness.
+  - *Fade*: Like Snap, but the screen briefly fades out before the turn and fades back in after. The fade color and duration are configurable.
+  - *Interpolate*: The avatar rotates to the new angle over a fixed duration instead of snapping.
+  - *Smooth*: The avatar rotates continuously at a constant speed while the joystick is held. This feels most like a traditional FPS but is the mode most likely to cause motion sickness.
+- *Turn Deadzone*: Minimum horizontal input required before a turn triggers.
+- *Turn Cooldown*: Time in seconds to wait before another discrete turn can occur while the joystick is still held. Prevents unintended rapid turning in Snap, Fade, and Interpolate modes.
+- *Turn Step Degrees*: Angle of each discrete turn in Snap, Fade, and Interpolate modes.
+- *Fade Turn Color*: The screen color used during fade-based turns.
+- *Fade Turn Seconds*: Duration of the fade effect when the Turn Type is *Fade*.
+- *Interpolate Turn Seconds*: Duration of the rotation transition when the Turn Type is *Interpolate*.
+- *Smooth Turn Speed Deg*: Continuous turning speed in degrees per second when the Turn Type is *Smooth*.
+- *Smooth Rotation*: How smoothly the avatar and camera rotation track their target orientation. Lower values feel more responsive; higher values add a slight smoothing.
+
+### Gravity
+
+- *Gravity*: Downward acceleration applied to the avatar while it is airborne, in units per second squared. The default value approximates Earth gravity.
+- *Grounded Stick Force*: A small constant downward force applied while the avatar is on the ground. This helps keep the `CharacterController` pressed against floors and gentle slopes so it doesn't float.
+- *Terminal Velocity*: Maximum speed the avatar can reach while falling.
+
+### Collider
+
+The collider section controls how the `CharacterController` capsule is sized and positioned. These values also affect how the avatar fits through doorways and under low ceilings.
+
+- *Min Height*: Minimum allowed height for the capsule collider. Prevents the collider from becoming too small when the user crouches.
+- *Max Height*: Maximum allowed height for the capsule collider. Prevents it from becoming unreasonably tall.
+- *Radius*: Radius of the capsule collider in meters. Increase this to make the avatar harder to squeeze through narrow gaps.
+- *Eye To Top Distance*: Distance from the user's eye position to the top of the capsule. Used to position the top of the collider at roughly the top of the user's head.
+- *Collider Center Y Offset*: A manual vertical offset added to the collider center. Use this to fine-tune how the capsule aligns with the avatar if the automatic placement is slightly off.
+
+### Direction
+
+- *Movement Relative To*: The reference used to determine which way is forward when moving. Options are:
+  - *Head*: Moving forward travels in the direction the user is looking. This is the most common choice for VR.
+  - *Left Hand*: Moving forward travels in the direction the left controller is pointing.
+  - *Right Hand*: Moving forward travels in the direction the right controller is pointing.
