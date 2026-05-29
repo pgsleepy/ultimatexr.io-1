@@ -56,8 +56,8 @@ public class MyVRLocomotion : UxrSmoothLocomotion
 {
     protected override IEnumerable<IUxrSmoothLocomotionInput> GetDefaultInputs()
     {
-        // Return an input component attached to this GameObject
-        return GetComponents<IUxrSmoothLocomotionInput>();
+			_locomotionInput ??= new MyLocomotionInput(Avatar);
+            yield return _locomotionInput;
     }
 }
 ```
@@ -127,7 +127,7 @@ To provide input from a new device or control scheme, implement `IUxrSmoothLocom
 Override the internal methods and return your input values:
 
 ```csharp
-public class MyKeyboardInput : UxrSmoothLocomotionInput
+public class MyLocomotionInput : UxrSmoothLocomotionInput
 {
     protected override UxrMovementInput GetMovementInputInternal()
     {
