@@ -14,7 +14,7 @@ One of the biggest challenges since VR became mainstream has been consolidating 
 - **Intuitiveness**: Users must learn and get used to new input mechanics to move around.
 - **Personal preferences**: Users have very different preferences, and it is very important to support them all.
 
-UltimateXR provides built-in components to support the most common locomotion methods. Built-in locomotion components, such as `UxrTeleportLocomotion` or `UxrSmoothLocomotion`, can be placed on any object in the avatar hierarchy. The UltimateXR avatar prefabs, for example, come with teleport components by default. Switching to another locomotion method can be done by disabling these default components and adding other component(s) to any object in the avatar hierarchy.
+UltimateXR provides built-in components to support the most common locomotion methods. Built-in locomotion components, such as `UxrTeleportLocomotion` or `UxrStandardSmoothLocomotion`, can be placed on any object in the avatar hierarchy. The UltimateXR avatar prefabs, for example, come with teleport components by default. Switching to another locomotion method can be done by disabling these default components and adding other component(s) to any object in the avatar hierarchy.
 
 The framework also provides great flexibility to create new mechanics. There is no limitation on the amount of active locomotion components in an avatar. Some might add a single feature to the already existing components, such as climbing, but it is important that they all can work together.
 

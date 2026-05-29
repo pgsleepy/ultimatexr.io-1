@@ -12,4 +12,4 @@ To create your own locomotion components using scripting follow these steps:
 4. Use methods in `UxrManager` such as `MoveAvatarTo`, `TranslateAvatar`, `RotateAvatar`, `TeleportLocalAvatar` so that the locomotion integrates correctly with the event system. This is important for other components in the framework such as LOD switching or in networking environments.
 5. Disable the other locomotion components in the avatar if required and add the new component anywhere in the hierarchy.
 
-A good start can be checking out the `UxrSmoothLocomotion` component to see how it works.
+A good start can be checking out the `UxrStandardSmoothLocomotion` component to see how it works.

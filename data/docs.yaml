@@ -290,18 +290,19 @@
   items:
     - title: "Introduction"
       url: "/docs/locomotion/introduction"
-      label: "in progress"
+      label: "ready"
     - title: "Teleporting"
       url: "/docs/locomotion/teleporting"
-      label: "in progress"
+      label: "ready"
     - title: "Smooth Locomotion"
       url: "/docs/locomotion/smooth-locomotion"
-      label: "in progress"
+      label: "ready"
     - title: "Locomotion Helper Components"
       url: "/docs/locomotion/locomotion-helper-components"
+      label: "ready"
     - title: "Extending Locomotion"
       url: "/docs/locomotion/extending-locomotion"
-      label: "in progress"
+      label: "ready"
 
 - title: "Manipulation"
   items:
