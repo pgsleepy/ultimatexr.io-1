@@ -6,18 +6,16 @@ title: "Extending Locomotion"
 
 UltimateXR provides two extension points depending on the type of locomotion you want to implement:
 
-- **`UxrLocomotion`** — base class for any locomotion (teleport, custom, etc.)
-- **`UxrSmoothLocomotion`** — abstract base for `CharacterController`-driven smooth locomotion (extends `UxrLocomotion`)
+- **`UxrLocomotion`**: base class for any locomotion (teleport, custom, etc.)
+- **`UxrSmoothLocomotion`**: abstract base for `CharacterController`-driven smooth locomotion (extends `UxrLocomotion`)
 
----
+## Extending UxrLocomotion (Any Locomotion)
 
-## Option A: Extending UxrLocomotion (Any Locomotion)
-
-Use this for fully custom locomotion — teleport variants, waypoint systems, scripted movement, etc.
+Use this for fully custom locomotion.
 
 1. Create a class that derives from `UxrLocomotion`.
 2. Override `IsSmoothLocomotion` to return `true` if the avatar is moved every frame, or `false` for discrete teleport-style movement.
-3. Override `UpdateLocomotion()` — this is called every frame by the framework.
+3. Override `UpdateLocomotion()`, this is called every frame by the framework.
 4. Use `UxrManager` methods to move the avatar so that the event system, networking, and LOD components are notified correctly:
    - `UxrManager.Instance.MoveAvatarTo(avatar, position, direction)`
    - `UxrManager.Instance.TranslateAvatar(avatar, translation)`
@@ -41,9 +39,7 @@ public class MyCustomLocomotion : UxrLocomotion
 }
 ```
 
----
-
-## Option B: Extending UxrSmoothLocomotion (CharacterController Locomotion)
+## Extending UxrSmoothLocomotion (CharacterController Locomotion)
 
 Use this when you want smooth, continuous movement driven by a `CharacterController`. The base class handles movement, rotation, gravity, collider fitting, and the input pipeline. You only need to supply the inputs.
 
@@ -109,6 +105,8 @@ foreach (IUxrSmoothLocomotionInput input in mySmoothLocomotion.LocomotionInputs)
 
 ### Moving the Avatar Programmatically
 
+Use `MoveBody()` to move the `CharacterController` using physics. You can also move the avatar directly, without physics, using:
+
 ```csharp
 // Smoothly moves the avatar to a world-space position over 0.5 seconds
 mySmoothLocomotion.MoveAvatarTo(targetPosition);
@@ -119,8 +117,6 @@ mySmoothLocomotion.MoveAvatarTo(targetPosition, UxrSmoothMoveToOptions.Force);
 // Custom duration
 mySmoothLocomotion.MoveAvatarTo(targetPosition, UxrSmoothMoveToOptions.Default, 1.0f);
 ```
-
----
 
 ## Custom Input: Implementing IUxrSmoothLocomotionInput
 
@@ -164,58 +160,7 @@ myInput.AllowedInputs &= ~UxrAllowedInputs.Rotation;
 myInput.AllowedInputs = UxrAllowedInputs.All;
 ```
 
----
-
-## Key Properties Reference
-
-The following properties are available on `UxrSmoothLocomotion` and can be set from the Inspector or at runtime:
-
-**Movement**
-
-| Property | Default | Description |
-|---|---|---|
-| `MaxSpeed` | 3.5 | Maximum horizontal movement speed (m/s). |
-| `UseAcceleration` | true | Whether to use gradual acceleration/deceleration. |
-| `Acceleration` | 30 | Rate of speed increase. |
-| `Deceleration` | 40 | Rate of speed decrease. |
-| `SprintModifier` | 2.0 | Speed multiplier while sprinting. |
-| `MovementDeadzone` | 0.15 | Minimum input magnitude before movement starts. |
-| `IsTranslationAllowed` | true | Master toggle for all translation. |
-
-**Rotation**
-
-| Property | Default | Description |
-|---|---|---|
-| `TurnType` | `Snap` | Turn mode (see Turn Types above). |
-| `TurnDeadzone` | 0.15 | Minimum input before a discrete turn fires. |
-| `TurnCooldown` | 0.25 s | Delay before another discrete turn while holding input. |
-| `TurnStepDegrees` | 45° | Angle per discrete turn. |
-| `SmoothTurnSpeedDeg` | 90°/s | Speed for `Smooth` turn mode. |
-| `FadeTurnSeconds` | — | Duration of fade effect for `Fade` turn mode. |
-| `InterpolateTurnSeconds` | — | Duration of interpolation for `Interpolate` turn mode. |
-
-**Gravity**
-
-| Property | Default | Description |
-|---|---|---|
-| `Gravity` | -9.81 | Downward acceleration while airborne. |
-| `GroundedStickForce` | -2.0 | Small downward force applied while grounded. |
-| `TerminalVelocity` | -20 | Maximum falling speed. |
-
-**Collider**
-
-| Property | Default | Description |
-|---|---|---|
-| `ColliderMinHeight` | 1.2 m | Minimum capsule height. |
-| `ColliderMaxHeight` | 2.2 m | Maximum capsule height. |
-| `ColliderRadius` | 0.2 m | Capsule radius. |
-| `EyeToTopDistance` | 0.08 m | Distance from eye level to top of capsule. |
-| `ColliderCenterYOffset` | 0 | Vertical offset for capsule center alignment. |
-| `SnapBackDistanceThreshold` | 0.20 m | Max head drift before snapping back to collider. |
-
----
-
 ## Reference Implementations
 
-- **`UxrStandardSmoothLocomotion`** — VR smooth locomotion using controller joysticks (left stick to move, right stick to turn). Good starting point for custom VR locomotion.
-- **`UxrTeleportLocomotion`** — Arc-based teleport with destination validation, fade/interpolate transitions, and optional turn-in-place.
+- **`UxrStandardSmoothLocomotion`**: VR smooth locomotion using controller joysticks.
+- **`UxrTeleportLocomotion`**: Arc-based teleport.
