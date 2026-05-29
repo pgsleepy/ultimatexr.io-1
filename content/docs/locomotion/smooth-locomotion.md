@@ -25,8 +25,6 @@ Setting up `UxrStandardSmoothLocomotion` on an avatar:
 
 That's it! With the default settings you can now move with the left joystick, turn with the right joystick, and sprint by pressing the left joystick in.
 
-## The `UxrStandardSmoothLocomotion` component
-
 ### Movement
 
 - *Character Controller*: A reference to Unity's Character Controller on the avatar. Use the button below to set it up automatically.
