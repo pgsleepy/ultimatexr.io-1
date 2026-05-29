@@ -48,7 +48,7 @@ Unlike controller input components, which operate individually, locomotion compo
 Be sure to use `UxrManager` methods for avatar movement to ensure that position and rotation changes are registered by the system.
 {{% /callout %}}
 
-When implementing new locomotion components and features, it's recommended to review the existing locomotion components located at /Scripts/Locomotion for reference.
+Fore more detailed instructions, see [Extending Locomotion](/docs/locomotion/extending-locomotion).
 
 ## New UxrGrabPointShape
 
