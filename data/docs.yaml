@@ -323,6 +323,7 @@
       label: "ready"
     - title: "Helper Components"
       url: ""
+      label: "ready"
       items:
         - title: "UxrAlignOnRelease"
           url: "/docs/manipulation/helper-components/uxralignonrelease"
@@ -338,6 +339,7 @@
           url: "/docs/manipulation/helper-components/uxrreturngrabbableobject"
     - title: "Extending manipulation"
       url: ""
+      label: "ready"
       items:
         - title: "UxrGrabPointShape"
           url: "/docs/manipulation/extending-manipulation/uxrgrabpointshape"
@@ -372,6 +374,7 @@
   items:
     - title: "Effects"
       url: ""
+      label: "ready"
       items:
         - title: "Magnifying glass"
           url: "/docs/rendering/effects/magnifying-glass"
@@ -379,6 +382,7 @@
           url: "/docs/rendering/effects/planar-reflection"
     - title: "Level of Detail"
       url: ""
+      label: "ready"
       items:
         - title: "UxrLODGroup"
           url: "/docs/rendering/level-of-detail/uxrlodgroup"
