@@ -40,7 +40,7 @@ We see that there are some elements that weren’t found correctly (Upper Chest,
 
 ## The HandsIntegration
  
-Going back to the assistant, we see it now offers a choice between using Big Hands or Small Hands for the **Hands Integration**. You can check the [previous section](/docs/avatar/using-built-in-avatars#hands-integration) if you are not familiar with what the **Hands Integration** is.
+Going back to the assistant, we see it now offers a choice between using Big Hands or Small Hands for the **Hands Integration**. You can check the [previous section](/docs/avatar/using-built-in-avatars#the-handsintegration-prefab) if you are not familiar with what the **Hands Integration** is.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/13AvatarFix07.png)
  
@@ -87,6 +87,8 @@ To finish let’s go to the root GameObject and edit the UxrStandardAvatarContro
 Now click Play to test the avatar.
 
 It seems to work nice! That was easy right? We hope the assistant can help you set up many other avatars the same way.
+
+## Next Steps
 
 Where to go from here:
 

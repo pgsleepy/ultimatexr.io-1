@@ -4,6 +4,8 @@ title: "Using Built-in Avatars"
 
 # Using Built-in Avatars
 
+## Available Avatars
+
 Besides the Cyborg avatar that is used in the example scene, UltimateXR comes with 2 main avatar prefabs:
 
 - BigHandsAvatar
@@ -16,6 +18,8 @@ The _URP prefab is meant to be used in Universal Render Pipeline applications, w
 ![](/media/docs/avatars/using-built-in-avatars/01AvatarPrefabs.png)
  
 The first question normally is, but where’s the normal hands avatar? The answer is there is no “normal” hand size, hand sizes can vary but in a very simplified world they can be grouped in small hands and big hands. Inclusion is one of the main goals of our avatars, and we try to support both in all our applications so that everyone feels included.
+
+## Adding the Avatar to the Scene
 
 Let’s create a new scene and drag the BigHandsAvatar to it. Make sure to remove any existing camera.
 
@@ -34,6 +38,8 @@ This has additional advantages:
 Now click Play. If your environment has been correctly set up and the device integration is working, you should be able to see your hands and make a fist by pressing the grab button.
 
 ![](/media/docs/avatars/using-built-in-avatars/03AvatarTesting.png)
+
+## Appearance
  
 You can change your appearance using the different combinations provided. You may see that inside the avatar there are glove and hand objects for each side. You can select to activate either the gloves or the hands, and assign any of the following pre-defined materials:
 
@@ -60,6 +66,8 @@ You can also create a new custom skin by creating a new material and assigning t
 If you decide to use the hand objects instead of the gloves, make sure you replace the glove renderers assigned by default in the UxrAvatar component with the hand renders:
 
 ![](/media/docs/avatars/using-built-in-avatars/05ZRenderers.png)
+
+## The HandsIntegration Prefab
  
 One important thing is making sure you do not move these hands, since there is another set of “virtual” hands that they depend on. If you check in the object tree, you will notice that there is a nested prefab called BigHandsIntegration.
 
@@ -76,6 +84,8 @@ The BigHandsIntegration prefab is responsible for a lot of critical tasks:
 
 The fact that it can easily add all this functionality to any avatar, even to those created by the user, is one of the most important features in UltimateXR. By using a prefab, we make sure that any new controllers, graphics, or components will be available automatically after any update.
 
+## Grabbers
+
 A last step is required if you opted for the hand objects instead of the gloves. Go to the grabbers located below the LeftHand and RightHand inside the BigHandsIntegration object.
 
 ![](/media/docs/avatars/using-built-in-avatars/06Z1GrabberFix.png)
@@ -83,6 +93,8 @@ A last step is required if you opted for the hand objects instead of the gloves.
 Both components currently reference the glove renderers, which you deactivated in favor of the hands. You need to reference the HandLeft and HandRight renderers that you activated instead. What this does is tell the grabbers which objects should be used to preview grab poses.
 
 ![](/media/docs/avatars/using-built-in-avatars/06Z2GrabberFix.png)
+
+## Next Steps
  
 Possible next steps setting up your avatar:
 
