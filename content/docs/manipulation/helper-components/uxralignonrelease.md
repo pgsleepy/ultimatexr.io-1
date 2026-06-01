@@ -22,7 +22,7 @@ The component does **not** require a `UxrGrabbableObject` on the same GameObject
 2. Drag one or more `UxrGrabbableObject` components into the **Grabbable Objects** list. The alignment animation pauses for as long as any of these objects is being held.
 3. Choose whether to use **Only Level** (the default) or full upright alignment, and tune the **Smooth Factor**.
 
-![](/media/docs/manipulation/helper-components/uxralignonrelease/UxrAlignOnRelease.png)
+![](/media/docs/manipulation/helper-components/UxrAlignOnRelease.png)
 
 ## Parameter reference
 
