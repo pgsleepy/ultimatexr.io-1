@@ -30,12 +30,12 @@ The system uses two components working together:
 
 Add a `UxrGrabbableObject` to the object and set its translation constraint to **Restrict Local Offset** along a single axis. The component uses this axis as the slide direction. If the constraint is not configured correctly, a warning will appear in the console and the component will fall back to the Z axis.
 
-![](/media/docs/manipulation/helper-components/uxrautoslideinobject/AutoSlideInGrabbableInspector.png)
+![](/media/docs/manipulation/helper-components/AutoSlideInGrabbableInspector.png)
 
 Add the `UxrAutoSlideInObject` component to the same GameObject. Set **Translation Constraint Min** and **Translation Constraint Max** to define the sliding range relative to the anchor. The sign and magnitude of the maximum value determine the direction and total travel distance.
 These values will override the offsets from the `UxrGrabbableObject` component.
 
-![](/media/docs/manipulation/helper-components/uxrautoslideinobject/AutoSlideInInspector.png)
+![](/media/docs/manipulation/helper-components/AutoSlideInInspector.png)
 
 ### 2. Configure the anchor
 
@@ -44,7 +44,7 @@ Create a separate GameObject at the resting position and add:
 - A `UxrGrabbableObjectAnchor` component, configured with the correct compatible tag to match the grabbable object.
 - An `UxrAutoSlideInAnchor` component (no additional configuration needed on this one).
 
-![](/media/docs/manipulation/helper-components/uxrautoslideinobject/AutoSlideInAnchorInspector.png)
+![](/media/docs/manipulation/helper-components/AutoSlideInAnchorInspector.png)
 
 {{% callout i %}}
 Make sure the object starts placed on the anchor. You can use the **Start Anchor** field in the `UxrGrabbableObject` to reference it.
