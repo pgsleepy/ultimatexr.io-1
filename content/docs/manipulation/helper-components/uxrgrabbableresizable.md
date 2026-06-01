@@ -12,13 +12,15 @@ title: "UxrGrabbableResizable"
 
 The component relies on a specific object hierarchy to work correctly. All objects should use the standard axis convention (X right, Y up, Z forward):
 
-    Root GameObject
-    ├── [UxrGrabbableResizable]     ← component lives here
-    ├── [UxrGrabbableObject]        ← dummy grabbable parent, so the root can be moved by grabbing the extensions
-    │
-    ├── Resizable Root              ← child object whose localScale.x is driven by the extension distance
-    ├── Grabbable Left              ← left extension: locked rotation, translation constrained left-right
-    └── Grabbable Right             ← right extension: locked rotation, translation constrained left-right
+```text
+Root GameObject
+├── [UxrGrabbableResizable]     ← component lives here
+├── [UxrGrabbableObject]        ← dummy grabbable parent, so the root can be moved by grabbing the extensions
+│
+├── Resizable Root              ← child object whose localScale.x is driven by the extension distance
+├── Grabbable Left              ← left extension: locked rotation, translation constrained left-right
+└── Grabbable Right             ← right extension: locked rotation, translation constrained left-right
+```
 
 The left and right extension objects each need a `UxrGrabbableObject` with:
 - Rotation constraint set to **Locked**.
