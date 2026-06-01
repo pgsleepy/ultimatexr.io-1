@@ -46,7 +46,7 @@ Create a separate GameObject at the resting position and add:
 
 ![](/media/docs/manipulation/helper-components/AutoSlideInAnchorInspector.png)
 
-{{% callout i %}}
+{{% callout info %}}
 Make sure the object starts placed on the anchor. You can use the **Start Anchor** field in the `UxrGrabbableObject` to reference it.
 {{% /callout %}}
 
