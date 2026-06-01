@@ -10,6 +10,10 @@ Add it to any GameObject that already has a `UxrGrabbableObject` component. No a
 
 {{< video src="/media/docs/manipulation/helper-components/RestoreOnReleaseExample.mp4" >}}
 
+{{% callout info %}}
+This component is different than `UxrReturnGrabbableObject` in that `UxrRestoreOnRelease` moves a constrained object back to its rest position. `UxrReturnGrabbableObject` is used to move a free grabbable back to an anchor.
+{{% /callout %}}
+
 ## Use cases
 
 - Levers/joysticks that must return to a neutral position after being grabbed.
