@@ -8,7 +8,7 @@ title: "UxrDependentGrabbable"
 
 The classic example is a grenade and its safety pin. Without a dependency, a user trying to grab the grenade might accidentally grab the pin instead. With `UxrDependentGrabbable` on the pin, the pin's `UxrGrabbableObject` remains disabled until the grenade is being held.
 
-![](/media/docs/manipulation/helper-components/uxrdependentgrabbable/DependentGrabbableExample.png)
+![](/media/docs/manipulation/helper-components/DependentGrabbableExample.png)
 
 ## How it works
 
@@ -21,7 +21,7 @@ The component disables its own `UxrGrabbableObject` on startup and re-enables it
 3. Drag the object that must be held first into the **Dependent On** field.
 4. Decide whether to enable **Only Once** (see below).
 
-![](/media/docs/manipulation/helper-components/uxrdependentgrabbable/UxrDependentGrabbable.png)
+![](/media/docs/manipulation/helper-components/UxrDependentGrabbable.png)
 
 ## Parameter reference
 
