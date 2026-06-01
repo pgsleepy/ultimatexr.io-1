@@ -10,7 +10,7 @@ When a user releases a grabbed object close enough to a compatible anchor, the g
 
 No extra setup is required to make placement work in a scene, the `UxrGrabManager` handles everything automatically.
 
-![](/media/docs/manipulation/uxrgrabbableobjectanchor/UxrGrabbableObjectAnchor.jpg)
+![](/media/docs/manipulation/uxrgrabbableobjectanchor/UxrGrabbableObjectAnchor.png)
 
 ## Setting up an anchor
 
@@ -22,7 +22,7 @@ If you want the snapped object to align to something other than the anchor's own
 On the `UxrGrabbableObject` side, make sure its **Start Anchor** field points to this anchor if the object should already be placed on it when the scene starts.
 {{% /callout %}}
 
-![](/media/docs/manipulation/uxrgrabbableobjectanchor/StartAnchor.jpg)
+![](/media/docs/manipulation/uxrgrabbableobjectanchor/StartAnchor.png)
 
 ## Compatible tags
 
@@ -36,7 +36,7 @@ Compatibility tags on grabbable objects should not be confused with Unity's Game
 
 The anchor provides five GameObject slots that are activated or deactivated automatically based on the current state. Assigning highlight meshes, indicator lights, or tooltip objects to these slots is a quick way to create visual feedback without any scripting.
 
-![](/media/docs/manipulation/uxrgrabbableobjectanchor/ActivationSlots.jpg)
+![](/media/docs/manipulation/uxrgrabbableobjectanchor/ActivationSlots.png)
 
 - **Activate On Compatible Near**: Enabled when a compatible grabbed object is close enough to trigger a placement if the user releases the grab button.
 - **Activate On Compatible Not Near**: Enabled when no compatible object is within placement range.
