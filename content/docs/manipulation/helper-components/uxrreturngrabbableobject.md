@@ -11,7 +11,7 @@ title: "UxrReturnGrabbableObject"
 Add it to any GameObject that has a `UxrGrabbableObject` component. Make sure the object has a **Start Anchor** or has been placed on an anchor at some point so the return destination is known.
 
 {{% callout info %}}
-This component is different than `UxrRestoreOnRelease` in that `UxrReturnGrabbableObject` is used to move a free grabbable back to an anchor. `UxrRestoreOnRelease` moves a constrained object back to its rest position.
+This component is different than [UxrRestoreOnRelease](/docs/manipulation/helper-components/uxrrestoreonrelease) in that [UxrReturnGrabbableObject](/docs/manipulation/helper-components/uxrreturngrabbableobject) is used to move a free grabbable back to an anchor. [UxrRestoreOnRelease](/docs/manipulation/helper-components/uxrrestoreonrelease) moves a constrained object back to its rest position.
 {{% /callout %}}
 
 ## How it works
