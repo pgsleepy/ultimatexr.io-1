@@ -12,7 +12,7 @@ This is particularly useful when an object has a common shape that can be approx
 
 Currently the only concrete implementation is `UxrGrabPointShapeAxisAngle`, which describes a cylindrical shape: the hand can grab anywhere along an axis segment while simultaneously rotating freely around that axis within configurable angle limits.
 
-![](/media/docs/manipulation/extending-manipulation/GrabPointShape.png)
+![](/media/docs/manipulation/extending-manipulation/GrabbableObject.png)
 
 When an `UxrGrabPointShapeAxisAngle` component is present, a line gizmo appears in the Scene Window showing the grabbable segment. Select the component to see it.
 
