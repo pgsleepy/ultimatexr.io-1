@@ -317,8 +317,10 @@
       label: "ready"
     - title: "UxrGrabbableObjectAnchor"
       url: "/docs/manipulation/uxrgrabbableobjectanchor"
+      label: "ready"
     - title: "UxrGrabber"
       url: "/docs/manipulation/uxrgrabber"
+      label: "ready"
     - title: "Helper Components"
       url: ""
       items:
