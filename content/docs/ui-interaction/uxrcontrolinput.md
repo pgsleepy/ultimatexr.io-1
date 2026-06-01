@@ -27,6 +27,6 @@ The haptic clip supports some interesting features:
 
 ## UxrControlInput scripting
 
-Some examples of common `UxrControlInput` use can be found [here](/docs/programming-guide/how-do-i#ui).
-
-The full *UxrControlInput* API can be found [here](/api/T_UltimateXR_UI_UnityInputModule_Controls_UxrControlInput).
+- The **UxrControlInput** programming guide found [here](/docs/programming-guide/ui-interaction/uxrcontrolinput).
+- Some examples of common **UxrControlInput** use can be found [here](/docs/programming-guide/how-do-i/ui).
+- The full **UxrControlInput** API can be found [here](/api/T_UltimateXR_UI_UnityInputModule_Controls_UxrControlInput).
