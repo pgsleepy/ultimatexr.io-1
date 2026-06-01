@@ -14,11 +14,13 @@ All this makes it very difficult to create interactive VR applications from scra
 
 One of the biggest challenges of UltimateXR was creating a manipulation system that would feel natural. Bad interactions immediately throw somebody off and ruin an application. Good interactions create memorable experiences and that is what we are aiming for.
 
+{{< video src="/media/docs/getting-started/what-is-ultimatexr/UltimateXR_lo.mp4" >}}
+
 In this guide we will show you the key components enabling manipulation using UltimateXR:
 
-- `UxrGrabbableObject`: Component that enables an object to be grabbed.
-- `UxrGrabbableObjectAnchor`: Component that can be used to place a `UxrGrabbableObject` on.
-- `UxrGrabber`: Component added to each hand of an avatar enabling it to grab objects.
+- **UxrGrabbableObject**: Component that enables an object to be grabbed.
+- **UxrGrabbableObjectAnchor**: Component that can be used to place a **UxrGrabbableObject** on.
+- **UxrGrabber**: Component added to each hand of an avatar enabling it to grab objects.
 
 ## Prerequisites
 
