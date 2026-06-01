@@ -12,6 +12,8 @@ title: "UxrLODGroup"
 `UxrLODGroup` can be used to avoid this when using teleport locomotion by only switching when the avatar has actually moved, such as after a teleport. If a different LOD level is needed, the switch can happen during the teleport fade, making the transition much less noticeable.
 When smooth locomotion is active, standard Unity LOD behavior is used.
 
+![](/media/docs/manipulation/helper-components/UxrGrabbableResizable.png)
+
 ## Requirements
 
 - Unity **`LODGroup`** component on the same GameObject (added automatically if missing).
