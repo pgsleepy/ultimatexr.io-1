@@ -6,6 +6,8 @@ title: "Creating a Custom Avatar"
 
 You may also want to set up a custom avatar using your own rig and graphics. We have put special effort into providing a simple yet powerful way to set up your own avatar.
 
+## The Assistant
+
 It all starts by creating an empty GameObject placed at floor level. Add an UxrAvatar component to it.
 
 You will notice that there is immediately an assistant on top of the component that will guide you through the steps by looking at missing elements and offering an instant fix.
@@ -15,6 +17,8 @@ Let’s see what it can do automatically:
 ![](/media/docs/avatars/creating-a-custom-avatar/07AvatarFix01.png)
 ![](/media/docs/avatars/creating-a-custom-avatar/08AvatarFix02.png)
 ![](/media/docs/avatars/creating-a-custom-avatar/09AvatarFix03.png)
+
+## The Avatar Rig
      
 Woops! It seems we got our first roadblock.
 
@@ -24,15 +28,19 @@ This is because we haven’t placed anything hanging from the avatar yet. Let’
 
 ![](/media/docs/avatars/creating-a-custom-avatar/11AvatarFix05.png)
  
-Let’s go back to the UxrAvatar assistant and try Fix again. It seems to work now! 
+Let’s go back to the UxrAvatar assistant and try Fix again. It seems to work now!
+
+## The Rig Type
 
 Now we set the Rig Type to Half or Full Body since the avatar is more than just head+hands.
 
 We see that there are some elements that weren’t found correctly (Upper Chest, Chest, and Spine) but the rest was automatically assigned and found, including all finger bones. Let’s assign the missing elements.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/12AvatarFix06.png)
+
+## The HandsIntegration
  
-Going back to the assistant, we see it now offers a choice between using Big Hands or Small Hands for the Hands Integration. You can check the previous section (Using a UltimateXR avatar prefab) if you are not familiar with what the Hands Integration is.
+Going back to the assistant, we see it now offers a choice between using Big Hands or Small Hands for the **Hands Integration**. You can check the [previous section](/docs/avatar/using-built-in-avatars#hands-integration) if you are not familiar with what the **Hands Integration** is.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/13AvatarFix07.png)
  
@@ -52,21 +60,29 @@ Do the same operation on the right hand.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/16AvatarFix10.png)
  
-When selecting LeftHand and RightHand in the SmallHandsIntegration object, you may also have noticed that the inspector lets you choose which hands are shown when the avatar Render Mode is set to LeftController + RightController. Set up which combination you prefer.
+When selecting LeftHand and RightHand in the SmallHandsIntegration object, you may also have noticed that the inspector lets you choose which hands are shown when the avatar Render Mode is set to Controllers. Set up which combination you prefer.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/17AvatarFix11.png)
+
+## Grabbers
  
 The next step is quite critical for manipulation: Go to the GrabberLeft and GrabberRight objects hanging from LeftHand/RightHand and assign them the correct renderers for each hand. This will provide a way to preview grab hand poses when editing the pose properties of a grabbable object.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/18AvatarFix12.png)
+
+## Renderers
  
 Now go to the UxrAvatar component and drag all the renderers in your avatar to the Avatar Renderers field. It can be useful to click the lock on the inspector to be able to multi-select all renderers in the hierarchy and drag&drop them to the Avatar Renderers.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/19AvatarFix13.png)
 
+## Avatar Controller
+
 To finish let’s go to the root GameObject and edit the UxrStandardAvatarController component. We can adjust the eyes height so that the gizmos shown coincide with the eyes on the avatar. All other values are good by default.
 
 ![](/media/docs/avatars/creating-a-custom-avatar/20AvatarFix14.png)
+
+## Testing
  
 Now click Play to test the avatar.
 
