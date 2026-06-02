@@ -29,6 +29,6 @@ The `UxrPointerInputModule` checks whether the fingertip is approaching a canvas
 
 If you notice that finger presses are not registering, verify that the forward vector of the `UxrFingerTip` GameObject is pointing in approximately the correct direction. 
 
-## No Inspector Parameters
+## Inspector Reference
 
 `UxrFingerTip` has no configurable inspector parameters. Place it on the correct bone, orient the GameObject forward axis appropriately, and the interaction system handles the rest automatically.
