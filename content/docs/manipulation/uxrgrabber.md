@@ -22,7 +22,7 @@ The **Objects To Disable On Grab** list accepts any number of GameObjects. Each 
 
 ## Proximity transforms
 
-By default the grabber's own transform is used to measure distance to nearby `UxrGrabbableObject` components. For scenes where you need finer control, for example, a cockpit where small buttons should react to the tip of the index finger while larger controls react to the palm. You can add additional transforms to the **Optional Proximity Transforms** list.
+By default the grabber's own transform is used to measure distance to nearby `UxrGrabbableObject` components. This transform is usually located in the palm. For scenes where you need finer control, for example, a cockpit where small buttons should react to the tip of the index finger while larger controls react to the palm. You can add additional transforms to the **Optional Proximity Transforms** list.
 
 Each grab point on a `UxrGrabbableObject` can then specify which proximity transform index it prefers via the **Grabber Proximity Index** field, overriding the default grabber-transform distance check.
 
