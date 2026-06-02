@@ -81,7 +81,7 @@ foreach (UxrComponent component in UxrComponent.AllComponents)
 In the code above, through the static `AllComponents` property, it is possible to access all components in the scene that inherit from `UxrComponent`.
 To iterate over the enabled components only, the property `EnabledComponents` can be used instead.
 
-In the previous [Class Diagram](/docs/programming-guide/core-components-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`:
+In the previous [Class Diagram](/docs/programming-guide/architecture/core-components-diagram) we also showed two typed variations of `UxrComponent`: `UxrComponent<T>` and `UxrComponent<TP, TC>`:
 
 ### `UxrComponent<T>`
 In `UxrComponent<T>`, `AllComponents` and `EnabledComponents` are redefined to return only the components of the specific type `T`. For instance using `UxrAvatar`, which is defined as `class UxrAvatar : UxrComponent<UxrAvatar>`:

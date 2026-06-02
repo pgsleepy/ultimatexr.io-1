@@ -33,7 +33,7 @@ A more technical overview is given in the [Technical Overview](/docs/multiplayer
 
 UltimateXR provides multiplayer support out of the box with just a few clicks, **running on top of your preferred networking SDK**, making it perfect for quick prototyping and indie projects. It can be enabled without any code. We will see this in the upcoming sections.
 
-For larger projects, where custom multiplayer code is required, UltimateXR has a simple yet powerful API that works with any of the supported multiplayer systems. This API has the additional benefit of providing state-saving and replay support seamlessly. [New multiplayer system integrations](/docs/programming-guide/architecture-extending-ultimatexr#new-multiplayer-sdk) will also work automatically.
+For larger projects, where custom multiplayer code is required, UltimateXR has a simple yet powerful API that works with any of the supported multiplayer systems. This API has the additional benefit of providing state-saving and replay support seamlessly. [New multiplayer system integrations](/docs/programming-guide/architecture/extending-ultimatexr#new-multiplayer-sdk) will also work automatically.
 
 {{% callout info %}}
 Developers can also choose to use or combine native multiplayer SDK code if preferred. While UltimateXR's sync API offers many benefits and is highly recommended, some developers may opt to stick with a more familiar API.

@@ -15,6 +15,6 @@ The **local avatar** is the avatar controlled directly by the user. **Non-local 
 UltimateXR provides two main ways to add avatars to a scene:
 
 1. [Use one of the built-in avatar prefabs provided by UltimateXR](/docs/avatars/using-built-in-avatars).
-2. [Create an avatar from scratch)](/docs/avatars/creating-a-custom-avatar).
+2. [Create an avatar from scratch](/docs/avatars/creating-a-custom-avatar).
 
 Let's explore the two options in the next sections.

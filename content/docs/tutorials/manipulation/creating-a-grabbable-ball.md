@@ -56,7 +56,7 @@ Great. We've now created our first grabbable ball object!
 {{% callout tip "Some tips" %}}
 To learn more about the `UxrGrabbableObject` component, please check out the following pages.
 
-- [Programming Guide's UxrGrabbableObject page](/docs/programming-guide/manipulation-uxrgrabbableobject/)
+- [Programming Guide's UxrGrabbableObject page](/docs/programming-guide/manipulation/uxrgrabbableobject)
 - [API's UxrGrabbableObject page](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class).
 
 These pages will allow you to gain a better understanding of the inner workings of the UxrGrabbableObject component and it's properties.

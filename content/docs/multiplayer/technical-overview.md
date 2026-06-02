@@ -133,4 +133,4 @@ The diagram describing this process is shown below:
 
 ## More Information
 
-For a complete guide on **StateSave** and **StateSync** functionality please visit the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization-introduction) section of the Programming Guide.
+For a complete guide on **StateSave** and **StateSync** functionality please visit the [State Serialization and Synchronization](/docs/programming-guide/state-serialization-and-synchronization/introduction) section of the Programming Guide.
