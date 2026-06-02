@@ -35,6 +35,8 @@ The 3D geometry reacts to the interaction while the actual input detection is ha
 5. In the `UxrButton3DPress` inspector, drag the 3D geometry object into the **Target Transform** field.
 6. Set **Pressed Local Offset** to the distance and direction the object should travel when pressed. For a button that pushes inward on the Z axis, use something like `(0, 0, -0.005)`.
 
+![](/media/docs/ui-interaction/3d-buttons/UxrButton3DPress.png)
+
 ### Parameter reference
 
 - *Target Transform*: The 3D `Transform` that will be moved when the button is pressed.
@@ -52,12 +54,12 @@ The setup is the same as `UxrButton3DPress`:
 2. Place an invisible world canvas in front of it.
 3. Add a child GameObject, the size of the button, with a `UxrNonDrawingGraphic` component and `UxrControlInput`.
 4. Add `UxrButton3DRotate` and assign the 3D geometry to **Target Transform**.
-5. Set **Button Local Up Axis** to the axis that should be treated as "up" for the button (usually `(0, 1, 0)` for world-up aligned buttons).
+5. Set **Button Local Up Axis** to the 3D object's axis that should be treated as "up".
 6. Set **Pressed Degrees** to the angle the button should rotate when pressed.
 
 ![](/media/docs/ui-interaction/3d-buttons/UxrButton3DRotate.png)
 
-The component calculates the rotation axis from the cross product of the up axis and the direction from the button center to the point of contact. This means pressing the left side tilts the button left, and pressing the right side tilts it right, automatically.
+The component calculates the rotation from the button center to the point of contact. This means pressing the left side tilts the button left, and pressing the right side tilts it right, automatically.
 
 ### Parameter reference
 
