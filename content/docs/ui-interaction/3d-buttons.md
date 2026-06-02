@@ -6,7 +6,7 @@ title: "3D Buttons"
 
 Standard Unity UI buttons are flat. They live on a Canvas and work well for menus and HUDs, but in VR you often want physical-looking controls — a button that visually depresses when pressed, a dial knob that tilts slightly under a fingertip, or a rocker switch that pivots around its center.
 
-{{</* video src="/media/docs/ui-interaction/3d-buttons/3DButtons.mp4" */>}}
+{</* video src="/media/docs/ui-interaction/3d-buttons/3DButtons.mp4" */>}
 
 UltimateXR provides two components that bridge 2D UI interaction with 3D object animation: `UxrButton3DPress` and `UxrButton3DRotate`.
 
