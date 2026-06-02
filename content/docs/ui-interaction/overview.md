@@ -39,4 +39,6 @@ If for some reason you don’t want UltimateXR to automatically set up pre-exist
 
 ![](/media/docs/ui-interaction/overview/04UxrCanvas.jpg)
  
+{{% callout caution %}}
 A common mistake is to forget adding the `UxrCanvas` component to prefabs that are instantiated at runtime.
+{{% /callout %}}
