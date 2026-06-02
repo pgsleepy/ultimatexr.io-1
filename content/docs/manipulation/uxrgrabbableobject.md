@@ -4,137 +4,282 @@ title: "UxrGrabbableObject"
 
 # UxrGrabbableObject
 
-The UxrGrabbableObject component can be added to an object so that it becomes grabbable by an avatar.
+`UxrGrabbableObject` is the central component of the UltimateXR manipulation system. Adding it to a GameObject makes that object interactable so that avatars can grab it, move it, throw it, and place it on anchors. It works out of the box with no required setup, but it can be configured in many ways when you need more control. It supports anything from simple objects the user can pick up freely to constrained interactions such as levers, steering wheels, and complex compound objects.
 
-Let’s create a small sphere with scale x=0.07 y=0.07 z=0.07 and add the UxrGrabbableObject component.
-After adding the component, it should already work out-of-the-box. This means that tuning grabbing behavior becomes changing the default parameters instead of figuring out how to configure it from scratch.
+Manipulation is handled by the `UxrGrabManager` singleton, which is automatically created by the system. Any scene that has an avatar with `UxrGrabber` components and at least one `UxrGrabbableObject` will automatically work.
 
-![](/media/docs/manipulation/uxrgrabbableobject/01Grabbable.jpg)
- 
-By pressing Play you should be able to grab the ball and move it around. It will snap to the hand but will not fit.
+## Quick Start
 
-At this point you have 2 main choices:
+Add `UxrGrabbableObject` to any GameObject and press Play. The object is now grabbable. The hand will snap to it, without fitting, using the default grip, and the object will follow the hand freely.
 
-- Enable the Hide Hand Renderer option in the UxrGrabbableObject component. This will hide the hands while the object is being grabbed. It removes the need to create specific grab poses and works surprisingly well. Owlchemy Labs, a talented team of Virtual Reality videogame developers, called this “Tomato Presence”; the concept that hand presence can be maintained using a stand-in object. 
-- Register the avatar to use grip poses by dragging it to the Register Avatar for Grips field.
+That is the starting point. The rest of this guide shows how to customize that default behavior for different types of interaction.
 
-## Using grab poses
+![](/media/docs/manipulation/uxrgrabbableobject/01DefaultGrabbableInspector.png)
 
-Let’s continue with the previous example and register the avatar to use grab poses. The inspector will now look like this:
+## Avatar Registration and Grab Poses
 
-![](/media/docs/manipulation/uxrgrabbableobject/02RegisterAvatar.jpg)
- 
-The green fields now tell you which fields have specific values for the selected avatar. Each avatar that is registered will have its own set of values for the green fields, which in this case means that every avatar can specify its own pose and snap points for the left and right hand.
+By default, any avatar that has a `UxrGrabber` can pick up the object, but the grip will be generic. For a realistic, object-fitted grip you register specific avatars and configure per-avatar poses.
 
-This is a powerful feature that favors inclusion and is important in cases where totally different avatars need to interact with the same objects.
+Find **Register Avatar for Grips** and drag an avatar prefab into the field. The inspector will highlight the parameters that can be configured per avatar in green.
 
-If you used any of the UltimateXR avatar prefabs you can select the GrabBall pose that is included.
+![](/media/docs/manipulation/uxrgrabbableobject/02RegisterAvatar.png)
 
-By pressing the Create Left Snap and Create Right Snap buttons you will create two transforms that will hang from the grabbable object that will allow you to move where the ball snaps to the hand when it is grabbed.
+Once an avatar is registered, two things become possible:
 
-At this point you should be able to see a preview mesh in the Scene Window for the grab pose of both hands.
+1. **Grip Pose**: Select a hand pose asset for each grab point on that avatar. The inspector will display a 3D preview of the grip directly in the Scene window.
+2. **Snap transforms**: Click **Create Left Snap** and **Create Right Snap** to create child transforms that define exactly where and how the hand aligns to the object. Move and rotate these transforms in the scene to fine-tune the grip.
+
+Use **Selected Avatar Grips** to switch between registered avatars and edit each one independently. Every avatar shape and size can have its own fitted grip on the same object.
 
 ![](/media/docs/manipulation/uxrgrabbableobject/03Pose01.png)
- 
-If you select the newly created Left Grab or Right Grab object, you will notice that the preview will switch to the snap that is selected.
+
+When a snap transform is selected in the hierarchy, the preview switches to show that specific grip, and the `UxrGrabbableSnapTransform` component on it lets you adjust the blend value for blend poses.
 
 ![](/media/docs/manipulation/uxrgrabbableobject/04Snap.png)
- 
-That is because a UxrGrabbableSnapTransform component was added, that will also let you adjust the blend value since the GrabBall pose is a blend pose.
 
-Now, by adjusting the blend value and moving the transform around, you can easily place how the object will be grabbed. There are additional utilities that will let you copy/mirror the position and orientation.
-
-With some small adjustments you should now be able to end up with a grip that fits the sphere perfectly.
+After adjusting the blend and repositioning both snaps, the grip fits the object correctly for that avatar.
 
 ![](/media/docs/manipulation/uxrgrabbableobject/05EndResult.png)
- 
-Do this for both hands, keeping in mind that the blend pose value is shared between left and right, and you should now be able to check in play mode your improvements.
 
-You can add more grab points to grabbable objects so that they can be grabbed from many angles and using different grips. The framework will be able to determine the grip that will be used based on the position and orientation of the object. Click on the + at the end of the Grab Points section to add new grab points.
+### Hiding the Hand Instead of Posing It
+
+If you do not want to set up grab poses, enable **Hide Hand Renderer** on the grab point. The hand mesh is hidden while the object is held, and the object itself stands in as the visual hand. This is the "Tomato Presence" technique, a term coined by Owlchemy Labs. The idea is that the brain accepts the held object as a hand proxy. It works surprisingly well and avoids all pose setup.
+
+## Multiple Grab Points
+
+Objects can have any number of grab points, allowing them to be picked up from different angles with different grips. Use the **+** button in the Grab Points section to add new points.
 
 ![](/media/docs/manipulation/uxrgrabbableobject/05ZGrabPoints.png)
 
-A good practice is to name each grab point so that the snap transforms that are generated later have meaningful names. This will make it easier for other developers to understand how the grabs are structured.
+Give each grab point a meaningful name using the **Name In Editor** field. The name is used as the base for the snap transform GameObjects that are created later, so descriptive names make the hierarchy easier to understand.
 
-Sometimes it is easy to end up with many different grab points that end up cluttering the scene window:
+With many grab points the Scene window can become cluttered with preview meshes:
 
 ![](/media/docs/manipulation/uxrgrabbableobject/06Cluttering.png)
- 
-You can filter out grab previews by:
 
-- Collapsing the grab points you don’t want to preview.
-- Changing the Preview Grip Pose Meshes parameters switching between showing only the left hand, the right hand, both or none.
-
-Here is the same view with all grab points collapsed and filtering out the left hand
+Collapse grab points you are not currently editing, or use **Preview Grip Pose Meshes** to filter the preview to left hand only, right hand only, both, or none:
 
 ![](/media/docs/manipulation/uxrgrabbableobject/07ClutteringFixed.png)
- 
-Here are some other tips that can be useful:
 
-- To be able to see the preview grab meshes, it is required to have an avatar of that type available instantiated in the scene.
-- You can edit grab poses using the Hand Editor and the preview poses will be updated in real-time.
-- If you want to quickly settings from one grab point to another you can do so using Unity copy & paste of the whole grab point set.
+**Tips for working with grab points:**
 
-We will keep updating this documentation with more advanced tutorials and step by steps. Meanwhile, here is the complete reference guide. You can also hover on the component fields; every item has its own tooltip.
+- You can edit grab poses live in the Hand Pose Editor while previews update in real time in the Scene window.
+- Use Unity's component copy/paste to quickly duplicate a configured grab point to another.
+- Use the mirror buttons in `UxrGrabbableSnapTransform` to quickly copy snap orientations between the left and right hands, so you only need to adjust one side.
+
+## Two-hand Grabbing
+
+When more than one grab point is defined and **Allow 2 Hands Grab** is enabled, the object can be held with both hands simultaneously.
+
+**First Grab Point Is Main** determines how the object behaves when two hands are on it. When enabled, the first grab point in the list controls the object's world position while the second grab point controls the direction the object points. This is the correct setting for a rifle: the trigger hand keeps the weapon's position stable while the forward hand steers the barrel direction. When disabled, neither hand has priority and the object is centered between the two grabs.
+
+## Grab Dependency (Compound Grabbables)
+
+When a `UxrGrabbableObject` exists inside the hierarchy of another `UxrGrabbableObject`, the system sees a parent-child relationship between two grabbable parts. A door handle and door is the typical example: the handle can rotate around itself, and that rotation should also rotate the door.
+
+### Dependent Objects (Control Parent Direction)
+
+If you leave **Ignore Parent Dependency** disabled on the child, it is then considered a movable part of the compound object. While the child is grabbed, its movement drives the parent according to the parent's constraints: turning the handle also swings the door. Enable **Control Parent Direction** on the parent to allow a grabbed child to steer the parent's orientation.
+
+### Independent Objects
+
+Enable **Ignore Parent Dependency** on the child when it just happens to live in the same hierarchy but should behave as a completely standalone grabbable, unaffected by the parent.
+
+### Dummy Grabbable Parents
+
+Sometimes the parent needs constraints (the door needs a rotation limit) but should not itself be directly grabbable. Enable **Is Dummy Grabbable Parent** on the parent in that case. The parent gets the constraints but cannot be grabbed directly, only through the child handle.
+
+An aircraft yoke column is another good example: the column moves forward and back when the yoke itself is pushed or pulled.
+
+Here is an example where the door itself cannot be grabbed directly, but it can still be opened and closed through the door handle:
+![](/media/docs/manipulation/uxrgrabbableobject/08DummyGrabbableParent.png)
+
+The door has a `UxrGrabbableObject` component, and its child handle has another `UxrGrabbableObject`. The parent door has **Is Dummy Grabbable Parent** enabled, which shows a simpler inspector without the standard grabbable options.
+The handle also shows options to control the parent-child relationship:
+![](/media/docs/manipulation/uxrgrabbableobject/10ChildInspector.png)
+
+## Translation Constraints
+
+**Translation Constraint Mode** controls how the object's position is limited while being held:
+
+- **Free**: No position limits, the object follows the hand anywhere.
+- **Restrict Local Offset**: The object can only move within a local-axis-aligned bounding box defined by **Translation Limits Min** and **Translation Limits Max**. Use this for sliders, drawer handles, and any object that slides along a rail.
+- **Restrict To Box**: Position is constrained to the volume of a `BoxCollider` assigned to **Restrict To Box**. The pivot must stay inside that box.
+- **Restrict To Sphere**: Position is constrained to the volume of a `SphereCollider` assigned to **Restrict To Sphere**.
+- **Locked**: The object cannot move at all. It can still be grabbed but the hand snaps to it without moving it.
+
+![](/media/docs/manipulation/uxrgrabbableobject/TranslationConstraints.png)
+
+**Translation Resistance** adds a drag-like resistance to movement. A value of zero means no resistance. Higher values require more hand movement to push the object and can be used to simulate heavy objects or objects on tight rails.
+
+### Constrained Grab Release Distance
+
+When an object has constraints, the virtual hand is locked to the grab point and cannot stray far from it. If the real hand moves too far from where the virtual hand is locked, for example by walking backward while holding a lever, the grip should release automatically. **Constrained Grab Release Distance** sets this threshold in meters.
+
+## Rotation Constraints
+
+**Rotation Constraint Mode** controls how rotation is limited:
+
+- **Free**: No rotation limits.
+- **Restrict Local Rotation**: Rotation is clamped per-axis between **Rotation Angle Limits Min** and **Rotation Angle Limits Max**. Use this for levers, door hinges, dials, and joysticks.
+- **Locked**: The object cannot rotate.
+
+**Rotation Resistance** is the rotational equivalent of translation resistance.
+
+### Rotation Provider
+
+When an object has both a translation constraint and a rotation constraint with actual range of motion, the **Rotation Provider** setting (visible when **Auto Rotation Provider** is off) controls how the hand drives the rotation:
+
+- **Hand Orientation**: The object rotates as the hand wrist rotates. Good for knobs and small joysticks where torque comes from twisting the wrist.
+- **Hand Position Around Pivot**: The object rotates based on where the hand moves around the pivot axis. Good for large levers, steering wheels, and door handles where the leverage comes from arm movement, not wrist rotation.
+
+When **Auto Rotation Provider** is enabled the system picks the most appropriate provider automatically based on the object's shape and constraint configuration.
+
+**Longitudinal Axis** specifies which of the object's local axes (X, Y, or Z) runs along its length. This is used when rotation is constrained on two or more axes to determine which axis the object's "barrel" follows.
+
+**Needs 2 Hands to Rotate** prevents the object from rotating when grabbed with only one hand. The object can be picked up, but it will not rotate until the second hand joins the grip.
+
+![](/media/docs/manipulation/uxrgrabbableobject/RotationConstraints.png)
+
+## Physics
+
+Assign a `Rigidbody` component to **Rigidbody** to enable physics-driven release. When the object is grabbed, its rigidbody is made kinematic so the hand drives it. On release:
+
+- If **Rigidbody Dynamic On Release** is enabled, the rigidbody becomes dynamic and receives the throwing velocity of the hand. The object can then be thrown like a real object.
+- If disabled, the rigidbody stays kinematic after release.
+
+**Vertical Release Multiplier** and **Horizontal Release Multiplier** scale the release velocity independently for each direction. Values greater than 1 produce a stronger throw in that direction. Values less than 1 dampen it.
+
+![](/media/docs/manipulation/uxrgrabbableobject/PhysicsSettings.png)
+
+## Grab Proximity
+
+By default the [`UxrGrabber`](/docs/manipulation/uxrgrabber) component's own transform is used to measure distance to nearby `UxrGrabbableObject` components. For scenes where you need finer control, for example, a cockpit where small buttons should react to the tip of the index finger while larger controls react to the palm. You can add additional transforms to the [`UxrGrabber`](/docs/manipulation/uxrgrabber) component's **Optional Proximity Transforms** list.
+
+Each grab point on the `UxrGrabbableObject` can then specify which proximity transform index it prefers via the **Grabber Proximity Index** field, overriding the default grabber-transform distance check.
+
+## Priority
+
+When two grabbable objects are within reach simultaneously, the grab manager uses **Priority** to decide which one to offer to the user. A higher-priority object always wins over a lower-priority one regardless of distance. Objects with the same priority are resolved by distance and orientation.
+
+## Placement
+
+### Anchor Compatible Tag
+
+**Anchor Compatible Tag** is a string identifier that controls which `UxrGrabbableObjectAnchor` sockets can accept this object. An object can be placed on an anchor only if:
+
+- Both have no tag set, **or**
+- The object's tag appears in the anchor's **Compatible Tags** list.
+
+### Start Anchor
+
+**Start Anchor** references the `UxrGrabbableObjectAnchor` where the object is initially placed when the scene starts. If the object begins in the scene already sitting on an anchor, assign that anchor here.
+
+### Create Anchor at Startup
+
+Enabling **Create Anchor at Startup** generates a `UxrGrabbableObjectAnchor` automatically at runtime, positioned exactly where the object starts. The generated anchor accepts only objects with a matching tag (if one is set). This is a convenient way to create a fixed home position for an object without placing an anchor manually in the editor.
+
+### Anchor Snap
+
+**Anchor Snap** references the transform on this object that will be aligned to the anchor's **Align Transform** when the object is placed. Leave this unassigned (or enable **Use Self**) to align the object's pivot.
+
+**Anchor Snap Mode** controls what gets snapped:
+
+- **Don't Snap**: Placement happens but the object is not repositioned or reoriented.
+- **Position Only**: Only the position snaps. Rotation is preserved.
+- **Rotation Only**: Only the rotation snaps, Position is preserved.
+- **Position And Rotation**: Both snap (default).
+
+### Proximity
+
+**Anchor Proximity Position** references the transform used to measure how close the object is to anchors when deciding whether it can be placed. Leave unassigned (or enable **Use Self**) to use the object's own pivot for distance measurement.
+
+**Parent When Placing** controls whether the object is parented to the anchor's GameObject when placed on it. Enable this when the anchor or its parent moves and the placed object should move along with it.
+
+![](/media/docs/manipulation/uxrgrabbableobject/PlacementSettings.png)
 
 ## Parameter reference
-- *Register Avatar for Grips*: Registers an avatar to have the possibility to have different grip parameters for each avatar. This allows to fine-tune how different hand shapes and sizes wrap around the same object. Parameters that can be adjusted for each avatar will be colored to help in the process.
-- *Selected Avatar Grips*: Switches the avatar currently selected to edit its grip parameters. Being able to register different avatars allows to fine-tune how different hand shapes and sizes wrap around the same object. Parameters that can be adjusted for each avatar will be colored to help in the process.
-- *Ignore Parent Dependency*: In objects with grabbable parents, mark this to ignore the parent constraint and tell this object is independent.
-- *Priority*: By default, closer objects will be always grabbed over far objects. Using priority, objects with higher priority will always be grabbed if they are in range.
-- *Translation Constraint Mode*: Allows to constrain the translation of this object while being grabbed.
-- *Restrict To Box*: Allowed volume where this object's pivot will be allowed to move while being grabbed.
-- *Restrict To Sphere*: Allowed volume where this object's pivot will be allowed to move while being grabbed.
-- *Translation Offset Min*: Minimum allowed offset along the local axes.
-- *Translation Offset Max*: Maximum allowed offset along the local axes.
-- *Rotation Constraint Mode*: Allows to constrain the rotation of this object while being grabbed.
-- *Rotation Angle Limits Min*: Minimum allowed rotation offset degrees around the local axes.
-- *Rotation Angle Limits Max*: Maximum allowed rotation offset degrees around the local axes.
-- *Rotation Provider*: Controls how an object with constrained position is rotated. Auto will to try to infer the most appropriate rotation provider automatically based on the object shape and the grip. HandOrientation will rotate the object directly by rotating the hand, useful for knobs or small joysticks where the torque is applied mostly by twisting the wrist. HandPositionAroundPivot will rotate the object using the position of the hand around the pivot instead, useful for levers, bigger joysticks, steering wheels and similar objects where the torque is applied using hand leverage around the rotation axis.
-- *Longitudinal Axis*: Specifies which axis, in the object coordinate system, is the longitudinal axis. The longitudinal axis is the axis that goes from head to tail along the object.
-- *Needs 2 Hands to Rotate*: When manipulation mode is set to Rotate Around Axis this will tell if the user will be able to rotate the object using one hand only or the object needs to be grabbed with two hands to rotate it.
-- *Constrained Grab Release Distance*: Maximum allowed distance of a locked grab to move away from the grab point before being released.
-- *Translation Resistance*: Resistance of the object to being moved. Values higher than zero may be used to simulate heavy objects.
-- *Rotation Resistance*: Resistance of the object to being rotated. Values higher than zero may be used to simulate heavy objects.
-- *Rigidbody*: References the object's rigidbody when physics are required. The object will be made kinematic when grabbed and optionally dynamic when released.
-- *Rigidbody Dynamic on Release*: When a rigidbody is specified it controls whether it will be marked as dynamic after being grabbed and released. Otherwise, it will continue to be kinematic after being released.
-- *Vertical Release Multiplier*: When throwing a rigidbody this parameter will enable increasing or decreasing the actual release velocity (vertical component).
-- *Horizontal Release Multiplier*: When throwing a rigidbody this parameter will enable increasing or decreasing the actual release velocity (horizontal component).
-- *Allow 2 Hands Grab*: When more than one grab point has been specified, this parameter will tell if the object can be grabbed with two hands at the same time.
-- *Preview Grip Pose Meshes*: Will show/hide the preview grip pose meshes in the Scene Window.
-- *First Grab Point Is Main*: Whether the first grab point in the list is the main grab in objects with more than one grab point. When an object is grabbed with both hands, the main grab controls the actual position while the secondary grab controls the direction. Set it to true in objects like a rifle, where the trigger hand should be the first grab to keep the object in place, and the front grab will control the aiming direction. If false, the grab point order is irrelevant and the hand that grabbed the object first will be considered as the main grab.
-- *Grab Point*: Parameters of the main grabbing point.
-- *Additional Grab Points*: Parameters of the additional grabbing points which enables grabbing the object using more than one hand.
-  - *Name In Editor*: The display name showed for this grab point in the editor's foldout label.
-  - *Grab Mode*: Whether the object will a) Be grabbed while keeping the grab button pressed, b) Keep being grabbed until the grab button is pressed again or c) Keep being grabbed until another hand grabs it or it is requested through scripting.
-  - *Default Grab Button(s)*: Whether the object is grabbed using the grab button specified in the Avatar's Standard Controller component. This allows to override the grab button for certain objects.
-  - *Grab Button(s)*: The button or combination of buttons that will be required to grab this object.
-  - *Both Hands Compatible*: Whether this object can be grabbed using both hands.
-  - *Compatible Hand*: The hand/controller this object can be picked with if the controller can only be grabbed with one hand.
-  - *Hide Hand Renderer*: Whether the hand renderers specified in the UxrGrabber component should be hidden while grabbing.
-  - *Grip Pose*: Selects the hand grip pose to use for the selected avatar/grab point combo.
-  - *Pose Blend*: Move the slider to open/close the grip and adjust it to the object size and shape.
-  - *Grip Snap Left Hand*: The transform that will be aligned to the left UxrGrabber transform if AlignToHandGrabAxes and/or PlaceInHandGrabPivot are active.
-  - *Grip Snap Right Hand*: The transform that will be aligned to the right UxrGrabber transform if AlignToHandGrabAxes and/or PlaceInHandGrabPivot are active.
-  - *Create Left Snap*: Create a dummy as left snap transform.
-  - *Create Right Snap*: Create a dummy as right snap transform.
-  - *Snap Mode*: How this object's grab-alignment-transform axes will snap to the UxrGrabber transform after being grabbed.
-  - *Snap Direction*: Whether this object will be snapped to the hand, or the hand will snap to the object.
-  - *Grip Snap Transform*: Whether the grabbed object will be aligned with the UxrGrabber transform while being grabbed or another snap transform will be used.
-  - *Align To Controller*: Aligns the object to the controller when it is being grabbed. This is very important for objects like weapons where aiming correctly is critical.
-  - *Align To Controller Axes*: By default, if no transform specified, it will use the objects axes as reference to align (z forward, etc.). Otherwise, it can use another transform as reference.
-  - *Grabbable Valid Distance*: Tells which method to use to detect if a UxrGrabber can grab this object.
-  - *Grabbable Valid Box*: Volume the UxrGrabber needs to be in to grab this object.
-  - *Max Distance Grab*: The maximum distance the UxrGrabber can be to be able to grab it. This is called the proximity.
-  - *Grabbable Distance Reference*: The reference from the grabbable object that will be used to know if the UxrGrabber is close enough to grab it.
-  - *Grabbable Proximity Transform*: Position the UxrGrabber needs to be close to to grab this object.
-  - *Use Grabber Default Proximity*: Uses the grabber's own transform for proximity computation (distance from hand to object). Optionally you can specify different transforms in the grabber component for more precise interactions, for example one for precise distance to a dummy in the palm of the hand and other for precise distance to the dummy near the index finger.
-  - *Grabber Proximity Index*: Allows to specify a different transform for proximity computation (distance from hand to object). This index tells which transform from the UxrGrabber component's proximity list is used.
-  - *Enable When Hand Near*: Optional GameObject that will be enabled if a hand is close enough to grab this object.
-- *Parent When Placing*: Will parent this GameObject to the UxrGrabbableAnchor when placing it.
-- *Create Anchor at Startup*: Will generate an UxrGrabbableObjectAnchor during startup and place this object on it, keeping the position and rotation. If the object has an Anchor Compatible Tag assigned, the tag will be the only compatible tag allowed by the anchor. This is useful to have a fixed anchor where the object can be placed back again after picking it up.
-- *Start Anchor*: If this object is initially placed on an UxrGrabbableObjectAnchor, select here which anchor it is placed on.
-- *Anchor Compatible Tag*: String identifier that can be used to filter which objects can be placed on which UxrGrabbableObjectAnchor objects.
-- *Anchor Snap*: The transform where objects will be snapped to when being placed.
-- *Anchor Snap Mode*: How this object will snap to the UxrGrabbableObjectAnchor transform after being placing on it.
-- *Anchor Proximity Position*: The reference that will be used to know if this object is close enough to an UxrGrabbableObjectAnchor to place it there.
+
+### General
+
+- *Register Avatar for Grips*: Registers an avatar prefab to have per-avatar grip configuration. Parameters highlighted in green are overridable per registered avatar.
+- *Selected Avatar Grips*: Switches which registered avatar's grip parameters are shown and editable in the inspector.
+- *Is Dummy Grabbable Parent*: Marks this object as non-grabbable directly, but still active as a constrained parent for children to drive.
+- *Control Parent Direction*: When this child is grabbed, its movement steers the parent object's direction according to the parent's constraints.
+- *Ignore Parent Dependency*: When enabled, this child is treated as a standalone object independent of any grabbable parent in the hierarchy.
+- *Priority*: Objects with higher priority are offered to the user first when multiple objects are in reach. Default is 0.
+- *Allow 2 Hands Grab*: When more than one grab point exists, controls whether the object can be held by both hands simultaneously.
+
+### Constraints
+
+- *Translation Constraint Mode*: How the object's position is limited while grabbed. Options: Free, Restrict Local Offset, Restrict To Box, Restrict To Sphere, Locked.
+- *Restrict To Box*: The `BoxCollider` that defines the allowed volume when Translation Constraint Mode is Restrict To Box.
+- *Restrict To Sphere*: The `SphereCollider` that defines the allowed volume when Translation Constraint Mode is Restrict To Sphere.
+- *Translation Limits Min*: Minimum local-axis offsets allowed when Translation Constraint Mode is Restrict Local Offset.
+- *Translation Limits Max*: Maximum local-axis offsets allowed when Translation Constraint Mode is Restrict Local Offset.
+- *Rotation Constraint Mode*: How the object's rotation is limited while grabbed. Options: Free, Restrict Local Rotation, Locked.
+- *Rotation Angle Limits Min*: Minimum rotation in degrees per axis when Rotation Constraint Mode is Restrict Local Rotation.
+- *Rotation Angle Limits Max*: Maximum rotation in degrees per axis when Rotation Constraint Mode is Restrict Local Rotation.
+- *Auto Rotation Provider*: When enabled, the system automatically selects the most appropriate rotation provider for the object.
+- *Rotation Provider*: Visible when Auto Rotation Provider is off. Controls how the hand drives rotation on a constrained object. Options: Hand Orientation (wrist twist), Hand Position Around Pivot (leverage).
+- *Longitudinal Axis*: The local axis that runs along the length of the object. Used to resolve rotation when multiple axes are constrained.
+- *Needs 2 Hands to Rotate*: Prevents rotation of a constrained object when only one hand is grabbing it.
+- *Constrained Grab Release Distance*: Maximum distance in meters between the real hand and the locked virtual grab point before the grip is automatically released.
+- *Translation Resistance*: Resistance to hand-driven movement. Zero means no resistance. Higher values simulate heavier or stiffer objects.
+- *Rotation Resistance*: Resistance to hand-driven rotation.
+
+### Physics
+
+- *Rigidbody*: The `Rigidbody` component used for physics. Made kinematic during a grab and optionally dynamic on release.
+- *Rigidbody Dynamic On Release*: When enabled, the rigidbody becomes dynamic on release so the object can be thrown. When disabled it stays kinematic.
+- *Vertical Release Multiplier*: Scale factor applied to the vertical component of the throwing velocity.
+- *Horizontal Release Multiplier*: Scale factor applied to the horizontal component of the throwing velocity.
+
+### Avatar Grips
+
+- *Preview Grip Pose Meshes*: Controls which hand preview meshes are shown in the Scene window. Options: Both Hands, Left Only, Right Only, None.
+
+### Grab Points
+
+- *First Grab Point Is Main*: In two-hand grabs, the first grab point controls world position while the second controls direction. Disable to let the hand that grabbed first act as main.
+- *Grab Point*: The main grabbing point configuration (see Grab Point Parameters below).
+- *Additional Grab Points*: Extra grab points that allow the object to be grabbed from different angles or with different grips.
+
+#### Grab Point Parameters (Applies to Main and Additional Grab Points)
+
+- *Name In Editor*: Display name for this grab point in the inspector foldout, also used as base name for generated snap transforms.
+- *Grab Mode*: How the grab is held. Options: Grab While Pressed (hold button), Grab Toggle (press to grab, press to release), Grab And Keep Always (only released by code).
+- *Default Grab Button(s)*: When enabled, uses the avatar's standard grab button. When disabled, **Grab Button(s)** becomes active.
+- *Grab Button(s)*: The input button or combination required to grab via this point, when not using the default.
+- *Both Hands Compatible*: When enabled, either hand can use this grab point. When disabled, only the hand specified in **Compatible Hand** can use it.
+- *Compatible Hand*: The hand allowed to grab via this point when **Both Hands Compatible** is off.
+- *Hide Hand Renderer*: When enabled, the hand renderer is hidden while this grab point is active.
+- *Grip Pose*: The hand pose asset used for this grab point on the selected registered avatar.
+- *Pose Blend*: Blend value for blend poses, controlling how open or closed the hand is.
+- *Grip Snap Left Hand*: Snap transform for the left hand. The left `UxrGrabber` aligns to this transform on grab.
+- *Grip Snap Right Hand*: Snap transform for the right hand. The right `UxrGrabber` aligns to this transform on grab.
+- *Create Left Snap*: Creates a child transform to use as the left hand snap reference.
+- *Create Right Snap*: Creates a child transform to use as the right hand snap reference.
+- *Snap Mode*: Which axes snap when the object is grabbed. Options: Don't Snap, Position Only, Rotation Only, Position And Rotation.
+- *Snap Direction*: Whether the object snaps to the hand or the hand snaps to the object. For constrained objects the hand always snaps to the object regardless of this setting.
+- *Grip Snap Transform*: Selects whether the object's own transform or a designated snap transform is used as the alignment reference.
+- *Align To Controller*: When enabled, the object aligns to the controller axes on grab. Important for weapons and tools where aiming direction must match the controller.
+- *Align To Controller Axes*: An optional transform to use as the reference for controller alignment instead of the object's own axes.
+- *Grabbable Valid Distance*: Determines how proximity to this grab point is measured. Options: Use Proximity (distance to transform), Box Constrained (hand must be inside a box).
+- *Grabbable Valid Box*: The `BoxCollider` the hand must be inside when Grabbable Valid Distance is Box Constrained.
+- *Max Distance Grab*: Maximum distance at which the hand can grab via this point when using proximity mode.
+- *Grabbable Distance Reference*: The transform on this object used as the reference point for proximity calculations.
+- *Grabbable Proximity Transform*: Custom transform for proximity distance measurement. Overrides the default when assigned.
+- *Use Grabber Default Proximity*: When enabled, the grabber's own transform is used for distance checks. When disabled, a specific proximity transform from the grabber can be selected.
+- *Grabber Proximity Index*: Index of the additional proximity transform on the `UxrGrabber` component to use for distance calculations when **Use Grabber Default Proximity** is off.
+- *Enable When Hand Near*: Optional `GameObject` that will be activated when a hand is close enough to grab via this point.
+
+### Placement
+
+- *Parent When Placing*: When enabled, the object is parented to the `UxrGrabbableObjectAnchor` when placed on it.
+- *Create Anchor at Startup*: Generates a `UxrGrabbableObjectAnchor` at the object's start position automatically at runtime.
+- *Start Anchor*: The `UxrGrabbableObjectAnchor` where this object is initially placed at scene start.
+- *Anchor Compatible Tag*: String identifier used to match this object to compatible `UxrGrabbableObjectAnchor` sockets.
+- *Anchor Snap*: Transform on this object that aligns to the anchor's align transform when placed.
+- *Anchor Snap Mode*: How the object snaps to the anchor. Options: Don't Snap, Position Only, Rotation Only, Position And Rotation.
+- *Anchor Proximity Position*: Transform used to measure distance to anchors when determining if placement should trigger.
