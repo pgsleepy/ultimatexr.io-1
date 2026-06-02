@@ -4,7 +4,7 @@ title: "UxrGrabbableObject"
 
 # UxrGrabbableObject
 
-`UxrGrabbableObject` is the central component of the UltimateXR manipulation system. Adding it to a GameObject makes that object interactable so that avatars can grab it, move it, throw it, and place it on anchors. It works out of the box with no required setup, but it can be configured in many ways when you need more control. It supports anything from simple objects the user can pick up freely to constrained interactions such as levers, steering wheels, and complex compound objects.
+`UxrGrabbableObject` is the central component of the UltimateXR manipulation system. Adding it to a GameObject makes that object interactable so that avatars can grab it, move it, throw it, and place it on anchors (objects with the [`UxrGrabbableObjectAnchor`](/docs/manipulation/uxrgrabbableobjectanchor) component). It works out of the box with no required setup, but it can be configured in many ways when you need more control. It supports anything from simple objects the user can pick up freely to constrained interactions such as levers, steering wheels, and complex compound objects.
 
 Manipulation is handled by the `UxrGrabManager` singleton, which is automatically created by the system. Any scene that has an avatar with `UxrGrabber` components and at least one `UxrGrabbableObject` will automatically work.
 
