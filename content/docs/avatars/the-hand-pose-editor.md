@@ -43,7 +43,7 @@ Being able to work with avatar prefab variants and inherit poses is a powerful f
 
 ![](/media/docs/avatars/the-hand-pose-editor/04PoseInheritance.png)
 
-## Using the main menu
+## Using the Main Menu
 
 ![](/media/docs/avatars/the-hand-pose-editor/05MainMenu.png)
  
@@ -70,7 +70,7 @@ Being able to work with avatar prefab variants and inherit poses is a powerful f
 
 •	If the selected avatar is a prefab variant, it will show a top to bottom prefab hierarchy where the root parent prefab is at the top and the avatar being edited at the bottom.
  
-## Using the pose menu
+## Using the Pose Menu
 
 ![](/media/docs/avatars/the-hand-pose-editor/06PoseMenu.png)
  
@@ -103,7 +103,7 @@ Options:
 - Place Snap on Grabbable Object: If you are editing a grab pose by placing the grabbable object in the avatar hand and using the hand pose editor to adjust the grip on the object, this option can help you create a snap transform. You will need to have the grabbable object currently selected in the hierarchy window.
 The created snap transform can later be assigned in the UxrGrabbableObject component to select where the hand should snap when grabbing the object using the pose.
 
-## Using the hand pose presets
+## Using the Hand Pose Presets
 
 ![](/media/docs/avatars/the-hand-pose-editor/08Presets.png)
  
