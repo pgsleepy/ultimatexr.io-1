@@ -25,7 +25,7 @@ The haptic clip supports some interesting features:
 - If a Clip (audio file) is specified and the current system supports audio data as haptic feedback, the clip will be transformed to vibration and played through the controllers.
 - If a Clip was not specified or the current system doesn’t support audio data as haptic feedback, a Fallback Clip from a pre-defined set of vibrations can be played. You may use a negative value as duration in seconds to specify the default clip duration.
 
-## UxrControlInput scripting
+## UxrControlInput Scripting
 
 - The **UxrControlInput** programming guide found [here](/docs/programming-guide/ui-interaction/uxrcontrolinput).
 - Some examples of common **UxrControlInput** use can be found [here](/docs/programming-guide/how-do-i/ui).

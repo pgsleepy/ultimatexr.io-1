@@ -10,13 +10,13 @@ You add it to the **EventSystem** GameObject in your scene. From that point on, 
 
 ![](/media/docs/ui-interaction/uxrpointerinputmodule/UxrPointerInputModule.jpg)
 
-## Adding it to your scene
+## Adding It to Your Scene
 
 1. Create an EventSystem if one does not already exist: **GameObject -> UI -> EventSystem**.
 2. Select the EventSystem GameObject and add the `UxrPointerInputModule` component to it.
 3. The existing Standalone Input Module can stay; `UxrPointerInputModule` is designed to run alongside it so that non-VR UI input also continues to work. Remove it to avoid any touch/mouse interaction.
 
-## Automatic canvas setup
+## Automatic Canvas Setup
 
 The most important option is **Auto Enable On World Canvases**. When enabled, `UxrPointerInputModule` scans all Canvas components in the scene after loading and automatically adds a `UxrCanvas` component to any world-space canvas that does not already have one. This means most scenes will work without touching individual canvases at all.
 
@@ -26,7 +26,7 @@ The **Interaction Types On Auto Enable** field controls which interaction method
 
 If you are instantiating canvases at runtime, automatic setup does not cover them. In this case add a `UxrCanvas` component directly to any prefab that contains a Canvas.
 
-## Parameter reference
+## Parameter Reference
 
 - *Disable Other Input Modules*: When enabled, all other input modules on the EventSystem are bypassed. Enable this if you want VR-only interaction and do not want mouse or keyboard events interfering with the UI.
 - *Auto Enable On World Canvases*: When enabled, the module automatically adds `UxrCanvas` to any world-space Canvas in the scene that has not been configured manually. Canvases set to Screen Space are not affected.

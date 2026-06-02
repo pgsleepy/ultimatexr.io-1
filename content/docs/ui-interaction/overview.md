@@ -21,7 +21,7 @@ UltimateXR supports two ways to interact with a user interface:
 - Direct touch, using the fingertips that have a `UxrFingerTip` component.
 - From a distance, using a laser pointer on one or both hands, through the `UxrLaserPointer` component.
 
-## Setting up a UI
+## Setting Up a UI
 
 The first requirement to be able to use user interfaces is to add a Unity *EventSystem* GameObject to the scene using the GameObject -> UI -> EventSystem menu:
 

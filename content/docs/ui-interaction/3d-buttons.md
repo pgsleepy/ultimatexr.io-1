@@ -37,7 +37,7 @@ The 3D geometry reacts to the interaction while the actual input detection is ha
 
 ![](/media/docs/ui-interaction/3d-buttons/UxrButton3DPress.png)
 
-### Parameter reference
+### Parameter Reference
 
 - *Target Transform*: The 3D `Transform` that will be moved when the button is pressed.
 - *Pressed Local Offset*: The local-space offset applied to the target while the button is held down. On release, the target returns to its original local position.
@@ -61,7 +61,7 @@ The setup is the same as `UxrButton3DPress`:
 
 The component calculates the rotation from the button center to the point of contact. This means pressing the left side tilts the button left, and pressing the right side tilts it right, automatically.
 
-### Parameter reference
+### Parameter Reference
 
 - *Target Transform*: The 3D `Transform` that will be rotated when the button is pressed.
 - *Button Local Up Axis*: The local-space axis that defines "up" for the rotation calculation. Default is `(0, 1, 0)`.
