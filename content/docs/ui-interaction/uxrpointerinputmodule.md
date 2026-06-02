@@ -8,7 +8,7 @@ title: "UxrPointerInputModule"
 
 You add it to the **EventSystem** GameObject in your scene. From that point on, any Unity Canvas in the scene can be interacted with using VR hands.
 
-![](/media/docs/ui-interaction/uxrpointerinputmodule/UxrPointerInputModule.jpg)
+![](/media/docs/ui-interaction/uxrpointerinputmodule/UxrPointerInputModule.png)
 
 ## Adding It to Your Scene
 
@@ -22,7 +22,7 @@ The most important option is **Auto Enable On World Canvases**. When enabled, `U
 
 The **Interaction Types On Auto Enable** field controls which interaction method is set up on those auto-configured canvases: finger tips, laser pointers, or both.
 
-![](/media/docs/ui-interaction/uxrpointerinputmodule/UxrCanvas.jpg)
+![](/media/docs/ui-interaction/uxrpointerinputmodule/UxrCanvas.png)
 
 If you are instantiating canvases at runtime, automatic setup does not cover them. In this case add a `UxrCanvas` component directly to any prefab that contains a Canvas.
 

@@ -21,7 +21,7 @@ If you are working with a custom avatar or want to add fingertip interaction man
 
 This orientation step is important. The interaction system filters out contacts that are not approaching the canvas at a natural angle. If the forward vector is misaligned, presses may be ignored.
 
-![](/media/docs/ui-interaction/uxrfingertip/Fingertip.jpg)
+![](/media/docs/ui-interaction/uxrfingertip/Fingertip.png)
 
 ## How the Angle Filter Works
 

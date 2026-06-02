@@ -14,11 +14,11 @@ Teleporting uses one component for each hand. These default components can be di
 
 At runtime, teleporting looks like this:
 
-![](/media/docs/locomotion/teleporting/Teleporting.jpg)
+![](/media/docs/locomotion/teleporting/Teleporting.png)
 
 ## The `UxrTeleportLocomotion` component
 
-![](/media/docs/locomotion/teleporting/TeleportComponent.jpg)
+![](/media/docs/locomotion/teleporting/TeleportComponent.png)
 
 ### General parameters
 - *Controller Hand*: Which hand controls the input.
