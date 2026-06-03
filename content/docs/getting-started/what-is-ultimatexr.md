@@ -28,3 +28,7 @@ Originally started in 2016 by VRMADA, a company specializing in virtual training
 UltimateXR isn’t just for programmers, it's designed as a tool for different roles within a team, facilitating collaboration between creative and technical departments throughout the development process.
 
 It offers tools for game designers and artists to build or prototype fully interactive environments, including multiplayer, using components. For larger projects, it also provides a complete API, allowing programmers to create the complex logic needed for enterprise-level projects and professional video games.
+
+## Frequently Asked Questions
+
+Questions about UltimateXR? Check our [FAQ](/docs/faq/frequently-asked-questions) for common questions and answers.
