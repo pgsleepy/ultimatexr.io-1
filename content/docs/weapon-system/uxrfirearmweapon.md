@@ -4,13 +4,13 @@ title: "UxrFirearmWeapon"
 
 ## UxrFirearmWeapon
 
-![](/media/docs/weapon-system/weapons/Shotgun.png)
+![](/media/docs/weapon-system/Shotgun.png)
 
 `UxrFirearmWeapon` is the component for any weapon that fires projectiles. Add it to the root of a weapon hierarchy alongside a `UxrProjectileSource`. It requires at least one trigger entry, which defines the shooting behaviour for a projectile type.
 
 The component automatically reads controller trigger input, animates the trigger geometry, blends the grip hand pose, and fires rounds. No input code is required.
 
-![](/media/docs/weapon-system/weapons/UxrFirearmWeaponShotgunInspector.png)
+![](/media/docs/weapon-system/UxrFirearmWeaponShotgunInspector.png)
 
 ## Setting Up a Firearm
 
@@ -42,7 +42,7 @@ Assign a **Recoil Axes** transform to control the direction the recoil offset an
 
 `UxrProjectileSource` is a required companion component that defines what is actually shot. It holds a list of **Shot Types** (of type `UxrShotDescriptor`), each describing one kind of projectile.
 
-![](/media/docs/weapon-system/weapons/UxrFirearmWeaponShotgunProjectileSource.png)
+![](/media/docs/weapon-system/UxrFirearmWeaponShotgunProjectileSource.png)
 
 A rifle with a grenade launcher attachment would have two shot types: one for bullets and one for grenades. The trigger index in `UxrFirearmWeapon` maps to the shot type index in `UxrProjectileSource`.
 
@@ -74,7 +74,7 @@ A rifle with a grenade launcher attachment would have two shot types: one for bu
 
 `UxrFirearmMag` is the magazine component. Add it alongside a `UxrGrabbableObject` on the magazine prefab. The magazine snaps into the weapon's `UxrGrabbableObjectAnchor` using standard placement.
 
-![](/media/docs/weapon-system/weapons/UxrFirearmMag.png)
+![](/media/docs/weapon-system/UxrFirearmMag.png)
 
 ### Parameter Reference
 
