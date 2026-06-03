@@ -453,5 +453,5 @@
 - title: "FAQ"
   items:
     - title: "Frequently Asked Questions"
-      url: "/docs/troubleshooting/frequently-asked-questions"
+      url: "/docs/faq/frequently-asked-questions"
       label: "ready"
