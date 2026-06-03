@@ -8,7 +8,7 @@ Smooth locomotion is a continuous movement system that lets users travel through
 
 Smooth locomotion gives more direct control than teleportation but can cause motion sickness in some users, particularly when combined with free smooth turning. For users prone to discomfort, consider using snap or fade turning instead.
 
-## The `UxrStandardSmoothLocomotion` component
+## `UxrStandardSmoothLocomotion`
 
 `UxrStandardSmoothLocomotion` is the built-in smooth locomotion component provided by UltimateXR. It derives from `UxrSmoothLocomotion`, which handles most of the processing. You can also subclass `UxrSmoothLocomotion` directly if you need a custom implementation.
 
@@ -25,7 +25,9 @@ Setting up `UxrStandardSmoothLocomotion` on an avatar:
 
 That's it! With the default settings you can now move with the left joystick, turn with the right joystick, and sprint by pressing the left joystick in.
 
-### Movement
+## Parameter Reference
+
+### General
 
 - *Character Controller*: A reference to Unity's Character Controller on the avatar. Use the button below to set it up automatically.
 
