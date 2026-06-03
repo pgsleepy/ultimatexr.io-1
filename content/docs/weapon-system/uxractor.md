@@ -10,7 +10,7 @@ An actor has a life value. When a projectile or explosion inflicts enough damage
 
 ![](/media/docs/weapon-system/UxrActorInspector.png)
 
-## Setting up an actor
+## Setting Up an Actor
 
 1. Add `UxrActor` to the root GameObject of the entity that should take damage (an enemy character, a barrel, a vehicle).
 2. Set **Life** to the starting health value.
@@ -24,7 +24,7 @@ If you want to manage damage subtraction or destruction yourself (to play custom
 To keep automatic damage handling while still randomizing animations and audio clips, use the DamageReceiving event to assign random properties at runtime, right before the damage effects are applied.
 {{% /callout %}}
 
-## Automatic handling
+## Automatic Handling
 
 When **Automatic Damage Handling** is enabled, the actor subtracts the incoming damage from its life value automatically. When **Automatic Dead Handling** is additionally enabled, reaching zero life immediately destroys the GameObject after the delay configured in **Destroy After Dead Seconds**.
 
@@ -36,7 +36,7 @@ Disabling **Automatic Dead Handling** leaves the actor alive in the scene after 
 
 `DamageReceived` fires after damage has been applied (and cannot be cancelled). The event arguments contain the amount of damage, the source actor, and whether the hit was lethal.
 
-## Parameter reference
+## Parameter Reference
 
 - *Life*: Starting life value. Damage is subtracted from this value.
 - *Animator*: Optional `Animator` that receives trigger signals on damage and death.
