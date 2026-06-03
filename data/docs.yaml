@@ -449,5 +449,9 @@
     - title: "Common Errors"
       url: "/docs/troubleshooting/common-errors"
       label: "ready"
+
+- title: "FAQ"
+  items:
     - title: "Frequently Asked Questions"
       url: "/docs/troubleshooting/frequently-asked-questions"
+      label: "ready"
