@@ -8,6 +8,14 @@ title: "Frequently Asked Questions"
 
 Yes. UltimateXR is actively used and developed at VRMADA as part of our own projects. Many improvements come directly from real production needs.
 
+## Who is developing UltimateXR?
+
+UltimateXR is developed by VRMADA, a company specialized in enterprise XR solutions. The framework started in 2016 as the foundation for VRMADA’s own virtual reality projects, created by a team with long experience in computer graphics, simulation, and video games.
+
+## Why is UltimateXR free and open-source?
+
+UltimateXR is free and open-source because we want to make VR development more accessible. VR is our passion, and we believe the tools we have built over years of production work can help indie developers, companies, and academic institutions create better VR applications.
+
 ## Why is the GitHub repository not updated daily or weekly?
 
 UltimateXR is developed internally at VRMADA using a private PlasticSCM repository. GitHub is used as the public distribution channel, so updates are pushed there when they contain meaningful improvements, fixes, or release-ready changes.
