@@ -1,5 +1,3 @@
 ---
-title: "Title"
+title: "UxrWeaponManager"
 ---
-
-# Title
