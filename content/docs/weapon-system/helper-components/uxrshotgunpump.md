@@ -6,6 +6,8 @@ title: "UxrShotgunPump"
 
 `UxrShotgunPump` adds physical pump-action reloading to a firearm. When the player grabs the pump and slides it back and forward past a configurable threshold, the component calls `Reload` on the `UxrFirearmWeapon`. This is used together with a **Manual Reload** shot cycle so the weapon requires a physical pump before each shot.
 
+{{< video src="/media/docs/weapon-system/helper-components/PumpAction.mp4" >}}
+
 The component requires a `UxrFirearmWeapon` on the same GameObject and must reference a `UxrGrabbableObject` that represents the pump handle.
 
 ![](/media/docs/weapon-system/helper-components/UxrShotgunPumpInspector.png)
