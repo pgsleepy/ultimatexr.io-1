@@ -198,7 +198,7 @@ Enabling **Create Anchor at Startup** generates a `UxrGrabbableObjectAnchor` aut
 
 ![](/media/docs/manipulation/uxrgrabbableobject/PlacementSettings.png)
 
-## Parameter reference
+## Parameter Reference
 
 ### General
 
