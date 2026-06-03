@@ -81,10 +81,7 @@ This is the suggested reading for programmers, organized by the required skill l
 
 ## Latest Updates
 
-Stay updated with the newest additions or modifications to the documentation. Here are the latest articles:
-- [New Article: Article Name](#) - Added on [Date].
-- [Updated: Article Name](#) - Revised on [Date].
-- [New Tutorial: Tutorial Name](#) - Added on [Date].
+Coming soon!
 
 ## Need Help?
 
