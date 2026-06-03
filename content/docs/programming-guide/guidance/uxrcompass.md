@@ -6,6 +6,8 @@ title: "UxrCompass Programming Guide"
 
 ## Introduction
 
+{{< video src="/media/docs/programming-guide/guidance/Compass.mp4" >}}
+
 The `UxrCompass` is a singleton component that guides the user by providing visual hints indicating where to look or what action to perform. It displays an arrow in front of the view to help bring the target into sight. Once the target is visible, it can optionally display an action icon depending on the display mode.
 
 {{% callout info %}}
