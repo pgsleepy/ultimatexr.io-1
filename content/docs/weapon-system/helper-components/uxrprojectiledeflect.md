@@ -6,9 +6,8 @@ title: "UxrProjectileDeflect"
 
 `UxrProjectileDeflect` allows a collider to reflect incoming projectiles rather than absorbing them. When a projectile from a `UxrProjectileSource` hits an object that has this component in the same GameObject or any parent, the projectile bounces off the surface according to the standard reflection vector and continues traveling in the new direction. A deflected projectile can then hit other objects and deal damage normally.
 
+A typical use case is a shield or sword that can be held in the hand to block and redirect incoming fire. Here is an example from VRMADA’s internal game Cyber Syndrome. The shield can not only block incoming shots, but also deflect them back to hit enemies.
 {{< video src="/media/docs/weapon-system/helper-components/ProjectileDeflect.mp4" >}}
-
-A typical use case is a shield or sword that can be held in the hand to block and redirect incoming fire.
 
 The object doesn't require to be grabbable, but the component inherits from `UxrGrabbableObjectComponent`, so it also supports tracking the owner `UxrActor` automatically if it is grabbable. A deflected projectile is attributed to the deflector's owner actor rather than to the original source.
 
