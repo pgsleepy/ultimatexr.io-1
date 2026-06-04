@@ -46,8 +46,10 @@
   items:
     - title: "Overview"
       url: "/docs/contributing-to-the-guide/overview"
+      label: "ready"
     - title: "Submitting a Simple Edit"
       url: "/docs/contributing-to-the-guide/submitting-a-simple-edit"
+      label: "ready"
     - title: "Submitting a New Article"
       url: "/docs/contributing-to-the-guide/submitting-a-new-article"
     - title: "Guidelines"
