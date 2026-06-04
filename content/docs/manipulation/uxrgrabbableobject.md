@@ -41,6 +41,16 @@ After adjusting the blend and repositioning both snaps, the grip fits the object
 
 ![](/media/docs/manipulation/uxrgrabbableobject/05EndResult.png)
 
+### Prefab Hierarchy Inheritance
+
+When a grab occurs, the system resolves which grip configuration to use by walking up the grabbing avatar's prefab hierarchy until it finds a match:
+
+1. **The avatar itself**: If a grip entry was registered for that exact prefab, it is used.
+2. **Parent prefabs**: If no match is found, the system moves up to the parent prefab (the prefab this avatar was created as a variant of), then to its parent, and so on, all the way to the root prefab in the chain.
+3. **Default settings**: If no registered entry is found anywhere in the prefab chain, the grab point's default configuration is used. This is the same generic grip that unregistered avatars receive.
+
+This means you only need to register and configure the avatar that actually holds the pose data. Any prefab variant of that avatar will automatically inherit its grip configuration. If you have a base avatar prefab with a configured grip, every custom avatar derived from it will use that grip without any extra setup, unless you register the derived avatar separately to override it with its own pose.
+
 ### Hiding the Hand Instead of Posing It
 
 If you do not want to set up grab poses, enable **Hide Hand Renderer** on the grab point. The hand mesh is hidden while the object is held, and the object itself stands in as the visual hand. This is the "Tomato Presence" technique, a term coined by Owlchemy Labs. The idea is that the brain accepts the held object as a hand proxy. It works surprisingly well and avoids all pose setup.
