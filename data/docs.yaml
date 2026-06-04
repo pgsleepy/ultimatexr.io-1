@@ -213,54 +213,6 @@
           url: "/docs/programming-guide/how-do-i/ui"
         - title: "UltimateXR Components"
           url: "/docs/programming-guide/how-do-i/ultimatexr-components"
-- title: "Tutorials"
-  items:
-    - title: "Creating Your First Scene"
-      url: "/docs/tutorials/creating-your-first-scene"
-    - title: "Avatars"
-      url: ""
-      items:
-        - title: "Creating a Custom Avatar"
-          url: "/docs/tutorials/avatars/creating-a-custom-avatar"
-    - title: "Devices"
-      url: ""
-      items:
-        - title: "Adding Haptics"
-          url: "/docs/tutorials/devices/adding-haptics"
-    - title: "Locomotion"
-      url: ""
-      items:
-        - title: "Using Teleport Spawn Colliders"
-          url: "/docs/tutorials/locomotion/using-teleport-spawn-colliders"
-    - title: "Manipulation"
-      url: ""
-      label: "in progress"
-      items:
-        - title: "Creating a Grabbable Ball"
-          url: "/docs/tutorials/manipulation/creating-a-grabbable-ball"
-          label: "in progress"
-        - title: "Creating a Staff"
-          url: "/docs/tutorials/manipulation/creating-a-staff"
-          label: "in progress"
-        - title: "Using Constraints"
-          url: "/docs/tutorials/manipulation/using-constraints"
-    - title: "Multiplayer"
-      url: ""
-      items:
-        - title: "Basic Multiplayer"
-          url: "/docs/tutorials/multiplayer/basic-multiplayer"
-    - title: "UI"
-      url: ""
-      items:
-        - title: "Creating a 2D UI"
-          url: "/docs/tutorials/ui/creating-a-2d-ui"
-        - title: "Creating a 3D UI"
-          url: "/docs/tutorials/ui/creating-a-3d-ui"
-    - title: "Weapons"
-      url: ""
-      items:
-        - title: "Creating a Gun"
-          url: "/docs/tutorials/weapons/creating-a-gun"
 
 - title: "Avatars"
   items:
@@ -343,6 +295,14 @@
       items:
         - title: "UxrGrabPointShape"
           url: "/docs/manipulation/extending-manipulation/uxrgrabpointshape"
+    - title: "Tutorials"
+      url: ""
+      label: "ready"
+      items:
+        - title: "Creating a Grabbable Ball"
+          url: "/docs/manipulation/tutorials/creating-a-grabbable-ball"
+        - title: "Creating a Staff"
+          url: "/docs/manipulation/tutorials/creating-a-staff"
 
 - title: "UI Interaction"
   items:
