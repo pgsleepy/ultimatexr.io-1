@@ -8,5 +8,6 @@ title: "Submitting a New Article"
 - UltimateXR.io folder structure for Docs
   - Text documents (.md markdown) in /content/docs/ following the hierarchy of the left navigation menu
   - Article assets (images, videos) in /assets/media/docs/ following the hierarchy of the left navigation menu and ending in a directory with the same name of the article without the .md extension
+  - /data/docs.yaml to create new entry in the left navigation menu.
  
-Reference, wherever it makes sense, the guidelines article.
+Reference, wherever it makes sense, the guidelines article from /content/docs/contributing-to-the-guide/guidelines.md
