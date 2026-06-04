@@ -18,7 +18,7 @@ Below is a list of the most relevant UxrAvatar elements that are commonly used, 
 
 ## Avatar Mode
 
-Avatars can eihter be local or external. Typically, there is one avatar in the scene, the local avatar, which has its `AvatarMode` property set to `Local`. This avatar is controlled directly by the user with the connected VR device.
+Avatars can either be local or external. Typically, there is one avatar in the scene, the local avatar, which has its `AvatarMode` property set to `Local`. This avatar is controlled directly by the user with the connected VR device.
 
 In multiplayer sessions, however, additional avatars are spawned in the scene. These external avatars are not controlled by any connected devices; instead, they are updated using networking data. These avatars have their `AvatarMode` set to `UpdateExternally`.
 
