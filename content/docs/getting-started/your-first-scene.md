@@ -40,7 +40,7 @@ In the **Hierarchy** window, right-click and choose **3D Object -> Plane**. This
 
 ![](/media/docs/getting-started/your-first-scene/04Floor.png)
 
-{{% callout tip "No headset yet?" %}}
+{{% callout tip "Position your plane" %}}
 Make sure the plane stays at position `(0, 0, 0)` so the avatar spawns on it.
 {{% /callout %}}
 
