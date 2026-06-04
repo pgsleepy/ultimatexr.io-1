@@ -8,7 +8,14 @@ To start understanding the very basics of how UltimateXR works, we'll first star
 
 This guide will cover all there is necessary to create your first grabbable object.
 
-## Creating the ball
+## Objectives
+
+- Learn how to add the UxrGrabbableObject component to make an object grabbable.
+- Register an avatar on the UxrGrabbableObject to define the pose used when grabbing it.
+- Adjust the grip pose so the hand matches the shape of the grabbable object.
+- Fine-tune finger placement using Pose Blend.
+
+## Creating the Ball
 
 Let's start with our first grabbable object!
 
@@ -17,7 +24,7 @@ Using the cyborg's hand as a reference, scale down the sphere so that it can be 
 
 ![](/media/docs/tutorials/manipulation/creating-a-grabbable-ball/01Sphere.png)
 
-## Adding the UxrGrabbableObject component
+## Adding the UxrGrabbableObject Component
 
 To make the sphere grabbable, add the [UxrGrabbableObject](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class) component to it. This component enables the object to be grabbed by UxrGrabber components found in the hands of an UxrAvatar.
 
@@ -27,7 +34,7 @@ _Technically_ you have already made a grabbable ball object. However, you will n
 
 To fix this, we will need to add the appropriate grip pose to the grabbable ball.
 
-## Adding the grip pose
+## Adding the Grip Pose
 
 To add the grip pose, we will need select the avatar in the avatar grips menu.
 
@@ -53,11 +60,20 @@ Select the left one and position the left transform in the right position while 
 
 Great. We've now created our first grabbable ball object!
 
-{{% callout tip "Some tips" %}}
-To learn more about the `UxrGrabbableObject` component, please check out the following pages.
+## Recap
 
-- [Programming Guide's UxrGrabbableObject page](/docs/programming-guide/manipulation/uxrgrabbableobject)
-- [API's UxrGrabbableObject page](/api/T_UltimateXR_Manipulation_UxrGrabbableObject#uxrgrabbableobject-class).
+1. Created a 3D sphere and scaled it to a graspable size.
+2. Added `UxrGrabbableObject` to the sphere to enable grabbing.
+3. Registered the avatar on the `UxrGrabbableObject`.
+4. Selected the GrabBall grip pose in the avatar grip editor.
+5. Created left and right snap transforms and adjusted Pose Blend for each hand.
 
-These pages will allow you to gain a better understanding of the inner workings of the UxrGrabbableObject component and it's properties.
-{{% /callout %}}
+## End Result
+
+The sphere can now be picked up and held naturally in either hand with correct finger placement on the grip.
+
+## Continue Reading
+
+- [Creating a Staff](/docs/tutorials/manipulation/creating-a-staff) — extend grab points along a line using `UxrGrabPointShapeAxisAngle`
+- [UxrGrabbableObject user guide](/docs/manipulation/uxrgrabbableobject)
+- [UxrGrabbableObject programming guide](/docs/programming-guide/manipulation/uxrgrabbableobject)
