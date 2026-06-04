@@ -53,9 +53,7 @@ Fill in the pull request title and description. A good description explains what
 
 ## 7. Wait for a Maintainer to Merge
 
-Your pull request is now in the queue. A maintainer will review the change and, once approved, click **Merge pull request** to apply it to the site.
-
-![](/media/docs/contributing-to-the-guide/submitting-a-simple-edit/MergePullRequest.png)
+Your pull request is now in the queue. A maintainer will review the change and, if approved, merge the pull request to apply it to the site.
 
 {{% callout tip "Need to make bigger changes?" %}}
 For edits that span multiple files, or when writing a new article entirely, the [Previewing New Articles](/docs/contributing-to-the-guide/previewing-new-articles) guide covers setting up a local Hugo server so you can see your changes before submitting them.
