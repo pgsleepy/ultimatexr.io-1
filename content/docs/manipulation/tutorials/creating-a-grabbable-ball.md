@@ -22,7 +22,7 @@ Let's start with our first grabbable object!
 First, create a 3D sphere game object in your scene.
 Using the cyborg's hand as a reference, scale down the sphere so that it can be easily grabbed with one hand
 
-![](/media/docs/tutorials/manipulation/creating-a-grabbable-ball/01Sphere.png)
+![](/media/docs/manipulation/tutorials/creating-a-grabbable-ball/01Sphere.png)
 
 ## Adding the UxrGrabbableObject Component
 
@@ -30,7 +30,7 @@ To make the sphere grabbable, add the [UxrGrabbableObject](/api/T_UltimateXR_Man
 
 _Technically_ you have already made a grabbable ball object. However, you will notice that if you press play and try to grab the object, it will grab it through the middle as shown below.
 
-![](/media/docs/tutorials/manipulation/creating-a-grabbable-ball/02HandThroughBall.png)
+![](/media/docs/manipulation/tutorials/creating-a-grabbable-ball/02HandThroughBall.png)
 
 To fix this, we will need to add the appropriate grip pose to the grabbable ball.
 
@@ -38,25 +38,25 @@ To fix this, we will need to add the appropriate grip pose to the grabbable ball
 
 To add the grip pose, we will need select the avatar in the avatar grips menu.
 
-![](/media/docs/tutorials/manipulation/creating-a-grabbable-ball/03SelectedAvatar.png)
+![](/media/docs/manipulation/tutorials/creating-a-grabbable-ball/03SelectedAvatar.png)
 
 Having done that, the inspector will now show green fields which shows what is specific to the avatar itself.
 In this case, we see that the grip pose, left and right hand grip snap are green, as well as the two snap creation buttons down below.
 
 If we look in the scene view too, we will see that the ball now has both hands around it, this is to preview the grip pose!
 
-![](/media/docs/tutorials/manipulation/creating-a-grabbable-ball/04GripPosePreview.png)
+![](/media/docs/manipulation/tutorials/creating-a-grabbable-ball/04GripPosePreview.png)
 
 Please, select default `GrabBall` grip pose. You will see that a new slider has been added underneath the grip pose selector called `Pose Blend`.
 This allows you to blend the pose from one point to another. Changing this value will show the changes directly in the scene view.
 
-![](/media/docs/tutorials/manipulation/creating-a-grabbable-ball/05PoseBlendSlider.gif)
+![](/media/docs/manipulation/tutorials/creating-a-grabbable-ball/05PoseBlendSlider.gif)
 
 Now, please click on both the left and right snap button. This will create two transforms containing the positional and rotational values for the pose.
 
 Select the left one and position the left transform in the right position while adjusting the Pose Blend value in the `UxrGrabbableObjectSnapTransform` component that's inside of these game objects.
 
-![](/media/docs/tutorials/manipulation/creating-a-grabbable-ball/06GripPoseBlend.png)
+![](/media/docs/manipulation/tutorials/creating-a-grabbable-ball/06GripPoseBlend.png)
 
 Great. We've now created our first grabbable ball object!
 
@@ -74,6 +74,6 @@ The sphere can now be picked up and held naturally in either hand with correct f
 
 ## Continue Reading
 
-- [Creating a Staff](/docs/tutorials/manipulation/creating-a-staff) — extend grab points along a line using `UxrGrabPointShapeAxisAngle`
+- [Creating a Staff](/docs/manipulation/tutorials/creating-a-staff) — extend grab points along a line using `UxrGrabPointShapeAxisAngle`
 - [UxrGrabbableObject user guide](/docs/manipulation/uxrgrabbableobject)
 - [UxrGrabbableObject programming guide](/docs/programming-guide/manipulation/uxrgrabbableobject)

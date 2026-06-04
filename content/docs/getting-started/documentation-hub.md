@@ -31,7 +31,7 @@ Here you can find a curated selection of recommended articles and tutorials, org
 
 ### Beginner Documentation
 - [Using Built-in Avatars](/docs/avatars/using-built-in-avatars): A guide to integrating UltimateXR's built-in avatars for your projects.
-- [Creating a Grabbable Ball](/docs/tutorials/manipulation/creating-a-grabbable-ball): Step-by-step instructions to create a ball that can be grabbed and manipulated in VR.
+- [Creating a Grabbable Ball](/docs/manipulation/tutorials/creating-a-grabbable-ball): Step-by-step instructions to create a ball that can be grabbed and manipulated in VR.
 - [Creating a 2D UI](/docs/tutorials/ui/creating-a-2d-ui): Learn how to build and integrate a 2D user interface within a VR environment.
 - [Teleporting](/docs/locomotion/teleporting) and [Smooth Locomotion](/docs/locomotion/smooth-locomotion): Add locomotion mechanics.
 
