@@ -16,15 +16,15 @@ Deleting UltimateXR before installing a newer version will not break any referen
 
 ## Installation and setup
 
-We provide the following ways to install **UltimateXR**:
+We provide different ways to install **UltimateXR**:
 
-### Method 1: Through the official Unity Asset Store
+## 1 Asset Store
 
 - Delete the previous version from /Assets/UltimateXR first. **Important!** Not removing the folder before updating may result in incorrect files remaining after installation.
 - Go to the [Asset Store](https://assetstore.unity.com/packages/slug/236782) and click Open in Unity to proceed with the installation.
 - Remember to rate and review our asset if you liked it!
 
-### Method 2: Downloading and installing the .unitypackage file
+## 2 .unitypackage
 
 UltimateXR can be installed by downloading the latest [.unitypackage]({{< param latest_version_download_url >}}) (version {{< param latest_version >}}).
 
@@ -36,7 +36,7 @@ UltimateXR can be installed by downloading the latest [.unitypackage]({{< param 
   
 - Select the downloaded file and click Import. Importing assets may take a while due to the included sample scene.
 
-### Method 3: Using the Package Manager for git users
+## 3 Package Manager
 
 - Open the Package Manager using the Window menu -> Package Manager
 
@@ -46,16 +46,23 @@ UltimateXR can be installed by downloading the latest [.unitypackage]({{< param 
 
 ![AddFromGitURL](https://user-images.githubusercontent.com/5702147/197527755-cfc2a87c-980b-4ea3-96ee-34c385f79d86.JPG)
 
-- Input the following URL: https://github.com/VRMADA/ultimatexr-unity.git and click Add.
+- To install the latest version, input the following URL and click **Add**:
+
+```
+https://github.com/VRMADA/ultimatexr-unity.git
+```
+
+- To install a specific release or branch, append `#` followed by the branch or tag name. For example, to install the `release/v1.0.0` branch:
+
+```
+https://github.com/VRMADA/ultimatexr-unity.git#release/v1.0.0
+```
+
 - When the installation has completed, make sure to import the examples if it's your first time using UltimateXR.
 
 ![Examples](https://user-images.githubusercontent.com/5702147/197527794-2f304b4d-0b36-4058-96d1-b7e4d389c0a7.jpg)
 
-### Additional installation methods
-
-We are in the process of providing installation through the Unity Package Manager without requiring git. Stay tuned!
-
-## Setting up the environment
+## Setting Up the Environment
 
 UltimateXR works with any render pipeline (BRP or Built-in Render Pipeline, URP or Universal Render Pipeline, HDRP or High-Definition Render Pipeline) although for the moment it comes with BRP and URP compatible materials.
 
