@@ -48,13 +48,13 @@ UltimateXR can be installed by downloading the latest [.unitypackage]({{< param 
 
 - To install the latest version, input the following URL and click **Add**:
 
-```
+```text
 https://github.com/VRMADA/ultimatexr-unity.git
 ```
 
 - To install a specific release or branch, append `#` followed by the branch or tag name. For example, to install the `release/v1.0.0` branch:
 
-```
+```text
 https://github.com/VRMADA/ultimatexr-unity.git#release/v1.0.0
 ```
 
