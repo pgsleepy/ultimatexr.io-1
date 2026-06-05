@@ -27,6 +27,10 @@ Check the [Extending UltimateXR](/docs/programming-guide/architecture/extending-
 
 Clear and comprehensive documentation is key to a successful project. Help us improve our documentation by fixing errors, adding examples, or suggesting clarifications.
 
+- To fix a typo or small error directly in the browser with no local setup, see [Submitting a Single Edit](/docs/contributing-to-the-guide/submitting-a-single-edit).
+- To write a new article or make larger changes with a live local preview, see [Previewing New Articles](/docs/contributing-to-the-guide/previewing-new-articles) and [Submitting a New Article](/docs/contributing-to-the-guide/submitting-a-new-article).
+- To keep your writing consistent with the rest of the documentation, check the [Guidelines](/docs/contributing-to-the-guide/guidelines).
+
 ### Bug Reports and Feature Requests
 
 Found a bug? Have an idea for a new feature? Let us know by opening an issue on [GitHub](https://github.com/VRMADA/ultimatexr-unity/). Be sure to provide as much detail as possible, including steps to reproduce the issue or a thorough description of the proposed feature.
